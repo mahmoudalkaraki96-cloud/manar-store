@@ -49,6 +49,23 @@ const asText = (value: unknown) => typeof value === "string" ? value.trim() : ""
 const asOptionalText = (value: unknown) => asText(value) || null;
 const asBoolean = (value: unknown) => value === true || value === 1;
 const slugify = (value: string) => value.trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "") || crypto.randomUUID();
+const validColor = (value: unknown, fallback: string) => /^#[0-9a-f]{6}$/i.test(asText(value)) ? asText(value) : fallback;
+const safeUrl = (value: unknown) => { const text = asText(value); if (!text) return null; try { const url = new URL(text); return ["http:", "https:"].includes(url.protocol) ? text : null; } catch { return null; } };
+async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
+
+async function readStorefront(env: Env) {
+  await ensureStorefrontColumns(env);
+  const [row, slides] = await Promise.all([
+    env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
+    env.DB.prepare("SELECT id,title,image_url,product_id,category_id,external_url,sort_order,active FROM sliders ORDER BY sort_order,id").all(),
+  ]);
+  const settings = { storeName:String(row?.store_name||"Manar Store"),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000)};
+  return {settings,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)}))};
+}
+
+async function saveSettings(request:Request,env:Env){const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,popup_enabled,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"Manar Store",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,now,now).run();return json({ok:true});}
+
+async function saveSlide(request:Request,env:Env,id?:number){const body=await parseJson(request),image=asText(body.imageUrl);if(!image)return json({error:"صورة الشريحة مطلوبة"},{status:400});const values=[asOptionalText(body.title),image,body.productId?Number(body.productId):null,body.categoryId?Number(body.categoryId):null,safeUrl(body.externalUrl),Number(body.sortOrder||0),asBoolean(body.active)?1:0,Date.now()];if(id)await env.DB.prepare("UPDATE sliders SET title=?,image_url=?,product_id=?,category_id=?,external_url=?,sort_order=?,active=?,updated_at=? WHERE id=?").bind(...values,id).run();else await env.DB.prepare("INSERT INTO sliders (title,image_url,product_id,category_id,external_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)").bind(...values,Date.now()).run();return json({ok:true});}
 
 async function readCatalog(env: Env, includeInactive = false) {
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
@@ -172,6 +189,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
 
 async function api(request: Request, env: Env, url: URL): Promise<Response | null> {
   if (request.method === "GET" && url.pathname === "/api/catalog") return json(await readCatalog(env, false));
+  if (request.method === "GET" && url.pathname === "/api/storefront") return json(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
     const key = decodeURIComponent(url.pathname.slice(7));
@@ -183,6 +201,12 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname === "/api/admin/catalog") return json(await readCatalog(env, true));
+  if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
+  if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
+  if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
+  const slideMatch=url.pathname.match(/^\/api\/admin\/sliders\/(\d+)$/);
+  if(slideMatch&&request.method==="PUT")return saveSlide(request,env,Number(slideMatch[1]));
+  if(slideMatch&&request.method==="DELETE"){await env.DB.prepare("DELETE FROM sliders WHERE id=?").bind(Number(slideMatch[1])).run();return json({ok:true});}
   if (request.method === "POST" && url.pathname === "/api/admin/categories") return saveCategory(request, env);
   const categoryMatch = url.pathname.match(/^\/api\/admin\/categories\/(\d+)$/);
   if (categoryMatch && request.method === "PUT") return saveCategory(request, env, Number(categoryMatch[1]));
