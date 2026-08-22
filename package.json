@@ -15,7 +15,8 @@
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
     "db:migrate:remote": "bash scripts/sites-env.sh -- wrangler d1 migrations apply manar-store-db --remote",
-    "deploy:cloudflare": "npm run db:migrate:remote && wrangler deploy"
+    "deploy:cloudflare": "npm run db:migrate:remote && wrangler deploy",
+    "deploy:admin": "npm run db:migrate:remote && wrangler deploy --config wrangler.admin.jsonc"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
