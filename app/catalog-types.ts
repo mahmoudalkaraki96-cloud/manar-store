@@ -47,6 +47,7 @@ export type Product = {
   description: string;
   specifications?: string;
   stock: number;
+  inStock: boolean;
   active: boolean;
   featured: boolean;
   views: number;

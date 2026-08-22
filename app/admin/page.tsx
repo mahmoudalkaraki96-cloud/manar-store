@@ -5,7 +5,7 @@ import SettingsPanel from "./SettingsPanel";
 import OrdersPanel from "./OrdersPanel";
 
 const modules=["نظرة عامة","المنتجات","الأقسام","المتغيرات والمخزون","المشتريات والموردون","الطلبات","الزبائن","العروض والمحتوى","الإعدادات"];
-const emptyProduct:Product={id:0,itemNumber:0,name:"",slug:"",categoryId:null,category:"",price:0,description:"",stock:0,active:true,featured:false,views:0,orders:0,rating:0,variants:[],images:[]};
+const emptyProduct:Product={id:0,itemNumber:0,name:"",slug:"",categoryId:null,category:"",price:0,description:"",stock:0,inStock:false,active:true,featured:false,views:0,orders:0,rating:0,variants:[],images:[]};
 const emptyCategory:Category={id:0,categoryNumber:0,parentId:null,name:"",slug:"",description:"",bannerUrl:"",sortOrder:0,active:true};
 async function api(path:string,options?:RequestInit){const response=await fetch(path,{...options,headers:{"content-type":"application/json",...(options?.headers||{})}}),body=await response.json() as {error?:string};if(!response.ok)throw new Error(body.error||"فشلت العملية");return body}
 async function compressImage(file:File){if(!file.type.startsWith("image/"))return file;const bitmap=await createImageBitmap(file),scale=Math.min(1,1400/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));canvas.getContext("2d")?.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close();const blob=await new Promise<Blob>((resolve,reject)=>canvas.toBlob(value=>value?resolve(value):reject(new Error("تعذر ضغط الصورة")),"image/webp",.75));return new File([blob],file.name.replace(/\.[^.]+$/,"")+".webp",{type:"image/webp"})}

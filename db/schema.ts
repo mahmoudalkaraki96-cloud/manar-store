@@ -24,6 +24,7 @@ export const storeSettings = sqliteTable("store_settings", {
   tiktokEnabled: integer("tiktok_enabled", { mode: "boolean" }).notNull().default(true),
   sliderEnabled: integer("slider_enabled", { mode: "boolean" }).notNull().default(true),
   sliderIntervalMs: integer("slider_interval_ms").notNull().default(5000),
+  showOutOfStock: integer("show_out_of_stock", { mode: "boolean" }).notNull().default(true),
   popupEnabled: integer("popup_enabled", { mode: "boolean" }).notNull().default(false),
   ...timestamps,
 });
