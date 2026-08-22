@@ -193,11 +193,12 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (productMatch && request.method === "DELETE") { await env.DB.prepare("UPDATE products SET deleted_at=?, active=0 WHERE id=?").bind(Date.now(), Number(productMatch[1])).run(); return json({ ok: true }); }
   if (request.method === "POST" && url.pathname === "/api/admin/media") {
     const contentLength = Number(request.headers.get("content-length") || 0);
-    if (!contentLength || contentLength > 50_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
+    if (!contentLength || contentLength > 12_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
     const form = await request.formData(); const file = form.get("file");
     if (!(file instanceof File)) return json({ error: "الملف مطلوب" }, { status: 400 });
     const allowed = file.type.startsWith("image/") || file.type.startsWith("video/");
     if (!allowed) return json({ error: "نوع الملف غير مدعوم" }, { status: 400 });
+    if (file.type.startsWith("video/") && file.size > 10_000_000) return json({ error: "حجم الفيديو يتجاوز 10MB" }, { status: 413 });
     const extension = file.name.split(".").pop()?.replace(/[^a-zA-Z0-9]/g, "") || (file.type.startsWith("video/") ? "mp4" : "webp");
     const key = `products/${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${extension}`;
     await env.MEDIA.put(key, file.stream(), { httpMetadata: { contentType: file.type } });
