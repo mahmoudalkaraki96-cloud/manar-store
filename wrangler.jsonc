@@ -15,6 +15,14 @@
     "directory": "./dist/client",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "manar-store-db",
+      "database_id": "4afe4c16-e513-43ac-a397-26fa4141e5c9",
+      "migrations_dir": "./drizzle"
+    }
+  ],
   "observability": {
     "enabled": true
   }
