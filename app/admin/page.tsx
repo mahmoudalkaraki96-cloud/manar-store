@@ -1,240 +1,35 @@
 "use client";
-import {useEffect,useState} from "react";
-import {categoryData,products as seed,Product,Variant} from "../catalog";
-type Slide={id:number;image:string;mobileImage?:string;focus:"center"|"right"|"left";linkType:"product"|"category"|"offers"|"none";target:string;active:boolean};
-type Settings={name:string;logo:string;logoImage:string;primary:string;accent:string;bg:string;whatsapp:string;facebook:string;instagram:string;tiktok:string;slider:boolean;sliderInterval:number;slides:Slide[];popup:boolean;offers:boolean;bests:boolean;ratings:boolean;categoryBlocks:boolean};
-const defaultSlides:Slide[]=[{id:1,image:"https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=82",focus:"center",linkType:"category",target:"giveaways",active:true},{id:2,image:"https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=1600&q=82",focus:"center",linkType:"category",target:"wrapping",active:true},{id:3,image:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1600&q=82",focus:"center",linkType:"category",target:"gifts",active:true}];
-const defaults:Settings={name:"Manar Store",logo:"MANAR",logoImage:"",primary:"#b85f7d",accent:"#d7a46d",bg:"#fff8fb",whatsapp:"",facebook:"",instagram:"",tiktok:"",slider:true,sliderInterval:4500,slides:defaultSlides,popup:true,offers:true,bests:true,ratings:true,categoryBlocks:true};
-const emptyProduct:Product={id:0,name:"",category:categoryData[0].name,price:0,icon:"✦",color:"#e7e2d8",description:"",views:0,orders:0,rating:5,variants:[]};
-const modules=["نظرة عامة","الطلبات","المنتجات","الأقسام","المتغيرات والمخزون","المشتريات والموردون","الزبائن","العروض والمحتوى","التقييمات","المستخدمون والصلاحيات","التقارير","الإعدادات","سجل العمليات"];
-const readFile=(file:File,done:(v:string)=>void)=>{const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{const max=1200,scale=Math.min(1,max/Math.max(img.width,img.height)),canvas=document.createElement("canvas");canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext("2d")?.drawImage(img,0,0,canvas.width,canvas.height);done(canvas.toDataURL("image/webp",.76))};img.src=String(r.result)};r.readAsDataURL(file)};
+import {useEffect,useMemo,useState} from "react";
+import type {CatalogResponse,Category,Product,Variant} from "../catalog-types";
+
+const modules=["نظرة عامة","المنتجات","الأقسام","المتغيرات والمخزون","المشتريات والموردون","الطلبات","الزبائن","العروض والمحتوى","الإعدادات"];
+const emptyProduct:Product={id:0,itemNumber:0,name:"",slug:"",categoryId:null,category:"",price:0,description:"",stock:0,active:true,featured:false,views:0,orders:0,rating:0,variants:[],images:[]};
+const emptyCategory:Category={id:0,categoryNumber:0,parentId:null,name:"",slug:"",description:"",bannerUrl:"",sortOrder:0,active:true};
+async function api(path:string,options?:RequestInit){const response=await fetch(path,{...options,headers:{"content-type":"application/json",...(options?.headers||{})}}),body=await response.json() as {error?:string};if(!response.ok)throw new Error(body.error||"فشلت العملية");return body}
+async function compressImage(file:File){if(!file.type.startsWith("image/"))return file;const bitmap=await createImageBitmap(file),scale=Math.min(1,1600/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));canvas.getContext("2d")?.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close();const blob=await new Promise<Blob>((resolve,reject)=>canvas.toBlob(value=>value?resolve(value):reject(new Error("تعذر ضغط الصورة")),"image/webp",.78));return new File([blob],file.name.replace(/\.[^.]+$/,"")+".webp",{type:"image/webp"})}
+
 export default function Admin(){
- const [tab,setTab]=useState("نظرة عامة"),[settings,setSettings]=useState(defaults),[items,setItems]=useState<Product[]>(seed),[editing,setEditing]=useState<Product|null>(null),[saved,setSaved]=useState(false);
- useEffect(()=>{try{const a=localStorage.getItem("manar_settings"),b=localStorage.getItem("manar_products");if(a)setSettings({...defaults,...JSON.parse(a)});if(b){const saved:Product[]=JSON.parse(b),list=[...saved,...seed.filter(p=>!saved.some(x=>x.id===p.id))];setItems(list.map((x:Product)=>({...x,image:x.image||seed.find(y=>y.id===x.id)?.image,variantName:x.variantName||seed.find(y=>y.id===x.id)?.variantName,variantDisplay:x.variantDisplay||seed.find(y=>y.id===x.id)?.variantDisplay})))}}catch{}},[]);
- const persistItems=(next:Product[])=>{setItems(next);localStorage.setItem("manar_products",JSON.stringify(next))};
- const saveProduct=()=>{if(!editing||!editing.name.trim()||editing.price<0)return;const id=editing.id||Math.max(1000,...items.map(x=>x.id))+1;const ready={...editing,id};persistItems(items.some(x=>x.id===id)?items.map(x=>x.id===id?ready:x):[ready,...items]);setEditing(null)};
- const remove=(id:number)=>{if(confirm("حذف الصنف؟"))persistItems(items.filter(x=>x.id!==id))};
- const saveSettings=()=>{localStorage.setItem("manar_settings",JSON.stringify(settings));setSaved(true);setTimeout(()=>setSaved(false),1600)};
- const reset=()=>{setSettings(defaults);localStorage.setItem("manar_settings",JSON.stringify(defaults))};
- const addVariant=()=>setEditing(p=>p?({...p,variants:[...(p.variants||[]),{name:"خيار جديد",sku:"SKU-"+Date.now(),displayType:"text",stock:0}]}):p);
- const updateVariant=(i:number,k:keyof Variant,v:string|number)=>setEditing(p=>p?({...p,variants:(p.variants||[]).map((x,n)=>n===i?({...x,[k]:v}):x)}):p);
- const updateSlide=(i:number,patch:Partial<Slide>)=>setSettings(s=>({...s,slides:s.slides.map((x,n)=>n===i?{...x,...patch}:x)}));
- const moveSlide=(i:number,dir:-1|1)=>setSettings(s=>{const n=[...s.slides],to=i+dir;if(to<0||to>=n.length)return s;[n[i],n[to]]=[n[to],n[i]];return {...s,slides:n}});
- return <main className="adminShell" style={{"--green":settings.primary,"--gold":settings.accent} as React.CSSProperties}>
-  <aside className="adminSide">
-<a className="brand" href="/">{settings.logoImage?<img src={settings.logoImage} alt="الشعار"/>:<b>{settings.logo}</b>}<small>ADMIN</small>
-</a>{modules.map(x=>
-<button key={x} className={tab===x?"active":""} onClick={()=>setTab(x)}>{x}</button>)}</aside>
-  <section className="adminMain">
-<div className="adminTop">
-<div>
-<small>إدارة المتجر</small>
-<h1>{tab}</h1>
-</div>
-<a href="/">فتح المتجر ←</a>
-</div>
-  {tab==="نظرة عامة"&&<>
-<div className="stats">
-<div>
-<small>الطلبات اليوم</small>
-<b>18</b>
-</div>
-<div>
-<small>المبيعات</small>
-<b>3,420 ₪</b>
-</div>
-<div>
-<small>الأصناف</small>
-<b>{items.length}</b>
-</div>
-<div>
-<small>المتغيرات</small>
-<b>{items.reduce((n,p)=>n+(p.variants?.length||0),0)}</b>
-</div>
-</div>
-<div className="adminCards">
-<div>
-<h3>طلبات حديثة</h3>{["ORD-000128","ORD-000127","ORD-000126"].map((x,i)=>
-<p key={x}>
-<b>{x}</b>
-<span>{220+i*85} ₪</span>
-<em>قيد التجهيز</em>
-</p>)}</div>
-<div>
-<h3>اختصارات</h3>
-<button onClick={()=>{setTab("المنتجات");setEditing({...emptyProduct})}}>إضافة صنف</button>
-<button onClick={()=>setTab("الإعدادات")}>تخصيص المتجر</button>
-</div>
-</div>
-</>}
-  {tab==="المنتجات"&&<div className="dataPanel">
-<div className="panelHead">
-<h3>الأصناف ({items.length})</h3>
-<button onClick={()=>setEditing({...emptyProduct,variants:[]})}>＋ صنف جديد</button>
-</div>
-<div className="adminSearch">
-<input placeholder="ابحث باسم أو رقم الصنف..."/>
-</div>
-<table>
-<thead>
-<tr>
-<th>الصورة</th>
-<th>الرقم</th>
-<th>الصنف</th>
-<th>القسم</th>
-<th>البيع</th>
-<th>الجملة</th>
-<th>المتغيرات</th>
-<th>
-</th>
-</tr>
-</thead>
-<tbody>{items.map(p=>
-<tr key={p.id}>
-<td>{p.image?<img className="tableImage" src={p.image}/>:<i className="tableIcon" style={{background:p.color}}>{p.icon}</i>}</td>
-<td>#{p.id}</td>
-<td>{p.name}</td>
-<td>{p.category}</td>
-<td>{p.price} ₪</td>
-<td>{p.wholesale==null?"—":p.wholesale+" ₪"}</td>
-<td>{p.variants?.length||0}</td>
-<td>
-<button className="editBtn" onClick={()=>setEditing({...p,variants:(p.variants||[]).map(v=>({...v}))})}>تعديل</button>
-<button className="deleteBtn" onClick={()=>remove(p.id)}>حذف</button>
-</td>
-</tr>)}</tbody>
-</table>
-</div>}
-  {tab==="الأقسام"&&<div className="dataPanel">
-<div className="panelHead">
-<h3>الأقسام</h3>
-<button>＋ قسم جديد</button>
-</div>
-<div className="categoryAdmin">{categoryData.map(c=>
-<div key={c.slug}>
-<i>{c.icon}</i>
-<b>{c.name}</b>
-<small>{c.subs.join(" • ")||"بدون أقسام فرعية"}</small>
-<button>تعديل</button>
-</div>)}</div>
-</div>}
-  {tab==="الإعدادات"&&<div className="settingsGrid">
-<div className="dataPanel">
-<h3>هوية المتجر</h3>
-<label>اسم المتجر<input value={settings.name} onChange={e=>setSettings({...settings,name:e.target.value})}/>
-</label>
-<label>نص الشعار<input value={settings.logo} onChange={e=>setSettings({...settings,logo:e.target.value})}/>
-</label>
-<label className="uploadBox">رفع صورة الشعار<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&readFile(e.target.files[0],logoImage=>setSettings({...settings,logoImage}))}/>{settings.logoImage&&<img src={settings.logoImage}/>}</label>
-<div className="colors">
-<label>الرئيسي<input type="color" value={settings.primary} onChange={e=>setSettings({...settings,primary:e.target.value})}/>
-<input value={settings.primary} onChange={e=>setSettings({...settings,primary:e.target.value})}/>
-</label>
-<label>المساعد<input type="color" value={settings.accent} onChange={e=>setSettings({...settings,accent:e.target.value})}/>
-<input value={settings.accent} onChange={e=>setSettings({...settings,accent:e.target.value})}/>
-</label>
-<label>الخلفية<input type="color" value={settings.bg} onChange={e=>setSettings({...settings,bg:e.target.value})}/>
-<input value={settings.bg} onChange={e=>setSettings({...settings,bg:e.target.value})}/>
-</label>
-</div>
-<h3>روابط التواصل</h3>{(["whatsapp","facebook","instagram","tiktok"] as const).map(k=>
-<label key={k}>{k}<input value={settings[k]} onChange={e=>setSettings({...settings,[k]:e.target.value})}/>
-</label>)}</div>
-<div className="dataPanel">
-<h3>محتوى الرئيسية</h3>{(["slider","popup","offers","bests","ratings","categoryBlocks"] as const).map(k=>
-<label className="roleLine" key={k}>
-<span>{{slider:"السلايدر",popup:"النافذة المنبثقة",offers:"العروض",bests:"الأكثر طلباً",ratings:"الأعلى تقييماً",categoryBlocks:"أقسام الصفحة"}[k]}</span>
-<input type="checkbox" checked={settings[k]} onChange={e=>setSettings({...settings,[k]:e.target.checked})}/>
-</label>)}
-<div className="sliderAdmin">
-<div className="sliderAdminHead"><div><h3>إدارة السلايدر</h3><small>الصورة الأساسية إجبارية، وصورة الهاتف اختيارية.</small></div><button onClick={()=>setSettings({...settings,slides:[...settings.slides,{id:Date.now(),image:"",focus:"center",linkType:"none",target:"",active:true}]})}>＋ سلايد</button></div>
-<label className="sliderSpeed">مدة الانتقال التلقائي<select value={settings.sliderInterval} onChange={e=>setSettings({...settings,sliderInterval:+e.target.value})}><option value={3000}>3 ثوانٍ</option><option value={4500}>4.5 ثوانٍ</option><option value={6000}>6 ثوانٍ</option><option value={8000}>8 ثوانٍ</option></select></label>
-{settings.slides.map((x,i)=><div className="slideEditor" key={x.id}>
- <div className="slideEditorTop"><b>سلايد {i+1}</b><label>فعّال <input type="checkbox" checked={x.active} onChange={e=>updateSlide(i,{active:e.target.checked})}/></label><span><button onClick={()=>moveSlide(i,-1)}>↑</button><button onClick={()=>moveSlide(i,1)}>↓</button><button className="deleteBtn" onClick={()=>setSettings({...settings,slides:settings.slides.filter((_,n)=>n!==i)})}>حذف</button></span></div>
- <div className="slideFields"><label className="uploadBox">الصورة الأساسية<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&readFile(e.target.files[0],image=>updateSlide(i,{image}))}/>{x.image&&<img src={x.image}/>}</label><label className="uploadBox">صورة الهاتف — اختياري<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&readFile(e.target.files[0],mobileImage=>updateSlide(i,{mobileImage}))}/>{x.mobileImage&&<img src={x.mobileImage}/>}</label>
- <label>نقطة التركيز<select value={x.focus} onChange={e=>updateSlide(i,{focus:e.target.value as Slide["focus"]})}><option value="center">المنتصف</option><option value="right">اليمين</option><option value="left">اليسار</option></select></label>
- <label>عند الضغط<select value={x.linkType} onChange={e=>updateSlide(i,{linkType:e.target.value as Slide["linkType"],target:e.target.value==="offers"?"offers":""})}><option value="product">فتح منتج</option><option value="category">فتح قسم</option><option value="offers">فتح العروض</option><option value="none">بدون رابط</option></select></label>
- {x.linkType==="product"&&<label>رقم المنتج<input type="number" value={x.target} onChange={e=>updateSlide(i,{target:e.target.value})}/></label>}{x.linkType==="category"&&<label>القسم<select value={x.target} onChange={e=>updateSlide(i,{target:e.target.value})}><option value="">اختر القسم</option>{categoryData.filter(c=>c.slug!=="offers").map(c=><option value={c.slug} key={c.slug}>{c.name}</option>)}</select></label>}
- </div></div>)}
-</div>
-<div className="storePreview" style={{background:settings.bg,borderColor:settings.accent}}>{settings.logoImage?<img src={settings.logoImage}/>:<b style={{color:settings.primary}}>{settings.logo}</b>}<span style={{background:settings.primary}}>زر المتجر</span>
-</div>
-<button className="saveBtn" onClick={saveSettings}>{saved?"تم الحفظ ✓":"حفظ الإعدادات"}</button>
-<button className="resetBtn" onClick={reset}>استعادة التصميم الافتراضي</button>
-</div>
-</div>}
-  {tab==="المستخدمون والصلاحيات"&&<div className="dataPanel">{["مدير النظام","موظف الطلبات","موظف المخزون","التسويق","زبون جملة"].map(x=>
-<label className="roleLine" key={x}>
-<span>{x}</span>
-<input type="checkbox" defaultChecked/>
-</label>)}</div>}
-  {!["نظرة عامة","المنتجات","الأقسام","الإعدادات","المستخدمون والصلاحيات"].includes(tab)&&<div className="dataPanel emptyModule">
-<span>▦</span>
-<h2>{tab}</h2>
-<button>إضافة سجل جديد</button>
-</div>}
-  </section>
-  {editing&&<div className="overlay">
-<div className="productEditor">
-<div className="editorHead">
-<h2>{editing.id?"تعديل الصنف":"إضافة صنف"}</h2>
-<button onClick={()=>setEditing(null)}>×</button>
-</div>
-<div className="editorGrid">
-<label>اسم الصنف<input value={editing.name} onChange={e=>setEditing({...editing,name:e.target.value})}/>
-</label>
-<label>القسم<select value={editing.category} onChange={e=>setEditing({...editing,category:e.target.value})}>{categoryData.map(c=>
-<option key={c.slug}>{c.name}</option>)}</select>
-</label>
-<label>القسم الفرعي<select value={editing.subcategory||""} onChange={e=>setEditing({...editing,subcategory:e.target.value||undefined})}><option value="">بدون — منتج مباشر في القسم</option>{(categoryData.find(c=>c.name===editing.category)?.subs||[]).map(s=><option key={s}>{s}</option>)}</select>
-</label>
-<label>سعر البيع<input type="number" value={editing.price} onChange={e=>setEditing({...editing,price:+e.target.value})}/>
-</label>
-<label>سعر الجملة<input type="number" value={editing.wholesale??""} onChange={e=>setEditing({...editing,wholesale:e.target.value===""?undefined:+e.target.value})}/>
-</label>
-<label>السعر القديم<input type="number" value={editing.oldPrice??""} onChange={e=>setEditing({...editing,oldPrice:e.target.value===""?undefined:+e.target.value})}/>
-</label>
-<label>رمز/أيقونة<input value={editing.icon} onChange={e=>setEditing({...editing,icon:e.target.value})}/>
-</label>
-<label>لون خلفية الصورة<input type="color" value={editing.color} onChange={e=>setEditing({...editing,color:e.target.value})}/>
-</label>
-<label className="uploadBox">صورة الصنف — تضغط تلقائياً<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&readFile(e.target.files[0],image=>setEditing({...editing,image}))}/>{editing.image&&<img src={editing.image}/>}</label>
-<label>رابط فيديو المنتج<input value={editing.video||""} placeholder="YouTube أو MP4" onChange={e=>setEditing({...editing,video:e.target.value})}/>
-</label>
-<label className="wide">الوصف<textarea value={editing.description} onChange={e=>setEditing({...editing,description:e.target.value})}/>
-</label>
-<label className="wide">كلمات البحث الداخلية<textarea value={editing.keywords||""} placeholder="مثال: طقم سفرة، صحون بورسلان، عروس، 24 قطعة" onChange={e=>setEditing({...editing,keywords:e.target.value})}/>
-</label>
-<label className="wide seoField">عنوان SEO<input value={editing.seoTitle||""} maxLength={65} placeholder={editing.name||"عنوان صفحة المنتج في جوجل"} onChange={e=>setEditing({...editing,seoTitle:e.target.value})}/><small>{(editing.seoTitle||"").length}/65</small>
-</label>
-<label className="wide seoField">وصف SEO<textarea value={editing.seoDescription||""} maxLength={165} placeholder="وصف مختصر وجذاب للمنتج يظهر في نتائج البحث" onChange={e=>setEditing({...editing,seoDescription:e.target.value})}/><small>{(editing.seoDescription||"").length}/165</small>
-</label>
-<label className="wide">وصف الصورة لمحركات البحث<input value={editing.imageAlt||""} placeholder={editing.name} onChange={e=>setEditing({...editing,imageAlt:e.target.value})}/>
-</label>
-<label>اسم المتغير<input value={editing.variantName||""} placeholder="مثال: الحجم أو اللون" onChange={e=>setEditing({...editing,variantName:e.target.value})}/>
-</label>
-</div>
-<div className="variantsHead">
-<h3>{editing.variantName||"خيارات الصنف"}</h3>
-<button onClick={addVariant}>＋ إضافة لون/متغير</button>
-</div>
-<div className="variantEditor">{(editing.variants||[]).map((v,i)=>
-<div key={i}>
-<input value={v.name} onChange={e=>updateVariant(i,"name",e.target.value)} placeholder="اللون"/>
-<input value={v.sku} onChange={e=>updateVariant(i,"sku",e.target.value)} placeholder="رقم المتغير"/>
-<select value={v.displayType||(editing.variantDisplay==="color"?"color":"text")} onChange={e=>updateVariant(i,"displayType",e.target.value)}><option value="text">نص</option><option value="color">لون</option></select>
-{(v.displayType||(editing.variantDisplay==="color"?"color":"text"))==="color"&&<input type="color" value={v.color||"#d9d9d9"} onChange={e=>updateVariant(i,"color",e.target.value)}/>} 
-<input type="number" value={v.stock} onChange={e=>updateVariant(i,"stock",+e.target.value)} placeholder="المخزون"/>
-<input type="number" value={v.price??""} onChange={e=>updateVariant(i,"price",+e.target.value)} placeholder="سعر البيع"/>
-<input type="number" value={v.wholesale??""} onChange={e=>updateVariant(i,"wholesale",+e.target.value)} placeholder="الجملة"/>
-<label className="variantUpload">صورة<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&readFile(e.target.files[0],image=>updateVariant(i,"image",image))}/>{v.image&&<img src={v.image}/>}</label>
-<button onClick={()=>setEditing({...editing,variants:editing.variants?.filter((_,n)=>n!==i)})}>حذف</button>
-</div>)}</div>
-<div className="editorActions">
-<button onClick={()=>setEditing(null)}>إلغاء</button>
-<button className="saveBtn" onClick={saveProduct}>حفظ الصنف</button>
-</div>
-</div>
-</div>}
- </main>
-}
+ const [tab,setTab]=useState("نظرة عامة"),[data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[loading,setLoading]=useState(true),[message,setMessage]=useState(""),[editingProduct,setEditingProduct]=useState<Product|null>(null),[editingCategory,setEditingCategory]=useState<Category|null>(null),[search,setSearch]=useState(""),[saving,setSaving]=useState(false);
+ const refresh=async()=>{setLoading(true);try{const response=await fetch("/api/admin/catalog",{cache:"no-store"});if(!response.ok)throw new Error("تعذر تحميل قاعدة البيانات");setData(await response.json() as CatalogResponse)}catch(error){setMessage(error instanceof Error?error.message:"حدث خطأ")}finally{setLoading(false)}};
+ useEffect(()=>{void refresh()},[]);
+ const products=useMemo(()=>data.products.filter(product=>`${product.name} ${product.itemNumber}`.includes(search.trim())),[data.products,search]),roots=data.categories.filter(category=>category.parentId==null);
+ const upload=async(file:File)=>{const ready=await compressImage(file),form=new FormData();form.append("file",ready);const response=await fetch("/api/admin/media",{method:"POST",body:form}),body=await response.json() as {url?:string;error?:string};if(!response.ok||!body.url)throw new Error(body.error||"فشل رفع الملف");return body.url};
+ const addMedia=async(files:FileList|null,type:"image"|"video")=>{if(!editingProduct||!files?.length)return;setSaving(true);try{const urls=await Promise.all(Array.from(files).map(upload));if(type==="video")setEditingProduct({...editingProduct,video:urls[0]});else setEditingProduct({...editingProduct,images:[...(editingProduct.images||[]),...urls],image:editingProduct.image||urls[0]})}catch(error){setMessage(error instanceof Error?error.message:"فشل الرفع")}finally{setSaving(false)}};
+ const saveProduct=async()=>{if(!editingProduct?.name.trim())return setMessage("اسم الصنف مطلوب");setSaving(true);try{const payload={...editingProduct,media:[...(editingProduct.images||[]).map(url=>({type:"image",url,altText:editingProduct.name})),...(editingProduct.video?[{type:"video",url:editingProduct.video}]:[])]};await api(editingProduct.id?`/api/admin/products/${editingProduct.id}`:"/api/admin/products",{method:editingProduct.id?"PUT":"POST",body:JSON.stringify(payload)});setEditingProduct(null);setMessage("تم حفظ الصنف");await refresh()}catch(error){setMessage(error instanceof Error?error.message:"فشل الحفظ")}finally{setSaving(false)}};
+ const saveCategory=async()=>{if(!editingCategory?.name.trim())return setMessage("اسم القسم مطلوب");setSaving(true);try{await api(editingCategory.id?`/api/admin/categories/${editingCategory.id}`:"/api/admin/categories",{method:editingCategory.id?"PUT":"POST",body:JSON.stringify(editingCategory)});setEditingCategory(null);setMessage("تم حفظ القسم");await refresh()}catch(error){setMessage(error instanceof Error?error.message:"فشل الحفظ")}finally{setSaving(false)}};
+ const removeProduct=async(product:Product)=>{if(!confirm(`حذف الصنف ${product.name}؟`))return;await api(`/api/admin/products/${product.id}`,{method:"DELETE"});await refresh()};
+ const removeCategory=async(category:Category)=>{if(!confirm(`حذف القسم ${category.name}؟`))return;try{await api(`/api/admin/categories/${category.id}`,{method:"DELETE"});await refresh()}catch(error){setMessage(error instanceof Error?error.message:"لا يمكن حذف القسم")}};
+ const addVariant=()=>editingProduct&&setEditingProduct({...editingProduct,variants:[...(editingProduct.variants||[]),{name:"",sku:"",displayType:"text",stock:0,images:[]}]});
+ const updateVariant=(index:number,patch:Partial<Variant>)=>editingProduct&&setEditingProduct({...editingProduct,variants:(editingProduct.variants||[]).map((variant,i)=>i===index?{...variant,...patch}:variant)});
+ const uploadVariant=async(index:number,file:File)=>{setSaving(true);try{const url=await upload(file),variant=editingProduct?.variants?.[index];updateVariant(index,{image:url,images:[...(variant?.images||[]),url]})}catch(error){setMessage(error instanceof Error?error.message:"فشل الرفع")}finally{setSaving(false)}};
+ return <main className="adminShell"><aside className="adminSide"><a className="brand" href="/"><b>MANAR</b><small>ADMIN</small></a>{modules.map(item=><button key={item} className={tab===item?"active":""} onClick={()=>setTab(item)}>{item}</button>)}</aside><section className="adminMain"><div className="adminTop"><div><small>إدارة المتجر الفعلية</small><h1>{tab}</h1></div><a href="/">فتح المتجر ←</a></div>{message&&<div className="adminMessage" onClick={()=>setMessage("")}>{message} ×</div>}{loading?<div className="dataPanel">جاري تحميل البيانات من D1...</div>:<>
+ {tab==="نظرة عامة"&&<><div className="stats"><div><small>المنتجات الفعلية</small><b>{data.products.length}</b></div><div><small>الأقسام</small><b>{data.categories.length}</b></div><div><small>المتغيرات</small><b>{data.products.reduce((sum,product)=>sum+(product.variants?.length||0),0)}</b></div><div><small>الطلبات</small><b>0</b></div></div><div className="dataPanel"><h3>قاعدة حقيقية ونظيفة</h3><p>لا توجد بيانات تجريبية. أضف الأقسام أولاً ثم المنتجات، وستظهر مباشرة في المتجر.</p></div></>}
+ {tab==="المنتجات"&&<div className="dataPanel"><div className="panelHead"><h3>الأصناف ({data.products.length})</h3><button onClick={()=>setEditingProduct({...emptyProduct,images:[],variants:[]})}>＋ صنف جديد</button></div><div className="adminSearch"><input value={search} onChange={event=>setSearch(event.target.value)} placeholder="ابحث بالاسم أو رقم الصنف..."/></div>{products.length?<table><thead><tr><th>الصورة</th><th>الرقم</th><th>الصنف</th><th>القسم</th><th>البيع</th><th>المخزون</th><th></th></tr></thead><tbody>{products.map(product=><tr key={product.id}><td>{product.image?<img className="tableImage" src={product.image} alt=""/>:"—"}</td><td>#{product.itemNumber}</td><td>{product.name}</td><td>{product.subcategory||product.category}</td><td>{product.price} ₪</td><td>{product.stock}</td><td><button className="editBtn" onClick={()=>setEditingProduct(structuredClone(product))}>تعديل</button><button className="deleteBtn" onClick={()=>void removeProduct(product)}>حذف</button></td></tr>)}</tbody></table>:<div className="emptyCategory"><b>لا توجد أصناف</b><span>أضف أول صنف حقيقي من الزر أعلاه.</span></div>}</div>}
+ {tab==="الأقسام"&&<div className="dataPanel"><div className="panelHead"><h3>الأقسام ({data.categories.length})</h3><button onClick={()=>setEditingCategory({...emptyCategory})}>＋ قسم جديد</button></div>{data.categories.length?<div className="categoryAdmin">{data.categories.map(category=><div key={category.id}><i>▦</i><b>{category.name}</b><small>رقم {category.categoryNumber} {category.parentId?`• فرعي من ${roots.find(root=>root.id===category.parentId)?.name||"قسم"}`:"• رئيسي"}</small><button onClick={()=>setEditingCategory({...category})}>تعديل</button><button className="deleteBtn" onClick={()=>void removeCategory(category)}>حذف</button></div>)}</div>:<div className="emptyCategory"><b>لا توجد أقسام</b><span>ابدأ بإضافة القسم الرئيسي الأول.</span></div>}</div>}
+ {!['نظرة عامة','المنتجات','الأقسام'].includes(tab)&&<div className="dataPanel"><h3>{tab}</h3><p>هذه الوحدة نظيفة وغير مربوطة ببيانات وهمية. سيتم ربطها في المرحلة الخاصة بها.</p></div>}
+ </>}</section>
+ {editingCategory&&<div className="editModal"><div className="editBox"><div className="panelHead"><h2>{editingCategory.id?"تعديل القسم":"قسم جديد"}</h2><button onClick={()=>setEditingCategory(null)}>×</button></div><div className="formGrid"><label>اسم القسم<input value={editingCategory.name} onChange={event=>setEditingCategory({...editingCategory,name:event.target.value})}/></label><label>رقم القسم<input type="number" value={editingCategory.categoryNumber||""} placeholder="تلقائي" onChange={event=>setEditingCategory({...editingCategory,categoryNumber:Number(event.target.value)})}/></label><label>القسم الرئيسي<select value={editingCategory.parentId||""} onChange={event=>setEditingCategory({...editingCategory,parentId:event.target.value?Number(event.target.value):null})}><option value="">قسم رئيسي</option>{roots.filter(root=>root.id!==editingCategory.id).map(root=><option key={root.id} value={root.id}>{root.name}</option>)}</select></label><label>الرابط المختصر<input value={editingCategory.slug} placeholder="تلقائي" onChange={event=>setEditingCategory({...editingCategory,slug:event.target.value})}/></label><label className="wide">الوصف<textarea value={editingCategory.description} onChange={event=>setEditingCategory({...editingCategory,description:event.target.value})}/></label><label>الترتيب<input type="number" value={editingCategory.sortOrder} onChange={event=>setEditingCategory({...editingCategory,sortOrder:Number(event.target.value)})}/></label><label className="check"><input type="checkbox" checked={editingCategory.active} onChange={event=>setEditingCategory({...editingCategory,active:event.target.checked})}/> فعّال</label></div><button className="mainBtn" disabled={saving} onClick={()=>void saveCategory()}>{saving?"جاري الحفظ...":"حفظ القسم"}</button></div></div>}
+ {editingProduct&&<div className="editModal"><div className="editBox productEditor"><div className="panelHead"><h2>{editingProduct.id?"تعديل الصنف":"صنف جديد"}</h2><button onClick={()=>setEditingProduct(null)}>×</button></div><div className="formGrid"><label>اسم الصنف<input value={editingProduct.name} onChange={event=>setEditingProduct({...editingProduct,name:event.target.value})}/></label><label>رقم الصنف<input type="number" value={editingProduct.itemNumber||""} placeholder="تلقائي" onChange={event=>setEditingProduct({...editingProduct,itemNumber:Number(event.target.value)})}/></label><label>القسم<select value={editingProduct.categoryId||""} onChange={event=>setEditingProduct({...editingProduct,categoryId:event.target.value?Number(event.target.value):null})}><option value="">بدون قسم</option>{data.categories.map(category=><option key={category.id} value={category.id}>{category.parentId?`— ${category.name}`:category.name}</option>)}</select></label><label>سعر البيع<input type="number" min="0" step=".01" value={editingProduct.price} onChange={event=>setEditingProduct({...editingProduct,price:Number(event.target.value)})}/></label><label>سعر الجملة<input type="number" min="0" step=".01" value={editingProduct.wholesale??""} onChange={event=>setEditingProduct({...editingProduct,wholesale:event.target.value===""?undefined:Number(event.target.value)})}/></label><label>سعر الشراء<input type="number" min="0" step=".01" value={editingProduct.purchasePrice??""} onChange={event=>setEditingProduct({...editingProduct,purchasePrice:event.target.value===""?undefined:Number(event.target.value)})}/></label><label>المخزون<input type="number" min="0" value={editingProduct.stock} onChange={event=>setEditingProduct({...editingProduct,stock:Number(event.target.value)})}/></label><label className="wide">الكلمات المفتاحية<input value={editingProduct.keywords||""} placeholder="افصل الكلمات بفاصلة" onChange={event=>setEditingProduct({...editingProduct,keywords:event.target.value})}/></label><label className="wide">الوصف<textarea value={editingProduct.description} onChange={event=>setEditingProduct({...editingProduct,description:event.target.value})}/></label><label className="check"><input type="checkbox" checked={editingProduct.active} onChange={event=>setEditingProduct({...editingProduct,active:event.target.checked})}/> ظاهر في المتجر</label><label className="check"><input type="checkbox" checked={editingProduct.featured} onChange={event=>setEditingProduct({...editingProduct,featured:event.target.checked})}/> مميز</label></div>
+ <div className="mediaEditor"><h3>صور وفيديو المنتج</h3><label className="uploadBox">رفع صور مضغوطة تلقائياً<input type="file" accept="image/*" multiple onChange={event=>void addMedia(event.target.files,"image")}/></label><label className="uploadBox">رفع فيديو<input type="file" accept="video/*" onChange={event=>void addMedia(event.target.files,"video")}/></label><div className="mediaThumbs">{(editingProduct.images||[]).map(url=><div key={url}><img src={url} alt=""/><button onClick={()=>setEditingProduct({...editingProduct,images:editingProduct.images?.filter(image=>image!==url),image:editingProduct.image===url?editingProduct.images?.find(image=>image!==url):editingProduct.image})}>×</button></div>)}</div></div>
+ <div className="variantEditor"><div className="panelHead"><h3>المتغيرات</h3><button onClick={addVariant}>＋ متغير</button></div>{(editingProduct.variants||[]).map((variant,index)=><div className="variantRow" key={index}><input placeholder="اسم الخيار" value={variant.name} onChange={event=>updateVariant(index,{name:event.target.value})}/><input placeholder="SKU" value={variant.sku} onChange={event=>updateVariant(index,{sku:event.target.value})}/><select value={variant.displayType} onChange={event=>updateVariant(index,{displayType:event.target.value as "text"|"color"})}><option value="text">نص</option><option value="color">لون</option></select>{variant.displayType==="color"&&<input type="color" value={variant.color||"#cccccc"} onChange={event=>updateVariant(index,{color:event.target.value})}/>}<input type="number" placeholder="المخزون" value={variant.stock} onChange={event=>updateVariant(index,{stock:Number(event.target.value)})}/><label className="miniUpload">صورة<input type="file" accept="image/*" onChange={event=>event.target.files?.[0]&&void uploadVariant(index,event.target.files[0])}/></label>{variant.image&&<img src={variant.image} alt=""/>}<button className="deleteBtn" onClick={()=>setEditingProduct({...editingProduct,variants:editingProduct.variants?.filter((_,i)=>i!==index)})}>حذف</button></div>)}</div><button className="mainBtn" disabled={saving} onClick={()=>void saveProduct()}>{saving?"جاري الحفظ...":"حفظ الصنف"}</button></div></div>}
+ </main>}
