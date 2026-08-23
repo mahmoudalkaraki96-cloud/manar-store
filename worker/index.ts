@@ -53,6 +53,7 @@ const validColor = (value: unknown, fallback: string) => /^#[0-9a-f]{6}$/i.test(
 const safeUrl = (value: unknown) => { const text = asText(value); if (!text) return null; try { const url = new URL(text); return ["http:", "https:"].includes(url.protocol) ? text : null; } catch { return null; } };
 const safeTarget = (value:unknown) => { const text=asText(value); return text.startsWith("/")&&!text.startsWith("//")?text:safeUrl(text); };
 async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"],["show_out_of_stock","integer DEFAULT 1 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
+async function ensureCustomizationSchema(env:Env){await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_custom_fields (id INTEGER PRIMARY KEY AUTOINCREMENT,product_id INTEGER NOT NULL,label TEXT NOT NULL,placeholder TEXT,max_length INTEGER DEFAULT 60 NOT NULL,required INTEGER DEFAULT 0 NOT NULL,sort_order INTEGER DEFAULT 0 NOT NULL,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE)").run();const info=await env.DB.prepare("PRAGMA table_info(order_items)").all<{name:string}>();if(!info.results.some(row=>row.name==="customization_json"))await env.DB.prepare("ALTER TABLE order_items ADD COLUMN customization_json TEXT").run()}
 
 async function readStorefront(env: Env) {
   await ensureStorefrontColumns(env);
@@ -77,13 +78,14 @@ async function savePopup(request:Request,env:Env){const body=await parseJson(req
 
 const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancelled"] as const;
 async function createOrder(request:Request,env:Env){
+  await ensureCustomizationSchema(env);
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
   if(!name||phone.length<7||!city||!address)return json({error:"الاسم ورقم الهاتف والمدينة والعنوان مطلوبة"},{status:400});
   const shipping=zone==="jerusalem"?3000:zone==="inside"?7000:zone==="west_bank"?2000:-1;
   if(shipping<0)return json({error:"منطقة التوصيل غير صحيحة"},{status:400});
   const requested=Array.isArray(body.items)?body.items as Array<Record<string,unknown>>:[];
   if(!requested.length||requested.length>100)return json({error:"السلة فارغة أو تتجاوز الحد"},{status:400});
-  const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;qty:number;unit:number;total:number}>=[];
+  const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
   for(const item of requested){
     const productId=Number(item.productId),variantId=item.variantId?Number(item.variantId):null,qty=Math.min(99,Math.max(1,Number(item.qty)||1));
     const product=await env.DB.prepare("SELECT id,item_number,name,price_agorot,stock_quantity FROM products WHERE id=? AND active=1 AND deleted_at IS NULL").bind(productId).first<Record<string,unknown>>();
@@ -98,21 +100,24 @@ async function createOrder(request:Request,env:Env){
       if(Number(variantCount?.count||0)>0)return json({error:`اختر خيار الصنف ${String(product.name)} من جديد قبل إتمام الطلب`},{status:409});
     }
     if(stock<qty)return json({error:`المتوفر من ${String(product.name)}${label?` — ${label}`:""} هو ${stock} فقط`},{status:409});
-    lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,qty,unit,total:unit*qty});
+    const definitions=await env.DB.prepare("SELECT label,max_length,required FROM product_custom_fields WHERE product_id=? ORDER BY sort_order,id").bind(productId).all(),submitted=item.customizations&&typeof item.customizations==="object"?item.customizations as Record<string,unknown>:{},customizations:Record<string,string>={};
+    for(const field of definitions.results as Array<Record<string,unknown>>){const fieldLabel=String(field.label),value=asText(submitted[fieldLabel]).slice(0,Number(field.max_length||60));if(Boolean(field.required)&&!value)return json({error:`حقل ${fieldLabel} مطلوب للصنف ${String(product.name)}`},{status:400});if(value)customizations[fieldLabel]=value}
+    lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations,qty,unit,total:unit*qty});
   }
   const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now).run(),orderId=Number(result.meta.last_row_id);
-  await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,line.qty,line.unit,line.total)));
+  await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
   return json({ok:true,orderNumber:number,total:(subtotal+shipping)/100});
 }
 
 async function readOrders(env:Env){
+  await ensureCustomizationSchema(env);
   const [orders,items,mediaResult]=await Promise.all([
     env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
-    env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
+    env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
     env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all()
   ]);
   const media=mediaResult.results as Array<Record<string,unknown>>;
-  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
+  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
 async function updateOrder(request:Request,env:Env,id:number){
@@ -143,11 +148,12 @@ async function updateOrder(request:Request,env:Env,id:number){
 
 async function readCatalog(env: Env, includeInactive = false) {
   await ensureStorefrontColumns(env);
+  await ensureCustomizationSchema(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
   const productWhere = includeInactive ? "WHERE deleted_at IS NULL" : "WHERE p.active = 1 AND p.deleted_at IS NULL";
-  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult] = await Promise.all([
+  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult] = await Promise.all([
     env.DB.prepare(`SELECT id, category_number, parent_id, name, slug, description, banner_url, sort_order, active FROM categories ${categoryWhere} ORDER BY sort_order, id`).all(),
     env.DB.prepare(`SELECT p.*, c.name AS category_name, pc.name AS parent_category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id LEFT JOIN categories pc ON pc.id = c.parent_id ${productWhere} ORDER BY p.created_at DESC, p.id DESC`).all(),
     env.DB.prepare("SELECT id, product_id, name, display_type, sort_order FROM product_options ORDER BY sort_order, id").all(),
@@ -156,6 +162,7 @@ async function readCatalog(env: Env, includeInactive = false) {
     env.DB.prepare("SELECT variant_id, option_value_id FROM variant_option_values").all(),
     env.DB.prepare("SELECT id, product_id, variant_id, media_type, url, alt_text, sort_order, is_primary FROM product_media ORDER BY is_primary DESC, sort_order, id").all(),
     env.DB.prepare("SELECT product_id, keyword FROM product_keywords ORDER BY keyword").all(),
+    env.DB.prepare("SELECT id,product_id,label,placeholder,max_length,required,sort_order FROM product_custom_fields ORDER BY sort_order,id").all(),
   ]);
 
   const categories = (categoryResult.results as Array<Record<string, unknown>>).map((row) => ({
@@ -169,6 +176,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   const links = linkResult.results as Array<Record<string, unknown>>;
   const media = mediaResult.results as Array<Record<string, unknown>>;
   const keywords = keywordResult.results as Array<Record<string, unknown>>;
+  const customFields=customFieldResult.results as Array<Record<string,unknown>>;
 
   const products = (productResult.results as Array<Record<string, unknown>>).map((row) => {
     const id = Number(row.id);
@@ -190,6 +198,7 @@ async function readCatalog(env: Env, includeInactive = false) {
       price: amount(row.price_agorot as number) || 0, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: amount(row.offer_price_agorot as number | null),
       image: images[0], images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
       keywords: keywords.filter((item) => Number(item.product_id) === id).map((item) => String(item.keyword)).join(" "),
+      customFields:customFields.filter(item=>Number(item.product_id)===id).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
       description: String(row.description || row.short_description || ""), specifications: String(row.specifications || ""), stock: Number(row.stock_quantity), inStock, active: Boolean(row.active), featured: Boolean(row.featured), views: Number(row.view_count), orders: Number(row.order_count), rating: Number(row.rating_average_x100) / 100, variants: productVariants,
     };
   });
@@ -220,6 +229,7 @@ async function saveCategory(request: Request, env: Env, id?: number) {
 }
 
 async function saveProduct(request: Request, env: Env, id?: number) {
+  await ensureCustomizationSchema(env);
   const body = await parseJson(request);
   const name = asText(body.name);
   if (!name) return json({ error: "اسم الصنف مطلوب" }, { status: 400 });
@@ -236,6 +246,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
       env.DB.prepare("DELETE FROM product_options WHERE product_id=?").bind(id),
       env.DB.prepare("DELETE FROM product_variants WHERE product_id=?").bind(id),
       env.DB.prepare("DELETE FROM product_media WHERE product_id=?").bind(id),
+      env.DB.prepare("DELETE FROM product_custom_fields WHERE product_id=?").bind(id),
     ]);
   } else {
     const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0,0,0,0,?,?)")
@@ -243,6 +254,8 @@ async function saveProduct(request: Request, env: Env, id?: number) {
     productId = Number(result.meta.last_row_id);
   }
   if (!productId) return json({ error: "تعذر حفظ الصنف" }, { status: 500 });
+  const customFields=(Array.isArray(body.customFields)?body.customFields as Array<Record<string,unknown>>:[]).slice(0,5).filter(field=>asText(field.label));
+  if(customFields.length)await env.DB.batch(customFields.map((field,index)=>env.DB.prepare("INSERT INTO product_custom_fields (product_id,label,placeholder,max_length,required,sort_order) VALUES (?,?,?,?,?,?)").bind(productId,asText(field.label),asOptionalText(field.placeholder),Math.min(200,Math.max(1,Number(field.maxLength)||60)),asBoolean(field.required)?1:0,index)));
   const keywordList = asText(body.keywords).split(/[،,\n]+/).map((value) => value.trim()).filter(Boolean);
   if (keywordList.length) await env.DB.batch(keywordList.map((keyword) => env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword)));
   const media = Array.isArray(body.media) ? body.media as Array<Record<string, unknown>> : [];
