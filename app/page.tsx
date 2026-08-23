@@ -8,9 +8,24 @@ import OfferPopup from "./components/OfferPopup";
 import {loadCatalog,type CatalogResponse,type Product,type Variant} from "./catalog-types";
 import {defaultSettings,loadStorefront,type StorefrontResponse} from "./storefront-types";
 type CartLine={productId:number;variantId?:number;variantSku?:string;variantName?:string;qty:number;price:number;image?:string};
+function syncCart(saved:Record<string,CartLine>,products:Product[]){
+ const next:Record<string,CartLine>={};
+ for(const line of Object.values(saved)){
+  const product=products.find(item=>item.id===line.productId);
+  if(!product)continue;
+  const variant=product.variants?.length?(product.variants.find(item=>item.id===line.variantId&&item.stock>0)||product.variants.find(item=>item.stock>0)):undefined;
+  if(product.variants?.length&&!variant)continue;
+  const stock=variant?variant.stock:product.stock;
+  if(stock<=0)continue;
+  const key=`${product.id}:${variant?.id||"base"}`,qty=Math.min(Math.max(1,Number(line.qty)||1),stock),price=variant?.price??product.price;
+  next[key]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,qty:(next[key]?.qty||0)+qty,price,image:variant?.image||product.image};
+  next[key].qty=Math.min(next[key].qty,stock);
+ }
+ return next;
+}
 export default function Home(){
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[store,setStore]=useState<StorefrontResponse>({settings:defaultSettings,sliders:[],popup:null}),[loading,setLoading]=useState(true),[error,setError]=useState(""),[wholesale]=useState(false),[cart,setCart]=useState<Record<string,CartLine>>({}),[cartOpen,setCartOpen]=useState(false),[checkoutOpen,setCheckoutOpen]=useState(false),[completedOrder,setCompletedOrder]=useState<number|null>(null),[favorites,setFavorites]=useState<number[]>([]),[favOpen,setFavOpen]=useState(false);
- useEffect(()=>{Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setStore(storefront)}).catch(()=>setError("تعذر تحميل المتجر حالياً")).finally(()=>setLoading(false));try{setCart(JSON.parse(localStorage.getItem("manar_cart")||"{}"));setFavorites(JSON.parse(localStorage.getItem("manar_favorites")||"[]"))}catch{}},[]);
+ useEffect(()=>{let saved:Record<string,CartLine>={};try{saved=JSON.parse(localStorage.getItem("manar_cart")||"{}");setFavorites(JSON.parse(localStorage.getItem("manar_favorites")||"[]"))}catch{}Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setStore(storefront);setCart(syncCart(saved,catalog.products))}).catch(()=>setError("تعذر تحميل المتجر حالياً")).finally(()=>setLoading(false))},[]);
  useEffect(()=>{localStorage.setItem("manar_cart",JSON.stringify(cart))},[cart]);useEffect(()=>{localStorage.setItem("manar_favorites",JSON.stringify(favorites))},[favorites]);
  const count=Object.values(cart).reduce((sum,line)=>sum+line.qty,0),subtotal=Object.values(cart).reduce((sum,line)=>sum+line.price*line.qty,0),roots=data.categories.filter(category=>category.parentId==null);
  const add=(product:Product,variant?:Variant)=>{if(variant?variant.stock<=0:!product.inStock)return;const key=`${product.id}:${variant?.id||"base"}`,price=variant?.price??product.price;setCart(current=>({...current,[key]:{productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,qty:(current[key]?.qty||0)+1,price,image:variant?.image||product.image}}))};
