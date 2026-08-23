@@ -6,6 +6,7 @@ export type Category = {
   slug: string;
   description: string;
   bannerUrl: string;
+  iconUrl: string;
   sortOrder: number;
   active: boolean;
 };
