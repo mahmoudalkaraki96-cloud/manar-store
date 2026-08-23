@@ -22,6 +22,7 @@ export type Variant = {
   image?: string;
   images?: string[];
 };
+export type CustomField={id?:number;label:string;placeholder:string;required:boolean;maxLength:number};
 
 export type Product = {
   id: number;
@@ -54,6 +55,7 @@ export type Product = {
   orders: number;
   rating: number;
   variants?: Variant[];
+  customFields?: CustomField[];
 };
 
 export type CatalogResponse = { categories: Category[]; products: Product[] };
