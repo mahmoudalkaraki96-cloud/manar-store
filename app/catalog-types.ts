@@ -55,6 +55,8 @@ export type Product = {
   views: number;
   orders: number;
   rating: number;
+  ratingCount: number;
+  createdAt: number;
   variants?: Variant[];
   customFields?: CustomField[];
 };
