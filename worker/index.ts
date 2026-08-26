@@ -357,6 +357,25 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   const productMatch = url.pathname.match(/^\/api\/admin\/products\/(\d+)$/);
   if (productMatch && request.method === "PUT") return saveProduct(request, env, Number(productMatch[1]));
   if (productMatch && request.method === "DELETE") { await env.DB.prepare("UPDATE products SET deleted_at=?, active=0 WHERE id=?").bind(Date.now(), Number(productMatch[1])).run(); return json({ ok: true }); }
+  if (request.method === "POST" && url.pathname === "/api/admin/media/source") {
+    const body=await parseJson(request),source=asText(body.url);
+    let target:URL;try{target=new URL(source)}catch{return json({error:"رابط الصورة غير صحيح"},{status:400})}
+    const blocked=(value:URL)=>value.protocol!=="https:"||Boolean(value.username||value.password)||value.hostname==="localhost"||value.hostname.endsWith(".local")||value.hostname.endsWith(".internal")||/^\[.*\]$/.test(value.hostname)||/^\d{1,3}(\.\d{1,3}){3}$/.test(value.hostname);
+    if(blocked(target))return json({error:"يجب استخدام رابط صورة HTTPS عام"},{status:400});
+    let remote:Response|null=null;
+    for(let redirect=0;redirect<4;redirect++){
+      remote=await fetch(target.toString(),{headers:{accept:"image/*","user-agent":"ManarStore/1.0"},redirect:"manual"});
+      if(remote.status<300||remote.status>=400)break;
+      const location=remote.headers.get("location");if(!location)return json({error:"تعذر متابعة رابط الصورة"},{status:400});
+      target=new URL(location,target);if(blocked(target))return json({error:"تحويل رابط الصورة غير مسموح"},{status:400});
+    }
+    if(!remote?.ok)return json({error:"تعذر تنزيل الصورة من الرابط"},{status:400});
+    const type=remote.headers.get("content-type")?.split(";")[0]||"";
+    if(!type.startsWith("image/")||type==="image/svg+xml")return json({error:"الرابط لا يحتوي على صورة مدعومة"},{status:400});
+    const declared=Number(remote.headers.get("content-length")||0);if(declared>12_000_000)return json({error:"حجم الصورة يتجاوز 12MB"},{status:413});
+    const bytes=await remote.arrayBuffer();if(bytes.byteLength>12_000_000)return json({error:"حجم الصورة يتجاوز 12MB"},{status:413});
+    return new Response(bytes,{headers:{"content-type":type,"cache-control":"no-store"}});
+  }
   if (request.method === "POST" && url.pathname === "/api/admin/media") {
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (!contentLength || contentLength > 12_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
