@@ -264,6 +264,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
   const media = Array.isArray(body.media) ? body.media as Array<Record<string, unknown>> : [];
   if (media.length) await env.DB.batch(media.map((item, index) => env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,?,?,?,?,?,?,?)").bind(productId, item.type === "video" ? "video" : "image", asText(item.url), asOptionalText(item.altText), index, index === 0 && item.type !== "video" ? 1 : 0, now, now)));
   const variants = Array.isArray(body.variants) ? body.variants as Array<Record<string, unknown>> : [];
+  let savedVariantImages = 0;
   if (variants.length) {
     const displayType = variants.some((variant) => variant.displayType === "color") ? "color" : "text";
     const optionResult = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,?,?,0)").bind(productId, asText(body.variantName) || "الخيار", displayType).run();
@@ -274,11 +275,14 @@ async function saveProduct(request: Request, env: Env, id?: number) {
       const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)").bind(productId, asOptionalText(variant.sku), nullableAgorot(variant.price), nullableAgorot(variant.wholesale), Number(variant.stock || 0), 1, now, now).run();
       const variantId = Number(variantResult.meta.last_row_id);
       await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(variantId, Number(valueResult.meta.last_row_id)).run();
-      const variantImages = Array.isArray(variant.images) ? variant.images.filter((url) => typeof url === "string") as string[] : asText(variant.image) ? [asText(variant.image)] : [];
-      if (variantImages.length) await env.DB.batch(variantImages.map((url, mediaIndex) => env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,sort_order,is_primary,created_at,updated_at) VALUES (?,?,\"image\",?,?,?,?,?)").bind(productId, variantId, url, mediaIndex, mediaIndex === 0 ? 1 : 0, now, now)));
+      const variantImages = [...new Set(Array.isArray(variant.images) ? variant.images.map(asText).filter(Boolean) : asText(variant.image) ? [asText(variant.image)] : [])];
+      if (variantImages.length) {
+        await env.DB.batch(variantImages.map((url, mediaIndex) => env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,sort_order,is_primary,created_at,updated_at) VALUES (?,?,\"image\",?,?,?,?,?)").bind(productId, variantId, url, mediaIndex, mediaIndex === 0 ? 1 : 0, now, now)));
+        savedVariantImages += variantImages.length;
+      }
     }
   }
-  return json({ ok: true, id: productId, itemNumber });
+  return json({ ok: true, id: productId, itemNumber, savedVariantImages });
 }
 
 async function readOperations(env:Env){
