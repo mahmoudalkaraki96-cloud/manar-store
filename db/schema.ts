@@ -32,6 +32,7 @@ export const storeSettings = sqliteTable("store_settings", {
   showNewest: integer("show_newest", { mode: "boolean" }).notNull().default(true),
   showFeatured: integer("show_featured", { mode: "boolean" }).notNull().default(true),
   homeProductsLimit: integer("home_products_limit").notNull().default(6),
+  showSubcategoryProductsInParent: integer("show_subcategory_products_in_parent", { mode: "boolean" }).notNull().default(true),
   popupEnabled: integer("popup_enabled", { mode: "boolean" }).notNull().default(false),
   ...timestamps,
 });
