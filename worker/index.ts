@@ -66,10 +66,30 @@ const importedPearlProducts = [
   { sourceId: 295, name: "رول لولو 60متر لون لولي", price: 40, image: "4fa0b281-313e-43e6-b02b-72cad1969cb4", folder: "08-2025", extension: "jpeg" },
 ] as const;
 
-const importedMediaSources = new Map(importedPearlProducts.map((product) => {
+const importedResinProducts = [
+  { sourceId: 948, name: "ريزون علاقة زهري محجر", price: 3, image: "upload/02-2026/product/IMG_9524", extension: "jpeg" },
+  { sourceId: 936, name: "ريزون حجم كبير سادى مقاس ٢٨ سم مع قاعدة ذهبية", price: 40, image: "upload/02-2026/product/IMG_9240", extension: "jpeg" },
+  { sourceId: 935, name: "ريزون حجم كبير مع قاعدة ذهبية مقاس ٢٨ سم محجر من الاطراف", price: 40, image: "upload/02-2026/product/IMG_9237", extension: "jpeg" },
+  { sourceId: 674, name: "ريزون محجر مع علاقة", price: 3, image: "upload/11-2025/product/dbd774df-3949-420c-bcb7-8d1487b23b5d", extension: "jpeg" },
+  { sourceId: 233, name: "ريزون تعليقة أزرق محجر 6سم", price: 2, image: "upload/08-2025/product/e1e69485-936f-4445-9267-9beb8c360dd6", extension: "jpeg" },
+  { sourceId: 232, name: "ريزون مذهب سادى بدون حجر7سم", price: 2, image: "upload/11-2025/product/15f99f4d-22fe-4168-a35a-ae6c98deda71", extension: "jpeg" },
+  { sourceId: 231, name: "ريزون محجر مدور زهري 7سم", price: 2, image: "upload/11-2025/product/0d128ee4-63bb-4aaa-a58b-d40231069083", extension: "jpeg" },
+  { sourceId: 230, name: "ريزن مدور محجر فضي 7سم", price: 2, image: "upload/08-2025/product/9991e99e-e308-45c8-b333-24b4269a554e", extension: "jpeg" },
+  { sourceId: 229, name: "ريزون محجر مدور ذهبي", price: 2, image: "upload/08-2025/product/d826b23e-190a-4e34-a56c-6f6538d5ce01 (1)", extension: "jpeg" },
+  { sourceId: 228, name: "ريزون محجر ذهبي", price: 2, image: "upload/08-2025/product/1ae992a5-127d-43f1-be3c-a8060b90b96f", extension: "jpeg" },
+  { sourceId: 227, name: "ريزون محجر ذهبي", price: 2, image: "upload/11-2025/product/8f627bbf-7d94-4cf0-aa72-718d4e713ff0", extension: "jpeg" },
+  { sourceId: 226, name: "ريزون أزرق محجر", price: 3, image: "upload/08-2025/product/707f3fc0-e5ea-405a-8eb8-d2ec74e1dd1e", extension: "jpeg", variants: ["مدور", "مشرف"] },
+  { sourceId: 225, name: "ريزون محجر زهري 7سم", price: 2, image: "upload/08-2025/product/386a726e-2f5c-49b7-9663-9307be9d9f48", extension: "jpeg" },
+  { sourceId: 224, name: "ريزون زهري محجر 7 سم", price: 2, image: "upload/08-2025/product/e5dd22cf-0ec6-4a88-88ac-2ccfc23689b7", extension: "jpeg" },
+] as const;
+
+const importedMediaSources = new Map<string, readonly string[]>(importedPearlProducts.map((product) => {
   const base = `https://dofesh.ps/upload/${product.folder}/product/${product.image}`;
-  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]];
-}));
+  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]] as const;
+}).concat(importedResinProducts.map((product) => {
+  const base = `https://dofesh.ps/${product.image}`;
+  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]] as const;
+})));
 
 async function ensureImportedPearlProducts(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
@@ -91,6 +111,46 @@ async function ensureImportedPearlProducts(env: Env) {
       env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, mediaUrl, product.name, now, now),
       env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
     ]);
+    nextItemNumber += 1;
+  }
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+}
+
+async function ensureImportedResinProducts(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-resin-2026-08-31";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  let category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind("قسم الريزون").first<{id:number}>();
+  if (!category) {
+    const now = Date.now();
+    const categoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
+    const categoryResult = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,NULL,?,?,NULL,NULL,NULL,0,1,?,?)")
+      .bind(categoryNumber, "قسم الريزون", slugify("قسم الريزون"), now, now).run();
+    category = { id: Number(categoryResult.meta.last_row_id) };
+  }
+  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  const now = Date.now();
+  for (const product of importedResinProducts) {
+    const keyword = `dofesh-${product.sourceId}`;
+    const existing = await env.DB.prepare("SELECT p.id FROM products p JOIN product_keywords k ON k.product_id=p.id WHERE k.keyword=? LIMIT 1").bind(keyword).first<{id:number}>();
+    if (existing) continue;
+    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,100,1,0,NULL,0,0,0,0,?,?)")
+      .bind(nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), product.price * 100, now, now).run();
+    const productId = Number(result.meta.last_row_id);
+    const mediaUrl = `/media/imports/dofesh-${product.sourceId}.${product.extension}`;
+    await env.DB.batch([
+      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, mediaUrl, product.name, now, now),
+      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
+    ]);
+    if ("variants" in product && product.variants?.length) {
+      const optionResult = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,'الشكل','text',0)").bind(productId).run();
+      const optionId = Number(optionResult.meta.last_row_id);
+      for (let index = 0; index < product.variants.length; index += 1) {
+        const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(optionId, product.variants[index], index).run();
+        const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,100,1,?,?)").bind(productId, product.price * 100, now, now).run();
+        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(Number(variantResult.meta.last_row_id), Number(valueResult.meta.last_row_id)).run();
+      }
+    }
     nextItemNumber += 1;
   }
   await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
@@ -193,6 +253,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureStorefrontColumns(env);
   await ensureCustomizationSchema(env);
   await ensureImportedPearlProducts(env);
+  await ensureImportedResinProducts(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
