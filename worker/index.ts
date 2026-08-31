@@ -29,7 +29,7 @@ interface D1Database {
   batch<T = Record<string, unknown>>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
 }
 interface R2ObjectBody { body: ReadableStream; httpEtag: string; writeHttpMetadata(headers: Headers): void }
-interface R2Bucket { get(key: string): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream, options?: { httpMetadata?: { contentType?: string } }): Promise<unknown> }
+interface R2Bucket { get(key: string): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string } }): Promise<unknown> }
 interface Fetcher { fetch(request: Request): Promise<Response> }
 
 interface ExecutionContext {
@@ -54,6 +54,47 @@ const safeUrl = (value: unknown) => { const text = asText(value); if (!text) ret
 const safeTarget = (value:unknown) => { const text=asText(value); return text.startsWith("/")&&!text.startsWith("//")?text:safeUrl(text); };
 async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"],["show_out_of_stock","integer DEFAULT 1 NOT NULL"],["show_offers","integer DEFAULT 1 NOT NULL"],["show_most_ordered","integer DEFAULT 0 NOT NULL"],["show_top_rated","integer DEFAULT 0 NOT NULL"],["show_newest","integer DEFAULT 1 NOT NULL"],["show_featured","integer DEFAULT 1 NOT NULL"],["home_products_limit","integer DEFAULT 6 NOT NULL"],["show_subcategory_products_in_parent","integer DEFAULT 1 NOT NULL"],["watermark_opacity","integer DEFAULT 25 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
 async function ensureCustomizationSchema(env:Env){await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_custom_fields (id INTEGER PRIMARY KEY AUTOINCREMENT,product_id INTEGER NOT NULL,label TEXT NOT NULL,placeholder TEXT,max_length INTEGER DEFAULT 60 NOT NULL,required INTEGER DEFAULT 0 NOT NULL,sort_order INTEGER DEFAULT 0 NOT NULL,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE)").run();const info=await env.DB.prepare("PRAGMA table_info(order_items)").all<{name:string}>();if(!info.results.some(row=>row.name==="customization_json"))await env.DB.prepare("ALTER TABLE order_items ADD COLUMN customization_json TEXT").run();const categoryInfo=await env.DB.prepare("PRAGMA table_info(categories)").all<{name:string}>();if(!categoryInfo.results.some(row=>row.name==="icon_url"))await env.DB.prepare("ALTER TABLE categories ADD COLUMN icon_url TEXT").run()}
+
+const importedPearlProducts = [
+  { sourceId: 598, name: "لولو نص حبة 8 مل", price: 30, image: "b8a71253-89e9-44f0-bab2-48c597ea4d3c", folder: "09-2025", extension: "jpeg" },
+  { sourceId: 301, name: "سترس محجر 9 متر اصلي", price: 20, image: "IMG_2446", folder: "04-2026", extension: "png" },
+  { sourceId: 300, name: "رول لولو نص حبة 60 متر لون لولي", price: 30, image: "bbeae8e9-8a91-48ad-9f06-8f6ddcc4c110", folder: "08-2025", extension: "jpeg" },
+  { sourceId: 299, name: "رول لولو نص حبة 60 متر أزرق", price: 30, image: "48227ac6-90dd-4278-9f63-088c32a8229e", folder: "08-2025", extension: "jpeg" },
+  { sourceId: 298, name: "رول لولو نص حبة 60 متر زهري", price: 30, image: "a6889f08-71cf-4bff-961a-a881e4f82e84", folder: "08-2025", extension: "jpeg" },
+  { sourceId: 297, name: "رول لولو 60 متر أبيض", price: 40, image: "e914d712-ad9d-4099-82b9-0b7201f85225", folder: "08-2025", extension: "jpeg" },
+  { sourceId: 296, name: "رول لولو 60متر ذهبي", price: 40, image: "c8727f4b-98d0-4a4b-84d9-12ffc7400ea4", folder: "08-2025", extension: "jpeg" },
+  { sourceId: 295, name: "رول لولو 60متر لون لولي", price: 40, image: "4fa0b281-313e-43e6-b02b-72cad1969cb4", folder: "08-2025", extension: "jpeg" },
+] as const;
+
+const importedMediaSources = new Map(importedPearlProducts.map((product) => {
+  const base = `https://dofesh.ps/upload/${product.folder}/product/${product.image}`;
+  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]];
+}));
+
+async function ensureImportedPearlProducts(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-pearl-rolls-2026-08-31";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind("اكسسوارات التزين").first<{id:number}>();
+  if (!category) return;
+  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  const now = Date.now();
+  for (const product of importedPearlProducts) {
+    const keyword = `dofesh-${product.sourceId}`;
+    const existing = await env.DB.prepare("SELECT p.id FROM products p LEFT JOIN product_keywords k ON k.product_id=p.id WHERE k.keyword=? OR (p.category_id=? AND p.name=?) LIMIT 1").bind(keyword, category.id, product.name).first<{id:number}>();
+    if (existing) continue;
+    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,1,1,0,NULL,0,0,0,0,?,?)")
+      .bind(nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), product.price * 100, now, now).run();
+    const productId = Number(result.meta.last_row_id);
+    const mediaUrl = `/media/imports/dofesh-${product.sourceId}.${product.extension}`;
+    await env.DB.batch([
+      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, mediaUrl, product.name, now, now),
+      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
+    ]);
+    nextItemNumber += 1;
+  }
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+}
 
 async function readStorefront(env: Env) {
   await ensureStorefrontColumns(env);
@@ -151,6 +192,7 @@ async function updateOrder(request:Request,env:Env,id:number){
 async function readCatalog(env: Env, includeInactive = false) {
   await ensureStorefrontColumns(env);
   await ensureCustomizationSchema(env);
+  await ensureImportedPearlProducts(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
@@ -317,7 +359,20 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
     const key = decodeURIComponent(url.pathname.slice(7));
-    const object = await env.MEDIA.get(key);
+    let object = await env.MEDIA.get(key);
+    if (!object && importedMediaSources.has(key)) {
+      let remote: Response | null = null;
+      for (const source of importedMediaSources.get(key) || []) {
+        const candidate = await fetch(source, { headers: { accept: "image/*", "user-agent": "ManarStore/1.0" } });
+        if (candidate.ok && candidate.headers.get("content-type")?.startsWith("image/")) { remote = candidate; break; }
+      }
+      if (remote) {
+        const bytes = await remote.arrayBuffer();
+        const contentType = remote.headers.get("content-type")?.split(";")[0] || "image/jpeg";
+        await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
+        return new Response(bytes, { headers: { "content-type": contentType, "cache-control": "public, max-age=31536000, immutable" } });
+      }
+    }
     if (!object) return new Response("Not Found", { status: 404 });
     const headers = new Headers(); object.writeHttpMetadata(headers); headers.set("etag", object.httpEtag); headers.set("cache-control", "public, max-age=31536000, immutable");
     return new Response(object.body, { headers });
