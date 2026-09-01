@@ -347,7 +347,6 @@ async function ensureOrganizedFullCatalog(env: Env) {
 
   const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
   const startIndex = Math.max(0, Number(progress?.next_index || 0));
-  if (startIndex >= importedAllProducts.length) return;
   const endIndex = Math.min(importedAllProducts.length, startIndex + 60);
   let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
   let nextProductId = Number((await env.DB.prepare("SELECT COALESCE(MAX(id),0)+1 AS next FROM products").first<{next:number}>())?.next || 1);
@@ -391,6 +390,25 @@ async function ensureOrganizedFullCatalog(env: Env) {
       await env.DB.prepare("UPDATE products SET category_id=?,updated_at=? WHERE category_id=?").bind(targetId, now, old.id).run();
       await env.DB.prepare("UPDATE categories SET active=0,updated_at=? WHERE id=?").bind(now, old.id).run();
     }
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
+    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
+  }
+}
+
+async function ensureCorrectedFullCatalogPrices(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-full-catalog-correct-prices-2026-09-01-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
+  const startIndex = Math.max(0, Number(progress?.next_index || 0));
+  const endIndex = Math.min(importedAllProducts.length, startIndex + 200);
+  const now = Date.now();
+  const statements = importedAllProducts.slice(startIndex, endIndex).map(product => env.DB.prepare("UPDATE products SET price_agorot=?,updated_at=? WHERE id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1)")
+    .bind(Math.round(product.price * 100), now, `dofesh-${product.id}`));
+  for (let index = 0; index < statements.length; index += 50) await env.DB.batch(statements.slice(index, index + 50));
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
+  if (endIndex >= importedAllProducts.length) {
     await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
     await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
   }
@@ -497,6 +515,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureImportedDistributionProducts(env);
   await ensureCorrectedDistributionProductNames(env);
   await ensureOrganizedFullCatalog(env);
+  await ensureCorrectedFullCatalogPrices(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
