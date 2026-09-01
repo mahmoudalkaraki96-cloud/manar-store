@@ -180,7 +180,7 @@ async function ensureImportedResinProducts(env: Env) {
 async function ensureImportedDistributionProducts(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-distribution-category-40-2026-08-31-v1";
+  const seedKey = "dofesh-distribution-category-40-2026-09-01-v2";
   if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
   const categoryIds = new Map<number, number>();
   for (const category of distributionCategoryTree) {
@@ -212,8 +212,9 @@ async function ensureImportedDistributionProducts(env: Env) {
     const description = [product.description, colorNote].filter(Boolean).join("\n");
     const now = Date.now();
     if (existing) {
-      await env.DB.prepare("UPDATE products SET category_id=?,description=?,price_agorot=?,stock_quantity=100,active=1,updated_at=? WHERE id=?")
-        .bind(categoryId, description || null, Math.round(product.price * 100), now, existing.product_id).run();
+      await env.DB.prepare("UPDATE products SET category_id=?,name=?,description=?,price_agorot=?,stock_quantity=100,active=1,updated_at=? WHERE id=?")
+        .bind(categoryId, product.name, description || null, Math.round(product.price * 100), now, existing.product_id).run();
+      await env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existing.product_id).run();
       await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, productIndex + 1).run();
       continue;
     }
