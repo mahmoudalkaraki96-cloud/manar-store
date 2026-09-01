@@ -347,6 +347,13 @@ async function ensureOrganizedFullCatalog(env: Env) {
   if (startIndex >= importedAllProducts.length) return;
   const endIndex = Math.min(importedAllProducts.length, startIndex + 60);
   let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  let nextProductId = Number((await env.DB.prepare("SELECT COALESCE(MAX(id),0)+1 AS next FROM products").first<{next:number}>())?.next || 1);
+  const batchProducts = importedAllProducts.slice(startIndex, endIndex);
+  const keywords = batchProducts.map(product => `dofesh-${product.id}`);
+  const existingRows = keywords.length ? await env.DB.prepare(`SELECT product_id,keyword FROM product_keywords WHERE keyword IN (${keywords.map(()=>"?").join(",")})`).bind(...keywords).all<{product_id:number;keyword:string}>() : { results: [] };
+  const existingByKeyword = new Map(existingRows.results.map(row => [row.keyword, Number(row.product_id)]));
+  const productStatements: D1PreparedStatement[] = [];
+  const relatedStatements: D1PreparedStatement[] = [];
   for (let index = startIndex; index < endIndex; index += 1) {
     const product = importedAllProducts[index];
     const keyword = `dofesh-${product.id}`;
@@ -354,24 +361,22 @@ async function ensureOrganizedFullCatalog(env: Env) {
     const categoryId = categoryIds.get(categoryName) || categoryIds.get("مستلزمات متنوعة");
     if (!categoryId) continue;
     const stock = unavailableSourceIds.has(product.id) ? 0 : 100;
-    const existing = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(keyword).first<{product_id:number}>();
-    if (existing) {
-      await env.DB.batch([
-        env.DB.prepare("UPDATE products SET category_id=?,name=?,price_agorot=?,stock_quantity=?,active=1,updated_at=? WHERE id=?").bind(categoryId, product.name, Math.round(product.price * 100), stock, now, existing.product_id),
-        env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existing.product_id),
-      ]);
+    const existingProductId = existingByKeyword.get(keyword);
+    if (existingProductId) {
+      productStatements.push(env.DB.prepare("UPDATE products SET category_id=?,name=?,price_agorot=?,stock_quantity=?,active=1,updated_at=? WHERE id=?").bind(categoryId, product.name, Math.round(product.price * 100), stock, now, existingProductId));
+      relatedStatements.push(env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existingProductId));
     } else {
-      const created = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,?,1,0,NULL,0,0,0,0,?,?)")
-        .bind(nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), Math.round(product.price * 100), stock, now, now).run();
-      const productId = Number(created.meta.last_row_id);
+      const productId = nextProductId++;
+      productStatements.push(env.DB.prepare("INSERT INTO products (id,item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,NULL,?,NULL,NULL,?,1,0,NULL,0,0,0,0,?,?)")
+        .bind(productId, nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), Math.round(product.price * 100), stock, now, now));
       const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-      await env.DB.batch([
-        env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now),
-        env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
-      ]);
+      relatedStatements.push(env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now));
+      relatedStatements.push(env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
       nextItemNumber += 1;
     }
   }
+  for (let index = 0; index < productStatements.length; index += 50) await env.DB.batch(productStatements.slice(index, index + 50));
+  for (let index = 0; index < relatedStatements.length; index += 50) await env.DB.batch(relatedStatements.slice(index, index + 50));
   await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
   if (endIndex >= importedAllProducts.length) {
     const managedIds = [...categoryIds.values()];
