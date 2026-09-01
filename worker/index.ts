@@ -180,7 +180,7 @@ async function ensureImportedResinProducts(env: Env) {
 async function ensureImportedDistributionProducts(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-distribution-category-40-2026-09-01-v2";
+  const seedKey = "dofesh-distribution-category-40-2026-08-31-v1";
   if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
   const categoryIds = new Map<number, number>();
   for (const category of distributionCategoryTree) {
@@ -246,6 +246,21 @@ async function ensureImportedDistributionProducts(env: Env) {
     await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
     await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
   }
+}
+
+async function ensureCorrectedDistributionProductNames(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-distribution-correct-names-2026-09-01-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const now = Date.now();
+  const statements: D1PreparedStatement[] = [];
+  for (const product of importedDistributionProducts) {
+    const keyword = `dofesh-${product.id}`;
+    statements.push(env.DB.prepare("UPDATE products SET name=?,updated_at=? WHERE id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1)").bind(product.name, now, keyword));
+    statements.push(env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1) AND media_type='image'").bind(product.name, now, keyword));
+  }
+  for (let index = 0; index < statements.length; index += 50) await env.DB.batch(statements.slice(index, index + 50));
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
 }
 
 async function readStorefront(env: Env) {
@@ -347,6 +362,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureImportedPearlProducts(env);
   await ensureImportedResinProducts(env);
   await ensureImportedDistributionProducts(env);
+  await ensureCorrectedDistributionProductNames(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
