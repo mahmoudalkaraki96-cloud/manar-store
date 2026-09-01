@@ -1,6 +1,7 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import { importedDistributionProducts } from "./import-cat40.generated";
 
 interface Env {
   ASSETS: Fetcher;
@@ -89,7 +90,27 @@ const importedMediaSources = new Map<string, readonly string[]>(importedPearlPro
 }).concat(importedResinProducts.map((product) => {
   const base = `https://dofesh.ps/${product.image}`;
   return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]] as const;
+})).concat(importedDistributionProducts.map((product) => {
+  const pathname = new URL(product.image).pathname;
+  const extension = pathname.split(".").pop()?.toLowerCase() || "jpeg";
+  return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-IDX.", "-450px.")]] as const;
 })));
+
+const distributionCategoryTree = [
+  { sourceId: 40, name: "مستلزمات التوزيعات", parentSourceId: null },
+  { sourceId: 41, name: "قسم الكونكريت(الجبصو)", parentSourceId: 40 },
+  { sourceId: 42, name: "توزيعات اساور نحاس", parentSourceId: 40 },
+  { sourceId: 45, name: "قسم القماش", parentSourceId: 40 },
+  { sourceId: 46, name: "قماش ستان", parentSourceId: 45 },
+  { sourceId: 52, name: "قسم تول الكريستال", parentSourceId: 45 },
+  { sourceId: 53, name: "تول مدور للتوزيعات مقصوص", parentSourceId: 45 },
+  { sourceId: 47, name: "قسم الشوكولاتة", parentSourceId: 40 },
+  { sourceId: 48, name: "قسم الريزون", parentSourceId: 40 },
+  { sourceId: 55, name: "قسم رولات اللولو", parentSourceId: 40 },
+  { sourceId: 68, name: "فخار مشكل", parentSourceId: 40 },
+  { sourceId: 74, name: "صابون معطر", parentSourceId: 40 },
+  { sourceId: 93, name: "قسم الريش", parentSourceId: 40 },
+] as const;
 
 async function ensureImportedPearlProducts(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
@@ -149,6 +170,66 @@ async function ensureImportedResinProducts(env: Env) {
         const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(optionId, product.variants[index], index).run();
         const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,100,1,?,?)").bind(productId, product.price * 100, now, now).run();
         await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(Number(variantResult.meta.last_row_id), Number(valueResult.meta.last_row_id)).run();
+      }
+    }
+    nextItemNumber += 1;
+  }
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+}
+
+async function ensureImportedDistributionProducts(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-distribution-category-40-2026-08-31-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const categoryIds = new Map<number, number>();
+  for (const category of distributionCategoryTree) {
+    const parentId = category.parentSourceId == null ? null : categoryIds.get(category.parentSourceId) || null;
+    let existing = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(category.name).first<{id:number}>();
+    if (!existing) {
+      const now = Date.now();
+      const categoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
+      const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,NULL,0,1,?,?)")
+        .bind(categoryNumber, parentId, category.name, slugify(`${category.name}-${category.sourceId}`), now, now).run();
+      existing = { id: Number(created.meta.last_row_id) };
+    } else {
+      await env.DB.prepare("UPDATE categories SET parent_id=?,active=1,updated_at=? WHERE id=?").bind(parentId, Date.now(), existing.id).run();
+    }
+    categoryIds.set(category.sourceId, existing.id);
+  }
+
+  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  for (const product of importedDistributionProducts) {
+    const categoryId = categoryIds.get(product.categoryId);
+    if (!categoryId) continue;
+    const keyword = `dofesh-${product.id}`;
+    const existing = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(keyword).first<{product_id:number}>();
+    const colorNote = product.colors.length ? `الألوان المتوفرة: ${product.colors.join("، ")}` : "";
+    const description = [product.description, colorNote].filter(Boolean).join("\n");
+    const now = Date.now();
+    if (existing) {
+      await env.DB.prepare("UPDATE products SET category_id=?,description=?,price_agorot=?,stock_quantity=100,active=1,updated_at=? WHERE id=?")
+        .bind(categoryId, description || null, Math.round(product.price * 100), now, existing.product_id).run();
+      continue;
+    }
+    const created = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,?,NULL,NULL,100,1,0,NULL,0,0,0,0,?,?)")
+      .bind(nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), description || null, Math.round(product.price * 100), now, now).run();
+    const productId = Number(created.meta.last_row_id);
+    const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+    await env.DB.batch([
+      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now),
+      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
+    ]);
+    const choices = product.sizes.length ? product.sizes : product.colors.map(value => ({ name: "color", value, price: product.price }));
+    if (choices.length) {
+      const optionName = product.sizes.length ? "المقاس / الكمية" : "اللون";
+      const displayType = product.sizes.length ? "text" : "color";
+      const option = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,?,?,0)").bind(productId, optionName, displayType).run();
+      for (let index = 0; index < choices.length; index += 1) {
+        const choice = choices[index];
+        const value = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(Number(option.meta.last_row_id), choice.value, index).run();
+        const variantPrice = choice.price > 0 ? choice.price : product.price;
+        const variant = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,100,1,?,?)").bind(productId, Math.round(variantPrice * 100), now, now).run();
+        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(Number(variant.meta.last_row_id), Number(value.meta.last_row_id)).run();
       }
     }
     nextItemNumber += 1;
@@ -254,6 +335,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureCustomizationSchema(env);
   await ensureImportedPearlProducts(env);
   await ensureImportedResinProducts(env);
+  await ensureImportedDistributionProducts(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
