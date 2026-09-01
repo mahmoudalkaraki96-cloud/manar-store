@@ -3,6 +3,7 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import handler from "vinext/server/app-router-entry";
 import { importedDistributionProducts } from "./import-cat40.generated";
 import importedAllProducts from "./import-all-products.generated.json";
+import { product2222ImageBase64 } from "./product-2222-image.generated";
 
 interface Env {
   ASSETS: Fetcher;
@@ -414,6 +415,18 @@ async function ensureCorrectedFullCatalogPrices(env: Env) {
   }
 }
 
+async function ensureProduct2222EditedImage(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  const seedKey = "product-2222-edited-image-2026-09-01-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const product = await env.DB.prepare("SELECT id FROM products WHERE item_number=2222 AND deleted_at IS NULL LIMIT 1").first<{id:number}>();
+  if (!product) return;
+  const now = Date.now();
+  await env.DB.prepare("UPDATE product_media SET url=?,alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'")
+    .bind("/product-images/product-2222-edited.webp", "مراية قلاب مدور حديد", now, product.id).run();
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
+}
+
 async function readStorefront(env: Env) {
   await ensureStorefrontColumns(env);
   const [row, slides, popup] = await Promise.all([
@@ -516,6 +529,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureCorrectedDistributionProductNames(env);
   await ensureOrganizedFullCatalog(env);
   await ensureCorrectedFullCatalogPrices(env);
+  await ensureProduct2222EditedImage(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
@@ -676,6 +690,11 @@ async function postPurchase(env:Env,id:number){const purchase=await env.DB.prepa
 async function importProducts(request:Request,env:Env){const body=await parseJson(request),rows=Array.isArray(body.rows)?body.rows as Array<Record<string,unknown>>:[];if(!rows.length||rows.length>2000)return json({error:"الملف فارغ أو يتجاوز 2000 صنف"},{status:400});let created=0,updated=0;for(const row of rows){const name=asText(row.name),categoryNumber=Number(row.categoryNumber),price=Number(row.price),itemNumber=Number(row.itemNumber);if(!name||!categoryNumber||!Number.isFinite(price))continue;const category=await env.DB.prepare("SELECT id FROM categories WHERE category_number=?").bind(categoryNumber).first<{id:number}>();if(!category)continue;const existing=itemNumber?await env.DB.prepare("SELECT id FROM products WHERE item_number=? AND deleted_at IS NULL").bind(itemNumber).first<{id:number}>():null;const payload=new Request(request.url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({itemNumber,name,categoryId:category.id,price,wholesale:row.wholesale,purchasePrice:row.purchasePrice,stock:Number(row.stock||0),keywords:row.keywords,description:row.description,active:true,featured:false,variants:[],media:[]})});await saveProduct(payload,env,existing?.id);if(existing)updated++;else created++}return json({ok:true,created,updated});}
 
 async function api(request: Request, env: Env, url: URL): Promise<Response | null> {
+  if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
+    const binary = atob(product2222ImageBase64);
+    const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+    return new Response(bytes, { headers: { "content-type": "image/webp", "cache-control": "public, max-age=31536000, immutable" } });
+  }
   if (request.method === "GET" && url.pathname === "/api/catalog") return json(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return json(await readStorefront(env));
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
