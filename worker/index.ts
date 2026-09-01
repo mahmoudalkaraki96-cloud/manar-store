@@ -179,6 +179,7 @@ async function ensureImportedResinProducts(env: Env) {
 
 async function ensureImportedDistributionProducts(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
   const seedKey = "dofesh-distribution-category-40-2026-08-31-v1";
   if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
   const categoryIds = new Map<number, number>();
@@ -198,7 +199,11 @@ async function ensureImportedDistributionProducts(env: Env) {
   }
 
   let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  for (const product of importedDistributionProducts) {
+  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
+  const startIndex = Math.max(0, Number(progress?.next_index || 0));
+  const endIndex = Math.min(importedDistributionProducts.length, startIndex + 4);
+  for (let productIndex = startIndex; productIndex < endIndex; productIndex += 1) {
+    const product = importedDistributionProducts[productIndex];
     const categoryId = categoryIds.get(product.categoryId);
     if (!categoryId) continue;
     const keyword = `dofesh-${product.id}`;
@@ -209,6 +214,7 @@ async function ensureImportedDistributionProducts(env: Env) {
     if (existing) {
       await env.DB.prepare("UPDATE products SET category_id=?,description=?,price_agorot=?,stock_quantity=100,active=1,updated_at=? WHERE id=?")
         .bind(categoryId, description || null, Math.round(product.price * 100), now, existing.product_id).run();
+      await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, productIndex + 1).run();
       continue;
     }
     const created = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,?,NULL,NULL,100,1,0,NULL,0,0,0,0,?,?)")
@@ -233,8 +239,12 @@ async function ensureImportedDistributionProducts(env: Env) {
       }
     }
     nextItemNumber += 1;
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, productIndex + 1).run();
   }
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+  if (endIndex >= importedDistributionProducts.length) {
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
+  }
 }
 
 async function readStorefront(env: Env) {
