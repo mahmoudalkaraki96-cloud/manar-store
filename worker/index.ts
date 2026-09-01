@@ -2,6 +2,7 @@
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 import { importedDistributionProducts } from "./import-cat40.generated";
+import importedAllProducts from "./import-all-products.generated.json";
 
 interface Env {
   ASSETS: Fetcher;
@@ -94,7 +95,51 @@ const importedMediaSources = new Map<string, readonly string[]>(importedPearlPro
   const pathname = new URL(product.image).pathname;
   const extension = pathname.split(".").pop()?.toLowerCase() || "jpeg";
   return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-IDX.", "-450px.")]] as const;
+})).concat(importedAllProducts.map((product) => {
+  const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+  return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-450px.", "-IDX.")]] as const;
 })));
+
+const organizedCategoryTree = [
+  ["توزيعات وهدايا المناسبات", ["توزيعات الأعراس والحناء", "توزيعات المواليد", "الحج والعمرة", "التخرج والنجاح", "هدايا وتوزيعات عامة"]],
+  ["التغليف والعلب", ["علب وصناديق", "أكياس وورق تغليف", "صواني وسلال"]],
+  ["الورد والشرائط والأقمشة", ["الورود", "الشرائط والببيونات", "الأقمشة والتول"]],
+  ["الشموع والعطور والمباخر", ["الشموع", "العطور والصابون", "المباخر"]],
+  ["الأكريليك والخشب والطباعة", ["الأكريليك", "الخشب وCNC", "الطباعة والكروت"]],
+  ["الزينة والإكسسوارات", ["زينة الشوكولاتة", "اللولو والسترس", "زينة وإكسسوارات عامة"]],
+  ["المرايا والستاندات", ["المرايا", "الستاندات", "المسكات واللوحات"]],
+  ["أدوات ومستلزمات العمل", ["أدوات العمل", "الخامات", "مستلزمات متنوعة"]],
+] as const;
+
+function organizedCategoryFor(name: string) {
+  const n = name.replace(/[إأآ]/g, "ا").replace(/ة/g, "ه").toLowerCase();
+  if (/عروس|اعراس|زفاف|حناء|خطوب|عرسان/.test(n)) return "توزيعات الأعراس والحناء";
+  if (/بيبي|مولود|مواليد|طفل/.test(n)) return "توزيعات المواليد";
+  if (/حج|عمره|زمزم|مصاحف|مصحف|ايه الكرسي|تسبيح|مسابح/.test(n)) return "الحج والعمرة";
+  if (/تخرج|نجاح|جامعه|مدرسه|طاقيه/.test(n)) return "التخرج والنجاح";
+  if (/شموع|شمع|فتيل/.test(n)) return "الشموع";
+  if (/مبخر|بخور/.test(n)) return "المباخر";
+  if (/عطر|معطر|صابون|مسك الطهاره|كريم/.test(n)) return "العطور والصابون";
+  if (/ورد|زهور|بوكيه|غصن|تيوليب/.test(n)) return "الورود";
+  if (/شبر|شريط|ببيون|فيونك|ربطه/.test(n)) return "الشرائط والببيونات";
+  if (/قماش|تول|خيش|لايكرا|كروشي|مكرميه|مكرمي/.test(n)) return "الأقمشة والتول";
+  if (/علب|علبه|صندوق|بوكس|مرطبان|قنينه|قاروره|فازه|سكريه/.test(n)) return "علب وصناديق";
+  if (/كيس|اكياس|تغليف|ورق|نايلون|سلفان/.test(n)) return "أكياس وورق تغليف";
+  if (/صينيه|صواني|سله|سلال|ضيافه/.test(n)) return "صواني وسلال";
+  if (/مرايا|مراه/.test(n)) return "المرايا";
+  if (/ستاند|حامل|تلبيس ذهب|تلابيس ذهب/.test(n)) return "الستاندات";
+  if (/مسكه|مسكه|لوحه استقبال|برواز استقبال/.test(n)) return "المسكات واللوحات";
+  if (/اكريلك|اكريليك|بلاستيك شفاف/.test(n)) return "الأكريليك";
+  if (/خشب|cnc|بامبو/.test(n)) return "الخشب وCNC";
+  if (/طباع|كرت |كرتون للتزيين|كروت|ملصق|ستيكر/.test(n)) return "الطباعة والكروت";
+  if (/شوكولات|ملبس|مطبقيه|سيجار/.test(n)) return "زينة الشوكولاتة";
+  if (/لولو|سترس|كرستال|كريستال|محجر/.test(n)) return "اللولو والسترس";
+  if (/مقص|سلكون|لزق|لزيق|ماكنه|ماكينه|مسدس|فرد |مغناطيس|حبر|اداه/.test(n)) return "أدوات العمل";
+  if (/كونكريت|جبص|ريزن|ريزون|فخار|قش|حديد|نحاس|ريش|بالون/.test(n)) return "الخامات";
+  if (/دب|زينة|زينه|اكسسوار|فراش|شرشوب|تعليقه|علاقه|ديكور/.test(n)) return "زينة وإكسسوارات عامة";
+  if (/هديه|هدايا|توزيع|مروحه|مراوح|تحف/.test(n)) return "هدايا وتوزيعات عامة";
+  return "مستلزمات متنوعة";
+}
 
 const distributionCategoryTree = [
   { sourceId: 40, name: "مستلزمات التوزيعات", parentSourceId: null },
@@ -263,6 +308,86 @@ async function ensureCorrectedDistributionProductNames(env: Env) {
   await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
 }
 
+const unavailableSourceIds = new Set([1249,1248,1199,1198,1190,1184,1180,1148,1083,1051,1050,1009,908,907,901,897,896,882,878,859,833,827,821,784,775,750,748,738,718,707,654,639,628,606,605,604,597,588,586,564,557,545,544,540,532,529,512,506,488,478,468,463,462,442,426,422,382,381,380,358]);
+
+async function ensureOrganizedFullCatalog(env: Env) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
+  const seedKey = "dofesh-full-catalog-organized-2026-09-01-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const now = Date.now();
+  let nextCategoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
+  const categoryIds = new Map<string, number>();
+  let sortOrder = 10;
+  for (const [mainName, children] of organizedCategoryTree) {
+    let main = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(mainName).first<{id:number}>();
+    if (!main) {
+      const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,NULL,?,?,NULL,NULL,NULL,1,1,?,?)")
+        .bind(nextCategoryNumber++, mainName, slugify(mainName), now, now).run();
+      main = { id: Number(created.meta.last_row_id) };
+    }
+    await env.DB.prepare("UPDATE categories SET parent_id=NULL,sort_order=?,active=1,updated_at=? WHERE id=?").bind(sortOrder, now, main.id).run();
+    categoryIds.set(mainName, main.id);
+    let childOrder = 1;
+    for (const childName of children) {
+      let child = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(childName).first<{id:number}>();
+      if (!child) {
+        const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,NULL,?,1,?,?)")
+          .bind(nextCategoryNumber++, main.id, childName, slugify(childName), childOrder, now, now).run();
+        child = { id: Number(created.meta.last_row_id) };
+      }
+      await env.DB.prepare("UPDATE categories SET parent_id=?,sort_order=?,active=1,updated_at=? WHERE id=?").bind(main.id, childOrder++, now, child.id).run();
+      categoryIds.set(childName, child.id);
+    }
+    sortOrder += 10;
+  }
+
+  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
+  const startIndex = Math.max(0, Number(progress?.next_index || 0));
+  if (startIndex >= importedAllProducts.length) return;
+  const endIndex = Math.min(importedAllProducts.length, startIndex + 60);
+  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  for (let index = startIndex; index < endIndex; index += 1) {
+    const product = importedAllProducts[index];
+    const keyword = `dofesh-${product.id}`;
+    const categoryName = organizedCategoryFor(product.name);
+    const categoryId = categoryIds.get(categoryName) || categoryIds.get("مستلزمات متنوعة");
+    if (!categoryId) continue;
+    const stock = unavailableSourceIds.has(product.id) ? 0 : 100;
+    const existing = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(keyword).first<{product_id:number}>();
+    if (existing) {
+      await env.DB.batch([
+        env.DB.prepare("UPDATE products SET category_id=?,name=?,price_agorot=?,stock_quantity=?,active=1,updated_at=? WHERE id=?").bind(categoryId, product.name, Math.round(product.price * 100), stock, now, existing.product_id),
+        env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existing.product_id),
+      ]);
+    } else {
+      const created = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,?,1,0,NULL,0,0,0,0,?,?)")
+        .bind(nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), Math.round(product.price * 100), stock, now, now).run();
+      const productId = Number(created.meta.last_row_id);
+      const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+      await env.DB.batch([
+        env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now),
+        env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
+      ]);
+      nextItemNumber += 1;
+    }
+  }
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
+  if (endIndex >= importedAllProducts.length) {
+    const managedIds = [...categoryIds.values()];
+    const legacy = await env.DB.prepare(`SELECT id,name FROM categories WHERE id NOT IN (${managedIds.map(()=>"?").join(",")})`).bind(...managedIds).all<{id:number;name:string}>();
+    for (const old of legacy.results) {
+      const targetName = organizedCategoryFor(old.name);
+      const targetId = categoryIds.get(targetName);
+      if (!targetId) continue;
+      await env.DB.prepare("UPDATE products SET category_id=?,updated_at=? WHERE category_id=?").bind(targetId, now, old.id).run();
+      await env.DB.prepare("UPDATE categories SET active=0,updated_at=? WHERE id=?").bind(now, old.id).run();
+    }
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
+    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
+  }
+}
+
 async function readStorefront(env: Env) {
   await ensureStorefrontColumns(env);
   const [row, slides, popup] = await Promise.all([
@@ -363,6 +488,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   await ensureImportedResinProducts(env);
   await ensureImportedDistributionProducts(env);
   await ensureCorrectedDistributionProductNames(env);
+  await ensureOrganizedFullCatalog(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
