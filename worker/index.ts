@@ -318,8 +318,11 @@ async function ensureOrganizedFullCatalog(env: Env) {
   const now = Date.now();
   let nextCategoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
   const categoryIds = new Map<string, number>();
+  const managedNames = organizedCategoryTree.flatMap(([mainName, children]) => [mainName, ...children]);
+  const managedRows = await env.DB.prepare(`SELECT id,name FROM categories WHERE name IN (${managedNames.map(()=>"?").join(",")})`).bind(...managedNames).all<{id:number;name:string}>();
+  for (const row of managedRows.results) categoryIds.set(row.name, Number(row.id));
   let sortOrder = 10;
-  for (const [mainName, children] of organizedCategoryTree) {
+  if (categoryIds.size < managedNames.length) for (const [mainName, children] of organizedCategoryTree) {
     let main = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(mainName).first<{id:number}>();
     if (!main) {
       const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,NULL,?,?,NULL,NULL,NULL,1,1,?,?)")
