@@ -3,6 +3,9 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import handler from "vinext/server/app-router-entry";
 import { importedDistributionProducts } from "./import-cat40.generated";
 import importedAllProducts from "./import-all-products.generated.json";
+import importedJabariProducts from "./import-jabari-products.generated.json";
+import importedJabariVariants from "./import-jabari-variants.generated.json";
+import importedDofeshVariants from "./import-dofesh-variants.generated.json";
 import { product2222ImageBase64 } from "./product-2222-image.generated";
 
 interface Env {
@@ -44,6 +47,9 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
   ...init,
   headers: { "cache-control": "no-store", ...(init.headers || {}) },
 });
+
+const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
+const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
 
 const amount = (agorot: number | null) => agorot == null ? undefined : agorot / 100;
 const agorot = (value: unknown) => Math.max(0, Math.round(Number(value || 0) * 100));
@@ -99,7 +105,15 @@ const importedMediaSources = new Map<string, readonly string[]>(importedPearlPro
 })).concat(importedAllProducts.map((product) => {
   const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
   return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-450px.", "-IDX.")]] as const;
-})));
+})).concat(importedJabariProducts.map((product) => {
+  const extension = new URL(product.imageUrl).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+  return [`imports/jabari-${product.sourceId}.${extension}`, [product.imageUrl]] as const;
+})).concat(([...importedJabariVariants.map(record => ({source:"jabari",record})),...importedDofeshVariants.map(record => ({source:"dofesh",record}))]).flatMap(({source,record}) => Object.values(record.groups || {}).flat().map((variant, index) => {
+  if (!variant.imageUrl) return null;
+  const absolute = new URL(variant.imageUrl, source === "jabari" ? "https://jabaristore.com/" : "https://dofesh.ps/").toString();
+  const extension = new URL(absolute).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+  return [`imports/${source}-${record.sourceId}-variant-${index}.${extension}`, [absolute]] as const;
+}).filter((item): item is readonly [string, readonly string[]] => Boolean(item)))));
 
 const organizedCategoryTree = [
   ["توزيعات وهدايا المناسبات", ["توزيعات الأعراس والحناء", "توزيعات المواليد", "الحج والعمرة", "التخرج والنجاح", "هدايا وتوزيعات عامة"]],
@@ -415,6 +429,139 @@ async function ensureCorrectedFullCatalogPrices(env: Env) {
   }
 }
 
+const normalizedSupplierName = (value: string) => value
+  .normalize("NFKC").toLowerCase().replace(/[إأآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي")
+  .replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+
+const jabariRetailAgorot = (sourcePrice: number) => {
+  const retail = sourcePrice <= 30 ? sourcePrice + 2 : Math.ceil(sourcePrice * 1.1 * 2) / 2;
+  return Math.round(retail * 100);
+};
+
+async function ensureImportedSupplierCatalog(env: Env) {
+  const now = Date.now();
+  await env.DB.prepare("INSERT OR IGNORE INTO suppliers (supplier_number,name,phone,address,notes,active,created_at,updated_at) VALUES (9101,'متجر دوفش',NULL,NULL,'مورد المنتجات المستوردة من dofesh.ps',1,?,?)").bind(now, now).run();
+  await env.DB.prepare("INSERT OR IGNORE INTO suppliers (supplier_number,name,phone,address,notes,active,created_at,updated_at) VALUES (9102,'الجعبري للنثريات والإكسسوارات',NULL,NULL,'مورد المنتجات المستوردة من jabaristore.com',1,?,?)").bind(now, now).run();
+  const dofesh = await env.DB.prepare("SELECT id FROM suppliers WHERE supplier_number=9101 LIMIT 1").first<{id:number}>();
+  const jabari = await env.DB.prepare("SELECT id FROM suppliers WHERE supplier_number=9102 LIMIT 1").first<{id:number}>();
+  if (!dofesh || !jabari) return;
+
+  const dofeshSeed = "supplier-links-dofesh-2026-09-01-v1";
+  if (!(await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(dofeshSeed).first())) {
+    const rows = await env.DB.prepare("SELECT p.id,p.price_agorot,k.keyword FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND ps.id IS NULL ORDER BY p.id LIMIT 250").bind(dofesh.id).all<{id:number;price_agorot:number;keyword:string}>();
+    const missing = rows.results;
+    if (missing.length) {
+      await env.DB.batch(missing.map(row => env.DB.prepare("INSERT INTO product_suppliers (product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) VALUES (?,?,?,?,?,1,?,?) ON CONFLICT(product_id,supplier_id) DO UPDATE SET source_product_id=excluded.source_product_id,source_url=excluded.source_url,supplier_price_agorot=excluded.supplier_price_agorot,updated_at=excluded.updated_at")
+        .bind(Number(row.id), dofesh.id, String(row.keyword).slice(7), `https://dofesh.ps/?app=product.show.${String(row.keyword).slice(7)}`, Number(row.price_agorot), now, now)));
+    }
+    const remaining = await env.DB.prepare("SELECT COUNT(*) AS count FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND ps.id IS NULL").bind(dofesh.id).first<{count:number}>();
+    if (!Number(remaining?.count || 0)) await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(dofeshSeed, now).run();
+  }
+
+  const seedKey = "jabari-full-catalog-2026-09-01-v1";
+  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
+  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
+  const startIndex = Math.max(0, Number(progress?.next_index || 0));
+  const endIndex = Math.min(importedJabariProducts.length, startIndex + 80);
+  const batch = importedJabariProducts.slice(startIndex, endIndex);
+  const sourceKeywords = batch.map(product => `jabari-${product.sourceId}`);
+  const existingSourceRows = sourceKeywords.length ? await env.DB.prepare(`SELECT product_id,keyword FROM product_keywords WHERE keyword IN (${sourceKeywords.map(()=>"?").join(",")})`).bind(...sourceKeywords).all<{product_id:number;keyword:string}>() : {results:[]};
+  const existingBySource = new Map(existingSourceRows.results.map(row => [row.keyword, Number(row.product_id)]));
+  const dofeshRows = await env.DB.prepare("SELECT p.id,p.name,p.price_agorot FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND p.deleted_at IS NULL AND ps.id IS NULL").bind(jabari.id).all<{id:number;name:string;price_agorot:number}>();
+  const exactDofesh = new Map<string, number>();
+  for (const row of dofeshRows.results) exactDofesh.set(`${normalizedSupplierName(row.name)}|${Number(row.price_agorot)}`, Number(row.id));
+  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
+  let nextProductId = Number((await env.DB.prepare("SELECT COALESCE(MAX(id),0)+1 AS next FROM products").first<{next:number}>())?.next || 1);
+  const productStatements: D1PreparedStatement[] = [];
+  const relatedStatements: D1PreparedStatement[] = [];
+  for (const product of batch) {
+    const keyword = `jabari-${product.sourceId}`;
+    const sourceAgorot = Math.round(Number(product.sourcePrice) * 100);
+    const retailAgorot = jabariRetailAgorot(Number(product.sourcePrice));
+    const duplicateKey = `${normalizedSupplierName(product.name)}|${sourceAgorot}`;
+    let productId = existingBySource.get(keyword) || exactDofesh.get(duplicateKey);
+    if (!existingBySource.has(keyword) && productId) exactDofesh.delete(duplicateKey);
+    if (productId) {
+      productStatements.push(env.DB.prepare("UPDATE products SET purchase_price_agorot=CASE WHEN purchase_price_agorot IS NULL OR purchase_price_agorot>? THEN ? ELSE purchase_price_agorot END,price_agorot=CASE WHEN price_agorot>? THEN ? ELSE price_agorot END,updated_at=? WHERE id=?").bind(sourceAgorot, sourceAgorot, retailAgorot, retailAgorot, now, productId));
+      relatedStatements.push(env.DB.prepare("INSERT OR IGNORE INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
+    } else {
+      const categoryName = organizedCategoryFor(product.name);
+      const category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(categoryName).first<{id:number}>();
+      if (!category) continue;
+      productId = nextProductId++;
+      productStatements.push(env.DB.prepare("INSERT INTO products (id,item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,NULL,?,NULL,?,100,1,0,NULL,0,0,0,0,?,?)")
+        .bind(productId, nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), retailAgorot, sourceAgorot, now, now));
+      const extension = new URL(product.imageUrl).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+      relatedStatements.push(env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/jabari-${product.sourceId}.${extension}`, product.name, now, now));
+      relatedStatements.push(env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
+      nextItemNumber += 1;
+    }
+    relatedStatements.push(env.DB.prepare("INSERT INTO product_suppliers (product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) VALUES (?,?,?,?,?,1,?,?) ON CONFLICT(product_id,supplier_id) DO UPDATE SET source_product_id=excluded.source_product_id,source_url=excluded.source_url,supplier_price_agorot=excluded.supplier_price_agorot,updated_at=excluded.updated_at")
+      .bind(productId, jabari.id, String(product.sourceId), product.sourceUrl, sourceAgorot, now, now));
+  }
+  for (let index = 0; index < productStatements.length; index += 40) await env.DB.batch(productStatements.slice(index, index + 40));
+  for (let index = 0; index < relatedStatements.length; index += 40) await env.DB.batch(relatedStatements.slice(index, index + 40));
+  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
+  if (endIndex >= importedJabariProducts.length) {
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
+    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
+  }
+}
+
+async function ensureImportedSourceVariants(env: Env) {
+  const sources = [
+    { name: "dofesh", rows: importedDofeshVariants, markup: false },
+    { name: "jabari", rows: importedJabariVariants, markup: true },
+  ] as const;
+  for (const source of sources) {
+    const rows = source.rows.filter(record => Object.values(record.groups || {}).some(group => group.length));
+    const seedKey = `${source.name}-product-variants-${rows.length}-v1`;
+    if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) continue;
+    const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
+    const startIndex = Math.max(0, Number(progress?.next_index || 0));
+    const endIndex = Math.min(rows.length, startIndex + 25);
+    const now = Date.now();
+    for (const record of rows.slice(startIndex, endIndex)) {
+      const product = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(`${source.name}-${record.sourceId}`).first<{product_id:number}>();
+      if (!product) continue;
+      const groups = Object.entries(record.groups || {}).filter(([,values]) => values.length);
+      if (!groups.length) continue;
+      await env.DB.batch([
+        env.DB.prepare("DELETE FROM product_options WHERE product_id=?").bind(product.product_id),
+        env.DB.prepare("DELETE FROM product_variants WHERE product_id=?").bind(product.product_id),
+        env.DB.prepare("DELETE FROM product_media WHERE product_id=? AND variant_id IS NOT NULL").bind(product.product_id),
+      ]);
+      const optionLabel = groups[0][0] === "size" ? "القياس" : groups[0][0] === "color" ? "الخيار" : "الخيار";
+      const optionResult = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,?,'text',0)").bind(product.product_id, optionLabel).run();
+      const optionId = Number(optionResult.meta.last_row_id);
+      const flattened = groups.flatMap(([groupName, values]) => values.filter(value => !value.disabled).map(value => ({...value, groupName})));
+      for (let index = 0; index < flattened.length; index += 1) {
+        const variant = flattened[index];
+        const displayName = groups.length > 1 ? `${variant.groupName}: ${variant.name}` : variant.name;
+        const sourcePrice = Number(variant.oldSourcePrice || variant.sourcePrice);
+        const retailPrice = source.markup ? jabariRetailAgorot(sourcePrice) : Math.round(sourcePrice * 100);
+        const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(optionId, displayName, index).run();
+        const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,?,100,1,?,?)").bind(product.product_id, retailPrice, Math.round(sourcePrice * 100), now, now).run();
+        const variantId = Number(variantResult.meta.last_row_id);
+        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(variantId, Number(valueResult.meta.last_row_id)).run();
+        if (variant.imageUrl) {
+          const absolute = new URL(variant.imageUrl, source.name === "jabari" ? "https://jabaristore.com/" : "https://dofesh.ps/").toString();
+          const extension = new URL(absolute).pathname.split(".").pop()?.toLowerCase() || "jpeg";
+          const groupOffset = groups.slice(0, groups.findIndex(([name]) => name === variant.groupName)).reduce((sum,[,values]) => sum + values.length, 0);
+          const mediaIndex = groupOffset + groups.find(([,values]) => values.some(value => value.name === variant.name))![1].findIndex(value => value.name === variant.name);
+          await env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,?,'image',?,?,0,1,?,?)").bind(product.product_id, variantId, `/media/imports/${source.name}-${record.sourceId}-variant-${mediaIndex}.${extension}`, displayName, now, now).run();
+        }
+      }
+      await env.DB.prepare("UPDATE products SET stock_quantity=0,price_agorot=?,purchase_price_agorot=?,updated_at=? WHERE id=?").bind(Math.min(...flattened.map(variant => source.markup ? jabariRetailAgorot(Number(variant.oldSourcePrice || variant.sourcePrice)) : Math.round(Number(variant.oldSourcePrice || variant.sourcePrice) * 100))), Math.min(...flattened.map(variant => Math.round(Number(variant.oldSourcePrice || variant.sourcePrice) * 100))), now, product.product_id).run();
+    }
+    await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
+    if (endIndex >= rows.length) {
+      await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
+      await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
+    }
+  }
+}
+
 async function ensureProduct2222EditedImage(env: Env) {
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
   const seedKey = "product-2222-edited-image-2026-09-01-v1";
@@ -428,7 +575,6 @@ async function ensureProduct2222EditedImage(env: Env) {
 }
 
 async function readStorefront(env: Env) {
-  await ensureStorefrontColumns(env);
   const [row, slides, popup] = await Promise.all([
     env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
     env.DB.prepare("SELECT id,title,image_url,product_id,category_id,external_url,sort_order,active FROM sliders ORDER BY sort_order,id").all(),
@@ -521,20 +667,11 @@ async function updateOrder(request:Request,env:Env,id:number){
 }
 
 async function readCatalog(env: Env, includeInactive = false) {
-  await ensureStorefrontColumns(env);
-  await ensureCustomizationSchema(env);
-  await ensureImportedPearlProducts(env);
-  await ensureImportedResinProducts(env);
-  await ensureImportedDistributionProducts(env);
-  await ensureCorrectedDistributionProductNames(env);
-  await ensureOrganizedFullCatalog(env);
-  await ensureCorrectedFullCatalogPrices(env);
-  await ensureProduct2222EditedImage(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
   const productWhere = includeInactive ? "WHERE deleted_at IS NULL" : "WHERE p.active = 1 AND p.deleted_at IS NULL";
-  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult] = await Promise.all([
+  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult,supplierResult] = await Promise.all([
     env.DB.prepare(`SELECT id, category_number, parent_id, name, slug, description, banner_url, icon_url, sort_order, active FROM categories ${categoryWhere} ORDER BY sort_order, id`).all(),
     env.DB.prepare(`SELECT p.*, c.name AS category_name, pc.name AS parent_category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id LEFT JOIN categories pc ON pc.id = c.parent_id ${productWhere} ORDER BY p.created_at DESC, p.id DESC`).all(),
     env.DB.prepare("SELECT id, product_id, name, display_type, sort_order FROM product_options ORDER BY sort_order, id").all(),
@@ -544,6 +681,7 @@ async function readCatalog(env: Env, includeInactive = false) {
     env.DB.prepare("SELECT id, product_id, variant_id, media_type, url, alt_text, sort_order, is_primary FROM product_media ORDER BY is_primary DESC, sort_order, id").all(),
     env.DB.prepare("SELECT product_id, keyword FROM product_keywords ORDER BY keyword").all(),
     env.DB.prepare("SELECT id,product_id,label,placeholder,max_length,required,sort_order FROM product_custom_fields ORDER BY sort_order,id").all(),
+    env.DB.prepare("SELECT ps.product_id,ps.source_product_id,ps.source_url,ps.supplier_price_agorot,ps.preferred,s.id AS supplier_id,s.name AS supplier_name FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id ORDER BY ps.preferred DESC,s.name").all(),
   ]);
 
   const categories = (categoryResult.results as Array<Record<string, unknown>>).map((row) => ({
@@ -558,17 +696,37 @@ async function readCatalog(env: Env, includeInactive = false) {
   const media = mediaResult.results as Array<Record<string, unknown>>;
   const keywords = keywordResult.results as Array<Record<string, unknown>>;
   const customFields=customFieldResult.results as Array<Record<string,unknown>>;
+  const productSuppliers=supplierResult.results as Array<Record<string,unknown>>;
+
+  const grouped = <T extends Record<string, unknown>>(rows: T[], key: string) => {
+    const map = new Map<number, T[]>();
+    for (const row of rows) {
+      const id = Number(row[key]);
+      const bucket = map.get(id);
+      if (bucket) bucket.push(row); else map.set(id, [row]);
+    }
+    return map;
+  };
+  const mediaByProduct = grouped(media, "product_id");
+  const optionsByProduct = grouped(options, "product_id");
+  const valuesByOption = grouped(values, "option_id");
+  const variantsByProduct = grouped(variants, "product_id");
+  const linksByVariant = grouped(links, "variant_id");
+  const keywordsByProduct = grouped(keywords, "product_id");
+  const customFieldsByProduct = grouped(customFields, "product_id");
+  const suppliersByProduct = grouped(productSuppliers, "product_id");
 
   const products = (productResult.results as Array<Record<string, unknown>>).map((row) => {
     const id = Number(row.id);
-    const productMedia = media.filter((item) => Number(item.product_id) === id);
+    const productMedia = mediaByProduct.get(id) || [];
     const images = productMedia.filter((item) => item.media_type === "image" && item.variant_id == null).map((item) => String(item.url));
     const video = productMedia.find((item) => item.media_type === "video" && item.variant_id == null);
-    const option = options.find((item) => Number(item.product_id) === id);
-    const optionValues = option ? values.filter((item) => Number(item.option_id) === Number(option.id)) : [];
-    const productVariants = variants.filter((variant) => Number(variant.product_id) === id && (includeInactive || Boolean(variant.active))).map((variant) => {
-      const link = links.find((item) => Number(item.variant_id) === Number(variant.id));
-      const value = optionValues.find((item) => Number(item.id) === Number(link?.option_value_id));
+    const option = optionsByProduct.get(id)?.[0];
+    const optionValues = option ? valuesByOption.get(Number(option.id)) || [] : [];
+    const optionValueById = new Map(optionValues.map(item => [Number(item.id), item]));
+    const productVariants = (variantsByProduct.get(id) || []).filter((variant) => includeInactive || Boolean(variant.active)).map((variant) => {
+      const link = linksByVariant.get(Number(variant.id))?.[0];
+      const value = optionValueById.get(Number(link?.option_value_id));
       const variantImages = productMedia.filter((item) => Number(item.variant_id) === Number(variant.id) && item.media_type === "image").map((item) => String(item.url));
       return { id: Number(variant.id), name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
     });
@@ -578,8 +736,9 @@ async function readCatalog(env: Env, includeInactive = false) {
       category: String(row.parent_category_name || row.category_name || "بدون قسم"), subcategory: row.parent_category_name ? String(row.category_name) : undefined,
       price: amount(row.price_agorot as number) || 0, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: amount(row.offer_price_agorot as number | null),
       image: images[0], images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
-      keywords: keywords.filter((item) => Number(item.product_id) === id).map((item) => String(item.keyword)).join(" "),
-      customFields:customFields.filter(item=>Number(item.product_id)===id).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
+      keywords: (keywordsByProduct.get(id) || []).map((item) => String(item.keyword)).join(" "),
+      customFields:(customFieldsByProduct.get(id) || []).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
+      suppliers:(suppliersByProduct.get(id) || []).map(item=>({id:Number(item.supplier_id),name:String(item.supplier_name),sourceProductId:String(item.source_product_id||""),sourceUrl:String(item.source_url||""),supplierPrice:amount(item.supplier_price_agorot as number|null),preferred:Boolean(item.preferred)})),
       description: String(row.description || row.short_description || ""), specifications: String(row.specifications || ""), stock: Number(row.stock_quantity), inStock, active: Boolean(row.active), featured: Boolean(row.featured), views: Number(row.view_count), orders: Number(row.order_count), rating: Number(row.rating_average_x100) / 100, ratingCount:Number(row.rating_count||0),createdAt:Number(row.created_at||0), variants: productVariants,
     };
   });
@@ -695,8 +854,8 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
     const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
     return new Response(bytes, { headers: { "content-type": "image/webp", "cache-control": "public, max-age=31536000, immutable" } });
   }
-  if (request.method === "GET" && url.pathname === "/api/catalog") return json(await readCatalog(env, false));
-  if (request.method === "GET" && url.pathname === "/api/storefront") return json(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
+  if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
@@ -816,6 +975,18 @@ const worker = {
     }
 
     try {
+      const cacheablePublicApi = request.method === "GET" && (url.pathname === "/api/catalog" || url.pathname === "/api/storefront");
+      if (cacheablePublicApi) {
+        const cache = caches.default;
+        const cacheKey = new Request(url.toString(), { method: "GET" });
+        const cached = await cache.match(cacheKey);
+        if (cached) return cached;
+        const apiResponse = await api(request, env, url);
+        if (apiResponse) {
+          ctx.waitUntil(cache.put(cacheKey, apiResponse.clone()));
+          return apiResponse;
+        }
+      }
       const apiResponse = await api(request, env, url);
       if (apiResponse) return apiResponse;
     } catch (error) {
