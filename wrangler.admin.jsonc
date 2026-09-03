@@ -29,6 +29,9 @@
       "bucket_name": "manar-store-media"
     }
   ],
+  "ai": {
+    "binding": "AI"
+  },
   "vars": {
     "APP_SURFACE": "admin"
   },
