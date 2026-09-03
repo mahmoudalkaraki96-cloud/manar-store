@@ -672,7 +672,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
   const productWhere = includeInactive ? "WHERE deleted_at IS NULL" : "WHERE p.active = 1 AND p.deleted_at IS NULL";
-  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult,supplierResult] = await Promise.all([
+  const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult] = await Promise.all([
     env.DB.prepare(`SELECT id, category_number, parent_id, name, slug, description, banner_url, icon_url, sort_order, active FROM categories ${categoryWhere} ORDER BY sort_order, id`).all(),
     env.DB.prepare(`SELECT p.*, c.name AS category_name, pc.name AS parent_category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id LEFT JOIN categories pc ON pc.id = c.parent_id ${productWhere} ORDER BY p.created_at DESC, p.id DESC`).all(),
     env.DB.prepare("SELECT id, product_id, name, display_type, sort_order FROM product_options ORDER BY sort_order, id").all(),
@@ -682,7 +682,6 @@ async function readCatalog(env: Env, includeInactive = false) {
     env.DB.prepare("SELECT id, product_id, variant_id, media_type, url, alt_text, sort_order, is_primary FROM product_media ORDER BY is_primary DESC, sort_order, id").all(),
     env.DB.prepare("SELECT product_id, keyword FROM product_keywords ORDER BY keyword").all(),
     env.DB.prepare("SELECT id,product_id,label,placeholder,max_length,required,sort_order FROM product_custom_fields ORDER BY sort_order,id").all(),
-    env.DB.prepare("SELECT ps.product_id,ps.source_product_id,ps.source_url,ps.supplier_price_agorot,ps.preferred,s.id AS supplier_id,s.name AS supplier_name FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id ORDER BY ps.preferred DESC,s.name").all(),
   ]);
 
   const categories = (categoryResult.results as Array<Record<string, unknown>>).map((row) => ({
@@ -697,7 +696,7 @@ async function readCatalog(env: Env, includeInactive = false) {
   const media = mediaResult.results as Array<Record<string, unknown>>;
   const keywords = keywordResult.results as Array<Record<string, unknown>>;
   const customFields=customFieldResult.results as Array<Record<string,unknown>>;
-  const productSuppliers=supplierResult.results as Array<Record<string,unknown>>;
+  const productSuppliers: Array<Record<string,unknown>> = [];
 
   const grouped = <T extends Record<string, unknown>>(rows: T[], key: string) => {
     const map = new Map<number, T[]>();
