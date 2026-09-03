@@ -24,6 +24,7 @@ export type Variant = {
   images?: string[];
 };
 export type CustomField={id?:number;label:string;placeholder:string;required:boolean;maxLength:number};
+export type ProductSupplier={id:number;name:string;sourceProductId:string;sourceUrl:string;supplierPrice?:number;preferred:boolean};
 
 export type Product = {
   id: number;
@@ -59,6 +60,7 @@ export type Product = {
   createdAt: number;
   variants?: Variant[];
   customFields?: CustomField[];
+  suppliers?: ProductSupplier[];
 };
 
 export type CatalogResponse = { categories: Category[]; products: Product[] };
@@ -66,8 +68,18 @@ export type CatalogResponse = { categories: Category[]; products: Product[] };
 export const norm = (value: string) => value.toLowerCase().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
 export const matches = (product: Product, query: string) => norm(query).split(/\s+/).filter(Boolean).every((term) => norm(`${product.name} ${product.category} ${product.subcategory || ""} ${product.itemNumber} ${product.keywords || ""} ${(product.variants || []).map((variant) => `${variant.name} ${variant.sku}`).join(" ")}`).includes(term));
 
-export async function loadCatalog(): Promise<CatalogResponse> {
-  const response = await fetch("/api/catalog", { cache: "no-store" });
-  if (!response.ok) throw new Error("تعذر تحميل بيانات المتجر");
-  return response.json() as Promise<CatalogResponse>;
+let catalogPromise: Promise<CatalogResponse> | null = null;
+
+export function loadCatalog(): Promise<CatalogResponse> {
+  if (catalogPromise) return catalogPromise;
+  catalogPromise = fetch("/api/catalog")
+    .then((response) => {
+      if (!response.ok) throw new Error("تعذر تحميل بيانات المتجر");
+      return response.json() as Promise<CatalogResponse>;
+    })
+    .catch((error) => {
+      catalogPromise = null;
+      throw error;
+    });
+  return catalogPromise;
 }
