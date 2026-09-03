@@ -939,7 +939,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
     form.append("prompt", prompt);
     form.append("width", "1024");
     form.append("height", "1024");
-    form.append("input_image_0", new Blob([inputBytes.buffer], { type: "image/jpeg" }), "product.jpg");
+    form.append("input_image_0", new Blob([inputBytes.buffer as ArrayBuffer], { type: "image/jpeg" }), "product.jpg");
     const serialized = new Response(form);
     const result = await env.AI.run("@cf/black-forest-labs/flux-2-klein-4b", { multipart: { body: serialized.body, contentType: serialized.headers.get("content-type") } });
     if (!result?.image) return json({ error: "لم يرجع النموذج صورة" }, { status: 502 });
