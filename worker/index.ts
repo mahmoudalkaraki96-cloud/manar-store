@@ -920,33 +920,26 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "POST" && url.pathname === "/api/admin/ai-image") {
     const body = await parseJson(request);
     const imageUrl = asText(body.imageUrl);
+    const inputImageBase64 = asText(body.inputImageBase64);
     const allowedPrompts: Record<string, string> = {
       clean: "Edit the reference product photo. Preserve the exact product, shape, colors, decoration, printed text and proportions. Remove surrounding clutter, use a clean warm-white studio background, improve lighting and sharpness, add a soft natural shadow, center the product, square ecommerce composition. Do not add, remove, redesign or duplicate any product detail.",
       white: "Edit the reference product photo. Preserve the exact product, colors, printed text, shape and proportions. Isolate it on a pure white ecommerce background with soft shadow and balanced studio lighting. Do not alter or invent product details.",
     };
     const prompt = allowedPrompts[asText(body.mode)] || allowedPrompts.clean;
     if (!imageUrl.startsWith("/media/")) return json({ error: "هذه الصورة غير قابلة للمعالجة حالياً" }, { status: 400 });
-    const key = decodeURIComponent(imageUrl.slice(7));
-    let object = await env.MEDIA.get(key);
-    if (!object && importedMediaSources.has(key)) {
-      for (const source of importedMediaSources.get(key) || []) {
-        const remote = await fetch(source, { headers: { accept: "image/*", "user-agent": "ManarStore/1.0" } });
-        if (!remote.ok || !remote.headers.get("content-type")?.startsWith("image/")) continue;
-        const bytes = await remote.arrayBuffer();
-        const contentType = remote.headers.get("content-type")?.split(";")[0] || "image/jpeg";
-        await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
-        object = await env.MEDIA.get(key);
-        break;
-      }
+    if (!inputImageBase64 || inputImageBase64.length > 2_000_000 || !/^[A-Za-z0-9+/=]+$/.test(inputImageBase64)) return json({ error: "بيانات الصورة المصغرة غير صحيحة" }, { status: 400 });
+    let inputBytes: Uint8Array;
+    try {
+      const binary = atob(inputImageBase64);
+      inputBytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+    } catch {
+      return json({ error: "تعذر قراءة الصورة المصغرة" }, { status: 400 });
     }
-    if (!object) return json({ error: "تعذر قراءة الصورة الأصلية" }, { status: 404 });
-    const resized = await env.IMAGES.input(object.body).transform({ width: 512, height: 512, fit: "scale-down" }).output({ format: "image/jpeg", quality: 90 });
-    const resizedResponse = await resized.response();
     const form = new FormData();
     form.append("prompt", prompt);
     form.append("width", "1024");
     form.append("height", "1024");
-    form.append("input_image_0", new Blob([await resizedResponse.arrayBuffer()], { type: "image/jpeg" }), "product.jpg");
+    form.append("input_image_0", new Blob([inputBytes.buffer], { type: "image/jpeg" }), "product.jpg");
     const serialized = new Response(form);
     const result = await env.AI.run("@cf/black-forest-labs/flux-2-klein-4b", { multipart: { body: serialized.body, contentType: serialized.headers.get("content-type") } });
     if (!result?.image) return json({ error: "لم يرجع النموذج صورة" }, { status: 502 });
