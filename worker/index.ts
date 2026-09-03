@@ -12,6 +12,7 @@ interface Env {
   ASSETS: Fetcher;
   DB: D1Database;
   MEDIA: R2Bucket;
+  AI: { run(model: string, input: unknown): Promise<{ image?: string }> };
   APP_SURFACE?: "storefront" | "admin";
   IMAGES: {
     input(stream: ReadableStream): {
@@ -917,6 +918,45 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   const productMatch = url.pathname.match(/^\/api\/admin\/products\/(\d+)$/);
   if (productMatch && request.method === "PUT") return saveProduct(request, env, Number(productMatch[1]));
   if (productMatch && request.method === "DELETE") { await env.DB.prepare("UPDATE products SET deleted_at=?, active=0 WHERE id=?").bind(Date.now(), Number(productMatch[1])).run(); return json({ ok: true }); }
+  if (request.method === "POST" && url.pathname === "/api/admin/ai-image") {
+    const body = await parseJson(request);
+    const imageUrl = asText(body.imageUrl);
+    const allowedPrompts: Record<string, string> = {
+      clean: "Edit the reference product photo. Preserve the exact product, shape, colors, decoration, printed text and proportions. Remove surrounding clutter, use a clean warm-white studio background, improve lighting and sharpness, add a soft natural shadow, center the product, square ecommerce composition. Do not add, remove, redesign or duplicate any product detail.",
+      white: "Edit the reference product photo. Preserve the exact product, colors, printed text, shape and proportions. Isolate it on a pure white ecommerce background with soft shadow and balanced studio lighting. Do not alter or invent product details.",
+    };
+    const prompt = allowedPrompts[asText(body.mode)] || allowedPrompts.clean;
+    if (!imageUrl.startsWith("/media/")) return json({ error: "هذه الصورة غير قابلة للمعالجة حالياً" }, { status: 400 });
+    const key = decodeURIComponent(imageUrl.slice(7));
+    let object = await env.MEDIA.get(key);
+    if (!object && importedMediaSources.has(key)) {
+      for (const source of importedMediaSources.get(key) || []) {
+        const remote = await fetch(source, { headers: { accept: "image/*", "user-agent": "ManarStore/1.0" } });
+        if (!remote.ok || !remote.headers.get("content-type")?.startsWith("image/")) continue;
+        const bytes = await remote.arrayBuffer();
+        const contentType = remote.headers.get("content-type")?.split(";")[0] || "image/jpeg";
+        await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
+        object = await env.MEDIA.get(key);
+        break;
+      }
+    }
+    if (!object) return json({ error: "تعذر قراءة الصورة الأصلية" }, { status: 404 });
+    const resized = await env.IMAGES.input(object.body).transform({ width: 512, height: 512, fit: "scale-down" }).output({ format: "image/jpeg", quality: 90 });
+    const resizedResponse = await resized.response();
+    const form = new FormData();
+    form.append("prompt", prompt);
+    form.append("width", "1024");
+    form.append("height", "1024");
+    form.append("input_image_0", new Blob([await resizedResponse.arrayBuffer()], { type: "image/jpeg" }), "product.jpg");
+    const serialized = new Response(form);
+    const result = await env.AI.run("@cf/black-forest-labs/flux-2-klein-4b", { multipart: { body: serialized.body, contentType: serialized.headers.get("content-type") } });
+    if (!result?.image) return json({ error: "لم يرجع النموذج صورة" }, { status: 502 });
+    const binary = atob(result.image);
+    const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+    const outputKey = `ai-previews/${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.png`;
+    await env.MEDIA.put(outputKey, bytes.buffer, { httpMetadata: { contentType: "image/png" } });
+    return json({ url: `/media/${encodeURIComponent(outputKey)}` });
+  }
   if (request.method === "POST" && url.pathname === "/api/admin/media/source") {
     const body=await parseJson(request),source=asText(body.url);
     let target:URL;try{target=new URL(source)}catch{return json({error:"رابط الصورة غير صحيح"},{status:400})}
