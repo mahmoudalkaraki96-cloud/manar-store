@@ -72,7 +72,7 @@ let catalogPromise: Promise<CatalogResponse> | null = null;
 
 export function loadCatalog(): Promise<CatalogResponse> {
   if (catalogPromise) return catalogPromise;
-  catalogPromise = fetch("/api/catalog")
+  catalogPromise = fetch(`/api/catalog?v=${Date.now()}`, { cache: "no-store" })
     .then((response) => {
       if (!response.ok) throw new Error("تعذر تحميل بيانات المتجر");
       return response.json() as Promise<CatalogResponse>;
