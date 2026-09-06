@@ -15,7 +15,7 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
  useEffect(()=>{void refresh()},[]);
  const send=async(path:string,method:string,body?:unknown)=>{const r=await fetch(path,{method,headers:{"content-type":"application/json"},body:body?JSON.stringify(body):undefined}),d=await r.json();if(!r.ok)throw new Error(d.error||"فشلت العملية")};
  const media=async(file:File,field:"logoUrl"|"watermarkUrl",slideIndex?:number)=>{setBusy(true);try{const url=await upload(file);if(slideIndex==null)setSettings(s=>({...s,[field]:url}));else setSlides(s=>s.map((x,i)=>i===slideIndex?{...x,imageUrl:url}:x))}catch(e){setMessage(e instanceof Error?e.message:"فشل الرفع")}finally{setBusy(false)}};
- const saveSettings=async()=>{setBusy(true);try{await send("/api/admin/settings","PUT",settings);setMessage("تم حفظ الإعدادات")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
+ const saveSettings=async()=>{setBusy(true);try{await send("/api/admin/settings","PUT",settings);window.dispatchEvent(new CustomEvent<StoreSettings>("store-settings-updated",{detail:settings}));setMessage("تم حفظ الإعدادات وتطبيق هوية المتجر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const saveSlides=async()=>{setBusy(true);try{for(const slide of slides)await send(slide.id?`/api/admin/sliders/${slide.id}`:"/api/admin/sliders",slide.id?"PUT":"POST",slide);await refresh();setMessage("تم حفظ السلايدر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const update=(i:number,p:Partial<Slide>)=>setSlides(s=>s.map((x,n)=>n===i?{...x,...p}:x));
 
