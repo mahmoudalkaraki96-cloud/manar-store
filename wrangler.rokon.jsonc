@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rokon-store",
+  "main": "./dist/server/index.js",
+  "compatibility_date": "2026-08-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js", "**/*.mjs"]
+    }
+  ],
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "rokon-store-db",
+      "database_id": "REPLACE_WITH_ROKON_D1_DATABASE_ID",
+      "migrations_dir": "./drizzle"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "rokon-store-media"
+    }
+  ],
+  "vars": {
+    "APP_SURFACE": "storefront",
+    "STORE_KEY": "rokon"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
