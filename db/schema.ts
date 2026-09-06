@@ -7,12 +7,12 @@ const timestamps = {
 
 export const storeSettings = sqliteTable("store_settings", {
   id: integer("id").primaryKey().default(1),
-  storeName: text("store_name").notNull().default("Manar Store"),
+  storeName: text("store_name").notNull().default("Store"),
   logoUrl: text("logo_url"),
   watermarkUrl: text("watermark_url"),
   watermarkOpacity: integer("watermark_opacity").notNull().default(25),
-  primaryColor: text("primary_color").notNull().default("#8f4264"),
-  secondaryColor: text("secondary_color").notNull().default("#f8e8ef"),
+  primaryColor: text("primary_color").notNull().default("#374151"),
+  secondaryColor: text("secondary_color").notNull().default("#9ca3af"),
   backgroundColor: text("background_color").notNull().default("#ffffff"),
   currency: text("currency").notNull().default("ILS"),
   whatsapp: text("whatsapp"),
@@ -38,253 +38,21 @@ export const storeSettings = sqliteTable("store_settings", {
 });
 
 export const users = sqliteTable("users", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  email: text("email").notNull(),
-  passwordHash: text("password_hash"),
-  fullName: text("full_name").notNull(),
-  phone: text("phone"),
-  role: text("role", { enum: ["admin", "staff", "customer"] }).notNull().default("customer"),
-  wholesaleEnabled: integer("wholesale_enabled", { mode: "boolean" }).notNull().default(false),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  lastLoginAt: integer("last_login_at", { mode: "timestamp_ms" }),
-  ...timestamps,
+  id: integer("id").primaryKey({ autoIncrement: true }), email: text("email").notNull(), passwordHash: text("password_hash"), fullName: text("full_name").notNull(), phone: text("phone"), role: text("role", { enum: ["admin", "staff", "customer"] }).notNull().default("customer"), wholesaleEnabled: integer("wholesale_enabled", { mode: "boolean" }).notNull().default(false), active: integer("active", { mode: "boolean" }).notNull().default(true), lastLoginAt: integer("last_login_at", { mode: "timestamp_ms" }), ...timestamps,
 }, (t) => [uniqueIndex("users_email_unique").on(t.email), index("users_phone_idx").on(t.phone)]);
-
-export const categories = sqliteTable("categories", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  categoryNumber: integer("category_number").notNull(),
-  parentId: integer("parent_id"),
-  name: text("name").notNull(),
-  slug: text("slug").notNull(),
-  description: text("description"),
-  bannerUrl: text("banner_url"),
-  sortOrder: integer("sort_order").notNull().default(0),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  ...timestamps,
-}, (t) => [
-  uniqueIndex("categories_number_unique").on(t.categoryNumber),
-  uniqueIndex("categories_slug_unique").on(t.slug),
-  index("categories_parent_idx").on(t.parentId),
-]);
-
-export const products = sqliteTable("products", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  itemNumber: integer("item_number").notNull(),
-  categoryId: integer("category_id").references(() => categories.id, { onDelete: "set null" }),
-  name: text("name").notNull(),
-  slug: text("slug").notNull(),
-  shortDescription: text("short_description"),
-  description: text("description"),
-  specifications: text("specifications"),
-  priceAgorot: integer("price_agorot").notNull(),
-  wholesalePriceAgorot: integer("wholesale_price_agorot"),
-  purchasePriceAgorot: integer("purchase_price_agorot"),
-  stockQuantity: integer("stock_quantity").notNull().default(0),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  featured: integer("featured", { mode: "boolean" }).notNull().default(false),
-  offerPriceAgorot: integer("offer_price_agorot"),
-  offerStartsAt: integer("offer_starts_at", { mode: "timestamp_ms" }),
-  offerEndsAt: integer("offer_ends_at", { mode: "timestamp_ms" }),
-  viewCount: integer("view_count").notNull().default(0),
-  orderCount: integer("order_count").notNull().default(0),
-  ratingAverageX100: integer("rating_average_x100").notNull().default(0),
-  ratingCount: integer("rating_count").notNull().default(0),
-  deletedAt: integer("deleted_at", { mode: "timestamp_ms" }),
-  ...timestamps,
-}, (t) => [
-  uniqueIndex("products_item_number_unique").on(t.itemNumber),
-  uniqueIndex("products_slug_unique").on(t.slug),
-  index("products_category_idx").on(t.categoryId),
-  index("products_active_idx").on(t.active),
-]);
-
-export const productKeywords = sqliteTable("product_keywords", {
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  keyword: text("keyword").notNull(),
-}, (t) => [primaryKey({ columns: [t.productId, t.keyword] }), index("product_keywords_keyword_idx").on(t.keyword)]);
-
-export const productOptions = sqliteTable("product_options", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  name: text("name").notNull(),
-  displayType: text("display_type", { enum: ["text", "color"] }).notNull().default("text"),
-  sortOrder: integer("sort_order").notNull().default(0),
-}, (t) => [index("product_options_product_idx").on(t.productId)]);
-
-export const productOptionValues = sqliteTable("product_option_values", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  optionId: integer("option_id").notNull().references(() => productOptions.id, { onDelete: "cascade" }),
-  value: text("value").notNull(),
-  colorHex: text("color_hex"),
-  sortOrder: integer("sort_order").notNull().default(0),
-}, (t) => [index("product_option_values_option_idx").on(t.optionId)]);
-
-export const productVariants = sqliteTable("product_variants", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  sku: text("sku"),
-  priceAgorot: integer("price_agorot"),
-  wholesalePriceAgorot: integer("wholesale_price_agorot"),
-  purchasePriceAgorot: integer("purchase_price_agorot"),
-  stockQuantity: integer("stock_quantity").notNull().default(0),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  ...timestamps,
-}, (t) => [uniqueIndex("product_variants_sku_unique").on(t.sku), index("product_variants_product_idx").on(t.productId)]);
-
-export const variantOptionValues = sqliteTable("variant_option_values", {
-  variantId: integer("variant_id").notNull().references(() => productVariants.id, { onDelete: "cascade" }),
-  optionValueId: integer("option_value_id").notNull().references(() => productOptionValues.id, { onDelete: "cascade" }),
-}, (t) => [primaryKey({ columns: [t.variantId, t.optionValueId] })]);
-
-export const productMedia = sqliteTable("product_media", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  variantId: integer("variant_id").references(() => productVariants.id, { onDelete: "cascade" }),
-  mediaType: text("media_type", { enum: ["image", "video"] }).notNull().default("image"),
-  url: text("url").notNull(),
-  altText: text("alt_text"),
-  sortOrder: integer("sort_order").notNull().default(0),
-  isPrimary: integer("is_primary", { mode: "boolean" }).notNull().default(false),
-  ...timestamps,
-}, (t) => [index("product_media_product_idx").on(t.productId), index("product_media_variant_idx").on(t.variantId)]);
-
-export const sliders = sqliteTable("sliders", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  title: text("title"),
-  imageUrl: text("image_url").notNull(),
-  productId: integer("product_id").references(() => products.id, { onDelete: "set null" }),
-  categoryId: integer("category_id").references(() => categories.id, { onDelete: "set null" }),
-  externalUrl: text("external_url"),
-  sortOrder: integer("sort_order").notNull().default(0),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  ...timestamps,
-});
-
-export const popups = sqliteTable("popups", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  title: text("title"),
-  body: text("body"),
-  imageUrl: text("image_url"),
-  targetUrl: text("target_url"),
-  active: integer("active", { mode: "boolean" }).notNull().default(false),
-  startsAt: integer("starts_at", { mode: "timestamp_ms" }),
-  endsAt: integer("ends_at", { mode: "timestamp_ms" }),
-  ...timestamps,
-});
-
-export const policies = sqliteTable("policies", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  slug: text("slug").notNull(),
-  title: text("title").notNull(),
-  body: text("body").notNull(),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  sortOrder: integer("sort_order").notNull().default(0),
-  ...timestamps,
-}, (t) => [uniqueIndex("policies_slug_unique").on(t.slug)]);
-
-export const shippingZones = sqliteTable("shipping_zones", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  name: text("name").notNull(),
-  priceAgorot: integer("price_agorot").notNull(),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  sortOrder: integer("sort_order").notNull().default(0),
-  ...timestamps,
-});
-
-export const orders = sqliteTable("orders", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  orderNumber: integer("order_number").notNull(),
-  customerId: integer("customer_id").references(() => users.id, { onDelete: "set null" }),
-  status: text("status", { enum: ["draft", "new", "confirmed", "preparing", "shipped", "delivered", "cancelled"] }).notNull().default("draft"),
-  customerName: text("customer_name"),
-  phone: text("phone"),
-  address: text("address"),
-  city: text("city"),
-  shippingZoneId: integer("shipping_zone_id").references(() => shippingZones.id, { onDelete: "set null" }),
-  subtotalAgorot: integer("subtotal_agorot").notNull().default(0),
-  shippingAgorot: integer("shipping_agorot").notNull().default(0),
-  discountAgorot: integer("discount_agorot").notNull().default(0),
-  totalAgorot: integer("total_agorot").notNull().default(0),
-  paymentMethod: text("payment_method", { enum: ["cash_on_delivery", "electronic"] }).notNull().default("cash_on_delivery"),
-  paymentStatus: text("payment_status", { enum: ["pending", "paid", "failed", "refunded"] }).notNull().default("pending"),
-  notes: text("notes"),
-  deletedAt: integer("deleted_at", { mode: "timestamp_ms" }),
-  ...timestamps,
-}, (t) => [uniqueIndex("orders_number_unique").on(t.orderNumber), index("orders_customer_idx").on(t.customerId), index("orders_status_idx").on(t.status)]);
-
-export const orderItems = sqliteTable("order_items", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  orderId: integer("order_id").notNull().references(() => orders.id, { onDelete: "cascade" }),
-  productId: integer("product_id").references(() => products.id, { onDelete: "set null" }),
-  variantId: integer("variant_id").references(() => productVariants.id, { onDelete: "set null" }),
-  itemNumber: integer("item_number"),
-  productName: text("product_name").notNull(),
-  variantLabel: text("variant_label"),
-  quantity: integer("quantity").notNull(),
-  unitPriceAgorot: integer("unit_price_agorot").notNull(),
-  lineTotalAgorot: integer("line_total_agorot").notNull(),
-  notes: text("notes"),
-}, (t) => [index("order_items_order_idx").on(t.orderId)]);
-
-export const wishlists = sqliteTable("wishlists", {
-  userId: integer("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull().$defaultFn(() => new Date()),
-}, (t) => [primaryKey({ columns: [t.userId, t.productId] })]);
-
-export const reviews = sqliteTable("reviews", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  productId: integer("product_id").notNull().references(() => products.id, { onDelete: "cascade" }),
-  userId: integer("user_id").references(() => users.id, { onDelete: "set null" }),
-  rating: integer("rating").notNull(),
-  comment: text("comment"),
-  approved: integer("approved", { mode: "boolean" }).notNull().default(false),
-  ...timestamps,
-}, (t) => [index("reviews_product_idx").on(t.productId)]);
-
-export const suppliers = sqliteTable("suppliers", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  supplierNumber: integer("supplier_number").notNull(),
-  name: text("name").notNull(),
-  phone: text("phone"),
-  address: text("address"),
-  notes: text("notes"),
-  active: integer("active", { mode: "boolean" }).notNull().default(true),
-  ...timestamps,
-}, (t) => [uniqueIndex("suppliers_number_unique").on(t.supplierNumber)]);
-
-export const purchases = sqliteTable("purchases", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  purchaseNumber: integer("purchase_number").notNull(),
-  supplierId: integer("supplier_id").references(() => suppliers.id, { onDelete: "set null" }),
-  status: text("status", { enum: ["draft", "posted", "cancelled"] }).notNull().default("draft"),
-  invoiceReference: text("invoice_reference"),
-  purchasedAt: integer("purchased_at", { mode: "timestamp_ms" }).notNull().$defaultFn(() => new Date()),
-  totalAgorot: integer("total_agorot").notNull().default(0),
-  notes: text("notes"),
-  deletedAt: integer("deleted_at", { mode: "timestamp_ms" }),
-  ...timestamps,
-}, (t) => [uniqueIndex("purchases_number_unique").on(t.purchaseNumber), index("purchases_supplier_idx").on(t.supplierId)]);
-
-export const purchaseItems = sqliteTable("purchase_items", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  purchaseId: integer("purchase_id").notNull().references(() => purchases.id, { onDelete: "cascade" }),
-  productId: integer("product_id").references(() => products.id, { onDelete: "set null" }),
-  variantId: integer("variant_id").references(() => productVariants.id, { onDelete: "set null" }),
-  itemNumber: integer("item_number"),
-  productName: text("product_name").notNull(),
-  quantity: integer("quantity").notNull(),
-  unitCostAgorot: integer("unit_cost_agorot").notNull(),
-  lineTotalAgorot: integer("line_total_agorot").notNull(),
-  notes: text("notes"),
-}, (t) => [index("purchase_items_purchase_idx").on(t.purchaseId)]);
-
-export const auditLogs = sqliteTable("audit_logs", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  userId: integer("user_id").references(() => users.id, { onDelete: "set null" }),
-  entityType: text("entity_type").notNull(),
-  entityId: text("entity_id"),
-  action: text("action").notNull(),
-  detailsJson: text("details_json"),
-  createdAt: integer("created_at", { mode: "timestamp_ms" }).notNull().$defaultFn(() => new Date()),
-}, (t) => [index("audit_logs_entity_idx").on(t.entityType, t.entityId)]);
+export const categories = sqliteTable("categories", {id:integer("id").primaryKey({autoIncrement:true}),categoryNumber:integer("category_number").notNull(),parentId:integer("parent_id"),name:text("name").notNull(),slug:text("slug").notNull(),description:text("description"),bannerUrl:text("banner_url"),sortOrder:integer("sort_order").notNull().default(0),active:integer("active",{mode:"boolean"}).notNull().default(true),...timestamps},t=>[uniqueIndex("categories_number_unique").on(t.categoryNumber),uniqueIndex("categories_slug_unique").on(t.slug),index("categories_parent_idx").on(t.parentId)]);
+export const products=sqliteTable("products",{id:integer("id").primaryKey({autoIncrement:true}),itemNumber:integer("item_number").notNull(),categoryId:integer("category_id").references(()=>categories.id,{onDelete:"set null"}),name:text("name").notNull(),slug:text("slug").notNull(),shortDescription:text("short_description"),description:text("description"),specifications:text("specifications"),priceAgorot:integer("price_agorot").notNull(),wholesalePriceAgorot:integer("wholesale_price_agorot"),purchasePriceAgorot:integer("purchase_price_agorot"),stockQuantity:integer("stock_quantity").notNull().default(0),active:integer("active",{mode:"boolean"}).notNull().default(true),featured:integer("featured",{mode:"boolean"}).notNull().default(false),offerPriceAgorot:integer("offer_price_agorot"),offerStartsAt:integer("offer_starts_at",{mode:"timestamp_ms"}),offerEndsAt:integer("offer_ends_at",{mode:"timestamp_ms"}),viewCount:integer("view_count").notNull().default(0),orderCount:integer("order_count").notNull().default(0),ratingAverageX100:integer("rating_average_x100").notNull().default(0),ratingCount:integer("rating_count").notNull().default(0),deletedAt:integer("deleted_at",{mode:"timestamp_ms"}),...timestamps},t=>[uniqueIndex("products_item_number_unique").on(t.itemNumber),uniqueIndex("products_slug_unique").on(t.slug),index("products_category_idx").on(t.categoryId),index("products_active_idx").on(t.active)]);
+export const productKeywords=sqliteTable("product_keywords",{productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),keyword:text("keyword").notNull()},t=>[primaryKey({columns:[t.productId,t.keyword]}),index("product_keywords_keyword_idx").on(t.keyword)]);
+export const productOptions=sqliteTable("product_options",{id:integer("id").primaryKey({autoIncrement:true}),productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),name:text("name").notNull(),displayType:text("display_type",{enum:["text","color"]}).notNull().default("text"),sortOrder:integer("sort_order").notNull().default(0)},t=>[index("product_options_product_idx").on(t.productId)]);
+export const productOptionValues=sqliteTable("product_option_values",{id:integer("id").primaryKey({autoIncrement:true}),optionId:integer("option_id").notNull().references(()=>productOptions.id,{onDelete:"cascade"}),value:text("value").notNull(),colorHex:text("color_hex"),sortOrder:integer("sort_order").notNull().default(0)},t=>[index("product_option_values_option_idx").on(t.optionId)]);
+export const productVariants=sqliteTable("product_variants",{id:integer("id").primaryKey({autoIncrement:true}),productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),sku:text("sku"),priceAgorot:integer("price_agorot"),wholesalePriceAgorot:integer("wholesale_price_agorot"),purchasePriceAgorot:integer("purchase_price_agorot"),stockQuantity:integer("stock_quantity").notNull().default(0),active:integer("active",{mode:"boolean"}).notNull().default(true),...timestamps},t=>[uniqueIndex("product_variants_sku_unique").on(t.sku),index("product_variants_product_idx").on(t.productId)]);
+export const variantOptionValues=sqliteTable("variant_option_values",{variantId:integer("variant_id").notNull().references(()=>productVariants.id,{onDelete:"cascade"}),optionValueId:integer("option_value_id").notNull().references(()=>productOptionValues.id,{onDelete:"cascade"})},t=>[primaryKey({columns:[t.variantId,t.optionValueId]})]);
+export const productMedia=sqliteTable("product_media",{id:integer("id").primaryKey({autoIncrement:true}),productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),variantId:integer("variant_id").references(()=>productVariants.id,{onDelete:"cascade"}),mediaType:text("media_type",{enum:["image","video"]}).notNull().default("image"),url:text("url").notNull(),altText:text("alt_text"),sortOrder:integer("sort_order").notNull().default(0),isPrimary:integer("is_primary",{mode:"boolean"}).notNull().default(false),...timestamps},t=>[index("product_media_product_idx").on(t.productId),index("product_media_variant_idx").on(t.variantId)]);
+export const sliders=sqliteTable("sliders",{id:integer("id").primaryKey({autoIncrement:true}),title:text("title"),imageUrl:text("image_url").notNull(),productId:integer("product_id").references(()=>products.id,{onDelete:"set null"}),categoryId:integer("category_id").references(()=>categories.id,{onDelete:"set null"}),externalUrl:text("external_url"),sortOrder:integer("sort_order").notNull().default(0),active:integer("active",{mode:"boolean"}).notNull().default(true),...timestamps});
+export const popups=sqliteTable("popups",{id:integer("id").primaryKey({autoIncrement:true}),title:text("title"),body:text("body"),imageUrl:text("image_url"),targetUrl:text("target_url"),active:integer("active",{mode:"boolean"}).notNull().default(false),startsAt:integer("starts_at",{mode:"timestamp_ms"}),endsAt:integer("ends_at",{mode:"timestamp_ms"}),...timestamps});
+export const policies=sqliteTable("policies",{id:integer("id").primaryKey({autoIncrement:true}),slug:text("slug").notNull(),title:text("title").notNull(),body:text("body").notNull(),active:integer("active",{mode:"boolean"}).notNull().default(true),sortOrder:integer("sort_order").notNull().default(0),...timestamps},t=>[uniqueIndex("policies_slug_unique").on(t.slug)]);
+export const shippingZones=sqliteTable("shipping_zones",{id:integer("id").primaryKey({autoIncrement:true}),name:text("name").notNull(),priceAgorot:integer("price_agorot").notNull(),active:integer("active",{mode:"boolean"}).notNull().default(true),sortOrder:integer("sort_order").notNull().default(0),...timestamps});
+export const orders=sqliteTable("orders",{id:integer("id").primaryKey({autoIncrement:true}),orderNumber:integer("order_number").notNull(),customerId:integer("customer_id").references(()=>users.id,{onDelete:"set null"}),status:text("status",{enum:["draft","new","confirmed","preparing","shipped","delivered","cancelled"]}).notNull().default("draft"),customerName:text("customer_name"),phone:text("phone"),address:text("address"),city:text("city"),shippingZoneId:integer("shipping_zone_id").references(()=>shippingZones.id,{onDelete:"set null"}),subtotalAgorot:integer("subtotal_agorot").notNull().default(0),shippingAgorot:integer("shipping_agorot").notNull().default(0),discountAgorot:integer("discount_agorot").notNull().default(0),totalAgorot:integer("total_agorot").notNull().default(0),paymentMethod:text("payment_method",{enum:["cash_on_delivery","electronic"]}).notNull().default("cash_on_delivery"),paymentStatus:text("payment_status",{enum:["pending","paid","failed","refunded"]}).notNull().default("pending"),notes:text("notes"),deletedAt:integer("deleted_at",{mode:"timestamp_ms"}),...timestamps},t=>[uniqueIndex("orders_number_unique").on(t.orderNumber),index("orders_customer_idx").on(t.customerId),index("orders_status_idx").on(t.status)]);
+export const orderItems=sqliteTable("order_items",{id:integer("id").primaryKey({autoIncrement:true}),orderId:integer("order_id").notNull().references(()=>orders.id,{onDelete:"cascade"}),productId:integer("product_id").references(()=>products.id,{onDelete:"set null"}),variantId:integer("variant_id").references(()=>productVariants.id,{onDelete:"set null"}),itemNumber:integer("item_number"),productName:text("product_name").notNull(),variantLabel:text("variant_label"),quantity:integer("quantity").notNull(),unitPriceAgorot:integer("unit_price_agorot").notNull(),lineTotalAgorot:integer("line_total_agorot").notNull(),notes:text("notes")},t=>[index("order_items_order_idx").on(t.orderId)]);
+export const wishlists=sqliteTable("wishlists",{userId:integer("user_id").notNull().references(()=>users.id,{onDelete:"cascade"}),productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),createdAt:integer("created_at",{mode:"timestamp_ms"}).notNull().$defaultFn(()=>new Date())},t=>[primaryKey({columns:[t.userId,t.productId]})]);
+export const reviews=sqliteTable("reviews",{id:integer("id").primaryKey({autoIncrement:true}),productId:integer("product_id").notNull().references(()=>products.id,{onDelete:"cascade"}),userId:integer("user_id").references(()=>users.id,{onDelete:"set null"}),rating:integer("rating").notNull(),comment:text("comment"),approved:integer("approved",{mode:"boolean"}).notNull().default(false),...timestamps},t=>[index("reviews_product_idx").on(t.productId)]);
