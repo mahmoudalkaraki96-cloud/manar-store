@@ -19,7 +19,7 @@
     {
       "binding": "DB",
       "database_name": "rokon-store-db",
-      "database_id": "REPLACE_WITH_ROKON_D1_DATABASE_ID",
+      "database_id": "a5c50923-c7ec-4ede-95b3-d19b93914902",
       "migrations_dir": "./drizzle"
     }
   ],
