@@ -4,20 +4,27 @@ import type {CatalogResponse} from "../catalog-types";
 import {defaultSettings,type Slide,type StoreSettings} from "../storefront-types";
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
-const homeToggles=[
- ["showOffers","العروض"],["showFeatured","المنتجات المميزة"],["showNewest","مضاف حديثاً"],
- ["showMostOrdered","الأكثر طلباً"],["showTopRated","الأعلى تقييماً"],
+const homeToggles=[["showOffers","العروض"],["showFeatured","المنتجات المميزة"],["showNewest","مضاف حديثاً"],["showMostOrdered","الأكثر طلباً"],["showTopRated","الأعلى تقييماً"]] as const;
+const watermarkPositions=[
+ ["top-left","أعلى يسار"],["top-center","أعلى وسط"],["top-right","أعلى يمين"],
+ ["center-left","وسط يسار"],["center","الوسط"],["center-right","وسط يمين"],
+ ["bottom-left","أسفل يسار"],["bottom-center","أسفل وسط"],["bottom-right","أسفل يمين"],
 ] as const;
+type WatermarkPosition=typeof watermarkPositions[number][0];
+function parseWatermark(value:string){const [base,fragment=""]=value.split("#wm=");const [enabledRaw="1",positionRaw="bottom-right",sizeRaw="24"]=fragment.split(",");const position=watermarkPositions.some(([key])=>key===positionRaw)?positionRaw as WatermarkPosition:"bottom-right";return {base,enabled:enabledRaw!=="0",position,size:Math.min(60,Math.max(8,Number(sizeRaw)||24))}}
+function buildWatermark(base:string,enabled:boolean,position:WatermarkPosition,size:number){return `${base}#wm=${enabled?1:0},${position},${Math.min(60,Math.max(8,size))}`}
 
 export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogResponse;section:"settings"|"slider";upload:(file:File)=>Promise<string>}){
  const [settings,setSettings]=useState<StoreSettings>(defaultSettings),[slides,setSlides]=useState<Slide[]>([]),[busy,setBusy]=useState(false),[message,setMessage]=useState("");
+ const watermark=parseWatermark(settings.watermarkUrl||"");
  const refresh=async()=>{const r=await fetch("/api/admin/storefront",{cache:"no-store"}),d=await r.json();setSettings({...defaultSettings,...d.settings});setSlides(d.sliders)};
  useEffect(()=>{void refresh()},[]);
  const send=async(path:string,method:string,body?:unknown)=>{const r=await fetch(path,{method,headers:{"content-type":"application/json"},body:body?JSON.stringify(body):undefined}),d=await r.json();if(!r.ok)throw new Error(d.error||"فشلت العملية")};
- const media=async(file:File,field:"logoUrl"|"watermarkUrl",slideIndex?:number)=>{setBusy(true);try{const url=await upload(file);if(slideIndex==null)setSettings(s=>({...s,[field]:url}));else setSlides(s=>s.map((x,i)=>i===slideIndex?{...x,imageUrl:url}:x))}catch(e){setMessage(e instanceof Error?e.message:"فشل الرفع")}finally{setBusy(false)}};
+ const media=async(file:File,field:"logoUrl"|"watermarkUrl",slideIndex?:number)=>{setBusy(true);try{const url=await upload(file);if(slideIndex==null)setSettings(s=>{if(field!=="watermarkUrl")return {...s,[field]:url};const current=parseWatermark(s.watermarkUrl||"");return {...s,watermarkUrl:buildWatermark(url,current.enabled,current.position,current.size)}});else setSlides(s=>s.map((x,i)=>i===slideIndex?{...x,imageUrl:url}:x))}catch(e){setMessage(e instanceof Error?e.message:"فشل الرفع")}finally{setBusy(false)}};
  const saveSettings=async()=>{setBusy(true);try{await send("/api/admin/settings","PUT",settings);window.dispatchEvent(new CustomEvent<StoreSettings>("store-settings-updated",{detail:settings}));setMessage("تم حفظ الإعدادات وتطبيق هوية المتجر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const saveSlides=async()=>{setBusy(true);try{for(const slide of slides)await send(slide.id?`/api/admin/sliders/${slide.id}`:"/api/admin/sliders",slide.id?"PUT":"POST",slide);await refresh();setMessage("تم حفظ السلايدر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const update=(i:number,p:Partial<Slide>)=>setSlides(s=>s.map((x,n)=>n===i?{...x,...p}:x));
+ const setWatermark=(patch:Partial<{enabled:boolean;position:WatermarkPosition;size:number}>)=>setSettings(s=>{const current=parseWatermark(s.watermarkUrl||"");return {...s,watermarkUrl:buildWatermark(current.base,patch.enabled??current.enabled,patch.position??current.position,patch.size??current.size)}});
 
  if(section==="settings")return <div className="dataPanel settingsPanel"><h3>هوية المتجر وروابطه</h3>{message&&<p className="adminMessage">{message}</p>}<div className="settingsGrid">
   <label>اسم المتجر<input value={settings.storeName} onChange={e=>setSettings({...settings,storeName:e.target.value})}/></label>
@@ -25,8 +32,14 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
   <label>اللون الرئيسي<input type="color" value={settings.primaryColor} onChange={e=>setSettings({...settings,primaryColor:e.target.value})}/></label>
   <label>اللون الثانوي<input type="color" value={settings.secondaryColor} onChange={e=>setSettings({...settings,secondaryColor:e.target.value})}/></label>
   <label className="mediaUploadCard">شعار المتجر<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&void media(e.target.files[0],"logoUrl")}/>{settings.logoUrl&&<img src={settings.logoUrl} alt=""/>}</label>
-  <label className="mediaUploadCard">شعار العلامة المائية<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&void media(e.target.files[0],"watermarkUrl")}/>{settings.watermarkUrl&&<img src={settings.watermarkUrl} alt=""/>}</label>
-  <label className="watermarkOpacityControl">شفافية العلامة المائية <b>{settings.watermarkOpacity}%</b><input type="range" min="0" max="100" step="1" value={settings.watermarkOpacity} onChange={e=>setSettings({...settings,watermarkOpacity:Number(e.target.value)})}/><span className="watermarkPreview">{settings.watermarkUrl?<img src={settings.watermarkUrl} alt="معاينة العلامة المائية" style={{opacity:settings.watermarkOpacity/100}}/>:<small>ارفع شعار العلامة المائية لعرض المعاينة</small>}</span></label>
+  <label className="mediaUploadCard">شعار العلامة المائية<input type="file" accept="image/*" onChange={e=>e.target.files?.[0]&&void media(e.target.files[0],"watermarkUrl")}/>{watermark.base&&<img src={watermark.base} alt=""/>}<small>إذا لم ترفع شعاراً خاصاً، يُستخدم شعار المتجر.</small></label>
+  <div className="watermarkSettingsCard">
+   <div className="watermarkSettingHead"><div><b>إعدادات العلامة المائية</b><small>تحكم بالمكان والحجم والشفافية.</small></div><label className="watermarkSwitch"><input type="checkbox" checked={watermark.enabled} onChange={e=>setWatermark({enabled:e.target.checked})}/><span>{watermark.enabled?"مفعلة":"متوقفة"}</span></label></div>
+   <label className="watermarkOpacityControl">الشفافية <b>{settings.watermarkOpacity}%</b><input type="range" min="0" max="100" step="1" value={settings.watermarkOpacity} onChange={e=>setSettings({...settings,watermarkOpacity:Number(e.target.value)})}/></label>
+   <label className="watermarkOpacityControl">الحجم <b>{watermark.size}%</b><input type="range" min="8" max="60" step="1" value={watermark.size} onChange={e=>setWatermark({size:Number(e.target.value)})}/></label>
+   <div className="watermarkPositionControl"><b>مكان العلامة على الصورة</b><div className="watermarkPositionGrid">{watermarkPositions.map(([key,label])=><button type="button" key={key} className={watermark.position===key?"active":""} title={label} aria-label={label} onClick={()=>setWatermark({position:key})}><span>•</span></button>)}</div><small>{watermarkPositions.find(([key])=>key===watermark.position)?.[1]}</small></div>
+   <div className="watermarkLivePreview"><span>معاينة</span><div>{(watermark.base||settings.logoUrl)&&watermark.enabled?<img className={`previewWatermark preview-${watermark.position}`} src={watermark.base||settings.logoUrl} alt="" style={{opacity:settings.watermarkOpacity/100,width:`${watermark.size}%`}}/>:<small>العلامة المائية غير مفعلة</small>}</div></div>
+  </div>
   {([['whatsapp','whatsappEnabled','واتساب'],['facebookUrl','facebookEnabled','فيسبوك'],['instagramUrl','instagramEnabled','إنستغرام'],['tiktokUrl','tiktokEnabled','تيك توك']] as const).map(([key,enabled,label])=><label key={key}>{label}<span className="inlineSetting"><input value={settings[key]} onChange={e=>setSettings({...settings,[key]:e.target.value})} placeholder={key==='whatsapp'?'97059...':'https://...'}/><input type="checkbox" checked={settings[enabled]} onChange={e=>setSettings({...settings,[enabled]:e.target.checked})}/></span></label>)}
   <label className="settingsToggle"><span>إظهار الأصناف التي نفدت كميتها</span><input type="checkbox" checked={settings.showOutOfStock} onChange={e=>setSettings({...settings,showOutOfStock:e.target.checked})}/></label>
   <label className="settingsToggle"><span>إظهار منتجات الأقسام الفرعية داخل القسم الرئيسي</span><input type="checkbox" checked={settings.showSubcategoryProductsInParent} onChange={e=>setSettings({...settings,showSubcategoryProductsInParent:e.target.checked})}/></label>
