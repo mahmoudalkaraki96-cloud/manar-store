@@ -15,12 +15,12 @@ export function parseWatermark(value:string):WatermarkConfig{
   const parts=fragment.split(",");
   const enabled=parts[0]!=="0";
   if(parts[1]==="xy"){
-    return {base,enabled,x:clamp(Number(parts[2])||90,4,96),y:clamp(Number(parts[3])||90,4,96),size:clamp(Number(parts[4])||24,8,60)};
+    return {base,enabled,x:clamp(Number(parts[2])||90,2,98),y:clamp(Number(parts[3])||90,2,98),size:clamp(Number(parts[4])||24,2,60)};
   }
   const [x,y]=legacyPositions[parts[1]||"bottom-right"]||legacyPositions["bottom-right"];
-  return {base,enabled,x,y,size:clamp(Number(parts[2])||24,8,60)};
+  return {base,enabled,x,y,size:clamp(Number(parts[2])||24,2,60)};
 }
 
 export function buildWatermark(base:string,config:Pick<WatermarkConfig,"enabled"|"x"|"y"|"size">){
-  return `${base}#wm=${config.enabled?1:0},xy,${Math.round(clamp(config.x,4,96)*10)/10},${Math.round(clamp(config.y,4,96)*10)/10},${Math.round(clamp(config.size,8,60)*10)/10}`;
+  return `${base}#wm=${config.enabled?1:0},xy,${Math.round(clamp(config.x,2,98)*10)/10},${Math.round(clamp(config.y,2,98)*10)/10},${Math.round(clamp(config.size,2,60)*10)/10}`;
 }
