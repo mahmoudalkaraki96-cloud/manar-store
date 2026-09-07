@@ -1,4 +1,4 @@
-.logoWatermark{position:absolute!important;height:auto!important;max-height:42%!important;object-fit:contain!important;z-index:6!important;padding:0!important;background:transparent!important;pointer-events:none!important;transform:none!important;max-width:60%!important}
+.logoWatermark{position:absolute!important;width:var(--wm-size,24%)!important;height:auto!important;max-height:42%!important;object-fit:contain!important;z-index:6!important;padding:0!important;background:transparent!important;pointer-events:none!important;transform:none!important;max-width:60%!important}
 .logoWatermark.wm-top-left{top:10px!important;left:10px!important;right:auto!important;bottom:auto!important}
 .logoWatermark.wm-top-center{top:10px!important;left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important}
 .logoWatermark.wm-top-right{top:10px!important;right:10px!important;left:auto!important;bottom:auto!important}
