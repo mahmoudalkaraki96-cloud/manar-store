@@ -49,3 +49,23 @@ INSERT OR IGNORE INTO store_settings (
   CAST(strftime('%s','now') AS INTEGER) * 1000,
   CAST(strftime('%s','now') AS INTEGER) * 1000
 );
+
+CREATE TABLE IF NOT EXISTS store_maintenance (
+  key TEXT PRIMARY KEY,
+  applied_at INTEGER NOT NULL
+);
+
+UPDATE products
+SET stock_quantity = 100
+WHERE NOT EXISTS (
+  SELECT 1 FROM store_maintenance WHERE key = 'rokon_stock_reset_100_20260910'
+);
+
+UPDATE product_variants
+SET stock_quantity = 100
+WHERE NOT EXISTS (
+  SELECT 1 FROM store_maintenance WHERE key = 'rokon_stock_reset_100_20260910'
+);
+
+INSERT OR IGNORE INTO store_maintenance (key, applied_at)
+VALUES ('rokon_stock_reset_100_20260910', CAST(strftime('%s','now') AS INTEGER) * 1000);
