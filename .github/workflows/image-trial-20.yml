@@ -1,9 +1,9 @@
 name: Temporary 20-image AI trial
 
 on:
-  push:
+  pull_request:
     branches:
-      - codex/image-trial-20
+      - main
     paths:
       - .github/workflows/image-trial-20.yml
 
