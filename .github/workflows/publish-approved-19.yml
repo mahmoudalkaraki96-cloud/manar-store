@@ -1,0 +1,39 @@
+name: Publish approved 19 images
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-approved-19.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify and publish approved images
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/publish_trial19.py
+      - name: Save original links and results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-19-publish-record
+          path: publish-trial19-results/*.json
+          if-no-files-found: warn
+          retention-days: 30
