@@ -64,7 +64,7 @@ def main():
     plan = []
     for product_id, name, source_url, image in candidates:
         row = by_url[source_url]
-        if row["name"] != name or row["is_primary"] != 1 or row["variant_id"] is not None:
+        if row["product_id"] != int(product_id) or row["is_primary"] != 1 or row["variant_id"] is not None:
             raise RuntimeError(f"Unexpected product/media mapping for {product_id}: {row}")
         key = f"edited/2026-09-19/trial19/product-{product_id}.webp"
         plan.append({"trial_id": product_id, "name": name, "product_id": row["product_id"], "media_id": row["media_id"], "old_url": source_url, "new_url": "/media/" + key, "r2_key": key, "bytes": len(image)})
