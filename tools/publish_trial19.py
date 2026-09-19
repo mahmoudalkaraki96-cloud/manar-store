@@ -1,14 +1,9 @@
 """Publish the approved 19-image trial without overwriting original R2 objects."""
-import io
 import json
-import os
 import subprocess
 import urllib.request
-import zipfile
 from pathlib import Path
 
-ARTIFACT = 10488428836
-REPOSITORY = "mahmoudalkaraki96-cloud/manar-store"
 ORIGIN = "https://manar-store.mahmoud-alkaraki96.workers.dev"
 DB = "manar-store-db"
 BUCKET = "manar-store-media"
@@ -36,13 +31,8 @@ def quote(value):
 
 
 def main():
-    req = urllib.request.Request(
-        f"https://api.github.com/repos/{REPOSITORY}/actions/artifacts/{ARTIFACT}/zip",
-        headers={"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}", "Accept": "application/vnd.github+json"},
-    )
-    with urllib.request.urlopen(req, timeout=90) as response:
-        archive = zipfile.ZipFile(io.BytesIO(response.read()))
-    manifest = json.loads(archive.read("manifest.json"))
+    archive = Path("image-trial-results")
+    manifest = json.loads((archive / "manifest.json").read_text())
     approved = [item for item in manifest if item["status"] == "ok"]
     if len(approved) != 19 or len({x["id"] for x in approved}) != 19:
         raise RuntimeError("Expected exactly 19 distinct successful trial images")
@@ -50,11 +40,9 @@ def main():
     candidates = []
     for item in approved:
         product_id = item["id"]
-        image = archive.read(f"edited/product-{product_id}.webp")
+        image = (archive / f"edited/product-{product_id}.webp").read_bytes()
         if not image.startswith(b"RIFF") or image[8:12] != b"WEBP" or len(image) < 10000:
             raise RuntimeError(f"Invalid WebP file for {product_id}")
-        original = next(x for x in archive.namelist() if x.startswith(f"originals/{product_id}."))
-        source_url = f"/media/imports/dofesh-{1226-int(product_id)}{Path(original).suffix}"
         # The trial used explicit source paths. Confirm against that list instead of inferring numbering.
         sources = {
             "1221":"dofesh-5.jpeg", "1219":"dofesh-8.jpg", "1214":"dofesh-14.jpeg",
