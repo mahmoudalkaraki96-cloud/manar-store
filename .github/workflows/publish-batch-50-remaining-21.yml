@@ -1,0 +1,44 @@
+name: Publish remaining 21 images from first batch
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-batch-50-remaining-21.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: manar-store-batch-50-1
+          run-id: 35425587810
+          github-token: ${{ github.token }}
+          path: batch-50-results
+      - name: Publish 21 owner-approved images and verify backups
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/publish_batch_50_remaining_21.py
+      - name: Save original link mapping
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manar-store-batch50-remaining21-backup
+          path: batch-50-publish-record/backup.json
+          if-no-files-found: warn
+          retention-days: 30
