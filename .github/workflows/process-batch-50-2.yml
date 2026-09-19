@@ -1,0 +1,39 @@
+name: Process product image batch 50 part 2
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/process-batch-50-2.yml
+
+permissions:
+  contents: read
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'openai>=1.108.0'
+      - name: Generate second batch of 50
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/process_batch_50_2.py
+      - name: Save results for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manar-store-batch-50-2
+          path: batch-50-2-results/
+          if-no-files-found: warn
+          retention-days: 14
