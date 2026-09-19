@@ -1,10 +1,9 @@
 """Publish the approved 19-image trial without overwriting original R2 objects."""
 import json
+import hashlib
 import subprocess
-import urllib.request
 from pathlib import Path
 
-ORIGIN = "https://manar-store.mahmoud-alkaraki96.workers.dev"
 DB = "manar-store-db"
 BUCKET = "manar-store-media"
 ROOT = Path("publish-trial19-results")
@@ -56,18 +55,19 @@ def main():
         source_url = "/media/imports/" + sources[product_id]
         candidates.append((product_id, item["name"], source_url, image))
 
-    sql = "SELECT p.id AS product_id,p.item_number,p.name,m.id AS media_id,m.url,m.is_primary,m.variant_id FROM product_media m JOIN products p ON p.id=m.product_id WHERE m.url IN (" + ",".join(quote(x[2]) for x in candidates) + ") ORDER BY p.id,m.id"
+    acceptable_urls = [x[2] for x in candidates] + [f"/media/edited/2026-09-19/trial19/product-{x[0]}.webp" for x in candidates]
+    sql = "SELECT p.id AS product_id,p.item_number,p.name,m.id AS media_id,m.url,m.is_primary,m.variant_id FROM product_media m JOIN products p ON p.id=m.product_id WHERE m.url IN (" + ",".join(quote(x) for x in acceptable_urls) + ") ORDER BY p.id,m.id"
     rows = query(sql)["results"]
-    if len(rows) != 19 or len({x["media_id"] for x in rows}) != 19:
+    if len(rows) != 19 or len({x["media_id"] for x in rows}) != 19 or len({x["product_id"] for x in rows}) != 19:
         raise RuntimeError(f"Expected 19 unique matching media rows; got {len(rows)}")
-    by_url = {x["url"]: x for x in rows}
+    by_product = {x["product_id"]: x for x in rows}
     plan = []
     for product_id, name, source_url, image in candidates:
-        row = by_url[source_url]
-        if row["product_id"] != int(product_id) or row["is_primary"] != 1 or row["variant_id"] is not None:
-            raise RuntimeError(f"Unexpected product/media mapping for {product_id}: {row}")
+        row = by_product[int(product_id)]
         key = f"edited/2026-09-19/trial19/product-{product_id}.webp"
-        plan.append({"trial_id": product_id, "name": name, "product_id": row["product_id"], "media_id": row["media_id"], "old_url": source_url, "new_url": "/media/" + key, "r2_key": key, "bytes": len(image)})
+        if row["url"] not in (source_url, "/media/" + key) or row["is_primary"] != 1 or row["variant_id"] is not None:
+            raise RuntimeError(f"Unexpected product/media mapping for {product_id}: {row}")
+        plan.append({"trial_id": product_id, "name": name, "product_id": row["product_id"], "media_id": row["media_id"], "old_url": source_url, "current_url": row["url"], "new_url": "/media/" + key, "r2_key": key, "bytes": len(image)})
     (ROOT / "original-links.json").write_text(json.dumps(plan, ensure_ascii=False, indent=2))
     print("Preflight verified 19 unique primary media rows; original links backed up.", flush=True)
 
@@ -75,14 +75,17 @@ def main():
         file = ROOT / f"product-{record['trial_id']}.webp"
         file.write_bytes(image)
         wrangler("r2", "object", "put", f"{BUCKET}/{record['r2_key']}", "--file", str(file), "--content-type", "image/webp", "--remote", "--config", "wrangler.jsonc")
-        with urllib.request.urlopen(ORIGIN + record["new_url"] + "?verify=20260919", timeout=45) as response:
-            head = response.read(12)
-            if response.status != 200 or head[8:12] != b"WEBP":
-                raise RuntimeError(f"Uploaded file not served correctly: {record['new_url']}")
+        downloaded = ROOT / f"verify-{record['trial_id']}.webp"
+        wrangler("r2", "object", "get", f"{BUCKET}/{record['r2_key']}", "--file", str(downloaded), "--remote", "--config", "wrangler.jsonc")
+        if hashlib.sha256(downloaded.read_bytes()).digest() != hashlib.sha256(image).digest():
+            raise RuntimeError(f"Uploaded R2 object does not match image {record['trial_id']}")
         print(f"Uploaded and verified {record['trial_id']}", flush=True)
 
     # Conditional updates make reruns safe and refuse to overwrite later manual edits.
     for record in plan:
+        if record["current_url"] == record["new_url"]:
+            print(f"Already linked product {record['trial_id']}", flush=True)
+            continue
         statement = ("UPDATE product_media SET url=" + quote(record["new_url"]) +
                      ",updated_at=CAST(strftime('%s','now') AS INTEGER)*1000 WHERE id=" +
                      str(record["media_id"]) + " AND product_id=" + str(record["product_id"]) +
