@@ -25,7 +25,7 @@ STYLES = [
     "soft beige limewash wall and matte sand-colored stone surface",
     "warm ivory microcement wall and pale natural stone tabletop",
     "subtle cream arched studio backdrop and light beige textured surface",
-    "warm neutral boutique wall and refined matte limestone surface",
+    "warm neutral boutique wall with a refined matte limestone surface",
 ]
 RISK_WORDS = ("مصحف", "مطبوع", "كتابة", "تراث", "كوفية", "مقسم", "تعليقة", "شفاف", "اكريلك")
 
@@ -81,10 +81,10 @@ def original(row):
 def generate(client, row, path, index):
     prompt = f"""Edit this original product photo into a polished premium ecommerce photograph.
 Product: {row['name']}.
-Scene: a {STYLES[index % len(STYLES)]}. Backgrounds share a warm beige premium identity but are not identical.
-Composition: vertical, entire product clearly visible and large, filling 82–90% of the frame, centered with minimal margins. Natural studio lighting, realistic shadows and transparent materials.
-Critical: preserve the actual product exactly: shape, count, proportions, colors, materials, patterns, package design, and all writing, letters, numbers, labels, logos and decoration on the product. Do not invent components or change writing.
-Remove only hands, unrelated clutter, external seller watermarks and external product number overlays. No extra text, branding, props, people or products. Do not crop the product."""
+Scene: a {STYLES[index % len(STYLES)]}. Backgrounds across the catalog should share a warm beige premium identity but not be identical.
+Composition: vertical, entire product clearly visible and large, filling roughly 82–90% of usable frame, centered with minimal safe margins. Use natural studio lighting and realistic shadows, reflections and transparent material behavior.
+Critical: preserve the actual product exactly: shape, count, proportions, colors, materials, patterns, package design and all writing, letters, numbers, labels, logos and decoration on the product. Do not invent components or change writing.
+Remove only hands, arms, unrelated room clutter, external seller watermarks and external product number overlays. No additional text, branding, props, people or products. Do not crop the product."""
     with path.open("rb") as file:
         response = client.images.edit(model=MODEL, image=file, prompt=prompt, size="1024x1536", quality="medium", output_format="webp")
     data = base64.b64decode(response.data[0].b64_json)
