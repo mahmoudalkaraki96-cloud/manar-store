@@ -1,0 +1,55 @@
+name: Process store product images
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_count:
+        description: Number of original product images to process this run (1–500)
+        required: true
+        default: '50'
+        type: string
+      dry_run:
+        description: Preview product selection only, without API calls or image uploads
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manar-store-image-processing
+  cancel-in-progress: false
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'openai>=1.108.0,<3'
+      - name: Generate, upload, and record images
+        env:
+          IMAGE_COUNT: ${{ inputs.image_count }}
+          IMAGE_DRY_RUN: ${{ inputs.dry_run }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/auto_catalog_images.py
+      - name: Save review report and original links
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: manar-store-image-report-${{ github.run_id }}
+          path: |
+            image-batch-report/report.html
+            image-batch-report/results.json
+            image-batch-report/backup-*.json
+          if-no-files-found: warn
+          retention-days: 30
