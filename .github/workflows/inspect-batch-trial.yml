@@ -1,0 +1,37 @@
+name: Inspect first Batch API trial
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/inspect-batch-trial.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --disable-pip-version-check 'openai>=2.15.0,<3'
+      - name: Read completed Batch result
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from openai import OpenAI
+          client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+          batch = client.batches.retrieve("batch_6ab0c8b57b8c8190ac9242b698fef7aa")
+          print(json.dumps(batch.model_dump(), indent=2, default=str))
+          for label, file_id in (("output", batch.output_file_id), ("errors", batch.error_file_id)):
+              if not file_id:
+                  continue
+              response = client.files.content(file_id)
+              data = response.read() if hasattr(response, "read") else response.content
+              print(f"--- {label} file ---")
+              print(data.decode("utf-8"))
+          PY
