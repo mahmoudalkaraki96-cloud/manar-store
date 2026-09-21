@@ -62,26 +62,48 @@ def file_bytes(client, file_id):
 
 
 def report(batch_id, items):
+    pending_items = [item for item in items if item.get("status") == "pending_review" and item.get("generated_url")]
+    pending_numbers = ",".join(str(item["item_number"]) for item in pending_items)
+    published_count = sum(1 for item in items if item.get("status") == "published")
+    failed_count = sum(1 for item in items if item.get("status") == "failed")
     sections = []
     for item in items:
         old = SITE + item["original_url"]
         new = SITE + item["generated_url"] if item.get("generated_url") else ""
         new_html = f'<a href="{html.escape(new, quote=True)}"><img src="{html.escape(new, quote=True)}"></a>' if new else f'<p>{html.escape(item.get("error") or "لا توجد نتيجة")}</p>'
+        selector = (
+            f'<label class="reviewSelect"><input class="reviewChoice" type="checkbox" value="{item["item_number"]}" checked> اختيار هذا المنتج للنشر</label>'
+            if item.get("status") == "pending_review" and new else ""
+        )
         sections.append(
             f'<section><h2>رقم المنتج {item["item_number"]} · {html.escape(item["product_name"])}</h2>'
-            f'<p class="status">الحالة: {html.escape(item["status"])}</p><div class="pair">'
+            f'<p class="status">الحالة: {html.escape(item["status"])}</p>{selector}<div class="pair">'
             f'<div><b>القديمة</b><a href="{html.escape(old, quote=True)}"><img src="{html.escape(old, quote=True)}"></a></div>'
             f'<div><b>الجديدة</b>{new_html}</div></div></section>'
         )
+    review_box = (
+        f'<div class="reviewBox"><h2>صور تحتاج مراجعتك: {len(pending_items)}</h2>'
+        f'<p>راجع الصور، أزل الاختيار عن أي صورة لا تريد نشرها، ثم انسخ أرقام المنتجات المحددة.</p>'
+        f'<textarea id="pendingNumbers" readonly>{pending_numbers}</textarea>'
+        f'<div class="reviewActions"><button type="button" onclick="copyAll()">نسخ جميع الأرقام</button>'
+        f'<button type="button" onclick="copySelected()">نسخ أرقام المحدد فقط</button></div>'
+        f'<strong id="copyMessage"></strong></div>'
+        if pending_items else '<div class="reviewBox"><h2>لا توجد صور معلقة للمراجعة</h2></div>'
+    )
     page = f'''<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تقرير Batch {html.escape(batch_id)}</title><style>body{{font:16px system-ui;max-width:1200px;margin:auto;padding:20px;background:#f5f2ed}}section{{background:white;padding:16px;margin:18px 0;border-radius:12px}}.pair{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}img{{width:100%;height:430px;object-fit:contain;background:#eee}}.status{{font-weight:700}}@media(max-width:650px){{.pair{{grid-template-columns:1fr}}img{{height:280px}}}}</style>
-<h1>تقرير معالجة صور المنتجات</h1><p>الصور التي تحتاج مراجعة محفوظة وجاهزة للنشر دون إعادة معالجة أو تكلفة API جديدة.</p>{''.join(sections)}</html>'''
+<title>تقرير Batch {html.escape(batch_id)}</title><style>body{{font:16px system-ui;max-width:1200px;margin:auto;padding:20px;background:#f5f2ed}}section,.reviewBox{{background:white;padding:16px;margin:18px 0;border-radius:12px}}.summary{{display:flex;gap:10px;flex-wrap:wrap}}.summary b{{background:#eee8df;border-radius:20px;padding:8px 13px}}.pair{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}img{{width:100%;height:430px;object-fit:contain;background:#eee}}.status{{font-weight:700}}.reviewBox{{border:2px solid #b85f7d}}.reviewBox textarea{{direction:ltr;width:100%;min-height:90px;padding:12px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}}.reviewActions{{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}}.reviewActions button{{cursor:pointer;background:#b85f7d;color:white;border:0;border-radius:8px;padding:11px 16px;font-weight:700}}.reviewSelect{{display:flex;align-items:center;gap:8px;background:#fff4f8;border-radius:8px;padding:10px;margin:8px 0}}.reviewSelect input{{width:20px;height:20px}}#copyMessage{{display:block;color:#27734b;margin-top:8px}}@media(max-width:650px){{.pair{{grid-template-columns:1fr}}img{{height:280px}}}}</style>
+<h1>تقرير معالجة صور المنتجات</h1><div class="summary"><b>المجموع: {len(items)}</b><b>رُفعت تلقائياً: {published_count}</b><b>تحتاج مراجعة: {len(pending_items)}</b><b>فشلت: {failed_count}</b></div>
+<p>الصور التي تحتاج مراجعة محفوظة وجاهزة للنشر دون إعادة معالجة أو تكلفة API جديدة.</p>{review_box}{''.join(sections)}
+<script>
+function copyValue(value){{const message=document.getElementById('copyMessage');if(!value){{message.textContent='لم تحدد أي منتج';return}}navigator.clipboard.writeText(value).then(()=>message.textContent='تم نسخ الأرقام').catch(()=>{{const box=document.getElementById('pendingNumbers');box.value=value;box.select();document.execCommand('copy');message.textContent='تم نسخ الأرقام'}})}}
+function copyAll(){{copyValue(document.getElementById('pendingNumbers').value)}}
+function copySelected(){{copyValue([...document.querySelectorAll('.reviewChoice:checked')].map(input=>input.value).join(','))}}
+</script></html>'''
     path = ROOT / f"{batch_id}.html"
     path.write_text(page, encoding="utf-8")
     key = f"reports/batch-v2/{batch_id}.html"
     r2_put(key, path, "text/html; charset=utf-8")
     return "/media/" + key
-
 
 def process_batch(client, job):
     batch = client.batches.retrieve(job["openai_batch_id"])
