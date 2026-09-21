@@ -159,3 +159,33 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 /* Safari-safe product gallery and image navigation */
 .productPage>.gallery{min-width:0;overflow:hidden;justify-items:stretch!important}.productPage .mainImage{display:grid;width:100%!important;max-width:430px;justify-self:center;margin:0!important;place-self:start center;overflow:hidden}.productPage .thumbs{width:100%!important;max-width:430px;justify-self:center;margin:10px 0 0;overflow-x:auto;overflow-y:hidden;padding:2px;direction:rtl;-webkit-overflow-scrolling:touch}.productPage .thumbs button{flex:0 0 70px;width:70px;height:82px;background:#fff;overflow:hidden}.productPage .thumbs button.active{outline:2px solid var(--green);border-color:var(--green)}.galleryArrow{position:absolute;top:50%;z-index:12;width:43px;height:43px;padding:0;border:1px solid #ffffffc7;border-radius:50%;background:#fffffff0;color:var(--green);box-shadow:0 4px 16px #3515222e;display:grid;place-items:center;font-size:31px;line-height:1;transform:translateY(-50%);cursor:pointer}.galleryArrowRight{right:12px}.galleryArrowLeft{left:12px}.imageLightbox .galleryArrow{position:absolute}.imageLightbox .galleryArrowRight{right:16px}.imageLightbox .galleryArrowLeft{left:16px}
 @media(max-width:800px){.productPage .mainImage{max-width:390px}.productPage .thumbs{max-width:390px}.galleryArrow{width:38px;height:38px;font-size:27px}.galleryArrowRight{right:8px}.galleryArrowLeft{left:8px}.productPage .thumbs button{flex-basis:60px;width:60px;height:70px}}
+
+
+/* Watermark editor: controls on the right, live preview on the left. */
+.watermarkSettingsCard{display:grid!important;gap:18px!important}
+.watermarkEditorLayout{direction:ltr;display:grid;grid-template-columns:minmax(280px,1fr) minmax(340px,1.05fr);grid-template-areas:"preview controls";align-items:start;gap:24px}
+.watermarkControlsPanel{direction:rtl;grid-area:controls;display:grid;gap:17px;min-width:0}
+.watermarkLivePreview{direction:rtl;grid-area:preview;position:sticky;top:22px;display:grid;gap:10px}
+.watermarkPreviewTitle{display:grid;gap:4px}
+.watermarkPreviewTitle small{color:#7a8580;font-size:11px}
+.watermarkLogoUpload{margin:0!important;min-height:112px}
+.watermarkPositionGrid{direction:ltr!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;gap:8px!important}
+.watermarkPositionGrid button{direction:rtl;height:58px!important;display:grid;place-content:center;gap:0;padding:5px 3px}
+.watermarkPositionGrid button span{font-size:18px!important;line-height:1}
+.watermarkPositionGrid button small{font-size:9px;color:inherit;white-space:nowrap}
+.customWatermarkToggle{border:1px solid #dfe5e2;border-radius:10px;padding:11px 12px;margin:0!important;display:flex!important;align-items:center;justify-content:space-between;gap:12px}
+.customWatermarkToggle>span{display:grid;gap:3px}
+.customWatermarkToggle small{color:#7a8580;font-size:10px}
+.customWatermarkToggle input{width:21px;height:21px}
+.watermarkAxisControls.disabled{opacity:.45}
+.watermarkAxisControls input:disabled{cursor:not-allowed}
+.watermarkSavedValue{background:#f7f2f4;border:1px solid #eadde3;border-radius:9px;padding:10px;color:#6f5862;font-size:11px;font-weight:700}
+.watermarkSaveButton{width:100%}
+.watermarkPreviewFrame{width:min(470px,100%)!important}
+.watermarkPreviewCanvas{cursor:default!important}
+.watermarkPreviewCanvas.customActive{cursor:crosshair!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 18%,transparent),0 8px 24px #0000000d}
+@media (max-width:850px){
+ .watermarkEditorLayout{grid-template-columns:1fr;grid-template-areas:"controls" "preview";gap:18px}
+ .watermarkLivePreview{position:static}
+ .watermarkPreviewFrame{width:min(390px,100%)!important}
+}
