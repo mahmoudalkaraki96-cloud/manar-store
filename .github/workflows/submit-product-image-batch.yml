@@ -1,0 +1,45 @@
+name: Submit product image Batch
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_count:
+        description: Number of unprocessed original images (1-500)
+        required: true
+        default: '100'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manar-store-image-batch-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'openai>=2.15.0,<3'
+      - name: Submit image edits at Batch pricing
+        env:
+          IMAGE_COUNT: ${{ inputs.image_count }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/batch_catalog_images.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: submitted-image-batch-${{ github.run_id }}
+          path: batch-catalog-input.jsonl
+          if-no-files-found: ignore
+          retention-days: 7
