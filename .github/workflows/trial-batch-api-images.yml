@@ -1,0 +1,44 @@
+name: Trial cheaper Batch API on 3 images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/batch_trial_images.py
+      - .github/workflows/trial-batch-api-images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manar-store-batch-api-trial
+  cancel-in-progress: false
+
+jobs:
+  trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'openai>=2.15.0,<3'
+      - name: Submit and collect three Batch image edits
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/batch_trial_images.py
+      - name: Save comparison report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-api-trial-${{ github.run_id }}
+          path: batch-api-trial-report/
+          if-no-files-found: warn
+          retention-days: 30
