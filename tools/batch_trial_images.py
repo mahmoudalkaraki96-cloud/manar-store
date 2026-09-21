@@ -102,7 +102,6 @@ def main():
                 "prompt": prompt(row, index),
                 "size": "1024x1536",
                 "quality": "medium",
-                "input_fidelity": "high",
                 "output_format": "webp",
             },
         })
@@ -134,7 +133,10 @@ def main():
         write_report(items, batch.id, batch.status)
         raise RuntimeError(f"Batch did not complete during this job: {batch.status}")
 
-    output = content_bytes(client, batch.output_file_id).decode("utf-8")
+    result_file_id = batch.output_file_id or batch.error_file_id
+    if not result_file_id:
+        raise RuntimeError("Completed Batch contained neither an output file nor an error file")
+    output = content_bytes(client, result_file_id).decode("utf-8")
     by_id = {item["custom_id"]: item for item in items}
     for line in output.splitlines():
         record = json.loads(line)
