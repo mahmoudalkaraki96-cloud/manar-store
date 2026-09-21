@@ -2,7 +2,7 @@
 import {useEffect,useState,type PointerEvent} from "react";
 import type {CatalogResponse} from "../catalog-types";
 import {defaultSettings,type Slide,type StoreSettings} from "../storefront-types";
-import {buildWatermark,parseWatermark} from "../watermark-config";
+import {parseWatermark} from "../watermark-config";
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
 const homeToggles=[["showOffers","العروض"],["showFeatured","المنتجات المميزة"],["showNewest","مضاف حديثاً"],["showMostOrdered","الأكثر طلباً"],["showTopRated","الأعلى تقييماً"]] as const;
@@ -14,13 +14,14 @@ const watermarkPresets=[
 
 export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogResponse;section:"settings"|"slider";upload:(file:File)=>Promise<string>}){
  const [settings,setSettings]=useState<StoreSettings>(defaultSettings),[slides,setSlides]=useState<Slide[]>([]),[busy,setBusy]=useState(false),[message,setMessage]=useState("");
- const watermark=parseWatermark(settings.watermarkUrl||"");
+ const parsedWatermark=parseWatermark(settings.watermarkUrl||"");
+ const watermark={...parsedWatermark,enabled:settings.watermarkEnabled,x:settings.watermarkX,y:settings.watermarkY,size:settings.watermarkSize};
  const previewProduct=catalog.products.find(product=>Boolean(product.image))?.image||"";
  const refresh=async()=>{const r=await fetch("/api/admin/storefront",{cache:"no-store"}),d=await r.json();setSettings({...defaultSettings,...d.settings});setSlides(d.sliders)};
  useEffect(()=>{void refresh()},[]);
  const send=async(path:string,method:string,body?:unknown)=>{const r=await fetch(path,{method,headers:{"content-type":"application/json"},body:body?JSON.stringify(body):undefined}),d=await r.json();if(!r.ok)throw new Error(d.error||"فشلت العملية")};
- const setWatermark=(patch:Partial<{enabled:boolean;x:number;y:number;size:number}>)=>setSettings(s=>{const current=parseWatermark(s.watermarkUrl||"");const next={...current,...patch};return {...s,watermarkUrl:buildWatermark(current.base,next)}});
- const media=async(file:File,field:"logoUrl"|"watermarkUrl",slideIndex?:number)=>{setBusy(true);try{const url=await upload(file);if(slideIndex==null)setSettings(s=>{if(field!=="watermarkUrl")return {...s,[field]:url};const current=parseWatermark(s.watermarkUrl||"");return {...s,watermarkUrl:buildWatermark(url,current)}});else setSlides(s=>s.map((x,i)=>i===slideIndex?{...x,imageUrl:url}:x))}catch(e){setMessage(e instanceof Error?e.message:"فشل الرفع")}finally{setBusy(false)}};
+ const setWatermark=(patch:Partial<{enabled:boolean;x:number;y:number;size:number}>)=>setSettings(s=>({...s,watermarkEnabled:patch.enabled??s.watermarkEnabled,watermarkX:patch.x??s.watermarkX,watermarkY:patch.y??s.watermarkY,watermarkSize:patch.size??s.watermarkSize}));
+ const media=async(file:File,field:"logoUrl"|"watermarkUrl",slideIndex?:number)=>{setBusy(true);try{const url=await upload(file);if(slideIndex==null)setSettings(s=>({...s,[field]:url}));else setSlides(s=>s.map((x,i)=>i===slideIndex?{...x,imageUrl:url}:x))}catch(e){setMessage(e instanceof Error?e.message:"فشل الرفع")}finally{setBusy(false)}};
  const saveSettings=async()=>{setBusy(true);try{await send("/api/admin/settings","PUT",settings);window.dispatchEvent(new CustomEvent<StoreSettings>("store-settings-updated",{detail:settings}));setMessage("تم حفظ الإعدادات وتطبيق هوية المتجر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const saveSlides=async()=>{setBusy(true);try{for(const slide of slides)await send(slide.id?`/api/admin/sliders/${slide.id}`:"/api/admin/sliders",slide.id?"PUT":"POST",slide);await refresh();setMessage("تم حفظ السلايدر")}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}finally{setBusy(false)}};
  const update=(i:number,p:Partial<Slide>)=>setSlides(s=>s.map((x,n)=>n===i?{...x,...p}:x));
