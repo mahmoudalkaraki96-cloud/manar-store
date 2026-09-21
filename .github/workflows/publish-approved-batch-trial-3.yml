@@ -1,0 +1,61 @@
+name: Publish approved 3-image Batch trial
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-approved-batch-trial-3.yml
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Download approved generated images
+        uses: actions/download-artifact@v4
+        with:
+          name: batch-api-trial-35567109944
+          path: approved-trial
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: 35567109944
+      - name: Upload and connect approved images
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+          WRANGLER="./node_modules/.bin/wrangler"
+          CONFIG="--config wrangler.jsonc"
+          BUCKET="manar-store-media"
+
+          publish_one() {
+            product_id="$1"
+            item_number="$2"
+            media_id="$3"
+            old_url="$4"
+            file="approved-trial/product-${product_id}.webp"
+            key="edited/batch-v1/product-${product_id}-media-${media_id}.webp"
+            new_url="/media/${key}"
+
+            test -s "$file"
+            "$WRANGLER" r2 object put "$BUCKET/$key" --remote --file "$file" --content-type image/webp $CONFIG
+            result=$("$WRANGLER" d1 execute manar-store-db --remote --json $CONFIG --command "UPDATE product_media SET url='${new_url}',updated_at=CAST(strftime('%s','now') AS INTEGER)*1000 WHERE id=${media_id} AND product_id=${product_id} AND url='${old_url}'")
+            changes=$(printf '%s' "$result" | jq -r '.[0].meta.changes')
+            if [ "$changes" != "1" ]; then
+              echo "Refused database update for visible product $item_number: expected exactly one unchanged row, got $changes"
+              exit 1
+            fi
+            echo "Published visible product $item_number (internal product $product_id, media $media_id)"
+          }
+
+          publish_one 1035 2035 1157 "/media/imports/dofesh-335.jpeg"
+          publish_one 1034 2034 1156 "/media/imports/dofesh-336.jpeg"
+          publish_one 1033 2033 1155 "/media/imports/dofesh-337.jpeg"
