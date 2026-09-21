@@ -2,13 +2,13 @@
 import {useState,type CSSProperties} from "react";
 import Link from "next/link";
 import type {Product,Variant} from "../catalog-types";
-import {cachedStoreSettings} from "../storefront-types";
+import {cachedStoreSettings,type StoreSettings} from "../storefront-types";
 import {parseWatermark} from "../watermark-config";
 
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
-export default function ProductCard({p,wholesale=false,watermark="",favorite=false,onFavorite,onAdd}:{p:Product;wholesale?:boolean;watermark?:string;favorite?:boolean;onFavorite?:()=>void;onAdd?:(variant?:Variant)=>void}){
-  const store=cachedStoreSettings(),configured=parseWatermark(store.watermarkUrl||""),watermarkImage=(watermark?parseWatermark(watermark).base:configured.base)||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
+export default function ProductCard({p,wholesale=false,watermark="",settings,favorite=false,onFavorite,onAdd}:{p:Product;wholesale?:boolean;watermark?:string;settings?:StoreSettings;favorite?:boolean;onFavorite?:()=>void;onAdd?:(variant?:Variant)=>void}){
+  const store=settings||cachedStoreSettings(),configured=parseWatermark(store.watermarkUrl||""),watermarkImage=(watermark?parseWatermark(watermark).base:configured.base)||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
   const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${configured.size}%`,left:`${configured.x}%`,top:`${configured.y}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};
   const [variant,setVariant]=useState<Variant|undefined>(()=>p.variants?.find(item=>item.stock>0)||p.variants?.[0]);
   const price=wholesale?(variant?.wholesale??p.wholesale??variant?.price??p.price):(variant?.price??p.price);

@@ -995,7 +995,7 @@ const worker = {
     }
 
     try {
-      const cacheablePublicApi = request.method === "GET" && (url.pathname === "/api/catalog" || url.pathname === "/api/storefront");
+      const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
       if (cacheablePublicApi) {
         const cache = caches.default;
         const cacheKey = new Request(url.toString(), { method: "GET" });
