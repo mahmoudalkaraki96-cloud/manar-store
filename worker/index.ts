@@ -66,7 +66,19 @@ async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare(
 async function ensureHighlightSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_highlights (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,cover_url TEXT NOT NULL,images_json TEXT NOT NULL,sort_order INTEGER NOT NULL DEFAULT 0,active INTEGER NOT NULL DEFAULT 1,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_visibility (id INTEGER PRIMARY KEY CHECK(id=1),enabled INTEGER NOT NULL DEFAULT 1)").run();
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_image_numbers (id INTEGER PRIMARY KEY AUTOINCREMENT,highlight_id INTEGER NOT NULL,url TEXT NOT NULL,UNIQUE(highlight_id,url))").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_image_numbers (id INTEGER PRIMARY KEY AUTOINCREMENT,highlight_id INTEGER NOT NULL,url TEXT NOT NULL,image_number INTEGER,UNIQUE(highlight_id,url))").run();
+  const info=await env.DB.prepare("PRAGMA table_info(highlight_image_numbers)").all<{name:string}>();
+  if(!info.results.some(row=>row.name==="image_number"))await env.DB.prepare("ALTER TABLE highlight_image_numbers ADD COLUMN image_number INTEGER").run();
+  await env.DB.prepare("UPDATE highlight_image_numbers SET image_number=(SELECT COUNT(*) FROM highlight_image_numbers previous WHERE previous.highlight_id=highlight_image_numbers.highlight_id AND previous.id<=highlight_image_numbers.id) WHERE image_number IS NULL").run();
+  const visibilityInfo=await env.DB.prepare("PRAGMA table_info(highlight_visibility)").all<{name:string}>();
+  if(!visibilityInfo.results.some(row=>row.name==="interval_ms"))await env.DB.prepare("ALTER TABLE highlight_visibility ADD COLUMN interval_ms INTEGER NOT NULL DEFAULT 5000").run();
+}
+async function assignHighlightNumbers(env:Env,highlightId:number,urls:string[]){
+  const current=await env.DB.prepare("SELECT url,image_number FROM highlight_image_numbers WHERE highlight_id=?").bind(highlightId).all<{url:string;image_number:number}>();
+  const known=new Set(current.results.map(row=>row.url));
+  let next=Math.max(0,...current.results.map(row=>Number(row.image_number)||0));
+  const statements=urls.filter(url=>!known.has(url)).map(url=>env.DB.prepare("INSERT OR IGNORE INTO highlight_image_numbers (highlight_id,url,image_number) VALUES (?,?,?)").bind(highlightId,url,++next));
+  if(statements.length)await env.DB.batch(statements);
 }
 function highlightFromRow(row:Record<string,unknown>){
   let images:string[]=[];
@@ -77,21 +89,21 @@ async function readHighlights(env:Env,includeInactive=false){
   await ensureHighlightSchema(env);
   const [rows,visibility]=await Promise.all([
     env.DB.prepare("SELECT id,title,cover_url,images_json,sort_order,active FROM store_highlights ORDER BY sort_order,id").all<Record<string,unknown>>(),
-    env.DB.prepare("SELECT enabled FROM highlight_visibility WHERE id=1").first<{enabled:number}>()
+    env.DB.prepare("SELECT enabled,interval_ms FROM highlight_visibility WHERE id=1").first<{enabled:number;interval_ms:number}>()
   ]);
   const highlights=rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active);
   if(highlights.length){
-    const numbers=await env.DB.prepare("SELECT id,highlight_id,url FROM highlight_image_numbers").all<{id:number;highlight_id:number;url:string}>();
-    const lookup=new Map(numbers.results.map(image=>[image.highlight_id+"|"+image.url,image.id]));
-    const missing=highlights.flatMap(item=>item.images.filter(url=>!lookup.has(item.id+"|"+url)).map(url=>({highlightId:item.id,url})));
+    const numbers=await env.DB.prepare("SELECT highlight_id,url,image_number FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number}>();
+    const lookup=new Map(numbers.results.map(image=>[image.highlight_id+"|"+image.url,image.image_number]));
+    const missing=highlights.filter(item=>item.images.some(url=>!lookup.has(item.id+"|"+url)));
     if(missing.length){
-      await env.DB.batch(missing.map(image=>env.DB.prepare("INSERT OR IGNORE INTO highlight_image_numbers (highlight_id,url) VALUES (?,?)").bind(image.highlightId,image.url)));
-      const updated=await env.DB.prepare("SELECT id,highlight_id,url FROM highlight_image_numbers").all<{id:number;highlight_id:number;url:string}>();
-      for(const image of updated.results)lookup.set(image.highlight_id+"|"+image.url,image.id);
+      for(const item of missing)await assignHighlightNumbers(env,item.id,item.images);
+      const updated=await env.DB.prepare("SELECT highlight_id,url,image_number FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number}>();
+      for(const image of updated.results)lookup.set(image.highlight_id+"|"+image.url,image.image_number);
     }
-    for(const item of highlights)item.imageNumbers=item.images.map(url=>"H-"+lookup.get(item.id+"|"+url));
+    for(const item of highlights)item.imageNumbers=item.images.map(url=>"H"+item.id+"-"+lookup.get(item.id+"|"+url));
   }
-  return {enabled:visibility?.enabled!==0,highlights};
+  return {enabled:visibility?.enabled!==0,intervalMs:Math.min(20000,Math.max(2000,Number(visibility?.interval_ms)||5000)),highlights};
 }
 async function saveHighlight(request:Request,env:Env,id?:number){
   await ensureHighlightSchema(env);
@@ -111,7 +123,7 @@ async function saveHighlight(request:Request,env:Env,id?:number){
       .bind(title,cover,JSON.stringify(images),order,active,now,now).run();
     id=Number(result.meta.last_row_id);
   }
-  await env.DB.batch(images.map(url=>env.DB.prepare("INSERT OR IGNORE INTO highlight_image_numbers (highlight_id,url) VALUES (?,?)").bind(id,url)));
+  await assignHighlightNumbers(env,id,images);
   return json({ok:true});
 }
 
@@ -635,7 +647,7 @@ async function readStorefront(env: Env) {
     readHighlights(env),
   ]);
   const settings = { storeName:String(row?.store_name||"Manar Store"),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
-  return {settings,highlightsEnabled:highlightData.enabled,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
+  return {settings,highlightsEnabled:highlightData.enabled,highlightsIntervalMs:highlightData.intervalMs,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
 async function saveSettings(request:Request,env:Env){
@@ -956,6 +968,13 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
     await ensureHighlightSchema(env);
     const body=await parseJson(request);
     await env.DB.prepare("INSERT INTO highlight_visibility (id,enabled) VALUES (1,?) ON CONFLICT(id) DO UPDATE SET enabled=excluded.enabled").bind(asBoolean(body.enabled)?1:0).run();
+    return json({ok:true});
+  }
+  if (request.method === "PUT" && url.pathname === "/api/admin/highlights/duration"){
+    await ensureHighlightSchema(env);
+    const body=await parseJson(request),intervalMs=Number(body.intervalMs);
+    if(!Number.isInteger(intervalMs)||intervalMs<2000||intervalMs>20000)return json({error:"مدة العرض يجب أن تكون بين ثانيتين و20 ثانية"},{status:400});
+    await env.DB.prepare("INSERT INTO highlight_visibility (id,interval_ms) VALUES (1,?) ON CONFLICT(id) DO UPDATE SET interval_ms=excluded.interval_ms").bind(intervalMs).run();
     return json({ok:true});
   }
   if (request.method === "POST" && url.pathname === "/api/admin/highlights") return saveHighlight(request,env);

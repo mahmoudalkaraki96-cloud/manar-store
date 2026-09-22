@@ -6,17 +6,18 @@ type Props={upload:(file:File,options?:{maxSize?:number;quality?:number})=>Promi
 const empty=():Highlight=>({id:0,title:"",coverUrl:"",images:[],sortOrder:0,active:true});
 async function request(path:string,method="GET",body?:unknown){
  const response=await fetch(path,{method,cache:"no-store",headers:body?{"content-type":"application/json"}:undefined,body:body?JSON.stringify(body):undefined});
- const data=await response.json() as {error?:string;ok?:boolean;enabled?:boolean;highlights?:Highlight[]};
+ const data=await response.json() as {error?:string;ok?:boolean;enabled?:boolean;intervalMs?:number;highlights?:Highlight[]};
  if(!response.ok)throw new Error(data.error||"فشلت العملية");
  return data;
 }
 export default function HighlightsPanel({upload}:Props){
  const [items,setItems]=useState<Highlight[]>([]);
  const [enabled,setEnabled]=useState(true);
+ const [intervalMs,setIntervalMs]=useState(5000);
  const [loading,setLoading]=useState(true);
  const [busy,setBusy]=useState(false);
  const [message,setMessage]=useState("");
- const refresh=async()=>{const data=await request("/api/admin/highlights");setItems(data.highlights||[]);setEnabled(data.enabled!==false)};
+ const refresh=async()=>{const data=await request("/api/admin/highlights");setItems(data.highlights||[]);setEnabled(data.enabled!==false);setIntervalMs(data.intervalMs||5000)};
  useEffect(()=>{refresh().catch(error=>setMessage(error instanceof Error?error.message:"تعذر تحميل الهايلايتس")).finally(()=>setLoading(false))},[]);
  const edit=(index:number,patch:Partial<Highlight>)=>setItems(current=>current.map((item,i)=>i===index?{...item,...patch}:item));
  const perform=async(action:()=>Promise<void>,success:string)=>{setBusy(true);setMessage("");try{await action();await refresh();setMessage(success)}catch(error){setMessage(error instanceof Error?error.message:"فشلت العملية")}finally{setBusy(false)}};
@@ -45,6 +46,7 @@ export default function HighlightsPanel({upload}:Props){
  return <div className="dataPanel highlightsAdmin"><div className="panelHead"><div><h3>هايلايتس المتجر</h3><small>تظهر تحت الأقسام على كل صفحات المتجر.</small></div><button type="button" disabled={busy||items.length>=30} onClick={()=>setItems(current=>[...current,{...empty(),sortOrder:current.length}])}>＋ إضافة هايلايت</button></div>
  {message&&<p className="adminMessage" role="status">{message}</p>}
  <label className="highlightGlobalToggle"><span><b>إظهار صف الهايلايتس بالكامل</b><small>يمكن إخفاؤه دون حذف الهايلايتس أو صورها.</small></span><input type="checkbox" checked={enabled} disabled={busy} onChange={event=>{const value=event.target.checked;void perform(async()=>{await request("/api/admin/highlights/visibility","PUT",{enabled:value})},value?"تم إظهار الهايلايتس":"تم إخفاء الهايلايتس")}}/></label>
+ <label className="highlightDuration">مدة عرض كل صورة <select value={intervalMs} disabled={busy} onChange={event=>{const value=Number(event.target.value);void perform(async()=>{await request("/api/admin/highlights/duration","PUT",{intervalMs:value})},"تم تحديث مدة الهايلايت")}}>{[2000,3000,4000,5000,6000,8000,10000,15000,20000].map(value=><option key={value} value={value}>{value/1000} ثوانٍ</option>)}</select></label>
  {!items.length&&<p>لا توجد هايلايتس. أضف أول واحدة ثم ارفع صورها.</p>}
  {items.map((item,index)=><section key={item.id||"new-"+index} className="highlightAdminCard">
   <div className="highlightAdminHead"><b>{item.title||"هايلايت جديدة"}</b><div><button type="button" disabled={busy||index===0} onClick={()=>move(index,-1)} aria-label="تقديم الهايلايت">↑</button><button type="button" disabled={busy||index===items.length-1} onClick={()=>move(index,1)} aria-label="تأخير الهايلايت">↓</button><button type="button" disabled={busy} onClick={()=>remove(item,index)}>حذف</button></div></div>
