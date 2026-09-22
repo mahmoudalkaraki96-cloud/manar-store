@@ -8,12 +8,12 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
  const [loadedKey,setLoadedKey]=useState("");
  const [visible,setVisible]=useState(true);
  const [paused,setPaused]=useState(false);
- const [progress,setProgress]=useState(0);
+ const progressBarRef=useRef<HTMLElement|null>(null);
  const elapsedRef=useRef(0);
  const current=open?highlights[open.highlight]:null;
  const activeUrl=open&&current?current.images[open.image]:"";
  const duration=Math.min(20000,Math.max(2000,intervalMs));
- const resetClock=()=>{elapsedRef.current=0;setProgress(0);setLoadedKey("");setPaused(false)};
+ const resetClock=()=>{elapsedRef.current=0;if(progressBarRef.current)progressBarRef.current.style.width="0%";setLoadedKey("");setPaused(false)};
  const close=()=>setOpen(null);
  const select=(highlight:number,image:number)=>{resetClock();setOpen({highlight,image})};
  const step=(direction:number)=>{resetClock();setOpen(position=>{
@@ -46,7 +46,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
    if(cancelled)return;
    elapsedRef.current=Math.min(duration,elapsedRef.current+Math.max(0,now-last));
    last=now;
-   setProgress(elapsedRef.current/duration*100);
+   if(progressBarRef.current)progressBarRef.current.style.width=(elapsedRef.current/duration*100)+"%";
    if(elapsedRef.current>=duration){step(1);return}
    frame=requestAnimationFrame(tick);
   };
@@ -67,7 +67,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
   </div>
   {current&&open&&<div className="highlightViewer" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={event=>{if(event.target===event.currentTarget)close()}}>
    <div className="highlightViewerCard" onTouchStart={event=>setTouchX(event.touches[0].clientX)} onTouchEnd={event=>{if(touchX==null)return;const delta=event.changedTouches[0].clientX-touchX;if(Math.abs(delta)>55)step(delta<0?1:-1);setTouchX(null)}}>
-    <div className="highlightViewerProgress">{current.images.map((_,index)=><span key={index}><i style={{width:index<open.image?"100%":index===open.image?progress+"%":"0%"}}/></span>)}</div>
+    <div className="highlightViewerProgress">{current.images.map((_,index)=><span key={index}><i ref={index===open.image?progressBarRef:null} style={{width:index<open.image?"100%":"0%"}}/></span>)}</div>
     <div className="highlightViewerHead"><b>{current.title}</b><span>{open.image+1} / {current.images.length}</span><button type="button" aria-label="إغلاق" onClick={close}>×</button></div>
     <button type="button" className="highlightViewerPhoto" onClick={()=>setPaused(value=>!value)} aria-label={paused?"استئناف العرض التلقائي":"إيقاف العرض التلقائي"}>
      <img key={open.highlight+"-"+open.image} className="highlightViewerImage" src={activeUrl} alt={current.title} onLoad={()=>setLoadedKey(activeUrl)}/>
