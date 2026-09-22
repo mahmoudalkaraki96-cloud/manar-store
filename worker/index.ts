@@ -110,8 +110,8 @@ async function saveHighlight(request:Request,env:Env,id?:number){
   await ensureHighlightSchema(env);
   const body=await parseJson(request),title=asText(body.title).slice(0,60),raw=body.images;
   const images=Array.isArray(raw)?raw.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")).slice(0,20):[];
-  const cover=asText(body.coverUrl)||images[0]||"";
-  if(!title||!images.length||!cover.startsWith("/media/")||!Array.isArray(raw)||raw.length!==images.length||new Set(images).size!==images.length)return json({error:"العنوان وصور الهايلايت والغلاف مطلوبون، ولا يمكن تكرار الصورة"},{status:400});
+  const cover=asText(body.coverUrl)||images.find(value=>! /\.(mp4|webm)(?:\?|$)/i.test(value))||"";
+  if(!title||!images.length||!cover.startsWith("/media/")||/\.(mp4|webm)(?:\?|$)/i.test(cover)||!Array.isArray(raw)||raw.length!==images.length||new Set(images).size!==images.length)return json({error:"العنوان وصور الهايلايت والغلاف مطلوبون، ولا يمكن تكرار الصورة"},{status:400});
   const order=Math.max(0,Math.min(1000,Number(body.sortOrder)||0)),active=asBoolean(body.active)?1:0,now=Date.now();
   if(id){
     const result=await env.DB.prepare("UPDATE store_highlights SET title=?,cover_url=?,images_json=?,sort_order=?,active=?,updated_at=? WHERE id=?")
@@ -1058,7 +1058,8 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
     const key = decodeURIComponent(url.pathname.slice(7));
-    let object = await env.MEDIA.get(key);
+    const rangeHeader = request.headers.get("range");
+    let object = await env.MEDIA.get(key, rangeHeader ? { range: request.headers } : undefined);
     if (!object && importedMediaSources.has(key)) {
       let remote: Response | null = null;
       for (const source of importedMediaSources.get(key) || []) {
@@ -1074,6 +1075,12 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
     }
     if (!object) return new Response("Not Found", { status: 404 });
     const headers = new Headers(); object.writeHttpMetadata(headers); headers.set("etag", object.httpEtag); headers.set("cache-control", "public, max-age=31536000, immutable");
+    headers.set("accept-ranges", "bytes");
+    if (rangeHeader && object.range) {
+      headers.set("content-range", `bytes ${object.range.offset}-${object.range.offset + object.range.length - 1}/${object.size}`);
+      headers.set("content-length", String(object.range.length));
+      return new Response(object.body, { status: 206, headers });
+    }
     return new Response(object.body, { headers });
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;

@@ -2,19 +2,25 @@
 import {useEffect,useRef,useState} from "react";
 import type {Highlight} from "../storefront-types";
 
+const isVideo=(url:string)=>/\.(mp4|webm)(?:\?|$)/i.test(url);
 export default function StoreHighlights({highlights,intervalMs=5000}:{highlights:Highlight[];intervalMs?:number}){
  const [open,setOpen]=useState<{highlight:number;image:number}|null>(null);
  const [touchX,setTouchX]=useState<number|null>(null);
  const [loadedKey,setLoadedKey]=useState("");
  const [visible,setVisible]=useState(true);
  const [paused,setPaused]=useState(false);
+ const [soundOn,setSoundOn]=useState(false);
+ const [playError,setPlayError]=useState(false);
+ const videoRef=useRef<HTMLVideoElement|null>(null);
  const progressBarRef=useRef<HTMLElement|null>(null);
  const elapsedRef=useRef(0);
  const current=open?highlights[open.highlight]:null;
  const activeUrl=open&&current?current.images[open.image]:"";
+ const activeVideo=isVideo(activeUrl);
  const duration=Math.min(20000,Math.max(2000,intervalMs));
- const resetClock=()=>{elapsedRef.current=0;if(progressBarRef.current)progressBarRef.current.style.width="0%";setLoadedKey("");setPaused(false)};
- const close=()=>setOpen(null);
+ const resetClock=()=>{elapsedRef.current=0;if(progressBarRef.current)progressBarRef.current.style.width="0%";setLoadedKey("");setPaused(false);setSoundOn(false);setPlayError(false)};
+ const close=()=>{videoRef.current?.pause();setOpen(null)};
+ const togglePlayback=()=>{if(activeVideo){const video=videoRef.current;if(!video)return;if(video.paused){void video.play().then(()=>{setPaused(false);setPlayError(false)}).catch(()=>setPlayError(true))}else{video.pause();setPaused(true)}}else setPaused(value=>!value)};
  const select=(highlight:number,image:number)=>{resetClock();setOpen({highlight,image})};
  const step=(direction:number)=>{resetClock();setOpen(position=>{
   if(!position)return null;
@@ -40,7 +46,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
   return()=>document.removeEventListener("visibilitychange",onVisibility);
  },[]);
  useEffect(()=>{
-  if(!open||loadedKey!==activeUrl||!visible||paused)return;
+  if(!open||activeVideo||loadedKey!==activeUrl||!visible||paused)return;
   let frame=0,last=performance.now(),cancelled=false;
   const tick=(now:number)=>{
    if(cancelled)return;
@@ -52,11 +58,12 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
   };
   frame=requestAnimationFrame(tick);
   return()=>{cancelled=true;cancelAnimationFrame(frame)};
- },[open?.highlight,open?.image,activeUrl,loadedKey,visible,paused,duration]);
+ },[open?.highlight,open?.image,activeUrl,activeVideo,loadedKey,visible,paused,duration]);
+ useEffect(()=>{if(!activeVideo||!videoRef.current)return;const video=videoRef.current;if(!visible||paused){video.pause();return}void video.play().then(()=>setPlayError(false)).catch(()=>setPlayError(true));},[activeUrl,activeVideo,visible,paused]);
  useEffect(()=>{
   if(!open||!current)return;
   const next=current.images[open.image+1];
-  if(next){const preload=new Image();preload.src=next}
+  if(next&&!isVideo(next)){const preload=new Image();preload.src=next}
  },[open?.highlight,open?.image,highlights]);
  return <div className="storeHighlights">
   <div className="storeHighlightsTrack" role="list" aria-label="هايلايتس المتجر">
@@ -69,14 +76,15 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
    <div className="highlightViewerCard" onTouchStart={event=>setTouchX(event.touches[0].clientX)} onTouchEnd={event=>{if(touchX==null)return;const delta=event.changedTouches[0].clientX-touchX;if(Math.abs(delta)>55)step(delta<0?1:-1);setTouchX(null)}}>
     <div className="highlightViewerProgress">{current.images.map((_,index)=><span key={index}><i ref={index===open.image?progressBarRef:null} style={{width:index<open.image?"100%":"0%"}}/></span>)}</div>
     <div className="highlightViewerHead"><b>{current.title}</b><span>{open.image+1} / {current.images.length}</span><button type="button" aria-label="إغلاق" onClick={close}>×</button></div>
-    <button type="button" className="highlightViewerPhoto" onClick={()=>setPaused(value=>!value)} aria-label={paused?"استئناف العرض التلقائي":"إيقاف العرض التلقائي"}>
-     <img key={open.highlight+"-"+open.image} className="highlightViewerImage" src={activeUrl} alt={current.title} onLoad={()=>setLoadedKey(activeUrl)}/>
+    <button type="button" className="highlightViewerPhoto" onClick={togglePlayback} aria-label={paused?"استئناف العرض التلقائي":"إيقاف العرض التلقائي"}>
+     {activeVideo?<video key={open.highlight+"-"+open.image} ref={videoRef} className="highlightViewerVideo" src={activeUrl} muted={!soundOn} playsInline preload="metadata" onTimeUpdate={event=>{const video=event.currentTarget;if(progressBarRef.current&&Number.isFinite(video.duration)&&video.duration>0)progressBarRef.current.style.width=(video.currentTime/video.duration*100)+"%"}} onEnded={()=>step(1)} onError={()=>setPlayError(true)}/>:<img key={open.highlight+"-"+open.image} className="highlightViewerImage" src={activeUrl} alt={current.title} onLoad={()=>setLoadedKey(activeUrl)}/>}
      <span className="highlightViewerCode" dir="ltr">{current.imageNumbers?.[open.image]||""}</span>
-     {paused&&<span className="highlightViewerPaused">⏸ متوقف · اضغط للاستئناف</span>}
+     {(paused||playError)&&<span className="highlightViewerPaused">{playError?"اضغط لتشغيل الفيديو":"⏸ متوقف · اضغط للاستئناف"}</span>}
     </button>
+    {activeVideo&&<button type="button" className="highlightViewerSound" onClick={()=>setSoundOn(value=>!value)} aria-label={soundOn?"كتم الصوت":"تشغيل الصوت"}>{soundOn?"🔊":"🔇"}</button>}
     <button type="button" className="highlightViewerPrev" aria-label="الصورة السابقة" onClick={()=>step(-1)}>‹</button>
     <button type="button" className="highlightViewerNext" aria-label="الصورة التالية" onClick={()=>step(1)}>›</button>
-    <div className="highlightViewerThumbnails" aria-label="معاينة صور الهايلايت">{current.images.map((url,index)=><button type="button" key={url} className={index===open.image?"selected":""} onClick={()=>select(open.highlight,index)} aria-label={`الانتقال إلى الصورة ${current.imageNumbers?.[index]||index+1}`}><img src={url} alt="" loading="lazy"/><span dir="ltr">{current.imageNumbers?.[index]||""}</span></button>)}</div>
+    <div className="highlightViewerThumbnails" aria-label="معاينة صور الهايلايت">{current.images.map((url,index)=><button type="button" key={url} className={index===open.image?"selected":""} onClick={()=>select(open.highlight,index)} aria-label={`الانتقال إلى الصورة ${current.imageNumbers?.[index]||index+1}`}>{isVideo(url)?<span className="highlightVideoThumb">▶</span>:<img src={url} alt="" loading="lazy"/>}<span dir="ltr">{current.imageNumbers?.[index]||""}</span></button>)}</div>
    </div>
   </div>}
  </div>;
