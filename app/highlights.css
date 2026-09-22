@@ -1,0 +1,22 @@
+.storeHighlights{height:100px;background:var(--pageBg,#fff);border-bottom:1px solid #eadde3;overflow:hidden}
+.storeHighlightsTrack{display:flex;align-items:start;gap:15px;height:100%;overflow-x:auto;overflow-y:hidden;padding:8px 22px 5px;scrollbar-width:thin;overscroll-behavior-inline:contain}
+.storeHighlightItem{flex:0 0 71px;width:71px;display:grid;justify-items:center;gap:4px;border:0;padding:0;background:none;cursor:pointer;color:var(--ink);text-align:center}
+.storeHighlightRing{width:57px;height:57px;border-radius:50%;padding:3px;background:linear-gradient(35deg,var(--green),var(--gold));display:block}
+.storeHighlightRing img{width:100%;height:100%;border-radius:50%;border:2px solid #fff;object-fit:cover;background:#fff}
+.storeHighlightLabel{font-size:10px;line-height:1.2;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shopHeaderSpacer.withHighlights{height:226px;flex-basis:226px}
+.highlightViewer{position:fixed;inset:0;z-index:1000;background:#100e10e8;display:grid;place-items:center;padding:12px}
+.highlightViewerCard{position:relative;width:min(430px,100%);height:min(780px,calc(100dvh - 24px));background:#1b181a;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
+.highlightViewerProgress{display:flex;gap:3px;padding:8px 10px 0}.highlightViewerProgress span{flex:1;height:3px;background:#ffffff55;border-radius:3px}.highlightViewerProgress span.active{background:#fff}
+.highlightViewerHead{display:flex;gap:10px;align-items:center;padding:9px 14px;z-index:3}.highlightViewerHead b{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.highlightViewerHead span{font-size:12px;color:#ddd}.highlightViewerHead button{border:0;background:none;color:#fff;font-size:27px;cursor:pointer}
+.highlightViewerImage{width:100%;min-height:0;flex:1;object-fit:contain;background:#151315}
+.highlightViewerPrev,.highlightViewerNext{position:absolute;top:50%;z-index:4;width:38px;height:38px;border:0;border-radius:50%;background:#ffffffc7;color:#171217;font-size:30px;line-height:30px;cursor:pointer}.highlightViewerPrev{right:8px}.highlightViewerNext{left:8px}
+.highlightsAdmin{display:grid;gap:18px;overflow-x:hidden}.highlightsAdmin .panelHead small{display:block;color:#777;margin-top:4px}
+.highlightGlobalToggle{display:flex!important;align-items:center;justify-content:space-between;gap:14px;border:1px solid #eadde3;border-radius:12px;padding:14px;background:#fff8fa}
+.highlightGlobalToggle span{display:grid;gap:4px}.highlightGlobalToggle small{color:#777}.highlightGlobalToggle input,.highlightItemToggle input{width:21px;height:21px}
+.highlightAdminCard{border:1px solid #e7e0e3;border-radius:12px;padding:15px;display:grid;gap:14px;min-width:0}
+.highlightAdminHead{display:flex;align-items:center;justify-content:space-between;gap:8px}.highlightAdminHead>div{display:flex;gap:6px}.highlightAdminHead button,.highlightAdminImage button{border:1px solid #ddd;border-radius:7px;padding:6px;background:#fff;cursor:pointer}
+.highlightAdminFields{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}.highlightAdminFields label:first-child{display:grid;gap:6px}.highlightAdminFields input[type=text],.highlightAdminFields input:not([type]){padding:10px;border:1px solid #ddd;border-radius:8px}
+.highlightItemToggle{display:flex;align-items:center;gap:10px}.highlightImageUpload{display:grid;gap:8px;border:1px dashed #cfc1c6;border-radius:8px;padding:12px}
+.highlightAdminImages{display:flex;gap:10px;overflow-x:auto;max-width:100%;padding:4px}.highlightAdminImage{flex:0 0 142px;border:1px solid #eee;border-radius:9px;padding:5px}.highlightAdminImage img{height:110px;width:100%;object-fit:cover;border-radius:6px}.highlightAdminImage>div{display:flex;flex-wrap:wrap;gap:4px}.highlightAdminImage button{font-size:10px}.highlightAdminCard>.mainBtn{width:max-content}
+@media(max-width:720px){.storeHighlights{height:92px}.storeHighlightsTrack{gap:8px;padding:7px 12px 4px}.storeHighlightItem{flex-basis:64px;width:64px}.storeHighlightRing{width:53px;height:53px}.shopHeaderSpacer.withHighlights{height:256px;flex-basis:256px}.highlightAdminFields{grid-template-columns:1fr}.highlightAdminHead{flex-wrap:wrap}.highlightViewerCard{height:calc(100dvh - 20px)}}

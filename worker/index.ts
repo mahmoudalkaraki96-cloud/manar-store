@@ -23,7 +23,7 @@ interface Env {
   };
 }
 
-interface D1Meta { last_row_id?: number | string }
+interface D1Meta { last_row_id?: number | string; changes?: number }
 interface D1Result<T = Record<string, unknown>> { results: T[]; meta: D1Meta }
 interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
@@ -63,6 +63,44 @@ const validColor = (value: unknown, fallback: string) => /^#[0-9a-f]{6}$/i.test(
 const safeUrl = (value: unknown) => { const text = asText(value); if (!text) return null; try { const url = new URL(text); return ["http:", "https:"].includes(url.protocol) ? text : null; } catch { return null; } };
 const safeTarget = (value:unknown) => { const text=asText(value); return text.startsWith("/")&&!text.startsWith("//")?text:safeUrl(text); };
 async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"],["show_out_of_stock","integer DEFAULT 1 NOT NULL"],["show_offers","integer DEFAULT 1 NOT NULL"],["show_most_ordered","integer DEFAULT 0 NOT NULL"],["show_top_rated","integer DEFAULT 0 NOT NULL"],["show_newest","integer DEFAULT 1 NOT NULL"],["show_featured","integer DEFAULT 1 NOT NULL"],["home_products_limit","integer DEFAULT 6 NOT NULL"],["show_subcategory_products_in_parent","integer DEFAULT 1 NOT NULL"],["watermark_opacity","integer DEFAULT 25 NOT NULL"],["watermark_enabled","integer DEFAULT 1 NOT NULL"],["watermark_x","real DEFAULT 90 NOT NULL"],["watermark_y","real DEFAULT 90 NOT NULL"],["watermark_size","real DEFAULT 24 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
+async function ensureHighlightSchema(env:Env){
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_highlights (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,cover_url TEXT NOT NULL,images_json TEXT NOT NULL,sort_order INTEGER NOT NULL DEFAULT 0,active INTEGER NOT NULL DEFAULT 1,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_visibility (id INTEGER PRIMARY KEY CHECK(id=1),enabled INTEGER NOT NULL DEFAULT 1)").run();
+}
+function highlightFromRow(row:Record<string,unknown>){
+  let images:string[]=[];
+  try { const parsed=JSON.parse(String(row.images_json||"[]"));if(Array.isArray(parsed))images=parsed.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")); } catch {}
+  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||""),images,sortOrder:Number(row.sort_order||0),active:Boolean(row.active)};
+}
+async function readHighlights(env:Env,includeInactive=false){
+  await ensureHighlightSchema(env);
+  const [rows,visibility]=await Promise.all([
+    env.DB.prepare("SELECT id,title,cover_url,images_json,sort_order,active FROM store_highlights ORDER BY sort_order,id").all<Record<string,unknown>>(),
+    env.DB.prepare("SELECT enabled FROM highlight_visibility WHERE id=1").first<{enabled:number}>()
+  ]);
+  const enabled=visibility?.enabled!==0;
+  return {enabled,highlights:rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active)};
+}
+async function saveHighlight(request:Request,env:Env,id?:number){
+  await ensureHighlightSchema(env);
+  const body=await parseJson(request),title=asText(body.title).slice(0,60),raw=body.images;
+  const images=Array.isArray(raw)?raw.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")).slice(0,20):[];
+  const cover=asText(body.coverUrl)||images[0]||"";
+  if(!title||!images.length||!images.includes(cover)||!Array.isArray(raw)||raw.length!==images.length)return json({error:"العنوان وصور الهايلايت مطلوبة، والغلاف يجب أن يكون إحدى الصور"},{status:400});
+  const order=Math.max(0,Math.min(1000,Number(body.sortOrder)||0)),active=asBoolean(body.active)?1:0,now=Date.now();
+  if(id){
+    const result=await env.DB.prepare("UPDATE store_highlights SET title=?,cover_url=?,images_json=?,sort_order=?,active=?,updated_at=? WHERE id=?")
+      .bind(title,cover,JSON.stringify(images),order,active,now,id).run();
+    if(result.meta?.changes===0)return json({error:"الهايلايت غير موجودة"},{status:404});
+  }else{
+    const count=await env.DB.prepare("SELECT COUNT(*) AS count FROM store_highlights").first<{count:number}>();
+    if(Number(count?.count||0)>=30)return json({error:"الحد الأقصى 30 هايلايت"},{status:400});
+    await env.DB.prepare("INSERT INTO store_highlights (title,cover_url,images_json,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?)")
+      .bind(title,cover,JSON.stringify(images),order,active,now,now).run();
+  }
+  return json({ok:true});
+}
+
 async function ensureCustomizationSchema(env:Env){await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_custom_fields (id INTEGER PRIMARY KEY AUTOINCREMENT,product_id INTEGER NOT NULL,label TEXT NOT NULL,placeholder TEXT,max_length INTEGER DEFAULT 60 NOT NULL,required INTEGER DEFAULT 0 NOT NULL,sort_order INTEGER DEFAULT 0 NOT NULL,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE)").run();const info=await env.DB.prepare("PRAGMA table_info(order_items)").all<{name:string}>();if(!info.results.some(row=>row.name==="customization_json"))await env.DB.prepare("ALTER TABLE order_items ADD COLUMN customization_json TEXT").run();const categoryInfo=await env.DB.prepare("PRAGMA table_info(categories)").all<{name:string}>();if(!categoryInfo.results.some(row=>row.name==="icon_url"))await env.DB.prepare("ALTER TABLE categories ADD COLUMN icon_url TEXT").run()}
 
 const importedPearlProducts = [
@@ -576,13 +614,14 @@ async function ensureProduct2222EditedImage(env: Env) {
 }
 
 async function readStorefront(env: Env) {
-  const [row, slides, popup] = await Promise.all([
+  const [row, slides, popup, highlightData] = await Promise.all([
     env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
     env.DB.prepare("SELECT id,title,image_url,product_id,category_id,external_url,sort_order,active FROM sliders ORDER BY sort_order,id").all(),
     env.DB.prepare("SELECT id,title,body,image_url,target_url,active FROM popups ORDER BY id DESC LIMIT 1").first<Record<string,unknown>>(),
+    readHighlights(env),
   ]);
   const settings = { storeName:String(row?.store_name||"Manar Store"),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
-  return {settings,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
+  return {settings,highlightsEnabled:highlightData.enabled,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
 async function saveSettings(request:Request,env:Env){
@@ -898,6 +937,21 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
   if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]));
   if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/admin/highlights") return json(await readHighlights(env,true));
+  if (request.method === "PUT" && url.pathname === "/api/admin/highlights/visibility"){
+    await ensureHighlightSchema(env);
+    const body=await parseJson(request);
+    await env.DB.prepare("INSERT INTO highlight_visibility (id,enabled) VALUES (1,?) ON CONFLICT(id) DO UPDATE SET enabled=excluded.enabled").bind(asBoolean(body.enabled)?1:0).run();
+    return json({ok:true});
+  }
+  if (request.method === "POST" && url.pathname === "/api/admin/highlights") return saveHighlight(request,env);
+  const highlightMatch=url.pathname.match(/^\/api\/admin\/highlights\/(\d+)$/);
+  if(highlightMatch&&request.method==="PUT")return saveHighlight(request,env,Number(highlightMatch[1]));
+  if(highlightMatch&&request.method==="DELETE"){
+    await ensureHighlightSchema(env);
+    await env.DB.prepare("DELETE FROM store_highlights WHERE id=?").bind(Number(highlightMatch[1])).run();
+    return json({ok:true});
+  }
   if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
   if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
   if (request.method === "PUT" && url.pathname === "/api/admin/popup") return savePopup(request,env);
