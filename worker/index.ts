@@ -66,11 +66,12 @@ async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare(
 async function ensureHighlightSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_highlights (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,cover_url TEXT NOT NULL,images_json TEXT NOT NULL,sort_order INTEGER NOT NULL DEFAULT 0,active INTEGER NOT NULL DEFAULT 1,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_visibility (id INTEGER PRIMARY KEY CHECK(id=1),enabled INTEGER NOT NULL DEFAULT 1)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_image_numbers (id INTEGER PRIMARY KEY AUTOINCREMENT,highlight_id INTEGER NOT NULL,url TEXT NOT NULL,UNIQUE(highlight_id,url))").run();
 }
 function highlightFromRow(row:Record<string,unknown>){
   let images:string[]=[];
   try { const parsed=JSON.parse(String(row.images_json||"[]"));if(Array.isArray(parsed))images=parsed.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")); } catch {}
-  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||""),images,sortOrder:Number(row.sort_order||0),active:Boolean(row.active)};
+  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||"")||images[0]||"",images,imageNumbers:[] as string[],sortOrder:Number(row.sort_order||0),active:Boolean(row.active)};
 }
 async function readHighlights(env:Env,includeInactive=false){
   await ensureHighlightSchema(env);
@@ -78,15 +79,26 @@ async function readHighlights(env:Env,includeInactive=false){
     env.DB.prepare("SELECT id,title,cover_url,images_json,sort_order,active FROM store_highlights ORDER BY sort_order,id").all<Record<string,unknown>>(),
     env.DB.prepare("SELECT enabled FROM highlight_visibility WHERE id=1").first<{enabled:number}>()
   ]);
-  const enabled=visibility?.enabled!==0;
-  return {enabled,highlights:rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active)};
+  const highlights=rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active);
+  if(highlights.length){
+    const numbers=await env.DB.prepare("SELECT id,highlight_id,url FROM highlight_image_numbers").all<{id:number;highlight_id:number;url:string}>();
+    const lookup=new Map(numbers.results.map(image=>[image.highlight_id+"|"+image.url,image.id]));
+    const missing=highlights.flatMap(item=>item.images.filter(url=>!lookup.has(item.id+"|"+url)).map(url=>({highlightId:item.id,url})));
+    if(missing.length){
+      await env.DB.batch(missing.map(image=>env.DB.prepare("INSERT OR IGNORE INTO highlight_image_numbers (highlight_id,url) VALUES (?,?)").bind(image.highlightId,image.url)));
+      const updated=await env.DB.prepare("SELECT id,highlight_id,url FROM highlight_image_numbers").all<{id:number;highlight_id:number;url:string}>();
+      for(const image of updated.results)lookup.set(image.highlight_id+"|"+image.url,image.id);
+    }
+    for(const item of highlights)item.imageNumbers=item.images.map(url=>"H-"+lookup.get(item.id+"|"+url));
+  }
+  return {enabled:visibility?.enabled!==0,highlights};
 }
 async function saveHighlight(request:Request,env:Env,id?:number){
   await ensureHighlightSchema(env);
   const body=await parseJson(request),title=asText(body.title).slice(0,60),raw=body.images;
   const images=Array.isArray(raw)?raw.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")).slice(0,20):[];
   const cover=asText(body.coverUrl)||images[0]||"";
-  if(!title||!images.length||!images.includes(cover)||!Array.isArray(raw)||raw.length!==images.length)return json({error:"العنوان وصور الهايلايت مطلوبة، والغلاف يجب أن يكون إحدى الصور"},{status:400});
+  if(!title||!images.length||!cover.startsWith("/media/")||!Array.isArray(raw)||raw.length!==images.length||new Set(images).size!==images.length)return json({error:"العنوان وصور الهايلايت والغلاف مطلوبون، ولا يمكن تكرار الصورة"},{status:400});
   const order=Math.max(0,Math.min(1000,Number(body.sortOrder)||0)),active=asBoolean(body.active)?1:0,now=Date.now();
   if(id){
     const result=await env.DB.prepare("UPDATE store_highlights SET title=?,cover_url=?,images_json=?,sort_order=?,active=?,updated_at=? WHERE id=?")
@@ -95,9 +107,11 @@ async function saveHighlight(request:Request,env:Env,id?:number){
   }else{
     const count=await env.DB.prepare("SELECT COUNT(*) AS count FROM store_highlights").first<{count:number}>();
     if(Number(count?.count||0)>=30)return json({error:"الحد الأقصى 30 هايلايت"},{status:400});
-    await env.DB.prepare("INSERT INTO store_highlights (title,cover_url,images_json,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?)")
+    const result=await env.DB.prepare("INSERT INTO store_highlights (title,cover_url,images_json,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?)")
       .bind(title,cover,JSON.stringify(images),order,active,now,now).run();
+    id=Number(result.meta.last_row_id);
   }
+  await env.DB.batch(images.map(url=>env.DB.prepare("INSERT OR IGNORE INTO highlight_image_numbers (highlight_id,url) VALUES (?,?)").bind(id,url)));
   return json({ok:true});
 }
 
