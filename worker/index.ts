@@ -662,9 +662,128 @@ async function saveSettings(request:Request,env:Env){
 async function saveSlide(request:Request,env:Env,id?:number){const body=await parseJson(request),image=asText(body.imageUrl);if(!image)return json({error:"صورة الشريحة مطلوبة"},{status:400});const values=[asOptionalText(body.title),image,body.productId?Number(body.productId):null,body.categoryId?Number(body.categoryId):null,safeUrl(body.externalUrl),Number(body.sortOrder||0),asBoolean(body.active)?1:0,Date.now()];if(id)await env.DB.prepare("UPDATE sliders SET title=?,image_url=?,product_id=?,category_id=?,external_url=?,sort_order=?,active=?,updated_at=? WHERE id=?").bind(...values,id).run();else await env.DB.prepare("INSERT INTO sliders (title,image_url,product_id,category_id,external_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)").bind(...values,Date.now()).run();return json({ok:true});}
 async function savePopup(request:Request,env:Env){const body=await parseJson(request),now=Date.now(),current=await env.DB.prepare("SELECT id FROM popups ORDER BY id DESC LIMIT 1").first<{id:number}>(),values=[asOptionalText(body.title),asOptionalText(body.body),asOptionalText(body.imageUrl),safeTarget(body.targetUrl),asBoolean(body.active)?1:0,now];if(current)await env.DB.prepare("UPDATE popups SET title=?,body=?,image_url=?,target_url=?,active=?,updated_at=? WHERE id=?").bind(...values,current.id).run();else await env.DB.prepare("INSERT INTO popups (title,body,image_url,target_url,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?)").bind(...values,now).run();return json({ok:true});}
 
+
+const SESSION_COOKIE="manar_customer_session";
+const SESSION_MAX_AGE=400*24*60*60;
+const ACCOUNT_EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function hex(bytes:Uint8Array){return Array.from(bytes,byte=>byte.toString(16).padStart(2,"0")).join("")}
+function randomHex(length:number){return hex(crypto.getRandomValues(new Uint8Array(length)))}
+async function sha256(value:string){return hex(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value))))}
+async function passwordHash(password:string,salt:string){
+  const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
+  return hex(new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt:new TextEncoder().encode(salt),iterations:150000,hash:"SHA-256"},key,256)));
+}
+function equalHash(left:string,right:string){if(left.length!==right.length)return false;let difference=0;for(let i=0;i<left.length;i++)difference|=left.charCodeAt(i)^right.charCodeAt(i);return difference===0}
+let customerSchemaReady:Promise<void>|null=null;
+async function ensureCustomerAuthSchema(env:Env){
+  if(!customerSchemaReady)customerSchemaReady=initializeCustomerAuthSchema(env).catch(error=>{customerSchemaReady=null;throw error});
+  await customerSchemaReady;
+}
+async function initializeCustomerAuthSchema(env:Env){
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_accounts (id INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE,password_hash TEXT NOT NULL,password_salt TEXT NOT NULL,name TEXT NOT NULL,phone TEXT NOT NULL DEFAULT '',city TEXT NOT NULL DEFAULT '',address TEXT NOT NULL DEFAULT '',created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_sessions (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,token_hash TEXT NOT NULL UNIQUE,created_at INTEGER NOT NULL,last_seen_at INTEGER NOT NULL,revoked_at INTEGER)").run();
+  await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_sessions_account ON customer_sessions(account_id)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_auth_limits (key TEXT PRIMARY KEY,attempts INTEGER NOT NULL,window_start INTEGER NOT NULL)").run();
+  const columns=await env.DB.prepare("PRAGMA table_info(orders)").all<{name:string}>();
+  if(!columns.results.some(row=>row.name==="customer_account_id"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN customer_account_id INTEGER").run();
+}
+function customerCookie(token:string,maxAge=SESSION_MAX_AGE){return `${SESSION_COOKIE}=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${maxAge}`}
+function requestCookie(request:Request){
+  const raw=request.headers.get("cookie")||"";
+  const token=raw.split(";").map(part=>part.trim()).find(part=>part.startsWith(SESSION_COOKIE+"="))?.slice(SESSION_COOKIE.length+1)||"";
+  return /^[a-f0-9]{64}$/.test(token)?token:"";
+}
+type CustomerAccount={id:number;email:string;name:string;phone:string;city:string;address:string};
+async function getCustomerAccount(request:Request,env:Env):Promise<CustomerAccount|null>{
+  if(env.APP_SURFACE==="admin")return null;
+  const token=requestCookie(request);if(!token)return null;
+  return env.DB.prepare("SELECT a.id,a.email,a.name,a.phone,a.city,a.address FROM customer_sessions s JOIN customer_accounts a ON a.id=s.account_id WHERE s.token_hash=? AND s.revoked_at IS NULL").bind(await sha256(token)).first<CustomerAccount>();
+}
+async function customerRateLimit(env:Env,key:string,limit:number,windowMs:number){
+  const now=Date.now();
+  await env.DB.prepare("INSERT INTO customer_auth_limits (key,attempts,window_start) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET attempts=CASE WHEN ?-window_start>? THEN 1 ELSE attempts+1 END,window_start=CASE WHEN ?-window_start>? THEN ? ELSE window_start END").bind(key,now,now,windowMs,now,windowMs,now).run();
+  const row=await env.DB.prepare("SELECT attempts FROM customer_auth_limits WHERE key=?").bind(key).first<{attempts:number}>();
+  return Number(row?.attempts||0)<=limit;
+}
+function customerOriginValid(request:Request){
+  const origin=request.headers.get("origin");
+  return !origin||origin===new URL(request.url).origin;
+}
+async function createCustomerSession(env:Env,accountId:number){
+  const token=randomHex(32),now=Date.now();
+  await env.DB.prepare("INSERT INTO customer_sessions (account_id,token_hash,created_at,last_seen_at) VALUES (?,?,?,?)").bind(accountId,await sha256(token),now,now).run();
+  return token;
+}
+async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
+  if(env.APP_SURFACE==="admin")return json({error:"Not Found"},{status:404});
+  await ensureCustomerAuthSchema(env);
+  if(request.method!=="GET"&&!customerOriginValid(request))return json({error:"طلب غير مسموح"},{status:403});
+  const path=url.pathname;
+  if(request.method==="POST"&&path==="/api/account/register"){
+    const body=await parseJson(request),email=asText(body.email).toLowerCase(),password=typeof body.password==="string"?body.password:"",name=asText(body.name).slice(0,100),phone=asText(body.phone).slice(0,30),city=asText(body.city).slice(0,100),address=asText(body.address).slice(0,250);
+    if(!ACCOUNT_EMAIL.test(email)||email.length>254||!name||password.length<6||password.length>128)return json({error:"أدخل الاسم وبريدًا صحيحًا وكلمة مرور من 6 خانات على الأقل"},{status:400});
+    const ip=request.headers.get("cf-connecting-ip")||"unknown";
+    if(!await customerRateLimit(env,"register:"+await sha256(ip),10,3600000))return json({error:"محاولات كثيرة، حاول لاحقًا"},{status:429});
+    const existing=await env.DB.prepare("SELECT id FROM customer_accounts WHERE email=?").bind(email).first();
+    if(existing)return json({error:"هذا البريد مسجل مسبقًا"},{status:409});
+    const salt=randomHex(16),hash=await passwordHash(password,salt),now=Date.now();
+    let result:D1Result;
+    try{result=await env.DB.prepare("INSERT INTO customer_accounts (email,password_hash,password_salt,name,phone,city,address,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?)").bind(email,hash,salt,name,phone,city,address,now,now).run()}
+    catch{return json({error:"تعذر إنشاء الحساب، تحقق من البريد وحاول مجددًا"},{status:409})}
+    const token=await createCustomerSession(env,Number(result.meta.last_row_id));
+    return json({ok:true},{headers:{"set-cookie":customerCookie(token)}});
+  }
+  if(request.method==="POST"&&path==="/api/account/login"){
+    const body=await parseJson(request),email=asText(body.email).toLowerCase(),password=typeof body.password==="string"?body.password:"";
+    if(!ACCOUNT_EMAIL.test(email)||!password)return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
+    const ip=request.headers.get("cf-connecting-ip")||"unknown";
+    if(!await customerRateLimit(env,"login-email:"+await sha256(email),10,900000)||!await customerRateLimit(env,"login-ip:"+await sha256(ip),50,900000))return json({error:"محاولات كثيرة، حاول بعد 15 دقيقة"},{status:429});
+    const account=await env.DB.prepare("SELECT id,password_hash,password_salt FROM customer_accounts WHERE email=?").bind(email).first<{id:number;password_hash:string;password_salt:string}>();
+    const hash=await passwordHash(password,account?.password_salt||"not-an-account");
+    if(!account||!equalHash(hash,account.password_hash))return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
+    const token=await createCustomerSession(env,account.id);
+    return json({ok:true},{headers:{"set-cookie":customerCookie(token)}});
+  }
+  if(request.method==="POST"&&path==="/api/account/logout"){
+    const token=requestCookie(request);
+    if(token)await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE token_hash=?").bind(Date.now(),await sha256(token)).run();
+    return json({ok:true},{headers:{"set-cookie":customerCookie("",0)}});
+  }
+  const account=await getCustomerAccount(request,env);
+  if(!account)return json({error:"سجّل دخولك أولًا"},{status:401});
+  if(request.method==="GET"&&path==="/api/account/me"){
+    const token=requestCookie(request);
+    await env.DB.prepare("UPDATE customer_sessions SET last_seen_at=? WHERE token_hash=?").bind(Date.now(),await sha256(token)).run();
+    return json({account},{headers:{"set-cookie":customerCookie(token)}});
+  }
+  if(request.method==="PUT"&&path==="/api/account/me"){
+    const body=await parseJson(request),name=asText(body.name).slice(0,100),phone=asText(body.phone).slice(0,30),city=asText(body.city).slice(0,100),address=asText(body.address).slice(0,250);
+    if(!name)return json({error:"الاسم مطلوب"},{status:400});
+    await env.DB.prepare("UPDATE customer_accounts SET name=?,phone=?,city=?,address=?,updated_at=? WHERE id=?").bind(name,phone,city,address,Date.now(),account.id).run();
+    return json({ok:true});
+  }
+  if(request.method==="PUT"&&path==="/api/account/password"){
+    const body=await parseJson(request),current=typeof body.currentPassword==="string"?body.currentPassword:"",next=typeof body.newPassword==="string"?body.newPassword:"";
+    if(next.length<6||next.length>128)return json({error:"كلمة المرور الجديدة يجب أن تكون 6 خانات على الأقل"},{status:400});
+    const row=await env.DB.prepare("SELECT password_hash,password_salt FROM customer_accounts WHERE id=?").bind(account.id).first<{password_hash:string;password_salt:string}>();
+    if(!row||!equalHash(await passwordHash(current,row.password_salt),row.password_hash))return json({error:"كلمة المرور الحالية غير صحيحة"},{status:403});
+    const salt=randomHex(16);
+    await env.DB.prepare("UPDATE customer_accounts SET password_hash=?,password_salt=?,updated_at=? WHERE id=?").bind(await passwordHash(next,salt),salt,Date.now(),account.id).run();
+    await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE account_id=? AND token_hash<>? AND revoked_at IS NULL").bind(Date.now(),account.id,await sha256(requestCookie(request))).run();
+    return json({ok:true});
+  }
+  if(request.method==="GET"&&path==="/api/account/orders"){
+    const orders=await env.DB.prepare("SELECT id,order_number,status,total_agorot,shipping_agorot,created_at FROM orders WHERE customer_account_id=? AND deleted_at IS NULL ORDER BY created_at DESC,id DESC LIMIT 100").bind(account.id).all<{id:number;order_number:number;status:string;total_agorot:number;shipping_agorot:number;created_at:number}>();
+    const items=await env.DB.prepare("SELECT oi.order_id,oi.product_name,oi.variant_label,oi.quantity,oi.item_number FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.customer_account_id=? AND o.deleted_at IS NULL ORDER BY oi.id").bind(account.id).all<{order_id:number;product_name:string;variant_label:string|null;quantity:number;item_number:number}>();
+    return json({orders:orders.results.map(order=>({number:order.order_number,status:order.status,total:order.total_agorot/100,shipping:order.shipping_agorot/100,createdAt:order.created_at,items:items.results.filter(item=>item.order_id===order.id).map(item=>({name:item.product_name,variant:item.variant_label,quantity:item.quantity,itemNumber:item.item_number}))}))});
+  }
+  return json({error:"Not Found"},{status:404});
+}
+
 const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancelled"] as const;
 async function createOrder(request:Request,env:Env){
   await ensureCustomizationSchema(env);
+  await ensureCustomerAuthSchema(env);
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
   if(!name||phone.length<7||!city||!address)return json({error:"الاسم ورقم الهاتف والمدينة والعنوان مطلوبة"},{status:400});
   const shipping=zone==="jerusalem"?3000:zone==="inside"?7000:zone==="west_bank"?2000:-1;
@@ -691,7 +810,8 @@ async function createOrder(request:Request,env:Env){
     const lineNote=asText(item.notes).slice(0,500);
     lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
   }
-  const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now).run(),orderId=Number(result.meta.last_row_id);
+  const account=await getCustomerAccount(request,env);
+  const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null).run(),orderId=Number(result.meta.last_row_id);
   await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
   return json({ok:true,orderNumber:number,total:(subtotal+shipping)/100});
 }
@@ -923,6 +1043,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
+  if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
     const key = decodeURIComponent(url.pathname.slice(7));
