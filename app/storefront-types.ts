@@ -2,7 +2,7 @@ export type StoreSettings={storeName:string;logoUrl:string;watermarkUrl:string;w
 export type Slide={id:number;title:string;imageUrl:string;productId:number|null;categoryId:number|null;externalUrl:string;sortOrder:number;active:boolean};
 export type Popup={id:number;title:string;body:string;imageUrl:string;targetUrl:string;active:boolean};
 export type Highlight={id:number;title:string;coverUrl:string;images:string[];imageNumbers?:string[];sortOrder:number;active:boolean};
-export type StorefrontResponse={settings:StoreSettings;sliders:Slide[];popup:Popup|null;highlightsEnabled:boolean;highlights:Highlight[]};
+export type StorefrontResponse={settings:StoreSettings;sliders:Slide[];popup:Popup|null;highlightsEnabled:boolean;highlightsIntervalMs:number;highlights:Highlight[]};
 export const defaultSettings:StoreSettings={storeName:"Store",logoUrl:"",watermarkUrl:"",watermarkOpacity:25,watermarkEnabled:true,watermarkX:90,watermarkY:90,watermarkSize:24,primaryColor:"#374151",secondaryColor:"#9ca3af",backgroundColor:"#ffffff",currency:"ILS",whatsapp:"",whatsappEnabled:true,facebookUrl:"",facebookEnabled:true,instagramUrl:"",instagramEnabled:true,tiktokUrl:"",tiktokEnabled:true,sliderEnabled:true,sliderIntervalMs:5000,showOutOfStock:true,popupEnabled:false,showOffers:true,showMostOrdered:false,showTopRated:false,showNewest:true,showFeatured:true,homeProductsLimit:6,showSubcategoryProductsInParent:true};
 let storefrontCache:StorefrontResponse|null=null;
 function settingsCacheKey(){return typeof window!=="undefined"?`store_settings:${window.location.hostname}`:"store_settings"}
