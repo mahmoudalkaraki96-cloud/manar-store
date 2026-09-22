@@ -1,5 +1,6 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
+import { scrypt as nodeScrypt, pbkdf2 as nodePbkdf2 } from "node:crypto";
 import handler from "vinext/server/app-router-entry";
 import { importedDistributionProducts } from "./import-cat40.generated";
 import importedAllProducts from "./import-all-products.generated.json";
@@ -670,8 +671,18 @@ function hex(bytes:Uint8Array){return Array.from(bytes,byte=>byte.toString(16).p
 function randomHex(length:number){return hex(crypto.getRandomValues(new Uint8Array(length)))}
 async function sha256(value:string){return hex(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value))))}
 async function passwordHash(password:string,salt:string){
-  const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
-  return hex(new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt:new TextEncoder().encode(salt),iterations:150000,hash:"SHA-256"},key,256)));
+  const digest=await new Promise<Buffer>((resolve,reject)=>{
+    nodeScrypt(password,Buffer.from(salt,"hex"),32,{N:16384,r:8,p:1,maxmem:64*1024*1024},(error,key)=>error?reject(error):resolve(key));
+  });
+  return "scrypt$"+digest.toString("hex");
+}
+async function passwordMatches(password:string,salt:string,storedHash:string){
+  if(storedHash.startsWith("scrypt$"))return equalHash(await passwordHash(password,salt),storedHash);
+  // Accounts created with the earlier PBKDF2 code remain readable.
+  const digest=await new Promise<Buffer>((resolve,reject)=>{
+    nodePbkdf2(password,salt,150000,32,"sha256",(error,key)=>error?reject(error):resolve(key));
+  });
+  return equalHash(digest.toString("hex"),storedHash);
 }
 function equalHash(left:string,right:string){if(left.length!==right.length)return false;let difference=0;for(let i=0;i<left.length;i++)difference|=left.charCodeAt(i)^right.charCodeAt(i);return difference===0}
 let customerSchemaReady:Promise<void>|null=null;
@@ -739,8 +750,8 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const ip=request.headers.get("cf-connecting-ip")||"unknown";
     if(!await customerRateLimit(env,"login-email:"+await sha256(email),10,900000)||!await customerRateLimit(env,"login-ip:"+await sha256(ip),50,900000))return json({error:"محاولات كثيرة، حاول بعد 15 دقيقة"},{status:429});
     const account=await env.DB.prepare("SELECT id,password_hash,password_salt FROM customer_accounts WHERE email=?").bind(email).first<{id:number;password_hash:string;password_salt:string}>();
-    const hash=await passwordHash(password,account?.password_salt||"not-an-account");
-    if(!account||!equalHash(hash,account.password_hash))return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
+    const matches=await passwordMatches(password,account?.password_salt||"not-an-account",account?.password_hash||"scrypt$"+("0".repeat(64)));
+    if(!account||!matches)return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
     const token=await createCustomerSession(env,account.id);
     return json({ok:true},{headers:{"set-cookie":customerCookie(token)}});
   }
@@ -766,7 +777,7 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const body=await parseJson(request),current=typeof body.currentPassword==="string"?body.currentPassword:"",next=typeof body.newPassword==="string"?body.newPassword:"";
     if(next.length<6||next.length>128)return json({error:"كلمة المرور الجديدة يجب أن تكون 6 خانات على الأقل"},{status:400});
     const row=await env.DB.prepare("SELECT password_hash,password_salt FROM customer_accounts WHERE id=?").bind(account.id).first<{password_hash:string;password_salt:string}>();
-    if(!row||!equalHash(await passwordHash(current,row.password_salt),row.password_hash))return json({error:"كلمة المرور الحالية غير صحيحة"},{status:403});
+    if(!row||!await passwordMatches(current,row.password_salt,row.password_hash))return json({error:"كلمة المرور الحالية غير صحيحة"},{status:403});
     const salt=randomHex(16);
     await env.DB.prepare("UPDATE customer_accounts SET password_hash=?,password_salt=?,updated_at=? WHERE id=?").bind(await passwordHash(next,salt),salt,Date.now(),account.id).run();
     await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE account_id=? AND token_hash<>? AND revoked_at IS NULL").bind(Date.now(),account.id,await sha256(requestCookie(request))).run();
