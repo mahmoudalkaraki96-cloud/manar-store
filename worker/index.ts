@@ -695,6 +695,14 @@ async function initializeCustomerAuthSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_sessions (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,token_hash TEXT NOT NULL UNIQUE,created_at INTEGER NOT NULL,last_seen_at INTEGER NOT NULL,revoked_at INTEGER)").run();
   await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_sessions_account ON customer_sessions(account_id)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_auth_limits (key TEXT PRIMARY KEY,attempts INTEGER NOT NULL,window_start INTEGER NOT NULL)").run();
+  const shippingZoneColumns=await env.DB.prepare("PRAGMA table_info(shipping_zones)").all<{name:string}>();
+  if(shippingZoneColumns.results.length&&!shippingZoneColumns.results.some(column=>column.name==="code")){
+    const legacyBase="shipping_zones_legacy_20260923";
+    const firstBackup=await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").bind(legacyBase).first();
+    const secondBackup=await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").bind(legacyBase+"_2").first();
+    const backupName=!firstBackup?legacyBase:!secondBackup?legacyBase+"_2":legacyBase+"_3";
+    await env.DB.prepare("ALTER TABLE shipping_zones RENAME TO "+backupName).run();
+  }
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS shipping_zones (code TEXT PRIMARY KEY,label TEXT NOT NULL,price_agorot INTEGER NOT NULL,active INTEGER NOT NULL DEFAULT 1,sort_order INTEGER NOT NULL DEFAULT 0,updated_at INTEGER NOT NULL)").run();
   const zoneNow=Date.now();
   await env.DB.prepare("INSERT OR IGNORE INTO shipping_zones (code,label,price_agorot,active,sort_order,updated_at) VALUES ('west_bank','الضفة الغربية',2000,1,0,?),('jerusalem','القدس',3000,1,1,?),('inside','الداخل',7000,1,2,?)").bind(zoneNow,zoneNow,zoneNow).run();
