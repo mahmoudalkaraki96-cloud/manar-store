@@ -7,9 +7,10 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
- document.title=settings.storeName||"Store";
+ const name=settings.storeName&&settings.storeName!=="Store"&&settings.storeName!=="Online Store"?settings.storeName:"Manar Store";
+ document.title=location.pathname.startsWith("/admin")?`${name} – لوحة التحكم`:name;
  const adminBrand=document.querySelector<HTMLElement>(".adminSide .brand b");
- if(adminBrand)adminBrand.textContent=settings.storeName||"Store";
+ if(adminBrand)adminBrand.textContent=name;
 }
 
 export default function StoreTheme(){

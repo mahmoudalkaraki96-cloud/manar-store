@@ -861,7 +861,10 @@ async function createOrder(request:Request,env:Env){
   await ensureCustomizationSchema(env);
   await ensureCustomerAuthSchema(env);
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
-  if(!name||phone.length<7||!city||!address)return json({error:"الاسم ورقم الهاتف والمدينة والعنوان مطلوبة"},{status:400});
+  if(!name)return json({error:"الاسم الكامل مطلوب"},{status:400});
+  if(phone.replace(/\D/g,"").length<7)return json({error:"رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل"},{status:400});
+  if(!city)return json({error:"المدينة مطلوبة"},{status:400});
+  if(!address)return json({error:"العنوان بالتفصيل مطلوب"},{status:400});
   const shippingRow=await env.DB.prepare("SELECT price_agorot FROM shipping_zones WHERE code=? AND active=1").bind(zone).first<{price_agorot:number}>();
   if(!shippingRow)return json({error:"منطقة التوصيل غير صحيحة أو غير مفعلة"},{status:400});
   const shipping=Number(shippingRow.price_agorot);
