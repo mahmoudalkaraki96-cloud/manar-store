@@ -640,6 +640,44 @@ async function ensureProduct2222EditedImage(env: Env) {
   await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
 }
 
+type StorePolicyRecord={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number};
+const defaultStorePolicies={
+  receiving:"يستقبل المتجر الطلبات إلكترونياً على مدار الساعة. تسجيل الطلب لا يعني تأكيده نهائياً؛ يعتمد الطلب بعد مراجعة البيانات وتوفر المنتجات. يحق للمتجر التواصل مع الزبون للتأكيد أو طلب معلومات إضافية، ويمكن تعليق الطلب أو إلغاؤه إذا تعذر التواصل أو كانت البيانات ناقصة. إذا نفد منتج بعد تسجيل الطلب، يتم التواصل لاختيار بديل أو حذف المنتج غير المتوفر.",
+  shipping:"تستغرق مدة التوصيل عادةً من يوم إلى يومين، وقد تستغرق وقتاً إضافياً حسب ضغط الطلبات أو المنطقة أو الظروف الجوية وشركة الشحن. أسعار التوصيل الأساسية: الضفة الغربية 20 شيكل، القدس 30 شيكل، والداخل 70 شيكل. قد تضاف رسوم موضحة مسبقاً للطلبات كبيرة الحجم أو التي تحتاج ترتيبات خاصة. الزبون مسؤول عن صحة رقم الهاتف والعنوان.",
+  cancellation:"يمكن إلغاء الطلب ما دام لم يخرج للتوصيل. بعد خروجه لا يمكن إلغاؤه أو رفض استلامه، وفي حال رفض الاستلام أو تعذر التسليم بسبب الزبون يبقى ملزماً بدفع رسوم التوصيل. الطلبات المخصصة أو المصنوعة حسب الطلب لا يمكن إلغاؤها بعد بدء تجهيزها.",
+  exchange:"يمكن طلب الاستبدال خلال يوم واحد من الاستلام بشرط أن يكون المنتج غير مستخدم وبحالته الأصلية مع كامل ملحقاته وتغليفه. لا يوجد استرجاع نقدي. المنتجات المخصصة أو المكتوب عليها أسماء أو عبارات لا تستبدل إلا إذا وصلت خاطئة أو متضررة. يتحمل الزبون تكلفة الاستبدال عند تغيير رأيه، ويتحمل المتجر التكلفة عند الخطأ أو الضرر. يجب فحص الطلب فور استلامه والإبلاغ عن الكسر أو التلف أو النقص خلال ساعتين مع صور واضحة؛ بعد ساعتين لا تقبل بلاغات الضرر الظاهر."
+};
+let storePoliciesReady:Promise<void>|null=null;
+async function ensureStorePoliciesSchema(env:Env){
+  if(!storePoliciesReady)storePoliciesReady=(async()=>{
+    await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_policies (id INTEGER PRIMARY KEY CHECK(id=1),version INTEGER NOT NULL DEFAULT 1,receiving TEXT NOT NULL,shipping TEXT NOT NULL,cancellation TEXT NOT NULL,exchange_policy TEXT NOT NULL,updated_at INTEGER NOT NULL)").run();
+    await env.DB.prepare("INSERT OR IGNORE INTO store_policies (id,version,receiving,shipping,cancellation,exchange_policy,updated_at) VALUES (1,1,?,?,?,?,?)").bind(defaultStorePolicies.receiving,defaultStorePolicies.shipping,defaultStorePolicies.cancellation,defaultStorePolicies.exchange,Date.now()).run();
+  })().catch(error=>{storePoliciesReady=null;throw error});
+  return storePoliciesReady;
+}
+let orderPolicyColumnsReady:Promise<void>|null=null;
+async function ensureOrderPolicyColumns(env:Env){
+  if(!orderPolicyColumnsReady)orderPolicyColumnsReady=(async()=>{
+    const columns=await env.DB.prepare("PRAGMA table_info(orders)").all(),names=new Set((columns.results as Array<Record<string,unknown>>).map(row=>String(row.name)));
+    if(!names.has("accepted_policy_version"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN accepted_policy_version INTEGER").run();
+    if(!names.has("policy_accepted_at"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN policy_accepted_at INTEGER").run();
+  })().catch(error=>{orderPolicyColumnsReady=null;throw error});
+  return orderPolicyColumnsReady;
+}
+async function readPolicies(env:Env):Promise<StorePolicyRecord>{
+  await ensureStorePoliciesSchema(env);
+  const row=await env.DB.prepare("SELECT version,receiving,shipping,cancellation,exchange_policy,updated_at FROM store_policies WHERE id=1").first<Record<string,unknown>>();
+  return {version:Number(row?.version||1),receiving:String(row?.receiving||defaultStorePolicies.receiving),shipping:String(row?.shipping||defaultStorePolicies.shipping),cancellation:String(row?.cancellation||defaultStorePolicies.cancellation),exchange:String(row?.exchange_policy||defaultStorePolicies.exchange),updatedAt:Number(row?.updated_at||Date.now())};
+}
+async function savePolicies(request:Request,env:Env){
+  await ensureStorePoliciesSchema(env);
+  const body=await parseJson(request),receiving=asText(body.receiving),shipping=asText(body.shipping),cancellation=asText(body.cancellation),exchange=asText(body.exchange);
+  if(!receiving||!shipping||!cancellation||!exchange)return json({error:"نص الأقسام الأربعة مطلوب"},{status:400});
+  if([receiving,shipping,cancellation,exchange].some(value=>value.length>12000))return json({error:"نص السياسة طويل جداً"},{status:400});
+  await env.DB.prepare("UPDATE store_policies SET version=version+1,receiving=?,shipping=?,cancellation=?,exchange_policy=?,updated_at=? WHERE id=1").bind(receiving,shipping,cancellation,exchange,Date.now()).run();
+  return json({ok:true,policies:await readPolicies(env)});
+}
+
 async function readStorefront(env: Env) {
   const [row, slides, popup, highlightData] = await Promise.all([
     env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
@@ -881,7 +919,11 @@ const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancel
 async function createOrder(request:Request,env:Env){
   await ensureCustomizationSchema(env);
   await ensureCustomerAuthSchema(env);
+  await ensureStorePoliciesSchema(env);
+  await ensureOrderPolicyColumns(env);
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
+  const currentPolicies=await readPolicies(env),acceptedPolicyVersion=Number(body.policyVersion);
+  if(body.policyAccepted!==true||acceptedPolicyVersion!==currentPolicies.version)return json({error:"يجب قراءة سياسات المتجر والموافقة على النسخة الحالية قبل تأكيد الطلب"},{status:400});
   if(!name)return json({error:"الاسم الكامل مطلوب"},{status:400});
   if(phone.replace(/\D/g,"").length<7)return json({error:"رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل"},{status:400});
   if(!city)return json({error:"المدينة مطلوبة"},{status:400});
@@ -912,7 +954,7 @@ async function createOrder(request:Request,env:Env){
     lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
   }
   const account=await getCustomerAccount(request,env);
-  const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null).run(),orderId=Number(result.meta.last_row_id);
+  const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
   await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
   return json({ok:true,orderNumber:number,total:(subtotal+shipping)/100});
 }
@@ -920,14 +962,15 @@ async function createOrder(request:Request,env:Env){
 async function readOrders(env:Env){
   await ensureCustomizationSchema(env);
   await ensureOrderExtrasSchema(env);
+  await ensureOrderPolicyColumns(env);
   const [orders,items,mediaResult,feesResult]=await Promise.all([
-    env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
+    env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,accepted_policy_version,policy_accepted_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
     env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
     env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all(),
     env.DB.prepare("SELECT id,order_id,label,amount_agorot FROM order_extra_fees ORDER BY id").all()
   ]);
   const media=mediaResult.results as Array<Record<string,unknown>>;
-  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
+  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
 async function updateOrder(request:Request,env:Env,id:number){
@@ -1163,6 +1206,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   }
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
   if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
@@ -1216,6 +1260,8 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
   if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]));
   if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/admin/policies") return json({policies:await readPolicies(env)});
+  if (request.method === "PUT" && url.pathname === "/api/admin/policies") return savePolicies(request,env);
   if (request.method === "GET" && url.pathname === "/api/admin/highlights") return json(await readHighlights(env,true));
   if (request.method === "PUT" && url.pathname === "/api/admin/highlights/visibility"){
     await ensureHighlightSchema(env);
