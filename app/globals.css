@@ -250,3 +250,7 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 /* Fix enlarged preview image using explicit bounded dimensions */
 .imageLightbox>div>img:first-child{position:absolute!important;top:18px!important;right:18px!important;bottom:auto!important;left:auto!important;width:calc(100% - 36px)!important;height:calc(100% - 36px)!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:center!important}
 @media(max-width:800px){.imageLightbox>div>img:first-child{top:10px!important;right:10px!important;width:calc(100% - 20px)!important;height:calc(100% - 20px)!important}}
+
+
+/* Prevent stale theme colors flashing on hard refresh */
+.shopHeaderWrap.themeLoading .themeStrip{opacity:0!important}.shopHeaderWrap.themeReady .themeStrip{opacity:1}.shopHeaderWrap.themeLoading .headerBrand{color:transparent!important}.shopHeaderWrap.themeLoading .headerBrand img,.shopHeaderWrap.themeLoading .headerBrand b,.shopHeaderWrap.themeLoading .headerBrand small{visibility:hidden!important}.shopHeaderWrap.themeLoading .storeHighlights{visibility:hidden!important}
