@@ -849,13 +849,34 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     return json({ok:true});
   }
   if(request.method==="GET"&&path==="/api/account/orders"){
+    await ensureOrderExtrasSchema(env);
     const orders=await env.DB.prepare("SELECT id,order_number,status,total_agorot,shipping_agorot,created_at FROM orders WHERE customer_account_id=? AND deleted_at IS NULL ORDER BY created_at DESC,id DESC LIMIT 100").bind(account.id).all<{id:number;order_number:number;status:string;total_agorot:number;shipping_agorot:number;created_at:number}>();
     const items=await env.DB.prepare("SELECT oi.order_id,oi.product_name,oi.variant_label,oi.quantity,oi.item_number FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.customer_account_id=? AND o.deleted_at IS NULL ORDER BY oi.id").bind(account.id).all<{order_id:number;product_name:string;variant_label:string|null;quantity:number;item_number:number}>();
-    return json({orders:orders.results.map(order=>({number:order.order_number,status:order.status,total:order.total_agorot/100,shipping:order.shipping_agorot/100,createdAt:order.created_at,items:items.results.filter(item=>item.order_id===order.id).map(item=>({name:item.product_name,variant:item.variant_label,quantity:item.quantity,itemNumber:item.item_number}))}))});
+    const fees=await env.DB.prepare("SELECT f.order_id,f.label,f.amount_agorot FROM order_extra_fees f JOIN orders o ON o.id=f.order_id WHERE o.customer_account_id=? AND o.deleted_at IS NULL ORDER BY f.id").bind(account.id).all<{order_id:number;label:string;amount_agorot:number}>();
+    return json({orders:orders.results.map(order=>({number:order.order_number,status:order.status,total:order.total_agorot/100,shipping:order.shipping_agorot/100,createdAt:order.created_at,extraFees:fees.results.filter(fee=>fee.order_id===order.id).map(fee=>({label:fee.label,amount:fee.amount_agorot/100})),items:items.results.filter(item=>item.order_id===order.id).map(item=>({name:item.product_name,variant:item.variant_label,quantity:item.quantity,itemNumber:item.item_number}))}))});
   }
   return json({error:"Not Found"},{status:404});
 }
 
+let orderExtrasReady:Promise<void>|null=null;
+async function ensureOrderExtrasSchema(env:Env){
+ if(!orderExtrasReady)orderExtrasReady=env.DB.prepare("CREATE TABLE IF NOT EXISTS order_extra_fees (id INTEGER PRIMARY KEY AUTOINCREMENT,order_id INTEGER NOT NULL,label TEXT NOT NULL,amount_agorot INTEGER NOT NULL,created_at INTEGER NOT NULL,FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE)").run().then(()=>undefined).catch(error=>{orderExtrasReady=null;throw error});
+ await orderExtrasReady;
+}
+let analyticsReady:Promise<void>|null=null;
+async function ensureAnalyticsSchema(env:Env){
+ if(!analyticsReady)analyticsReady=(async()=>{await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_daily_visitors (day TEXT NOT NULL,visitor_hash TEXT NOT NULL,views INTEGER NOT NULL DEFAULT 1,first_seen_at INTEGER NOT NULL,last_seen_at INTEGER NOT NULL,PRIMARY KEY(day,visitor_hash))").run();await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_store_daily_visitors_day ON store_daily_visitors(day)").run()})().catch(error=>{analyticsReady=null;throw error});
+ await analyticsReady;
+}
+function analyticsDay(date=new Date()){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Hebron",year:"numeric",month:"2-digit",day:"2-digit"}).format(date)}
+async function trackStoreVisit(request:Request,env:Env){
+ await ensureAnalyticsSchema(env);
+ const body=await parseJson(request),visitorId=asText(body.visitorId);
+ if(!/^[a-zA-Z0-9-]{16,80}$/.test(visitorId))return json({error:"معرّف الزيارة غير صحيح"},{status:400});
+ const now=Date.now(),day=analyticsDay();
+ await env.DB.prepare("INSERT INTO store_daily_visitors (day,visitor_hash,views,first_seen_at,last_seen_at) VALUES (?,?,1,?,?) ON CONFLICT(day,visitor_hash) DO UPDATE SET views=views+1,last_seen_at=excluded.last_seen_at").bind(day,await sha256(visitorId),now,now).run();
+ return json({ok:true});
+}
 const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancelled"] as const;
 async function createOrder(request:Request,env:Env){
   await ensureCustomizationSchema(env);
@@ -898,21 +919,27 @@ async function createOrder(request:Request,env:Env){
 
 async function readOrders(env:Env){
   await ensureCustomizationSchema(env);
-  const [orders,items,mediaResult]=await Promise.all([
+  await ensureOrderExtrasSchema(env);
+  const [orders,items,mediaResult,feesResult]=await Promise.all([
     env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
     env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
-    env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all()
+    env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all(),
+    env.DB.prepare("SELECT id,order_id,label,amount_agorot FROM order_extra_fees ORDER BY id").all()
   ]);
   const media=mediaResult.results as Array<Record<string,unknown>>;
-  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
+  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
 async function updateOrder(request:Request,env:Env,id:number){
-  const body=await parseJson(request),status=asText(body.status);
+  await ensureOrderExtrasSchema(env);
+  const body=await parseJson(request),status=asText(body.status),submittedFees=Array.isArray(body.extraFees)?body.extraFees as Array<Record<string,unknown>>:null;
+  const fees=submittedFees?.map(fee=>({label:asText(fee.label).slice(0,100),amount:Math.max(0,Math.round(Number(fee.amount||0)*100))})).filter(fee=>fee.label&&fee.amount>0).slice(0,20)||null;
+  if(submittedFees&&fees?.length!==submittedFees.length)return json({error:"سبب ومبلغ كل رسم إضافي مطلوبان"},{status:400});
   if(!orderStatuses.includes(status as typeof orderStatuses[number]))return json({error:"حالة الطلب غير صحيحة"},{status:400});
   const current=await env.DB.prepare("SELECT status FROM orders WHERE id=? AND deleted_at IS NULL").bind(id).first<{status:string}>();
   if(!current)return json({error:"الطلب غير موجود"},{status:404});
-  const shipping=Math.max(0,Math.round(Number(body.shipping??0)*100)),now=Date.now(),statements=[env.DB.prepare("UPDATE orders SET status=?,shipping_agorot=?,total_agorot=subtotal_agorot+?,updated_at=? WHERE id=?").bind(status,shipping,shipping,now,id)];
+  const shipping=Math.max(0,Math.round(Number(body.shipping??0)*100)),now=Date.now(),existingFeeTotal=fees?0:Number((await env.DB.prepare("SELECT COALESCE(SUM(amount_agorot),0) AS total FROM order_extra_fees WHERE order_id=?").bind(id).first<{total:number}>())?.total||0),feeTotal=fees?fees.reduce((sum,fee)=>sum+fee.amount,0):existingFeeTotal,statements=[env.DB.prepare("UPDATE orders SET status=?,shipping_agorot=?,total_agorot=subtotal_agorot+?+?,updated_at=? WHERE id=?").bind(status,shipping,shipping,feeTotal,now,id)];
+  if(fees){statements.push(env.DB.prepare("DELETE FROM order_extra_fees WHERE order_id=?").bind(id));for(const fee of fees)statements.push(env.DB.prepare("INSERT INTO order_extra_fees (order_id,label,amount_agorot,created_at) VALUES (?,?,?,?)").bind(id,fee.label,fee.amount,now))}
   if(current.status==="new"&&status==="confirmed"){
     const items=await env.DB.prepare("SELECT id,product_id,variant_id,product_name,variant_label,quantity FROM order_items WHERE order_id=?").bind(id).all();
     for(const item of items.results as Array<Record<string,unknown>>){
@@ -1090,6 +1117,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
 }
 
 async function readOperations(env:Env){
+  await ensureAnalyticsSchema(env);
   const [suppliers,purchases,items,customers,stats]=await Promise.all([
     env.DB.prepare("SELECT id,supplier_number,name,phone,address,notes,active FROM suppliers ORDER BY name").all(),
     env.DB.prepare("SELECT p.id,p.purchase_number,p.supplier_id,p.status,p.invoice_reference,p.purchased_at,p.total_agorot,p.notes,s.name AS supplier_name FROM purchases p LEFT JOIN suppliers s ON s.id=p.supplier_id WHERE p.deleted_at IS NULL ORDER BY p.purchased_at DESC,p.id DESC").all(),
@@ -1098,11 +1126,24 @@ async function readOperations(env:Env){
     env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders_count,(SELECT COUNT(*) FROM orders WHERE status='new' AND deleted_at IS NULL) AS new_orders,(SELECT COUNT(*) FROM products WHERE deleted_at IS NULL AND active=1) AS products_count,(SELECT COUNT(*) FROM products WHERE deleted_at IS NULL AND stock_quantity<=0 AND NOT EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=products.id AND v.stock_quantity>0 AND v.active=1)) AS out_of_stock,(SELECT COALESCE(SUM(total_agorot),0) FROM orders WHERE status IN ('confirmed','preparing','shipped','delivered') AND deleted_at IS NULL) AS sales_agorot").first<Record<string,unknown>>()
   ]);
   const purchaseItems=items.results as Array<Record<string,unknown>>;
+  const now=Date.now(),today=analyticsDay(),day7=analyticsDay(new Date(now-6*86400000)),day30=analyticsDay(new Date(now-29*86400000));
+  const [traffic,orderMetrics,recentResult,topResult,trafficChart,orderChart]=await Promise.all([
+    env.DB.prepare("SELECT COUNT(DISTINCT CASE WHEN day=? THEN visitor_hash END) AS visitors_today,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_7d,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_30d,COALESCE(SUM(CASE WHEN day=? THEN views ELSE 0 END),0) AS views_today FROM store_daily_visitors").bind(today,day7,day30,today).first<Record<string,unknown>>(),
+    env.DB.prepare("SELECT COUNT(CASE WHEN date(created_at/1000,\'unixepoch\',\'+3 hours\')=? THEN 1 END) AS orders_today,COALESCE(SUM(CASE WHEN date(created_at/1000,\'unixepoch\',\'+3 hours\')=? AND status!=\'cancelled\' THEN total_agorot ELSE 0 END),0) AS sales_today,COALESCE(SUM(CASE WHEN created_at>=? AND status!=\'cancelled\' THEN total_agorot ELSE 0 END),0) AS sales_30d,COUNT(CASE WHEN created_at>=? AND status!=\'cancelled\' THEN 1 END) AS orders_30d,COALESCE(AVG(CASE WHEN status!=\'cancelled\' THEN total_agorot END),0) AS average_order FROM orders WHERE deleted_at IS NULL").bind(today,today,now-30*86400000,now-30*86400000).first<Record<string,unknown>>(),
+    env.DB.prepare("SELECT id,order_number,customer_name,total_agorot,status,created_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 5").all(),
+    env.DB.prepare("SELECT oi.item_number,oi.product_name,SUM(oi.quantity) AS quantity,SUM(oi.line_total_agorot) AS sales_agorot FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.deleted_at IS NULL AND o.status!='cancelled' GROUP BY oi.item_number,oi.product_name ORDER BY quantity DESC LIMIT 5").all(),
+    env.DB.prepare("SELECT day,COUNT(DISTINCT visitor_hash) AS visitors,SUM(views) AS views FROM store_daily_visitors WHERE day>=? GROUP BY day ORDER BY day").bind(day7).all(),
+    env.DB.prepare("SELECT date(created_at/1000,'unixepoch','+3 hours') AS day,COUNT(*) AS orders,COALESCE(SUM(CASE WHEN status!='cancelled' THEN total_agorot ELSE 0 END),0) AS sales_agorot FROM orders WHERE deleted_at IS NULL AND created_at>=? GROUP BY day ORDER BY day").bind(now-7*86400000).all()
+  ]);
+  const visitors30=Number(traffic?.visitors_30d||0),orders30=Number(orderMetrics?.orders_30d||0);
   return {
     suppliers:(suppliers.results as Array<Record<string,unknown>>).map(row=>({id:Number(row.id),supplierNumber:Number(row.supplier_number),name:String(row.name),phone:String(row.phone||""),address:String(row.address||""),notes:String(row.notes||""),active:Boolean(row.active)})),
     purchases:(purchases.results as Array<Record<string,unknown>>).map(row=>({id:Number(row.id),purchaseNumber:Number(row.purchase_number),supplierId:row.supplier_id==null?null:Number(row.supplier_id),supplierName:String(row.supplier_name||"بدون مورد"),status:String(row.status),invoiceReference:String(row.invoice_reference||""),purchasedAt:Number(row.purchased_at),total:Number(row.total_agorot)/100,notes:String(row.notes||""),items:purchaseItems.filter(item=>Number(item.purchase_id)===Number(row.id)).map(item=>({id:Number(item.id),productId:item.product_id==null?null:Number(item.product_id),variantId:item.variant_id==null?null:Number(item.variant_id),itemNumber:Number(item.item_number||0),productName:String(item.product_name),quantity:Number(item.quantity),unitCost:Number(item.unit_cost_agorot)/100,lineTotal:Number(item.line_total_agorot)/100,notes:String(item.notes||"")}))})),
     customers:(customers.results as Array<Record<string,unknown>>).map(row=>({name:String(row.customer_name||""),phone:String(row.phone||""),city:String(row.city||""),ordersCount:Number(row.orders_count),total:Number(row.total_agorot)/100,lastOrderAt:Number(row.last_order_at)})),
-    stats:{ordersCount:Number(stats?.orders_count||0),newOrders:Number(stats?.new_orders||0),productsCount:Number(stats?.products_count||0),outOfStock:Number(stats?.out_of_stock||0),sales:Number(stats?.sales_agorot||0)/100}
+    stats:{ordersCount:Number(stats?.orders_count||0),newOrders:Number(stats?.new_orders||0),productsCount:Number(stats?.products_count||0),outOfStock:Number(stats?.out_of_stock||0),sales:Number(stats?.sales_agorot||0)/100,visitorsToday:Number(traffic?.visitors_today||0),visitors7d:Number(traffic?.visitors_7d||0),visitors30d:visitors30,pageviewsToday:Number(traffic?.views_today||0),ordersToday:Number(orderMetrics?.orders_today||0),salesToday:Number(orderMetrics?.sales_today||0)/100,sales30d:Number(orderMetrics?.sales_30d||0)/100,averageOrder:Number(orderMetrics?.average_order||0)/100,conversion30d:visitors30?Math.round(orders30/visitors30*1000)/10:0},
+    recentOrders:(recentResult.results as Array<Record<string,unknown>>).map(row=>({id:Number(row.id),number:Number(row.order_number),customerName:String(row.customer_name),total:Number(row.total_agorot)/100,status:String(row.status),createdAt:Number(row.created_at)})),
+    topProducts:(topResult.results as Array<Record<string,unknown>>).map(row=>({itemNumber:Number(row.item_number),name:String(row.product_name),quantity:Number(row.quantity),sales:Number(row.sales_agorot)/100})),
+    chart:{traffic:trafficChart.results,orders:orderChart.results}
   };
 }
 
@@ -1123,6 +1164,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
+  if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
   if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
