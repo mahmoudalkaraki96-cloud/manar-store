@@ -5,13 +5,14 @@ import {loadCatalog,type CatalogResponse,type Product,type Variant} from "../../
 import {defaultSettings,loadStorefront,type StoreSettings} from "../../storefront-types";
 import StoreHeader from "../../components/StoreHeader";
 import ProductCard from "../../components/ProductCard";
+import {addCartItem} from "../../cart-storage";
 
 export default function CategoryPage(){
  const params=useParams<{slug:string}>(),[data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[settings,setSettings]=useState<StoreSettings>(defaultSettings),[loading,setLoading]=useState(true),[sort,setSort]=useState("featured"),[term,setTerm]=useState(""),[price,setPrice]=useState("all"),[stock,setStock]=useState("all");
  useEffect(()=>{Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setSettings(storefront.settings)}).finally(()=>setLoading(false))},[]);
  const category=data.categories.find(item=>item.slug===params.slug),children=category?data.categories.filter(item=>item.parentId===category.id):[];
  const list=useMemo(()=>{if(!category)return[];let result=data.products.filter(product=>product.categoryId===category.id).filter(product=>product.name.includes(term)||String(product.itemNumber).includes(term));if(price==="under20")result=result.filter(product=>product.price<20);if(price==="20to50")result=result.filter(product=>product.price>=20&&product.price<=50);if(price==="over50")result=result.filter(product=>product.price>50);if(stock==="available")result=result.filter(product=>product.stock>0||product.variants?.some(variant=>variant.stock>0));if(stock==="unavailable")result=result.filter(product=>product.stock<=0&&!product.variants?.some(variant=>variant.stock>0));return [...result].sort((a,b)=>sort==="priceAsc"?a.price-b.price:sort==="priceDesc"?b.price-a.price:sort==="rating"?b.rating-a.rating:sort==="newest"?b.createdAt-a.createdAt:b.orders-a.orders)},[category,data.products,term,price,stock,sort]);
- const add=(product:Product,variant?:Variant)=>{if(variant?variant.stock<=0:!product.inStock)return;const key=`${product.id}:${variant?.id||"base"}`,saved=JSON.parse(localStorage.getItem("manar_cart")||"{}"),line=saved[key];saved[key]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations:line?.customizations||{},notes:line?.notes||"",qty:(line?.qty||0)+1,price:variant?.price??product.price,image:variant?.image||product.image};localStorage.setItem("manar_cart",JSON.stringify(saved))};
+ const add=(product:Product,variant?:Variant)=>{addCartItem(product,variant)};
  if(loading)return <main><StoreHeader/><div className="storeState">جاري التحميل...</div></main>;
  if(!category)return <main><StoreHeader categories={data.categories} products={data.products}/><div className="emptyStore"><h1>القسم غير موجود</h1><a href="/">العودة للرئيسية</a></div></main>;
  const ancestors=[];let current=category.parentId?data.categories.find(item=>item.id===category.parentId):undefined;while(current){ancestors.unshift(current);current=current.parentId?data.categories.find(item=>item.id===current.parentId):undefined}

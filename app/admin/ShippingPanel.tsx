@@ -1,0 +1,12 @@
+"use client";
+import {useEffect,useState} from "react";
+type Zone={code:string;label:string;price:number;active:boolean;sortOrder:number};
+async function request(method="GET",body?:unknown){const response=await fetch("/api/admin/shipping-zones",{method,cache:"no-store",headers:body?{"content-type":"application/json"}:undefined,body:body?JSON.stringify(body):undefined}),data=await response.json() as {error?:string;zones?:Zone[]};if(!response.ok)throw new Error(data.error||"تعذر حفظ إعدادات الشحن");return data}
+export default function ShippingPanel(){
+ const [zones,setZones]=useState<Zone[]>([]),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false),[message,setMessage]=useState("");
+ useEffect(()=>{void request().then(data=>setZones(data.zones||[])).catch(error=>setMessage(error instanceof Error?error.message:"تعذر تحميل مناطق الشحن")).finally(()=>setLoading(false))},[]);
+ const edit=(index:number,patch:Partial<Zone>)=>setZones(current=>current.map((zone,i)=>i===index?{...zone,...patch}:zone));
+ const save=async()=>{setBusy(true);setMessage("");try{const data=await request("PUT",{zones});setZones(data.zones||zones);setMessage("تم حفظ مناطق وأسعار الشحن")}catch(error){setMessage(error instanceof Error?error.message:"تعذر الحفظ")}finally{setBusy(false)}};
+ if(loading)return <div className="dataPanel">جاري تحميل إعدادات الشحن...</div>;
+ return <div className="dataPanel shippingSettings"><div className="panelHead"><div><h3>الشحن والمناطق</h3><small>السعر المختار يُضاف تلقائيًا للطلب حسب عنوان الزبون.</small></div><button type="button" disabled={busy} onClick={()=>void save()}>{busy?"جارٍ الحفظ...":"حفظ الإعدادات"}</button></div>{message&&<p className="adminMessage" role="status">{message}</p>}<div className="shippingZoneList">{zones.map((zone,index)=><section key={zone.code} className={zone.active?"shippingZone active":"shippingZone"}><label className="shippingZoneToggle"><input type="checkbox" checked={zone.active} onChange={event=>edit(index,{active:event.target.checked})}/><span>{zone.active?"مفعّلة":"مخفية"}</span></label><label>اسم المنطقة<input value={zone.label} maxLength={60} onChange={event=>edit(index,{label:event.target.value})}/></label><label>سعر الشحن بالشيكل<input type="number" min="0" max="1000" step="1" value={zone.price} onChange={event=>edit(index,{price:Number(event.target.value)})}/></label></section>)}</div><p className="shippingHint">إخفاء منطقة يمنع اختيارها في العناوين والطلبات الجديدة، لكنه لا يحذف العناوين القديمة.</p></div>;
+}
