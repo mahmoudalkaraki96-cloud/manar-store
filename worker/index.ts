@@ -695,6 +695,11 @@ async function initializeCustomerAuthSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_sessions (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,token_hash TEXT NOT NULL UNIQUE,created_at INTEGER NOT NULL,last_seen_at INTEGER NOT NULL,revoked_at INTEGER)").run();
   await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_sessions_account ON customer_sessions(account_id)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_auth_limits (key TEXT PRIMARY KEY,attempts INTEGER NOT NULL,window_start INTEGER NOT NULL)").run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS shipping_zones (code TEXT PRIMARY KEY,label TEXT NOT NULL,price_agorot INTEGER NOT NULL,active INTEGER NOT NULL DEFAULT 1,sort_order INTEGER NOT NULL DEFAULT 0,updated_at INTEGER NOT NULL)").run();
+  const zoneNow=Date.now();
+  await env.DB.prepare("INSERT OR IGNORE INTO shipping_zones (code,label,price_agorot,active,sort_order,updated_at) VALUES ('west_bank','الضفة الغربية',2000,1,0,?),('jerusalem','القدس',3000,1,1,?),('inside','الداخل',7000,1,2,?)").bind(zoneNow,zoneNow,zoneNow).run();
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_addresses (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,label TEXT NOT NULL,recipient_name TEXT NOT NULL,phone TEXT NOT NULL,city TEXT NOT NULL,address TEXT NOT NULL,shipping_zone TEXT NOT NULL,is_default INTEGER NOT NULL DEFAULT 0,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL,FOREIGN KEY(account_id) REFERENCES customer_accounts(id) ON DELETE CASCADE)").run();
+  await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_addresses_account ON customer_addresses(account_id)").run();
   const columns=await env.DB.prepare("PRAGMA table_info(orders)").all<{name:string}>();
   if(!columns.results.some(row=>row.name==="customer_account_id"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN customer_account_id INTEGER").run();
 }
@@ -724,6 +729,24 @@ async function createCustomerSession(env:Env,accountId:number){
   const token=randomHex(32),now=Date.now();
   await env.DB.prepare("INSERT INTO customer_sessions (account_id,token_hash,created_at,last_seen_at) VALUES (?,?,?,?)").bind(accountId,await sha256(token),now,now).run();
   return token;
+}
+type ShippingZone={code:string;label:string;price:number;active:boolean;sortOrder:number};
+async function readShippingZones(env:Env,includeInactive=false):Promise<ShippingZone[]>{
+  await ensureCustomerAuthSchema(env);
+  const rows=await env.DB.prepare("SELECT code,label,price_agorot,active,sort_order FROM shipping_zones "+(includeInactive?"":"WHERE active=1 ")+"ORDER BY sort_order,code").all<{code:string;label:string;price_agorot:number;active:number;sort_order:number}>();
+  return rows.results.map(row=>({code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
+}
+async function saveShippingZones(request:Request,env:Env){
+  await ensureCustomerAuthSchema(env);
+  const body=await parseJson(request),zones=Array.isArray(body.zones)?body.zones as Array<Record<string,unknown>>:[];
+  const allowed=new Set(["west_bank","jerusalem","inside"]);
+  if(zones.length!==3||zones.some(zone=>!allowed.has(asText(zone.code))))return json({error:"بيانات مناطق الشحن غير مكتملة"},{status:400});
+  for(const [index,zone] of zones.entries()){
+    const code=asText(zone.code),label=asText(zone.label).slice(0,60),price=Number(zone.price);
+    if(!label||!Number.isFinite(price)||price<0||price>1000)return json({error:"اسم المنطقة أو سعر الشحن غير صحيح"},{status:400});
+    await env.DB.prepare("UPDATE shipping_zones SET label=?,price_agorot=?,active=?,sort_order=?,updated_at=? WHERE code=?").bind(label,Math.round(price*100),asBoolean(zone.active)?1:0,index,Date.now(),code).run();
+  }
+  return json({ok:true,zones:await readShippingZones(env,true)});
 }
 async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
   if(env.APP_SURFACE==="admin")return json({error:"Not Found"},{status:404});
@@ -762,6 +785,40 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
   }
   const account=await getCustomerAccount(request,env);
   if(!account)return json({error:"سجّل دخولك أولًا"},{status:401});
+  if(request.method==="GET"&&path==="/api/account/addresses"){
+    let rows=await env.DB.prepare("SELECT id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses WHERE account_id=? ORDER BY is_default DESC,id").bind(account.id).all<{id:number;label:string;recipient_name:string;phone:string;city:string;address:string;shipping_zone:string;is_default:number}>();
+    if(!rows.results.length&&account.address&&account.city){
+      const now=Date.now();
+      await env.DB.prepare("INSERT INTO customer_addresses (account_id,label,recipient_name,phone,city,address,shipping_zone,is_default,created_at,updated_at) VALUES (?,?,?,?,?,?,?,1,?,?)").bind(account.id,"المنزل",account.name,account.phone,account.city,account.address,"west_bank",now,now).run();
+      rows=await env.DB.prepare("SELECT id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses WHERE account_id=? ORDER BY is_default DESC,id").bind(account.id).all<{id:number;label:string;recipient_name:string;phone:string;city:string;address:string;shipping_zone:string;is_default:number}>();
+    }
+    return json({addresses:rows.results.map(row=>({id:row.id,label:row.label,recipientName:row.recipient_name,phone:row.phone,city:row.city,address:row.address,shippingZone:row.shipping_zone,isDefault:row.is_default!==0}))});
+  }
+  const addressMatch=path.match(/^\/api\/account\/addresses\/(\d+)$/);
+  if((request.method==="POST"&&path==="/api/account/addresses")||(request.method==="PUT"&&addressMatch)){
+    const body=await parseJson(request),label=asText(body.label).slice(0,60),recipientName=asText(body.recipientName).slice(0,100),phone=asText(body.phone).slice(0,30),city=asText(body.city).slice(0,100),address=asText(body.address).slice(0,250),shippingZone=asText(body.shippingZone),makeDefault=asBoolean(body.isDefault),now=Date.now();
+    if(!label||!recipientName||phone.length<7||!city||!address)return json({error:"اسم العنوان والمستلم والهاتف والمدينة والعنوان مطلوبة"},{status:400});
+    const zone=await env.DB.prepare("SELECT code FROM shipping_zones WHERE code=? AND active=1").bind(shippingZone).first();
+    if(!zone)return json({error:"منطقة الشحن غير متاحة"},{status:400});
+    if(makeDefault)await env.DB.prepare("UPDATE customer_addresses SET is_default=0 WHERE account_id=?").bind(account.id).run();
+    if(addressMatch){
+      const id=Number(addressMatch[1]),result=await env.DB.prepare("UPDATE customer_addresses SET label=?,recipient_name=?,phone=?,city=?,address=?,shipping_zone=?,is_default=?,updated_at=? WHERE id=? AND account_id=?").bind(label,recipientName,phone,city,address,shippingZone,makeDefault?1:0,now,id,account.id).run();
+      if(result.meta?.changes===0)return json({error:"العنوان غير موجود"},{status:404});
+    }else{
+      const count=await env.DB.prepare("SELECT COUNT(*) AS count FROM customer_addresses WHERE account_id=?").bind(account.id).first<{count:number}>();
+      const isDefault=makeDefault||Number(count?.count||0)===0;
+      if(isDefault)await env.DB.prepare("UPDATE customer_addresses SET is_default=0 WHERE account_id=?").bind(account.id).run();
+      await env.DB.prepare("INSERT INTO customer_addresses (account_id,label,recipient_name,phone,city,address,shipping_zone,is_default,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(account.id,label,recipientName,phone,city,address,shippingZone,isDefault?1:0,now,now).run();
+    }
+    return json({ok:true});
+  }
+  if(request.method==="DELETE"&&addressMatch){
+    const id=Number(addressMatch[1]),row=await env.DB.prepare("SELECT is_default FROM customer_addresses WHERE id=? AND account_id=?").bind(id,account.id).first<{is_default:number}>();
+    if(!row)return json({error:"العنوان غير موجود"},{status:404});
+    await env.DB.prepare("DELETE FROM customer_addresses WHERE id=? AND account_id=?").bind(id,account.id).run();
+    if(row.is_default)await env.DB.prepare("UPDATE customer_addresses SET is_default=1 WHERE id=(SELECT id FROM customer_addresses WHERE account_id=? ORDER BY id LIMIT 1)").bind(account.id).run();
+    return json({ok:true});
+  }
   if(request.method==="GET"&&path==="/api/account/me"){
     const token=requestCookie(request);
     await env.DB.prepare("UPDATE customer_sessions SET last_seen_at=? WHERE token_hash=?").bind(Date.now(),await sha256(token)).run();
@@ -797,8 +854,9 @@ async function createOrder(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
   if(!name||phone.length<7||!city||!address)return json({error:"الاسم ورقم الهاتف والمدينة والعنوان مطلوبة"},{status:400});
-  const shipping=zone==="jerusalem"?3000:zone==="inside"?7000:zone==="west_bank"?2000:-1;
-  if(shipping<0)return json({error:"منطقة التوصيل غير صحيحة"},{status:400});
+  const shippingRow=await env.DB.prepare("SELECT price_agorot FROM shipping_zones WHERE code=? AND active=1").bind(zone).first<{price_agorot:number}>();
+  if(!shippingRow)return json({error:"منطقة التوصيل غير صحيحة أو غير مفعلة"},{status:400});
+  const shipping=Number(shippingRow.price_agorot);
   const requested=Array.isArray(body.items)?body.items as Array<Record<string,unknown>>:[];
   if(!requested.length||requested.length>100)return json({error:"السلة فارغة أو تتجاوز الحد"},{status:400});
   const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
@@ -1053,6 +1111,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   }
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
   if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
@@ -1086,6 +1145,8 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname === "/api/admin/catalog") return json(await readCatalog(env, true));
+  if (request.method === "GET" && url.pathname === "/api/admin/shipping-zones") return json({zones:await readShippingZones(env,true)});
+  if (request.method === "PUT" && url.pathname === "/api/admin/shipping-zones") return saveShippingZones(request,env);
   if (request.method === "GET" && url.pathname === "/api/admin/operations") return json(await readOperations(env));
   if (request.method === "POST" && url.pathname === "/api/admin/import-products") return importProducts(request,env);
   if (request.method === "POST" && url.pathname === "/api/admin/suppliers") return saveSupplier(request,env);

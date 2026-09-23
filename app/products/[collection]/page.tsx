@@ -4,13 +4,14 @@ import {useParams} from "next/navigation";
 import {loadCatalog,type CatalogResponse,type Product,type Variant} from "../../catalog-types";
 import StoreHeader from "../../components/StoreHeader";
 import ProductCard from "../../components/ProductCard";
+import {addCartItem} from "../../cart-storage";
 
 const labels:Record<string,string>={offers:"العروض",featured:"منتجات مميزة",newest:"مضاف حديثاً","most-ordered":"الأكثر طلباً","top-rated":"الأعلى تقييماً"};
 export default function ProductCollectionPage(){
  const params=useParams<{collection:string}>(),[data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[loading,setLoading]=useState(true);
  useEffect(()=>{loadCatalog().then(setData).finally(()=>setLoading(false))},[]);
  const list=useMemo(()=>{const items=[...data.products];if(params.collection==="offers")return items.filter(item=>item.oldPrice);if(params.collection==="featured")return items.filter(item=>item.featured);if(params.collection==="newest")return items.sort((a,b)=>b.createdAt-a.createdAt);if(params.collection==="most-ordered")return items.filter(item=>item.orders>0).sort((a,b)=>b.orders-a.orders);if(params.collection==="top-rated")return items.filter(item=>item.ratingCount>0).sort((a,b)=>b.rating-a.rating);return[]},[data.products,params.collection]);
- const add=(product:Product,variant?:Variant)=>{if(variant?variant.stock<=0:!product.inStock)return;const key=`${product.id}:${variant?.id||"base"}`,saved=JSON.parse(localStorage.getItem("manar_cart")||"{}"),line=saved[key];saved[key]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations:line?.customizations||{},notes:line?.notes||"",qty:(line?.qty||0)+1,price:variant?.price??product.price,image:variant?.image||product.image};localStorage.setItem("manar_cart",JSON.stringify(saved))};
+ const add=(product:Product,variant?:Variant)=>{addCartItem(product,variant)};
  const title=labels[params.collection];
  if(loading)return <main><StoreHeader/><div className="storeState">جاري التحميل...</div></main>;
  if(!title)return <main><StoreHeader categories={data.categories} products={data.products}/><div className="emptyStore"><h1>الصفحة غير موجودة</h1></div></main>;
