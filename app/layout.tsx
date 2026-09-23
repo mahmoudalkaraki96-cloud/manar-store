@@ -4,5 +4,5 @@ import "./globals.css";
 import "./checkout.css";
 import "./watermark.css";
 import "./highlights.css";
-export const metadata:Metadata={title:"Online Store",description:"تسوّق بسهولة من متجرنا الإلكتروني",openGraph:{title:"Online Store",description:"تسوّق بسهولة من متجرنا الإلكتروني",type:"website"},twitter:{card:"summary_large_image",title:"Online Store",description:"تسوّق بسهولة من متجرنا الإلكتروني"}};
+export const metadata:Metadata={title:"Manar Store",description:"تسوّق بسهولة من متجرنا الإلكتروني",openGraph:{title:"Manar Store",description:"تسوّق بسهولة من متجرنا الإلكتروني",type:"website"},twitter:{card:"summary_large_image",title:"Manar Store",description:"تسوّق بسهولة من متجرنا الإلكتروني"}};
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ar" dir="rtl"><body><StoreTheme/>{children}</body></html>}
