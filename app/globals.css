@@ -258,3 +258,8 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 
 /* Show every slider image completely without cropping or distortion */
 .imageOnlySlider>.sliderVisual,.imageOnlySlider>a>.sliderVisual{position:relative;width:100%;height:100%;overflow:hidden;background:#f4edf0;isolation:isolate}.imageOnlySlider .sliderBackdrop{position:absolute;inset:-24px;width:calc(100% + 48px);height:calc(100% + 48px);object-fit:cover;filter:blur(24px);transform:scale(1.06);opacity:.48;z-index:0}.imageOnlySlider .sliderImage{position:relative;width:100%;height:100%;object-fit:contain!important;object-position:center;background:transparent;z-index:1}.imageOnlySlider .slideTitle{position:absolute;z-index:2}
+
+
+/* Dynamic slider height based on each image aspect ratio */
+.imageOnlySlider{height:auto!important;max-height:650px;transition:height .35s ease;background:#fff!important}.imageOnlySlider>.sliderVisual,.imageOnlySlider>a,.imageOnlySlider>a>.sliderVisual{width:100%;height:auto;max-height:650px}.imageOnlySlider>.sliderVisual,.imageOnlySlider>a>.sliderVisual{position:relative;overflow:hidden;background:#fff!important;transition:aspect-ratio .35s ease}.imageOnlySlider .sliderBackdrop{display:none!important}.imageOnlySlider .sliderImage{display:block!important;width:100%!important;height:100%!important;max-height:650px!important;object-fit:contain!important;object-position:center!important;background:#fff!important}
+@media(max-width:720px){.imageOnlySlider,.imageOnlySlider>.sliderVisual,.imageOnlySlider>a,.imageOnlySlider>a>.sliderVisual{height:auto!important;max-height:420px!important}.imageOnlySlider .sliderImage{max-height:420px!important}}
