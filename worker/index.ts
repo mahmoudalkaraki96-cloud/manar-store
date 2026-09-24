@@ -1486,8 +1486,11 @@ const worker = {
 
     const appResponse=await handler.fetch(request, env, ctx);
     const headers=securityHeaders(new Headers(appResponse.headers));
-    if(env.APP_SURFACE==="storefront"&&request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
-      const html=await appResponse.text(),head=await storefrontSeo(env,url);
+    if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
+      const html=await appResponse.text();
+      const head=env.APP_SURFACE==="storefront"
+        ?await storefrontSeo(env,url)
+        :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});
     }
