@@ -921,11 +921,16 @@ async function createOrder(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
   await ensureStorePoliciesSchema(env);
   await ensureOrderPolicyColumns(env);
+  const requestOrigin=request.headers.get("origin");
+  if(requestOrigin!==new URL(request.url).origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
   const body=await parseJson(request),name=asText(body.customerName),phone=asText(body.phone),city=asText(body.city),address=asText(body.address),zone=asText(body.shippingZone),notes=asOptionalText(body.notes);
   const currentPolicies=await readPolicies(env),acceptedPolicyVersion=Number(body.policyVersion);
   if(body.policyAccepted!==true||acceptedPolicyVersion!==currentPolicies.version)return json({error:"يجب قراءة سياسات المتجر والموافقة على النسخة الحالية قبل تأكيد الطلب"},{status:400});
   if(!name)return json({error:"الاسم الكامل مطلوب"},{status:400});
-  if(phone.replace(/\D/g,"").length<7)return json({error:"رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل"},{status:400});
+  const phoneDigits=phone.replace(/\D/g,"");
+  if(phoneDigits.length<7)return json({error:"رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل"},{status:400});
+  const orderIp=request.headers.get("cf-connecting-ip")||"unknown";
+  if(!await customerRateLimit(env,"order-ip:"+await sha256(orderIp),20,600000)||!await customerRateLimit(env,"order-phone:"+await sha256(phoneDigits),6,1800000))return json({error:"تم إرسال طلبات كثيرة، انتظر قليلًا ثم حاول مجددًا"},{status:429});
   if(!city)return json({error:"المدينة مطلوبة"},{status:400});
   if(!address)return json({error:"العنوان بالتفصيل مطلوب"},{status:400});
   const shippingRow=await env.DB.prepare("SELECT price_agorot FROM shipping_zones WHERE code=? AND active=1").bind(zone).first<{price_agorot:number}>();
@@ -949,7 +954,7 @@ async function createOrder(request:Request,env:Env){
     }
     if(stock<qty)return json({error:`المتوفر من ${String(product.name)}${label?` — ${label}`:""} هو ${stock} فقط`},{status:409});
     const definitions=await env.DB.prepare("SELECT label,max_length,required FROM product_custom_fields WHERE product_id=? ORDER BY sort_order,id").bind(productId).all(),submitted=item.customizations&&typeof item.customizations==="object"?item.customizations as Record<string,unknown>:{},customizations:Record<string,string>={};
-    for(const field of definitions.results as Array<Record<string,unknown>>){const fieldLabel=String(field.label),value=asText(submitted[fieldLabel]).slice(0,Number(field.max_length||60));if(value)customizations[fieldLabel]=value}
+    for(const field of definitions.results as Array<Record<string,unknown>>){const fieldLabel=String(field.label),value=asText(submitted[fieldLabel]).slice(0,Number(field.max_length||60));if(Boolean(field.required)&&!value)return json({error:`الحقل ${fieldLabel} مطلوب للصنف ${String(product.name)}`},{status:400});if(value)customizations[fieldLabel]=value}
     const lineNote=asText(item.notes).slice(0,500);
     lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
   }
@@ -1198,6 +1203,71 @@ async function postPurchase(env:Env,id:number){const purchase=await env.DB.prepa
 
 async function importProducts(request:Request,env:Env){const body=await parseJson(request),rows=Array.isArray(body.rows)?body.rows as Array<Record<string,unknown>>:[];if(!rows.length||rows.length>2000)return json({error:"الملف فارغ أو يتجاوز 2000 صنف"},{status:400});let created=0,updated=0;for(const row of rows){const name=asText(row.name),categoryNumber=Number(row.categoryNumber),price=Number(row.price),itemNumber=Number(row.itemNumber);if(!name||!categoryNumber||!Number.isFinite(price))continue;const category=await env.DB.prepare("SELECT id FROM categories WHERE category_number=?").bind(categoryNumber).first<{id:number}>();if(!category)continue;const existing=itemNumber?await env.DB.prepare("SELECT id FROM products WHERE item_number=? AND deleted_at IS NULL").bind(itemNumber).first<{id:number}>():null;const payload=new Request(request.url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({itemNumber,name,categoryId:category.id,price,wholesale:row.wholesale,purchasePrice:row.purchasePrice,stock:Number(row.stock||0),keywords:row.keywords,description:row.description,active:true,featured:false,variants:[],media:[]})});await saveProduct(payload,env,existing?.id);if(existing)updated++;else created++}return json({ok:true,created,updated});}
 
+
+function xmlEscape(value:string){return value.replace(/[<>&'"]/g,character=>({"<":"&lt;",">":"&gt;","&":"&amp;","'":"&apos;",'"':"&quot;"}[character]||character))}
+function htmlEscape(value:string){return value.replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]||character))}
+function absoluteStoreUrl(value:string,origin:string){if(!value)return origin+"/og.png";try{return new URL(value,origin).toString()}catch{return origin+"/og.png"}}
+function securityHeaders(headers:Headers){
+  headers.set("x-content-type-options","nosniff");
+  headers.set("x-frame-options","DENY");
+  headers.set("referrer-policy","strict-origin-when-cross-origin");
+  headers.set("permissions-policy","camera=(), microphone=(), geolocation=()");
+  headers.set("content-security-policy","frame-ancestors 'none'");
+  return headers;
+}
+async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|null>{
+  if(env.APP_SURFACE!=="storefront"||request.method!=="GET")return null;
+  if(url.pathname==="/robots.txt"){
+    const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
+    return new Response(body,{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
+  }
+  if(url.pathname!=="/sitemap.xml")return null;
+  const [products,categories]=await Promise.all([
+    env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL ORDER BY id").all<{id:number;updated_at:number}>(),
+    env.DB.prepare("SELECT slug,updated_at FROM categories WHERE active=1 ORDER BY id").all<{slug:string;updated_at:number}>()
+  ]);
+  const pages:Array<{loc:string;lastmod?:number}>=[{loc:url.origin+"/"}];
+  for(const row of categories.results)pages.push({loc:url.origin+"/category/"+encodeURIComponent(row.slug),lastmod:Number(row.updated_at||0)});
+  for(const row of products.results)pages.push({loc:url.origin+"/product/"+Number(row.id),lastmod:Number(row.updated_at||0)});
+  pages.push({loc:url.origin+"/policies/terms"});
+  const body='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(page=>"  <url><loc>"+xmlEscape(page.loc)+"</loc>"+(page.lastmod?"<lastmod>"+new Date(page.lastmod).toISOString()+"</lastmod>":"")+"</url>").join("\n")+"\n</urlset>";
+  return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
+}
+async function storefrontSeo(env:Env,url:URL):Promise<string>{
+  const settings=await env.DB.prepare("SELECT store_name,logo_url FROM store_settings WHERE id=1").first<{store_name:string;logo_url:string}>();
+  const storeName=String(settings?.store_name||"Manar Store");
+  let title=storeName,description="تسوّق توزيعات وهدايا المناسبات بسهولة من "+storeName,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"Organization",name:storeName,url:url.origin,image};
+  const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
+  if(productMatch){
+    const value=Number(productMatch[1]);
+    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE (p.id=? OR p.item_number=?) AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value,value).first<Record<string,unknown>>();
+    if(product){
+      const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
+      title=name+" | "+storeName;
+      description=String(product.description||"").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
+      image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
+      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:url.toString(),offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:url.toString()}};
+    }
+  }else{
+    const categoryMatch=url.pathname.match(/^\/category\/([^/]+)\/?$/);
+    if(categoryMatch){
+      const slug=decodeURIComponent(categoryMatch[1]);
+      const category=await env.DB.prepare("SELECT name,description,banner_url FROM categories WHERE slug=? AND active=1 LIMIT 1").bind(slug).first<Record<string,unknown>>();
+      if(category){
+        const name=String(category.name);title=name+" | "+storeName;
+        description=String(category.description||"").trim().slice(0,155)||"تصفّح منتجات قسم "+name+" في "+storeName+".";
+        image=absoluteStoreUrl(String(category.banner_url||settings?.logo_url||"/og.png"),url.origin);
+        jsonLd={"@context":"https://schema.org","@type":"CollectionPage",name,description,url:url.toString(),image};
+      }
+    }
+  }
+  const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
+  return '<title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><link rel="canonical" href="'+htmlEscape(url.toString())+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(url.toString())+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+}
+function injectSeo(html:string,head:string){
+  return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["']canonical["'][^>]*>/gi,"").replace("</head>",head+"</head>");
+}
+
 async function api(request: Request, env: Env, url: URL): Promise<Response | null> {
   if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
     const binary = atob(product2222ImageBase64);
@@ -1382,6 +1452,8 @@ const worker = {
     }
 
     try {
+      const seoRouteResponse=await publicSeoRoute(request,env,url);
+      if(seoRouteResponse)return seoRouteResponse;
       const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
       if (cacheablePublicApi) {
         const cache = caches.default;
@@ -1412,7 +1484,14 @@ const worker = {
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    const appResponse=await handler.fetch(request, env, ctx);
+    const headers=securityHeaders(new Headers(appResponse.headers));
+    if(env.APP_SURFACE==="storefront"&&request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
+      const html=await appResponse.text(),head=await storefrontSeo(env,url);
+      headers.delete("content-length");headers.delete("content-encoding");
+      return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});
+    }
+    return new Response(appResponse.body,{status:appResponse.status,statusText:appResponse.statusText,headers});
   },
 };
 
