@@ -1440,6 +1440,16 @@ const worker = {
     const url = new URL(request.url);
     const isAdminPath = url.pathname === "/admin" || url.pathname.startsWith("/admin/");
 
+    if (env.APP_SURFACE === "admin" && url.pathname === "/robots.txt") {
+      return new Response("User-agent: *\nDisallow: /\n", {
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=3600",
+          "x-robots-tag": "noindex, nofollow, noarchive",
+        },
+      });
+    }
+
     if (env.APP_SURFACE === "storefront" && isAdminPath) {
       return new Response("Not Found", {
         status: 404,
@@ -1486,6 +1496,7 @@ const worker = {
 
     const appResponse=await handler.fetch(request, env, ctx);
     const headers=securityHeaders(new Headers(appResponse.headers));
+    if(env.APP_SURFACE==="admin")headers.set("x-robots-tag","noindex, nofollow, noarchive");
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
