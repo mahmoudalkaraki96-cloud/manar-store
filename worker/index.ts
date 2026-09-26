@@ -1238,15 +1238,17 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
 }
 async function storefrontSeo(env:Env,url:URL):Promise<string>{
   const settings=await env.DB.prepare("SELECT store_name,logo_url FROM store_settings WHERE id=1").first<{store_name:string;logo_url:string}>();
-  const storeName=String(settings?.store_name||"Manar Store");
-  let title=storeName,description="تسوّق توزيعات وهدايا المناسبات بسهولة من "+storeName,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"Organization",name:storeName,url:url.origin,image};
+  const storeName="منار ستور";
+  const homeTitle="منار ستور | توزيعات وهدايا للمناسبات";
+  const homeDescription="متجر منار ستور لتوزيعات وهدايا الأعراس والخطوبة والمواليد والتخرج، مع التوصيل إلى الضفة الغربية والقدس والداخل.";
+  let title=homeTitle,description=homeDescription,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"Organization",name:storeName,url:url.origin,image,description:homeDescription};
   const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
   if(productMatch){
     const value=Number(productMatch[1]);
     const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE (p.id=? OR p.item_number=?) AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value,value).first<Record<string,unknown>>();
     if(product){
       const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
-      title=name+" | "+storeName;
+      title=name+" – "+storeName;
       description=String(product.description||"").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
       image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
       jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:url.toString(),offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:url.toString()}};
@@ -1257,7 +1259,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
       const slug=decodeURIComponent(categoryMatch[1]);
       const category=await env.DB.prepare("SELECT name,description,banner_url FROM categories WHERE slug=? AND active=1 LIMIT 1").bind(slug).first<Record<string,unknown>>();
       if(category){
-        const name=String(category.name);title=name+" | "+storeName;
+        const name=String(category.name);title=name+" – "+storeName;
         description=String(category.description||"").trim().slice(0,155)||"تصفّح منتجات قسم "+name+" في "+storeName+".";
         image=absoluteStoreUrl(String(category.banner_url||settings?.logo_url||"/og.png"),url.origin);
         jsonLd={"@context":"https://schema.org","@type":"CollectionPage",name,description,url:url.toString(),image};
