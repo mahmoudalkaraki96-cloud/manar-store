@@ -277,11 +277,13 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 .mobileSocials{display:none}
 .headerSocials a,.mobileSocials a{font-weight:700}
 @media(max-width:1000px){
+ .shopHeaderSpacer{height:160px;flex-basis:160px}
  .mobileSocials{display:flex;align-items:center;justify-content:center;gap:7px;min-height:34px;padding:4px 8px;border-top:1px solid var(--line);background:#fff;overflow-x:auto;white-space:nowrap}
  .mobileSocials:empty{display:none}
  .mobileSocials a{display:inline-flex;align-items:center;justify-content:center;border:1px solid color-mix(in srgb,var(--green) 30%,var(--line));border-radius:999px;padding:5px 10px;color:var(--green);font-size:10px;background:#fff}
 }
 @media(max-width:720px){
+ .shopHeaderSpacer{height:196px;flex-basis:196px}
  .mobileSocials{min-height:32px;justify-content:flex-start;padding-inline:10px}
  .mobileSocials a{font-size:9px;padding:5px 9px}
 }
