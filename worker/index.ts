@@ -52,8 +52,6 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
 
 const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
 const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
-const GOOGLE_ANALYTICS_ID = "G-PB5GHRZS5S";
-const googleAnalyticsHead = '<script async src="https://www.googletagmanager.com/gtag/js?id='+GOOGLE_ANALYTICS_ID+'"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","'+GOOGLE_ANALYTICS_ID+'");</script>';
 
 const amount = (agorot: number | null) => agorot == null ? undefined : agorot / 100;
 const agorot = (value: unknown) => Math.max(0, Math.round(Number(value || 0) * 100));
@@ -1232,6 +1230,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
   for(const row of categories.results)pages.push({loc:url.origin+"/category/"+encodeURIComponent(row.slug),lastmod:Number(row.updated_at||0)});
   for(const row of products.results)pages.push({loc:url.origin+"/product/"+Number(row.id),lastmod:Number(row.updated_at||0)});
   pages.push({loc:url.origin+"/policies/terms"});
+  pages.push({loc:url.origin+"/privacy"});
   const body='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(page=>"  <url><loc>"+xmlEscape(page.loc)+"</loc>"+(page.lastmod?"<lastmod>"+new Date(page.lastmod).toISOString()+"</lastmod>":"")+"</url>").join("\n")+"\n</urlset>";
   return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
 }
@@ -1502,7 +1501,7 @@ const worker = {
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
-        ?(await storefrontSeo(env,url))+googleAnalyticsHead
+        ?await storefrontSeo(env,url)
         :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});
