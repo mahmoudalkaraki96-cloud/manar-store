@@ -1223,6 +1223,33 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
     const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
     return new Response(body,{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
   }
+  if(url.pathname==="/google-merchant-feed.xml"){
+    const catalog=await readCatalog(env,false);
+    const products=catalog.products.filter(product=>product.active&&Number(product.price)>0&&Boolean(product.image));
+    const clean=(value:unknown)=>String(value??"").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g," ").trim();
+    const items=products.map(product=>{
+      const title=clean(product.name).slice(0,150);
+      const description=clean(product.description||product.specifications||product.name).slice(0,5000);
+      const link=url.origin+"/product/"+Number(product.id);
+      const image=absoluteStoreUrl(String(product.image||""),url.origin);
+      const availability=product.inStock?"in_stock":"out_of_stock";
+      const id=clean(product.itemNumber||product.id);
+      return "    <item>\n"+
+        "      <g:id>"+xmlEscape(id)+"</g:id>\n"+
+        "      <g:title>"+xmlEscape(title)+"</g:title>\n"+
+        "      <g:description>"+xmlEscape(description)+"</g:description>\n"+
+        "      <g:link>"+xmlEscape(link)+"</g:link>\n"+
+        "      <g:image_link>"+xmlEscape(image)+"</g:image_link>\n"+
+        "      <g:availability>"+availability+"</g:availability>\n"+
+        "      <g:price>"+Number(product.price).toFixed(2)+" ILS</g:price>\n"+
+        "      <g:condition>new</g:condition>\n"+
+        "      <g:brand>Manar Store</g:brand>\n"+
+        "      <g:identifier_exists>false</g:identifier_exists>\n"+
+        "    </item>";
+    }).join("\n");
+    const body='<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Manar Store</title>\n    <link>'+xmlEscape(url.origin)+'</link>\n    <description>منتجات منار ستور</description>\n'+items+'\n  </channel>\n</rss>';
+    return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=900, s-maxage=1800"}))});
+  }
   if(url.pathname!=="/sitemap.xml")return null;
   const [products,categories]=await Promise.all([
     env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL ORDER BY id").all<{id:number;updated_at:number}>(),
