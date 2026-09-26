@@ -52,6 +52,8 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
 
 const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
 const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
+const GOOGLE_ANALYTICS_ID = "G-PB5GHRZS5S";
+const googleAnalyticsHead = '<script async src="https://www.googletagmanager.com/gtag/js?id='+GOOGLE_ANALYTICS_ID+'"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","'+GOOGLE_ANALYTICS_ID+'");</script>';
 
 const amount = (agorot: number | null) => agorot == null ? undefined : agorot / 100;
 const agorot = (value: unknown) => Math.max(0, Math.round(Number(value || 0) * 100));
@@ -1500,7 +1502,7 @@ const worker = {
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
-        ?await storefrontSeo(env,url)
+        ?(await storefrontSeo(env,url))+googleAnalyticsHead
         :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});
