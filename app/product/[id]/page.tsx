@@ -8,6 +8,7 @@ import PolicySections from "../../components/PolicySections";
 import {cachedStoreSettings,loadStorefront,type StoreSettings} from "../../storefront-types";
 import {parseWatermark} from "../../watermark-config";
 import {addCartItem,cartCount as countCart,loadCart} from "../../cart-storage";
+import {trackEcommerce} from "../../analytics";
 
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
@@ -17,6 +18,7 @@ export default function ProductPage(){
  useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});try{setFavorite((JSON.parse(localStorage.getItem("manar_favorites")||"[]") as number[]).includes(Number(params.id)))}catch{}refreshCartCount();return()=>{active=false}},[params.id]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(params.id)||item.itemNumber===Number(params.id));
+ useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
  const watermarkConfig=parseWatermark(store.watermarkUrl||""),watermark=watermarkConfig.base||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
  const watermarkEnabled=store.watermarkEnabled??watermarkConfig.enabled,watermarkX=store.watermarkX??watermarkConfig.x,watermarkY=store.watermarkY??watermarkConfig.y,watermarkSize=store.watermarkSize??watermarkConfig.size;
  const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${watermarkSize}%`,left:`${watermarkX}%`,top:`${watermarkY}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};
