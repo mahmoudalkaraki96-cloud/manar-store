@@ -1,4 +1,5 @@
 name: Deploy store and admin to Cloudflare
+# Production deployment trigger: storefront and admin
 
 on:
   push:
