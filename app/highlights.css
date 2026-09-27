@@ -195,3 +195,43 @@ img,video,iframe,svg{max-width:100%}
  .mobileSocials{gap:8px}
  .mobileSocials a{width:36px!important;height:36px!important;min-width:36px}
 }
+
+/* Compact mobile header socials */
+@media(max-width:720px){
+ .mobileSocials{display:none!important}
+ .shopHeaderMain{grid-template-columns:auto minmax(0,1fr)!important;column-gap:7px!important;row-gap:8px!important;align-items:center}
+ .headerBrand{grid-column:1!important;grid-row:1!important;max-width:58px!important}
+ .headerBrand .brandLogo{width:44px!important;height:44px!important;max-width:44px!important}
+ .headerBrand small{max-width:58px!important;font-size:8px!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .headerUtility{grid-column:2!important;grid-row:1!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;gap:3px!important;width:100%!important;min-width:0!important}
+ .headerSocials{display:flex!important;align-items:center!important;gap:3px!important;flex:0 0 auto!important}
+ .headerSocials a{display:grid!important;place-items:center!important;width:27px!important;height:27px!important;min-width:27px!important;padding:0!important;border-radius:50%!important;background:#fff!important;border:1px solid color-mix(in srgb,var(--green) 28%,#fff)!important;color:var(--green)!important;font-size:0!important;line-height:1!important}
+ .headerSocials svg{display:block!important;width:15px!important;height:15px!important;fill:currentColor;stroke:currentColor;stroke-width:1.8}
+ .headerSocials svg rect,.headerSocials svg circle:not(.socialIconFill){fill:none}
+ .headerSocials .socialIconFill{fill:currentColor;stroke:none}
+ .utilityBtn,.headerPoliciesLink{width:30px!important;height:30px!important;min-width:30px!important;padding:0!important;display:grid!important;place-items:center!important}
+ .headerPoliciesLink small{display:none!important}
+ .headerPoliciesLink span{font-size:15px!important}
+ .utilityBtn{font-size:16px!important}
+ .utilityBtn span{font-size:8px!important;min-width:14px!important;height:14px!important;line-height:14px!important}
+ .headerAccountSigned{display:flex!important;align-items:center!important;gap:2px!important;min-width:0!important}
+ .accountHeaderLink{display:none!important}
+ .accountIdentity{display:flex!important;align-items:center!important;gap:2px!important;min-width:0!important;max-width:58px!important}
+ .accountAvatar{width:27px!important;height:27px!important;min-width:27px!important;font-size:13px!important}
+ .accountIdentity small{display:block!important;max-width:29px!important;font-size:8px!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .globalSearch{grid-column:1/-1!important;grid-row:2!important;width:100%!important}
+}
+@media(max-width:410px){
+ .shopHeaderMain{padding-inline:6px!important;column-gap:4px!important}
+ .headerBrand{max-width:48px!important}
+ .headerBrand .brandLogo{width:40px!important;height:40px!important;max-width:40px!important}
+ .headerBrand small{display:none!important}
+ .headerUtility{gap:2px!important}
+ .headerSocials{gap:2px!important}
+ .headerSocials a{width:24px!important;height:24px!important;min-width:24px!important}
+ .headerSocials svg{width:14px!important;height:14px!important}
+ .utilityBtn,.headerPoliciesLink{width:28px!important;height:28px!important;min-width:28px!important}
+ .accountIdentity{max-width:48px!important}
+ .accountAvatar{width:25px!important;height:25px!important;min-width:25px!important}
+ .accountIdentity small{max-width:21px!important}
+}
