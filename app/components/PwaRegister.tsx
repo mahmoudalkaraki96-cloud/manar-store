@@ -12,14 +12,32 @@ function isStandalone(){
   (window.navigator as Navigator&{standalone?:boolean}).standalone===true;
 }
 
+function isAdminSurface(){
+ if(typeof window==="undefined")return false;
+ return window.location.hostname.startsWith("admin.")||window.location.pathname.startsWith("/admin");
+}
+
 export default function PwaRegister(){
  const [prompt,setPrompt]=useState<InstallPromptEvent|null>(null);
  const [showIosHelp,setShowIosHelp]=useState(false);
  const [installed,setInstalled]=useState(false);
+ const [admin,setAdmin]=useState(false);
 
  useEffect(()=>{
+  const adminSurface=isAdminSurface();
+  setAdmin(adminSurface);
+  const manifest=adminSurface?"/admin-manifest.webmanifest":"/manifest.webmanifest";
+  let manifestLink=document.head.querySelector<HTMLLinkElement>('link[rel="manifest"]');
+  if(!manifestLink){
+   manifestLink=document.createElement("link");
+   manifestLink.rel="manifest";
+   document.head.appendChild(manifestLink);
+  }
+  manifestLink.href=manifest;
+
   if(!("serviceWorker" in navigator))return;
-  const register=()=>navigator.serviceWorker.register("/sw.js",{scope:"/"}).then(registration=>registration.update()).catch(()=>{});
+  const worker=adminSurface?"/admin-sw.js":"/sw.js";
+  const register=()=>navigator.serviceWorker.register(worker,{scope:"/"}).then(registration=>registration.update()).catch(()=>{});
   if(document.readyState==="complete")void register();
   else window.addEventListener("load",register,{once:true});
 
@@ -40,6 +58,7 @@ export default function PwaRegister(){
  if(installed)return null;
  const ios=typeof navigator!=="undefined"&&/iphone|ipad|ipod/i.test(navigator.userAgent);
  if(!prompt&&!ios)return null;
+ const appName=admin?"Manar Store Admin":"Manar Store";
 
  async function install(){
   if(prompt){
@@ -51,12 +70,12 @@ export default function PwaRegister(){
  }
 
  return <>
-  <button className="pwaInstallButton" type="button" onClick={install} aria-label="تثبيت تطبيق Manar Store">
-   <span aria-hidden="true">↧</span> تثبيت التطبيق
+  <button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
+   <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
   </button>
   {showIosHelp&&<div className="pwaInstallHelp" role="dialog" aria-modal="true" aria-label="طريقة تثبيت التطبيق">
    <button className="pwaInstallClose" type="button" onClick={()=>setShowIosHelp(false)} aria-label="إغلاق">×</button>
-   <b>تثبيت Manar Store على الآيفون</b>
+   <b>تثبيت {appName} على الآيفون</b>
    <p>اضغط زر المشاركة في Safari، ثم اختر «إضافة إلى الشاشة الرئيسية» وبعدها «إضافة».</p>
   </div>}
  </>;
