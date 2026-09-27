@@ -235,3 +235,17 @@ img,video,iframe,svg{max-width:100%}
  .accountAvatar{width:25px!important;height:25px!important;min-width:25px!important}
  .accountIdentity small{max-width:21px!important}
 }
+
+/* Desktop social brand icons */
+@media(min-width:721px){
+ .headerSocials{display:flex;align-items:center;gap:7px}
+ .headerSocials a{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;min-width:34px!important;padding:0!important;border:0!important;border-radius:50%!important;color:#fff!important;overflow:hidden;box-shadow:0 3px 11px #321b2720;transition:transform .18s ease,box-shadow .18s ease}
+ .headerSocials a:hover{transform:translateY(-2px);box-shadow:0 6px 15px #321b2730}
+ .headerSocials svg{display:block!important;width:19px!important;height:19px!important;max-width:19px!important;max-height:19px!important;fill:currentColor!important;stroke:currentColor!important;stroke-width:1.8}
+ .headerSocials svg rect,.headerSocials svg circle:not(.socialIconFill){fill:none!important}
+ .headerSocials .socialIconFill{fill:currentColor!important;stroke:none!important}
+ .headerSocials .socialWhatsapp{background:#25d366!important}
+ .headerSocials .socialInstagram{background:linear-gradient(135deg,#833ab4 0%,#fd1d1d 52%,#fcb045 100%)!important}
+ .headerSocials .socialFacebook{background:#1877f2!important}
+ .headerSocials .socialTiktok{background:#111!important}
+}
