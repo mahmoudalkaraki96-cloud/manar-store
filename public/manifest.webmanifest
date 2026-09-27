@@ -1,0 +1,31 @@
+{
+  "name": "Manar Store",
+  "short_name": "Manar Store",
+  "description": "متجر منار للتوزيعات وهدايا المناسبات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#b85f7d",
+  "categories": [
+    "shopping",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ]
+}
