@@ -1,0 +1,55 @@
+name: Clean up replaced original product images
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Preview only, or permanently delete safe old originals
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - delete
+      confirm_delete:
+        description: Required only for delete mode — I understand this permanently deletes old R2 files
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manar-store-old-image-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validate destructive mode confirmation
+        if: inputs.mode == 'delete' && inputs.confirm_delete != true
+        run: |
+          echo "Delete mode requires confirm_delete=true."
+          exit 1
+      - name: Preview or delete replaced originals
+        env:
+          CLEANUP_MODE: ${{ inputs.mode }}
+          CONFIRM_DELETE: ${{ inputs.confirm_delete }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/cleanup_replaced_images.py
+      - name: Upload cleanup report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: old-image-cleanup-${{ inputs.mode }}-${{ github.run_id }}
+          path: old-image-cleanup-report/
+          if-no-files-found: warn
+          retention-days: 30
