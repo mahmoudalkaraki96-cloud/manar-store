@@ -1,24 +1,24 @@
-name: Trial five stored product thumbnails
+name: Generate all stored product thumbnails
 
 on:
   push:
     branches: [main]
     paths:
-      - tools/create_thumbnail_trial.py
-      - .github/workflows/thumbnail-trial.yml
+      - tools/generate_product_thumbnails.py
+      - .github/workflows/generate-product-thumbnails.yml
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: manar-store-thumbnail-trial
+  group: manar-store-product-thumbnails
   cancel-in-progress: false
 
 jobs:
   thumbnails:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,15 +29,15 @@ jobs:
           python-version: '3.12'
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: pip install --disable-pip-version-check 'Pillow>=11,<13'
-      - name: Create and upload five thumbnail samples
+      - name: Generate and upload all missing primary thumbnails
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: python tools/create_thumbnail_trial.py
-      - name: Upload thumbnail report
+        run: python tools/generate_product_thumbnails.py
+      - name: Upload complete thumbnail report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: thumbnail-trial-${{ github.run_id }}
-          path: thumbnail-trial-report/
-          if-no-files-found: error
+          name: all-product-thumbnails-${{ github.run_id }}
+          path: thumbnail-batch-report/
+          if-no-files-found: warn
           retention-days: 30
