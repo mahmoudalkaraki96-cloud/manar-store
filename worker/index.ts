@@ -111,7 +111,7 @@ async function readHighlights(env:Env,includeInactive=false){
 async function saveHighlight(request:Request,env:Env,id?:number){
   await ensureHighlightSchema(env);
   const body=await parseJson(request),title=asText(body.title).slice(0,60),raw=body.images;
-  const images=Array.isArray(raw)?raw.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")).slice(0,20):[];
+  const images=Array.isArray(raw)?raw.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")).slice(0,200):[];
   const cover=asText(body.coverUrl)||images.find(value=>! /\.(mp4|webm)(?:\?|$)/i.test(value))||"";
   if(!title||!images.length||!cover.startsWith("/media/")||/\.(mp4|webm)(?:\?|$)/i.test(cover)||!Array.isArray(raw)||raw.length!==images.length||new Set(images).size!==images.length)return json({error:"العنوان وصور الهايلايت والغلاف مطلوبون، ولا يمكن تكرار الصورة"},{status:400});
   const order=Math.max(0,Math.min(1000,Number(body.sortOrder)||0)),active=asBoolean(body.active)?1:0,now=Date.now();
@@ -121,7 +121,7 @@ async function saveHighlight(request:Request,env:Env,id?:number){
     if(result.meta?.changes===0)return json({error:"الهايلايت غير موجودة"},{status:404});
   }else{
     const count=await env.DB.prepare("SELECT COUNT(*) AS count FROM store_highlights").first<{count:number}>();
-    if(Number(count?.count||0)>=30)return json({error:"الحد الأقصى 30 هايلايت"},{status:400});
+    if(Number(count?.count||0)>=100)return json({error:"الحد الأقصى 100 هايلايت"},{status:400});
     const result=await env.DB.prepare("INSERT INTO store_highlights (title,cover_url,images_json,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?)")
       .bind(title,cover,JSON.stringify(images),order,active,now,now).run();
     id=Number(result.meta.last_row_id);
@@ -1447,12 +1447,13 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   }
   if (request.method === "POST" && url.pathname === "/api/admin/media") {
     const contentLength = Number(request.headers.get("content-length") || 0);
-    if (!contentLength || contentLength > 12_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
+    if (!contentLength || contentLength > 52_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
     const form = await request.formData(); const file = form.get("file");
     if (!(file instanceof File)) return json({ error: "الملف مطلوب" }, { status: 400 });
     const allowed = file.type.startsWith("image/") || file.type.startsWith("video/");
     if (!allowed) return json({ error: "نوع الملف غير مدعوم" }, { status: 400 });
-    if (file.type.startsWith("video/") && file.size > 10_000_000) return json({ error: "حجم الفيديو يتجاوز 10MB" }, { status: 413 });
+    if (file.type.startsWith("image/") && file.size > 12_000_000) return json({ error: "حجم الصورة يتجاوز 12MB" }, { status: 413 });
+    if (file.type.startsWith("video/") && file.size > 50_000_000) return json({ error: "حجم الفيديو يتجاوز 50MB" }, { status: 413 });
     const extension = file.name.split(".").pop()?.replace(/[^a-zA-Z0-9]/g, "") || (file.type.startsWith("video/") ? "mp4" : "webp");
     const key = `products/${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${extension}`;
     await env.MEDIA.put(key, file.stream(), { httpMetadata: { contentType: file.type } });
