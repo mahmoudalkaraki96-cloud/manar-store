@@ -301,3 +301,20 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
  .headerPoliciesLink small{display:none}
  .utilityBtn{width:31px;height:34px}
 }
+
+/* Guaranteed mobile account slot and vector avatar. */
+.accountAvatar svg{width:18px;height:18px;display:block;fill:currentColor}
+@media(max-width:720px){
+ .shopHeaderMain{grid-template-columns:minmax(52px,66px) minmax(0,1fr) minmax(126px,auto);column-gap:3px}
+ .headerBrand{min-width:0;overflow:hidden}
+ .headerUtility{display:flex!important;visibility:visible!important;overflow:visible;max-width:100%;gap:2px}
+ .headerAccountSigned{display:flex!important;visibility:visible!important;order:-2}
+ .accountIdentity{display:grid!important;visibility:visible!important;min-width:34px;position:relative;z-index:2}
+ .accountAvatar{display:grid!important;visibility:visible!important;width:31px;height:31px}
+ .accountIdentity small{display:block;max-width:42px;font-size:8px;line-height:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .headerPoliciesLink{order:-1}
+}
+@media(max-width:380px){
+ .shopHeaderMain{grid-template-columns:48px minmax(0,1fr) minmax(120px,auto);padding-inline:4px}
+ .headerPoliciesLink{display:none}
+}
