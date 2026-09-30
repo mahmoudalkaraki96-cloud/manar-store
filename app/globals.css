@@ -287,3 +287,17 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
  .mobileSocials{min-height:32px;justify-content:flex-start;padding-inline:10px}
  .mobileSocials a{font-size:9px;padding:5px 9px}
 }
+
+/* Mobile header account visibility: keep the signed-in avatar inside the utility row. */
+@media(max-width:720px){
+ .shopHeaderMain{grid-template-columns:minmax(64px,74px) minmax(0,1fr) auto}
+ .headerUtility{min-width:0;gap:2px;justify-self:end}
+ .headerAccountSigned{display:flex!important;flex:0 0 auto;gap:0}
+ .accountIdentity{display:grid!important;min-width:30px}
+ .accountAvatar{width:30px;height:30px;font-size:15px}
+ .accountIdentity small,.headerAccountSigned>.accountHeaderLink{display:none}
+ .headerPoliciesLink{min-width:30px}
+ .headerPoliciesLink span{font-size:18px}
+ .headerPoliciesLink small{display:none}
+ .utilityBtn{width:31px;height:34px}
+}
