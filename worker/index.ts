@@ -72,6 +72,7 @@ async function ensureHighlightSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_image_numbers (id INTEGER PRIMARY KEY AUTOINCREMENT,highlight_id INTEGER NOT NULL,url TEXT NOT NULL,image_number INTEGER,UNIQUE(highlight_id,url))").run();
   const info=await env.DB.prepare("PRAGMA table_info(highlight_image_numbers)").all<{name:string}>();
   if(!info.results.some(row=>row.name==="image_number"))await env.DB.prepare("ALTER TABLE highlight_image_numbers ADD COLUMN image_number INTEGER").run();
+  if(!info.results.some(row=>row.name==="view_count"))await env.DB.prepare("ALTER TABLE highlight_image_numbers ADD COLUMN view_count INTEGER NOT NULL DEFAULT 0").run();
   await env.DB.prepare("UPDATE highlight_image_numbers SET image_number=(SELECT COUNT(*) FROM highlight_image_numbers previous WHERE previous.highlight_id=highlight_image_numbers.highlight_id AND previous.id<=highlight_image_numbers.id) WHERE image_number IS NULL").run();
   const visibilityInfo=await env.DB.prepare("PRAGMA table_info(highlight_visibility)").all<{name:string}>();
   if(!visibilityInfo.results.some(row=>row.name==="interval_ms"))await env.DB.prepare("ALTER TABLE highlight_visibility ADD COLUMN interval_ms INTEGER NOT NULL DEFAULT 5000").run();
@@ -86,7 +87,7 @@ async function assignHighlightNumbers(env:Env,highlightId:number,urls:string[]){
 function highlightFromRow(row:Record<string,unknown>){
   let images:string[]=[];
   try { const parsed=JSON.parse(String(row.images_json||"[]"));if(Array.isArray(parsed))images=parsed.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")); } catch {}
-  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||"")||images[0]||"",images,imageNumbers:[] as string[],sortOrder:Number(row.sort_order||0),active:Boolean(row.active),views:Number(row.view_count||0)};
+  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||"")||images[0]||"",images,imageNumbers:[] as string[],imageViews:[] as number[],sortOrder:Number(row.sort_order||0),active:Boolean(row.active),views:Number(row.view_count||0)};
 }
 async function readHighlights(env:Env,includeInactive=false){
   await ensureHighlightSchema(env);
@@ -96,15 +97,18 @@ async function readHighlights(env:Env,includeInactive=false){
   ]);
   const highlights=rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active);
   if(highlights.length){
-    const numbers=await env.DB.prepare("SELECT highlight_id,url,image_number FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number}>();
-    const lookup=new Map(numbers.results.map(image=>[image.highlight_id+"|"+image.url,image.image_number]));
+    const numbers=await env.DB.prepare("SELECT highlight_id,url,image_number,view_count FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number;view_count:number}>();
+    const lookup=new Map(numbers.results.map(image=>[image.highlight_id+"|"+image.url,{number:image.image_number,views:Number(image.view_count)||0}]));
     const missing=highlights.filter(item=>item.images.some(url=>!lookup.has(item.id+"|"+url)));
     if(missing.length){
       for(const item of missing)await assignHighlightNumbers(env,item.id,item.images);
-      const updated=await env.DB.prepare("SELECT highlight_id,url,image_number FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number}>();
-      for(const image of updated.results)lookup.set(image.highlight_id+"|"+image.url,image.image_number);
+      const updated=await env.DB.prepare("SELECT highlight_id,url,image_number,view_count FROM highlight_image_numbers").all<{highlight_id:number;url:string;image_number:number;view_count:number}>();
+      for(const image of updated.results)lookup.set(image.highlight_id+"|"+image.url,{number:image.image_number,views:Number(image.view_count)||0});
     }
-    for(const item of highlights)item.imageNumbers=item.images.map(url=>"H"+item.id+"-"+lookup.get(item.id+"|"+url));
+    for(const item of highlights){
+      item.imageNumbers=item.images.map(url=>"H"+item.id+"-"+lookup.get(item.id+"|"+url)?.number);
+      item.imageViews=item.images.map(url=>lookup.get(item.id+"|"+url)?.views||0);
+    }
   }
   return {enabled:visibility?.enabled!==0,intervalMs:Math.min(20000,Math.max(2000,Number(visibility?.interval_ms)||5000)),highlights};
 }
@@ -925,6 +929,15 @@ async function trackHighlightView(request:Request,env:Env,highlightId:number){
  if(Number(result.meta?.changes||0)===0)return json({error:"الهايلايت غير موجودة"},{status:404});
  return json({ok:true},{headers:{"cache-control":"no-store"}});
 }
+async function trackHighlightImageView(request:Request,env:Env,highlightId:number,imageNumber:number){
+ const requestOrigin=request.headers.get("origin"),origin=new URL(request.url).origin;
+ if(requestOrigin&&requestOrigin!==origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
+ if(!Number.isInteger(highlightId)||highlightId<1||!Number.isInteger(imageNumber)||imageNumber<1)return json({error:"رقم صورة الهايلايت غير صحيح"},{status:400});
+ await ensureHighlightSchema(env);
+ const result=await env.DB.prepare("UPDATE highlight_image_numbers SET view_count=view_count+1 WHERE highlight_id=? AND image_number=? AND EXISTS (SELECT 1 FROM store_highlights WHERE id=? AND active=1)").bind(highlightId,imageNumber,highlightId).run();
+ if(Number(result.meta?.changes||0)===0)return json({error:"صورة الهايلايت غير موجودة"},{status:404});
+ return json({ok:true},{headers:{"cache-control":"no-store"}});
+}
 async function trackProductView(request:Request,env:Env,productId:number){
  const requestOrigin=request.headers.get("origin"),origin=new URL(request.url).origin;
  if(requestOrigin&&requestOrigin!==origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
@@ -1329,6 +1342,8 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
   const productViewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/view$/);
   if(request.method==="POST"&&productViewMatch)return trackProductView(request,env,Number(productViewMatch[1]));
+  const highlightImageViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/images\/(\d+)\/view$/);
+  if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
   const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
   if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);

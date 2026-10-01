@@ -7,7 +7,7 @@ type ScrollStyle=CSSProperties&{"--highlight-scroll":string};
 function HighlightLabel({title}:{title:string}){
  const box=useRef<HTMLSpanElement|null>(null),text=useRef<HTMLSpanElement|null>(null),[distance,setDistance]=useState(0);
  useEffect(()=>{const measure=()=>setDistance(Math.max(0,(text.current?.scrollWidth||0)-(box.current?.clientWidth||0)));measure();const observer=typeof ResizeObserver==="undefined"?null:new ResizeObserver(measure);if(box.current)observer?.observe(box.current);if(text.current)observer?.observe(text.current);return()=>observer?.disconnect()},[title]);
- return <span ref={box} className={"storeHighlightLabel"+(distance>0?" scrolling":"")}><span ref={text} style={{"--highlight-scroll":"-"+distance+"px"} as ScrollStyle}>{title}</span></span>
+ return <span ref={box} className={"storeHighlightLabel"+(distance>0?" scrolling":"")}><span ref={text} style={{"--highlight-scroll":distance+"px"} as ScrollStyle}>{title}</span></span>
 }
 export default function StoreHighlights({highlights,intervalMs=5000}:{highlights:Highlight[];intervalMs?:number}){
  const [open,setOpen]=useState<{highlight:number;image:number}|null>(null);
@@ -24,6 +24,8 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
  useEffect(()=>{if(!current?.id)return;const key="manar_highlight_view_"+current.id,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/highlights/"+current.id+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[current?.id]);
  const activeUrl=open&&current?current.images[open.image]:"";
  const activeVideo=isVideo(activeUrl);
+ const activeImageNumber=current&&open?Number(current.imageNumbers?.[open.image]?.split("-").pop()||0):0;
+ useEffect(()=>{if(!current?.id||!activeImageNumber)return;const key="manar_highlight_image_view_"+current.id+"_"+activeImageNumber,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/highlights/"+current.id+"/images/"+activeImageNumber+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[current?.id,activeImageNumber]);
  const duration=Math.min(20000,Math.max(2000,intervalMs));
  const resetClock=()=>{elapsedRef.current=0;if(progressBarRef.current)progressBarRef.current.style.width="0%";setLoadedKey("");setPaused(false);setSoundOn(false);setPlayError(false)};
  const close=()=>{videoRef.current?.pause();setOpen(null)};
