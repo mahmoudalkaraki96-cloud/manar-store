@@ -86,12 +86,12 @@ async function assignHighlightNumbers(env:Env,highlightId:number,urls:string[]){
 function highlightFromRow(row:Record<string,unknown>){
   let images:string[]=[];
   try { const parsed=JSON.parse(String(row.images_json||"[]"));if(Array.isArray(parsed))images=parsed.filter((value):value is string=>typeof value==="string"&&value.startsWith("/media/")); } catch {}
-  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||"")||images[0]||"",images,imageNumbers:[] as string[],sortOrder:Number(row.sort_order||0),active:Boolean(row.active)};
+  return {id:Number(row.id),title:String(row.title||""),coverUrl:String(row.cover_url||"")||images[0]||"",images,imageNumbers:[] as string[],sortOrder:Number(row.sort_order||0),active:Boolean(row.active),views:Number(row.view_count||0)};
 }
 async function readHighlights(env:Env,includeInactive=false){
   await ensureHighlightSchema(env);
   const [rows,visibility]=await Promise.all([
-    env.DB.prepare("SELECT id,title,cover_url,images_json,sort_order,active FROM store_highlights ORDER BY sort_order,id").all<Record<string,unknown>>(),
+    env.DB.prepare("SELECT id,title,cover_url,images_json,sort_order,active,view_count FROM store_highlights ORDER BY sort_order,id").all<Record<string,unknown>>(),
     env.DB.prepare("SELECT enabled,interval_ms FROM highlight_visibility WHERE id=1").first<{enabled:number;interval_ms:number}>()
   ]);
   const highlights=rows.results.map(highlightFromRow).filter(item=>includeInactive||item.active);
@@ -917,6 +917,22 @@ async function trackStoreVisit(request:Request,env:Env){
  await env.DB.prepare("INSERT INTO store_daily_visitors (day,visitor_hash,views,first_seen_at,last_seen_at) VALUES (?,?,1,?,?) ON CONFLICT(day,visitor_hash) DO UPDATE SET views=views+1,last_seen_at=excluded.last_seen_at").bind(day,await sha256(visitorId),now,now).run();
  return json({ok:true});
 }
+async function trackHighlightView(request:Request,env:Env,highlightId:number){
+ const requestOrigin=request.headers.get("origin"),origin=new URL(request.url).origin;
+ if(requestOrigin&&requestOrigin!==origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
+ if(!Number.isInteger(highlightId)||highlightId<1)return json({error:"رقم الهايلايت غير صحيح"},{status:400});
+ const result=await env.DB.prepare("UPDATE store_highlights SET view_count=view_count+1 WHERE id=? AND active=1").bind(highlightId).run();
+ if(Number(result.meta?.changes||0)===0)return json({error:"الهايلايت غير موجودة"},{status:404});
+ return json({ok:true},{headers:{"cache-control":"no-store"}});
+}
+async function trackProductView(request:Request,env:Env,productId:number){
+ const requestOrigin=request.headers.get("origin"),origin=new URL(request.url).origin;
+ if(requestOrigin&&requestOrigin!==origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
+ if(!Number.isInteger(productId)||productId<1)return json({error:"رقم المنتج غير صحيح"},{status:400});
+ const result=await env.DB.prepare("UPDATE products SET view_count=view_count+1 WHERE id=? AND active=1").bind(productId).run();
+ if(Number(result.meta?.changes||0)===0)return json({error:"المنتج غير موجود"},{status:404});
+ return json({ok:true},{headers:{"cache-control":"no-store"}});
+}
 const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancelled"] as const;
 async function createOrder(request:Request,env:Env){
   await ensureCustomizationSchema(env);
@@ -1311,6 +1327,10 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
   if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
+  const productViewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/view$/);
+  if(request.method==="POST"&&productViewMatch)return trackProductView(request,env,Number(productViewMatch[1]));
+  const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
+  if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
   if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });

@@ -20,6 +20,7 @@ export default function ProductPage(){
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(params.id)||item.itemNumber===Number(params.id));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
+ useEffect(()=>{if(!product)return;const key="manar_product_view_"+product.id,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/products/"+product.id+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[product?.id]);
  const watermarkConfig=parseWatermark(store.watermarkUrl||""),watermark=watermarkConfig.base||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
  const watermarkEnabled=store.watermarkEnabled??watermarkConfig.enabled,watermarkX=store.watermarkX??watermarkConfig.x,watermarkY=store.watermarkY??watermarkConfig.y,watermarkSize=store.watermarkSize??watermarkConfig.size;
  const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${watermarkSize}%`,left:`${watermarkX}%`,top:`${watermarkY}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};

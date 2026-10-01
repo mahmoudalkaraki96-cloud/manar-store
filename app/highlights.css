@@ -1,10 +1,10 @@
-.storeHighlights{height:126px;background:var(--pageBg,#fff);border-bottom:1px solid #eadde3;overflow:hidden}
+.storeHighlights{height:100px;background:var(--pageBg,#fff);border-bottom:1px solid #eadde3;overflow:hidden}
 .storeHighlightsTrack{display:flex;align-items:start;gap:15px;height:100%;overflow-x:auto;overflow-y:hidden;padding:8px 22px 5px;scrollbar-width:thin;overscroll-behavior-inline:contain}
-.storeHighlightItem{flex:0 0 88px;width:88px;display:grid;justify-items:center;gap:4px;border:0;padding:0;background:none;cursor:pointer;color:var(--ink);text-align:center}
+.storeHighlightItem{flex:0 0 71px;width:71px;display:grid;justify-items:center;gap:4px;border:0;padding:0;background:none;cursor:pointer;color:var(--ink);text-align:center}
 .storeHighlightRing{width:57px;height:57px;border-radius:50%;padding:3px;background:linear-gradient(35deg,var(--green),var(--gold));display:block}
 .storeHighlightRing img{width:100%;height:100%;border-radius:50%;border:2px solid #fff;object-fit:cover;background:#fff}
-.storeHighlightLabel{font-size:10px;line-height:1.3;width:100%;white-space:normal;overflow:visible;overflow-wrap:anywhere;word-break:normal}
-.shopHeaderSpacer.withHighlights{height:252px;flex-basis:252px}
+.storeHighlightLabel{display:block;font-size:10px;line-height:1.2;width:100%;overflow:hidden;white-space:nowrap;direction:rtl}.storeHighlightLabel>span{display:inline-block;min-width:100%;text-align:center;will-change:transform}.storeHighlightLabel.scrolling>span{animation:highlightLabelScroll 7s ease-in-out infinite}@keyframes highlightLabelScroll{0%,18%{transform:translateX(0)}72%,88%{transform:translateX(var(--highlight-scroll))}100%{transform:translateX(0)}}
+.shopHeaderSpacer.withHighlights{height:226px;flex-basis:226px}
 .highlightViewer{position:fixed;inset:0;z-index:1000;background:#100e10e8;display:grid;place-items:center;padding:12px}
 .highlightViewerCard{position:relative;width:min(430px,100%);height:min(780px,calc(100dvh - 24px));background:#1b181a;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;color:#fff}
 .highlightViewerProgress{display:flex;gap:3px;padding:8px 10px 0}.highlightViewerProgress span{flex:1;height:3px;background:#ffffff55;border-radius:3px}.highlightViewerProgress span.active{background:#fff}
@@ -19,7 +19,7 @@
 .highlightAdminFields{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}.highlightAdminFields label:first-child{display:grid;gap:6px}.highlightAdminFields input[type=text],.highlightAdminFields input:not([type]){padding:10px;border:1px solid #ddd;border-radius:8px}
 .highlightItemToggle{display:flex;align-items:center;gap:10px}.highlightImageUpload{display:grid;gap:8px;border:1px dashed #cfc1c6;border-radius:8px;padding:12px}
 .highlightAdminImages{display:flex;gap:10px;overflow-x:auto;max-width:100%;padding:4px}.highlightAdminImage{flex:0 0 142px;border:1px solid #eee;border-radius:9px;padding:5px}.highlightAdminImage img{height:110px;width:100%;object-fit:cover;border-radius:6px}.highlightAdminImage>div{display:flex;flex-wrap:wrap;gap:4px}.highlightAdminImage button{font-size:10px}.highlightAdminCard>.mainBtn{width:max-content}
-@media(max-width:720px){.storeHighlights{height:116px}.storeHighlightsTrack{gap:8px;padding:7px 12px 4px}.storeHighlightItem{flex-basis:78px;width:78px}.storeHighlightRing{width:53px;height:53px}.shopHeaderSpacer.withHighlights{height:280px;flex-basis:280px}.highlightAdminFields{grid-template-columns:1fr}.highlightAdminHead{flex-wrap:wrap}.highlightViewerCard{height:calc(100dvh - 20px)}}
+@media(max-width:720px){.storeHighlights{height:92px}.storeHighlightsTrack{gap:8px;padding:7px 12px 4px}.storeHighlightItem{flex-basis:64px;width:64px}.storeHighlightRing{width:53px;height:53px}.shopHeaderSpacer.withHighlights{height:256px;flex-basis:256px}.highlightAdminFields{grid-template-columns:1fr}.highlightAdminHead{flex-wrap:wrap}.highlightViewerCard{height:calc(100dvh - 20px)}}
 
 .highlightCoverField{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.highlightCoverField .highlightImageUpload{min-width:220px}.highlightCoverField img{width:58px;height:58px;object-fit:cover;border-radius:50%;border:2px solid #ddd}.highlightCoverField small{color:#666}.highlightImageNumber{display:block;text-align:center;font-size:12px;padding:4px;color:#303030;direction:ltr}
 
@@ -251,3 +251,7 @@ img,video,iframe,svg{max-width:100%}
 }
 
 .highlightOrderPanel{display:grid;gap:12px;border:1px solid #eadde3;border-radius:12px;padding:14px;background:#fff8fa}.highlightOrderHead{display:flex;align-items:center;justify-content:space-between;gap:12px}.highlightOrderHead>div{display:grid;gap:4px}.highlightOrderHead small{color:#777}.highlightOrderList{display:grid;gap:7px;max-height:420px;overflow:auto}.highlightOrderRow{display:grid;grid-template-columns:30px 38px minmax(120px,1fr) 28px 34px 34px;align-items:center;gap:7px;border:1px solid #eadde3;border-radius:9px;padding:6px;background:#fff}.highlightOrderRow img{width:36px;height:36px;border-radius:50%;object-fit:cover}.highlightOrderRow i{width:36px;height:36px;display:grid;place-items:center}.highlightOrderRow button{border:1px solid #dbcbd1;background:#fff;border-radius:7px;height:31px;cursor:pointer}.highlightDragHandle{font-size:20px;cursor:grab;user-select:none;touch-action:none}.highlightOrderRow:active .highlightDragHandle{cursor:grabbing}@media(max-width:560px){.highlightOrderHead{align-items:stretch;flex-direction:column}.highlightOrderHead .mainBtn{width:100%}.highlightOrderRow{grid-template-columns:25px 34px minmax(80px,1fr) 24px 31px 31px;gap:4px;padding:5px}.highlightOrderRow img,.highlightOrderRow i{width:32px;height:32px}.highlightOrderRow b{font-size:11px;line-height:1.3}}
+
+@media(prefers-reduced-motion:reduce){.storeHighlightLabel.scrolling>span{animation:none;text-overflow:ellipsis;overflow:hidden;max-width:100%}}
+
+.highlightViews{display:inline-block;margin-inline-start:8px;color:#7c6d73;font-size:11px;font-weight:500}.highlightOrderRow{grid-template-columns:30px 38px minmax(120px,1fr) 64px 28px 34px 34px}@media(max-width:560px){.highlightOrderRow{grid-template-columns:25px 34px minmax(70px,1fr) 53px 22px 30px 30px}.highlightOrderRow>small{font-size:9px;white-space:nowrap}}

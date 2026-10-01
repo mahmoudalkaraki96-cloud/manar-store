@@ -1,8 +1,14 @@
 "use client";
-import {useEffect,useRef,useState} from "react";
+import {useEffect,useRef,useState,type CSSProperties} from "react";
 import type {Highlight} from "../storefront-types";
 
 const isVideo=(url:string)=>/\.(mp4|webm)(?:\?|$)/i.test(url);
+type ScrollStyle=CSSProperties&{"--highlight-scroll":string};
+function HighlightLabel({title}:{title:string}){
+ const box=useRef<HTMLSpanElement|null>(null),text=useRef<HTMLSpanElement|null>(null),[distance,setDistance]=useState(0);
+ useEffect(()=>{const measure=()=>setDistance(Math.max(0,(text.current?.scrollWidth||0)-(box.current?.clientWidth||0)));measure();const observer=typeof ResizeObserver==="undefined"?null:new ResizeObserver(measure);if(box.current)observer?.observe(box.current);if(text.current)observer?.observe(text.current);return()=>observer?.disconnect()},[title]);
+ return <span ref={box} className={"storeHighlightLabel"+(distance>0?" scrolling":"")}><span ref={text} style={{"--highlight-scroll":"-"+distance+"px"} as ScrollStyle}>{title}</span></span>
+}
 export default function StoreHighlights({highlights,intervalMs=5000}:{highlights:Highlight[];intervalMs?:number}){
  const [open,setOpen]=useState<{highlight:number;image:number}|null>(null);
  const [touchX,setTouchX]=useState<number|null>(null);
@@ -15,6 +21,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
  const progressBarRef=useRef<HTMLElement|null>(null);
  const elapsedRef=useRef(0);
  const current=open?highlights[open.highlight]:null;
+ useEffect(()=>{if(!current?.id)return;const key="manar_highlight_view_"+current.id,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/highlights/"+current.id+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[current?.id]);
  const activeUrl=open&&current?current.images[open.image]:"";
  const activeVideo=isVideo(activeUrl);
  const duration=Math.min(20000,Math.max(2000,intervalMs));
@@ -69,7 +76,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
   <div className="storeHighlightsTrack" role="list" aria-label="هايلايتس المتجر">
    {highlights.map((item,index)=><button key={item.id} type="button" role="listitem" className="storeHighlightItem" onClick={()=>select(index,0)}>
     <span className="storeHighlightRing"><img src={item.coverUrl||item.images[0]} alt="" loading="eager" decoding="async"/></span>
-    <span className="storeHighlightLabel">{item.title}</span>
+    <HighlightLabel title={item.title}/>
    </button>)}
   </div>
   {current&&open&&<div className="highlightViewer" role="dialog" aria-modal="true" aria-label={current.title} onMouseDown={event=>{if(event.target===event.currentTarget)close()}}>
