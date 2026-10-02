@@ -9,6 +9,11 @@ function upsertMeta(selector:string,attributes:Record<string,string>){
  if(!element){element=document.createElement("meta");document.head.appendChild(element)}
  for(const [name,value] of Object.entries(attributes))element.setAttribute(name,value);
 }
+function upsertLink(rel:string,href:string){
+ let element=document.head.querySelector<HTMLLinkElement>('link[rel="'+rel+'"]');
+ if(!element){element=document.createElement("link");element.rel=rel;document.head.appendChild(element)}
+ element.href=href;
+}
 function upsertCanonical(href:string){
  let element=document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
  if(!element){element=document.createElement("link");element.rel="canonical";document.head.appendChild(element)}
@@ -30,8 +35,8 @@ function setPageSeo(title:string,description:string,url:string,image:string,type
 }
 function absoluteUrl(value:string){try{return new URL(value||"/og.png",location.origin).toString()}catch{return location.origin+"/og.png"}}
 async function applyPageSeo(settings:StoreSettings,pathname:string){
- const name=settings.storeName&&settings.storeName!=="Store"&&settings.storeName!=="Online Store"?settings.storeName:"Manar Store";
- let title=name,description=`تسوّق توزيعات وهدايا المناسبات بسهولة من ${name}`,image=absoluteUrl(settings.logoUrl),type="website";
+ const name=settings.siteNameAr||settings.storeName||"منار بارتي ستور",alternate=settings.siteNameEn||"";
+ let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة",image=absoluteUrl(settings.logoUrl),type="website";
  const catalog=await loadCatalog();
  const productMatch=pathname.match(/^\/product\/(\d+)\/?$/);
  if(productMatch){
@@ -55,7 +60,9 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
- const name=settings.storeName&&settings.storeName!=="Store"&&settings.storeName!=="Online Store"?settings.storeName:"Manar Store";
+ const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"منار بارتي ستور";
+ const favicon=absoluteUrl(settings.faviconUrl||settings.logoUrl);upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
+ upsertMeta('meta[property="og:site_name"]',{property:"og:site_name",content:settings.siteNameAr||name});
  if(location.pathname.startsWith("/admin"))document.title=`${name} – لوحة التحكم`;
  const adminBrand=document.querySelector<HTMLElement>(".adminSide .brand b");
  if(adminBrand)adminBrand.textContent=name;

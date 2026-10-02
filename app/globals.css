@@ -318,3 +318,9 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
  .shopHeaderMain{grid-template-columns:48px minmax(0,1fr) minmax(120px,auto);padding-inline:4px}
  .headerPoliciesLink{display:none}
 }
+
+.settingsWide{grid-column:1/-1}
+.settingsGrid textarea{width:100%;resize:vertical;padding:11px;border:1px solid #ddd;border-radius:6px;font:inherit}
+.adminSeoPreview{display:grid;gap:4px;padding:16px;border:1px solid #e2d7db;border-radius:12px;background:#fff;direction:rtl}
+.adminSeoPreview>small{color:#666}.adminSeoPreview>b{font-size:13px;color:#202124}.adminSeoPreview>span{font-size:12px;color:#4d5156;direction:ltr;text-align:right}.adminSeoPreview>strong{font-size:19px;font-weight:500;color:#1a0dab}.adminSeoPreview>p{margin:0;color:#4d5156;line-height:1.6}
+@media(max-width:800px){.settingsWide{grid-column:auto}}

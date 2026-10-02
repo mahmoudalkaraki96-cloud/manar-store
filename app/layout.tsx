@@ -7,15 +7,15 @@ import "./watermark.css";
 import "./highlights.css";
 
 export const metadata:Metadata={
- title:{default:"Manar Store",template:"%s | Manar Store"},
- description:"متجر منار للتوزيعات وهدايا المناسبات",
- applicationName:"Manar Store",
+ title:{default:"منار بارتي ستور | Manar Party Store",template:"%s | Manar Store"},
+ description:"قطع وإكسسوارات التوزيعات بالجملة والتجزئة",
+ applicationName:"منار بارتي ستور | Manar Party Store",
  manifest:"/manifest.webmanifest",
  icons:{
   icon:[{url:"/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",type:"image/webp"}],
   apple:[{url:"/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",type:"image/webp"}]
  },
- appleWebApp:{capable:true,statusBarStyle:"default",title:"Manar Store"},
+ appleWebApp:{capable:true,statusBarStyle:"default",title:"منار بارتي ستور | Manar Party Store"},
  formatDetection:{telephone:false}
 };
 
