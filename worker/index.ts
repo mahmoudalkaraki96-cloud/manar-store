@@ -1301,17 +1301,25 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   const homeTitle=storeName+" | "+alternateName;
   const homeDescription=String(settings?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة");
   const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/og.png"),url.origin);
+  const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
+  let canonicalUrl=url.origin+cleanPath;
+  let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
   let title=homeTitle,description=homeDescription,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"WebSite",name:storeName,alternateName,url:url.origin+"/",description:homeDescription};
   const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
   if(productMatch){
     const value=Number(productMatch[1]);
-    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE (p.id=? OR p.item_number=?) AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value,value).first<Record<string,unknown>>();
+    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value).first<Record<string,unknown>>();
     if(product){
       const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
       title=name+" – "+storeName;
       description=String(product.description||"").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
+      canonicalUrl=url.origin+"/product/"+Number(product.id);
       image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
-      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:url.toString(),offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:url.toString()}};
+      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
+    }else{
+      title="الصنف غير موجود – "+storeName;
+      description="هذا الصنف غير متوفر حاليًا. تصفّح المنتجات المتاحة في "+storeName+".";
+      robots="noindex,follow";
     }
   }else{
     const categoryMatch=url.pathname.match(/^\/category\/([^/]+)\/?$/);
@@ -1322,12 +1330,12 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
         const name=String(category.name);title=name+" – "+storeName;
         description=String(category.description||"").trim().slice(0,155)||"تصفّح منتجات قسم "+name+" في "+storeName+".";
         image=absoluteStoreUrl(String(category.banner_url||settings?.logo_url||"/og.png"),url.origin);
-        jsonLd={"@context":"https://schema.org","@type":"CollectionPage",name,description,url:url.toString(),image};
+        jsonLd={"@context":"https://schema.org","@type":"CollectionPage",name,description,url:canonicalUrl,image};
       }
     }
   }
   const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
-  return '<title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(url.toString())+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(url.toString())+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+  return '<title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
 }
 function injectSeo(html:string,head:string){
   return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["'](?:canonical|icon|apple-touch-icon)["'][^>]*>/gi,"").replace("</head>",head+"</head>");

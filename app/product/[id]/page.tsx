@@ -18,7 +18,7 @@ export default function ProductPage(){
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
  useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});try{setFavorite((JSON.parse(localStorage.getItem("manar_favorites")||"[]") as number[]).includes(Number(params.id)))}catch{}refreshCartCount();return()=>{active=false}},[params.id]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
- const product=catalog.find(item=>item.id===Number(params.id)||item.itemNumber===Number(params.id));
+ const product=catalog.find(item=>item.id===Number(params.id));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
  useEffect(()=>{if(!product)return;const key="manar_product_view_"+product.id,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/products/"+product.id+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[product?.id]);
  const watermarkConfig=parseWatermark(store.watermarkUrl||""),watermark=watermarkConfig.base||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
