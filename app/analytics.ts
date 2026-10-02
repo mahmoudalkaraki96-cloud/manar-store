@@ -15,7 +15,7 @@ export type AnalyticsItem = {
   quantity?: number;
 };
 
-export function trackEcommerce(event: "view_item" | "add_to_cart" | "begin_checkout" | "purchase", parameters: Record<string, unknown>) {
+export function trackEcommerce(event: "view_item" | "add_to_cart" | "begin_checkout" | "purchase" | "share", parameters: Record<string, unknown>) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   window.gtag("event", event, parameters);
 }
