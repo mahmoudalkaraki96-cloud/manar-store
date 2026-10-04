@@ -1,0 +1,3 @@
+import {env} from 'cloudflare:workers';
+import {accessError} from '@/lib/access.mjs';
+export async function GET(request:Request){const d=accessError(request);if(d)return Response.json({error:d.error},{status:d.status});const vars=env as unknown as Record<string,unknown>;return Response.json({connected:false,mode:'review',settings:['META_APP_ID','META_APP_SECRET','META_VERIFY_TOKEN'].map(key=>({key,configured:Boolean(vars[key])})),appId:'1114985494224600',pageId:'116720256838717',receiverImplemented:true,ingress:'requires_external_relay',message:'الاستقبال جاهز برمجيًا؛ يحتاج بوابة خارجية للموقع الخاص وأسرار Meta. لم يكتمل الربط الفعلي.'});}
