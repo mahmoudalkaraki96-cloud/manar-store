@@ -53,6 +53,7 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
 const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
 const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
 const GOOGLE_ANALYTICS_ID = "G-PB5GHRZS5S";
+const metaPixelHead = "<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('set','autoConfig',false,'1231904457865622');fbq('init','1231904457865622');fbq('track','PageView');window.__manarPixelPath=window.location.pathname;</script>";
 const googleAnalyticsHead = '<script async src="https://www.googletagmanager.com/gtag/js?id='+GOOGLE_ANALYTICS_ID+'"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","'+GOOGLE_ANALYTICS_ID+'");</script>';
 
 const amount = (agorot: number | null) => agorot == null ? undefined : agorot / 100;
@@ -1589,7 +1590,7 @@ const worker = {
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
-        ?(await storefrontSeo(env,url))+googleAnalyticsHead
+        ?(await storefrontSeo(env,url))+googleAnalyticsHead+((url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")?metaPixelHead:"")
         :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});

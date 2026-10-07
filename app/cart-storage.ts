@@ -23,7 +23,7 @@ export function addCartItem(product:Product,variant?:Variant,qty=1,customization
  const cart=loadCart(),base=`${product.id}:${variant?.id||"base"}`,key=unique?`${base}:custom:${crypto.randomUUID()}`:base,line=cart[key];
  cart[key]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations,notes:line?.notes||"",qty:(line?.qty||0)+qty,price:variant?.price??product.price,image:variant?.image||product.image};
  saveCart(cart);
- trackEcommerce("add_to_cart",{currency:"ILS",value:(variant?.price??product.price)*qty,items:[{item_id:String(product.id),item_name:product.name,item_variant:variant?.name,item_category:product.category,price:variant?.price??product.price,quantity:qty}]});
+ trackEcommerce("add_to_cart",{currency:"ILS",value:(variant?.price??product.price)*qty,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_variant:variant?.name,item_category:product.category,price:variant?.price??product.price,quantity:qty}]});
  return cart;
 }
 export const cartCount=(cart:Record<string,CartLine>)=>Object.values(cart).reduce((sum,line)=>sum+(Number(line.qty)||0),0);
