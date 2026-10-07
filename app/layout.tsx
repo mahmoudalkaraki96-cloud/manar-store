@@ -13,8 +13,8 @@ export const metadata:Metadata={
  applicationName:"منار بارتي ستور | Manar Party Store",
  manifest:"/manifest.webmanifest",
  icons:{
-  icon:[{url:"/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",type:"image/webp"}],
-  apple:[{url:"/media/products%2F2026-08-22%2F81d345a6-d59d-4bf3-9ab9-1440f95da7e7.webp",type:"image/webp"}]
+  icon:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}],
+  apple:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}]
  },
  appleWebApp:{capable:true,statusBarStyle:"default",title:"منار بارتي ستور | Manar Party Store"},
  formatDetection:{telephone:false}

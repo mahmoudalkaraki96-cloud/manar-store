@@ -1310,7 +1310,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   const alternateName=String(settings?.site_name_en||"Manar Party Store");
   const homeTitle=storeName+" | "+alternateName;
   const homeDescription=String(settings?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة");
-  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/og.png"),url.origin);
+  const favicon=absoluteStoreUrl((url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")?"/favicon.png":String(settings?.favicon_url||settings?.logo_url||"/og.png"),url.origin);
   const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
   let canonicalUrl=url.origin+cleanPath;
   let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";

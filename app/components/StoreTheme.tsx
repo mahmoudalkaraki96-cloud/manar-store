@@ -61,7 +61,7 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
  const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"منار بارتي ستور";
- const favicon=absoluteUrl(settings.faviconUrl||settings.logoUrl);upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
+ const favicon=absoluteUrl((location.hostname==="manarstore.ps"||location.hostname==="www.manarstore.ps")?"/favicon.png":settings.faviconUrl||settings.logoUrl);upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
  upsertMeta('meta[property="og:site_name"]',{property:"og:site_name",content:settings.siteNameAr||name});
  if(location.pathname.startsWith("/admin"))document.title=`${name} – لوحة التحكم`;
  const adminBrand=document.querySelector<HTMLElement>(".adminSide .brand b");
