@@ -1236,6 +1236,9 @@ async function postPurchase(env:Env,id:number){const purchase=await env.DB.prepa
 async function importProducts(request:Request,env:Env){const body=await parseJson(request),rows=Array.isArray(body.rows)?body.rows as Array<Record<string,unknown>>:[];if(!rows.length||rows.length>2000)return json({error:"الملف فارغ أو يتجاوز 2000 صنف"},{status:400});let created=0,updated=0;for(const row of rows){const name=asText(row.name),categoryNumber=Number(row.categoryNumber),price=Number(row.price),itemNumber=Number(row.itemNumber);if(!name||!categoryNumber||!Number.isFinite(price))continue;const category=await env.DB.prepare("SELECT id FROM categories WHERE category_number=?").bind(categoryNumber).first<{id:number}>();if(!category)continue;const existing=itemNumber?await env.DB.prepare("SELECT id FROM products WHERE item_number=? AND deleted_at IS NULL").bind(itemNumber).first<{id:number}>():null;const payload=new Request(request.url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({itemNumber,name,categoryId:category.id,price,wholesale:row.wholesale,purchasePrice:row.purchasePrice,stock:Number(row.stock||0),keywords:row.keywords,description:row.description,active:true,featured:false,variants:[],media:[]})});await saveProduct(payload,env,existing?.id);if(existing)updated++;else created++}return json({ok:true,created,updated});}
 
 
+function isImportedErrorName(value: unknown): boolean {
+  return /^(?:forbidden|403\\s+forbidden|404\\s+not found|access denied)$/i.test(String(value ?? "").trim());
+}
 function cleanCatalogDescription(value: unknown): string {
   const text = String(value ?? "").trim();
   // Supplier error pages can be imported as descriptions; never publish them.
@@ -1261,7 +1264,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
   }
   if(url.pathname==="/google-merchant-feed.xml"){
     const catalog=await readCatalog(env,false);
-    const products=catalog.products.filter(product=>product.active&&Number(product.price)>0&&Boolean(product.image));
+    const products=catalog.products.filter(product=>product.active&&!isImportedErrorName(product.name)&&Number(product.price)>0&&Boolean(product.image));
     const clean=(value:unknown)=>String(value??"").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g," ").trim();
     const items=products.map(product=>{
       const title=clean(product.name).slice(0,150);
@@ -1288,7 +1291,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
   }
   if(url.pathname!=="/sitemap.xml")return null;
   const [products,categories]=await Promise.all([
-    env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL ORDER BY id").all<{id:number;updated_at:number}>(),
+    env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL AND lower(trim(name)) NOT IN ('forbidden','403 forbidden','404 not found','access denied') ORDER BY id").all<{id:number;updated_at:number}>(),
     env.DB.prepare("SELECT slug,updated_at FROM categories WHERE active=1 ORDER BY id").all<{slug:string;updated_at:number}>()
   ]);
   const pages:Array<{loc:string;lastmod?:number}>=[{loc:url.origin+"/"}];
@@ -1315,7 +1318,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   if(productMatch){
     const value=Number(productMatch[1]);
     const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value).first<Record<string,unknown>>();
-    if(product){
+    if(product&&!isImportedErrorName(product.name)){
       const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
       title=name+" – "+storeName;
       description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
