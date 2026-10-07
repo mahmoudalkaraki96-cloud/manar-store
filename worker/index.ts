@@ -1357,6 +1357,13 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
     const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
     return new Response(bytes, { headers: { "content-type": "image/webp", "cache-control": "public, max-age=31536000, immutable" } });
   }
+  if(request.method==="GET"&&url.pathname==="/api/seo"&&env.APP_SURFACE==="storefront"){
+    const path=url.searchParams.get("path")||"/";
+    if(!path.startsWith("/")||path.startsWith("//")||path.includes("\\\\")||path.length>500)return json({error:"Invalid path"},{status:400});
+    const target=new URL(path,url.origin);
+    if(target.origin!==url.origin)return json({error:"Invalid path"},{status:400});
+    return json({head:await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
+  }
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
@@ -1528,6 +1535,10 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
+      const target=new URL(url);target.protocol="https:";target.hostname="manarstore.ps";
+      return Response.redirect(target.toString(),308);
+    }
     const isAdminPath = url.pathname === "/admin" || url.pathname.startsWith("/admin/");
 
     if (env.APP_SURFACE === "admin" && url.pathname === "/robots.txt") {
@@ -1593,7 +1604,8 @@ const worker = {
         ?(await storefrontSeo(env,url))+googleAnalyticsHead+((url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")?metaPixelHead:"")
         :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
-      return new Response(injectSeo(html,head),{status:appResponse.status,statusText:appResponse.statusText,headers});
+      const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
+      return new Response(injectSeo(html,head+seoData),{status:appResponse.status,statusText:appResponse.statusText,headers});
     }
     return new Response(appResponse.body,{status:appResponse.status,statusText:appResponse.statusText,headers});
   },

@@ -1,4 +1,5 @@
 import type {Metadata,Viewport} from "next";
+import StoreSeo from "./components/StoreSeo";
 import StoreTheme from "./components/StoreTheme";
 import PwaRegister from "./components/PwaRegister";
 import "./globals.css";
@@ -27,5 +28,5 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreTheme/><PwaRegister/>{children}</body></html>
+ return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/>{children}</body></html>
 }
