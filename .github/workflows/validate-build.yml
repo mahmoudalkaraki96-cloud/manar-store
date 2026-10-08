@@ -19,4 +19,5 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: node --experimental-strip-types --test tests/meta-pixel.test.mjs
       - run: npm run build
