@@ -9,7 +9,8 @@ test("disabled, empty and unsafe pixel IDs do not load tracking",()=>{
 });
 test("initialization queues one PageView and uses the chosen pixel without contact data",()=>{
  const html=buildMetaPixelHead("987654321012345",true),script=html.slice(8,-9),inserted=[];
- const context={window:{location:{pathname:"/product/170"}},document:{createElement:()=>({}),getElementsByTagName:()=>[{parentNode:{insertBefore:node=>inserted.push(node)}}]}};
+ const context={location:{pathname:"/product/170"},document:{createElement:()=>({}),getElementsByTagName:()=>[{parentNode:{insertBefore:node=>inserted.push(node)}}]}};
+ context.window=context;
  vm.runInNewContext(script,context);
  const calls=Array.from(context.window.fbq.queue,args=>Array.from(args));
  assert.equal(calls.filter(call=>call[0]==="init").length,1);
