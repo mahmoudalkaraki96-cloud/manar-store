@@ -7,6 +7,8 @@ const timestamps = {
 
 export const storeSettings = sqliteTable("store_settings", {
   id: integer("id").primaryKey().default(1),
+  metaPixelId: text("meta_pixel_id").notNull().default("1231904457865622"),
+  metaPixelEnabled: integer("meta_pixel_enabled", { mode: "boolean" }).notNull().default(true),
   storeName: text("store_name").notNull().default("Store"),
   logoUrl: text("logo_url"),
   watermarkUrl: text("watermark_url"),
