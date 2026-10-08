@@ -2,6 +2,7 @@ import {buildMetaPixelHead} from "./meta-pixel";
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import { scrypt as nodeScrypt, pbkdf2 as nodePbkdf2 } from "node:crypto";
+import {pushApi,drainPushQueue,notifyNewOrder,notifyOrderStatus,pushAdminSummary,queueCampaign} from "./push";
 import handler from "vinext/server/app-router-entry";
 import { importedDistributionProducts } from "./import-cat40.generated";
 import importedAllProducts from "./import-all-products.generated.json";
@@ -958,7 +959,7 @@ async function trackProductView(request:Request,env:Env,productId:number){
  return json({ok:true},{headers:{"cache-control":"no-store"}});
 }
 const orderStatuses=["new","confirmed","preparing","shipped","delivered","cancelled"] as const;
-async function createOrder(request:Request,env:Env){
+async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
   await ensureCustomizationSchema(env);
   await ensureCustomerAuthSchema(env);
   await ensureStorePoliciesSchema(env);
@@ -1003,6 +1004,7 @@ async function createOrder(request:Request,env:Env){
   const account=await getCustomerAccount(request,env);
   const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
   await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
+  ctx.waitUntil(notifyNewOrder(env,orderId,number,new URL(request.url).origin,account?.id||null,body.pushDeviceId,body.pushDeviceToken).catch(()=>console.error("new_order_push_failed")));
   return json({ok:true,orderNumber:number,total:(subtotal+shipping)/100});
 }
 
@@ -1020,7 +1022,7 @@ async function readOrders(env:Env){
   return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
-async function updateOrder(request:Request,env:Env,id:number){
+async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContext){
   await ensureOrderExtrasSchema(env);
   const body=await parseJson(request),status=asText(body.status),submittedFees=Array.isArray(body.extraFees)?body.extraFees as Array<Record<string,unknown>>:null;
   const fees=submittedFees?.map(fee=>({label:asText(fee.label).slice(0,100),amount:Math.max(0,Math.round(Number(fee.amount||0)*100))})).filter(fee=>fee.label&&fee.amount>0).slice(0,20)||null;
@@ -1047,6 +1049,7 @@ async function updateOrder(request:Request,env:Env,id:number){
     }
   }
   await env.DB.batch(statements);
+  if(current.status!==status)ctx.waitUntil(notifyOrderStatus(env,id,status).catch(()=>console.error("order_status_push_failed")));
   return json({ok:true});
 }
 
@@ -1360,7 +1363,7 @@ function injectSeo(html:string,head:string){
   return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["'](?:canonical|icon|apple-touch-icon)["'][^>]*>/gi,"").replace("</head>",head+"</head>");
 }
 
-async function api(request: Request, env: Env, url: URL): Promise<Response | null> {
+async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): Promise<Response | null> {
   if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
     const binary = atob(product2222ImageBase64);
     const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
@@ -1384,7 +1387,14 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
   const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
   if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
-  if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env);
+  if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env,ctx);
+  if(url.pathname.startsWith("/api/push/")&&env.APP_SURFACE==="storefront"){
+    await ensureCustomerAuthSchema(env);
+    if(request.method==="POST"&&!await customerRateLimit(env,"push:"+await sha256(request.headers.get("cf-connecting-ip")||"unknown"),100,3600000))return json({error:"انتظر قليلًا ثم أعد المحاولة"},{status:429});
+    const account=await getCustomerAccount(request,env),response=await pushApi(request,env,"customer",account?.id||null);
+    if(response?.ok&&url.pathname.endsWith("/test"))ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("push_failed")));
+    return response;
+  }
   if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
@@ -1416,6 +1426,12 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(url.pathname.startsWith("/api/admin/push/")){
+    if(request.method==="GET"&&url.pathname.endsWith("/summary"))return json(await pushAdminSummary(env));
+    const response=url.pathname.endsWith("/campaign")&&request.method==="POST"?await queueCampaign(request,env):await pushApi(request,env,"admin",null);
+    if(response?.ok&&(url.pathname.endsWith("/test")||url.pathname.endsWith("/campaign")))ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("push_failed")));
+    return response;
+  }
   if (request.method === "GET" && url.pathname === "/api/admin/catalog") return json(await readCatalog(env, true));
   if (request.method === "GET" && url.pathname === "/api/admin/shipping-zones") return json({zones:await readShippingZones(env,true)});
   if (request.method === "PUT" && url.pathname === "/api/admin/shipping-zones") return saveShippingZones(request,env);
@@ -1433,7 +1449,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
   if(postPurchaseMatch&&request.method==="POST")return postPurchase(env,Number(postPurchaseMatch[1]));
   if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
-  if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]));
+  if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]),ctx);
   if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/admin/policies") return json({policies:await readPolicies(env)});
   if (request.method === "PUT" && url.pathname === "/api/admin/policies") return savePolicies(request,env);
@@ -1542,6 +1558,7 @@ async function api(request: Request, env: Env, url: URL): Promise<Response | nul
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
@@ -1580,13 +1597,13 @@ const worker = {
         const cacheKey = new Request(url.toString(), { method: "GET" });
         const cached = await cache.match(cacheKey);
         if (cached) return cached;
-        const apiResponse = await api(request, env, url);
+        const apiResponse = await api(request, env, url,ctx);
         if (apiResponse) {
           ctx.waitUntil(cache.put(cacheKey, apiResponse.clone()));
           return apiResponse;
         }
       }
-      const apiResponse = await api(request, env, url);
+      const apiResponse = await api(request, env, url,ctx);
       if (apiResponse) return apiResponse;
     } catch (error) {
       console.error(JSON.stringify({ event: "api_error", path: url.pathname, message: error instanceof Error ? error.message : "unknown" }));
@@ -1621,3 +1638,4 @@ const worker = {
 };
 
 export default worker;
+

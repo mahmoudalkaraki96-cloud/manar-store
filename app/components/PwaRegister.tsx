@@ -1,4 +1,5 @@
 "use client";
+import Notifications from "./Notifications";
 import {useEffect,useState} from "react";
 
 type InstallPromptEvent=Event&{
@@ -55,9 +56,9 @@ export default function PwaRegister(){
   };
  },[]);
 
- if(installed)return null;
+ if(installed)return <Notifications/>;
  const ios=typeof navigator!=="undefined"&&/iphone|ipad|ipod/i.test(navigator.userAgent);
- if(!prompt&&!ios)return null;
+ if(!prompt&&!ios)return <Notifications/>;
  const appName=admin?"Manar Store Admin":"Manar Store";
 
  async function install(){
@@ -70,6 +71,7 @@ export default function PwaRegister(){
  }
 
  return <>
+  <Notifications/>
   <button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
    <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
   </button>
@@ -80,3 +82,4 @@ export default function PwaRegister(){
   </div>}
  </>;
 }
+
