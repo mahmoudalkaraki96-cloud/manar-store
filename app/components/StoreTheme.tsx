@@ -1,6 +1,7 @@
 "use client";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
+import {trackPageView} from "../analytics";
 import {loadCatalog} from "../catalog-types";
 import {loadStorefront,type StoreSettings} from "../storefront-types";
 
@@ -70,6 +71,7 @@ function applyStoreIdentity(settings:StoreSettings){
 
 export default function StoreTheme(){
  const pathname=usePathname();
+ useEffect(()=>{if(!pathname.startsWith("/admin"))trackPageView(pathname)},[pathname]);
  useEffect(()=>{if(pathname.startsWith("/admin"))return;try{const key="manar_visitor_id",visitorId=localStorage.getItem(key)||crypto.randomUUID();localStorage.setItem(key,visitorId);void fetch("/api/analytics/visit",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({visitorId}),keepalive:true})}catch{}},[pathname]);
  useEffect(()=>{
   let active=true;
