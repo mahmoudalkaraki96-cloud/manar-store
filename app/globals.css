@@ -340,3 +340,6 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 .cartRemove:hover{background:#ffe3e9}
 .cartRemove:focus-visible{outline:2px solid #9b2440;outline-offset:3px}
 .cartRemove svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Keep mobile search at a readable size to avoid focus-triggered browser zoom. */
+@media(max-width:768px){.globalSearch>input{font-size:16px}}
