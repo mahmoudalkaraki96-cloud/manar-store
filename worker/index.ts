@@ -1,3 +1,4 @@
+import {recordCart,readCartMetrics} from "./cart-metrics";
 import {buildMetaPixelHead} from "./meta-pixel";
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
@@ -1380,6 +1381,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
+  if(request.method==="POST"&&url.pathname==="/api/analytics/cart"&&env.APP_SURFACE==="storefront")return recordCart(request,env.DB);
   if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
   const productViewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/view$/);
   if(request.method==="POST"&&productViewMatch)return trackProductView(request,env,Number(productViewMatch[1]));
@@ -1426,6 +1428,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json(await readCartMetrics(env.DB),{headers:{"cache-control":"no-store"}});
   if(url.pathname.startsWith("/api/admin/push/")){
     if(request.method==="GET"&&url.pathname.endsWith("/summary"))return json(await pushAdminSummary(env));
     const response=url.pathname.endsWith("/campaign")&&request.method==="POST"?await queueCampaign(request,env):await pushApi(request,env,"admin",null);

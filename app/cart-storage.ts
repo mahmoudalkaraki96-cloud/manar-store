@@ -14,9 +14,18 @@ export function loadCart():Record<string,CartLine>{
   return merged;
  }catch{return {}}
 }
+// Serialize snapshots so the first response sets the anonymous cookie before later writes.
+let cartMetricsQueue:Promise<unknown>=Promise.resolve();
+export function reportCart(cart:Record<string,CartLine>){
+ if(typeof window==="undefined")return;
+ const items=Object.values(cart).filter(line=>line.qty>0).map(line=>({productId:line.productId,qty:line.qty}));
+ const body=JSON.stringify({items});
+ cartMetricsQueue=cartMetricsQueue.catch(()=>{}).then(()=>fetch("/api/analytics/cart",{method:"POST",headers:{"content-type":"application/json"},credentials:"same-origin",body,keepalive:true})).catch(()=>{});
+}
 export function saveCart(cart:Record<string,CartLine>){
  localStorage.setItem(cartStorageKey(),JSON.stringify(cart));
  window.dispatchEvent(new CustomEvent("manar:cart",{detail:cart}));
+ reportCart(cart);
 }
 export function addCartItem(product:Product,variant?:Variant,qty=1,customizations:Record<string,string>={},unique=false){
  if(variant?variant.stock<=0:!product.inStock)return loadCart();

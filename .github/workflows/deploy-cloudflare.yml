@@ -31,6 +31,9 @@ jobs:
       - name: Verify encrypted web push
         run: node --test tests/web-push.test.cjs
 
+      - name: Verify cart metrics
+        run: node --experimental-strip-types --test tests/cart-metrics.test.mjs
+
       - name: Build
         run: npm run build
 
