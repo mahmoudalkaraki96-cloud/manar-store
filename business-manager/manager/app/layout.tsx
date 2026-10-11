@@ -1,0 +1,1 @@
+import type {Metadata} from "next";import "./globals.css";export const metadata:Metadata={title:"مدير أعمال منار",description:"إدارة مهام منار والطلبات المخصصة وقنوات البيع",icons:{icon:"/favicon.svg"}};export default function Layout({children}:{children:React.ReactNode}){return <html lang="ar" dir="rtl"><body>{children}</body></html>}

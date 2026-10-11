@@ -1,0 +1,2 @@
+import {accessError} from "@/lib/access.mjs";
+export async function GET(request:Request){const denied=accessError(request);if(denied)return Response.json({error:denied.error},{status:denied.status});try{const r=await fetch("https://manarstore.ps/api/catalog",{signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error();const data=await r.json();return Response.json({count:Array.isArray(data.products)?data.products.length:0,checkedAt:Date.now()});}catch{return Response.json({error:"تعذر قراءة كتالوج المتجر. أعد المحاولة لاحقًا."},{status:502});}}

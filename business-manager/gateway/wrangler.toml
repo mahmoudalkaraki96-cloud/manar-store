@@ -1,0 +1,7 @@
+name = "manar-message-gateway"
+main = "worker.mjs"
+compatibility_date = "2026-10-04"
+account_id = "008c61df8c322c27b8d1c1137922e328"
+workers_dev = true
+[observability]
+enabled = false
