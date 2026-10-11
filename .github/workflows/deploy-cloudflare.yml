@@ -34,6 +34,9 @@ jobs:
       - name: Verify cart metrics
         run: node --experimental-strip-types --test tests/cart-metrics.test.mjs
 
+      - name: Verify admin dashboard metrics
+        run: node --test tests/admin-dashboard.test.cjs
+
       - name: Build
         run: npm run build
 
@@ -62,3 +65,4 @@ jobs:
 
       - name: Verify live push configuration
         run: node tests/push-live-probe.mjs
+
