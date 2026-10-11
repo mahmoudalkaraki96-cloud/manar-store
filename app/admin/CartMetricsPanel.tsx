@@ -19,10 +19,11 @@ export default function CartMetricsPanel(){
   <h3>المنتجات في سلال الزبائن</h3>
   {error&&<p className="adminMessage" role="alert">{error}</p>}
   <div className="dashboardStats">
-   <article><small>عدد القطع في السلال</small><b>{metrics?metrics.cartQuantity.toLocaleString("ar-PS"):"—"}</b><span>يشمل الكميات المتكررة من المنتج نفسه</span></article>
-   <article><small>السلال غير الفارغة</small><b>{metrics?metrics.nonemptyCarts.toLocaleString("ar-PS"):"—"}</b><span>سلال أجهزة الزبائن التي تواصلت مع المتجر خلال 30 يومًا</span></article>
+   <article><small>عدد القطع في السلال</small><b>{metrics?metrics.cartQuantity.toLocaleString("ar-PS-u-nu-latn"):"—"}</b><span>يشمل الكميات المتكررة من المنتج نفسه</span></article>
+   <article><small>السلال غير الفارغة</small><b>{metrics?metrics.nonemptyCarts.toLocaleString("ar-PS-u-nu-latn"):"—"}</b><span>سلال أجهزة الزبائن التي تواصلت مع المتجر خلال 30 يومًا</span></article>
   </div>
   <p>يبدأ العد من تفعيل الميزة. تظهر السلال القديمة عند زيارة أصحابها للمتجر، وتُزال السلة من العدد عند إفراغها أو إتمام الطلب. كل جهاز أو متصفح يُحسب كسلة مستقلة.</p>
-  <small>{metrics?"آخر تحديث: "+new Date(metrics.asOf).toLocaleString("ar-PS",{timeZone:"Asia/Hebron"}):"جاري تحميل الإحصائية…"}{busy&&metrics?" — جاري التحديث…":""}</small>
+  <small>{metrics?"آخر تحديث: "+new Date(metrics.asOf).toLocaleString("ar-PS-u-nu-latn",{timeZone:"Asia/Hebron"}):"جاري تحميل الإحصائية…"}{busy&&metrics?" — جاري التحديث…":""}</small>
  </section>;
 }
+
