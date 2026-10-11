@@ -16,3 +16,5 @@
 @media print{.adminShell.adminRedesign,.adminRedesign .orderDetail,.adminRedesign .orderAddress,.adminRedesign .orderTotals{background:#fff!important;color:#000!important;color-scheme:light}.adminRedesign .adminSide,.adminRedesign .adminTop,.adminRedesign .adminMenuButton{display:none!important}.adminRedesign td,.adminRedesign th{color:#000!important;border-color:#ccc!important;background:#fff!important}}
 
 .adminRedesign .adminSide nav{display:block;flex:1;min-width:0}.adminRedesign .adminTop{height:auto;min-height:65px;position:static;padding:0;border-bottom:0;background:transparent;backdrop-filter:none}.adminRedesign .adminDashboard{width:100%;height:auto;overflow:visible;background:transparent}
+
+.adminRedesign .navNewOrders{font-size:9px;background:#e5aa36;color:#25302a;white-space:nowrap;padding:2px 6px;border-radius:5px}.orderConfirmationCounts b{color:#bc8b31}.orderConfirmationCounts span{color:var(--admin-accent)}

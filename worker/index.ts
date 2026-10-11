@@ -867,7 +867,14 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const zone=await env.DB.prepare("SELECT code FROM shipping_zones WHERE code=? AND active=1").bind(shippingZone).first();
     if(!zone)return json({error:"منطقة الشحن غير متاحة"},{status:400});
     if(makeDefault)await env.DB.prepare("UPDATE customer_addresses SET is_default=0 WHERE account_id=?").bind(account.id).run();
-    if(addrestName,phone,city,address,shippingZone,isDefault?1:0,now,now).run();
+    if(addressMatch){
+      const id=Number(addressMatch[1]),result=await env.DB.prepare("UPDATE customer_addresses SET label=?,recipient_name=?,phone=?,city=?,address=?,shipping_zone=?,is_default=?,updated_at=? WHERE id=? AND account_id=?").bind(label,recipientName,phone,city,address,shippingZone,makeDefault?1:0,now,id,account.id).run();
+      if(result.meta?.changes===0)return json({error:"العنوان غير موجود"},{status:404});
+    }else{
+      const count=await env.DB.prepare("SELECT COUNT(*) AS count FROM customer_addresses WHERE account_id=?").bind(account.id).first<{count:number}>();
+      const isDefault=makeDefault||Number(count?.count||0)===0;
+      if(isDefault)await env.DB.prepare("UPDATE customer_addresses SET is_default=0 WHERE account_id=?").bind(account.id).run();
+      await env.DB.prepare("INSERT INTO customer_addresses (account_id,label,recipient_name,phone,city,address,shipping_zone,is_default,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(account.id,label,recipientName,phone,city,address,shippingZone,isDefault?1:0,now,now).run();
     }
     return json({ok:true});
   }
@@ -1216,10 +1223,15 @@ async function readOperations(env:Env){
   const purchaseItems=items.results as Array<Record<string,unknown>>;
   const now=Date.now(),today=analyticsDay(),day7=analyticsDay(new Date(now-6*86400000)),day30=analyticsDay(new Date(now-29*86400000));
   const [traffic,orderMetrics,recentResult,topResult,trafficChart,orderChart]=await Promise.all([
-    env.DB.prepare("SELECT COUNT(DISTINCT CASE WHEN day=? THEN visitor_hash END) AS visitors_today,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_7d,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_30d,COALESCE(SUM(CASE WHEN day=? THEN views ELSE 0 END),0) AS views_today FROM store_daily_visitors").bind(today,day7,day30,today).first<Record<string,unknogorot,status,created_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 5").all(),
+    env.DB.prepare("SELECT COUNT(DISTINCT CASE WHEN day=? THEN visitor_hash END) AS visitors_today,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_7d,COUNT(DISTINCT CASE WHEN day>=? THEN visitor_hash END) AS visitors_30d,COALESCE(SUM(CASE WHEN day=? THEN views ELSE 0 END),0) AS views_today FROM store_daily_visitors").bind(today,day7,day30,today).first<Record<string,unknown>>(),
+    env.DB.prepare("SELECT COUNT(CASE WHEN date(created_at/1000,\'unixepoch\',\'+3 hours\')=? THEN 1 END) AS orders_today,COALESCE(SUM(CASE WHEN date(created_at/1000,\'unixepoch\',\'+3 hours\')=? AND status!=\'cancelled\' THEN total_agorot ELSE 0 END),0) AS sales_today,COALESCE(SUM(CASE WHEN created_at>=? AND status!=\'cancelled\' THEN total_agorot ELSE 0 END),0) AS sales_30d,COUNT(CASE WHEN created_at>=? AND status!=\'cancelled\' THEN 1 END) AS orders_30d,COALESCE(AVG(CASE WHEN status!=\'cancelled\' THEN total_agorot END),0) AS average_order FROM orders WHERE deleted_at IS NULL").bind(today,today,now-30*86400000,now-30*86400000).first<Record<string,unknown>>(),
+    env.DB.prepare("SELECT id,order_number,customer_name,total_agorot,status,created_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT 5").all(),
     env.DB.prepare("SELECT oi.item_number,oi.product_name,SUM(oi.quantity) AS quantity,SUM(oi.line_total_agorot) AS sales_agorot FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.deleted_at IS NULL AND o.status!='cancelled' GROUP BY oi.item_number,oi.product_name ORDER BY quantity DESC LIMIT 5").all(),
     env.DB.prepare("SELECT day,COUNT(DISTINCT visitor_hash) AS visitors,SUM(views) AS views FROM store_daily_visitors WHERE day>=? GROUP BY day ORDER BY day").bind(day7).all(),
-    env.DB.prepare("SELECT date(created_at/1000,'unixepoch','+3 hours') AS day,COUNT(*) AS orders,COALESCE(SUM(CASE WHEN status!='cancelled' THEN total_agoron  return {
+    env.DB.prepare("SELECT date(created_at/1000,'unixepoch','+3 hours') AS day,COUNT(*) AS orders,COALESCE(SUM(CASE WHEN status!='cancelled' THEN total_agorot ELSE 0 END),0) AS sales_agorot FROM orders WHERE deleted_at IS NULL AND created_at>=? GROUP BY day ORDER BY day").bind(now-7*86400000).all()
+  ]);
+  const visitors30=Number(traffic?.visitors_30d||0),orders30=Number(orderMetrics?.orders_30d||0);
+  return {
     suppliers:(suppliers.results as Array<Record<string,unknown>>).map(row=>({id:Number(row.id),supplierNumber:Number(row.supplier_number),name:String(row.name),phone:String(row.phone||""),address:String(row.address||""),notes:String(row.notes||""),active:Boolean(row.active)})),
     purchases:(purchases.results as Array<Record<string,unknown>>).map(row=>({id:Number(row.id),purchaseNumber:Number(row.purchase_number),supplierId:row.supplier_id==null?null:Number(row.supplier_id),supplierName:String(row.supplier_name||"بدون مورد"),status:String(row.status),invoiceReference:String(row.invoice_reference||""),purchasedAt:Number(row.purchased_at),total:Number(row.total_agorot)/100,notes:String(row.notes||""),items:purchaseItems.filter(item=>Number(item.purchase_id)===Number(row.id)).map(item=>({id:Number(item.id),productId:item.product_id==null?null:Number(item.product_id),variantId:item.variant_id==null?null:Number(item.variant_id),itemNumber:Number(item.item_number||0),productName:String(item.product_name),quantity:Number(item.quantity),unitCost:Number(item.unit_cost_agorot)/100,lineTotal:Number(item.line_total_agorot)/100,notes:String(item.notes||"")}))})),
     customers:(customers.results as Array<Record<string,unknown>>).map(row=>({name:String(row.customer_name||""),phone:String(row.phone||""),city:String(row.city||""),ordersCount:Number(row.orders_count),total:Number(row.total_agorot)/100,lastOrderAt:Number(row.last_order_at)})),
@@ -1236,7 +1248,25 @@ async function savePurchase(request:Request,env:Env,id?:number){const body=await
 
 async function postPurchase(env:Env,id:number){const purchase=await env.DB.prepare("SELECT status FROM purchases WHERE id=? AND deleted_at IS NULL").bind(id).first<{status:string}>();if(!purchase)return json({error:"الفاتورة غير موجودة"},{status:404});if(purchase.status!=="draft")return json({error:"تم ترحيل هذه الفاتورة مسبقاً"},{status:409});const items=await env.DB.prepare("SELECT product_id,variant_id,quantity,unit_cost_agorot FROM purchase_items WHERE purchase_id=?").bind(id).all(),now=Date.now(),statements:D1PreparedStatement[]=[];for(const item of items.results as Array<Record<string,unknown>>){if(item.variant_id!=null)statements.push(env.DB.prepare("UPDATE product_variants SET stock_quantity=stock_quantity+?,purchase_price_agorot=?,updated_at=? WHERE id=?").bind(Number(item.quantity),Number(item.unit_cost_agorot),now,Number(item.variant_id)));else statements.push(env.DB.prepare("UPDATE products SET stock_quantity=stock_quantity+?,purchase_price_agorot=?,updated_at=? WHERE id=?").bind(Number(item.quantity),Number(item.unit_cost_agorot),now,Number(item.product_id)))}statements.push(env.DB.prepare("UPDATE purchases SET status='posted',updated_at=? WHERE id=?").bind(now,id));await env.DB.batch(statements);return json({ok:true});}
 
-async function importProducts(request:Request,env:Env-origin");
+async function importProducts(request:Request,env:Env){const body=await parseJson(request),rows=Array.isArray(body.rows)?body.rows as Array<Record<string,unknown>>:[];if(!rows.length||rows.length>2000)return json({error:"الملف فارغ أو يتجاوز 2000 صنف"},{status:400});let created=0,updated=0;for(const row of rows){const name=asText(row.name),categoryNumber=Number(row.categoryNumber),price=Number(row.price),itemNumber=Number(row.itemNumber);if(!name||!categoryNumber||!Number.isFinite(price))continue;const category=await env.DB.prepare("SELECT id FROM categories WHERE category_number=?").bind(categoryNumber).first<{id:number}>();if(!category)continue;const existing=itemNumber?await env.DB.prepare("SELECT id FROM products WHERE item_number=? AND deleted_at IS NULL").bind(itemNumber).first<{id:number}>():null;const payload=new Request(request.url,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({itemNumber,name,categoryId:category.id,price,wholesale:row.wholesale,purchasePrice:row.purchasePrice,stock:Number(row.stock||0),keywords:row.keywords,description:row.description,active:true,featured:false,variants:[],media:[]})});await saveProduct(payload,env,existing?.id);if(existing)updated++;else created++}return json({ok:true,created,updated});}
+
+
+function isImportedErrorName(value: unknown): boolean {
+  return /^(?:forbidden|403\\s+forbidden|404\\s+not found|access denied)$/i.test(String(value ?? "").trim());
+}
+function cleanCatalogDescription(value: unknown): string {
+  const text = String(value ?? "").trim();
+  // Supplier error pages can be imported as descriptions; never publish them.
+  if (/you (?:don't|do not|don’t) have permission to access this resource|additionally, a 403|^403\\s*(?:forbidden)?$/i.test(text)) return "";
+  return text;
+}
+function xmlEscape(value:string){return value.replace(/[<>&'"]/g,character=>({"<":"&lt;",">":"&gt;","&":"&amp;","'":"&apos;",'"':"&quot;"}[character]||character))}
+function htmlEscape(value:string){return value.replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]||character))}
+function absoluteStoreUrl(value:string,origin:string){if(!value)return origin+"/og.png";try{return new URL(value,origin).toString()}catch{return origin+"/og.png"}}
+function securityHeaders(headers:Headers){
+  headers.set("x-content-type-options","nosniff");
+  headers.set("x-frame-options","DENY");
+  headers.set("referrer-policy","strict-origin-when-cross-origin");
   headers.set("permissions-policy","camera=(), microphone=(), geolocation=()");
   headers.set("content-security-policy","frame-ancestors 'none'");
   return headers;
@@ -1244,7 +1274,243 @@ async function importProducts(request:Request,env:Env-origin");
 async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|null>{
   if(env.APP_SURFACE!=="storefront"||request.method!=="GET")return null;
   if(url.pathname==="/robots.txt"){
-    const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.int8Array.from(binary, character => character.charCodeAt(0));
+    const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
+    return new Response(body,{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
+  }
+  if(url.pathname==="/google-merchant-feed.xml"){
+    const catalog=await readCatalog(env,false);
+    const products=catalog.products.filter(product=>product.active&&!isImportedErrorName(product.name)&&Number(product.price)>0&&Boolean(product.image));
+    const clean=(value:unknown)=>String(value??"").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g," ").trim();
+    const items=products.map(product=>{
+      const title=clean(product.name).slice(0,150);
+      const description=clean(product.description||product.specifications||product.name).slice(0,5000);
+      const link=url.origin+"/product/"+Number(product.id);
+      const image=absoluteStoreUrl(String(product.image||""),url.origin);
+      const availability=product.inStock?"in_stock":"out_of_stock";
+      const id=clean(product.itemNumber||product.id);
+      return "    <item>\n"+
+        "      <g:id>"+xmlEscape(id)+"</g:id>\n"+
+        "      <g:title>"+xmlEscape(title)+"</g:title>\n"+
+        "      <g:description>"+xmlEscape(description)+"</g:description>\n"+
+        "      <g:link>"+xmlEscape(link)+"</g:link>\n"+
+        "      <g:image_link>"+xmlEscape(image)+"</g:image_link>\n"+
+        "      <g:availability>"+availability+"</g:availability>\n"+
+        "      <g:price>"+Number(product.price).toFixed(2)+" ILS</g:price>\n"+
+        "      <g:condition>new</g:condition>\n"+
+        "      <g:brand>Manar Store</g:brand>\n"+
+        "      <g:identifier_exists>false</g:identifier_exists>\n"+
+        "    </item>";
+    }).join("\n");
+    const body='<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Manar Store</title>\n    <link>'+xmlEscape(url.origin)+'</link>\n    <description>منتجات منار ستور</description>\n'+items+'\n  </channel>\n</rss>';
+    return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=900, s-maxage=1800"}))});
+  }
+  if(url.pathname!=="/sitemap.xml")return null;
+  const [products,categories]=await Promise.all([
+    env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL AND lower(trim(name)) NOT IN ('forbidden','403 forbidden','404 not found','access denied') ORDER BY id").all<{id:number;updated_at:number}>(),
+    env.DB.prepare("SELECT slug,updated_at FROM categories WHERE active=1 ORDER BY id").all<{slug:string;updated_at:number}>()
+  ]);
+  const pages:Array<{loc:string;lastmod?:number}>=[{loc:url.origin+"/"}];
+  for(const row of categories.results)pages.push({loc:url.origin+"/category/"+encodeURIComponent(row.slug),lastmod:Number(row.updated_at||0)});
+  for(const row of products.results)pages.push({loc:url.origin+"/product/"+Number(row.id),lastmod:Number(row.updated_at||0)});
+  pages.push({loc:url.origin+"/policies/terms"});
+  pages.push({loc:url.origin+"/privacy"});
+  const body='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(page=>"  <url><loc>"+xmlEscape(page.loc)+"</loc>"+(page.lastmod?"<lastmod>"+new Date(page.lastmod).toISOString()+"</lastmod>":"")+"</url>").join("\n")+"\n</urlset>";
+  return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
+}
+async function storefrontSeo(env:Env,url:URL):Promise<string>{
+  await ensureStorefrontColumns(env);
+  const settings=await env.DB.prepare("SELECT store_name,site_name_ar,site_name_en,seo_description,logo_url,favicon_url FROM store_settings WHERE id=1").first<{store_name:string;site_name_ar:string;site_name_en:string;seo_description:string;logo_url:string;favicon_url:string}>();
+  const storeName=String(settings?.site_name_ar||settings?.store_name||"منار بارتي ستور");
+  const alternateName=String(settings?.site_name_en||"Manar Party Store");
+  const homeTitle=storeName+" | "+alternateName;
+  const homeDescription=String(settings?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة");
+  const favicon=absoluteStoreUrl((url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")?"/favicon.png":String(settings?.favicon_url||settings?.logo_url||"/og.png"),url.origin);
+  const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
+  let canonicalUrl=url.origin+cleanPath;
+  let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
+  let title=homeTitle,description=homeDescription,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"WebSite",name:storeName,alternateName,url:url.origin+"/",description:homeDescription};
+  const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
+  if(productMatch){
+    const value=Number(productMatch[1]);
+    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value).first<Record<string,unknown>>();
+    if(product&&!isImportedErrorName(product.name)){
+      const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
+      title=name+" – "+storeName;
+      description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
+      canonicalUrl=url.origin+"/product/"+Number(product.id);
+      image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
+      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
+    }else{
+      title="الصنف غير موجود – "+storeName;
+      description="هذا الصنف غير متوفر حاليًا. تصفّح المنتجات المتاحة في "+storeName+".";
+      robots="noindex,follow";
+    }
+  }else{
+    const categoryMatch=url.pathname.match(/^\/category\/([^/]+)\/?$/);
+    if(categoryMatch){
+      const slug=decodeURIComponent(categoryMatch[1]);
+      const category=await env.DB.prepare("SELECT name,description,banner_url FROM categories WHERE slug=? AND active=1 LIMIT 1").bind(slug).first<Record<string,unknown>>();
+      if(category){
+        const name=String(category.name);title=name+" – "+storeName;
+        description=String(category.description||"").trim().slice(0,155)||"تصفّح منتجات قسم "+name+" في "+storeName+".";
+        image=absoluteStoreUrl(String(category.banner_url||settings?.logo_url||"/og.png"),url.origin);
+        jsonLd={"@context":"https://schema.org","@type":"CollectionPage",name,description,url:canonicalUrl,image};
+      }
+    }
+  }
+  const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
+  return '<title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+}
+function injectSeo(html:string,head:string){
+  return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["'](?:canonical|icon|apple-touch-icon)["'][^>]*>/gi,"").replace("</head>",head+"</head>");
+}
+
+async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): Promise<Response | null> {
+  if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
+    const binary = atob(product2222ImageBase64);
+    const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+    return new Response(bytes, { headers: { "content-type": "image/webp", "cache-control": "public, max-age=31536000, immutable" } });
+  }
+  if(request.method==="GET"&&url.pathname==="/api/seo"&&env.APP_SURFACE==="storefront"){
+    const path=url.searchParams.get("path")||"/";
+    if(!path.startsWith("/")||path.startsWith("//")||path.includes("\\\\")||path.length>500)return json({error:"Invalid path"},{status:400});
+    const target=new URL(path,url.origin);
+    if(target.origin!==url.origin)return json({error:"Invalid path"},{status:400});
+    return json({head:await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
+  }
+  if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
+  if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
+  if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
+  if(request.method==="POST"&&url.pathname==="/api/analytics/cart"&&env.APP_SURFACE==="storefront")return recordCart(request,env.DB);
+  if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
+  const productViewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/view$/);
+  if(request.method==="POST"&&productViewMatch)return trackProductView(request,env,Number(productViewMatch[1]));
+  const highlightImageViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/images\/(\d+)\/view$/);
+  if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
+  const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
+  if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
+  if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env,ctx);
+  if(url.pathname.startsWith("/api/push/")&&env.APP_SURFACE==="storefront"){
+    await ensureCustomerAuthSchema(env);
+    if(request.method==="POST"&&!await customerRateLimit(env,"push:"+await sha256(request.headers.get("cf-connecting-ip")||"unknown"),100,3600000))return json({error:"انتظر قليلًا ثم أعد المحاولة"},{status:429});
+    const account=await getCustomerAccount(request,env),response=await pushApi(request,env,"customer",account?.id||null);
+    if(response?.ok&&url.pathname.endsWith("/test"))ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("push_failed")));
+    return response;
+  }
+  if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
+  if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
+  if (request.method === "GET" && url.pathname.startsWith("/media/")) {
+    const key = decodeURIComponent(url.pathname.slice(7));
+    const rangeHeader = request.headers.get("range");
+    let object = await env.MEDIA.get(key, rangeHeader ? { range: request.headers } : undefined);
+    if (!object && importedMediaSources.has(key)) {
+      let remote: Response | null = null;
+      for (const source of importedMediaSources.get(key) || []) {
+        const candidate = await fetch(source, { headers: { accept: "image/*", "user-agent": "ManarStore/1.0" } });
+        if (candidate.ok && candidate.headers.get("content-type")?.startsWith("image/")) { remote = candidate; break; }
+      }
+      if (remote) {
+        const bytes = await remote.arrayBuffer();
+        const contentType = remote.headers.get("content-type")?.split(";")[0] || "image/jpeg";
+        await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
+        return new Response(bytes, { headers: { "content-type": contentType, "cache-control": "public, max-age=31536000, immutable" } });
+      }
+    }
+    if (!object) return new Response("Not Found", { status: 404 });
+    const headers = new Headers(); object.writeHttpMetadata(headers); headers.set("etag", object.httpEtag); headers.set("cache-control", "public, max-age=31536000, immutable");
+    headers.set("accept-ranges", "bytes");
+    if (rangeHeader && object.range) {
+      headers.set("content-range", `bytes ${object.range.offset}-${object.range.offset + object.range.length - 1}/${object.size}`);
+      headers.set("content-length", String(object.range.length));
+      return new Response(object.body, { status: 206, headers });
+    }
+    return new Response(object.body, { headers });
+  }
+  if (!url.pathname.startsWith("/api/admin/")) return null;
+  if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
+  if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
+  if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json(await readCartMetrics(env.DB),{headers:{"cache-control":"no-store"}});
+  if(url.pathname.startsWith("/api/admin/push/")){
+    if(request.method==="GET"&&url.pathname.endsWith("/summary"))return json(await pushAdminSummary(env));
+    const response=url.pathname.endsWith("/campaign")&&request.method==="POST"?await queueCampaign(request,env):await pushApi(request,env,"admin",null);
+    if(response?.ok&&(url.pathname.endsWith("/test")||url.pathname.endsWith("/campaign")))ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("push_failed")));
+    return response;
+  }
+  if (request.method === "GET" && url.pathname === "/api/admin/catalog") return json(await readCatalog(env, true));
+  if (request.method === "GET" && url.pathname === "/api/admin/shipping-zones") return json({zones:await readShippingZones(env,true)});
+  if (request.method === "PUT" && url.pathname === "/api/admin/shipping-zones") return saveShippingZones(request,env);
+  if (request.method === "GET" && url.pathname === "/api/admin/operations") return json(await readOperations(env));
+  if (request.method === "POST" && url.pathname === "/api/admin/import-products") return importProducts(request,env);
+  if (request.method === "POST" && url.pathname === "/api/admin/suppliers") return saveSupplier(request,env);
+  const supplierMatch=url.pathname.match(/^\/api\/admin\/suppliers\/(\d+)$/);
+  if(supplierMatch&&request.method==="PUT")return saveSupplier(request,env,Number(supplierMatch[1]));
+  if(supplierMatch&&request.method==="DELETE"){await env.DB.prepare("UPDATE suppliers SET active=0,updated_at=? WHERE id=?").bind(Date.now(),Number(supplierMatch[1])).run();return json({ok:true});}
+  if (request.method === "POST" && url.pathname === "/api/admin/purchases") return savePurchase(request,env);
+  const purchaseMatch=url.pathname.match(/^\/api\/admin\/purchases\/(\d+)$/);
+  if(purchaseMatch&&request.method==="PUT")return savePurchase(request,env,Number(purchaseMatch[1]));
+  if(purchaseMatch&&request.method==="DELETE"){await env.DB.prepare("UPDATE purchases SET deleted_at=?,updated_at=? WHERE id=? AND status='draft'").bind(Date.now(),Date.now(),Number(purchaseMatch[1])).run();return json({ok:true});}
+  const postPurchaseMatch=url.pathname.match(/^\/api\/admin\/purchases\/(\d+)\/post$/);
+  if(postPurchaseMatch&&request.method==="POST")return postPurchase(env,Number(postPurchaseMatch[1]));
+  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
+  const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
+  if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]),ctx);
+  if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
+  if (request.method === "GET" && url.pathname === "/api/admin/policies") return json({policies:await readPolicies(env)});
+  if (request.method === "PUT" && url.pathname === "/api/admin/policies") return savePolicies(request,env);
+  if (request.method === "GET" && url.pathname === "/api/admin/highlights") return json(await readHighlights(env,true));
+  if (request.method === "PUT" && url.pathname === "/api/admin/highlights/visibility"){
+    await ensureHighlightSchema(env);
+    const body=await parseJson(request);
+    await env.DB.prepare("INSERT INTO highlight_visibility (id,enabled) VALUES (1,?) ON CONFLICT(id) DO UPDATE SET enabled=excluded.enabled").bind(asBoolean(body.enabled)?1:0).run();
+    return json({ok:true});
+  }
+  if (request.method === "PUT" && url.pathname === "/api/admin/highlights/duration"){
+    await ensureHighlightSchema(env);
+    const body=await parseJson(request),intervalMs=Number(body.intervalMs);
+    if(!Number.isInteger(intervalMs)||intervalMs<2000||intervalMs>20000)return json({error:"مدة العرض يجب أن تكون بين ثانيتين و20 ثانية"},{status:400});
+    await env.DB.prepare("INSERT INTO highlight_visibility (id,interval_ms) VALUES (1,?) ON CONFLICT(id) DO UPDATE SET interval_ms=excluded.interval_ms").bind(intervalMs).run();
+    return json({ok:true});
+  }
+  if (request.method === "POST" && url.pathname === "/api/admin/highlights") return saveHighlight(request,env);
+  const highlightMatch=url.pathname.match(/^\/api\/admin\/highlights\/(\d+)$/);
+  if(highlightMatch&&request.method==="PUT")return saveHighlight(request,env,Number(highlightMatch[1]));
+  if(highlightMatch&&request.method==="DELETE"){
+    await ensureHighlightSchema(env);
+    await env.DB.prepare("DELETE FROM store_highlights WHERE id=?").bind(Number(highlightMatch[1])).run();
+    return json({ok:true});
+  }
+  if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
+  if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
+  if (request.method === "PUT" && url.pathname === "/api/admin/popup") return savePopup(request,env);
+  const slideMatch=url.pathname.match(/^\/api\/admin\/sliders\/(\d+)$/);
+  if(slideMatch&&request.method==="PUT")return saveSlide(request,env,Number(slideMatch[1]));
+  if(slideMatch&&request.method==="DELETE"){await env.DB.prepare("DELETE FROM sliders WHERE id=?").bind(Number(slideMatch[1])).run();return json({ok:true});}
+  if (request.method === "POST" && url.pathname === "/api/admin/categories") return saveCategory(request, env);
+  const categoryMatch = url.pathname.match(/^\/api\/admin\/categories\/(\d+)$/);
+  if (categoryMatch && request.method === "PUT") return saveCategory(request, env, Number(categoryMatch[1]));
+  if (categoryMatch && request.method === "DELETE") { await env.DB.prepare("DELETE FROM categories WHERE id=?").bind(Number(categoryMatch[1])).run(); return json({ ok: true }); }
+  if (request.method === "POST" && url.pathname === "/api/admin/products") return saveProduct(request, env);
+  const featuredMatch=url.pathname.match(/^\/api\/admin\/products\/(\d+)\/featured$/);
+  if(featuredMatch&&request.method==="PATCH"){
+    const body=await parseJson(request);
+    await env.DB.prepare("UPDATE products SET featured=?,updated_at=? WHERE id=? AND deleted_at IS NULL").bind(asBoolean(body.featured)?1:0,Date.now(),Number(featuredMatch[1])).run();
+    return json({ok:true});
+  }
+  const productMatch = url.pathname.match(/^\/api\/admin\/products\/(\d+)$/);
+  if (productMatch && request.method === "PUT") return saveProduct(request, env, Number(productMatch[1]));
+  if (productMatch && request.method === "DELETE") { await env.DB.prepare("UPDATE products SET deleted_at=?, active=0 WHERE id=?").bind(Date.now(), Number(productMatch[1])).run(); return json({ ok: true }); }
+  if (request.method === "POST" && url.pathname === "/api/admin/ai-image") {
+    const body = await parseJson(request);
+    const imageUrl = asText(body.imageUrl);
+    const inputImageBase64 = asText(body.inputImageBase64);
+    if (!imageUrl.startsWith("/media/")) return json({ error: "هذه الصورة غير قابلة للمعالجة حالياً" }, { status: 400 });
+    if (!inputImageBase64 || inputImageBase64.length > 2_000_000 || !/^[A-Za-z0-9+/=]+$/.test(inputImageBase64)) return json({ error: "بيانات الصورة المصغرة غير صحيحة" }, { status: 400 });
+    let inputBytes: Uint8Array;
+    try {
+      const binary = atob(inputImageBase64);
+      inputBytes = Uint8Array.from(binary, character => character.charCodeAt(0));
     } catch {
       return json({ error: "تعذر قراءة الصورة المصغرة" }, { status: 400 });
     }
