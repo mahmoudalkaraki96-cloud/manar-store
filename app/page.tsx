@@ -16,7 +16,22 @@ export default function Home(){
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[store,setStore]=useState<StorefrontResponse>({settings:defaultSettings,sliders:[],popup:null,highlightsEnabled:false,highlights:[]}),[loading,setLoading]=useState(true),[error,setError]=useState(""),[wholesale]=useState(false),[cart,setCart]=useState<Record<string,CartLine>>({}),[cartOpen,setCartOpen]=useState(false),[checkoutOpen,setCheckoutOpen]=useState(false),[completedOrder,setCompletedOrder]=useState<number|null>(null),[favorites,setFavorites]=useState<number[]>([]),[favOpen,setFavOpen]=useState(false);
  useEffect(()=>{let saved:Record<string,CartLine>={};try{saved=loadCart();setCart(saved);setFavorites(JSON.parse(localStorage.getItem(storageKey("favorites"))||"[]"));if(new URLSearchParams(window.location.search).get("cart")==="open")setCartOpen(true)}catch{}Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setStore(storefront);setCart(syncCart(saved,catalog.products))}).catch(()=>setError("تعذر تحميل المتجر حالياً")).finally(()=>setLoading(false))},[]);
  useEffect(()=>{if(!loading)saveCart(cart)},[cart,loading]);useEffect(()=>{localStorage.setItem(storageKey("favorites"),JSON.stringify(favorites))},[favorites]);
- useEffect(()=>{const locked=cartOpen||favOpen||checkoutOpen;document.body.style.overflow=locked?"hidden":"";return()=>{document.body.style.overflow=""}},[cartOpen,favOpen,checkoutOpen]);
+ const overlayOpen=cartOpen||favOpen||checkoutOpen;
+ useEffect(()=>{
+  if(!overlayOpen)return;
+  const body=document.body,root=document.documentElement,scrollY=window.scrollY;
+  const previous={position:body.style.position,top:body.style.top,left:body.style.left,right:body.style.right,width:body.style.width,overflow:body.style.overflow,rootOverflow:root.style.overflow,scrollBehavior:root.style.scrollBehavior};
+  // A fixed body also locks the background on mobile Safari.
+  Object.assign(body.style,{position:"fixed",top:`-${scrollY}px`,left:"0",right:"0",width:"100%",overflow:"hidden"});
+  root.style.overflow="hidden";
+  return()=>{
+   Object.assign(body.style,{position:previous.position,top:previous.top,left:previous.left,right:previous.right,width:previous.width,overflow:previous.overflow});
+   root.style.overflow=previous.rootOverflow;
+   root.style.scrollBehavior="auto";
+   window.scrollTo(0,scrollY);
+   root.style.scrollBehavior=previous.scrollBehavior;
+  };
+ },[overlayOpen]);
  const count=Object.values(cart).reduce((sum,line)=>sum+line.qty,0),subtotal=Object.values(cart).reduce((sum,line)=>sum+line.price*line.qty,0),roots=data.categories.filter(category=>category.parentId==null);
  const categoryTreeIds=(rootId:number)=>{const ids=new Set<number>([rootId]);let added=true;while(added){added=false;for(const category of data.categories)if(category.parentId!=null&&ids.has(category.parentId)&&!ids.has(category.id)){ids.add(category.id);added=true}}return ids};
  const add=(product:Product,variant?:Variant)=>setCart(addCartItem(product,variant));
