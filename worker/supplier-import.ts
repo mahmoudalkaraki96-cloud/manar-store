@@ -48,6 +48,7 @@ export async function runSupplierImports(env:any){
    const response=await fetch(`https://${host}/?app=product.all..${job.next_page}`,{redirect:'manual',headers:{'Accept':'text/html','User-Agent':'ManarCatalogImport/1.0 (+https://manarstore.ps)'},signal:AbortSignal.timeout(30000)});
    if(!response.ok){const blocked=[403,429].includes(response.status);await db.prepare('UPDATE supplier_import_jobs SET status=?,last_error=?,next_attempt_at=? WHERE source=?').bind(blocked?'paused_blocked':'running',`HTTP ${response.status}`,now+(blocked?86400000:1800000),source).run();return;}
    const html=await response.text();if(/cf-chl-|captcha|access denied|too many requests|temporarily blocked/i.test(html))throw new Error('supplier_block');
+   await db.prepare('UPDATE supplier_import_jobs SET last_response=? WHERE source=?').bind(html.slice(0,750000),source).run();
    const parsed=listing(html,source);if(!parsed.cards.length)throw new Error('listing_not_verified: '+plain(html.slice(0,800)).slice(0,120));
    const fingerprint=parsed.cards.map(c=>c.id).join(',');if(fingerprint===job.last_fingerprint)throw new Error('repeated_page');
    if(parsed.next!==null&&parsed.next!==Number(job.next_page)+1)throw new Error('unexpected_pagination');
