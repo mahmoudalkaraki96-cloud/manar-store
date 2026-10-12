@@ -5,6 +5,7 @@ const sources = {dofesh:{host:'dofesh.ps',number:9101,name:'متجر دوفش'},
 export function salePrice(cost:number,source:Source){return cost+(source==='jabari'?(cost<=500?50:cost<=1000?100:cost<=3000?150:cost<=7000?200:cost<=10000?500:1000):0)}
 export function plain(s:string){return s.replace(/<[^>]*>/g,' ').replace(/&#(x[0-9a-f]+|\d+);/gi,(_,n)=>String.fromCodePoint(n[0].toLowerCase()==='x'?parseInt(n.slice(1),16):Number(n))).replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\s+/g,' ').trim()}
 export function listing(html:string,source:Source):{cards:Card[];next:number|null}{
+ if(html.trim().startsWith('{')||html.trim().startsWith('[')){try{const fragments:string[]=[];const collect=(value:any)=>{if(typeof value==='string'&&value.includes('<'))fragments.push(value);else if(value&&typeof value==='object')Object.values(value).forEach(collect)};collect(JSON.parse(html));if(fragments.length)html=fragments.join('\n')}catch{}}
  const host=sources[source].host,cards:Card[]=[];
  for(const m of html.matchAll(/<a\b([^>]*\bid=["']link-(\d+)["'][^>]*)>([\s\S]*?)<\/a>/gi)){
   const b=m[3],name=plain(b.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/i)?.[1]||'');
@@ -47,7 +48,7 @@ export async function runSupplierImports(env:any){
    const response=await fetch(`https://${host}/?app=product.all..${job.next_page}`,{redirect:'manual',headers:{'Accept':'text/html','User-Agent':'ManarCatalogImport/1.0 (+https://manarstore.ps)'},signal:AbortSignal.timeout(30000)});
    if(!response.ok){const blocked=[403,429].includes(response.status);await db.prepare('UPDATE supplier_import_jobs SET status=?,last_error=?,next_attempt_at=? WHERE source=?').bind(blocked?'paused_blocked':'running',`HTTP ${response.status}`,now+(blocked?86400000:1800000),source).run();return;}
    const html=await response.text();if(/cf-chl-|captcha|access denied|too many requests|temporarily blocked/i.test(html))throw new Error('supplier_block');
-   const parsed=listing(html,source);if(!parsed.cards.length)throw new Error('listing_not_verified');
+   const parsed=listing(html,source);if(!parsed.cards.length)throw new Error('listing_not_verified: '+plain(html.slice(0,800)).slice(0,120));
    const fingerprint=parsed.cards.map(c=>c.id).join(',');if(fingerprint===job.last_fingerprint)throw new Error('repeated_page');
    if(parsed.next!==null&&parsed.next!==Number(job.next_page)+1)throw new Error('unexpected_pagination');
    if(parsed.next===null&&parsed.cards.length>=60)throw new Error('pagination_not_verified');
