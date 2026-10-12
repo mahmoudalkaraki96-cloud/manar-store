@@ -1,0 +1,9 @@
+"use client";
+import {useEffect,useState} from 'react';
+type Job={source:string;status:string;next_page:number;pages_scanned:number;created_count:number;skipped_count:number;last_error:string|null;next_attempt_at:number};
+export default function SupplierImportProgress(){
+ const [jobs,setJobs]=useState<Job[]>([]),[error,setError]=useState('');
+ useEffect(()=>{let live=true;const load=async()=>{try{const response=await fetch('/api/admin/supplier-imports',{cache:'no-store'});if(!response.ok)throw new Error('تعذر قراءة حالة الاستيراد');const body=await response.json();if(live){setJobs(body.jobs);setError('')}}catch(e){if(live)setError(String(e))}};void load();const timer=setInterval(load,60000);return()=>{live=false;clearInterval(timer)}},[]);
+ const statuses:Record<string,string>={running:'جاري الاستيراد على مراحل',completed_drafts:'اكتمل فحص صفحات المورد وحفظ المسودات',paused_blocked:'متوقف بسبب حظر المورد',paused_review:'متوقف ويحتاج مراجعة'};
+ return <div className="adminCard" style={{padding:20,marginBottom:20}}><h2>الاستيراد المرحلي من الموردين</h2><p>كل المنتجات الجديدة مسودات مخفية. طلب واحد لكل مورد كل خمس دقائق؛ يتوقف عند الحظر. الصور والخيارات والتصنيف تحتاج مراجعة قبل النشر.</p><p>زيادة جعبري: حتى 5 ₪: +0.5؛ حتى 10: +1؛ حتى 30: +1.5؛ حتى 70: +2؛ حتى 100: +5؛ فوق 100: +10.</p>{error&&<p role="alert">{error}</p>}<div style={{overflowX:'auto'}}><table><thead><tr><th>المورد</th><th>الحالة</th><th>صفحات مفحوصة</th><th>مسودات جديدة</th><th>موجود سابقًا</th><th>الصفحة التالية</th></tr></thead><tbody>{jobs.map(j=><tr key={j.source}><td>{j.source==='dofesh'?'متجر دوفش':'جعبري ستور'}</td><td>{statuses[j.status]||j.status}{j.last_error&&<small style={{display:'block'}}>{j.last_error}</small>}</td><td>{j.pages_scanned}</td><td>{j.created_count}</td><td>{j.skipped_count}</td><td>{j.status==='running'?j.next_page:'—'}</td></tr>)}</tbody></table></div></div>
+}

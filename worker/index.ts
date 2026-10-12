@@ -1,3 +1,4 @@
+import {runSupplierImports,readSupplierImports} from "./supplier-import";
 import {readAdminDashboard} from "./admin-dashboard";
 import {recordCart,readCartMetrics,readCartDetails} from "./cart-metrics";
 import {buildMetaPixelHead} from "./meta-pixel";
@@ -1084,7 +1085,9 @@ async function readCatalog(env: Env, includeInactive = false) {
   const media = mediaResult.results as Array<Record<string, unknown>>;
   const keywords = keywordResult.results as Array<Record<string, unknown>>;
   const customFields=customFieldResult.results as Array<Record<string,unknown>>;
-  const productSuppliers: Array<Record<string,unknown>> = [];
+  const productSuppliers: Array<Record<string,unknown>> = includeInactive
+    ? (await env.DB.prepare("SELECT ps.product_id,ps.supplier_id,ps.source_product_id,ps.source_url,ps.supplier_price_agorot,ps.preferred,s.name AS supplier_name FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id ORDER BY ps.preferred DESC,ps.id").all()).results as Array<Record<string,unknown>>
+    : [];
 
   const grouped = <T extends Record<string, unknown>>(rows: T[], key: string) => {
     const map = new Map<number, T[]>();
@@ -1431,6 +1434,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
+  if(request.method==="GET"&&url.pathname==="/api/admin/supplier-imports")return json(await readSupplierImports(env.DB),{headers:{"cache-control":"no-store"}});
   if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json({...await readCartMetrics(env.DB),...await readCartDetails(env.DB)},{headers:{"cache-control":"no-store"}});
   if(url.pathname.startsWith("/api/admin/push/")){
     if(request.method==="GET"&&url.pathname.endsWith("/summary"))return json(await pushAdminSummary(env));
@@ -1564,7 +1568,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
-  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")))},
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
