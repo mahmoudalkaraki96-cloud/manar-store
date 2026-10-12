@@ -18,7 +18,7 @@ export function loadCart():Record<string,CartLine>{
 let cartMetricsQueue:Promise<unknown>=Promise.resolve();
 export function reportCart(cart:Record<string,CartLine>){
  if(typeof window==="undefined")return;
- const items=Object.values(cart).filter(line=>line.qty>0).map(line=>({productId:line.productId,qty:line.qty}));
+ const items=Object.values(cart).filter(line=>line.qty>0).map(line=>({productId:line.productId,variantId:line.variantId??null,qty:line.qty}));
  const body=JSON.stringify({items});
  cartMetricsQueue=cartMetricsQueue.catch(()=>{}).then(()=>fetch("/api/analytics/cart",{method:"POST",headers:{"content-type":"application/json"},credentials:"same-origin",body,keepalive:true})).catch(()=>{});
 }

@@ -4,6 +4,7 @@ import {matches,type CatalogResponse} from "../catalog-types";
 import {productThumbnail} from "../image-utils";
 import {defaultSettings,type Slide,type StoreSettings} from "../storefront-types";
 import {parseWatermark} from "../watermark-config";
+import CartMetricsPanel from "./CartMetricsPanel";
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
 const homeToggles=[["showOffers","العروض"],["showFeatured","المنتجات المميزة"],["showNewest","مضاف حديثاً"],["showMostOrdered","الأكثر طلباً"],["showTopRated","الأعلى تقييماً"]] as const;
@@ -29,7 +30,7 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
  const update=(i:number,p:Partial<Slide>)=>setSlides(s=>s.map((x,n)=>n===i?{...x,...p}:x));
  const moveWatermark=(event:PointerEvent<HTMLDivElement>)=>{if(!customWatermarkPosition)return;const rect=event.currentTarget.getBoundingClientRect();const x=Math.min(98,Math.max(2,((event.clientX-rect.left)/rect.width)*100));const y=Math.min(98,Math.max(2,((event.clientY-rect.top)/rect.height)*100));setWatermark({x,y})};
 
- if(section==="settings")return <div className="dataPanel settingsPanel"><h3>هوية المتجر وروابطه</h3>{message&&<p className="adminMessage">{message}</p>}<div className="settingsGrid">
+ if(section==="settings")return <div className="dataPanel settingsPanel"><CartMetricsPanel/><h3>هوية المتجر وروابطه</h3>{message&&<p className="adminMessage">{message}</p>}<div className="settingsGrid">
   <label>الاسم الظاهر في واجهة المتجر<input value={settings.storeName} onChange={e=>setSettings({...settings,storeName:e.target.value})}/><small>مثال: منار بارتي ستور | Manar Party Store</small></label>
   <label>الاسم العربي الرئيسي لجوجل<input value={settings.siteNameAr} maxLength={60} onChange={e=>setSettings({...settings,siteNameAr:e.target.value})}/></label>
   <label>الاسم الإنجليزي البديل<input dir="ltr" value={settings.siteNameEn} maxLength={60} onChange={e=>setSettings({...settings,siteNameEn:e.target.value})}/></label>

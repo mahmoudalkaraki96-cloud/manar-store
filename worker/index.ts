@@ -1,5 +1,5 @@
 import {readAdminDashboard} from "./admin-dashboard";
-import {recordCart,readCartMetrics} from "./cart-metrics";
+import {recordCart,readCartMetrics,readCartDetails} from "./cart-metrics";
 import {buildMetaPixelHead} from "./meta-pixel";
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
@@ -1431,7 +1431,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
-  if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json(await readCartMetrics(env.DB),{headers:{"cache-control":"no-store"}});
+  if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json({...await readCartMetrics(env.DB),...await readCartDetails(env.DB)},{headers:{"cache-control":"no-store"}});
   if(url.pathname.startsWith("/api/admin/push/")){
     if(request.method==="GET"&&url.pathname.endsWith("/summary"))return json(await pushAdminSummary(env));
     const response=url.pathname.endsWith("/campaign")&&request.method==="POST"?await queueCampaign(request,env):await pushApi(request,env,"admin",null);
