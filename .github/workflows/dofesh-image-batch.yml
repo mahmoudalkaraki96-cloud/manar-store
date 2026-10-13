@@ -1,0 +1,58 @@
+name: دوفش باتش امج
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_count:
+        description: عدد صور مسودات دوفش غير المعالجة (1-100)
+        required: true
+        default: '100'
+        type: string
+      mode:
+        description: معاينة القائمة بدون تكلفة أو إرسال الصور للمعالجة
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - submit
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manar-store-image-batch-submit
+  cancel-in-progress: false
+
+jobs:
+  dofesh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: فحص اختيار مسودات دوفش والمعاينة
+        run: python tools/test_dofesh_batch.py
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'openai>=2.15.0,<3' 'Pillow>=11,<13'
+      - name: تجهيز ومعالجة صور مسودات دوفش بنفس الستايل السابق
+        env:
+          IMAGE_COUNT: ${{ inputs.image_count }}
+          BATCH_MODE: ${{ inputs.mode }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/dofesh_batch_images.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dofesh-image-batch-${{ github.run_id }}
+          path: |
+            dofesh-batch-plan.json
+            batch-catalog-input.jsonl
+          if-no-files-found: ignore
+          retention-days: 30

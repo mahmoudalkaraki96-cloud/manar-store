@@ -101,12 +101,15 @@ def main():
     if not 1 <= count <= 500:
         raise ValueError("IMAGE_COUNT must be between 1 and 500")
     ensure_tables()
+    source_filter = ""
+    if os.environ.get("DOFESH_DRAFT_ONLY") == "1":
+        source_filter = " AND p.active=0 AND EXISTS(SELECT 1 FROM product_keywords k WHERE k.product_id=p.id AND k.keyword LIKE 'dofesh-%') "
     rows = query(
         "SELECT p.id AS product_id,p.item_number,p.name,m.id AS media_id,m.url "
         "FROM product_media m JOIN products p ON p.id=m.product_id "
         "LEFT JOIN image_ai_items ai ON ai.media_id=m.id "
         "WHERE m.is_primary=1 AND m.variant_id IS NULL AND m.url LIKE '/media/imports/%' "
-        "AND p.deleted_at IS NULL AND ai.media_id IS NULL "
+        "AND p.deleted_at IS NULL AND ai.media_id IS NULL " + source_filter +
         f"ORDER BY p.id DESC LIMIT {count}"
     )["results"]
     if not rows:
