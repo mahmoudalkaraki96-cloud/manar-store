@@ -9,11 +9,12 @@ export function listing(html:string,source:Source):{cards:Card[];next:number|nul
  const host=sources[source].host,cards:Card[]=[];
  for(const m of html.matchAll(/<a\b([^>]*\bid=["']link-(\d+)["'][^>]*)>([\s\S]*?)<\/a>/gi)){
   const b=m[3],name=plain(b.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/i)?.[1]||'');
-  const price=plain((b.match(/<div\b[^>]*class=["'][^"']*\bprice\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]||'').replace(/<(del|s)\b[^>]*>[\s\S]*?<\/\1>/gi,''));
+  const price=plain((b.match(/<div\b[^>]*class=["'](?:[^"']*\s)?price(?:\s[^"']*)?["'][^>]*>([\s\S]*?)<\/div>/i)?.[1]||'').replace(/<(del|s)\b[^>]*>[\s\S]*?<\/\1>/gi,''));
   const img=b.match(/<img\b[^>]*src=["']([^"']+)["']/i)?.[1]||'';
   if(name&&price)cards.push({id:Number(m[2]),name,price,image:img?new URL(img,`https://${host}/`).href:'',url:`https://${host}/?app=product.show.${m[2]}`});
  }
- const next=html.match(/<a\b[^>]*href=["'][^"']*app=product\.all\.\.(\d+)[^"']*["'][^>]*rel=["']next["']/i);
+ const more=[...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].find(x=>/class=["'](?:[^"']*\s)?pages-next-box(?:\s[^"']*)?["']/i.test(x[1]));
+ const next=more?.[1].match(/app=product\.all\.\.(\d+)/i);
  return {cards,next:next?Number(next[1]):null};
 }
 export function supplierCost(text:string){const n=text.match(/\d+(?:\.\d+)?/);if(!n)throw new Error('missing_price');const v=Math.round(Number(n[0])*100);if(!Number.isFinite(v)||v<0)throw new Error('invalid_price');return v}
