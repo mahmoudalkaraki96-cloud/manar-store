@@ -47,12 +47,25 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python tools/dofesh_batch_images.py
-      - uses: actions/upload-artifact@v4
+      - name: عرض ملخص الدفعة بدون استخدام مساحة Artifacts
         if: always()
-        with:
-          name: dofesh-image-batch-${{ github.run_id }}
-          path: |
-            dofesh-batch-plan.json
-            batch-catalog-input.jsonl
-          if-no-files-found: ignore
-          retention-days: 30
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          plan = Path('dofesh-batch-plan.json')
+          summary = Path(os.environ['GITHUB_STEP_SUMMARY'])
+          if plan.exists():
+              data = json.loads(plan.read_text(encoding='utf-8'))
+              items = data.get('products', [])
+              lines = [
+                  '## دوفش باتش امج',
+                  f"- الوضع: {data.get('mode', 'unknown')}",
+                  f"- عدد الصور المختارة: {data.get('image_count', len(items))}",
+                  '- أرقام الأصناف: ' + (', '.join(str(p.get('item_number', '?')) for p in items) or 'لا يوجد'),
+              ]
+              summary.write_text('\\n'.join(lines) + '\\n', encoding='utf-8')
+          else:
+              summary.write_text('## دوفش باتش امج\\nلم يتم إنشاء خطة المعالجة؛ راجع سجل الخطوة السابقة.\\n', encoding='utf-8')
+          PY
