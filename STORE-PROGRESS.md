@@ -99,3 +99,9 @@
 - commit 1c6bc0d6bea7435ecdca4ce976b0155657164d41 يحوي Workflow «دوفش باتش امج» والأداة والاختبارات والوثائق. تشغيل38427493832 اكتملsuccess، والبناءومراجعاتالمتجرونشرالمتجروالإدارةناجحة.
 - Workflow يدويجديد .github/workflows/dofesh-image-batch.yml. لم يُرسل أيBatch إلىOpenAI بهذاالطلب؛ وضعpreview الافتراضيلا ينزلصورالموردولا يستهلكAPI. التشغيلsubmit منفصلبأمرRun workflow، معبقاءالمنتجاتمسودات.
 - التالي: تشغيلpreview للحصولعلىقائمةوعددالصورالحالي، ثمsubmit عنداختيارإرسالالدفعة. لا تعتبرنجاحCI معالجةللصور.
+
+### 2026-10-14 — IMAGE-DOFESH: إصلاح فشل رفع Artifact
+- جرى فحص سجل التشغيل 38573915954: وضع preview اختار 89 صورة دوفش بنجاح، ثم فشل actions/upload-artifact@v4 بسبب Artifact storage quota has been hit؛ لم تُرسل صور إلى OpenAI في هذا التشغيل.
+- عدل Workflow `.github/workflows/dofesh-image-batch.yml` بإلغاء رفع Artifact وإظهار عدد الصور وأرقام الأصناف في GitHub Step Summary بلا استهلاك مساحة Artifact؛ commit ece84ca44596757105904fd87a2a8900219c2dee.
+- لم تُحذف Artifacts قديمة، ولم يُشغّل submit، ولم تُنشر منتجات. هذه المعالجة تتجاوز عائق تخزين تقارير الباتش فقط ولا تفرغ الحصة الحالية.
+- الحالة: كود الإصلاح محفوظ على main، يحتاج تشغيل preview جديد للتأكيد العملي ثم submit بإذن المستخدم عند الحاجة.
