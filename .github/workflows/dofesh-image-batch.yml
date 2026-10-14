@@ -65,7 +65,7 @@ jobs:
                   f"- عدد الصور المختارة: {data.get('image_count', len(items))}",
                   '- أرقام الأصناف: ' + (', '.join(str(p.get('item_number', '?')) for p in items) or 'لا يوجد'),
               ]
-              summary.write_text('\\n'.join(lines) + '\\n', encoding='utf-8')
+              summary.write_text('\n'.join(lines) + '\n', encoding='utf-8')
           else:
-              summary.write_text('## دوفش باتش امج\\nلم يتم إنشاء خطة المعالجة؛ راجع سجل الخطوة السابقة.\\n', encoding='utf-8')
+              summary.write_text('## دوفش باتش امج\nلم يتم إنشاء خطة المعالجة؛ راجع سجل الخطوة السابقة.\n', encoding='utf-8')
           PY
