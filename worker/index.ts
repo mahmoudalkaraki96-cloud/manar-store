@@ -1371,6 +1371,32 @@ function injectSeo(html:string,head:string){
   return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["'](?:canonical|icon|apple-touch-icon)["'][^>]*>/gi,"").replace("</head>",head+"</head>");
 }
 
+async function fetchImageSource(path:string,env:Env,request:Request):Promise<Response>{
+  const sourceUrl=new URL(path,request.url);
+  if(sourceUrl.origin!==new URL(request.url).origin)return new Response("Invalid image source",{status:400});
+  if(sourceUrl.pathname==="/product-images/product-2222-edited.webp"){
+    const binary=atob(product2222ImageBase64),bytes=Uint8Array.from(binary,character=>character.charCodeAt(0));
+    return new Response(bytes,{headers:{"content-type":"image/webp"}});
+  }
+  if(!sourceUrl.pathname.startsWith("/media/"))return env.ASSETS.fetch(new Request(sourceUrl));
+  let key:string;
+  try{key=decodeURIComponent(sourceUrl.pathname.slice("/media/".length))}catch{return new Response("Invalid image path",{status:400})}
+  const object=await env.MEDIA.get(key);
+  if(!object&&importedMediaSources.has(key)){
+    for(const source of importedMediaSources.get(key)||[]){
+      const candidate=await fetch(source,{headers:{accept:"image/*","user-agent":"ManarStore/1.0"}});
+      if(candidate.ok&&candidate.headers.get("content-type")?.startsWith("image/")){
+        const bytes=await candidate.arrayBuffer(),contentType=candidate.headers.get("content-type")?.split(";")[0]||"image/jpeg";
+        await env.MEDIA.put(key,bytes,{httpMetadata:{contentType}});
+        return new Response(bytes,{headers:{"content-type":contentType}});
+      }
+    }
+  }
+  if(!object)return new Response("Not Found",{status:404});
+  const headers=new Headers();object.writeHttpMetadata(headers);headers.set("etag",object.httpEtag);
+  return new Response(object.body,{headers});
+}
+
 async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): Promise<Response | null> {
   if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
     const binary = atob(product2222ImageBase64);
@@ -1561,7 +1587,18 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if (file.type.startsWith("video/") && file.size > 50_000_000) return json({ error: "حجم الفيديو يتجاوز 50MB" }, { status: 413 });
     const extension = file.name.split(".").pop()?.replace(/[^a-zA-Z0-9]/g, "") || (file.type.startsWith("video/") ? "mp4" : "webp");
     const key = `products/${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${extension}`;
-    await env.MEDIA.put(key, file.stream(), { httpMetadata: { contentType: file.type } });
+    if(file.type.startsWith("image/")){
+      const bytes=await file.arrayBuffer();
+      await env.MEDIA.put(key,bytes,{httpMetadata:{contentType:file.type}});
+      try{
+        const thumbnail=await env.IMAGES.input(new Response(bytes).body!).transform({width:384}).output({format:"image/webp",quality:75});
+        const thumbnailBytes=await (await thumbnail.response()).arrayBuffer();
+        const thumbnailKey=`thumbnails/w384/${key.replace(/\.[^.]+$/,"")}.webp`;
+        await env.MEDIA.put(thumbnailKey,thumbnailBytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}});
+      }catch(error){console.error(JSON.stringify({event:"image_thumbnail_upload_failed",message:error instanceof Error?error.message:"unknown"}))}
+    }else{
+      await env.MEDIA.put(key,file.stream(),{httpMetadata:{contentType:file.type}});
+    }
     return json({ url: `/media/${encodeURIComponent(key)}` });
   }
   return json({ error: "Not Found" }, { status: 404 });
@@ -1624,6 +1661,41 @@ const worker = {
     } catch (error) {
       console.error(JSON.stringify({ event: "api_error", path: url.pathname, message: error instanceof Error ? error.message : "unknown" }));
       return json({ error: error instanceof Error ? error.message : "حدث خطأ غير متوقع" }, { status: 500 });
+    }
+
+    if(request.method==="GET"&&url.pathname==="/_media/thumbnail"){
+      const source=url.searchParams.get("src")||"",width=Number(url.searchParams.get("width"));
+      if(!source.startsWith("/media/")&&!source.startsWith("/product-images/"))return new Response("Invalid image source",{status:400});
+      if(![256,384,640].includes(width))return new Response("Invalid image width",{status:400});
+      const cache=caches.default,cacheKey=new Request(url.toString(),{method:"GET"}),cached=await cache.match(cacheKey);
+      if(cached)return cached;
+      if(source.startsWith("/media/")){
+        try{
+          const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
+          const thumbnailKey=`thumbnails/w${width}/${sourceKey.replace(/\.[^.]+$/,"")}.webp`;
+          const saved=await env.MEDIA.get(thumbnailKey);
+          if(saved){
+            const headers=new Headers();saved.writeHttpMetadata(headers);headers.set("content-type","image/webp");headers.set("cache-control","public, max-age=31536000, immutable");
+            const response=new Response(saved.body,{headers});ctx.waitUntil(cache.put(cacheKey,response.clone()));return response;
+          }
+        }catch{}
+      }
+      const original=await fetchImageSource(source,env,request);
+      if(!original.ok||!original.body)return new Response("Image not found",{status:original.status||404});
+      if(!original.headers.get("content-type")?.startsWith("image/"))return new Response("Invalid image content",{status:415});
+      const resized=await env.IMAGES.input(original.body).transform({width}).output({format:"image/webp",quality:75});
+      const transformed=await resized.response(),bytes=await transformed.arrayBuffer(),headers=new Headers(transformed.headers);
+      headers.set("content-type","image/webp");headers.set("cache-control","public, max-age=31536000, immutable");
+      const response=new Response(bytes,{status:transformed.status,headers});
+      if(source.startsWith("/media/")){
+        try{
+          const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
+          const thumbnailKey=`thumbnails/w${width}/${sourceKey.replace(/\.[^.]+$/,"")}.webp`;
+          ctx.waitUntil(env.MEDIA.put(thumbnailKey,bytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}}));
+        }catch{}
+      }
+      ctx.waitUntil(cache.put(cacheKey,response.clone()));
+      return response;
     }
 
     if (url.pathname === "/_vinext/image") {
