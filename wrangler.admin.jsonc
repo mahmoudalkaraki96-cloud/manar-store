@@ -29,6 +29,7 @@
       "bucket_name": "manar-store-media"
     }
   ],
+  "images": { "binding": "IMAGES" },
   "ai": {
     "binding": "AI"
   },
