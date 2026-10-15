@@ -1,35 +1,8 @@
 "use client";
-import {useEffect,useState} from "react";
-type Item={productId:number;variantId:number|null;itemNumber:number|null;productName:string;variantName:string;quantity:number;carts:number;lastSeen:number};
-type Metrics={cartQuantity:number;nonemptyCarts:number;windowDays:number;asOf:number;missingDetailsCarts:number;items:Item[]};
-const number=(value:number)=>value.toLocaleString("ar-PS-u-nu-latn");
-const date=(value:number)=>new Date(value).toLocaleString("ar-PS-u-nu-latn",{timeZone:"Asia/Hebron"});
-export default function CartMetricsPanel(){
- const [metrics,setMetrics]=useState<Metrics|null>(null),[error,setError]=useState(""),[busy,setBusy]=useState(false),[revision,setRevision]=useState(0);
- useEffect(()=>{
-  let active=true,inFlight=false;
-  const refresh=async()=>{if(inFlight)return;inFlight=true;setBusy(true);try{
-   const response=await fetch("/api/admin/cart-metrics",{cache:"no-store"});
-   if(!response.ok)throw new Error("تعذر تحميل تفاصيل السلال");
-   const next=await response.json() as Metrics;
-   if(!Array.isArray(next.items))throw new Error("تفاصيل السلال غير جاهزة؛ أعد التحديث بعد قليل");
-   if(active){setMetrics(next);setError("")}
-  }catch(e){if(active)setError(e instanceof Error?e.message:"تعذر التحميل")}finally{inFlight=false;if(active)setBusy(false)}};
-  void refresh();const timer=window.setInterval(()=>void refresh(),60000);
-  const focus=()=>void refresh();window.addEventListener("focus",focus);
-  return()=>{active=false;window.clearInterval(timer);window.removeEventListener("focus",focus)};
- },[revision]);
- return <section aria-label="المنتجات في سلال الزبائن" style={{marginBottom:32}}>
-  <div className="panelHead"><h3>المنتجات في سلال الزبائن</h3><button type="button" disabled={busy} onClick={()=>setRevision(value=>value+1)}>{busy?"جاري التحديث…":"تحديث السلال"}</button></div>
-  {error&&<p className="adminMessage" role="alert">{error}</p>}
-  <div className="dashboardStats">
-   <article><small>عدد القطع في السلال</small><b>{metrics?number(metrics.cartQuantity):"—"}</b></article>
-   <article><small>السلال غير الفارغة</small><b>{metrics?number(metrics.nonemptyCarts):"—"}</b></article>
-  </div>
-  <p>سلال الأجهزة والمتصفحات التي زارت المتجر خلال آخر 30 يومًا. تُزال المنتجات عند إفراغ السلة أو إتمام الطلب؛ وجودها في السلة لا يعني تسجيل طلب.</p>
-  {metrics&&metrics.missingDetailsCarts>0&&<p className="adminMessage">هناك {number(metrics.missingDetailsCarts)} سلة قديمة ضمن المجموع لم تُحفظ أسماء منتجاتها. تظهر تفاصيلها عند عودة أصحابها إلى المتجر.</p>}
-  {metrics&&metrics.items.length>0?<div style={{overflowX:"auto"}}><table style={{width:"100%",borderCollapse:"collapse",textAlign:"right"}}><thead><tr>{["رقم الصنف","المنتج","المتغير","عدد القطع","عدد السلال","آخر نشاط"].map(title=><th key={title} style={{padding:12,borderBottom:"1px solid #8884",whiteSpace:"nowrap"}}>{title}</th>)}</tr></thead><tbody>{metrics.items.map(item=><tr key={item.productId+":"+item.variantId}><td style={{padding:12}}>{item.itemNumber==null?"—":number(item.itemNumber)}</td><td style={{padding:12}}>{item.productName}</td><td style={{padding:12}}>{item.variantName}</td><td style={{padding:12}}>{number(item.quantity)}</td><td style={{padding:12}}>{number(item.carts)}</td><td style={{padding:12,whiteSpace:"nowrap"}}>{date(item.lastSeen)}</td></tr>)}</tbody></table></div>:metrics&&<p>{metrics.nonemptyCarts>0?"بانتظار وصول تفاصيل المنتجات من سلال الزبائن.":"لا توجد سلال غير فارغة خلال هذه الفترة."}</p>}
-  <small>{metrics?"آخر تحديث: "+date(metrics.asOf):error?"لم يتم تحميل البيانات.":"جاري تحميل السلال…"}</small>
- </section>;
-}
-
+import {useState} from 'react';
+import {useAdminPolling} from './useAdminPolling';
+import {activityNumber as n,activityDate as date,deviceLabels,locationLabel} from './LiveActivityPanel';
+type Item={productId:number;variantId:number|null;itemNumber:number|null;productName:string;variantName:string;quantity:number};
+type Cart={deviceKey:string;deviceType:string;browser:string;country:string;city:string;lastSeen:number;online:boolean;quantity:number;detailsAvailable:boolean;items:Item[]};
+type Metrics={asOf:number;cartQuantity:number;nonemptyCarts:number;onlineDevices:number;missingDetailsCarts:number;page:number;pages:number;pageSize:number;carts:Cart[]};
+export default function CartMetricsPanel(){const [days,setDays]=useState(30),[page,setPage]=useState(1);const {data,error,busy,refresh}=useAdminPolling<Metrics>('/api/admin/carts?days='+days+'&page='+page);return <section className="groupedCartPanel" aria-label="سلال الزبائن حسب الجهاز"><div className="panelHead"><div><h3>سلال الزبائن حسب الجهاز</h3><small>الأحدث نشاطًا أولًا · نفس المتصفح يظهر كمجموعة واحدة</small></div><button type="button" disabled={busy} onClick={refresh}>{busy?'جاري التحديث…':'تحديث السلال'}</button></div><div className="cartPeriod" aria-label="فترة السلال">{[[1,'اليوم'],[7,'آخر 7 أيام'],[30,'آخر 30 يومًا']].map(([v,label])=><button key={v} type="button" aria-pressed={days===v} onClick={()=>{setDays(Number(v));setPage(1)}}>{label}</button>)}</div>{error&&<p className="dashboardError" role="alert">{error}</p>}<div className="cartSummaryGrid"><article><small>الأجهزة الأونلاين في المتجر</small><b>{data?n(data.onlineDevices):'—'}</b><span>آخر 5 دقائق، مع سلة أو بدونها</span></article><article><small>السلال غير الفارغة</small><b>{data?n(data.nonemptyCarts):'—'}</b><span>ضمن الفترة المختارة</span></article><article><small>عدد القطع في السلال</small><b>{data?n(data.cartQuantity):'—'}</b><span>مجموع الكميات ضمن الفترة</span></article></div><p className="cartHelp">السلة تخص جهازًا أو متصفحًا، وليست هوية شخص. تُزال بعد إفراغها أو إتمام الطلب. الموقع تقديري وقد لا يتوفر للسلال القديمة.</p>{data&&data.missingDetailsCarts>0&&<p className="adminMessage">{n(data.missingDetailsCarts)} سلة قديمة لا تتوفر تفاصيل أصنافها حتى عودة المتصفح للمتجر.</p>}<div className="cartDeviceScroll" tabIndex={0} role="region" aria-label="قائمة السلال القابلة للتمرير" aria-busy={busy}>{data?data.carts.length?data.carts.map(cart=><details className="browserCart" key={cart.deviceKey}><summary><span className="cartDeviceIcon" aria-hidden>{cart.deviceType==='mobile'?'▯':'▣'}</span><span className="cartDeviceTitle"><b>{deviceLabels[cart.deviceType]||'متصفح'} <span dir="ltr">#{cart.deviceKey.slice(0,8)}</span>{cart.online&&<em>نشط الآن</em>}</b><small>{cart.browser||'نوع المتصفح غير متاح'} · {locationLabel(cart.country,cart.city)}</small><small>آخر نشاط: {date(cart.lastSeen)}</small></span><span className="cartQuantity"><b>{n(cart.quantity)}</b><small>قطعة</small><span>⌄</span></span></summary><div className="browserCartBody">{cart.detailsAvailable&&cart.items.length?<div className="browserCartItems"><table><thead><tr><th>الصنف</th><th>المتغير</th><th>الكمية</th></tr></thead><tbody>{cart.items.map(item=><tr key={item.productId+':'+item.variantId}><td><b>{item.productName}</b><small>{item.itemNumber?'#'+n(item.itemNumber):'رقم غير متاح'}</small></td><td>{item.variantName}</td><td>{n(item.quantity)}</td></tr>)}</tbody></table></div>:<p>لا توجد تفاصيل محفوظة لهذه السلة القديمة. تظهر عند عودة الجهاز للمتجر.</p>}</div></details>):<div className="dashboardEmpty">لا توجد سلال غير فارغة ضمن هذه الفترة.</div>:<div className="dashboardEmpty">{error?'تعذر تحميل السلال.':'جاري تحميل السلال…'}</div>}</div>{data&&<div className="cartPagination"><small>صفحة {n(data.page)} من {n(data.pages)} · {n(data.nonemptyCarts)} سلة</small><div><button disabled={busy||data.page<=1} onClick={()=>setPage(data.page-1)}>السابق</button><button disabled={busy||data.page>=data.pages} onClick={()=>setPage(data.page+1)}>التالي</button></div></div>}<small className="activityTimestamp">{data?'آخر تحديث: '+date(data.asOf)+' · تحديث تلقائي كل 30 ثانية':error?'لم يتم تحميل البيانات.':''}</small></section>}

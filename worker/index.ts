@@ -1,6 +1,9 @@
 import {runSupplierImports,readSupplierImports} from "./supplier-import";
-import {readAdminDashboard} from "./admin-dashboard";
-import {recordCart,readCartMetrics,readCartDetails} from "./cart-metrics";
+import {readAdminDashboard,dayStart,calendarDays} from "./admin-dashboard";
+import {readBrowserActivity,purgeBrowserActivity} from "./browser-activity";
+import {readGroupedCarts} from "./grouped-carts";
+import {recordCartWithActivity} from "./cart-activity";
+import {readCartMetrics,readCartDetails} from "./cart-metrics";
 import {buildMetaPixelHead} from "./meta-pixel";
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
@@ -1385,7 +1388,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
-  if(request.method==="POST"&&url.pathname==="/api/analytics/cart"&&env.APP_SURFACE==="storefront")return recordCart(request,env.DB);
+  if(request.method==="POST"&&url.pathname==="/api/analytics/cart"&&env.APP_SURFACE==="storefront")return recordCartWithActivity(request,env.DB);
   if (request.method === "POST" && url.pathname === "/api/analytics/visit") return trackStoreVisit(request,env);
   const productViewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/view$/);
   if(request.method==="POST"&&productViewMatch)return trackProductView(request,env,Number(productViewMatch[1]));
@@ -1432,6 +1435,8 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(request.method==="GET"&&url.pathname==="/api/admin/live-activity")return json(await readBrowserActivity(env.DB),{headers:{"cache-control":"no-store"}});
+  if(request.method==="GET"&&url.pathname==="/api/admin/carts"){const days=Number(url.searchParams.get("days")||30),page=Number(url.searchParams.get("page")||1);if(![1,7,30].includes(days)||!Number.isSafeInteger(page)||page<1||page>100000)return json({error:"الفترة أو الصفحة غير صالحة"},{status:400});const cutoff=dayStart(calendarDays(Date.now(),days)[0]);return json(await readGroupedCarts(env.DB,cutoff,page),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/supplier-import-response"){const source=url.searchParams.get("source");if(source!=="dofesh"&&source!=="jabari")return json({error:"Invalid source"},{status:400});const row=await env.DB.prepare("SELECT last_response FROM supplier_import_jobs WHERE source=?").bind(source).first<{last_response:string}>();return new Response(row?.last_response||"",{headers:{"content-type":"text/plain; charset=utf-8","cache-control":"no-store"}});}
@@ -1569,7 +1574,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
-  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){

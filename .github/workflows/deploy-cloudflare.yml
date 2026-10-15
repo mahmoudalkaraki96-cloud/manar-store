@@ -37,6 +37,9 @@ jobs:
       - name: Verify admin dashboard metrics
         run: node --test tests/admin-dashboard.test.cjs
 
+      - name: Verify anonymous browser activity and grouped carts
+        run: node --test tests/browser-activity.test.cjs
+
       - name: Build
         run: npm run build
 
@@ -65,4 +68,5 @@ jobs:
 
       - name: Verify live push configuration
         run: node tests/push-live-probe.mjs
+
 

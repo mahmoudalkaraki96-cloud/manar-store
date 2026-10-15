@@ -46,7 +46,7 @@ export async function recordCart(request:Request,db:Database){
   ]);
  }
  const headers=new Headers({"cache-control":"no-store"});
- if(snapshot.quantity&&!existing)headers.set("set-cookie",cookieName+"="+id+"; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=31536000");
+ if(!existing)headers.set("set-cookie",cookieName+"="+id+"; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=31536000");
  return Response.json({ok:true},{headers});
 }
 export async function readCartMetrics(db:Pick<Database,"prepare">){

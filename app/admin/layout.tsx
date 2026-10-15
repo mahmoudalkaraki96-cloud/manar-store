@@ -1,4 +1,5 @@
 import "./admin.css";
+import "./live-activity.css";
 import type {Metadata} from "next";
 
 export const metadata:Metadata={
