@@ -4,6 +4,11 @@
 .savedAddressSelect{display:grid;gap:7px;margin:12px 0;padding:12px;background:#fff7fa;border:1px solid #eadde3;border-radius:10px}.savedAddressSelect select{padding:11px;border:1px solid #d9cdd2;border-radius:8px;background:#fff}
 
 /* Do not let the delivery form's gestures scroll the storefront underneath. */
-.checkoutOverlay{height:100vh;height:100dvh;overflow:hidden;overscroll-behavior:contain;touch-action:pan-y}
-.checkoutBox{min-height:0;max-height:100%;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+.checkoutOverlay{height:100vh;height:100dvh;overflow:hidden;overscroll-behavior:contain;touch-action:pan-y pinch-zoom}
+.checkoutBox{min-height:0;max-height:100%;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
 @media(max-width:650px){.checkoutOverlay{padding:8px}.checkoutBox{padding-bottom:max(15px,env(safe-area-inset-bottom))}}
+
+/* Keep focused checkout controls readable without iOS automatic zoom. */
+@media(max-width:1000px){
+ .checkoutBox input,.checkoutBox select,.checkoutBox textarea{font-size:16px}
+}
