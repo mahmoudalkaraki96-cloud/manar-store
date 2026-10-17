@@ -23,7 +23,6 @@ from urllib.parse import urlparse
 from PIL import Image, ImageOps
 
 
-REPO = "mahmoudalkaraki96-cloud/manar-store"
 SITE = "https://manarstore.ps"
 SOURCE = "جعبري ستور"
 SOURCE_HOSTS = {"jabaristore.com", "www.jabaristore.com"}
@@ -340,16 +339,25 @@ def finish_batch(batch: dict) -> dict:
     duplicate = [row for row in rows if row["status"] == "duplicate"]
     if published:
         where = ",".join(str(int(row["product_id"])) for row in published)
+        eligible = query(
+            f"SELECT COUNT(*) AS count FROM products WHERE id IN ({where}) AND active=0 AND deleted_at IS NULL "
+            f"AND EXISTS(SELECT 1 FROM categories c WHERE c.id=products.category_id AND c.active=1) "
+            f"AND EXISTS(SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=products.id AND s.name={q(SOURCE)})"
+        )["results"][0]["count"]
+        if int(eligible) != len(published):
+            raise RuntimeError("Some unique products are no longer eligible; batch left incomplete and products remain drafts")
         execute(
             f"UPDATE products SET active=1,updated_at={now} WHERE id IN ({where}) AND active=0 AND deleted_at IS NULL "
             f"AND EXISTS(SELECT 1 FROM categories c WHERE c.id=products.category_id AND c.active=1) "
             f"AND EXISTS(SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=products.id AND s.name={q(SOURCE)});"
         )
+        activated = query(f"SELECT COUNT(*) AS count FROM products WHERE id IN ({where}) AND active=1")["results"][0]["count"]
+        if int(activated) != len(published):
+            raise RuntimeError("Published count did not match the unique-image count; batch left incomplete")
     execute(f"UPDATE supplier_visual_batches SET status='completed',updated_at={now} WHERE batch_id={q(batch['batch_id'])}")
     summary = {"batch": batch["batch_id"], "processed": len(rows), "published": len(published), "duplicates_left_draft": len(duplicate), "review_left_draft": len(review)}
-    Path("supplier-product-batch-report.json").write_text(json.dumps({"summary": summary, "products": rows}, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False), flush=True)
-    return summary
+    return {"summary": summary, "products": rows}
 
 
 def main() -> None:
@@ -370,10 +378,12 @@ def main() -> None:
             print("No remaining Jabari draft products in the captured import set", flush=True)
             return
         items = query(f"SELECT item_number,product_name,status FROM supplier_visual_batch_items WHERE batch_id={q(batch['batch_id'])} ORDER BY item_number DESC")["results"]
+        Path("supplier-product-batch-report.json").write_text(json.dumps({"mode": "preview", "batch": batch["batch_id"], "count": len(items), "products": items}, ensure_ascii=False, indent=2), encoding="utf-8")
         print(json.dumps({"mode": mode, "batch": batch["batch_id"], "count": len(items), "products": items}, ensure_ascii=False), flush=True)
         return
 
     completed_this_run = 0
+    completed_reports = []
     while completed_this_run < MAX_BATCHES_PER_RUN:
         control = query("SELECT * FROM supplier_visual_control WHERE id=1")["results"][0]
         if control["paused"]:
@@ -398,9 +408,10 @@ def main() -> None:
         control = query("SELECT paused FROM supplier_visual_control WHERE id=1")["results"][0]
         if control["paused"]:
             break
-        summary = finish_batch(batch)
+        report = finish_batch(batch)
+        completed_reports.append(report)
         completed_this_run += 1
-        if summary["processed"] < BATCH_SIZE:
+        if report["summary"]["processed"] < BATCH_SIZE:
             break
     control = query("SELECT target_max_product_id,paused FROM supplier_visual_control WHERE id=1")["results"][0]
     remaining = query(
@@ -409,7 +420,9 @@ def main() -> None:
         f"WHERE s.name={q(SOURCE)} AND p.active=0 AND p.deleted_at IS NULL AND p.id<={int(control['target_max_product_id'])} "
         "AND NOT EXISTS(SELECT 1 FROM supplier_visual_batch_items i WHERE i.media_id=m.id)"
     )["results"][0]["count"]
-    continue_chain = bool(remaining) and not control["paused"] and completed_this_run == MAX_BATCHES_PER_RUN
+    continue_chain = bool(remaining) and not control["paused"] and completed_this_run > 0 and completed_this_run == MAX_BATCHES_PER_RUN
+    if completed_reports:
+        Path("supplier-product-batch-report.json").write_text(json.dumps({"batches": completed_reports}, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"::notice::remaining={remaining}; paused={control['paused']}; continue={str(continue_chain).lower()}", flush=True)
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
