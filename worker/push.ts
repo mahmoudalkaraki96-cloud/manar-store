@@ -49,17 +49,17 @@ export async function drainPushQueue(env:PushEnv){
   const payload=JSON.parse(String(row.payload));
   if(row.disabled||(String(payload.tag).startsWith("offer-")&&!row.offers_enabled)||(String(payload.tag).startsWith("order-")&&!row.orders_enabled)||!validPushEndpoint(String(row.endpoint))){await env.DB.prepare("UPDATE push_jobs SET status='cancelled' WHERE id=?").bind(row.id).run();return}
   const attempt=Number(row.attempts)+1;
-  let stage='vapid_sign';
+  let stage='vapid_sign',responseStatus:number|null=null;
   try{
    const authorization=await vapidAuthorization(keys,String(row.endpoint));
    stage='payload_encrypt';
    const body=await encryptPush({p256dh:String(row.p256dh),auth:String(row.auth)},String(row.payload));
    stage='provider_fetch';
-   const response=await fetch(String(row.endpoint),{method:'POST',redirect:'error',signal:AbortSignal.timeout(15000),headers:{Authorization:authorization,'Content-Encoding':'aes128gcm','Content-Type':'application/octet-stream',TTL:'86400',Urgency:'normal'},body});
-   if(response.status===404||response.status===410){await env.DB.prepare('UPDATE push_subscriptions SET disabled=1 WHERE id=?').bind(row.subscription_id).run();await env.DB.prepare("UPDATE push_jobs SET status='expired',attempts=?,last_error=? WHERE id=?").bind(attempt,'push_http_'+response.status,row.id).run();return}
+   const response=await fetch(String(row.endpoint),{method:'POST',redirect:'manual',signal:AbortSignal.timeout(15000),headers:{Authorization:authorization,'Content-Encoding':'aes128gcm','Content-Type':'application/octet-stream',TTL:'86400',Urgency:'normal'},body});
+   responseStatus=response.status;\n   if(response.status===404||response.status===410){await env.DB.prepare('UPDATE push_subscriptions SET disabled=1 WHERE id=?').bind(row.subscription_id).run();await env.DB.prepare("UPDATE push_jobs SET status='expired',attempts=?,last_error=? WHERE id=?").bind(attempt,'push_http_'+response.status,row.id).run();return}
    if(!response.ok)throw new Error('push_http_'+response.status);
    await env.DB.prepare("UPDATE push_jobs SET status='sent',attempts=?,sent_at=?,last_error=NULL WHERE id=?").bind(attempt,Date.now(),row.id).run();
-  }catch(error){const message=error&&typeof error==='object'&&'message'in error?String((error as {message:unknown}).message):'';const code=/^push_http_\d{3}$/.test(message)?message:error&&typeof error==='object'&&'name'in error&&String((error as {name:unknown}).name)==='TimeoutError'?'push_timeout':'push_network_error';const rawName=error&&typeof error==='object'&&'name'in error?String((error as {name:unknown}).name):'UnknownError';const errorName=/^[A-Za-z][A-Za-z0-9]{0,39}$/.test(rawName)?rawName:'UnknownError';console.error('web_push_delivery_failed',{jobId:Number(row.id),provider:new URL(String(row.endpoint)).hostname,attempt,error:code,stage,errorName});await env.DB.prepare('UPDATE push_jobs SET status=?,attempts=?,next_attempt=?,last_error=? WHERE id=?').bind(attempt>=5?'failed':'pending',attempt,Date.now()+60000*Math.pow(2,attempt),code,row.id).run()}
+  }catch(error){const message=error&&typeof error==='object'&&'message'in error?String((error as {message:unknown}).message):'';const code=/^push_http_\d{3}$/.test(message)?message:error&&typeof error==='object'&&'name'in error&&String((error as {name:unknown}).name)==='TimeoutError'?'push_timeout':'push_network_error';const rawName=error&&typeof error==='object'&&'name'in error?String((error as {name:unknown}).name):'UnknownError';const errorName=/^[A-Za-z][A-Za-z0-9]{0,39}$/.test(rawName)?rawName:'UnknownError';console.error('web_push_delivery_failed',{jobId:Number(row.id),provider:new URL(String(row.endpoint)).hostname,attempt,error:code,stage,errorName,...(responseStatus===null?{}:{responseStatus})});await env.DB.prepare('UPDATE push_jobs SET status=?,attempts=?,next_attempt=?,last_error=? WHERE id=?').bind(attempt>=5?'failed':'pending',attempt,Date.now()+60000*Math.pow(2,attempt),code,row.id).run()}
  }));
 }
 async function device(env:PushEnv,id:unknown,token:unknown,role:string){if(typeof id!=='string'||typeof token!=='string'||token.length<32||token.length>128)return null;return env.DB.prepare('SELECT * FROM push_subscriptions WHERE id=? AND token_hash=? AND role=? AND disabled=0').bind(id,await hash(token),role).first<Record<string,unknown>>()}
