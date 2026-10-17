@@ -35,6 +35,8 @@ jobs:
           python-version: '3.12'
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: اختبارات بصمة الصور والتحويل
+        run: python tools/test_supplier_product_batches.py
       - name: فحص صور جعبري بدفعات لا تتجاوز 100 منتج
         id: process
         env:
@@ -52,22 +54,35 @@ jobs:
           summary = Path(os.environ['GITHUB_STEP_SUMMARY'])
           if path.exists():
               data = json.loads(path.read_text(encoding='utf-8'))
-              result = data['summary']
-              products = data.get('products', [])
-              lines = [
-                  '## نتيجة فحص دفعة جعبري',
-                  f"- الدفعة: {result['batch']}",
-                  f"- الصور المعالجة: {result['processed']}",
-                  f"- أصناف فريدة نُشرت: {result['published']}",
-                  f"- صور متشابهة بقيت مسودات: {result['duplicates_left_draft']}",
-                  f"- صور تحتاج مراجعة بقيت مسودات: {result['review_left_draft']}",
-                  '',
-                  '> تعتمد المطابقة على بصمة الصورة perceptual hash. الصور المتقاربة أو غير الحاسمة تبقى مسودات؛ اختلاف زاوية التصوير قد لا يكشف تطابق المنتج نفسه.',
-                  '',
-                  '| رقم الصنف | نتيجة الفحص | صورة قريبة |',
-                  '| ---: | --- | ---: |',
-              ]
-              lines += [f"| {p['item_number']} | {p['status']} | {p.get('matched_media_id') or '—'} |" for p in products]
+              if data.get('mode') == 'preview':
+                  lines = [
+                      '## معاينة دفعة جعبري',
+                      f"- رقم الدفعة: {data['batch']}",
+                      f"- عدد المنتجات: {data['count']}",
+                      '- هذه معاينة فقط؛ لم تُنزّل صور من المورد ولم تُنشر منتجات.',
+                      '',
+                      '| رقم الصنف | المنتج |',
+                      '| ---: | --- |',
+                  ]
+                  lines += [f"| {p['item_number']} | {p['product_name']} |" for p in data.get('products', [])]
+                  summary.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+                  raise SystemExit(0)
+              lines = ['## نتائج فحص دفعات جعبري']
+              for batch in data.get('batches', []):
+                  result = batch['summary']
+                  lines += [
+                      '',
+                      f"### {result['batch']}",
+                      f"- الصور المعالجة: {result['processed']}",
+                      f"- أصناف فريدة نُشرت: {result['published']}",
+                      f"- صور متشابهة بقيت مسودات: {result['duplicates_left_draft']}",
+                      f"- صور تحتاج مراجعة بقيت مسودات: {result['review_left_draft']}",
+                      '',
+                      '| رقم الصنف | نتيجة الفحص | رقم صورة قريبة |',
+                      '| ---: | --- | ---: |',
+                  ]
+                  lines += [f"| {p['item_number']} | {p['status']} | {p.get('matched_media_id') or '—'} |" for p in batch.get('products', [])]
+              lines += ['', '> تعتمد المطابقة على بصمة الصورة perceptual hash. الصور المتقاربة أو غير الحاسمة تبقى مسودات؛ اختلاف زاوية التصوير قد لا يكشف تطابق المنتج نفسه.']
               summary.write_text('\n'.join(lines) + '\n', encoding='utf-8')
           else:
               summary.write_text('## فحص صور ونشر دفعات جعبري\nلم تكتمل دفعة؛ راجع سجل الخطوات لمعرفة سبب التوقف.\n', encoding='utf-8')
