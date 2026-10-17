@@ -1398,6 +1398,16 @@ async function fetchImageSource(path:string,env:Env,request:Request):Promise<Res
 }
 
 async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): Promise<Response | null> {
+  if(request.method==="POST"&&url.pathname==="/api/pwa/install"&&(env.APP_SURFACE==="storefront"||env.APP_SURFACE==="admin")){
+    if(request.headers.get("origin")!==url.origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
+    if(Number(request.headers.get("content-length")||0)>1000)return json({error:"الطلب كبير جدًا"},{status:413});
+    const text=await request.text();if(text.length>1000)return json({error:"الطلب كبير جدًا"},{status:413});
+    let body:Record<string,unknown>;try{body=JSON.parse(text)}catch{return json({error:"بيانات غير صحيحة"},{status:400})}
+    const installationId=String(body.installationId||""),source=String(body.source||"");
+    if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(installationId)||!["appinstalled","standalone"].includes(source))return json({error:"بيانات التثبيت غير صحيحة"},{status:400});
+    await env.DB.prepare("INSERT OR IGNORE INTO pwa_installations(installation_id,surface,source,installed_at) VALUES(?,?,?,?)").bind(installationId,env.APP_SURFACE,source,Date.now()).run();
+    return json({ok:true});
+  }
   if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
     const binary = atob(product2222ImageBase64);
     const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
