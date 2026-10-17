@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS pwa_installations (\n  installation_id TEXT PRIMARY KEY,\n  surface TEXT NOT NULL CHECK(surface IN ('storefront','admin')),\n  source TEXT NOT NULL CHECK(source IN ('appinstalled','standalone')),\n  installed_at INTEGER NOT NULL\n);\nCREATE INDEX IF NOT EXISTS pwa_installations_surface ON pwa_installations(surface);\n
