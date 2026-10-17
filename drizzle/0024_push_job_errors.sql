@@ -1,1 +1,1 @@
-ALTER TABLE push_jobs ADD COLUMN last_error TEXT;\n
+ALTER TABLE push_jobs ADD COLUMN last_error TEXT;
