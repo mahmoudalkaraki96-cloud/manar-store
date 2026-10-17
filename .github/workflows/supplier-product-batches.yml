@@ -1,0 +1,80 @@
+name: فحص صور ونشر دفعات جعبري
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: معاينة، بدء معالجة بطيئة، أو استكمال يدوي بعد التوقف
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - process
+          - resume
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: manar-store-image-batch-submit
+  cancel-in-progress: false
+
+jobs:
+  image-batches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: فحص صور جعبري بدفعات لا تتجاوز 100 منتج
+        id: process
+        env:
+          BATCH_MODE: ${{ inputs.mode }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/supplier_product_batches.py
+      - name: عرض تقرير الدفعات
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          path = Path('supplier-product-batch-report.json')
+          summary = Path(os.environ['GITHUB_STEP_SUMMARY'])
+          if path.exists():
+              data = json.loads(path.read_text(encoding='utf-8'))
+              result = data['summary']
+              products = data.get('products', [])
+              lines = [
+                  '## نتيجة فحص دفعة جعبري',
+                  f"- الدفعة: {result['batch']}",
+                  f"- الصور المعالجة: {result['processed']}",
+                  f"- أصناف فريدة نُشرت: {result['published']}",
+                  f"- صور متشابهة بقيت مسودات: {result['duplicates_left_draft']}",
+                  f"- صور تحتاج مراجعة بقيت مسودات: {result['review_left_draft']}",
+                  '',
+                  '> تعتمد المطابقة على بصمة الصورة perceptual hash. الصور المتقاربة أو غير الحاسمة تبقى مسودات؛ اختلاف زاوية التصوير قد لا يكشف تطابق المنتج نفسه.',
+                  '',
+                  '| رقم الصنف | نتيجة الفحص | صورة قريبة |',
+                  '| ---: | --- | ---: |',
+              ]
+              lines += [f"| {p['item_number']} | {p['status']} | {p.get('matched_media_id') or '—'} |" for p in products]
+              summary.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          else:
+              summary.write_text('## فحص صور ونشر دفعات جعبري\nلم تكتمل دفعة؛ راجع سجل الخطوات لمعرفة سبب التوقف.\n', encoding='utf-8')
+          PY
+      - name: بدء الدفعات الثلاث التالية بعد اكتمال الدفعات الحالية
+        if: success() && steps.process.outputs.continue == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run supplier-product-batches.yml --ref main -f mode=process
+
