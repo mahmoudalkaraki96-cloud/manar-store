@@ -386,3 +386,46 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
  .globalSearchPanel .searchResultPrice{font-size:10px}
  .globalSearchPanel .searchItemBadge{font-size:8px;padding:1px 4px}
 }
+
+
+/* Compact horizontal search rows when the list view is selected. */
+.searchProductGrid.searchProductList>.searchProductResult{
+ display:grid;
+ grid-template-columns:64px minmax(0,1fr);
+ grid-template-rows:auto auto auto;
+ align-items:center;
+ gap:2px 9px;
+ padding:6px 8px;
+}
+.searchProductGrid.searchProductList .searchResultLink{display:contents}
+.searchProductGrid.searchProductList .searchResultVisual{grid-column:1;grid-row:1/4;align-self:center}
+.searchProductGrid.searchProductList .searchResultVisual img{width:64px;height:64px;max-width:100%;object-fit:contain}
+.searchProductGrid.searchProductList .searchResultLink>b{
+ grid-column:2;
+ grid-row:1;
+ align-self:end;
+ min-height:0;
+ font-size:12px;
+ line-height:1.35;
+ display:-webkit-box;
+ -webkit-box-orient:vertical;
+ -webkit-line-clamp:2;
+ overflow:hidden;
+}
+.searchProductGrid.searchProductList .searchVariantChoices{
+ grid-column:2;
+ grid-row:2;
+ flex-wrap:nowrap;
+ max-width:100%;
+ overflow-x:auto;
+ scrollbar-width:none;
+}
+.searchProductGrid.searchProductList .searchVariantChoices::-webkit-scrollbar{display:none}
+.searchProductGrid.searchProductList .searchResultPrice{grid-column:2;grid-row:3;align-self:start;margin:0;font-size:12px}
+@media(max-width:768px){
+ .searchProductGrid.searchProductList>.searchProductResult{grid-template-columns:56px minmax(0,1fr);gap:2px 8px;padding:5px 7px}
+ .searchProductGrid.searchProductList .searchResultVisual img{width:56px;height:56px}
+ .searchProductGrid.searchProductList .searchResultLink>b{font-size:11px;line-height:1.3}
+ .searchProductGrid.searchProductList .searchVariantChoices button{font-size:9px;padding:2px 5px}
+ .searchProductGrid.searchProductList .searchResultPrice{font-size:10px}
+}
