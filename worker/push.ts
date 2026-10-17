@@ -50,10 +50,10 @@ export async function drainPushQueue(env:PushEnv){
   if(row.disabled||(String(payload.tag).startsWith("offer-")&&!row.offers_enabled)||(String(payload.tag).startsWith("order-")&&!row.orders_enabled)||!validPushEndpoint(String(row.endpoint))){await env.DB.prepare("UPDATE push_jobs SET status='cancelled' WHERE id=?").bind(row.id).run();return}
   const attempt=Number(row.attempts)+1;
   try{const response=await fetch(String(row.endpoint),{method:'POST',redirect:'error',signal:AbortSignal.timeout(15000),headers:{Authorization:await vapidAuthorization(keys,String(row.endpoint)),'Content-Encoding':'aes128gcm','Content-Type':'application/octet-stream',TTL:'86400',Urgency:'normal'},body:await encryptPush({p256dh:String(row.p256dh),auth:String(row.auth)},String(row.payload))});
-   if(response.status===404||response.status===410){await env.DB.prepare('UPDATE push_subscriptions SET disabled=1 WHERE id=?').bind(row.subscription_id).run();await env.DB.prepare("UPDATE push_jobs SET status='expired',attempts=? WHERE id=?").bind(attempt,row.id).run();return}
+   if(response.status===404||response.status===410){await env.DB.prepare('UPDATE push_subscriptions SET disabled=1 WHERE id=?').bind(row.subscription_id).run();await env.DB.prepare("UPDATE push_jobs SET status='expired',attempts=?,last_error=? WHERE id=?").bind(attempt,'push_http_'+response.status,row.id).run();return}
    if(!response.ok)throw new Error('push_http_'+response.status);
-   await env.DB.prepare("UPDATE push_jobs SET status='sent',attempts=?,sent_at=? WHERE id=?").bind(attempt,Date.now(),row.id).run();
-  }catch{await env.DB.prepare('UPDATE push_jobs SET status=?,attempts=?,next_attempt=? WHERE id=?').bind(attempt>=5?'failed':'pending',attempt,Date.now()+60000*Math.pow(2,attempt),row.id).run()}
+   await env.DB.prepare("UPDATE push_jobs SET status='sent',attempts=?,sent_at=?,last_error=NULL WHERE id=?").bind(attempt,Date.now(),row.id).run();
+  }catch(error){const message=error&&typeof error==='object'&&'message'in error?String((error as {message:unknown}).message):'';const code=/^push_http_\d{3}$/.test(message)?message:error&&typeof error==='object'&&'name'in error&&String((error as {name:unknown}).name)==='TimeoutError'?'push_timeout':'push_network_error';console.error('web_push_delivery_failed',{jobId:Number(row.id),provider:new URL(String(row.endpoint)).hostname,attempt,error:code});await env.DB.prepare('UPDATE push_jobs SET status=?,attempts=?,next_attempt=?,last_error=? WHERE id=?').bind(attempt>=5?'failed':'pending',attempt,Date.now()+60000*Math.pow(2,attempt),code,row.id).run()}
  }));
 }
 async function device(env:PushEnv,id:unknown,token:unknown,role:string){if(typeof id!=='string'||typeof token!=='string'||token.length<32||token.length>128)return null;return env.DB.prepare('SELECT * FROM push_subscriptions WHERE id=? AND token_hash=? AND role=? AND disabled=0').bind(id,await hash(token),role).first<Record<string,unknown>>()}
@@ -99,7 +99,9 @@ export async function notifyOrderStatus(env:PushEnv,orderId:number,status:string
 }
 export async function pushAdminSummary(env:PushEnv){
  const subscribers=await env.DB.prepare('SELECT role,COUNT(*) AS count,SUM(offers_enabled) AS offers,SUM(CASE WHEN orders_enabled=1 THEN 1 ELSE 0 END) AS orders FROM push_subscriptions WHERE disabled=0 GROUP BY role').all();
- const jobs=await env.DB.prepare('SELECT status,COUNT(*) AS count FROM push_jobs GROUP BY status').all();return {subscribers:subscribers.results,jobs:jobs.results};
+ const jobs=await env.DB.prepare('SELECT status,COUNT(*) AS count FROM push_jobs GROUP BY status').all();
+ const latestTestError=await env.DB.prepare("SELECT last_error FROM push_jobs WHERE json_extract(payload,'$.tag')='manar-push-test' AND last_error IS NOT NULL ORDER BY created_at DESC,id DESC LIMIT 1").first<{last_error:string}>();
+ return {subscribers:subscribers.results,jobs:jobs.results,latestTestError:latestTestError?.last_error||null};
 }
 export async function queueCampaign(request:Request,env:PushEnv){
  if(request.headers.get('origin')!==new URL(request.url).origin)return Response.json({error:'مصدر الطلب غير مسموح'},{status:403});
