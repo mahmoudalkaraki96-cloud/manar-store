@@ -46,10 +46,20 @@ export default function PwaRegister(){
    event.preventDefault();
    setPrompt(event as InstallPromptEvent);
   };
-  const onInstalled=()=>{setInstalled(true);setPrompt(null);setShowIosHelp(false)};
+  const reportInstall=async(source:"appinstalled"|"standalone")=>{
+   try{
+    const idKey="manar_pwa_install_id",surface=adminSurface?"admin":"storefront",reportedKey="manar_pwa_install_reported:"+surface;
+    let installationId=localStorage.getItem(idKey);
+    if(!installationId){installationId=crypto.randomUUID();localStorage.setItem(idKey,installationId)}
+    if(localStorage.getItem(reportedKey)===installationId)return;
+    const response=await fetch("/api/pwa/install",{method:"POST",credentials:"same-origin",cache:"no-store",keepalive:true,headers:{"content-type":"application/json"},body:JSON.stringify({installationId,source})});
+    if(response.ok)localStorage.setItem(reportedKey,installationId);
+   }catch{}
+  };
+  const onInstalled=()=>{setInstalled(true);setPrompt(null);setShowIosHelp(false);void reportInstall("appinstalled")};
   window.addEventListener("beforeinstallprompt",onPrompt);
   window.addEventListener("appinstalled",onInstalled);
-  setInstalled(isStandalone());
+  if(isStandalone()){setInstalled(true);void reportInstall("standalone")}
   return()=>{
    window.removeEventListener("beforeinstallprompt",onPrompt);
    window.removeEventListener("appinstalled",onInstalled);
