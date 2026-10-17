@@ -98,7 +98,7 @@ export async function notifyOrderStatus(env:PushEnv,orderId:number,status:string
  await drainPushQueue(env);
 }
 export async function pushAdminSummary(env:PushEnv){
- const subscribers=await env.DB.prepare('SELECT role,COUNT(*) AS count,SUM(offers_enabled) AS offers FROM push_subscriptions WHERE disabled=0 GROUP BY role').all();
+ const subscribers=await env.DB.prepare('SELECT role,COUNT(*) AS count,SUM(offers_enabled) AS offers,SUM(CASE WHEN orders_enabled=1 THEN 1 ELSE 0 END) AS orders FROM push_subscriptions WHERE disabled=0 GROUP BY role').all();
  const jobs=await env.DB.prepare('SELECT status,COUNT(*) AS count FROM push_jobs GROUP BY status').all();return {subscribers:subscribers.results,jobs:jobs.results};
 }
 export async function queueCampaign(request:Request,env:PushEnv){
