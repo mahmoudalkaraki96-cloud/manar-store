@@ -431,7 +431,7 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 }
 
 /* Stable slider box: keep every slide at a predictable height and show the full image. */
-.imageOnlySlider{position:relative!important;display:block!important;width:min(1200px,calc(100% - 30px))!important;aspect-ratio:16/9!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;background:#f4edf0!important}
+.imageOnlySlider{position:relative!important;display:block!important;width:min(1200px,calc(100% - 30px))!important;aspect-ratio:1024/420!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;background:#f4edf0!important}
 .imageOnlySlider>a,.imageOnlySlider>.sliderVisual,.imageOnlySlider>a>.sliderVisual{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important}
 .imageOnlySlider>.sliderVisual,.imageOnlySlider>a>.sliderVisual{position:relative!important;overflow:hidden!important;background:#f4edf0!important}
 .imageOnlySlider .sliderImage{position:relative!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;object-fit:contain!important;object-position:center center!important;background:transparent!important}
