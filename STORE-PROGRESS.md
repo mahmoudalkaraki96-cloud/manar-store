@@ -1183,3 +1183,64 @@
 - دوفش#990 ↔ صنف#1497: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.990
 - دوفش#989 ↔ صنف#1498: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.989
 - دوفش#988 ↔ صنف#1499: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.988
+
+
+### 2026-10-19T15:17:40.555073+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:17:40.555073+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 184, "no_options": 150, "missing_source": 3, "unsupported_customization_or_minimum": 3, "matched": 7}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#987 ↔ صنف#1500: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.987
+- دوفش#986 ↔ صنف#1501: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.986
+- دوفش#985 ↔ صنف#1502: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.985
+- دوفش#984 ↔ صنف#1503: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.984
+- دوفش#983 ↔ صنف#1504: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.983
+- دوفش#982 ↔ صنف#1505: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.982
+- دوفش#981 ↔ صنف#1506: no_options؛ وردة مخمل مع حبة لولو وعرق ذهبي. https://dofesh.ps/?app=product.show.981
+- دوفش#980 ↔ صنف#1507: no_options؛ ورد قماش مخمل مع حبة لولو وعرق ذهبي. https://dofesh.ps/?app=product.show.980
+- دوفش#979 ↔ صنف#1508: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.979
+- دوفش#978 ↔ صنف#1509: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.978
+- دوفش#977 ↔ صنف#1510: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.977
+- دوفش#976 ↔ صنف#1511: synced؛ بالحبة=2₪؛ 10 حبة=15₪؛ 50 حبة=70₪. https://dofesh.ps/?app=product.show.976
+- دوفش#974 ↔ صنف#1512: synced؛ مع قاطع داخلي / بالحبة=2₪؛ مع قاطع داخلي / 10 حبة=18₪؛ مع قاطع داخلي / 60 حبة=90₪؛ بدون قاطع داخلي / بالحبة=2₪؛ بدون قاطع داخلي / 10 حبة=18₪؛ بدون قاطع داخلي / 60 حبة=90₪. https://dofesh.ps/?app=product.show.974
+- دوفش#973 ↔ صنف#1513: synced؛ بالحبة=2₪؛ 10 حبة=15₪؛ 50 حبة=50₪. https://dofesh.ps/?app=product.show.973
+- دوفش#972 ↔ صنف#1514: synced؛ بالحبة=2₪؛ 10 حبة=15₪؛ 50 حبة=50₪. https://dofesh.ps/?app=product.show.972
+- دوفش#971 ↔ صنف#1515: synced؛ بالحبة=3₪؛ 10 حبة=25₪؛ 50 حبة=100₪. https://dofesh.ps/?app=product.show.971
+- دوفش#970 ↔ صنف#1516: synced؛ بالحبة=3₪؛ 10 حبة=25₪؛ 50 حبة=100₪. https://dofesh.ps/?app=product.show.970
+- دوفش#969 ↔ صنف#1517: synced؛ بالحبة=4₪؛ 10 حبة=30₪. https://dofesh.ps/?app=product.show.969
+- دوفش#968 ↔ صنف#1518: synced؛ احمر=1₪؛ خمري=1₪؛ زهري مع ابيض=1₪. https://dofesh.ps/?app=product.show.968
+- دوفش#967 ↔ صنف#1519: synced؛ بالحبة=1₪؛ 10 حبة=6₪؛ 50 حبة=25₪؛ 100 حبة=40₪. https://dofesh.ps/?app=product.show.967
+- دوفش#966 ↔ صنف#1520: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.966
+- دوفش#965 ↔ صنف#1521: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.965
+- دوفش#964 ↔ صنف#1522: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.964
+- دوفش#963 ↔ صنف#1523: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.963
+- دوفش#962 ↔ صنف#1524: synced؛ بالحبة=2₪؛ 10 حبة (دزينة )=15₪. https://dofesh.ps/?app=product.show.962
+- دوفش#961 ↔ صنف#1525: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.961
+- دوفش#960 ↔ صنف#1526: synced؛ بالحبة=1₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.960
+- دوفش#959 ↔ صنف#1527: synced؛ بالحبة=1₪؛ 50حبة=30₪. https://dofesh.ps/?app=product.show.959
+- دوفش#958 ↔ صنف#1528: synced؛ بالحبة=1₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.958
+- دوفش#957 ↔ صنف#1529: synced؛ بالحبة=1₪؛ 25 حبة=20₪؛ 50حبة=40₪. https://dofesh.ps/?app=product.show.957
+- دوفش#956 ↔ صنف#1530: synced؛ بالحبة=1₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.956
+- دوفش#955 ↔ صنف#1531: synced؛ بالحبة=1₪؛ 12حبة=10₪؛ 60 حبة=40₪. https://dofesh.ps/?app=product.show.955
+- دوفش#953 ↔ صنف#1532: synced؛ بيج / بالحبة=1₪؛ بيج / 10حبة=8₪؛ بيج / 50 حبة=30₪؛ اسود / بالحبة=1₪؛ اسود / 10حبة=8₪؛ اسود / 50 حبة=30₪؛ خمري / بالحبة=1₪؛ خمري / 10حبة=8₪؛ خمري / 50 حبة=30₪؛ نيلي / بالحبة=1₪؛ نيلي / 10حبة=8₪؛ نيلي / 50 حبة=30₪؛ كحلي / بالحبة=1₪؛ كحلي / 10حبة=8₪؛ كحلي / 50 حبة=30₪؛ زهري / بالحبة=1₪؛ زهري / 10حبة=8₪؛ زهري / 50 حبة=30₪. https://dofesh.ps/?app=product.show.953
+- دوفش#952 ↔ صنف#1533: synced؛ بالحبة=1₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.952
+- دوفش#951 ↔ صنف#1534: synced؛ بالحبة=1₪؛ 50حبة=25₪. https://dofesh.ps/?app=product.show.951
+- دوفش#950 ↔ صنف#1535: synced؛ بالحبة=1₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.950
+- دوفش#949 ↔ صنف#1536: synced؛ بالحبة=5₪؛ 10 قطعة=40₪. https://dofesh.ps/?app=product.show.949
+- دوفش#948 ↔ صنف#1038: no_options؛ ريزون علاقة زهري محجر. https://dofesh.ps/?app=product.show.948
+- دوفش#947 ↔ صنف#1537: synced؛ مع طبعة كعبة=6₪؛ بدون طبعة كعبة=5₪. https://dofesh.ps/?app=product.show.947
+- دوفش#946 ↔ صنف#1538: no_options؛ لايكرا اخضر زيتي. https://dofesh.ps/?app=product.show.946
+- دوفش#945 ↔ صنف#1539: no_options؛ لايكرا اخضر فاتح. https://dofesh.ps/?app=product.show.945
+- دوفش#944 ↔ صنف#1540: no_options؛ لايكرا كحلي. https://dofesh.ps/?app=product.show.944
+- دوفش#943 ↔ صنف#1541: no_options؛ لايكرا اسود. https://dofesh.ps/?app=product.show.943
+- دوفش#942 ↔ صنف#1542: no_options؛ لايكرا ازرق فاتح مقاس عرض 1.5 متر. https://dofesh.ps/?app=product.show.942
+- دوفش#941 ↔ صنف#1543: no_options؛ لايكرا بني. https://dofesh.ps/?app=product.show.941
+- دوفش#940 ↔ صنف#1544: no_options؛ لايكرا نود عرض 1.5 متر. https://dofesh.ps/?app=product.show.940
+- دوفش#939 ↔ صنف#1545: no_options؛ معطر جو مع محفظة للبطاقة الشخصية والفيزا كارد. https://dofesh.ps/?app=product.show.939
+- دوفش#938 ↔ صنف#1159: no_options؛ حصان خشب ارتفاع 8 سم. https://dofesh.ps/?app=product.show.938
+- دوفش#937 ↔ صنف#1546: no_options؛ طقم طاولة 2 حبة خشب مبزر مميز. https://dofesh.ps/?app=product.show.937
+- دوفش#936 ↔ صنف#1039: no_options؛ ريزون حجم كبير سادى مقاس 28 سم مع قاعدة ذهبية. https://dofesh.ps/?app=product.show.936
