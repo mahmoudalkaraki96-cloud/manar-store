@@ -1,6 +1,6 @@
 ## Jabari variant audit
-- Time: 2026-10-19T23:37:05.823579+03:00
+- Time: 2026-10-19T23:45:26.207082+03:00
 - Mode: apply
 - Status: completed_batch
-- Counts: {"no_options": 655, "synced": 332, "unsupported_source_price": 119}
+- Counts: {"no_options": 656, "synced": 340, "unsupported_source_price": 160}
 - Per-product results: docs/jabari-variant-audit/latest.json

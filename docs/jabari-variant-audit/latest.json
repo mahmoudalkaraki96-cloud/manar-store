@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:37:05.823579+03:00",
+  "updated_at": "2026-10-19T23:45:26.207082+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -8851,6 +8851,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3534, \"source\": {\"title\": \"شبر ورق زم ازرق ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792442224620
+    },
+    {
+      "source_id": 2914,
+      "mode": "apply",
+      "product_id": 2535,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3535, \"source\": {\"title\": \"شبر ورق زم زهري ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442233351
+    },
+    {
+      "source_id": 2913,
+      "mode": "apply",
+      "product_id": 2536,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3536}",
+      "updated_at": 1792442243097
+    },
+    {
+      "source_id": 2912,
+      "mode": "apply",
+      "product_id": 2537,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3537}",
+      "updated_at": 1792442253102
+    },
+    {
+      "source_id": 2911,
+      "mode": "apply",
+      "product_id": 2538,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3538}",
+      "updated_at": 1792442263300
+    },
+    {
+      "source_id": 2910,
+      "mode": "apply",
+      "product_id": 2539,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3539}",
+      "updated_at": 1792442273097
+    },
+    {
+      "source_id": 2909,
+      "mode": "apply",
+      "product_id": 2540,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3540}",
+      "updated_at": 1792442283104
+    },
+    {
+      "source_id": 2907,
+      "mode": "apply",
+      "product_id": 2541,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3541}",
+      "updated_at": 1792442293097
+    },
+    {
+      "source_id": 2904,
+      "mode": "apply",
+      "product_id": 2542,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3542}",
+      "updated_at": 1792442303108
+    },
+    {
+      "source_id": 2898,
+      "mode": "apply",
+      "product_id": 2543,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3543}",
+      "updated_at": 1792442313078
+    },
+    {
+      "source_id": 2894,
+      "mode": "apply",
+      "product_id": 2544,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3544}",
+      "updated_at": 1792442323309
+    },
+    {
+      "source_id": 2888,
+      "mode": "apply",
+      "product_id": 2545,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3545}",
+      "updated_at": 1792442333326
+    },
+    {
+      "source_id": 2884,
+      "mode": "apply",
+      "product_id": 2546,
+      "status": "synced",
+      "detail": "{\"item_number\": 3546, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*20*20 ( 10 قطع )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3000, \"active\": true}, {\"name\": \"بني\", \"price\": 3000, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2546\", \"source_url\": \"https://jabaristore.com/?app=product.show.2884\"}",
+      "updated_at": 1792442343601
+    },
+    {
+      "source_id": 2883,
+      "mode": "apply",
+      "product_id": 2547,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3547}",
+      "updated_at": 1792442353237
+    },
+    {
+      "source_id": 2882,
+      "mode": "apply",
+      "product_id": 2548,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3548}",
+      "updated_at": 1792442363222
+    },
+    {
+      "source_id": 2881,
+      "mode": "apply",
+      "product_id": 2549,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3549}",
+      "updated_at": 1792442373250
+    },
+    {
+      "source_id": 2880,
+      "mode": "apply",
+      "product_id": 2550,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3550}",
+      "updated_at": 1792442383211
+    },
+    {
+      "source_id": 2879,
+      "mode": "apply",
+      "product_id": 2551,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3551}",
+      "updated_at": 1792442393119
+    },
+    {
+      "source_id": 2878,
+      "mode": "apply",
+      "product_id": 2552,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3552}",
+      "updated_at": 1792442403229
+    },
+    {
+      "source_id": 2877,
+      "mode": "apply",
+      "product_id": 2553,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3553}",
+      "updated_at": 1792442413096
+    },
+    {
+      "source_id": 2876,
+      "mode": "apply",
+      "product_id": 2554,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3554}",
+      "updated_at": 1792442423102
+    },
+    {
+      "source_id": 2875,
+      "mode": "apply",
+      "product_id": 2555,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3555}",
+      "updated_at": 1792442433112
+    },
+    {
+      "source_id": 2874,
+      "mode": "apply",
+      "product_id": 2556,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3556}",
+      "updated_at": 1792442443116
+    },
+    {
+      "source_id": 2872,
+      "mode": "apply",
+      "product_id": 2557,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3557}",
+      "updated_at": 1792442453088
+    },
+    {
+      "source_id": 2871,
+      "mode": "apply",
+      "product_id": 2558,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3558}",
+      "updated_at": 1792442463234
+    },
+    {
+      "source_id": 2869,
+      "mode": "apply",
+      "product_id": 2559,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3559}",
+      "updated_at": 1792442473111
+    },
+    {
+      "source_id": 2868,
+      "mode": "apply",
+      "product_id": 2560,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3560}",
+      "updated_at": 1792442483337
+    },
+    {
+      "source_id": 2867,
+      "mode": "apply",
+      "product_id": 2561,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3561}",
+      "updated_at": 1792442493247
+    },
+    {
+      "source_id": 2866,
+      "mode": "apply",
+      "product_id": 2562,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3562}",
+      "updated_at": 1792442503237
+    },
+    {
+      "source_id": 2865,
+      "mode": "apply",
+      "product_id": 2563,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3563}",
+      "updated_at": 1792442513077
+    },
+    {
+      "source_id": 2864,
+      "mode": "apply",
+      "product_id": 2564,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3564}",
+      "updated_at": 1792442523250
+    },
+    {
+      "source_id": 2863,
+      "mode": "apply",
+      "product_id": 2565,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3565}",
+      "updated_at": 1792442533081
+    },
+    {
+      "source_id": 2862,
+      "mode": "apply",
+      "product_id": 2566,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3566}",
+      "updated_at": 1792442543107
+    },
+    {
+      "source_id": 2861,
+      "mode": "apply",
+      "product_id": 2567,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3567}",
+      "updated_at": 1792442553097
+    },
+    {
+      "source_id": 2860,
+      "mode": "apply",
+      "product_id": 2568,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3568}",
+      "updated_at": 1792442563247
+    },
+    {
+      "source_id": 2859,
+      "mode": "apply",
+      "product_id": 2569,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3569}",
+      "updated_at": 1792442573105
+    },
+    {
+      "source_id": 2858,
+      "mode": "apply",
+      "product_id": 2570,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3570}",
+      "updated_at": 1792442583113
+    },
+    {
+      "source_id": 2857,
+      "mode": "apply",
+      "product_id": 2571,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3571}",
+      "updated_at": 1792442593386
+    },
+    {
+      "source_id": 2856,
+      "mode": "apply",
+      "product_id": 2572,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3572}",
+      "updated_at": 1792442603430
+    },
+    {
+      "source_id": 2855,
+      "mode": "apply",
+      "product_id": 2573,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3573}",
+      "updated_at": 1792442613098
+    },
+    {
+      "source_id": 2854,
+      "mode": "apply",
+      "product_id": 2574,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3574}",
+      "updated_at": 1792442623510
+    },
+    {
+      "source_id": 2852,
+      "mode": "apply",
+      "product_id": 2575,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3575}",
+      "updated_at": 1792442633348
+    },
+    {
+      "source_id": 2851,
+      "mode": "apply",
+      "product_id": 2576,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3576}",
+      "updated_at": 1792442643312
+    },
+    {
+      "source_id": 2850,
+      "mode": "apply",
+      "product_id": 2577,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3577}",
+      "updated_at": 1792442653344
+    },
+    {
+      "source_id": 2848,
+      "mode": "apply",
+      "product_id": 2578,
+      "status": "synced",
+      "detail": "{\"item_number\": 3578, \"name\": \"علب pvc 12*12*20 ( 10 قطع )\", \"before_price\": 2350, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 12*12*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}, {\"name\": \"بني / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"بني / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 12*12*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 20000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 20000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}, {\"name\": \"بني / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"بني / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2578\", \"source_url\": \"https://jabaristore.com/?app=product.show.2848\"}",
+      "updated_at": 1792442663619
+    },
+    {
+      "source_id": 2847,
+      "mode": "apply",
+      "product_id": 2579,
+      "status": "synced",
+      "detail": "{\"item_number\": 3579, \"name\": \"علب pvc 12*12*10 ( 10 قطع )\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 12*12*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 12*12*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2579\", \"source_url\": \"https://jabaristore.com/?app=product.show.2847\"}",
+      "updated_at": 1792442673414
+    },
+    {
+      "source_id": 2846,
+      "mode": "apply",
+      "product_id": 2580,
+      "status": "synced",
+      "detail": "{\"item_number\": 3580, \"name\": \"علب pvc 12*12*8 ( 10 قطع )\", \"before_price\": 1850, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 12*12*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 12*12*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1700, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1700, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1700, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2580\", \"source_url\": \"https://jabaristore.com/?app=product.show.2846\"}",
+      "updated_at": 1792442683702
+    },
+    {
+      "source_id": 2845,
+      "mode": "apply",
+      "product_id": 2581,
+      "status": "synced",
+      "detail": "{\"item_number\": 3581, \"name\": \"علب pvc 12*12*6 ( 10 قطع )\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 12*12*6 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 12*12*6 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2581\", \"source_url\": \"https://jabaristore.com/?app=product.show.2845\"}",
+      "updated_at": 1792442693640
+    },
+    {
+      "source_id": 2844,
+      "mode": "apply",
+      "product_id": 2582,
+      "status": "synced",
+      "detail": "{\"item_number\": 3582, \"name\": \"علب pvc 12*12*4 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 12*12*4 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 12*12*4 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2582\", \"source_url\": \"https://jabaristore.com/?app=product.show.2844\"}",
+      "updated_at": 1792442703420
+    },
+    {
+      "source_id": 2843,
+      "mode": "apply",
+      "product_id": 2583,
+      "status": "synced",
+      "detail": "{\"item_number\": 3583, \"name\": \"علب pvc 7*7*20 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 7*7*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 7*7*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2583\", \"source_url\": \"https://jabaristore.com/?app=product.show.2843\"}",
+      "updated_at": 1792442713541
+    },
+    {
+      "source_id": 2842,
+      "mode": "apply",
+      "product_id": 2584,
+      "status": "synced",
+      "detail": "{\"item_number\": 3584, \"name\": \"علب pvc 7*7*17 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 7*7*17 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 7*7*17 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2584\", \"source_url\": \"https://jabaristore.com/?app=product.show.2842\"}",
+      "updated_at": 1792442723442
     }
   ]
 }

@@ -3523,3 +3523,64 @@
 - الجعبري#2917 ↔ صنف#3532: no_options؛ شبر ورق زم ذهبي ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2917
 - الجعبري#2916 ↔ صنف#3533: no_options؛ شبر ورق زم ابيض ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2916
 - الجعبري#2915 ↔ صنف#3534: no_options؛ شبر ورق زم ازرق ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2915
+
+
+### 2026-10-19T23:45:26.207082+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:45:26.207082+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 656, "synced": 340, "unsupported_source_price": 160}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#2914 ↔ صنف#3535: no_options؛ شبر ورق زم زهري ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2914
+- الجعبري#2913 ↔ صنف#3536: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2913
+- الجعبري#2912 ↔ صنف#3537: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2912
+- الجعبري#2911 ↔ صنف#3538: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2911
+- الجعبري#2910 ↔ صنف#3539: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2910
+- الجعبري#2909 ↔ صنف#3540: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2909
+- الجعبري#2907 ↔ صنف#3541: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2907
+- الجعبري#2904 ↔ صنف#3542: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2904
+- الجعبري#2898 ↔ صنف#3543: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2898
+- الجعبري#2894 ↔ صنف#3544: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2894
+- الجعبري#2888 ↔ صنف#3545: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2888
+- الجعبري#2884 ↔ صنف#3546: synced؛ ابيض=31.5₪؛ بني=31.5₪؛ ذهبي=31.5₪. https://jabaristore.com/?app=product.show.2884
+- الجعبري#2883 ↔ صنف#3547: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2883
+- الجعبري#2882 ↔ صنف#3548: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2882
+- الجعبري#2881 ↔ صنف#3549: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2881
+- الجعبري#2880 ↔ صنف#3550: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2880
+- الجعبري#2879 ↔ صنف#3551: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2879
+- الجعبري#2878 ↔ صنف#3552: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2878
+- الجعبري#2877 ↔ صنف#3553: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2877
+- الجعبري#2876 ↔ صنف#3554: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2876
+- الجعبري#2875 ↔ صنف#3555: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2875
+- الجعبري#2874 ↔ صنف#3556: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2874
+- الجعبري#2872 ↔ صنف#3557: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2872
+- الجعبري#2871 ↔ صنف#3558: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2871
+- الجعبري#2869 ↔ صنف#3559: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2869
+- الجعبري#2868 ↔ صنف#3560: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2868
+- الجعبري#2867 ↔ صنف#3561: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2867
+- الجعبري#2866 ↔ صنف#3562: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2866
+- الجعبري#2865 ↔ صنف#3563: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2865
+- الجعبري#2864 ↔ صنف#3564: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2864
+- الجعبري#2863 ↔ صنف#3565: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2863
+- الجعبري#2862 ↔ صنف#3566: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2862
+- الجعبري#2861 ↔ صنف#3567: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2861
+- الجعبري#2860 ↔ صنف#3568: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2860
+- الجعبري#2859 ↔ صنف#3569: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2859
+- الجعبري#2858 ↔ صنف#3570: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2858
+- الجعبري#2857 ↔ صنف#3571: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2857
+- الجعبري#2856 ↔ صنف#3572: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2856
+- الجعبري#2855 ↔ صنف#3573: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2855
+- الجعبري#2854 ↔ صنف#3574: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2854
+- الجعبري#2852 ↔ صنف#3575: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2852
+- الجعبري#2851 ↔ صنف#3576: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2851
+- الجعبري#2850 ↔ صنف#3577: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2850
+- الجعبري#2848 ↔ صنف#3578: synced؛ ابيض / 10 قطعة=23.5₪؛ ابيض / 100 قطعة=210₪؛ بني / 10 قطعة=23.5₪؛ بني / 100 قطعة=210₪؛ ذهبي / 10 قطعة=23.5₪؛ ذهبي / 100 قطعة=210₪. https://jabaristore.com/?app=product.show.2848
+- الجعبري#2847 ↔ صنف#3579: synced؛ ابيض / 10 قطعة=19.5₪؛ ابيض / 100 قطعة=170₪؛ بني / 10 قطعة=19.5₪؛ بني / 100 قطعة=170₪؛ ذهبي / 10 قطعة=19.5₪؛ ذهبي / 100 قطعة=170₪. https://jabaristore.com/?app=product.show.2847
+- الجعبري#2846 ↔ صنف#3580: synced؛ ابيض / 10 قطعة=18.5₪؛ ابيض / 100 قطعة=160₪؛ بني / 10 قطعة=18.5₪؛ بني / 100 قطعة=160₪؛ ذهبي / 10 قطعة=18.5₪؛ ذهبي / 100 قطعة=160₪. https://jabaristore.com/?app=product.show.2846
+- الجعبري#2845 ↔ صنف#3581: synced؛ ابيض / 10 قطعة=17.5₪؛ ابيض / 100 قطعة=150₪؛ بني / 10 قطعة=17.5₪؛ بني / 100 قطعة=150₪؛ ذهبي / 10 قطعة=17.5₪؛ ذهبي / 100 قطعة=150₪. https://jabaristore.com/?app=product.show.2845
+- الجعبري#2844 ↔ صنف#3582: synced؛ ابيض / 10 قطعة=16.5₪؛ ابيض / 100 قطعة=140₪؛ بني / 10 قطعة=16.5₪؛ بني / 100 قطعة=140₪؛ ذهبي / 10 قطعة=16.5₪؛ ذهبي / 100 قطعة=140₪. https://jabaristore.com/?app=product.show.2844
+- الجعبري#2843 ↔ صنف#3583: synced؛ ابيض / 10 قطعة=16.5₪؛ ابيض / 100 قطعة=140₪؛ بني / 10 قطعة=16.5₪؛ بني / 100 قطعة=140₪؛ ذهبي / 10 قطعة=16.5₪؛ ذهبي / 100 قطعة=140₪. https://jabaristore.com/?app=product.show.2843
+- الجعبري#2842 ↔ صنف#3584: synced؛ ابيض / 10 قطعة=15.5₪؛ ابيض / 100 قطعة=130₪؛ بني / 10 قطعة=15.5₪؛ بني / 100 قطعة=130₪؛ ذهبي / 10 قطعة=15.5₪؛ ذهبي / 100 قطعة=130₪. https://jabaristore.com/?app=product.show.2842
