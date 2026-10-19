@@ -2608,3 +2608,64 @@
 - الجعبري#4071 ↔ صنف#2814: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4071
 - الجعبري#4070 ↔ صنف#2815: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4070
 - الجعبري#4069 ↔ صنف#2816: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4069
+
+
+### 2026-10-19T21:40:46.467799+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:40:46.467799+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 266, "synced": 106, "unsupported_source_price": 34}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4068 ↔ صنف#2817: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.4068
+- الجعبري#4067 ↔ صنف#2818: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.4067
+- الجعبري#4066 ↔ صنف#2819: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.4066
+- الجعبري#4065 ↔ صنف#2820: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.4065
+- الجعبري#4064 ↔ صنف#2821: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4064
+- الجعبري#4063 ↔ صنف#2822: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4063
+- الجعبري#4062 ↔ صنف#2823: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4062
+- الجعبري#4061 ↔ صنف#2824: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4061
+- الجعبري#4060 ↔ صنف#2825: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4060
+- الجعبري#4059 ↔ صنف#2826: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4059
+- الجعبري#4058 ↔ صنف#2827: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4058
+- الجعبري#4057 ↔ صنف#2828: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.4057
+- الجعبري#4054 ↔ صنف#2829: no_options؛ معالق خشب ( عسل & نوتيلا ) 100 قطعة. https://jabaristore.com/?app=product.show.4054
+- الجعبري#4050 ↔ صنف#2830: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4050
+- الجعبري#4049 ↔ صنف#2831: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4049
+- الجعبري#4047 ↔ صنف#2832: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4047
+- الجعبري#4046 ↔ صنف#2833: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4046
+- الجعبري#4045 ↔ صنف#2834: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4045
+- الجعبري#4044 ↔ صنف#2835: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4044
+- الجعبري#4043 ↔ صنف#2836: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4043
+- الجعبري#4042 ↔ صنف#2837: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4042
+- الجعبري#4041 ↔ صنف#2838: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4041
+- الجعبري#4038 ↔ صنف#2839: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4038
+- الجعبري#4037 ↔ صنف#2840: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4037
+- الجعبري#4036 ↔ صنف#2841: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4036
+- الجعبري#4035 ↔ صنف#2842: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4035
+- الجعبري#4034 ↔ صنف#2843: no_options؛ رول تغليف لميع - 5 متر -. https://jabaristore.com/?app=product.show.4034
+- الجعبري#4033 ↔ صنف#2844: synced؛ 18 سم=4.5₪؛ 20 سم=5.5₪؛ 22 سم=7₪؛ 24 سم=8₪. https://jabaristore.com/?app=product.show.4033
+- الجعبري#4032 ↔ صنف#2398: synced؛ 100 غم=11₪؛ 1 كيلو=62₪. https://jabaristore.com/?app=product.show.4032
+- الجعبري#4031 ↔ صنف#2399: synced؛ 100 غم=16.5₪؛ 1 كيلو=80₪. https://jabaristore.com/?app=product.show.4031
+- الجعبري#4030 ↔ صنف#2400: synced؛ 100 غم=11₪؛ 1 كيلو=62₪. https://jabaristore.com/?app=product.show.4030
+- الجعبري#4029 ↔ صنف#2401: synced؛ 100 غرام=11₪؛ 1 كيلو=62₪. https://jabaristore.com/?app=product.show.4029
+- الجعبري#4028 ↔ صنف#2845: no_options؛ عبوة بلاستيك فارغة غطاء بخاخ ~12 قطعة~ ( 50 مل ). https://jabaristore.com/?app=product.show.4028
+- الجعبري#4027 ↔ صنف#2846: no_options؛ عبوة بلاستيك فارغة غطاء بخاخ ~12 قطعة~ ( 30 مل ). https://jabaristore.com/?app=product.show.4027
+- الجعبري#4026 ↔ صنف#2847: no_options؛ عبوة بلاستيك فارغة غطاء ذهبي ~12 قطعة~ ( 70 مل ). https://jabaristore.com/?app=product.show.4026
+- الجعبري#4025 ↔ صنف#2848: no_options؛ عبوة بلاستيك فارغة غطاء ذهبي ~12 قطعة~ ( 50 مل ). https://jabaristore.com/?app=product.show.4025
+- الجعبري#4024 ↔ صنف#2849: no_options؛ عبوة بلاستيك فارغة غطاء ذهبي ~12 قطعة~ ( 30 مل ). https://jabaristore.com/?app=product.show.4024
+- الجعبري#4023 ↔ صنف#2402: no_options؛ اعواد خشبية كروية ~ 20cm ~ ( 100 قطعة ). https://jabaristore.com/?app=product.show.4023
+- الجعبري#4021 ↔ صنف#2403: no_options؛ اعواد خشبية مبسطه ~ 30cm ~ ( 25 قطعة ). https://jabaristore.com/?app=product.show.4021
+- الجعبري#4020 ↔ صنف#2404: no_options؛ اعواد خشبية مبسطه ~ 40cm ~ ( 25 قطعة ). https://jabaristore.com/?app=product.show.4020
+- الجعبري#4019 ↔ صنف#2850: synced؛ ابيض / 10 قطعة=10₪؛ ابيض / 100 قطعة=85₪؛ بني / 10 قطعة=10₪؛ بني / 100 قطعة=85₪؛ ذهبي / 10 قطعة=10₪؛ ذهبي / 100 قطعة=85₪. https://jabaristore.com/?app=product.show.4019
+- الجعبري#4017 ↔ صنف#2851: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4017
+- الجعبري#4016 ↔ صنف#2852: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4016
+- الجعبري#4015 ↔ صنف#2853: no_options؛ رول تول ابيض ( 30CM * 22.5M ). https://jabaristore.com/?app=product.show.4015
+- الجعبري#4014 ↔ صنف#2854: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4014
+- الجعبري#4013 ↔ صنف#2855: synced؛ ذهبي=4₪؛ فضي=4₪. https://jabaristore.com/?app=product.show.4013
+- الجعبري#4012 ↔ صنف#2856: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4012
+- الجعبري#4011 ↔ صنف#2857: synced؛ ذهبي=4.5₪؛ فضي=4.5₪. https://jabaristore.com/?app=product.show.4011
+- الجعبري#4010 ↔ صنف#2858: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4010
+- الجعبري#4009 ↔ صنف#2859: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4009
