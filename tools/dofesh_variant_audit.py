@@ -415,7 +415,14 @@ def main():
                 time.sleep(wait)
             last_request = time.monotonic()
             try:
-                source = parse_product(fetch_product(sid),sid)
+                try:
+                    source = parse_product(fetch_product(sid),sid)
+                except ValueError as e:
+                    if str(e) not in ('invalid_price', 'unsupported_price'):
+                        raise
+                    save_result(db,sid,args.mode,p,'unsupported_source_price',{'reason':str(e)},token)
+                    print(f"source={sid} item={p['item_number']} status=unsupported_source_price",flush=True)
+                    continue
                 decision = decide(p,source)
                 if decision == 'ready' and args.mode == 'apply':
                     # Remove only a previous failure record, never a completed record.
