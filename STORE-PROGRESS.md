@@ -800,3 +800,14 @@
 - Per-product results: docs/dofesh-variant-audit/latest.json
 - تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
 - تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+
+
+### 2026-10-19T14:22:12.991066+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T14:22:12.991066+03:00
+- Mode: apply
+- Status: paused_error
+- Counts: {"synced": 9, "no_options": 38, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.

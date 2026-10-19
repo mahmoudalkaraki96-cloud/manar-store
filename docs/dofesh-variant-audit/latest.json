@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-19T14:13:36.281809+03:00",
+  "updated_at": "2026-10-19T14:22:12.991066+03:00",
   "run_mode": "apply",
-  "run_status": "completed_batch",
+  "run_status": "paused_error",
   "results": [
     {
       "source_id": 1298,
@@ -82,6 +82,350 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1244, \"source\": {\"title\": \"شمعة بوكيه ورد مغلفة مع ريحة ارتفاع ٨ سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
       "updated_at": 1792408299871
+    },
+    {
+      "source_id": 1293,
+      "mode": "apply",
+      "product_id": 245,
+      "status": "synced",
+      "detail": "{\"item_number\": 1245, \"name\": \"علبة بلاستيك شفاف وجهين كرتون مقاس (8*8*15)\", \"before_price\": 2500, \"before_variants\": [], \"source\": {\"title\": \"علبة بلاستيك شفاف وجهين كرتون مقاس (8*8*15)\", \"variants\": [{\"name\": \"10 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/245\", \"source_url\": \"https://dofesh.ps/?app=product.show.1293\"}",
+      "updated_at": 1792408513383
+    },
+    {
+      "source_id": 1292,
+      "mode": "apply",
+      "product_id": 246,
+      "status": "synced",
+      "detail": "{\"item_number\": 1246, \"name\": \"علبة كرتون مع غطاء شفاف قياس (15*12*3)\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون مع غطاء شفاف قياس (15*12*3)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/246\", \"source_url\": \"https://dofesh.ps/?app=product.show.1292\"}",
+      "updated_at": 1792408523502
+    },
+    {
+      "source_id": 1291,
+      "mode": "apply",
+      "product_id": 247,
+      "status": "synced",
+      "detail": "{\"item_number\": 1247, \"name\": \"علبة كرتون مع غطاء شفاف وقواطع مقاس (20*6)\", \"before_price\": 4000, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون مع غطاء شفاف وقواطع مقاس (20*6)\", \"variants\": [{\"name\": \"20 حبة\", \"price\": 4000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 8500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/247\", \"source_url\": \"https://dofesh.ps/?app=product.show.1291\"}",
+      "updated_at": 1792408533564
+    },
+    {
+      "source_id": 1290,
+      "mode": "apply",
+      "product_id": 248,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1248, \"source\": {\"title\": \"علبة كرتون غطاء شفاف لتغليف المروحة مقاس (22*6*3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792408543299
+    },
+    {
+      "source_id": 1289,
+      "mode": "apply",
+      "product_id": 249,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1249, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408553106
+    },
+    {
+      "source_id": 1288,
+      "mode": "apply",
+      "product_id": 250,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1250, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408562897
+    },
+    {
+      "source_id": 1287,
+      "mode": "apply",
+      "product_id": 251,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1251, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408573247
+    },
+    {
+      "source_id": 1286,
+      "mode": "apply",
+      "product_id": 252,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1252, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408583020
+    },
+    {
+      "source_id": 1285,
+      "mode": "apply",
+      "product_id": 253,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1253, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792408593089
+    },
+    {
+      "source_id": 1284,
+      "mode": "apply",
+      "product_id": 254,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1254, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408603031
+    },
+    {
+      "source_id": 1283,
+      "mode": "apply",
+      "product_id": 255,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1255, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408612956
+    },
+    {
+      "source_id": 1282,
+      "mode": "apply",
+      "product_id": 256,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1256, \"source\": {\"title\": \"شبر تراث عرض 2.5 سم (50يارد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792408623090
+    },
+    {
+      "source_id": 1281,
+      "mode": "apply",
+      "product_id": 257,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1257, \"source\": {\"title\": \"مصحف جلد مقاس 9*6\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}}",
+      "updated_at": 1792408633228
+    },
+    {
+      "source_id": 1279,
+      "mode": "apply",
+      "product_id": 135,
+      "status": "synced",
+      "detail": "{\"item_number\": 1135, \"name\": \"كرت وردة تيوليب مع ببيونة كرتون ثقيل مميز\", \"before_price\": 2000, \"before_variants\": [], \"source\": {\"title\": \"كرت وردة تيوليب مع ببيونة كرتون ثقيل مميز\", \"variants\": [{\"name\": \"احمر\", \"price\": 2000, \"active\": true}, {\"name\": \"ابيض مع سكني\", \"price\": 2000, \"active\": true}, {\"name\": \"بيج مذهب\", \"price\": 2000, \"active\": true}, {\"name\": \"زهري\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/135\", \"source_url\": \"https://dofesh.ps/?app=product.show.1279\"}",
+      "updated_at": 1792408643445
+    },
+    {
+      "source_id": 1278,
+      "mode": "apply",
+      "product_id": 258,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1258, \"source\": {\"title\": \"معطر جو فواح مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792408653021
+    },
+    {
+      "source_id": 1277,
+      "mode": "apply",
+      "product_id": 259,
+      "status": "synced",
+      "detail": "{\"item_number\": 1259, \"name\": \"مبخرة ريزن مع غلاف كرتون\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ريزن مع غلاف كرتون\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/259\", \"source_url\": \"https://dofesh.ps/?app=product.show.1277\"}",
+      "updated_at": 1792408663131
+    },
+    {
+      "source_id": 1276,
+      "mode": "apply",
+      "product_id": 260,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1260, \"source\": {\"title\": \"مبخرة كرستال صافي مميزة ارتفاع 13cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792408673137
+    },
+    {
+      "source_id": 1275,
+      "mode": "apply",
+      "product_id": 261,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1261, \"source\": {\"title\": \"سكرية سيراميك مميزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792408682886
+    },
+    {
+      "source_id": 1274,
+      "mode": "apply",
+      "product_id": 262,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1262, \"source\": {\"title\": \"سكرية سيراميك مميزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792408693317
+    },
+    {
+      "source_id": 1273,
+      "mode": "apply",
+      "product_id": 136,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1136, \"source\": {\"title\": \"فنجان سادى 12حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792408703022
+    },
+    {
+      "source_id": 1272,
+      "mode": "apply",
+      "product_id": 263,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1263, \"source\": {\"title\": \"مبخرة كونكريت بيضاوي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792408713067
+    },
+    {
+      "source_id": 1271,
+      "mode": "apply",
+      "product_id": 264,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1264, \"source\": {\"title\": \"صينية لتلبيس الذهب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 10000}}",
+      "updated_at": 1792408723208
+    },
+    {
+      "source_id": 1270,
+      "mode": "apply",
+      "product_id": 265,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1265, \"source\": {\"title\": \"صينية خشب مع ايد اكريلك ذهبية مقاس 40*26\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792408733196
+    },
+    {
+      "source_id": 1269,
+      "mode": "apply",
+      "product_id": 266,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1266, \"source\": {\"title\": \"صينية خشب مع ايد اكريلك ذهبية مقاس 40*27\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792408743193
+    },
+    {
+      "source_id": 1268,
+      "mode": "apply",
+      "product_id": 267,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1267, \"source\": {\"title\": \"صينية خشب مع ايد اكريلك مقاس 40*30\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792408753132
+    },
+    {
+      "source_id": 1267,
+      "mode": "apply",
+      "product_id": 268,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1268, \"source\": {\"title\": \"كرت كرتون تخرج مقاس 15*1.5 عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408763140
+    },
+    {
+      "source_id": 1266,
+      "mode": "apply",
+      "product_id": 269,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1269, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408772897
+    },
+    {
+      "source_id": 1265,
+      "mode": "apply",
+      "product_id": 270,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1270, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408783230
+    },
+    {
+      "source_id": 1264,
+      "mode": "apply",
+      "product_id": 271,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1271, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408793125
+    },
+    {
+      "source_id": 1263,
+      "mode": "apply",
+      "product_id": 272,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1272, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408802903
+    },
+    {
+      "source_id": 1262,
+      "mode": "apply",
+      "product_id": 273,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1273, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408813133
+    },
+    {
+      "source_id": 1261,
+      "mode": "apply",
+      "product_id": 274,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1274, \"source\": {\"title\": \"كرت حناء بدون الحناء والزجاج عدد 25 كرت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792408823247
+    },
+    {
+      "source_id": 1260,
+      "mode": "apply",
+      "product_id": 137,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1137, \"source\": {\"title\": \"ستاند اكريلك اصواني الذهب لون فضي ارتفاع 28 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792408833017
+    },
+    {
+      "source_id": 1259,
+      "mode": "apply",
+      "product_id": 138,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1138, \"source\": {\"title\": \"ستاند اكريلك امي الغالية ارتفاع 24 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792408843225
+    },
+    {
+      "source_id": 1258,
+      "mode": "apply",
+      "product_id": 139,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1139, \"source\": {\"title\": \"ستاند اكريلك حماتي الغالية ارتفاع 24 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792408853193
+    },
+    {
+      "source_id": 1257,
+      "mode": "apply",
+      "product_id": 140,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1140, \"source\": {\"title\": \"كلفة ليرات 10 يارد خفيفة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792408863235
+    },
+    {
+      "source_id": 1256,
+      "mode": "apply",
+      "product_id": 141,
+      "status": "synced",
+      "detail": "{\"item_number\": 1141, \"name\": \"دائرة خشب ملبسة قماش خيش مع مغناطيس مقاس٧سم\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"دائرة خشب ملبسة قماش خيش مع مغناطيس مقاس7سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"50 حبة (بكيت)\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/141\", \"source_url\": \"https://dofesh.ps/?app=product.show.1256\"}",
+      "updated_at": 1792408873320
+    },
+    {
+      "source_id": 1255,
+      "mode": "apply",
+      "product_id": 275,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1275, \"source\": {\"title\": \"قماش لايكرا لون ابيض عرض 1.5 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792408882905
+    },
+    {
+      "source_id": 1254,
+      "mode": "apply",
+      "product_id": 142,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1142, \"source\": {\"title\": \"سكرية اكريلك 12 حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792408893123
+    },
+    {
+      "source_id": 1253,
+      "mode": "apply",
+      "product_id": 276,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1276, \"source\": {\"title\": \"توزيعة دلة مخمل احمر 12 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2400}}",
+      "updated_at": 1792408903303
+    },
+    {
+      "source_id": 1252,
+      "mode": "apply",
+      "product_id": 277,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1277, \"source\": {\"title\": \"شمع الكتروني بطارية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2400}}",
+      "updated_at": 1792408913020
+    },
+    {
+      "source_id": 1251,
+      "mode": "apply",
+      "product_id": 143,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1143, \"source\": {\"title\": \"شمع اصابع ابيض جودة ممتازة مقاس 25 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}}",
+      "updated_at": 1792408923281
+    },
+    {
+      "source_id": 1250,
+      "mode": "apply",
+      "product_id": 278,
+      "status": "error",
+      "detail": "{\"reason\": \"RuntimeError\"}",
+      "updated_at": 1792408932452
     }
   ]
 }
