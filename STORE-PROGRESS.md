@@ -2730,3 +2730,64 @@
 - الجعبري#3935 ↔ صنف#2903: no_options؛ شنطة اكريلك يد لولو & كرستال ( 40*18*32 ). https://jabaristore.com/?app=product.show.3935
 - الجعبري#3934 ↔ صنف#2409: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3934
 - الجعبري#3933 ↔ صنف#2410: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3933
+
+
+### 2026-10-19T21:57:21.405501+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:57:21.405501+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 341, "synced": 110, "unsupported_source_price": 55}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3932 ↔ صنف#2411: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3932
+- الجعبري#3931 ↔ صنف#2412: no_options؛ خيط سمك شفاف 0.70mm. https://jabaristore.com/?app=product.show.3931
+- الجعبري#3930 ↔ صنف#2904: synced؛ 0.4mm=5.5₪؛ 0.5mm=5.5₪؛ 0.6mm=5.5₪؛ 0.8mm=5.5₪. https://jabaristore.com/?app=product.show.3930
+- الجعبري#3929 ↔ صنف#2905: synced؛ 0.4mm=5.5₪؛ 0.5mm=5.5₪؛ 0.6mm=5.5₪؛ 0.8mm=5.5₪. https://jabaristore.com/?app=product.show.3929
+- الجعبري#3928 ↔ صنف#2413: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3928
+- الجعبري#3927 ↔ صنف#2414: no_options؛ خرز كرستال زجاج سداسي ( 8 ملم ). https://jabaristore.com/?app=product.show.3927
+- الجعبري#3926 ↔ صنف#2415: no_options؛ خرز كرستال زجاج سداسي ( 8 ملم ). https://jabaristore.com/?app=product.show.3926
+- الجعبري#3925 ↔ صنف#2416: no_options؛ خرز كرستال زجاج سداسي ( 2 ملم ). https://jabaristore.com/?app=product.show.3925
+- الجعبري#3924 ↔ صنف#2906: no_options؛ خرز كرستال زجاج هرمي ( 4 ملم ). https://jabaristore.com/?app=product.show.3924
+- الجعبري#3923 ↔ صنف#2907: no_options؛ خرز كرستال زجاج هرمي ( 4 ملم ). https://jabaristore.com/?app=product.show.3923
+- الجعبري#3922 ↔ صنف#2908: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3922
+- الجعبري#3921 ↔ صنف#2909: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3921
+- الجعبري#3920 ↔ صنف#2910: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3920
+- الجعبري#3919 ↔ صنف#2911: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3919
+- الجعبري#3918 ↔ صنف#2912: no_options؛ خرز كرستال زجاج سداسي ( 4 ملم ). https://jabaristore.com/?app=product.show.3918
+- الجعبري#3917 ↔ صنف#2913: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3917
+- الجعبري#3916 ↔ صنف#2914: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3916
+- الجعبري#3915 ↔ صنف#2915: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3915
+- الجعبري#3914 ↔ صنف#2916: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3914
+- الجعبري#3913 ↔ صنف#2917: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3913
+- الجعبري#3912 ↔ صنف#2918: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3912
+- الجعبري#3911 ↔ صنف#2919: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3911
+- الجعبري#3910 ↔ صنف#2920: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3910
+- الجعبري#3909 ↔ صنف#2921: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3909
+- الجعبري#3908 ↔ صنف#2922: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3908
+- الجعبري#3907 ↔ صنف#2923: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3907
+- الجعبري#3906 ↔ صنف#2924: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3906
+- الجعبري#3905 ↔ صنف#2925: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3905
+- الجعبري#3904 ↔ صنف#2926: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3904
+- الجعبري#3903 ↔ صنف#2927: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3903
+- الجعبري#3902 ↔ صنف#2928: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3902
+- الجعبري#3901 ↔ صنف#2929: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3901
+- الجعبري#3900 ↔ صنف#2930: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3900
+- الجعبري#3899 ↔ صنف#2931: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3899
+- الجعبري#3898 ↔ صنف#2932: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3898
+- الجعبري#3897 ↔ صنف#2933: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3897
+- الجعبري#3896 ↔ صنف#2934: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3896
+- الجعبري#3895 ↔ صنف#2935: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3895
+- الجعبري#3894 ↔ صنف#2936: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3894
+- الجعبري#3893 ↔ صنف#2937: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3893
+- الجعبري#3892 ↔ صنف#2938: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3892
+- الجعبري#3891 ↔ صنف#2939: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3891
+- الجعبري#3890 ↔ صنف#2940: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3890
+- الجعبري#3889 ↔ صنف#2941: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3889
+- الجعبري#3888 ↔ صنف#2942: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3888
+- الجعبري#3887 ↔ صنف#2943: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3887
+- الجعبري#3886 ↔ صنف#2944: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3886
+- الجعبري#3885 ↔ صنف#2945: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3885
+- الجعبري#3884 ↔ صنف#2946: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3884
+- الجعبري#3883 ↔ صنف#2947: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3883

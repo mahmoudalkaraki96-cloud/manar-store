@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:49:03.993823+03:00",
+  "updated_at": "2026-10-19T21:57:21.405501+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -3643,6 +3643,406 @@
       "status": "unsupported_source_price",
       "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2410}",
       "updated_at": 1792435743082
+    },
+    {
+      "source_id": 3932,
+      "mode": "apply",
+      "product_id": 1411,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2411}",
+      "updated_at": 1792435750659
+    },
+    {
+      "source_id": 3931,
+      "mode": "apply",
+      "product_id": 1412,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2412, \"source\": {\"title\": \"خيط سمك شفاف 0.70mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435760481
+    },
+    {
+      "source_id": 3930,
+      "mode": "apply",
+      "product_id": 1904,
+      "status": "synced",
+      "detail": "{\"item_number\": 2904, \"name\": \"سلك نحاسي فضي فاتح ( اصلي )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"سلك نحاسي فضي فاتح ( اصلي )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"سلك نحاسي فضي فاتح ( اصلي )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.5mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.6mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.8mm\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1904\", \"source_url\": \"https://jabaristore.com/?app=product.show.3930\"}",
+      "updated_at": 1792435770750
+    },
+    {
+      "source_id": 3929,
+      "mode": "apply",
+      "product_id": 1905,
+      "status": "synced",
+      "detail": "{\"item_number\": 2905, \"name\": \"سلك نحاسي ذهبي فاتح ( اصلي )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"سلك نحاسي ذهبي فاتح ( اصلي )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"سلك نحاسي ذهبي فاتح ( اصلي )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.5mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.6mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.8mm\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1905\", \"source_url\": \"https://jabaristore.com/?app=product.show.3929\"}",
+      "updated_at": 1792435780893
+    },
+    {
+      "source_id": 3928,
+      "mode": "apply",
+      "product_id": 1413,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2413, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435790636
+    },
+    {
+      "source_id": 3927,
+      "mode": "apply",
+      "product_id": 1414,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2414, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435800633
+    },
+    {
+      "source_id": 3926,
+      "mode": "apply",
+      "product_id": 1415,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2415, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435810494
+    },
+    {
+      "source_id": 3925,
+      "mode": "apply",
+      "product_id": 1416,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2416, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 2 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435820479
+    },
+    {
+      "source_id": 3924,
+      "mode": "apply",
+      "product_id": 1906,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2906, \"source\": {\"title\": \"خرز كرستال زجاج هرمي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435830505
+    },
+    {
+      "source_id": 3923,
+      "mode": "apply",
+      "product_id": 1907,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2907, \"source\": {\"title\": \"خرز كرستال زجاج هرمي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435840491
+    },
+    {
+      "source_id": 3922,
+      "mode": "apply",
+      "product_id": 1908,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2908, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435850513
+    },
+    {
+      "source_id": 3921,
+      "mode": "apply",
+      "product_id": 1909,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2909, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435860482
+    },
+    {
+      "source_id": 3920,
+      "mode": "apply",
+      "product_id": 1910,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2910, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435870484
+    },
+    {
+      "source_id": 3919,
+      "mode": "apply",
+      "product_id": 1911,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2911, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435880481
+    },
+    {
+      "source_id": 3918,
+      "mode": "apply",
+      "product_id": 1912,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2912, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 4 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435890500
+    },
+    {
+      "source_id": 3917,
+      "mode": "apply",
+      "product_id": 1913,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2913, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435900728
+    },
+    {
+      "source_id": 3916,
+      "mode": "apply",
+      "product_id": 1914,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2914, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435910690
+    },
+    {
+      "source_id": 3915,
+      "mode": "apply",
+      "product_id": 1915,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2915, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435920706
+    },
+    {
+      "source_id": 3914,
+      "mode": "apply",
+      "product_id": 1916,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2916, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435930519
+    },
+    {
+      "source_id": 3913,
+      "mode": "apply",
+      "product_id": 1917,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2917, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435940758
+    },
+    {
+      "source_id": 3912,
+      "mode": "apply",
+      "product_id": 1918,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2918, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435951016
+    },
+    {
+      "source_id": 3911,
+      "mode": "apply",
+      "product_id": 1919,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2919, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435960720
+    },
+    {
+      "source_id": 3910,
+      "mode": "apply",
+      "product_id": 1920,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2920, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435970480
+    },
+    {
+      "source_id": 3909,
+      "mode": "apply",
+      "product_id": 1921,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2921, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435980513
+    },
+    {
+      "source_id": 3908,
+      "mode": "apply",
+      "product_id": 1922,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2922, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435990956
+    },
+    {
+      "source_id": 3907,
+      "mode": "apply",
+      "product_id": 1923,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2923, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436000508
+    },
+    {
+      "source_id": 3906,
+      "mode": "apply",
+      "product_id": 1924,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2924, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436010743
+    },
+    {
+      "source_id": 3905,
+      "mode": "apply",
+      "product_id": 1925,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2925, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436020483
+    },
+    {
+      "source_id": 3904,
+      "mode": "apply",
+      "product_id": 1926,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2926, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436030484
+    },
+    {
+      "source_id": 3903,
+      "mode": "apply",
+      "product_id": 1927,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2927, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436040514
+    },
+    {
+      "source_id": 3902,
+      "mode": "apply",
+      "product_id": 1928,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2928, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436050514
+    },
+    {
+      "source_id": 3901,
+      "mode": "apply",
+      "product_id": 1929,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2929, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436060734
+    },
+    {
+      "source_id": 3900,
+      "mode": "apply",
+      "product_id": 1930,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2930, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436070516
+    },
+    {
+      "source_id": 3899,
+      "mode": "apply",
+      "product_id": 1931,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2931, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436080481
+    },
+    {
+      "source_id": 3898,
+      "mode": "apply",
+      "product_id": 1932,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2932, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436090526
+    },
+    {
+      "source_id": 3897,
+      "mode": "apply",
+      "product_id": 1933,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2933, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436100505
+    },
+    {
+      "source_id": 3896,
+      "mode": "apply",
+      "product_id": 1934,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2934, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436110486
+    },
+    {
+      "source_id": 3895,
+      "mode": "apply",
+      "product_id": 1935,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2935, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436120482
+    },
+    {
+      "source_id": 3894,
+      "mode": "apply",
+      "product_id": 1936,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2936, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436130500
+    },
+    {
+      "source_id": 3893,
+      "mode": "apply",
+      "product_id": 1937,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2937, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436140509
+    },
+    {
+      "source_id": 3892,
+      "mode": "apply",
+      "product_id": 1938,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2938, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436150625
+    },
+    {
+      "source_id": 3891,
+      "mode": "apply",
+      "product_id": 1939,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2939, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436160651
+    },
+    {
+      "source_id": 3890,
+      "mode": "apply",
+      "product_id": 1940,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2940, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436170744
+    },
+    {
+      "source_id": 3889,
+      "mode": "apply",
+      "product_id": 1941,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2941, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436180726
+    },
+    {
+      "source_id": 3888,
+      "mode": "apply",
+      "product_id": 1942,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2942, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436190740
+    },
+    {
+      "source_id": 3887,
+      "mode": "apply",
+      "product_id": 1943,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2943, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436200641
+    },
+    {
+      "source_id": 3886,
+      "mode": "apply",
+      "product_id": 1944,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2944, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436210505
+    },
+    {
+      "source_id": 3885,
+      "mode": "apply",
+      "product_id": 1945,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2945, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436220526
+    },
+    {
+      "source_id": 3884,
+      "mode": "apply",
+      "product_id": 1946,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2946, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436230486
+    },
+    {
+      "source_id": 3883,
+      "mode": "apply",
+      "product_id": 1947,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2947, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436240502
     },
     {
       "source_id": 3780,
