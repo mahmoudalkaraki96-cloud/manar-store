@@ -12,12 +12,14 @@ export default function ProductCard({p,wholesale=false,watermark="",settings,fav
   const store=settings||cachedStoreSettings(),configured=parseWatermark(store.watermarkUrl||""),watermarkImage=(watermark?parseWatermark(watermark).base:configured.base)||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
   const watermarkEnabled=store.watermarkEnabled??configured.enabled,watermarkX=store.watermarkX??configured.x,watermarkY=store.watermarkY??configured.y,watermarkSize=store.watermarkSize??configured.size;
   const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${watermarkSize}%`,left:`${watermarkX}%`,top:`${watermarkY}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};
-  const [variantIndex,setVariantIndex]=useState(()=>{const index=p.variants?.findIndex(item=>item.stock>0)??-1;return index>=0?index:0;});
-  const variant=p.variants?.[variantIndex];
+  const [variantIndex,setVariantIndex]=useState<number|null>(null);
+  const variant=variantIndex===null?undefined:p.variants?.[variantIndex];
   const price=wholesale?(variant?.wholesale??p.wholesale??variant?.price??p.price):(variant?.price??p.price);
   const variantPrices=(p.variants||[]).filter(item=>item.stock>0).map(item=>wholesale?(item.wholesale??p.wholesale??item.price??p.price):(item.price??p.price)),minPrice=variantPrices.length?Math.min(...variantPrices):price,maxPrice=variantPrices.length?Math.max(...variantPrices):price,priceLabel=variant?`${price} ₪`:minPrice===maxPrice?`${minPrice} ₪`:`${minPrice} ₪ - ${maxPrice} ₪`;
   const fallback=wholesale&&(variant?variant.wholesale==null:p.wholesale==null),image=variant?.image||p.image,cardImage=productThumbnail(image,480);
-  const available=variant?variant.stock>0:p.inStock;
+  const hasVariants=Boolean(p.variants?.length),hasAvailableVariant=(p.variants||[]).some(item=>item.stock>0);
+  const available=hasVariants?Boolean(variant&&variant.stock>0):p.inStock;
+  const addLabel=hasVariants&&!variant&&hasAvailableVariant?"اختر الخيار":available?"أضف إلى السلة":"نفدت الكمية";
   return <article className="product softProduct">
     {onFavorite&&<button aria-label="إضافة للمفضلة" className={favorite?"favBtn active":"favBtn"} onClick={onFavorite}>♥</button>}
     {!p.inStock&&<span className="soldOutBadge">نفدت الكمية</span>}
@@ -25,7 +27,7 @@ export default function ProductCard({p,wholesale=false,watermark="",settings,fav
     <div className="productInfo"><small>{p.subcategory||p.category}</small><Link href={`/product/${p.id}`}><h3>{p.name}</h3></Link>
       {p.variants?.length?<div className="cardVariantChoices">{p.variants.slice(0,6).map((v,index)=>{const kind=v.displayType||(p.variantDisplay==="color"?"color":"text");return <button type="button" disabled={v.stock<=0} aria-label={v.name} aria-pressed={variantIndex===index} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} key={v.id??index} className={`${kind==="color"?"variantColorChoice":"variantTextChoice"} ${variantIndex===index?"active":""}`} style={kind==="color"?{background:v.color||"#ddd"}:undefined} onClick={()=>setVariantIndex(index)}>{kind==="color"?<span>{v.name}</span>:v.name}</button>})}{p.variants.length>6&&<small>+{p.variants.length-6}</small>}</div>:null}
       <div className={"price "+(fallback?"retailFallback":"")}><b>{priceLabel}</b>{!wholesale&&p.oldPrice&&<del>{p.oldPrice} ₪</del>}</div>
-      {onAdd&&<button className="cardAddButton" disabled={!available} aria-label={available?`إضافة ${p.name} للسلة`:`${p.name} غير متوفر`} onClick={()=>available&&onAdd(variant)}>{available?"أضف إلى السلة":"نفدت الكمية"}</button>}
+      {onAdd&&<button className="cardAddButton" disabled={!available} aria-label={hasVariants&&!variant&&hasAvailableVariant?`اختر خيارًا لـ ${p.name}`:available?`إضافة ${p.name} للسلة`:`${p.name} غير متوفر`} onClick={()=>available&&onAdd(variant)}>{addLabel}</button>}
     </div>
   </article>;
 }
