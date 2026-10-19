@@ -2287,3 +2287,62 @@
 - الجعبري#4262 ↔ صنف#2667: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4262
 - الجعبري#4261 ↔ صنف#2668: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4261
 - الجعبري#4260 ↔ صنف#2669: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4260
+### 2026-10-19T21:10:26.818715+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T21:10:26.818715+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 307, "no_options": 659, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#289 ↔ صنف#1098: no_options؛ تول مدور مقصوص (24سم) نيلي. https://dofesh.ps/?app=product.show.289
+- دوفش#288 ↔ صنف#1099: no_options؛ تول مدور مقصوص (24سم) زيتي. https://dofesh.ps/?app=product.show.288
+- دوفش#287 ↔ صنف#1100: no_options؛ تول مدور مصقوق (24 سم)ازرق فاتح. https://dofesh.ps/?app=product.show.287
+- دوفش#286 ↔ صنف#1101: no_options؛ تول مدور مقصوص (24سم) بني فاتح. https://dofesh.ps/?app=product.show.286
+- دوفش#285 ↔ صنف#1087: no_options؛ تول كرستال فوشي (عرض متر ونص). https://dofesh.ps/?app=product.show.285
+- دوفش#284 ↔ صنف#1088: no_options؛ تول كرستال نيلي (عرض متر ونص ). https://dofesh.ps/?app=product.show.284
+- دوفش#283 ↔ صنف#1089: no_options؛ تول كرستال سكني (عرض متر ونص ). https://dofesh.ps/?app=product.show.283
+- دوفش#282 ↔ صنف#1090: no_options؛ تول كرستال ابيض (عرض متر ونص). https://dofesh.ps/?app=product.show.282
+- دوفش#281 ↔ صنف#1091: no_options؛ تول كرستال بيج فاتح (عرض متر ونص). https://dofesh.ps/?app=product.show.281
+- دوفش#280 ↔ صنف#1092: no_options؛ تول كرستال ازرق سماوي(عرض متر ونص). https://dofesh.ps/?app=product.show.280
+- دوفش#279 ↔ صنف#1093: no_options؛ تول كرستال زهري بارد (عرض متر ونص). https://dofesh.ps/?app=product.show.279
+- دوفش#278 ↔ صنف#2062: synced؛ بالحبة=0.7₪؛ 10 حبة=5₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.278
+- دوفش#277 ↔ صنف#2063: synced؛ بالحبة=0.7₪؛ 10 حبة=5₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.277
+- دوفش#275 ↔ صنف#2064: no_options؛ وردة قماش لون بيج مع 3 حبة خرز لولو 5 سم. https://dofesh.ps/?app=product.show.275
+- دوفش#274 ↔ صنف#2065: no_options؛ ورد ليمونيوم خمري. https://dofesh.ps/?app=product.show.274
+- دوفش#273 ↔ صنف#2066: no_options؛ ورد ذيل الفار حبة كبيرة لون بني 50 حبة بالكيس. https://dofesh.ps/?app=product.show.273
+- دوفش#272 ↔ صنف#2067: no_options؛ ورد ذيل الفار بيج 50 حبة بالكيس. https://dofesh.ps/?app=product.show.272
+- دوفش#271 ↔ صنف#2068: no_options؛ ورد ليمونيوم مجفف بيج. https://dofesh.ps/?app=product.show.271
+- دوفش#270 ↔ صنف#2069: no_options؛ ورد جفسو فوشي. https://dofesh.ps/?app=product.show.270
+- دوفش#268 ↔ صنف#2070: no_options؛ ريش عريض (ذيل القط). https://dofesh.ps/?app=product.show.268
+- دوفش#267 ↔ صنف#2071: no_options؛ ورد جفسو اصفر. https://dofesh.ps/?app=product.show.267
+- دوفش#266 ↔ صنف#2072: no_options؛ ورد جفسو نهدي. https://dofesh.ps/?app=product.show.266
+- دوفش#265 ↔ صنف#2073: no_options؛ رد جفسو ازرق غامق. https://dofesh.ps/?app=product.show.265
+- دوفش#264 ↔ صنف#2074: no_options؛ ورد جفسو ازرق فاتح. https://dofesh.ps/?app=product.show.264
+- دوفش#263 ↔ صنف#2075: no_options؛ ورد جفسو زهر بارد. https://dofesh.ps/?app=product.show.263
+- دوفش#262 ↔ صنف#2076: no_options؛ رد جفسو احمر. https://dofesh.ps/?app=product.show.262
+- دوفش#261 ↔ صنف#2077: no_options؛ ورد جفسو بيج. https://dofesh.ps/?app=product.show.261
+- دوفش#260 ↔ صنف#2078: no_options؛ مبخرة فخار. https://dofesh.ps/?app=product.show.260
+- دوفش#259 ↔ صنف#2079: no_options؛ مبخرة فخار. https://dofesh.ps/?app=product.show.259
+- دوفش#258 ↔ صنف#2080: synced؛ 10 مل=1₪؛ 5 مل=1₪؛ 3 مل=1₪. https://dofesh.ps/?app=product.show.258
+- دوفش#256 ↔ صنف#2081: no_options؛ صينية اكريلك شفاف ثقيلة(40*30سم). https://dofesh.ps/?app=product.show.256
+- دوفش#255 ↔ صنف#2082: no_options؛ مبخرة نحاس(7سم ) راس تاج. https://dofesh.ps/?app=product.show.255
+- دوفش#254 ↔ صنف#2083: no_options؛ ورد فلل بيج 3سم. https://dofesh.ps/?app=product.show.254
+- دوفش#253 ↔ صنف#2084: no_options؛ ورد فلل 3سم ابيض. https://dofesh.ps/?app=product.show.253
+- دوفش#252 ↔ صنف#2085: no_options؛ ورد فلل 3سم زهري. https://dofesh.ps/?app=product.show.252
+- دوفش#251 ↔ صنف#2086: no_options؛ ورد صغير فلل للتزينن 3سم ازرق. https://dofesh.ps/?app=product.show.251
+- دوفش#250 ↔ صنف#2087: synced؛ بني فاتح=10₪؛ بني محروق=10₪. https://dofesh.ps/?app=product.show.250
+- دوفش#248 ↔ صنف#1226: no_options؛ كوتة بيبي ازرق حجم (14.5*8.5سم). https://dofesh.ps/?app=product.show.248
+- دوفش#247 ↔ صنف#1222: no_options؛ كوتة بيبي زهري حجم (14*8.5سم). https://dofesh.ps/?app=product.show.247
+- دوفش#246 ↔ صنف#2088: synced؛ 12 حبة=24₪. https://dofesh.ps/?app=product.show.246
+- دوفش#245 ↔ صنف#2089: synced؛ 9*5.5=3₪. https://dofesh.ps/?app=product.show.245
+- دوفش#244 ↔ صنف#1189: no_options؛ عسل طبيعي 100% اصلي. https://dofesh.ps/?app=product.show.244
+- دوفش#242 ↔ صنف#2090: no_options؛ رواز اكريلة ذهبي (3.5سم). https://dofesh.ps/?app=product.show.242
+- دوفش#241 ↔ صنف#2091: no_options؛ برواز اكريلك (4سم) تلزيق. https://dofesh.ps/?app=product.show.241
+- دوفش#240 ↔ صنف#2092: no_options؛ مبخرة نحاس (عرض 7 سم ارتفاع 8سم)ذهبي. https://dofesh.ps/?app=product.show.240
+- دوفش#239 ↔ صنف#2093: no_options؛ مبخرة نحاس ذهبي مع طربوش (عرض 7سم ارتفاع8سم). https://dofesh.ps/?app=product.show.239
+- دوفش#238 ↔ صنف#1190: no_options؛ فراش حديد (4سم) ذهبي. https://dofesh.ps/?app=product.show.238
+- دوفش#237 ↔ صنف#1191: no_options؛ فراش حديد اكسسوار (عرض 4 سم) ذهبي / 50 حبة بالكيس. https://dofesh.ps/?app=product.show.237
+- دوفش#236 ↔ صنف#2094: no_options؛ سلة اعراس ابيض. https://dofesh.ps/?app=product.show.236
+- دوفش#235 ↔ صنف#2095: no_options؛ س حنا تراث بدوي احمرمع ابيض. https://dofesh.ps/?app=product.show.235

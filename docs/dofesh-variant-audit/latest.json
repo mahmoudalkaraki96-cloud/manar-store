@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:02:09.537203+03:00",
+  "updated_at": "2026-10-19T21:10:26.818715+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -7635,6 +7635,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1097, \"source\": {\"title\": \"تول مدور مقصوص (24سم) فوشي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
       "updated_at": 1792432928614
+    },
+    {
+      "source_id": 289,
+      "mode": "apply",
+      "product_id": 98,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1098, \"source\": {\"title\": \"تول مدور مقصوص (24سم) نيلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432936036
+    },
+    {
+      "source_id": 288,
+      "mode": "apply",
+      "product_id": 99,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1099, \"source\": {\"title\": \"تول مدور مقصوص (24سم) زيتي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432945802
+    },
+    {
+      "source_id": 287,
+      "mode": "apply",
+      "product_id": 100,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1100, \"source\": {\"title\": \"تول مدور مصقوق (24 سم)ازرق فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792432956013
+    },
+    {
+      "source_id": 286,
+      "mode": "apply",
+      "product_id": 101,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1101, \"source\": {\"title\": \"تول مدور مقصوص (24سم) بني فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432966070
+    },
+    {
+      "source_id": 285,
+      "mode": "apply",
+      "product_id": 87,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1087, \"source\": {\"title\": \"تول كرستال فوشي (عرض متر ونص)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432975811
+    },
+    {
+      "source_id": 284,
+      "mode": "apply",
+      "product_id": 88,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1088, \"source\": {\"title\": \"تول كرستال نيلي (عرض متر ونص )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432985939
+    },
+    {
+      "source_id": 283,
+      "mode": "apply",
+      "product_id": 89,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1089, \"source\": {\"title\": \"تول كرستال سكني (عرض متر ونص )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432996143
+    },
+    {
+      "source_id": 282,
+      "mode": "apply",
+      "product_id": 90,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1090, \"source\": {\"title\": \"تول كرستال ابيض (عرض متر ونص)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433005908
+    },
+    {
+      "source_id": 281,
+      "mode": "apply",
+      "product_id": 91,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1091, \"source\": {\"title\": \"تول كرستال بيج فاتح (عرض متر ونص)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433015807
+    },
+    {
+      "source_id": 280,
+      "mode": "apply",
+      "product_id": 92,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1092, \"source\": {\"title\": \"تول كرستال ازرق سماوي(عرض متر ونص)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433025910
+    },
+    {
+      "source_id": 279,
+      "mode": "apply",
+      "product_id": 93,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1093, \"source\": {\"title\": \"تول كرستال زهري بارد (عرض متر ونص)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433035947
+    },
+    {
+      "source_id": 278,
+      "mode": "apply",
+      "product_id": 1062,
+      "status": "synced",
+      "detail": "{\"item_number\": 2062, \"name\": \"اكسسوار بطم فضي\", \"before_price\": 70, \"before_variants\": [], \"source\": {\"title\": \"اكسسوار بطم فضي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 70, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1062\", \"source_url\": \"https://dofesh.ps/?app=product.show.278\"}",
+      "updated_at": 1792433046354
+    },
+    {
+      "source_id": 277,
+      "mode": "apply",
+      "product_id": 1063,
+      "status": "synced",
+      "detail": "{\"item_number\": 2063, \"name\": \"اكسسوار بطم ذهبي\", \"before_price\": 70, \"before_variants\": [], \"source\": {\"title\": \"اكسسوار بطم ذهبي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 70, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1063\", \"source_url\": \"https://dofesh.ps/?app=product.show.277\"}",
+      "updated_at": 1792433056199
+    },
+    {
+      "source_id": 275,
+      "mode": "apply",
+      "product_id": 1064,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2064, \"source\": {\"title\": \"وردة قماش لون بيج مع 3 حبة خرز لولو 5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792433065842
+    },
+    {
+      "source_id": 274,
+      "mode": "apply",
+      "product_id": 1065,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2065, \"source\": {\"title\": \"ورد ليمونيوم خمري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433075900
+    },
+    {
+      "source_id": 273,
+      "mode": "apply",
+      "product_id": 1066,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2066, \"source\": {\"title\": \"ورد ذيل الفار حبة كبيرة لون بني 50 حبة بالكيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433085802
+    },
+    {
+      "source_id": 272,
+      "mode": "apply",
+      "product_id": 1067,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2067, \"source\": {\"title\": \"ورد ذيل الفار بيج 50 حبة بالكيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433095798
+    },
+    {
+      "source_id": 271,
+      "mode": "apply",
+      "product_id": 1068,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2068, \"source\": {\"title\": \"ورد ليمونيوم مجفف بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433106047
+    },
+    {
+      "source_id": 270,
+      "mode": "apply",
+      "product_id": 1069,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2069, \"source\": {\"title\": \"ورد جفسو فوشي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433116141
+    },
+    {
+      "source_id": 268,
+      "mode": "apply",
+      "product_id": 1070,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2070, \"source\": {\"title\": \"ريش عريض (ذيل القط)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433125838
+    },
+    {
+      "source_id": 267,
+      "mode": "apply",
+      "product_id": 1071,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2071, \"source\": {\"title\": \"ورد جفسو اصفر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433136153
+    },
+    {
+      "source_id": 266,
+      "mode": "apply",
+      "product_id": 1072,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2072, \"source\": {\"title\": \"ورد جفسو نهدي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433146146
+    },
+    {
+      "source_id": 265,
+      "mode": "apply",
+      "product_id": 1073,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2073, \"source\": {\"title\": \"رد جفسو ازرق غامق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433156066
+    },
+    {
+      "source_id": 264,
+      "mode": "apply",
+      "product_id": 1074,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2074, \"source\": {\"title\": \"ورد جفسو ازرق فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433166186
+    },
+    {
+      "source_id": 263,
+      "mode": "apply",
+      "product_id": 1075,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2075, \"source\": {\"title\": \"ورد جفسو زهر بارد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433175807
+    },
+    {
+      "source_id": 262,
+      "mode": "apply",
+      "product_id": 1076,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2076, \"source\": {\"title\": \"رد جفسو احمر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433186039
+    },
+    {
+      "source_id": 261,
+      "mode": "apply",
+      "product_id": 1077,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2077, \"source\": {\"title\": \"ورد جفسو بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433195799
+    },
+    {
+      "source_id": 260,
+      "mode": "apply",
+      "product_id": 1078,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2078, \"source\": {\"title\": \"مبخرة فخار\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792433205800
+    },
+    {
+      "source_id": 259,
+      "mode": "apply",
+      "product_id": 1079,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2079, \"source\": {\"title\": \"مبخرة فخار\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792433215805
+    },
+    {
+      "source_id": 258,
+      "mode": "apply",
+      "product_id": 1080,
+      "status": "synced",
+      "detail": "{\"item_number\": 2080, \"name\": \"تست عطر (١٠مل)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"تست عطر (10مل)\", \"variants\": [{\"name\": \"10 مل\", \"price\": 100, \"active\": true}, {\"name\": \"5 مل\", \"price\": 100, \"active\": false}, {\"name\": \"3 مل\", \"price\": 100, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1080\", \"source_url\": \"https://dofesh.ps/?app=product.show.258\"}",
+      "updated_at": 1792433226279
+    },
+    {
+      "source_id": 256,
+      "mode": "apply",
+      "product_id": 1081,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2081, \"source\": {\"title\": \"صينية اكريلك شفاف ثقيلة(40*30سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4500}}",
+      "updated_at": 1792433236023
+    },
+    {
+      "source_id": 255,
+      "mode": "apply",
+      "product_id": 1082,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2082, \"source\": {\"title\": \"مبخرة نحاس(7سم ) راس تاج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433245805
+    },
+    {
+      "source_id": 254,
+      "mode": "apply",
+      "product_id": 1083,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2083, \"source\": {\"title\": \"ورد فلل بيج 3سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433255797
+    },
+    {
+      "source_id": 253,
+      "mode": "apply",
+      "product_id": 1084,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2084, \"source\": {\"title\": \"ورد فلل 3سم ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433266036
+    },
+    {
+      "source_id": 252,
+      "mode": "apply",
+      "product_id": 1085,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2085, \"source\": {\"title\": \"ورد فلل 3سم زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433275797
+    },
+    {
+      "source_id": 251,
+      "mode": "apply",
+      "product_id": 1086,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2086, \"source\": {\"title\": \"ورد صغير فلل للتزينن 3سم ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433285810
+    },
+    {
+      "source_id": 250,
+      "mode": "apply",
+      "product_id": 1087,
+      "status": "synced",
+      "detail": "{\"item_number\": 2087, \"name\": \"ورد خشب\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ورد خشب\", \"variants\": [{\"name\": \"بني فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"بني محروق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1087\", \"source_url\": \"https://dofesh.ps/?app=product.show.250\"}",
+      "updated_at": 1792433296279
+    },
+    {
+      "source_id": 248,
+      "mode": "apply",
+      "product_id": 226,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1226, \"source\": {\"title\": \"كوتة بيبي ازرق حجم (14.5*8.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433305810
+    },
+    {
+      "source_id": 247,
+      "mode": "apply",
+      "product_id": 222,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1222, \"source\": {\"title\": \"كوتة بيبي زهري حجم (14*8.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433315817
+    },
+    {
+      "source_id": 246,
+      "mode": "apply",
+      "product_id": 1088,
+      "status": "synced",
+      "detail": "{\"item_number\": 2088, \"name\": \"كوتة بيبي أبيض (9*5.5سم)\", \"before_price\": 2400, \"before_variants\": [], \"source\": {\"title\": \"كوتة بيبي ابيض (9*5.5سم)\", \"variants\": [{\"name\": \"12 حبة\", \"price\": 2400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1088\", \"source_url\": \"https://dofesh.ps/?app=product.show.246\"}",
+      "updated_at": 1792433326107
+    },
+    {
+      "source_id": 245,
+      "mode": "apply",
+      "product_id": 1089,
+      "status": "synced",
+      "detail": "{\"item_number\": 2089, \"name\": \"كوتة سادى زهري (9*5.5سم)\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"كوتة سادى زهري (9*5.5سم)\", \"variants\": [{\"name\": \"9*5.5\", \"price\": 300, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1089\", \"source_url\": \"https://dofesh.ps/?app=product.show.245\"}",
+      "updated_at": 1792433336278
+    },
+    {
+      "source_id": 244,
+      "mode": "apply",
+      "product_id": 189,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1189, \"source\": {\"title\": \"عسل طبيعي 100% اصلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}}",
+      "updated_at": 1792433345817
+    },
+    {
+      "source_id": 242,
+      "mode": "apply",
+      "product_id": 1090,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2090, \"source\": {\"title\": \"رواز اكريلة ذهبي (3.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}}",
+      "updated_at": 1792433356021
+    },
+    {
+      "source_id": 241,
+      "mode": "apply",
+      "product_id": 1091,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2091, \"source\": {\"title\": \"برواز اكريلك (4سم) تلزيق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792433366003
+    },
+    {
+      "source_id": 240,
+      "mode": "apply",
+      "product_id": 1092,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2092, \"source\": {\"title\": \"مبخرة نحاس (عرض 7 سم ارتفاع 8سم)ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433376019
+    },
+    {
+      "source_id": 239,
+      "mode": "apply",
+      "product_id": 1093,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2093, \"source\": {\"title\": \"مبخرة نحاس ذهبي مع طربوش (عرض 7سم ارتفاع8سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792433386013
+    },
+    {
+      "source_id": 238,
+      "mode": "apply",
+      "product_id": 190,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1190, \"source\": {\"title\": \"فراش حديد (4سم) ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792433396074
+    },
+    {
+      "source_id": 237,
+      "mode": "apply",
+      "product_id": 191,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1191, \"source\": {\"title\": \"فراش حديد اكسسوار (عرض 4 سم) ذهبي / 50 حبة بالكيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792433406046
+    },
+    {
+      "source_id": 236,
+      "mode": "apply",
+      "product_id": 1094,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2094, \"source\": {\"title\": \"سلة اعراس ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792433416085
+    },
+    {
+      "source_id": 235,
+      "mode": "apply",
+      "product_id": 1095,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2095, \"source\": {\"title\": \"س حنا تراث بدوي احمرمع ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792433425824
     }
   ]
 }
