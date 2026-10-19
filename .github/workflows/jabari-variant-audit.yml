@@ -1,0 +1,104 @@
+name: Jabari variant audit and sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        description: preview or add missing variants; preserve existing prices
+        default: preview
+        options: [preview, apply]
+      start:
+        description: Highest supplier number to scan (resume skips completed rows)
+        default: '999999'
+        required: true
+      limit:
+        description: Maximum products in this run (1-200)
+        default: '50'
+        required: true
+      delay:
+        description: Seconds between supplier requests (minimum 5)
+        default: '10'
+        required: true
+      batches:
+        description: Number of sequential batches (1-25); stop on block or completion
+        default: '1'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manar-jabari-variant-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preserve concurrent progress entries
+        shell: bash
+        run: |
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/jabari-merge-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/jabari-merge-attributes"
+      - name: Test parser, atomic saves, idempotency and preservation
+        run: python tools/test_jabari_variant_audit.py
+      - name: Audit and synchronize verified Jabari products
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          AUDIT_MODE: ${{ inputs.mode }}
+          AUDIT_START: ${{ inputs.start }}
+          AUDIT_LIMIT: ${{ inputs.limit }}
+          AUDIT_DELAY: ${{ inputs.delay }}
+          AUDIT_BATCHES: ${{ inputs.batches }}
+        run: |
+          python -c 'import os; n=int(os.environ["AUDIT_BATCHES"]); assert 1 <= n <= 25'
+          git config user.name 'Manar catalog audit'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for batch in $(seq 1 "$AUDIT_BATCHES"); do
+            python tools/jabari_variant_audit.py --mode "$AUDIT_MODE" --start "$AUDIT_START" --limit "$AUDIT_LIMIT" --delay "$AUDIT_DELAY"
+            git add docs/jabari-variant-audit STORE-PROGRESS.md
+            if ! git diff --cached --quiet; then
+              git commit -m "docs: Jabari batch $batch results [skip ci]"
+              for attempt in 1 2 3; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then break; fi
+                if [ "$attempt" = 3 ]; then exit 1; fi
+              done
+            fi
+            state=$(python -c 'import json; print(json.load(open("docs/jabari-variant-audit/latest.json"))["run_status"])')
+            processed=$(python -c 'import json; print(json.load(open("docs/jabari-variant-audit/latest.json"))["run_processed"])')
+            if [ "$state" != completed_batch ] || [ "$processed" = 0 ]; then break; fi
+          done
+      - name: Save reports and progress on GitHub
+        if: always()
+        run: |
+          if [ ! -f docs/jabari-variant-audit/latest.json ]; then exit 0; fi
+          git config user.name 'Manar catalog audit'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/jabari-variant-audit STORE-PROGRESS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: Jabari variant audit results [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
+      - name: Preserve report snapshot
+        continue-on-error: true
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jabari-variant-results
+          path: |
+            docs/jabari-variant-audit/
+            STORE-PROGRESS.md
+          retention-days: 30
