@@ -2791,3 +2791,64 @@
 - الجعبري#3885 ↔ صنف#2945: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3885
 - الجعبري#3884 ↔ صنف#2946: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3884
 - الجعبري#3883 ↔ صنف#2947: no_options؛ خرز كرستال زجاج سداسي ( 6 ملم ). https://jabaristore.com/?app=product.show.3883
+
+
+### 2026-10-19T22:05:38.899975+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T22:05:38.899975+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 352, "synced": 143, "unsupported_source_price": 61}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3882 ↔ صنف#2948: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3882
+- الجعبري#3881 ↔ صنف#2949: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3881
+- الجعبري#3880 ↔ صنف#2950: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3880
+- الجعبري#3879 ↔ صنف#2951: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3879
+- الجعبري#3878 ↔ صنف#2952: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3878
+- الجعبري#3877 ↔ صنف#2953: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3877
+- الجعبري#3876 ↔ صنف#2954: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3876
+- الجعبري#3875 ↔ صنف#2955: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3875
+- الجعبري#3874 ↔ صنف#2956: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3874
+- الجعبري#3873 ↔ صنف#2957: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3873
+- الجعبري#3872 ↔ صنف#2958: no_options؛ خرز كرستال زجاج سداسي ( 10 ملم ). https://jabaristore.com/?app=product.show.3872
+- الجعبري#3871 ↔ صنف#2959: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3871
+- الجعبري#3870 ↔ صنف#2960: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3870
+- الجعبري#3869 ↔ صنف#2961: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3869
+- الجعبري#3868 ↔ صنف#2962: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3868
+- الجعبري#3867 ↔ صنف#2963: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3867
+- الجعبري#3866 ↔ صنف#2964: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3866
+- الجعبري#3865 ↔ صنف#2965: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3865
+- الجعبري#3864 ↔ صنف#2966: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3864
+- الجعبري#3863 ↔ صنف#2967: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3863
+- الجعبري#3862 ↔ صنف#2968: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3862
+- الجعبري#3861 ↔ صنف#2969: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3861
+- الجعبري#3860 ↔ صنف#2970: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3860
+- الجعبري#3859 ↔ صنف#2971: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3859
+- الجعبري#3858 ↔ صنف#2972: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3858
+- الجعبري#3857 ↔ صنف#2973: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3857
+- الجعبري#3856 ↔ صنف#2974: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3856
+- الجعبري#3855 ↔ صنف#2975: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3855
+- الجعبري#3854 ↔ صنف#2976: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3854
+- الجعبري#3853 ↔ صنف#2977: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3853
+- الجعبري#3852 ↔ صنف#2978: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3852
+- الجعبري#3851 ↔ صنف#2979: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3851
+- الجعبري#3850 ↔ صنف#2980: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3850
+- الجعبري#3849 ↔ صنف#2981: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3849
+- الجعبري#3848 ↔ صنف#2982: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3848
+- الجعبري#3847 ↔ صنف#2983: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3847
+- الجعبري#3846 ↔ صنف#2984: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3846
+- الجعبري#3845 ↔ صنف#2985: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3845
+- الجعبري#3844 ↔ صنف#2986: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3844
+- الجعبري#3843 ↔ صنف#2987: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3843
+- الجعبري#3842 ↔ صنف#2988: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3842
+- الجعبري#3841 ↔ صنف#2989: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3841
+- الجعبري#3840 ↔ صنف#2990: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3840
+- الجعبري#3839 ↔ صنف#2991: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.3839
+- الجعبري#3837 ↔ صنف#2992: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3837
+- الجعبري#3836 ↔ صنف#2993: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3836
+- الجعبري#3835 ↔ صنف#2994: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3835
+- الجعبري#3834 ↔ صنف#2995: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3834
+- الجعبري#3833 ↔ صنف#2996: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3833
+- الجعبري#3832 ↔ صنف#2997: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3832

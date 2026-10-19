@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:57:21.405501+03:00",
+  "updated_at": "2026-10-19T22:05:38.899975+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -4043,6 +4043,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2947, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 6 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792436240502
+    },
+    {
+      "source_id": 3882,
+      "mode": "apply",
+      "product_id": 1948,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2948, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436247692
+    },
+    {
+      "source_id": 3881,
+      "mode": "apply",
+      "product_id": 1949,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2949, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436257685
+    },
+    {
+      "source_id": 3880,
+      "mode": "apply",
+      "product_id": 1950,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2950, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436267809
+    },
+    {
+      "source_id": 3879,
+      "mode": "apply",
+      "product_id": 1951,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2951, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436277666
+    },
+    {
+      "source_id": 3878,
+      "mode": "apply",
+      "product_id": 1952,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2952, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436287688
+    },
+    {
+      "source_id": 3877,
+      "mode": "apply",
+      "product_id": 1953,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2953, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436297827
+    },
+    {
+      "source_id": 3876,
+      "mode": "apply",
+      "product_id": 1954,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2954, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436307691
+    },
+    {
+      "source_id": 3875,
+      "mode": "apply",
+      "product_id": 1955,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2955, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436317823
+    },
+    {
+      "source_id": 3874,
+      "mode": "apply",
+      "product_id": 1956,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2956, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436327692
+    },
+    {
+      "source_id": 3873,
+      "mode": "apply",
+      "product_id": 1957,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2957, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436337833
+    },
+    {
+      "source_id": 3872,
+      "mode": "apply",
+      "product_id": 1958,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2958, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436347819
+    },
+    {
+      "source_id": 3871,
+      "mode": "apply",
+      "product_id": 1959,
+      "status": "synced",
+      "detail": "{\"item_number\": 2959, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1959\", \"source_url\": \"https://jabaristore.com/?app=product.show.3871\"}",
+      "updated_at": 1792436358005
+    },
+    {
+      "source_id": 3870,
+      "mode": "apply",
+      "product_id": 1960,
+      "status": "synced",
+      "detail": "{\"item_number\": 2960, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1960\", \"source_url\": \"https://jabaristore.com/?app=product.show.3870\"}",
+      "updated_at": 1792436367947
+    },
+    {
+      "source_id": 3869,
+      "mode": "apply",
+      "product_id": 1961,
+      "status": "synced",
+      "detail": "{\"item_number\": 2961, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1961\", \"source_url\": \"https://jabaristore.com/?app=product.show.3869\"}",
+      "updated_at": 1792436377918
+    },
+    {
+      "source_id": 3868,
+      "mode": "apply",
+      "product_id": 1962,
+      "status": "synced",
+      "detail": "{\"item_number\": 2962, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1962\", \"source_url\": \"https://jabaristore.com/?app=product.show.3868\"}",
+      "updated_at": 1792436388188
+    },
+    {
+      "source_id": 3867,
+      "mode": "apply",
+      "product_id": 1963,
+      "status": "synced",
+      "detail": "{\"item_number\": 2963, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1963\", \"source_url\": \"https://jabaristore.com/?app=product.show.3867\"}",
+      "updated_at": 1792436398153
+    },
+    {
+      "source_id": 3866,
+      "mode": "apply",
+      "product_id": 1964,
+      "status": "synced",
+      "detail": "{\"item_number\": 2964, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1964\", \"source_url\": \"https://jabaristore.com/?app=product.show.3866\"}",
+      "updated_at": 1792436408197
+    },
+    {
+      "source_id": 3865,
+      "mode": "apply",
+      "product_id": 1965,
+      "status": "synced",
+      "detail": "{\"item_number\": 2965, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1965\", \"source_url\": \"https://jabaristore.com/?app=product.show.3865\"}",
+      "updated_at": 1792436418570
+    },
+    {
+      "source_id": 3864,
+      "mode": "apply",
+      "product_id": 1966,
+      "status": "synced",
+      "detail": "{\"item_number\": 2966, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1966\", \"source_url\": \"https://jabaristore.com/?app=product.show.3864\"}",
+      "updated_at": 1792436428224
+    },
+    {
+      "source_id": 3863,
+      "mode": "apply",
+      "product_id": 1967,
+      "status": "synced",
+      "detail": "{\"item_number\": 2967, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1967\", \"source_url\": \"https://jabaristore.com/?app=product.show.3863\"}",
+      "updated_at": 1792436438211
+    },
+    {
+      "source_id": 3862,
+      "mode": "apply",
+      "product_id": 1968,
+      "status": "synced",
+      "detail": "{\"item_number\": 2968, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1968\", \"source_url\": \"https://jabaristore.com/?app=product.show.3862\"}",
+      "updated_at": 1792436448254
+    },
+    {
+      "source_id": 3861,
+      "mode": "apply",
+      "product_id": 1969,
+      "status": "synced",
+      "detail": "{\"item_number\": 2969, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1969\", \"source_url\": \"https://jabaristore.com/?app=product.show.3861\"}",
+      "updated_at": 1792436458013
+    },
+    {
+      "source_id": 3860,
+      "mode": "apply",
+      "product_id": 1970,
+      "status": "synced",
+      "detail": "{\"item_number\": 2970, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1970\", \"source_url\": \"https://jabaristore.com/?app=product.show.3860\"}",
+      "updated_at": 1792436468244
+    },
+    {
+      "source_id": 3859,
+      "mode": "apply",
+      "product_id": 1971,
+      "status": "synced",
+      "detail": "{\"item_number\": 2971, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1971\", \"source_url\": \"https://jabaristore.com/?app=product.show.3859\"}",
+      "updated_at": 1792436477928
+    },
+    {
+      "source_id": 3858,
+      "mode": "apply",
+      "product_id": 1972,
+      "status": "synced",
+      "detail": "{\"item_number\": 2972, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1972\", \"source_url\": \"https://jabaristore.com/?app=product.show.3858\"}",
+      "updated_at": 1792436487927
+    },
+    {
+      "source_id": 3857,
+      "mode": "apply",
+      "product_id": 1973,
+      "status": "synced",
+      "detail": "{\"item_number\": 2973, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1973\", \"source_url\": \"https://jabaristore.com/?app=product.show.3857\"}",
+      "updated_at": 1792436497928
+    },
+    {
+      "source_id": 3856,
+      "mode": "apply",
+      "product_id": 1974,
+      "status": "synced",
+      "detail": "{\"item_number\": 2974, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1974\", \"source_url\": \"https://jabaristore.com/?app=product.show.3856\"}",
+      "updated_at": 1792436508005
+    },
+    {
+      "source_id": 3855,
+      "mode": "apply",
+      "product_id": 1975,
+      "status": "synced",
+      "detail": "{\"item_number\": 2975, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1975\", \"source_url\": \"https://jabaristore.com/?app=product.show.3855\"}",
+      "updated_at": 1792436518207
+    },
+    {
+      "source_id": 3854,
+      "mode": "apply",
+      "product_id": 1976,
+      "status": "synced",
+      "detail": "{\"item_number\": 2976, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1976\", \"source_url\": \"https://jabaristore.com/?app=product.show.3854\"}",
+      "updated_at": 1792436528133
+    },
+    {
+      "source_id": 3853,
+      "mode": "apply",
+      "product_id": 1977,
+      "status": "synced",
+      "detail": "{\"item_number\": 2977, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1977\", \"source_url\": \"https://jabaristore.com/?app=product.show.3853\"}",
+      "updated_at": 1792436537952
+    },
+    {
+      "source_id": 3852,
+      "mode": "apply",
+      "product_id": 1978,
+      "status": "synced",
+      "detail": "{\"item_number\": 2978, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1978\", \"source_url\": \"https://jabaristore.com/?app=product.show.3852\"}",
+      "updated_at": 1792436548205
+    },
+    {
+      "source_id": 3851,
+      "mode": "apply",
+      "product_id": 1979,
+      "status": "synced",
+      "detail": "{\"item_number\": 2979, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1979\", \"source_url\": \"https://jabaristore.com/?app=product.show.3851\"}",
+      "updated_at": 1792436557963
+    },
+    {
+      "source_id": 3850,
+      "mode": "apply",
+      "product_id": 1980,
+      "status": "synced",
+      "detail": "{\"item_number\": 2980, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1980\", \"source_url\": \"https://jabaristore.com/?app=product.show.3850\"}",
+      "updated_at": 1792436567970
+    },
+    {
+      "source_id": 3849,
+      "mode": "apply",
+      "product_id": 1981,
+      "status": "synced",
+      "detail": "{\"item_number\": 2981, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1981\", \"source_url\": \"https://jabaristore.com/?app=product.show.3849\"}",
+      "updated_at": 1792436577968
+    },
+    {
+      "source_id": 3848,
+      "mode": "apply",
+      "product_id": 1982,
+      "status": "synced",
+      "detail": "{\"item_number\": 2982, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1982\", \"source_url\": \"https://jabaristore.com/?app=product.show.3848\"}",
+      "updated_at": 1792436587958
+    },
+    {
+      "source_id": 3847,
+      "mode": "apply",
+      "product_id": 1983,
+      "status": "synced",
+      "detail": "{\"item_number\": 2983, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1983\", \"source_url\": \"https://jabaristore.com/?app=product.show.3847\"}",
+      "updated_at": 1792436597941
+    },
+    {
+      "source_id": 3846,
+      "mode": "apply",
+      "product_id": 1984,
+      "status": "synced",
+      "detail": "{\"item_number\": 2984, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1984\", \"source_url\": \"https://jabaristore.com/?app=product.show.3846\"}",
+      "updated_at": 1792436607988
+    },
+    {
+      "source_id": 3845,
+      "mode": "apply",
+      "product_id": 1985,
+      "status": "synced",
+      "detail": "{\"item_number\": 2985, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1985\", \"source_url\": \"https://jabaristore.com/?app=product.show.3845\"}",
+      "updated_at": 1792436617951
+    },
+    {
+      "source_id": 3844,
+      "mode": "apply",
+      "product_id": 1986,
+      "status": "synced",
+      "detail": "{\"item_number\": 2986, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1986\", \"source_url\": \"https://jabaristore.com/?app=product.show.3844\"}",
+      "updated_at": 1792436627972
+    },
+    {
+      "source_id": 3843,
+      "mode": "apply",
+      "product_id": 1987,
+      "status": "synced",
+      "detail": "{\"item_number\": 2987, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1987\", \"source_url\": \"https://jabaristore.com/?app=product.show.3843\"}",
+      "updated_at": 1792436638178
+    },
+    {
+      "source_id": 3842,
+      "mode": "apply",
+      "product_id": 1988,
+      "status": "synced",
+      "detail": "{\"item_number\": 2988, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1988\", \"source_url\": \"https://jabaristore.com/?app=product.show.3842\"}",
+      "updated_at": 1792436648270
+    },
+    {
+      "source_id": 3841,
+      "mode": "apply",
+      "product_id": 1989,
+      "status": "synced",
+      "detail": "{\"item_number\": 2989, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1989\", \"source_url\": \"https://jabaristore.com/?app=product.show.3841\"}",
+      "updated_at": 1792436658259
+    },
+    {
+      "source_id": 3840,
+      "mode": "apply",
+      "product_id": 1990,
+      "status": "synced",
+      "detail": "{\"item_number\": 2990, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1990\", \"source_url\": \"https://jabaristore.com/?app=product.show.3840\"}",
+      "updated_at": 1792436667963
+    },
+    {
+      "source_id": 3839,
+      "mode": "apply",
+      "product_id": 1991,
+      "status": "synced",
+      "detail": "{\"item_number\": 2991, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1991\", \"source_url\": \"https://jabaristore.com/?app=product.show.3839\"}",
+      "updated_at": 1792436678215
+    },
+    {
+      "source_id": 3837,
+      "mode": "apply",
+      "product_id": 1992,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2992}",
+      "updated_at": 1792436687696
+    },
+    {
+      "source_id": 3836,
+      "mode": "apply",
+      "product_id": 1993,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2993}",
+      "updated_at": 1792436697882
+    },
+    {
+      "source_id": 3835,
+      "mode": "apply",
+      "product_id": 1994,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2994}",
+      "updated_at": 1792436707670
+    },
+    {
+      "source_id": 3834,
+      "mode": "apply",
+      "product_id": 1995,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2995}",
+      "updated_at": 1792436717941
+    },
+    {
+      "source_id": 3833,
+      "mode": "apply",
+      "product_id": 1996,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2996}",
+      "updated_at": 1792436727905
+    },
+    {
+      "source_id": 3832,
+      "mode": "apply",
+      "product_id": 1997,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2997}",
+      "updated_at": 1792436737883
     },
     {
       "source_id": 3780,
