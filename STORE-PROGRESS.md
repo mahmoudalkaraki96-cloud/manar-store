@@ -1779,3 +1779,19 @@
 - أدوات مستقلة jabari_variant_audit.py وworkflow jabari-variant-audit.yml، وربط jabari-N الصريح فقط. لا تعديل أسعار/مخزون/توفر المتغيرات القائمة ولا السعر الأساسي أو الصور أو حالة نشر المنتج. مسودات المنتجات تبقى مسودات؛ مخزون المتغيرات الجديدة فيها صفر.
 - اجتازت12اختبارًا: HTML جعبري حقيقي3780، حدود الربح، ثبات الأسعار والقيم الموجودة، حماية الصور والنشر والمخزون، منع التكرار، rollback والحفظ الذري، استرجاع progress منD1 والتقرير. جداول audit/lock مستقلة عبر migration0027، وتقارير docs/jabari-variant-audit/ بصيغJSON/CSV/HTML. دمج union محلي للسجل مع حفظ بعد كل دفعة.
 - التالي: أول تشغيل apply محدود ثم تحقق التقرير واستكمال الدفعات تلقائيًا. وجود الكود لا يعني تنفيذ بيانات حتى تأكيد نتيجة التشغيل.
+
+
+### 2026-10-19T20:32:28.914204+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T20:32:28.914204+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 5}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4499 ↔ صنف#2314: no_options؛ جهاز تذويب الشمع الكهربائي ستانلس ستيل – 5 لتر – مع تحكم بدرجة الحرارة وحنفية. https://jabaristore.com/?app=product.show.4499
+- الجعبري#4498 ↔ صنف#2315: no_options؛ جهاز تذويب الشمع الكهربائي ستانلس ستيل – 8 لتر – مع تحكم بدرجة الحرارة وشاشة وحنفية. https://jabaristore.com/?app=product.show.4498
+- الجعبري#4497 ↔ صنف#2316: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4497
+- الجعبري#4496 ↔ صنف#2317: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4496
+- الجعبري#4495 ↔ صنف#2318: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4495

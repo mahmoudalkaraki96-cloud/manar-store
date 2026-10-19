@@ -1,0 +1,48 @@
+{
+  "updated_at": "2026-10-19T20:32:28.914204+03:00",
+  "run_mode": "apply",
+  "run_status": "completed_batch",
+  "run_processed": 5,
+  "results": [
+    {
+      "source_id": 4499,
+      "mode": "apply",
+      "product_id": 1314,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2314, \"source\": {\"title\": \"جهاز تذويب الشمع الكهربائي ستانلس ستيل – 5 لتر – مع تحكم بدرجة الحرارة وحنفية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 29000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431108541
+    },
+    {
+      "source_id": 4498,
+      "mode": "apply",
+      "product_id": 1315,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2315, \"source\": {\"title\": \"جهاز تذويب الشمع الكهربائي ستانلس ستيل – 8 لتر – مع تحكم بدرجة الحرارة وشاشة وحنفية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 39000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431118509
+    },
+    {
+      "source_id": 4497,
+      "mode": "apply",
+      "product_id": 1316,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2316, \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431128400
+    },
+    {
+      "source_id": 4496,
+      "mode": "apply",
+      "product_id": 1317,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2317, \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431138513
+    },
+    {
+      "source_id": 4495,
+      "mode": "apply",
+      "product_id": 1318,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2318, \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431148546
+    }
+  ]
+}
