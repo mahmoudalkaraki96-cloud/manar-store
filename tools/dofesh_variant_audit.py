@@ -418,7 +418,7 @@ def main():
                 try:
                     source = parse_product(fetch_product(sid),sid)
                 except ValueError as e:
-                    if str(e) not in ('invalid_price', 'unsupported_price'):
+                    if str(e) not in ('invalid_price', 'unsupported_price', 'simple_price_not_verified'):
                         raise
                     save_result(db,sid,args.mode,p,'unsupported_source_price',{'reason':str(e)},token)
                     print(f"source={sid} item={p['item_number']} status=unsupported_source_price",flush=True)
