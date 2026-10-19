@@ -1795,3 +1795,15 @@
 - الجعبري#4497 ↔ صنف#2316: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4497
 - الجعبري#4496 ↔ صنف#2317: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4496
 - الجعبري#4495 ↔ صنف#2318: no_options؛ صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV. https://jabaristore.com/?app=product.show.4495
+
+
+### 2026-10-19T20:33:37.219041+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T20:33:37.219041+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 5, "synced": 1}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3780 ↔ صنف#2421: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3780

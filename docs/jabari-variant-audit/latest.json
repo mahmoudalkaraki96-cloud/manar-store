@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T20:32:28.914204+03:00",
+  "updated_at": "2026-10-19T20:33:37.219041+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 5,
+  "run_processed": 1,
   "results": [
     {
       "source_id": 4499,
@@ -43,6 +43,14 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2318, \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792431148546
+    },
+    {
+      "source_id": 3780,
+      "mode": "apply",
+      "product_id": 1421,
+      "status": "synced",
+      "detail": "{\"item_number\": 2421, \"name\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1421\", \"source_url\": \"https://jabaristore.com/?app=product.show.3780\"}",
+      "updated_at": 1792431214977
     }
   ]
 }
