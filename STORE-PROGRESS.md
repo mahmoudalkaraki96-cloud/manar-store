@@ -1305,3 +1305,64 @@
 - دوفش#887 ↔ صنف#1591: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.887
 - دوفش#886 ↔ صنف#1592: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.886
 - دوفش#885 ↔ صنف#1593: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.885
+
+
+### 2026-10-19T15:34:16.378488+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:34:16.378488+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 215, "no_options": 218, "missing_source": 3, "unsupported_customization_or_minimum": 3, "matched": 8}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#884 ↔ صنف#1594: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.884
+- دوفش#883 ↔ صنف#1595: no_options؛ شمع حجر. https://dofesh.ps/?app=product.show.883
+- دوفش#882 ↔ صنف#1596: no_options؛ شمعة حجر مقاس (6.5*5.5). https://dofesh.ps/?app=product.show.882
+- دوفش#881 ↔ صنف#1597: no_options؛ صينية خشب مع ايد. https://dofesh.ps/?app=product.show.881
+- دوفش#880 ↔ صنف#1598: no_options؛ شمعة وردة جورية معطرة مع تغليفة. https://dofesh.ps/?app=product.show.880
+- دوفش#879 ↔ صنف#1599: no_options؛ شمعة وردة جورية معطرة مع غلاف مميز. https://dofesh.ps/?app=product.show.879
+- دوفش#878 ↔ صنف#1600: no_options؛ معطر جو حجر. https://dofesh.ps/?app=product.show.878
+- دوفش#877 ↔ صنف#1601: no_options؛ معطر جو مع غطاء جلد مميز. https://dofesh.ps/?app=product.show.877
+- دوفش#875 ↔ صنف#1602: no_options؛ صندوق كرتون مدور مقاس (30*30*40). https://dofesh.ps/?app=product.show.875
+- دوفش#874 ↔ صنف#1603: synced؛ 30*30*34=20₪؛ 33*33*45=20₪. https://dofesh.ps/?app=product.show.874
+- دوفش#873 ↔ صنف#1604: no_options؛ مبخرة محارة حجر وزجاج. https://dofesh.ps/?app=product.show.873
+- دوفش#872 ↔ صنف#1605: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.872
+- دوفش#870 ↔ صنف#1606: no_options؛ ورق شجر حديد صغير مقاس 2.5 سم. https://dofesh.ps/?app=product.show.870
+- دوفش#869 ↔ صنف#1607: no_options؛ ورق شجر حديد كبير مقاس 4.5 سم. https://dofesh.ps/?app=product.show.869
+- دوفش#868 ↔ صنف#1608: no_options؛ عرق شجر حديد وسط 3 سم. https://dofesh.ps/?app=product.show.868
+- دوفش#867 ↔ صنف#1609: no_options؛ ورد فلل جوري مخمل. https://dofesh.ps/?app=product.show.867
+- دوفش#866 ↔ صنف#1610: synced؛ بالحبة=1₪؛ 50 حبة (بكيت)=20₪. https://dofesh.ps/?app=product.show.866
+- دوفش#865 ↔ صنف#1611: synced؛ بالحبة=1₪؛ 50 حبة (بكيت)=20₪. https://dofesh.ps/?app=product.show.865
+- دوفش#864 ↔ صنف#1612: synced؛ 1حبة=1₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.864
+- دوفش#863 ↔ صنف#1613: no_options؛ شبر مطرز بداوي عرض 5 سم. https://dofesh.ps/?app=product.show.863
+- دوفش#862 ↔ صنف#1614: no_options؛ راس عظم ابيض للذهب ارتفاع 28 سم. https://dofesh.ps/?app=product.show.862
+- دوفش#861 ↔ صنف#1615: no_options؛ رقبة للذهب جلد ابيض ارتفاع 23 سم. https://dofesh.ps/?app=product.show.861
+- دوفش#860 ↔ صنف#1616: no_options؛ رقبة للذهب جلد ابيض ارتفاع 25 سم. https://dofesh.ps/?app=product.show.860
+- دوفش#859 ↔ صنف#1617: synced؛ مبخرة مزخرفة مدورة. https://dofesh.ps/?app=product.show.859
+- دوفش#858 ↔ صنف#1618: synced؛ بالحبة=1₪؛ 20حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.858
+- دوفش#857 ↔ صنف#1619: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل)=10₪. https://dofesh.ps/?app=product.show.857
+- دوفش#856 ↔ صنف#1620: no_options؛ علبة bvc مقاس 7*7*7. https://dofesh.ps/?app=product.show.856
+- دوفش#855 ↔ صنف#1621: no_options؛ علبة bvc مقاس 6*6*15. https://dofesh.ps/?app=product.show.855
+- دوفش#854 ↔ صنف#1622: no_options؛ سيراميك مغناطيس للثلاجة. https://dofesh.ps/?app=product.show.854
+- دوفش#853 ↔ صنف#1623: no_options؛ سيراميك مغناطيس للثلاجة 7.5 سم. https://dofesh.ps/?app=product.show.853
+- دوفش#852 ↔ صنف#1125: no_options؛ ريش ازرق. https://dofesh.ps/?app=product.show.852
+- دوفش#851 ↔ صنف#1126: no_options؛ ريش زهري. https://dofesh.ps/?app=product.show.851
+- دوفش#850 ↔ صنف#1127: no_options؛ ريش ابيض. https://dofesh.ps/?app=product.show.850
+- دوفش#849 ↔ صنف#1128: no_options؛ ريش ذهبي. https://dofesh.ps/?app=product.show.849
+- دوفش#848 ↔ صنف#1129: no_options؛ ريش اسود مقصب ذهبي. https://dofesh.ps/?app=product.show.848
+- دوفش#847 ↔ صنف#1130: no_options؛ ريش ابيض مقصب ذهبي. https://dofesh.ps/?app=product.show.847
+- دوفش#846 ↔ صنف#1624: synced؛ 12=24₪؛ 50=80₪؛ 100=150₪. https://dofesh.ps/?app=product.show.846
+- دوفش#845 ↔ صنف#1625: synced؛ 12=24₪؛ 50=80₪؛ 100=150₪. https://dofesh.ps/?app=product.show.845
+- دوفش#844 ↔ صنف#1626: synced؛ 12=24₪؛ 50=80₪؛ 100=150₪. https://dofesh.ps/?app=product.show.844
+- دوفش#843 ↔ صنف#1627: no_options؛ علبة طربوش 5.5 سم. https://dofesh.ps/?app=product.show.843
+- دوفش#842 ↔ صنف#1628: no_options؛ عرق شجر حديد مقاس 3.5 سم. https://dofesh.ps/?app=product.show.842
+- دوفش#841 ↔ صنف#1629: matched؛ 50=20₪؛ 100=30₪؛ 500=120₪. https://dofesh.ps/?app=product.show.841
+- دوفش#840 ↔ صنف#1630: synced؛ 1 حبة=1.5₪؛ 50حبة=60₪. https://dofesh.ps/?app=product.show.840
+- دوفش#839 ↔ صنف#1631: no_options؛ صندوق كرتون مقاس (28*22*6). https://dofesh.ps/?app=product.show.839
+- دوفش#838 ↔ صنف#1632: no_options؛ شبر تول معرق خمري 25 متر. https://dofesh.ps/?app=product.show.838
+- دوفش#837 ↔ صنف#1633: no_options؛ شبر تول معرق اسود 25 متر. https://dofesh.ps/?app=product.show.837
+- دوفش#836 ↔ صنف#1634: no_options؛ شبر تول معرق زهر نود 25 متر. https://dofesh.ps/?app=product.show.836
+- دوفش#835 ↔ صنف#1635: no_options؛ شبر تول معرق ازرق 25 متر. https://dofesh.ps/?app=product.show.835
+- دوفش#834 ↔ صنف#1636: no_options؛ شبر تول معرق بيج 25 متر. https://dofesh.ps/?app=product.show.834
+- دوفش#833 ↔ صنف#1637: no_options؛ شبر تول 25 متر ابيض. https://dofesh.ps/?app=product.show.833
