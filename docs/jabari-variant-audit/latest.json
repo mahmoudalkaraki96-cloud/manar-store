@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:45:26.207082+03:00",
+  "updated_at": "2026-10-19T23:53:44.790914+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -9251,6 +9251,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 3584, \"name\": \"علب pvc 7*7*17 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"علب pvc 7*7*17 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب pvc 7*7*17 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2584\", \"source_url\": \"https://jabaristore.com/?app=product.show.2842\"}",
       "updated_at": 1792442723442
+    },
+    {
+      "source_id": 2838,
+      "mode": "apply",
+      "product_id": 2585,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3585}",
+      "updated_at": 1792442733296
+    },
+    {
+      "source_id": 2836,
+      "mode": "apply",
+      "product_id": 2586,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3586}",
+      "updated_at": 1792442743298
+    },
+    {
+      "source_id": 2831,
+      "mode": "apply",
+      "product_id": 2587,
+      "status": "synced",
+      "detail": "{\"item_number\": 3587, \"name\": \"صندوق كرتون كامل 20*8.5*13.5 (12 قطعة)\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون كامل 20*8.5*13.5 (12 قطعة)\", \"variants\": [{\"name\": \"ابيض (كود16)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"بني ( كود16)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق كرتون كامل 20*8.5*13.5 (12 قطعة)\", \"variants\": [{\"name\": \"ابيض (كود16)\", \"price\": 2400, \"active\": true}, {\"name\": \"بني ( كود16)\", \"price\": 2400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود16)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"بني ( كود16)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2587\", \"source_url\": \"https://jabaristore.com/?app=product.show.2831\"}",
+      "updated_at": 1792442753570
+    },
+    {
+      "source_id": 2830,
+      "mode": "apply",
+      "product_id": 2588,
+      "status": "synced",
+      "detail": "{\"item_number\": 3588, \"name\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1200, \"active\": true}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2588\", \"source_url\": \"https://jabaristore.com/?app=product.show.2830\"}",
+      "updated_at": 1792442763849
+    },
+    {
+      "source_id": 2829,
+      "mode": "apply",
+      "product_id": 2589,
+      "status": "synced",
+      "detail": "{\"item_number\": 3589, \"name\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شنطة كرتون مع شبرة (12 قطعة )\", \"variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1200, \"active\": true}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:10*7.5*5 (كود14)\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"L:12*9*6 (كود15)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2589\", \"source_url\": \"https://jabaristore.com/?app=product.show.2829\"}",
+      "updated_at": 1792442773570
+    },
+    {
+      "source_id": 2828,
+      "mode": "apply",
+      "product_id": 2590,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3590}",
+      "updated_at": 1792442783285
+    },
+    {
+      "source_id": 2827,
+      "mode": "apply",
+      "product_id": 2591,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3591}",
+      "updated_at": 1792442793498
+    },
+    {
+      "source_id": 2826,
+      "mode": "apply",
+      "product_id": 2592,
+      "status": "synced",
+      "detail": "{\"item_number\": 3592, \"name\": \"صندوق كرتون L:20*11*15 (12قطعة)\", \"before_price\": 1725, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون L:20*11*15 (12قطعة)\", \"variants\": [{\"name\": \"ابيض ( كود 9 )\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}, {\"name\": \"بني ( كود 9 )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق كرتون L:20*11*15 (12قطعة)\", \"variants\": [{\"name\": \"ابيض ( كود 9 )\", \"price\": 2100, \"active\": false}, {\"name\": \"بني ( كود 9 )\", \"price\": 2100, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض ( كود 9 )\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}, {\"name\": \"بني ( كود 9 )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2592\", \"source_url\": \"https://jabaristore.com/?app=product.show.2826\"}",
+      "updated_at": 1792442803704
+    },
+    {
+      "source_id": 2825,
+      "mode": "apply",
+      "product_id": 2593,
+      "status": "synced",
+      "detail": "{\"item_number\": 3593, \"name\": \"صندوق كرتون s:15*9*11.5 (12قطعة)\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون s:15*9*11.5 (12قطعة)\", \"variants\": [{\"name\": \"ابيض ( كود 8 )\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"بني ( كود 8 )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق كرتون s:15*9*11.5 (12قطعة)\", \"variants\": [{\"name\": \"ابيض ( كود 8 )\", \"price\": 1800, \"active\": false}, {\"name\": \"بني ( كود 8 )\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض ( كود 8 )\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"بني ( كود 8 )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2593\", \"source_url\": \"https://jabaristore.com/?app=product.show.2825\"}",
+      "updated_at": 1792442813596
+    },
+    {
+      "source_id": 2823,
+      "mode": "apply",
+      "product_id": 2594,
+      "status": "synced",
+      "detail": "{\"item_number\": 3594, \"name\": \"مسابح الكترونية / خواتم تسبيح ( ملون )\", \"before_price\": 8500, \"before_variants\": [], \"source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ملون )\", \"variants\": [{\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 76000, \"active\": true, \"supplier_price\": 75000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ملون )\", \"variants\": [{\"name\": \"باكيت 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 75000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 76000, \"active\": true, \"supplier_price\": 75000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2594\", \"source_url\": \"https://jabaristore.com/?app=product.show.2823\"}",
+      "updated_at": 1792442823552
+    },
+    {
+      "source_id": 2822,
+      "mode": "apply",
+      "product_id": 2595,
+      "status": "synced",
+      "detail": "{\"item_number\": 3595, \"name\": \"مسابح الكترونية / خواتم تسبيح ( ازرق )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ازرق )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ازرق )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 78000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2595\", \"source_url\": \"https://jabaristore.com/?app=product.show.2822\"}",
+      "updated_at": 1792442833710
+    },
+    {
+      "source_id": 2819,
+      "mode": "apply",
+      "product_id": 2596,
+      "status": "synced",
+      "detail": "{\"item_number\": 3596, \"name\": \"علب كرتون مع شبرة ^12قطعة^ (L:9*11.5*4.5)\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون مع شبرة ^12قطعة^ (L:9*11.5*4.5)\", \"variants\": [{\"name\": \"ابيض (كود13)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني (كود13)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون مع شبرة ^12قطعة^ (L:9*11.5*4.5)\", \"variants\": [{\"name\": \"ابيض (كود13)\", \"price\": 1800, \"active\": true}, {\"name\": \"بني (كود13)\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود13)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني (كود13)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2596\", \"source_url\": \"https://jabaristore.com/?app=product.show.2819\"}",
+      "updated_at": 1792442843766
+    },
+    {
+      "source_id": 2818,
+      "mode": "apply",
+      "product_id": 2597,
+      "status": "synced",
+      "detail": "{\"item_number\": 3597, \"name\": \"علب كرتون مع شبرة ^12قطعة^ ( s:6*8*3 )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون مع شبرة ^12قطعة^ ( s:6*8*3 )\", \"variants\": [{\"name\": \"ابيض (كود12)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني (كود12)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون مع شبرة ^12قطعة^ ( s:6*8*3 )\", \"variants\": [{\"name\": \"ابيض (كود12)\", \"price\": 1500, \"active\": true}, {\"name\": \"بني (كود12)\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود12)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني (كود12)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2597\", \"source_url\": \"https://jabaristore.com/?app=product.show.2818\"}",
+      "updated_at": 1792442853848
+    },
+    {
+      "source_id": 2817,
+      "mode": "apply",
+      "product_id": 2598,
+      "status": "synced",
+      "detail": "{\"item_number\": 3598, \"name\": \"اكياس كرتون وجه شفاف اسود قفل سكوتش & ببيونة (12 قطعة)\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون وجه شفاف اسود قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"ms:20*14*7\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"m:27*19*9\", \"price\": 3500, \"active\": true, \"supplier_price\": 3300}, {\"name\": \"L:31*24*11\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون وجه شفاف اسود قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 2100, \"active\": true}, {\"name\": \"ms:20*14*7\", \"price\": 2700, \"active\": true}, {\"name\": \"m:27*19*9\", \"price\": 3300, \"active\": true}, {\"name\": \"L:31*24*11\", \"price\": 3900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:16*12*6\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"ms:20*14*7\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"m:27*19*9\", \"price\": 3500, \"active\": true, \"supplier_price\": 3300}, {\"name\": \"L:31*24*11\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2598\", \"source_url\": \"https://jabaristore.com/?app=product.show.2817\"}",
+      "updated_at": 1792442863826
+    },
+    {
+      "source_id": 2815,
+      "mode": "apply",
+      "product_id": 2599,
+      "status": "synced",
+      "detail": "{\"item_number\": 3599, \"name\": \"اكياس كرتون وجه شفاف بني قفل سكوتش & ببيونة (12 قطعة)\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون وجه شفاف بني قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"ms:20*14*7\", \"price\": 2850, \"active\": false, \"supplier_price\": 2700}, {\"name\": \"m:27*19*9\", \"price\": 3500, \"active\": false, \"supplier_price\": 3300}, {\"name\": \"L:31*24*11\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون وجه شفاف بني قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 2100, \"active\": true}, {\"name\": \"ms:20*14*7\", \"price\": 2700, \"active\": false}, {\"name\": \"m:27*19*9\", \"price\": 3300, \"active\": false}, {\"name\": \"L:31*24*11\", \"price\": 3900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:16*12*6\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"ms:20*14*7\", \"price\": 2850, \"active\": false, \"supplier_price\": 2700}, {\"name\": \"m:27*19*9\", \"price\": 3500, \"active\": false, \"supplier_price\": 3300}, {\"name\": \"L:31*24*11\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2599\", \"source_url\": \"https://jabaristore.com/?app=product.show.2815\"}",
+      "updated_at": 1792442873554
+    },
+    {
+      "source_id": 2814,
+      "mode": "apply",
+      "product_id": 2600,
+      "status": "synced",
+      "detail": "{\"item_number\": 3600, \"name\": \"اكياس كرتون اسود قفل سكوتش & ببيونة (12 قطعة)\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون اسود قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"m:26*19*9\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون اسود قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1800, \"active\": true}, {\"name\": \"ms:20*14*7\", \"price\": 2400, \"active\": true}, {\"name\": \"m:26*19*9\", \"price\": 3000, \"active\": true}, {\"name\": \"L:32*23*11\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"m:26*19*9\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2600\", \"source_url\": \"https://jabaristore.com/?app=product.show.2814\"}",
+      "updated_at": 1792442883745
+    },
+    {
+      "source_id": 2813,
+      "mode": "apply",
+      "product_id": 2601,
+      "status": "synced",
+      "detail": "{\"item_number\": 3601, \"name\": \"اكياس كرتون ابيض قفل سكوتش & ببيونة (12 قطعة)\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون ابيض قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"m:26*19*9\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون ابيض قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1800, \"active\": true}, {\"name\": \"ms:20*14*7\", \"price\": 2400, \"active\": false}, {\"name\": \"m:26*19*9\", \"price\": 3000, \"active\": false}, {\"name\": \"L:32*23*11\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"m:26*19*9\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2601\", \"source_url\": \"https://jabaristore.com/?app=product.show.2813\"}",
+      "updated_at": 1792442893682
+    },
+    {
+      "source_id": 2812,
+      "mode": "apply",
+      "product_id": 2602,
+      "status": "synced",
+      "detail": "{\"item_number\": 3602, \"name\": \"اكياس كرتون بني قفل سكوتش & ببيونة (12 قطعة)\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون بني قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"M:26*19*9\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون بني قفل سكوتش & ببيونة (12 قطعة)\", \"variants\": [{\"name\": \"s:16*12*6\", \"price\": 1800, \"active\": true}, {\"name\": \"ms:20*14*7\", \"price\": 2400, \"active\": true}, {\"name\": \"M:26*19*9\", \"price\": 3000, \"active\": true}, {\"name\": \"L:32*23*11\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"s:16*12*6\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"ms:20*14*7\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}, {\"name\": \"M:26*19*9\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"L:32*23*11\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2602\", \"source_url\": \"https://jabaristore.com/?app=product.show.2812\"}",
+      "updated_at": 1792442903560
+    },
+    {
+      "source_id": 2811,
+      "mode": "apply",
+      "product_id": 2603,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3603}",
+      "updated_at": 1792442913287
+    },
+    {
+      "source_id": 2810,
+      "mode": "apply",
+      "product_id": 2604,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3604}",
+      "updated_at": 1792442923422
+    },
+    {
+      "source_id": 2808,
+      "mode": "apply",
+      "product_id": 2605,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3605}",
+      "updated_at": 1792442933431
+    },
+    {
+      "source_id": 2807,
+      "mode": "apply",
+      "product_id": 2606,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3606}",
+      "updated_at": 1792442943428
+    },
+    {
+      "source_id": 2806,
+      "mode": "apply",
+      "product_id": 2607,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3607}",
+      "updated_at": 1792442953297
+    },
+    {
+      "source_id": 2802,
+      "mode": "apply",
+      "product_id": 2608,
+      "status": "synced",
+      "detail": "{\"item_number\": 3608, \"name\": \"اكياس كرتون ( 31*12*42 سم ) (12 قطعة )\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون ( 31*12*42 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"بني\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"اسود\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون ( 31*12*42 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2100, \"active\": true}, {\"name\": \"بني\", \"price\": 2100, \"active\": true}, {\"name\": \"اسود\", \"price\": 2100, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"بني\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"اسود\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2608\", \"source_url\": \"https://jabaristore.com/?app=product.show.2802\"}",
+      "updated_at": 1792442963591
+    },
+    {
+      "source_id": 2801,
+      "mode": "apply",
+      "product_id": 2609,
+      "status": "synced",
+      "detail": "{\"item_number\": 3609, \"name\": \"اكياس كرتون ( 25*12*33 سم ) (12 قطعة )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون ( 25*12*33 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"اسود\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون ( 25*12*33 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1200, \"active\": true}, {\"name\": \"بني\", \"price\": 1200, \"active\": true}, {\"name\": \"اسود\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"اسود\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2609\", \"source_url\": \"https://jabaristore.com/?app=product.show.2801\"}",
+      "updated_at": 1792442973614
+    },
+    {
+      "source_id": 2800,
+      "mode": "apply",
+      "product_id": 2610,
+      "status": "synced",
+      "detail": "{\"item_number\": 3610, \"name\": \"اكياس كرتون (41*15*31 سم ) (12 قطعة )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون (41*15*31 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"اسود\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون (41*15*31 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1800, \"active\": true}, {\"name\": \"بني\", \"price\": 1800, \"active\": true}, {\"name\": \"اسود\", \"price\": 1800, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"اسود\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2610\", \"source_url\": \"https://jabaristore.com/?app=product.show.2800\"}",
+      "updated_at": 1792442983534
+    },
+    {
+      "source_id": 2799,
+      "mode": "apply",
+      "product_id": 2611,
+      "status": "synced",
+      "detail": "{\"item_number\": 3611, \"name\": \"اكياس كرتون (32*11*25 سم ) (12 قطعة )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون (32*11*25 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"اسود\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون (32*11*25 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1200, \"active\": true}, {\"name\": \"بني\", \"price\": 1200, \"active\": true}, {\"name\": \"اسود\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"اسود\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2611\", \"source_url\": \"https://jabaristore.com/?app=product.show.2799\"}",
+      "updated_at": 1792442993591
+    },
+    {
+      "source_id": 2798,
+      "mode": "apply",
+      "product_id": 2612,
+      "status": "synced",
+      "detail": "{\"item_number\": 3612, \"name\": \"اكياس كرتون ( 26*11*22 سم ) (12 قطعة )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون ( 26*11*22 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اسود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون ( 26*11*22 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": false}, {\"name\": \"بني\", \"price\": 1000, \"active\": true}, {\"name\": \"اسود\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اسود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2612\", \"source_url\": \"https://jabaristore.com/?app=product.show.2798\"}",
+      "updated_at": 1792443003623
+    },
+    {
+      "source_id": 2797,
+      "mode": "apply",
+      "product_id": 2613,
+      "status": "synced",
+      "detail": "{\"item_number\": 3613, \"name\": \"اكياس كرتون (22*8*15 سم ) (12 قطعة )\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون (22*8*15 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"اسود\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون (22*8*15 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 800, \"active\": true}, {\"name\": \"بني\", \"price\": 800, \"active\": true}, {\"name\": \"اسود\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"اسود\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2613\", \"source_url\": \"https://jabaristore.com/?app=product.show.2797\"}",
+      "updated_at": 1792443013698
+    },
+    {
+      "source_id": 2796,
+      "mode": "apply",
+      "product_id": 2614,
+      "status": "synced",
+      "detail": "{\"item_number\": 3614, \"name\": \"اكياس كرتون (16*8*13 سم ) (12 قطعة )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"اكياس كرتون (16*8*13 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"اسود\", \"price\": 700, \"active\": false, \"supplier_price\": 600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس كرتون (16*8*13 سم ) (12 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 600, \"active\": true}, {\"name\": \"بني\", \"price\": 600, \"active\": true}, {\"name\": \"اسود\", \"price\": 600, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"اسود\", \"price\": 700, \"active\": false, \"supplier_price\": 600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2614\", \"source_url\": \"https://jabaristore.com/?app=product.show.2796\"}",
+      "updated_at": 1792443023599
+    },
+    {
+      "source_id": 2795,
+      "mode": "apply",
+      "product_id": 2615,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3615, \"source\": {\"title\": \"اكياس سلفان لاصق 5+90*60 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443033431
+    },
+    {
+      "source_id": 2794,
+      "mode": "apply",
+      "product_id": 2616,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3616, \"source\": {\"title\": \"اكياس سلفان لاصق 5+70*50 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443043432
+    },
+    {
+      "source_id": 2793,
+      "mode": "apply",
+      "product_id": 2617,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3617, \"source\": {\"title\": \"اكياس سلفان لاصق 4+60*40 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443053288
+    },
+    {
+      "source_id": 2792,
+      "mode": "apply",
+      "product_id": 2618,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3618, \"source\": {\"title\": \"اكياس سلفان لاصق 4+48*42 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443063285
+    },
+    {
+      "source_id": 2790,
+      "mode": "apply",
+      "product_id": 2619,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3619, \"source\": {\"title\": \"اكياس سلفان لاصق 4+38*25 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443073275
+    },
+    {
+      "source_id": 2787,
+      "mode": "apply",
+      "product_id": 2620,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3620, \"source\": {\"title\": \"اكياس سلفان لاصق 4+36*27 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443083538
+    },
+    {
+      "source_id": 2786,
+      "mode": "apply",
+      "product_id": 2621,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3621, \"source\": {\"title\": \"اكياس سلفان لاصق 4+31*20 ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443093597
+    },
+    {
+      "source_id": 2782,
+      "mode": "apply",
+      "product_id": 2622,
+      "status": "synced",
+      "detail": "{\"item_number\": 3622, \"name\": \"اكياس سلفان لاصق 3+21*10\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+21*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4900, \"active\": true, \"supplier_price\": 4700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+21*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1400, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4900, \"active\": true, \"supplier_price\": 4700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2622\", \"source_url\": \"https://jabaristore.com/?app=product.show.2782\"}",
+      "updated_at": 1792443103571
+    },
+    {
+      "source_id": 2781,
+      "mode": "apply",
+      "product_id": 2623,
+      "status": "synced",
+      "detail": "{\"item_number\": 3623, \"name\": \"اكياس سلفان لاصق 3+19*10\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+19*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+19*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1300, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2623\", \"source_url\": \"https://jabaristore.com/?app=product.show.2781\"}",
+      "updated_at": 1792443113796
+    },
+    {
+      "source_id": 2780,
+      "mode": "apply",
+      "product_id": 2624,
+      "status": "synced",
+      "detail": "{\"item_number\": 3624, \"name\": \"اكياس سلفان لاصق 3+11*10\", \"before_price\": 1250, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+11*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+11*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1100, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2624\", \"source_url\": \"https://jabaristore.com/?app=product.show.2780\"}",
+      "updated_at": 1792443123781
+    },
+    {
+      "source_id": 2779,
+      "mode": "apply",
+      "product_id": 2625,
+      "status": "synced",
+      "detail": "{\"item_number\": 3625, \"name\": \"اكياس سلفان لاصق 3+15*8\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+15*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+15*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1200, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ربطة 1000 كيس\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2625\", \"source_url\": \"https://jabaristore.com/?app=product.show.2779\"}",
+      "updated_at": 1792443133974
+    },
+    {
+      "source_id": 2778,
+      "mode": "apply",
+      "product_id": 2626,
+      "status": "synced",
+      "detail": "{\"item_number\": 3626, \"name\": \"اكياس سلفان لاصق 3+13*8\", \"before_price\": 1250, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+13*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+13*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1100, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2626\", \"source_url\": \"https://jabaristore.com/?app=product.show.2778\"}",
+      "updated_at": 1792443143962
+    },
+    {
+      "source_id": 2777,
+      "mode": "apply",
+      "product_id": 2627,
+      "status": "synced",
+      "detail": "{\"item_number\": 3627, \"name\": \"اكياس سلفان لاصق 3+11*8\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+11*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3600, \"active\": true, \"supplier_price\": 3400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+11*8\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 900, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ربطة 1000 كيس\", \"price\": 3600, \"active\": true, \"supplier_price\": 3400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2627\", \"source_url\": \"https://jabaristore.com/?app=product.show.2777\"}",
+      "updated_at": 1792443154137
+    },
+    {
+      "source_id": 2776,
+      "mode": "apply",
+      "product_id": 2628,
+      "status": "synced",
+      "detail": "{\"item_number\": 3628, \"name\": \"اكياس سلفان لاصق 3+7*7\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+7*7\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ربطة 1000 كيس\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+7*7\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 700, \"active\": true}, {\"name\": \"ربطة 1000 كيس\", \"price\": 2400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ربطة 1000 كيس\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2628\", \"source_url\": \"https://jabaristore.com/?app=product.show.2776\"}",
+      "updated_at": 1792443163842
+    },
+    {
+      "source_id": 2774,
+      "mode": "apply",
+      "product_id": 2629,
+      "status": "synced",
+      "detail": "{\"item_number\": 3629, \"name\": \"رول ببلز تغليف 3 طبقة ( عرض 100 سم ) - 60 متر -\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 100 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"رول - 60 متر\", \"price\": 13500, \"active\": true, \"supplier_price\": 12500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 100 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 300, \"active\": true}, {\"name\": \"رول - 60 متر\", \"price\": 12500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالمتر\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"رول - 60 متر\", \"price\": 13500, \"active\": true, \"supplier_price\": 12500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2629\", \"source_url\": \"https://jabaristore.com/?app=product.show.2774\"}",
+      "updated_at": 1792443173818
+    },
+    {
+      "source_id": 2773,
+      "mode": "apply",
+      "product_id": 2630,
+      "status": "synced",
+      "detail": "{\"item_number\": 3630, \"name\": \"رول ببلز تغليف 3 طبقة ( عرض 70 سم ) - 60 متر -\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 70 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"رول - 60 متر\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 70 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 250, \"active\": true}, {\"name\": \"رول - 60 متر\", \"price\": 10500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالمتر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"رول - 60 متر\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2630\", \"source_url\": \"https://jabaristore.com/?app=product.show.2773\"}",
+      "updated_at": 1792443183583
+    },
+    {
+      "source_id": 2772,
+      "mode": "apply",
+      "product_id": 2631,
+      "status": "synced",
+      "detail": "{\"item_number\": 3631, \"name\": \"رول ببلز تغليف 3 طبقة ( عرض 50 سم ) - 60 متر -\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 50 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"رول - 60 متر\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"رول ببلز تغليف 3 طبقة ( عرض 50 سم ) - 60 متر -\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 250, \"active\": true}, {\"name\": \"رول - 60 متر\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالمتر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"رول - 60 متر\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2631\", \"source_url\": \"https://jabaristore.com/?app=product.show.2772\"}",
+      "updated_at": 1792443193883
+    },
+    {
+      "source_id": 2767,
+      "mode": "apply",
+      "product_id": 2632,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3632}",
+      "updated_at": 1792443203293
+    },
+    {
+      "source_id": 2766,
+      "mode": "apply",
+      "product_id": 2633,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3633}",
+      "updated_at": 1792443213306
+    },
+    {
+      "source_id": 2765,
+      "mode": "apply",
+      "product_id": 2634,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3634}",
+      "updated_at": 1792443223286
     }
   ]
 }

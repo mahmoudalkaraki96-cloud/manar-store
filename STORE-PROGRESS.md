@@ -3584,3 +3584,64 @@
 - الجعبري#2844 ↔ صنف#3582: synced؛ ابيض / 10 قطعة=16.5₪؛ ابيض / 100 قطعة=140₪؛ بني / 10 قطعة=16.5₪؛ بني / 100 قطعة=140₪؛ ذهبي / 10 قطعة=16.5₪؛ ذهبي / 100 قطعة=140₪. https://jabaristore.com/?app=product.show.2844
 - الجعبري#2843 ↔ صنف#3583: synced؛ ابيض / 10 قطعة=16.5₪؛ ابيض / 100 قطعة=140₪؛ بني / 10 قطعة=16.5₪؛ بني / 100 قطعة=140₪؛ ذهبي / 10 قطعة=16.5₪؛ ذهبي / 100 قطعة=140₪. https://jabaristore.com/?app=product.show.2843
 - الجعبري#2842 ↔ صنف#3584: synced؛ ابيض / 10 قطعة=15.5₪؛ ابيض / 100 قطعة=130₪؛ بني / 10 قطعة=15.5₪؛ بني / 100 قطعة=130₪؛ ذهبي / 10 قطعة=15.5₪؛ ذهبي / 100 قطعة=130₪. https://jabaristore.com/?app=product.show.2842
+
+
+### 2026-10-19T23:53:44.790914+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:53:44.790914+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 663, "synced": 371, "unsupported_source_price": 172}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#2838 ↔ صنف#3585: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2838
+- الجعبري#2836 ↔ صنف#3586: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2836
+- الجعبري#2831 ↔ صنف#3587: synced؛ ابيض (كود16)=25.5₪؛ بني ( كود16)=25.5₪. https://jabaristore.com/?app=product.show.2831
+- الجعبري#2830 ↔ صنف#3588: synced؛ s:10*7.5*5 (كود14)=13.5₪؛ L:12*9*6 (كود15)=16.5₪. https://jabaristore.com/?app=product.show.2830
+- الجعبري#2829 ↔ صنف#3589: synced؛ s:10*7.5*5 (كود14)=13.5₪؛ L:12*9*6 (كود15)=16.5₪. https://jabaristore.com/?app=product.show.2829
+- الجعبري#2828 ↔ صنف#3590: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2828
+- الجعبري#2827 ↔ صنف#3591: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2827
+- الجعبري#2826 ↔ صنف#3592: synced؛ ابيض ( كود 9 )=22.5₪؛ بني ( كود 9 )=22.5₪. https://jabaristore.com/?app=product.show.2826
+- الجعبري#2825 ↔ صنف#3593: synced؛ ابيض ( كود 8 )=19.5₪؛ بني ( كود 8 )=19.5₪. https://jabaristore.com/?app=product.show.2825
+- الجعبري#2823 ↔ صنف#3594: synced؛ باكيت 100 قطعة=85₪؛ كرتونة 1000 قطعة=760₪. https://jabaristore.com/?app=product.show.2823
+- الجعبري#2822 ↔ صنف#3595: synced؛ بالقطعة=1.5₪؛ باكيت 100 قطعة=90₪؛ كرتونة 1000 قطعة=790₪. https://jabaristore.com/?app=product.show.2822
+- الجعبري#2819 ↔ صنف#3596: synced؛ ابيض (كود13)=19.5₪؛ بني (كود13)=19.5₪. https://jabaristore.com/?app=product.show.2819
+- الجعبري#2818 ↔ صنف#3597: synced؛ ابيض (كود12)=16.5₪؛ بني (كود12)=16.5₪. https://jabaristore.com/?app=product.show.2818
+- الجعبري#2817 ↔ صنف#3598: synced؛ s:16*12*6=22.5₪؛ ms:20*14*7=28.5₪؛ m:27*19*9=35₪؛ L:31*24*11=41₪. https://jabaristore.com/?app=product.show.2817
+- الجعبري#2815 ↔ صنف#3599: synced؛ s:16*12*6=22.5₪؛ ms:20*14*7=28.5₪؛ m:27*19*9=35₪؛ L:31*24*11=41₪. https://jabaristore.com/?app=product.show.2815
+- الجعبري#2814 ↔ صنف#3600: synced؛ s:16*12*6=19.5₪؛ ms:20*14*7=25.5₪؛ m:26*19*9=31.5₪؛ L:32*23*11=38₪. https://jabaristore.com/?app=product.show.2814
+- الجعبري#2813 ↔ صنف#3601: synced؛ s:16*12*6=19.5₪؛ ms:20*14*7=25.5₪؛ m:26*19*9=31.5₪؛ L:32*23*11=38₪. https://jabaristore.com/?app=product.show.2813
+- الجعبري#2812 ↔ صنف#3602: synced؛ s:16*12*6=19.5₪؛ ms:20*14*7=25.5₪؛ M:26*19*9=31.5₪؛ L:32*23*11=38₪. https://jabaristore.com/?app=product.show.2812
+- الجعبري#2811 ↔ صنف#3603: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2811
+- الجعبري#2810 ↔ صنف#3604: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2810
+- الجعبري#2808 ↔ صنف#3605: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2808
+- الجعبري#2807 ↔ صنف#3606: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2807
+- الجعبري#2806 ↔ صنف#3607: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2806
+- الجعبري#2802 ↔ صنف#3608: synced؛ ابيض=22.5₪؛ بني=22.5₪؛ اسود=22.5₪. https://jabaristore.com/?app=product.show.2802
+- الجعبري#2801 ↔ صنف#3609: synced؛ ابيض=13.5₪؛ بني=13.5₪؛ اسود=13.5₪. https://jabaristore.com/?app=product.show.2801
+- الجعبري#2800 ↔ صنف#3610: synced؛ ابيض=19.5₪؛ بني=19.5₪؛ اسود=19.5₪. https://jabaristore.com/?app=product.show.2800
+- الجعبري#2799 ↔ صنف#3611: synced؛ ابيض=13.5₪؛ بني=13.5₪؛ اسود=13.5₪. https://jabaristore.com/?app=product.show.2799
+- الجعبري#2798 ↔ صنف#3612: synced؛ ابيض=11₪؛ بني=11₪؛ اسود=11₪. https://jabaristore.com/?app=product.show.2798
+- الجعبري#2797 ↔ صنف#3613: synced؛ ابيض=9₪؛ بني=9₪؛ اسود=9₪. https://jabaristore.com/?app=product.show.2797
+- الجعبري#2796 ↔ صنف#3614: synced؛ ابيض=7₪؛ بني=7₪؛ اسود=7₪. https://jabaristore.com/?app=product.show.2796
+- الجعبري#2795 ↔ صنف#3615: no_options؛ اكياس سلفان لاصق 5+90*60 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2795
+- الجعبري#2794 ↔ صنف#3616: no_options؛ اكياس سلفان لاصق 5+70*50 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2794
+- الجعبري#2793 ↔ صنف#3617: no_options؛ اكياس سلفان لاصق 4+60*40 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2793
+- الجعبري#2792 ↔ صنف#3618: no_options؛ اكياس سلفان لاصق 4+48*42 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2792
+- الجعبري#2790 ↔ صنف#3619: no_options؛ اكياس سلفان لاصق 4+38*25 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2790
+- الجعبري#2787 ↔ صنف#3620: no_options؛ اكياس سلفان لاصق 4+36*27 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2787
+- الجعبري#2786 ↔ صنف#3621: no_options؛ اكياس سلفان لاصق 4+31*20 ( 100 قطعة ). https://jabaristore.com/?app=product.show.2786
+- الجعبري#2782 ↔ صنف#3622: synced؛ 200 كيس=15.5₪؛ ربطة 1000 كيس=49₪. https://jabaristore.com/?app=product.show.2782
+- الجعبري#2781 ↔ صنف#3623: synced؛ 200 كيس=14.5₪؛ ربطة 1000 كيس=47₪. https://jabaristore.com/?app=product.show.2781
+- الجعبري#2780 ↔ صنف#3624: synced؛ 200 كيس=12.5₪؛ ربطة 1000 كيس=40₪. https://jabaristore.com/?app=product.show.2780
+- الجعبري#2779 ↔ صنف#3625: synced؛ 200 كيس=13.5₪؛ ربطة 1000 كيس=40₪. https://jabaristore.com/?app=product.show.2779
+- الجعبري#2778 ↔ صنف#3626: synced؛ 200 كيس=12.5₪؛ ربطة 1000 كيس=38₪. https://jabaristore.com/?app=product.show.2778
+- الجعبري#2777 ↔ صنف#3627: synced؛ 200 كيس=10₪؛ ربطة 1000 كيس=36₪. https://jabaristore.com/?app=product.show.2777
+- الجعبري#2776 ↔ صنف#3628: synced؛ 200 كيس=8₪؛ ربطة 1000 كيس=25.5₪. https://jabaristore.com/?app=product.show.2776
+- الجعبري#2774 ↔ صنف#3629: synced؛ بالمتر=3.5₪؛ رول - 60 متر=135₪. https://jabaristore.com/?app=product.show.2774
+- الجعبري#2773 ↔ صنف#3630: synced؛ بالمتر=3₪؛ رول - 60 متر=115₪. https://jabaristore.com/?app=product.show.2773
+- الجعبري#2772 ↔ صنف#3631: synced؛ بالمتر=3₪؛ رول - 60 متر=85₪. https://jabaristore.com/?app=product.show.2772
+- الجعبري#2767 ↔ صنف#3632: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2767
+- الجعبري#2766 ↔ صنف#3633: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2766
+- الجعبري#2765 ↔ صنف#3634: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2765
