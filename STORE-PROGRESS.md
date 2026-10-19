@@ -2486,3 +2486,64 @@
 - دوفش#176 ↔ صنف#2117: synced؛ بالحبة=15₪؛ 50 حبة=500₪. https://dofesh.ps/?app=product.show.176
 - دوفش#175 ↔ صنف#2118: synced؛ ذهبي=60₪. https://dofesh.ps/?app=product.show.175
 - دوفش#174 ↔ صنف#2119: error؛ invalid_choice_label. https://dofesh.ps/?app=product.show.174
+
+
+### 2026-10-19T21:24:07.474903+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:24:07.474903+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 234, "synced": 58, "unsupported_source_price": 14}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4196 ↔ صنف#2718: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 810 ). https://jabaristore.com/?app=product.show.4196
+- الجعبري#4195 ↔ صنف#2719: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 810 ). https://jabaristore.com/?app=product.show.4195
+- الجعبري#4194 ↔ صنف#2720: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 873 ). https://jabaristore.com/?app=product.show.4194
+- الجعبري#4193 ↔ صنف#2721: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 873 ). https://jabaristore.com/?app=product.show.4193
+- الجعبري#4192 ↔ صنف#2722: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 908 ). https://jabaristore.com/?app=product.show.4192
+- الجعبري#4191 ↔ صنف#2723: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 908 ). https://jabaristore.com/?app=product.show.4191
+- الجعبري#4190 ↔ صنف#2724: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 813 ). https://jabaristore.com/?app=product.show.4190
+- الجعبري#4189 ↔ صنف#2725: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 813 ). https://jabaristore.com/?app=product.show.4189
+- الجعبري#4188 ↔ صنف#2726: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 835 ). https://jabaristore.com/?app=product.show.4188
+- الجعبري#4187 ↔ صنف#2727: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 835 ). https://jabaristore.com/?app=product.show.4187
+- الجعبري#4186 ↔ صنف#2728: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 821 ). https://jabaristore.com/?app=product.show.4186
+- الجعبري#4185 ↔ صنف#2729: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 821 ). https://jabaristore.com/?app=product.show.4185
+- الجعبري#4184 ↔ صنف#2730: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 845 ). https://jabaristore.com/?app=product.show.4184
+- الجعبري#4183 ↔ صنف#2731: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 845 ). https://jabaristore.com/?app=product.show.4183
+- الجعبري#4182 ↔ صنف#2732: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 885 ). https://jabaristore.com/?app=product.show.4182
+- الجعبري#4181 ↔ صنف#2733: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 885 ). https://jabaristore.com/?app=product.show.4181
+- الجعبري#4180 ↔ صنف#2734: no_options؛ شريط لولو ابيض 10 يرد ( كود 556 ). https://jabaristore.com/?app=product.show.4180
+- الجعبري#4179 ↔ صنف#2735: no_options؛ شريط لولو ايفري 10 يرد ( كود 556 ). https://jabaristore.com/?app=product.show.4179
+- الجعبري#4178 ↔ صنف#2736: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 869 ). https://jabaristore.com/?app=product.show.4178
+- الجعبري#4177 ↔ صنف#2737: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 869 ). https://jabaristore.com/?app=product.show.4177
+- الجعبري#4176 ↔ صنف#2738: synced؛ بالقطعة=3₪؛ 25 قطعة=52₪. https://jabaristore.com/?app=product.show.4176
+- الجعبري#4175 ↔ صنف#2739: synced؛ بدون علبة=4₪؛ مع علبة كرتون ابيض خاصة=4.5₪. https://jabaristore.com/?app=product.show.4175
+- الجعبري#4174 ↔ صنف#2740: synced؛ بدون علبة=3.5₪؛ مع علبة كرتون ابيض خاصة=4₪. https://jabaristore.com/?app=product.show.4174
+- الجعبري#4173 ↔ صنف#2741: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4173
+- الجعبري#4172 ↔ صنف#2742: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4172
+- الجعبري#4171 ↔ صنف#2743: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4171
+- الجعبري#4170 ↔ صنف#2744: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4170
+- الجعبري#4169 ↔ صنف#2745: synced؛ بدون عبارة=72₪؛ مع عبارة عيد مبارك=85₪. https://jabaristore.com/?app=product.show.4169
+- الجعبري#4168 ↔ صنف#2746: synced؛ بدون عبارة=85₪؛ مع عبارة عيد مبارك=95₪. https://jabaristore.com/?app=product.show.4168
+- الجعبري#4167 ↔ صنف#2747: synced؛ بدون عبارة=85₪؛ مع عبارة عيد مبارك=95₪. https://jabaristore.com/?app=product.show.4167
+- الجعبري#4166 ↔ صنف#2748: synced؛ بدون علبة=2.5₪؛ مع علبة كرتون ابيض=3.5₪. https://jabaristore.com/?app=product.show.4166
+- الجعبري#4165 ↔ صنف#2749: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4165
+- الجعبري#4164 ↔ صنف#2750: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4164
+- الجعبري#4163 ↔ صنف#2751: synced؛ بالقطعة=5.5₪؛ 25 قطعة=105₪. https://jabaristore.com/?app=product.show.4163
+- الجعبري#4162 ↔ صنف#2752: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4162
+- الجعبري#4161 ↔ صنف#2753: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4161
+- الجعبري#4159 ↔ صنف#2754: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4159
+- الجعبري#4158 ↔ صنف#2755: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4158
+- الجعبري#4157 ↔ صنف#2756: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4157
+- الجعبري#4156 ↔ صنف#2757: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4156
+- الجعبري#4155 ↔ صنف#2758: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4155
+- الجعبري#4154 ↔ صنف#2759: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4154
+- الجعبري#4153 ↔ صنف#2760: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4153
+- الجعبري#4152 ↔ صنف#2761: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4152
+- الجعبري#4151 ↔ صنف#2762: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4151
+- الجعبري#4150 ↔ صنف#2763: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4150
+- الجعبري#4149 ↔ صنف#2764: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4149
+- الجعبري#4148 ↔ صنف#2765: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4148
+- الجعبري#4147 ↔ صنف#2766: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4147
+- الجعبري#4146 ↔ صنف#2767: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4146

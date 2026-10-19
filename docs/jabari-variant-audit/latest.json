@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:15:47.034121+03:00",
+  "updated_at": "2026-10-19T21:24:07.474903+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -2043,6 +2043,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2717, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 911 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792433746291
+    },
+    {
+      "source_id": 4196,
+      "mode": "apply",
+      "product_id": 1718,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2718, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 810 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433754685
+    },
+    {
+      "source_id": 4195,
+      "mode": "apply",
+      "product_id": 1719,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2719, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 810 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433764692
+    },
+    {
+      "source_id": 4194,
+      "mode": "apply",
+      "product_id": 1720,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2720, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 873 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433774677
+    },
+    {
+      "source_id": 4193,
+      "mode": "apply",
+      "product_id": 1721,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2721, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 873 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433784696
+    },
+    {
+      "source_id": 4192,
+      "mode": "apply",
+      "product_id": 1722,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2722, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 908 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433794694
+    },
+    {
+      "source_id": 4191,
+      "mode": "apply",
+      "product_id": 1723,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2723, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 908 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433804666
+    },
+    {
+      "source_id": 4190,
+      "mode": "apply",
+      "product_id": 1724,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2724, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 813 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433814678
+    },
+    {
+      "source_id": 4189,
+      "mode": "apply",
+      "product_id": 1725,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2725, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 813 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433824672
+    },
+    {
+      "source_id": 4188,
+      "mode": "apply",
+      "product_id": 1726,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2726, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 835 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433834934
+    },
+    {
+      "source_id": 4187,
+      "mode": "apply",
+      "product_id": 1727,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2727, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 835 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433844676
+    },
+    {
+      "source_id": 4186,
+      "mode": "apply",
+      "product_id": 1728,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2728, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 821 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433854669
+    },
+    {
+      "source_id": 4185,
+      "mode": "apply",
+      "product_id": 1729,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2729, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 821 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433864995
+    },
+    {
+      "source_id": 4184,
+      "mode": "apply",
+      "product_id": 1730,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2730, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 845 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433874960
+    },
+    {
+      "source_id": 4183,
+      "mode": "apply",
+      "product_id": 1731,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2731, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 845 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433884665
+    },
+    {
+      "source_id": 4182,
+      "mode": "apply",
+      "product_id": 1732,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2732, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 885 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433894966
+    },
+    {
+      "source_id": 4181,
+      "mode": "apply",
+      "product_id": 1733,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2733, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 885 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433904829
+    },
+    {
+      "source_id": 4180,
+      "mode": "apply",
+      "product_id": 1734,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2734, \"source\": {\"title\": \"شريط لولو ابيض 10 يرد ( كود 556 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433914880
+    },
+    {
+      "source_id": 4179,
+      "mode": "apply",
+      "product_id": 1735,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2735, \"source\": {\"title\": \"شريط لولو ايفري 10 يرد ( كود 556 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433924861
+    },
+    {
+      "source_id": 4178,
+      "mode": "apply",
+      "product_id": 1736,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2736, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 869 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433934831
+    },
+    {
+      "source_id": 4177,
+      "mode": "apply",
+      "product_id": 1737,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2737, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 869 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433944690
+    },
+    {
+      "source_id": 4176,
+      "mode": "apply",
+      "product_id": 1738,
+      "status": "synced",
+      "detail": "{\"item_number\": 2738, \"name\": \"عبوة زجاج - فارغة - 5 مل - للسيارة (غطاء + أعواد خشب) & علبة كرتون أبيض\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج - فارغة - 5 مل - للسيارة (غطاء + اعواد خشب) & علبة كرتون ابيض\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج - فارغة - 5 مل - للسيارة (غطاء + اعواد خشب) & علبة كرتون ابيض\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1738\", \"source_url\": \"https://jabaristore.com/?app=product.show.4176\"}",
+      "updated_at": 1792433954925
+    },
+    {
+      "source_id": 4175,
+      "mode": "apply",
+      "product_id": 1739,
+      "status": "synced",
+      "detail": "{\"item_number\": 2739, \"name\": \"عبوة زجاج رش | التاج الملكي 👑 ~ 50 مل ~\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج رش | التاج الملكي 👑 ~ 50 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج رش | التاج الملكي 👑 ~ 50 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 350, \"active\": true}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون علبة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1739\", \"source_url\": \"https://jabaristore.com/?app=product.show.4175\"}",
+      "updated_at": 1792433965142
+    },
+    {
+      "source_id": 4174,
+      "mode": "apply",
+      "product_id": 1740,
+      "status": "synced",
+      "detail": "{\"item_number\": 2740, \"name\": \"عبوة زجاج رش غطاء خشب 🪵 ~ 40 مل ~\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج رش غطاء خشب 🪵 ~ 40 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج رش غطاء خشب 🪵 ~ 40 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 300, \"active\": true}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 350, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون علبة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1740\", \"source_url\": \"https://jabaristore.com/?app=product.show.4174\"}",
+      "updated_at": 1792433974969
+    },
+    {
+      "source_id": 4173,
+      "mode": "apply",
+      "product_id": 1741,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2741}",
+      "updated_at": 1792433984834
+    },
+    {
+      "source_id": 4172,
+      "mode": "apply",
+      "product_id": 1742,
+      "status": "synced",
+      "detail": "{\"item_number\": 2742, \"name\": \"قطع اكريلك للزينة ( حج مبرور )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( حج مبرور )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( حج مبرور )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1742\", \"source_url\": \"https://jabaristore.com/?app=product.show.4172\"}",
+      "updated_at": 1792433995154
+    },
+    {
+      "source_id": 4171,
+      "mode": "apply",
+      "product_id": 1743,
+      "status": "synced",
+      "detail": "{\"item_number\": 2743, \"name\": \"قطع اكريلك للزينة ( عيد مبارك )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( عيد مبارك )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( عيد مبارك )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1743\", \"source_url\": \"https://jabaristore.com/?app=product.show.4171\"}",
+      "updated_at": 1792434004974
+    },
+    {
+      "source_id": 4170,
+      "mode": "apply",
+      "product_id": 1744,
+      "status": "synced",
+      "detail": "{\"item_number\": 2744, \"name\": \"قطع اكريلك للزينة ( عيدكم مبارك )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( عيدكم مبارك )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( عيدكم مبارك )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1744\", \"source_url\": \"https://jabaristore.com/?app=product.show.4170\"}",
+      "updated_at": 1792434014964
+    },
+    {
+      "source_id": 4169,
+      "mode": "apply",
+      "product_id": 1745,
+      "status": "synced",
+      "detail": "{\"item_number\": 2745, \"name\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 20 سم * الصينية 25 سم) 👑\", \"before_price\": 7200, \"before_variants\": [], \"source\": {\"title\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 20 سم * الصينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 8500, \"active\": false, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 20 سم * الصينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 7000, \"active\": true}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 8000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون عبارة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 8500, \"active\": false, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1745\", \"source_url\": \"https://jabaristore.com/?app=product.show.4169\"}",
+      "updated_at": 1792434025212
+    },
+    {
+      "source_id": 4168,
+      "mode": "apply",
+      "product_id": 1746,
+      "status": "synced",
+      "detail": "{\"item_number\": 2746, \"name\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 27 سم * الصينية 25 سم) 👑\", \"before_price\": 8500, \"before_variants\": [], \"source\": {\"title\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 27 سم * الصينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9500, \"active\": false, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند الضيافة الملكية || بدون زينة || (الهرم 27 سم * الصينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 8000, \"active\": true}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون عبارة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9500, \"active\": false, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1746\", \"source_url\": \"https://jabaristore.com/?app=product.show.4168\"}",
+      "updated_at": 1792434034954
+    },
+    {
+      "source_id": 4167,
+      "mode": "apply",
+      "product_id": 1747,
+      "status": "synced",
+      "detail": "{\"item_number\": 2747, \"name\": \"صينية الاناقة الملكية || بدون زينة || (قاعدة 35 سم * صينية 25 سم) 👑\", \"before_price\": 8500, \"before_variants\": [], \"source\": {\"title\": \"صينية الاناقة الملكية || بدون زينة || (قاعدة 35 سم * صينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صينية الاناقة الملكية || بدون زينة || (قاعدة 35 سم * صينية 25 سم) 👑\", \"variants\": [{\"name\": \"بدون عبارة\", \"price\": 8000, \"active\": true}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون عبارة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"مع عبارة عيد مبارك\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1747\", \"source_url\": \"https://jabaristore.com/?app=product.show.4167\"}",
+      "updated_at": 1792434044967
+    },
+    {
+      "source_id": 4166,
+      "mode": "apply",
+      "product_id": 1748,
+      "status": "synced",
+      "detail": "{\"item_number\": 2748, \"name\": \"عبوة زجاج رش غطاء ذهبي ~ 20 مل ~\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج رش غطاء ذهبي ~ 20 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"مع علبة كرتون ابيض\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج رش غطاء ذهبي ~ 20 مل ~\", \"variants\": [{\"name\": \"بدون علبة\", \"price\": 200, \"active\": true}, {\"name\": \"مع علبة كرتون ابيض\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون علبة\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"مع علبة كرتون ابيض\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1748\", \"source_url\": \"https://jabaristore.com/?app=product.show.4166\"}",
+      "updated_at": 1792434054948
+    },
+    {
+      "source_id": 4165,
+      "mode": "apply",
+      "product_id": 1749,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2749}",
+      "updated_at": 1792434064691
+    },
+    {
+      "source_id": 4164,
+      "mode": "apply",
+      "product_id": 1750,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2750}",
+      "updated_at": 1792434074668
+    },
+    {
+      "source_id": 4163,
+      "mode": "apply",
+      "product_id": 1751,
+      "status": "synced",
+      "detail": "{\"item_number\": 2751, \"name\": \"شنطة لولو ايفري ( قاعدة عريضة )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شنطة لولو ايفري ( قاعدة عريضة )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"25 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شنطة لولو ايفري ( قاعدة عريضة )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 500, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"25 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1751\", \"source_url\": \"https://jabaristore.com/?app=product.show.4163\"}",
+      "updated_at": 1792434085109
+    },
+    {
+      "source_id": 4162,
+      "mode": "apply",
+      "product_id": 1752,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2752}",
+      "updated_at": 1792434094879
+    },
+    {
+      "source_id": 4161,
+      "mode": "apply",
+      "product_id": 1753,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2753}",
+      "updated_at": 1792434104918
+    },
+    {
+      "source_id": 4159,
+      "mode": "apply",
+      "product_id": 1754,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2754}",
+      "updated_at": 1792434114689
+    },
+    {
+      "source_id": 4158,
+      "mode": "apply",
+      "product_id": 1755,
+      "status": "synced",
+      "detail": "{\"item_number\": 2755, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1755\", \"source_url\": \"https://jabaristore.com/?app=product.show.4158\"}",
+      "updated_at": 1792434125104
+    },
+    {
+      "source_id": 4157,
+      "mode": "apply",
+      "product_id": 1756,
+      "status": "synced",
+      "detail": "{\"item_number\": 2756, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1756\", \"source_url\": \"https://jabaristore.com/?app=product.show.4157\"}",
+      "updated_at": 1792434135057
+    },
+    {
+      "source_id": 4156,
+      "mode": "apply",
+      "product_id": 1757,
+      "status": "synced",
+      "detail": "{\"item_number\": 2757, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1757\", \"source_url\": \"https://jabaristore.com/?app=product.show.4156\"}",
+      "updated_at": 1792434144993
+    },
+    {
+      "source_id": 4155,
+      "mode": "apply",
+      "product_id": 1758,
+      "status": "synced",
+      "detail": "{\"item_number\": 2758, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1758\", \"source_url\": \"https://jabaristore.com/?app=product.show.4155\"}",
+      "updated_at": 1792434155222
+    },
+    {
+      "source_id": 4154,
+      "mode": "apply",
+      "product_id": 1759,
+      "status": "synced",
+      "detail": "{\"item_number\": 2759, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1759\", \"source_url\": \"https://jabaristore.com/?app=product.show.4154\"}",
+      "updated_at": 1792434165178
+    },
+    {
+      "source_id": 4153,
+      "mode": "apply",
+      "product_id": 1760,
+      "status": "synced",
+      "detail": "{\"item_number\": 2760, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1760\", \"source_url\": \"https://jabaristore.com/?app=product.show.4153\"}",
+      "updated_at": 1792434175197
+    },
+    {
+      "source_id": 4152,
+      "mode": "apply",
+      "product_id": 1761,
+      "status": "synced",
+      "detail": "{\"item_number\": 2761, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1761\", \"source_url\": \"https://jabaristore.com/?app=product.show.4152\"}",
+      "updated_at": 1792434185277
+    },
+    {
+      "source_id": 4151,
+      "mode": "apply",
+      "product_id": 1762,
+      "status": "synced",
+      "detail": "{\"item_number\": 2762, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1762\", \"source_url\": \"https://jabaristore.com/?app=product.show.4151\"}",
+      "updated_at": 1792434195210
+    },
+    {
+      "source_id": 4150,
+      "mode": "apply",
+      "product_id": 1763,
+      "status": "synced",
+      "detail": "{\"item_number\": 2763, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1763\", \"source_url\": \"https://jabaristore.com/?app=product.show.4150\"}",
+      "updated_at": 1792434205178
+    },
+    {
+      "source_id": 4149,
+      "mode": "apply",
+      "product_id": 1764,
+      "status": "synced",
+      "detail": "{\"item_number\": 2764, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1764\", \"source_url\": \"https://jabaristore.com/?app=product.show.4149\"}",
+      "updated_at": 1792434214966
+    },
+    {
+      "source_id": 4148,
+      "mode": "apply",
+      "product_id": 1765,
+      "status": "synced",
+      "detail": "{\"item_number\": 2765, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1765\", \"source_url\": \"https://jabaristore.com/?app=product.show.4148\"}",
+      "updated_at": 1792434225222
+    },
+    {
+      "source_id": 4147,
+      "mode": "apply",
+      "product_id": 1766,
+      "status": "synced",
+      "detail": "{\"item_number\": 2766, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1766\", \"source_url\": \"https://jabaristore.com/?app=product.show.4147\"}",
+      "updated_at": 1792434235217
+    },
+    {
+      "source_id": 4146,
+      "mode": "apply",
+      "product_id": 1767,
+      "status": "synced",
+      "detail": "{\"item_number\": 2767, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1767\", \"source_url\": \"https://jabaristore.com/?app=product.show.4146\"}",
+      "updated_at": 1792434245157
     },
     {
       "source_id": 3780,
