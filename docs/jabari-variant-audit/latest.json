@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:28:47.556524+03:00",
+  "updated_at": "2026-10-19T23:37:05.823579+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -8451,6 +8451,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3484, \"source\": {\"title\": \"تل ناعم زهري غامق (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792441726358
+    },
+    {
+      "source_id": 3009,
+      "mode": "apply",
+      "product_id": 2485,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3485, \"source\": {\"title\": \"تل ناعم ليلكي غامق (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441734889
+    },
+    {
+      "source_id": 3008,
+      "mode": "apply",
+      "product_id": 2486,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3486, \"source\": {\"title\": \"سنسال جلد جاهز ( 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441744820
+    },
+    {
+      "source_id": 3005,
+      "mode": "apply",
+      "product_id": 2487,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3487}",
+      "updated_at": 1792441754606
+    },
+    {
+      "source_id": 3004,
+      "mode": "apply",
+      "product_id": 2488,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3488}",
+      "updated_at": 1792441764615
+    },
+    {
+      "source_id": 3001,
+      "mode": "apply",
+      "product_id": 2489,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3489, \"source\": {\"title\": \"ميزان حراره\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441774803
+    },
+    {
+      "source_id": 3000,
+      "mode": "apply",
+      "product_id": 2490,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3490}",
+      "updated_at": 1792441784597
+    },
+    {
+      "source_id": 2999,
+      "mode": "apply",
+      "product_id": 2491,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3491}",
+      "updated_at": 1792441794787
+    },
+    {
+      "source_id": 2997,
+      "mode": "apply",
+      "product_id": 2492,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3492}",
+      "updated_at": 1792441804585
+    },
+    {
+      "source_id": 2995,
+      "mode": "apply",
+      "product_id": 2493,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3493}",
+      "updated_at": 1792441814583
+    },
+    {
+      "source_id": 2994,
+      "mode": "apply",
+      "product_id": 2494,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3494, \"source\": {\"title\": \"عروق خضار للزينة - ( حجم 80*0.5 سم ) ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441824589
+    },
+    {
+      "source_id": 2993,
+      "mode": "apply",
+      "product_id": 2495,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3495, \"source\": {\"title\": \"عروق خضار للزينة - ( حجم 100*0.5 سم ) ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441834581
+    },
+    {
+      "source_id": 2992,
+      "mode": "apply",
+      "product_id": 2496,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3496, \"source\": {\"title\": \"عروق خضار للزينة - ( حجم 120*0.5 سم ) ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2100}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441844860
+    },
+    {
+      "source_id": 2991,
+      "mode": "apply",
+      "product_id": 2497,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3497, \"source\": {\"title\": \"عروق خضار للزينة - ( حجم 120*1 سم ) ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441854827
+    },
+    {
+      "source_id": 2963,
+      "mode": "apply",
+      "product_id": 2498,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3498, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441864849
+    },
+    {
+      "source_id": 2962,
+      "mode": "apply",
+      "product_id": 2499,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3499, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2.5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441874890
+    },
+    {
+      "source_id": 2956,
+      "mode": "apply",
+      "product_id": 2500,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3500}",
+      "updated_at": 1792441884599
+    },
+    {
+      "source_id": 2949,
+      "mode": "apply",
+      "product_id": 2501,
+      "status": "synced",
+      "detail": "{\"item_number\": 3501, \"name\": \"عبوة رش ( زجاج ) غطاء فضي 3Ml - 12 قطعة -\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"عبوة رش ( زجاج ) غطاء فضي 3Ml - 12 قطعة -\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة رش ( زجاج ) غطاء فضي 3Ml - 12 قطعة -\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2501\", \"source_url\": \"https://jabaristore.com/?app=product.show.2949\"}",
+      "updated_at": 1792441895212
+    },
+    {
+      "source_id": 2948,
+      "mode": "apply",
+      "product_id": 2502,
+      "status": "synced",
+      "detail": "{\"item_number\": 3502, \"name\": \"عبوة رش ( زجاج ) غطاء شفاف 3Ml\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"عبوة رش ( زجاج ) غطاء شفاف 3Ml\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة رش ( زجاج ) غطاء شفاف 3Ml\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2502\", \"source_url\": \"https://jabaristore.com/?app=product.show.2948\"}",
+      "updated_at": 1792441905191
+    },
+    {
+      "source_id": 2947,
+      "mode": "apply",
+      "product_id": 2503,
+      "status": "synced",
+      "detail": "{\"item_number\": 3503, \"name\": \"عبوة رش ( زجاج ) غطاء ذهبي 3Ml - 12 قطعة -\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"عبوة رش ( زجاج ) غطاء ذهبي 3Ml - 12 قطعة -\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة رش ( زجاج ) غطاء ذهبي 3Ml - 12 قطعة -\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2503\", \"source_url\": \"https://jabaristore.com/?app=product.show.2947\"}",
+      "updated_at": 1792441915068
+    },
+    {
+      "source_id": 2945,
+      "mode": "apply",
+      "product_id": 2504,
+      "status": "synced",
+      "detail": "{\"item_number\": 3504, \"name\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": false, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1500, \"active\": true}, {\"name\": \"5 ضمم\", \"price\": 6000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": false, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2504\", \"source_url\": \"https://jabaristore.com/?app=product.show.2945\"}",
+      "updated_at": 1792441925198
+    },
+    {
+      "source_id": 2944,
+      "mode": "apply",
+      "product_id": 2505,
+      "status": "synced",
+      "detail": "{\"item_number\": 3505, \"name\": \"ستاند رخام طبيعي ( شايش ) (14*13 سم)& عطر فواح 50ml\", \"before_price\": 1850, \"before_variants\": [], \"source\": {\"title\": \"ستاند رخام طبيعي ( شايش ) (14*13 سم)& عطر فواح 50ml\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"10 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند رخام طبيعي ( شايش ) (14*13 سم)& عطر فواح 50ml\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 1700, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 16000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"10 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2505\", \"source_url\": \"https://jabaristore.com/?app=product.show.2944\"}",
+      "updated_at": 1792441935102
+    },
+    {
+      "source_id": 2943,
+      "mode": "apply",
+      "product_id": 2506,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3506, \"source\": {\"title\": \"شبر ورقي زم احمر ( 1.5*33 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441944906
+    },
+    {
+      "source_id": 2942,
+      "mode": "apply",
+      "product_id": 2507,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3507, \"source\": {\"title\": \"شبر ورقي زم ذهبي ( 1.5*33 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441954817
+    },
+    {
+      "source_id": 2941,
+      "mode": "apply",
+      "product_id": 2508,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3508, \"source\": {\"title\": \"شبر ورقي زم ازرق ( 1.5*33 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441964586
+    },
+    {
+      "source_id": 2940,
+      "mode": "apply",
+      "product_id": 2509,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3509, \"source\": {\"title\": \"شبر ورقي زم زهري ( 1.5*33 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441974592
+    },
+    {
+      "source_id": 2939,
+      "mode": "apply",
+      "product_id": 2510,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3510, \"source\": {\"title\": \"شبر ورقي زم ابيض ( 1.5*33 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441984845
+    },
+    {
+      "source_id": 2938,
+      "mode": "apply",
+      "product_id": 2511,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3511, \"source\": {\"title\": \"شبر ورقي زم ازرق ( 2.5*47 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441994611
+    },
+    {
+      "source_id": 2937,
+      "mode": "apply",
+      "product_id": 2512,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3512, \"source\": {\"title\": \"شبر ورقي زم احمر ( 2.5*47 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442004609
+    },
+    {
+      "source_id": 2936,
+      "mode": "apply",
+      "product_id": 2513,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3513, \"source\": {\"title\": \"شبر ورقي زم زهري ( 2.5*47 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442014594
+    },
+    {
+      "source_id": 2935,
+      "mode": "apply",
+      "product_id": 2514,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3514, \"source\": {\"title\": \"شبر ورقي زم ذهبي ( 2.5*47 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442024610
+    },
+    {
+      "source_id": 2934,
+      "mode": "apply",
+      "product_id": 2515,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3515, \"source\": {\"title\": \"شبر ورقي زم ابيض ( 2.5*47 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442034599
+    },
+    {
+      "source_id": 2933,
+      "mode": "apply",
+      "product_id": 2516,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3516, \"source\": {\"title\": \"شبر شيفون زم ازرق لمعة موج ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442044613
+    },
+    {
+      "source_id": 2932,
+      "mode": "apply",
+      "product_id": 2517,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3517, \"source\": {\"title\": \"شبر شيفون زم زهري لمعة موج ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442054598
+    },
+    {
+      "source_id": 2931,
+      "mode": "apply",
+      "product_id": 2518,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3518, \"source\": {\"title\": \"شبر شيفون زم فوشي لمعة موج ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442064610
+    },
+    {
+      "source_id": 2930,
+      "mode": "apply",
+      "product_id": 2519,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3519, \"source\": {\"title\": \"شبر شيفون زم ابيض لمعة زهري ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442074593
+    },
+    {
+      "source_id": 2929,
+      "mode": "apply",
+      "product_id": 2520,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3520, \"source\": {\"title\": \"شبر شيفون زم ذهبي لمعة ذهبي ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442084622
+    },
+    {
+      "source_id": 2928,
+      "mode": "apply",
+      "product_id": 2521,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3521, \"source\": {\"title\": \"شبر شيفون زم ابيض لمعة ازرق ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442094897
+    },
+    {
+      "source_id": 2927,
+      "mode": "apply",
+      "product_id": 2522,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3522, \"source\": {\"title\": \"شبر شيفون احمر زم لمعة ذهبي ( 3.5*51 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442104835
+    },
+    {
+      "source_id": 2926,
+      "mode": "apply",
+      "product_id": 2523,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3523, \"source\": {\"title\": \"شبر ورق & شيفون زم نيلي ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442114717
+    },
+    {
+      "source_id": 2925,
+      "mode": "apply",
+      "product_id": 2524,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3524, \"source\": {\"title\": \"شبر ورق & شيفون زم فوشي ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442124599
+    },
+    {
+      "source_id": 2924,
+      "mode": "apply",
+      "product_id": 2525,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3525, \"source\": {\"title\": \"شبر ورق & شيفون زم ازرق ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442134623
+    },
+    {
+      "source_id": 2923,
+      "mode": "apply",
+      "product_id": 2526,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3526, \"source\": {\"title\": \"شبر ورق & شيفون زم زهري ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442144850
+    },
+    {
+      "source_id": 2922,
+      "mode": "apply",
+      "product_id": 2527,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3527, \"source\": {\"title\": \"شبر ورق & شيفون زم ذهبي ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442154774
+    },
+    {
+      "source_id": 2921,
+      "mode": "apply",
+      "product_id": 2528,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3528, \"source\": {\"title\": \"شبر ورق & شيفون زم احمر ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442164600
+    },
+    {
+      "source_id": 2920,
+      "mode": "apply",
+      "product_id": 2529,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3529, \"source\": {\"title\": \"شبر ورق & شيفون زم توتي ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442174582
+    },
+    {
+      "source_id": 2919,
+      "mode": "apply",
+      "product_id": 2530,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3530, \"source\": {\"title\": \"شبر ورق & شيفون زم فضي ( 3*49 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442184871
+    },
+    {
+      "source_id": 2918,
+      "mode": "apply",
+      "product_id": 2531,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3531, \"source\": {\"title\": \"شبر ورق زم احمر ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442194852
+    },
+    {
+      "source_id": 2917,
+      "mode": "apply",
+      "product_id": 2532,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3532, \"source\": {\"title\": \"شبر ورق زم ذهبي ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442204597
+    },
+    {
+      "source_id": 2916,
+      "mode": "apply",
+      "product_id": 2533,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3533, \"source\": {\"title\": \"شبر ورق زم ابيض ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442214843
+    },
+    {
+      "source_id": 2915,
+      "mode": "apply",
+      "product_id": 2534,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3534, \"source\": {\"title\": \"شبر ورق زم ازرق ( 5*70 سم ) 12 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792442224620
     }
   ]
 }

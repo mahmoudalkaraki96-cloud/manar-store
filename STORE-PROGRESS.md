@@ -3462,3 +3462,64 @@
 - الجعبري#3012 ↔ صنف#3482: no_options؛ تل ناعم زهري (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3012
 - الجعبري#3011 ↔ صنف#3483: no_options؛ تل ناعم احمر (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3011
 - الجعبري#3010 ↔ صنف#3484: no_options؛ تل ناعم زهري غامق (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3010
+
+
+### 2026-10-19T23:37:05.823579+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:37:05.823579+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 655, "synced": 332, "unsupported_source_price": 119}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3009 ↔ صنف#3485: no_options؛ تل ناعم ليلكي غامق (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3009
+- الجعبري#3008 ↔ صنف#3486: no_options؛ سنسال جلد جاهز ( 100 قطعة ). https://jabaristore.com/?app=product.show.3008
+- الجعبري#3005 ↔ صنف#3487: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3005
+- الجعبري#3004 ↔ صنف#3488: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3004
+- الجعبري#3001 ↔ صنف#3489: no_options؛ ميزان حراره. https://jabaristore.com/?app=product.show.3001
+- الجعبري#3000 ↔ صنف#3490: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3000
+- الجعبري#2999 ↔ صنف#3491: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2999
+- الجعبري#2997 ↔ صنف#3492: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2997
+- الجعبري#2995 ↔ صنف#3493: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2995
+- الجعبري#2994 ↔ صنف#3494: no_options؛ عروق خضار للزينة - ( حجم 80*0.5 سم ) ( 12 قطعة ). https://jabaristore.com/?app=product.show.2994
+- الجعبري#2993 ↔ صنف#3495: no_options؛ عروق خضار للزينة - ( حجم 100*0.5 سم ) ( 12 قطعة ). https://jabaristore.com/?app=product.show.2993
+- الجعبري#2992 ↔ صنف#3496: no_options؛ عروق خضار للزينة - ( حجم 120*0.5 سم ) ( 12 قطعة ). https://jabaristore.com/?app=product.show.2992
+- الجعبري#2991 ↔ صنف#3497: no_options؛ عروق خضار للزينة - ( حجم 120*1 سم ) ( 12 قطعة ). https://jabaristore.com/?app=product.show.2991
+- الجعبري#2963 ↔ صنف#3498: no_options؛ قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2 سم ). https://jabaristore.com/?app=product.show.2963
+- الجعبري#2962 ↔ صنف#3499: no_options؛ قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2.5 سم ). https://jabaristore.com/?app=product.show.2962
+- الجعبري#2956 ↔ صنف#3500: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2956
+- الجعبري#2949 ↔ صنف#3501: synced؛ 10 قطعة=11₪؛ 100 قطعة=85₪. https://jabaristore.com/?app=product.show.2949
+- الجعبري#2948 ↔ صنف#3502: synced؛ 10 قطعة=10₪؛ 100 قطعة=72₪. https://jabaristore.com/?app=product.show.2948
+- الجعبري#2947 ↔ صنف#3503: synced؛ 10 قطعة=11₪؛ 100 قطعة=85₪. https://jabaristore.com/?app=product.show.2947
+- الجعبري#2945 ↔ صنف#3504: synced؛ بالضمة=16.5₪؛ 5 ضمم=62₪. https://jabaristore.com/?app=product.show.2945
+- الجعبري#2944 ↔ صنف#3505: synced؛ بالقطعة=18.5₪؛ 10 قطعة=170₪. https://jabaristore.com/?app=product.show.2944
+- الجعبري#2943 ↔ صنف#3506: no_options؛ شبر ورقي زم احمر ( 1.5*33 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2943
+- الجعبري#2942 ↔ صنف#3507: no_options؛ شبر ورقي زم ذهبي ( 1.5*33 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2942
+- الجعبري#2941 ↔ صنف#3508: no_options؛ شبر ورقي زم ازرق ( 1.5*33 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2941
+- الجعبري#2940 ↔ صنف#3509: no_options؛ شبر ورقي زم زهري ( 1.5*33 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2940
+- الجعبري#2939 ↔ صنف#3510: no_options؛ شبر ورقي زم ابيض ( 1.5*33 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2939
+- الجعبري#2938 ↔ صنف#3511: no_options؛ شبر ورقي زم ازرق ( 2.5*47 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2938
+- الجعبري#2937 ↔ صنف#3512: no_options؛ شبر ورقي زم احمر ( 2.5*47 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2937
+- الجعبري#2936 ↔ صنف#3513: no_options؛ شبر ورقي زم زهري ( 2.5*47 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2936
+- الجعبري#2935 ↔ صنف#3514: no_options؛ شبر ورقي زم ذهبي ( 2.5*47 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2935
+- الجعبري#2934 ↔ صنف#3515: no_options؛ شبر ورقي زم ابيض ( 2.5*47 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2934
+- الجعبري#2933 ↔ صنف#3516: no_options؛ شبر شيفون زم ازرق لمعة موج ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2933
+- الجعبري#2932 ↔ صنف#3517: no_options؛ شبر شيفون زم زهري لمعة موج ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2932
+- الجعبري#2931 ↔ صنف#3518: no_options؛ شبر شيفون زم فوشي لمعة موج ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2931
+- الجعبري#2930 ↔ صنف#3519: no_options؛ شبر شيفون زم ابيض لمعة زهري ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2930
+- الجعبري#2929 ↔ صنف#3520: no_options؛ شبر شيفون زم ذهبي لمعة ذهبي ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2929
+- الجعبري#2928 ↔ صنف#3521: no_options؛ شبر شيفون زم ابيض لمعة ازرق ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2928
+- الجعبري#2927 ↔ صنف#3522: no_options؛ شبر شيفون احمر زم لمعة ذهبي ( 3.5*51 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2927
+- الجعبري#2926 ↔ صنف#3523: no_options؛ شبر ورق & شيفون زم نيلي ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2926
+- الجعبري#2925 ↔ صنف#3524: no_options؛ شبر ورق & شيفون زم فوشي ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2925
+- الجعبري#2924 ↔ صنف#3525: no_options؛ شبر ورق & شيفون زم ازرق ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2924
+- الجعبري#2923 ↔ صنف#3526: no_options؛ شبر ورق & شيفون زم زهري ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2923
+- الجعبري#2922 ↔ صنف#3527: no_options؛ شبر ورق & شيفون زم ذهبي ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2922
+- الجعبري#2921 ↔ صنف#3528: no_options؛ شبر ورق & شيفون زم احمر ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2921
+- الجعبري#2920 ↔ صنف#3529: no_options؛ شبر ورق & شيفون زم توتي ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2920
+- الجعبري#2919 ↔ صنف#3530: no_options؛ شبر ورق & شيفون زم فضي ( 3*49 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2919
+- الجعبري#2918 ↔ صنف#3531: no_options؛ شبر ورق زم احمر ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2918
+- الجعبري#2917 ↔ صنف#3532: no_options؛ شبر ورق زم ذهبي ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2917
+- الجعبري#2916 ↔ صنف#3533: no_options؛ شبر ورق زم ابيض ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2916
+- الجعبري#2915 ↔ صنف#3534: no_options؛ شبر ورق زم ازرق ( 5*70 سم ) 12 قطعة. https://jabaristore.com/?app=product.show.2915
