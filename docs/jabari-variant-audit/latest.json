@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:13:58.322102+03:00",
+  "updated_at": "2026-10-19T22:22:17.498695+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -4851,6 +4851,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 3042, \"name\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2042\", \"source_url\": \"https://jabaristore.com/?app=product.show.3753\"}",
       "updated_at": 1792437235671
+    },
+    {
+      "source_id": 3749,
+      "mode": "apply",
+      "product_id": 2043,
+      "status": "synced",
+      "detail": "{\"item_number\": 3043, \"name\": \"ببيونه ستان ( ذهبي ) عرض 2.5 سم\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ( ذهبي ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ( ذهبي ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2043\", \"source_url\": \"https://jabaristore.com/?app=product.show.3749\"}",
+      "updated_at": 1792437245332
+    },
+    {
+      "source_id": 3748,
+      "mode": "apply",
+      "product_id": 2044,
+      "status": "synced",
+      "detail": "{\"item_number\": 3044, \"name\": \"ببيونه ستان ( زهر ) عرض 2.5 سم\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ( زهر ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ( زهر ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2044\", \"source_url\": \"https://jabaristore.com/?app=product.show.3748\"}",
+      "updated_at": 1792437255024
+    },
+    {
+      "source_id": 3747,
+      "mode": "apply",
+      "product_id": 2045,
+      "status": "synced",
+      "detail": "{\"item_number\": 3045, \"name\": \"ببينونة قماش محزز ( ازرق ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( ازرق ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( ازرق ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2045\", \"source_url\": \"https://jabaristore.com/?app=product.show.3747\"}",
+      "updated_at": 1792437265237
+    },
+    {
+      "source_id": 3746,
+      "mode": "apply",
+      "product_id": 2046,
+      "status": "synced",
+      "detail": "{\"item_number\": 3046, \"name\": \"ببينونة قماش محزز ( ذهبي ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( ذهبي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( ذهبي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2046\", \"source_url\": \"https://jabaristore.com/?app=product.show.3746\"}",
+      "updated_at": 1792437275042
+    },
+    {
+      "source_id": 3745,
+      "mode": "apply",
+      "product_id": 2047,
+      "status": "synced",
+      "detail": "{\"item_number\": 3047, \"name\": \"ببينونة قماش محزز ( زهر ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( زهر ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( زهر ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2047\", \"source_url\": \"https://jabaristore.com/?app=product.show.3745\"}",
+      "updated_at": 1792437285447
+    },
+    {
+      "source_id": 3744,
+      "mode": "apply",
+      "product_id": 2048,
+      "status": "synced",
+      "detail": "{\"item_number\": 3048, \"name\": \"ببينونة قماش محزز ( كحلي ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( كحلي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( كحلي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2048\", \"source_url\": \"https://jabaristore.com/?app=product.show.3744\"}",
+      "updated_at": 1792437295009
+    },
+    {
+      "source_id": 3743,
+      "mode": "apply",
+      "product_id": 2049,
+      "status": "synced",
+      "detail": "{\"item_number\": 3049, \"name\": \"ببينونة قماش محزز ( موف ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( موف ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( موف ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2049\", \"source_url\": \"https://jabaristore.com/?app=product.show.3743\"}",
+      "updated_at": 1792437305037
+    },
+    {
+      "source_id": 3741,
+      "mode": "apply",
+      "product_id": 2050,
+      "status": "synced",
+      "detail": "{\"item_number\": 3050, \"name\": \"ببينونة قماش محزز ( ابيض ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( ابيض ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( ابيض ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2050\", \"source_url\": \"https://jabaristore.com/?app=product.show.3741\"}",
+      "updated_at": 1792437315017
+    },
+    {
+      "source_id": 3740,
+      "mode": "apply",
+      "product_id": 2051,
+      "status": "synced",
+      "detail": "{\"item_number\": 3051, \"name\": \"ببينونة قماش محزز ( اخضر نعناعي ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( اخضر نعناعي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( اخضر نعناعي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2051\", \"source_url\": \"https://jabaristore.com/?app=product.show.3740\"}",
+      "updated_at": 1792437325010
+    },
+    {
+      "source_id": 3739,
+      "mode": "apply",
+      "product_id": 2052,
+      "status": "synced",
+      "detail": "{\"item_number\": 3052, \"name\": \"ببينونة قماش محزز ( زيتي ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( زيتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( زيتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2052\", \"source_url\": \"https://jabaristore.com/?app=product.show.3739\"}",
+      "updated_at": 1792437335040
+    },
+    {
+      "source_id": 3738,
+      "mode": "apply",
+      "product_id": 2053,
+      "status": "synced",
+      "detail": "{\"item_number\": 3053, \"name\": \"ببينونة قماش محزز ( بنفسجي ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( بنفسجي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( بنفسجي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2053\", \"source_url\": \"https://jabaristore.com/?app=product.show.3738\"}",
+      "updated_at": 1792437345078
+    },
+    {
+      "source_id": 3737,
+      "mode": "apply",
+      "product_id": 2054,
+      "status": "synced",
+      "detail": "{\"item_number\": 3054, \"name\": \"ببينونة قماش محزز ( خمري ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( خمري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( خمري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2054\", \"source_url\": \"https://jabaristore.com/?app=product.show.3737\"}",
+      "updated_at": 1792437355079
+    },
+    {
+      "source_id": 3736,
+      "mode": "apply",
+      "product_id": 2055,
+      "status": "synced",
+      "detail": "{\"item_number\": 3055, \"name\": \"ببينونة قماش محزز ( ايفري ) عرض 1 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببينونة قماش محزز ( ايفري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببينونة قماش محزز ( ايفري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"100 قطعة\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"500 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2055\", \"source_url\": \"https://jabaristore.com/?app=product.show.3736\"}",
+      "updated_at": 1792437365001
+    },
+    {
+      "source_id": 3735,
+      "mode": "apply",
+      "product_id": 1423,
+      "status": "synced",
+      "detail": "{\"item_number\": 2423, \"name\": \"ورد طبيعي مجفف\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ورد طبيعي مجفف\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد طبيعي مجفف\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1500, \"active\": true}, {\"name\": \"5 ضمم\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1423\", \"source_url\": \"https://jabaristore.com/?app=product.show.3735\"}",
+      "updated_at": 1792437375019
+    },
+    {
+      "source_id": 3734,
+      "mode": "apply",
+      "product_id": 1424,
+      "status": "synced",
+      "detail": "{\"item_number\": 2424, \"name\": \"ورد طبعي مجفف\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"ورد طبعي مجفف\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"5 ضمم\", \"price\": 9000, \"active\": false, \"supplier_price\": 8500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد طبعي مجفف\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 2000, \"active\": true}, {\"name\": \"5 ضمم\", \"price\": 8500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالضمة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"5 ضمم\", \"price\": 9000, \"active\": false, \"supplier_price\": 8500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1424\", \"source_url\": \"https://jabaristore.com/?app=product.show.3734\"}",
+      "updated_at": 1792437385227
+    },
+    {
+      "source_id": 3733,
+      "mode": "apply",
+      "product_id": 1425,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2425}",
+      "updated_at": 1792437394971
+    },
+    {
+      "source_id": 3729,
+      "mode": "apply",
+      "product_id": 2056,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3056}",
+      "updated_at": 1792437404970
+    },
+    {
+      "source_id": 3728,
+      "mode": "apply",
+      "product_id": 2057,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3057}",
+      "updated_at": 1792437414953
+    },
+    {
+      "source_id": 3727,
+      "mode": "apply",
+      "product_id": 2058,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3058, \"source\": {\"title\": \"ورد صناعي ورق ( زهري فاتح )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437424778
+    },
+    {
+      "source_id": 3726,
+      "mode": "apply",
+      "product_id": 2059,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3059, \"source\": {\"title\": \"ورد صناعي ورق ( كحلي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437434931
+    },
+    {
+      "source_id": 3725,
+      "mode": "apply",
+      "product_id": 2060,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3060, \"source\": {\"title\": \"ورد صناعي ورق ( اخضر جيشي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437444768
+    },
+    {
+      "source_id": 3724,
+      "mode": "apply",
+      "product_id": 2061,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3061, \"source\": {\"title\": \"ورد صناعي ورق ( فوشي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437454974
+    },
+    {
+      "source_id": 3723,
+      "mode": "apply",
+      "product_id": 2062,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3062, \"source\": {\"title\": \"ورد صناعي ورق ( بنفسجي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437464991
+    },
+    {
+      "source_id": 3722,
+      "mode": "apply",
+      "product_id": 2063,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3063, \"source\": {\"title\": \"ورد صناعي ورق ( برتقالي فاتح )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437474981
+    },
+    {
+      "source_id": 3721,
+      "mode": "apply",
+      "product_id": 2064,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3064, \"source\": {\"title\": \"ورد صناعي ورق ( اصفر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437484974
+    },
+    {
+      "source_id": 3720,
+      "mode": "apply",
+      "product_id": 1426,
+      "status": "synced",
+      "detail": "{\"item_number\": 2426, \"name\": \"خيط سمك شفاف ( 500 يرد )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"خيط سمك شفاف ( 500 يرد )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.5mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.6mm\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"0.7mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.8mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خيط سمك شفاف ( 500 يرد )\", \"variants\": [{\"name\": \"0.4mm\", \"price\": 1500, \"active\": true}, {\"name\": \"0.5mm\", \"price\": 1500, \"active\": true}, {\"name\": \"0.6mm\", \"price\": 1500, \"active\": false}, {\"name\": \"0.7mm\", \"price\": 1500, \"active\": true}, {\"name\": \"0.8mm\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"0.4mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.5mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.6mm\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"0.7mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"0.8mm\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1426\", \"source_url\": \"https://jabaristore.com/?app=product.show.3720\"}",
+      "updated_at": 1792437495049
+    },
+    {
+      "source_id": 3719,
+      "mode": "apply",
+      "product_id": 2065,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3065, \"source\": {\"title\": \"صينية جرانيت دائري اسود كود 46\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437505011
+    },
+    {
+      "source_id": 3716,
+      "mode": "apply",
+      "product_id": 2066,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3066, \"source\": {\"title\": \"صينية جرانيت اسود يد زاوية كود 6\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437514757
+    },
+    {
+      "source_id": 3715,
+      "mode": "apply",
+      "product_id": 2067,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3067, \"source\": {\"title\": \"مضايف زجاج لون اخضر مريمي كود 51\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437524739
+    },
+    {
+      "source_id": 3709,
+      "mode": "apply",
+      "product_id": 2068,
+      "status": "synced",
+      "detail": "{\"item_number\": 3068, \"name\": \"خرز لولو سكري 16mm (مثقوب)\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"خرز لولو سكري 16mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خرز لولو سكري 16mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2500, \"active\": true}, {\"name\": \"5 باكيت\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2068\", \"source_url\": \"https://jabaristore.com/?app=product.show.3709\"}",
+      "updated_at": 1792437535307
+    },
+    {
+      "source_id": 3708,
+      "mode": "apply",
+      "product_id": 2069,
+      "status": "synced",
+      "detail": "{\"item_number\": 3069, \"name\": \"خرز لولو سكري 14mm (مثقوب)\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"خرز لولو سكري 14mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خرز لولو سكري 14mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2500, \"active\": true}, {\"name\": \"5 باكيت\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2069\", \"source_url\": \"https://jabaristore.com/?app=product.show.3708\"}",
+      "updated_at": 1792437545108
+    },
+    {
+      "source_id": 3707,
+      "mode": "apply",
+      "product_id": 2070,
+      "status": "synced",
+      "detail": "{\"item_number\": 3070, \"name\": \"خرز لولو ابيض 16mm (مثقوب)\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"خرز لولو ابيض 16mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خرز لولو ابيض 16mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2500, \"active\": true}, {\"name\": \"5 باكيت\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2070\", \"source_url\": \"https://jabaristore.com/?app=product.show.3707\"}",
+      "updated_at": 1792437555014
+    },
+    {
+      "source_id": 3706,
+      "mode": "apply",
+      "product_id": 2071,
+      "status": "synced",
+      "detail": "{\"item_number\": 3071, \"name\": \"خرز لولو ابيض 14mm (مثقوب)\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"خرز لولو ابيض 14mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خرز لولو ابيض 14mm (مثقوب)\", \"variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2500, \"active\": true}, {\"name\": \"5 باكيت\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"باكيت ( نصف كيلو )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"5 باكيت\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2071\", \"source_url\": \"https://jabaristore.com/?app=product.show.3706\"}",
+      "updated_at": 1792437565270
+    },
+    {
+      "source_id": 3705,
+      "mode": "apply",
+      "product_id": 2072,
+      "status": "synced",
+      "detail": "{\"item_number\": 3072, \"name\": \"ستاند رخام ( شايش ) & أسماء الجلالة اكريلك ( بدون صندوق )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ستاند رخام ( شايش ) & اسماء الجلالة اكريلك ( بدون صندوق )\", \"variants\": [{\"name\": \"لفظ الجلالة ( الله )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة (الرحمن )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الرحيم )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الوهاب )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الرزاق )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( اللطيف )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند رخام ( شايش ) & اسماء الجلالة اكريلك ( بدون صندوق )\", \"variants\": [{\"name\": \"لفظ الجلالة ( الله )\", \"price\": 1500, \"active\": true}, {\"name\": \"لفظ الجلالة (الرحمن )\", \"price\": 1500, \"active\": true}, {\"name\": \"لفظ الجلالة ( الرحيم )\", \"price\": 1500, \"active\": true}, {\"name\": \"لفظ الجلالة ( الوهاب )\", \"price\": 1500, \"active\": true}, {\"name\": \"لفظ الجلالة ( الرزاق )\", \"price\": 1500, \"active\": true}, {\"name\": \"لفظ الجلالة ( اللطيف )\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفظ الجلالة ( الله )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة (الرحمن )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الرحيم )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الوهاب )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( الرزاق )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"لفظ الجلالة ( اللطيف )\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2072\", \"source_url\": \"https://jabaristore.com/?app=product.show.3705\"}",
+      "updated_at": 1792437575315
+    },
+    {
+      "source_id": 3704,
+      "mode": "apply",
+      "product_id": 2073,
+      "status": "synced",
+      "detail": "{\"item_number\": 3073, \"name\": \"أكياس PVC حافة ذهبي & يد ذهبي ( 10*6*12 سم )\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"اكياس PVC حافة ذهبي & يد ذهبي ( 10*6*12 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"50 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس PVC حافة ذهبي & يد ذهبي ( 10*6*12 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"50 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2073\", \"source_url\": \"https://jabaristore.com/?app=product.show.3704\"}",
+      "updated_at": 1792437585157
+    },
+    {
+      "source_id": 3703,
+      "mode": "apply",
+      "product_id": 2074,
+      "status": "synced",
+      "detail": "{\"item_number\": 3074, \"name\": \"أكياس PVC حافة ذهبي & يد ذهبي ( 15*8.5*15 سم ) 12 قطعة\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"اكياس PVC حافة ذهبي & يد ذهبي ( 15*8.5*15 سم ) 12 قطعة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس PVC حافة ذهبي & يد ذهبي ( 15*8.5*15 سم ) 12 قطعة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2074\", \"source_url\": \"https://jabaristore.com/?app=product.show.3703\"}",
+      "updated_at": 1792437595045
+    },
+    {
+      "source_id": 3702,
+      "mode": "apply",
+      "product_id": 2075,
+      "status": "synced",
+      "detail": "{\"item_number\": 3075, \"name\": \"أكياس PVC & يد ذهبي ( 15*8*20 سم )\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"اكياس PVC & يد ذهبي ( 15*8*20 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"50 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس PVC & يد ذهبي ( 15*8*20 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2700, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"50 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2075\", \"source_url\": \"https://jabaristore.com/?app=product.show.3702\"}",
+      "updated_at": 1792437605081
+    },
+    {
+      "source_id": 3701,
+      "mode": "apply",
+      "product_id": 2076,
+      "status": "synced",
+      "detail": "{\"item_number\": 3076, \"name\": \"أكياس PVC & يد ذهبي ( 12*14*24 سم )\", \"before_price\": 3150, \"before_variants\": [], \"source\": {\"title\": \"اكياس PVC & يد ذهبي ( 12*14*24 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"50 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس PVC & يد ذهبي ( 12*14*24 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 13500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"50 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2076\", \"source_url\": \"https://jabaristore.com/?app=product.show.3701\"}",
+      "updated_at": 1792437615011
+    },
+    {
+      "source_id": 3700,
+      "mode": "apply",
+      "product_id": 2077,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3077}",
+      "updated_at": 1792437624757
+    },
+    {
+      "source_id": 3699,
+      "mode": "apply",
+      "product_id": 2078,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3078}",
+      "updated_at": 1792437635006
+    },
+    {
+      "source_id": 3698,
+      "mode": "apply",
+      "product_id": 2079,
+      "status": "synced",
+      "detail": "{\"item_number\": 3079, \"name\": \"ميدالية مكرميه وردة ( ازرق )\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"ميدالية مكرميه وردة ( ازرق )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية مكرميه وردة ( ازرق )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2079\", \"source_url\": \"https://jabaristore.com/?app=product.show.3698\"}",
+      "updated_at": 1792437645166
+    },
+    {
+      "source_id": 3697,
+      "mode": "apply",
+      "product_id": 2080,
+      "status": "synced",
+      "detail": "{\"item_number\": 3080, \"name\": \"ميدالية مكرميه رامبو ( ازرق )\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"ميدالية مكرميه رامبو ( ازرق )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية مكرميه رامبو ( ازرق )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"كبير / 25 قطعة\", \"price\": 7500, \"active\": true}, {\"name\": \"صغير / بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2080\", \"source_url\": \"https://jabaristore.com/?app=product.show.3697\"}",
+      "updated_at": 1792437655067
+    },
+    {
+      "source_id": 3696,
+      "mode": "apply",
+      "product_id": 2081,
+      "status": "synced",
+      "detail": "{\"item_number\": 3081, \"name\": \"ميدالية مكرميه رامبو ( زهري )\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"ميدالية مكرميه رامبو ( زهري )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية مكرميه رامبو ( زهري )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"كبير / 25 قطعة\", \"price\": 7500, \"active\": true}, {\"name\": \"صغير / بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2081\", \"source_url\": \"https://jabaristore.com/?app=product.show.3696\"}",
+      "updated_at": 1792437665169
+    },
+    {
+      "source_id": 3695,
+      "mode": "apply",
+      "product_id": 2082,
+      "status": "synced",
+      "detail": "{\"item_number\": 3082, \"name\": \"ميدالية مكرميه رامبو ( ايفري )\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"ميدالية مكرميه رامبو ( ايفري )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية مكرميه رامبو ( ايفري )\", \"variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"كبير / 25 قطعة\", \"price\": 7500, \"active\": true}, {\"name\": \"صغير / بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"كبير / 25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}, {\"name\": \"صغير / بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"صغير / 25 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2082\", \"source_url\": \"https://jabaristore.com/?app=product.show.3695\"}",
+      "updated_at": 1792437675026
+    },
+    {
+      "source_id": 3694,
+      "mode": "apply",
+      "product_id": 2083,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3083}",
+      "updated_at": 1792437684922
+    },
+    {
+      "source_id": 3693,
+      "mode": "apply",
+      "product_id": 2084,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3084}",
+      "updated_at": 1792437694909
+    },
+    {
+      "source_id": 3690,
+      "mode": "apply",
+      "product_id": 2085,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3085}",
+      "updated_at": 1792437704755
+    },
+    {
+      "source_id": 3688,
+      "mode": "apply",
+      "product_id": 2086,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3086, \"source\": {\"title\": \"مضيفة حجر ( الحصان ) & علبة PVC شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437714874
+    },
+    {
+      "source_id": 3687,
+      "mode": "apply",
+      "product_id": 2087,
+      "status": "synced",
+      "detail": "{\"item_number\": 3087, \"name\": \"صدفة حجر فارغة ( 13 سم )\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"صدفة حجر فارغة ( 13 سم )\", \"variants\": [{\"name\": \"علبة كرتون ابيض\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"علبة كرتون شفاف Pvc\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صدفة حجر فارغة ( 13 سم )\", \"variants\": [{\"name\": \"علبة كرتون ابيض\", \"price\": 350, \"active\": true}, {\"name\": \"علبة كرتون شفاف Pvc\", \"price\": 400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"علبة كرتون ابيض\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"علبة كرتون شفاف Pvc\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2087\", \"source_url\": \"https://jabaristore.com/?app=product.show.3687\"}",
+      "updated_at": 1792437725029
+    },
+    {
+      "source_id": 3673,
+      "mode": "apply",
+      "product_id": 2088,
+      "status": "synced",
+      "detail": "{\"item_number\": 3088, \"name\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 600, \"active\": true}, {\"name\": \"بدون تغليف\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2088\", \"source_url\": \"https://jabaristore.com/?app=product.show.3673\"}",
+      "updated_at": 1792437735149
     }
   ]
 }

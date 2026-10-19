@@ -2913,3 +2913,64 @@
 - الجعبري#3758 ↔ صنف#3040: synced؛ 50 قطعة=13.5₪؛ 100 قطعة=21.5₪؛ 200 قطعة=34₪. https://jabaristore.com/?app=product.show.3758
 - الجعبري#3756 ↔ صنف#3041: synced؛ 50 قطعة=13.5₪؛ 100 قطعة=21.5₪؛ 200 قطعة=34₪. https://jabaristore.com/?app=product.show.3756
 - الجعبري#3753 ↔ صنف#3042: synced؛ 50 قطعة=14.5₪؛ 100 قطعة=23.5₪؛ 200 قطعة=37₪. https://jabaristore.com/?app=product.show.3753
+
+
+### 2026-10-19T22:22:17.498695+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T22:22:17.498695+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 380, "synced": 205, "unsupported_source_price": 71}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3749 ↔ صنف#3043: synced؛ 50 قطعة=14.5₪؛ 100 قطعة=23.5₪؛ 200 قطعة=37₪. https://jabaristore.com/?app=product.show.3749
+- الجعبري#3748 ↔ صنف#3044: synced؛ 50 قطعة=14.5₪؛ 100 قطعة=23.5₪؛ 200 قطعة=37₪. https://jabaristore.com/?app=product.show.3748
+- الجعبري#3747 ↔ صنف#3045: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3747
+- الجعبري#3746 ↔ صنف#3046: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3746
+- الجعبري#3745 ↔ صنف#3047: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3745
+- الجعبري#3744 ↔ صنف#3048: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3744
+- الجعبري#3743 ↔ صنف#3049: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3743
+- الجعبري#3741 ↔ صنف#3050: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3741
+- الجعبري#3740 ↔ صنف#3051: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3740
+- الجعبري#3739 ↔ صنف#3052: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3739
+- الجعبري#3738 ↔ صنف#3053: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3738
+- الجعبري#3737 ↔ صنف#3054: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3737
+- الجعبري#3736 ↔ صنف#3055: synced؛ 50 قطعة=11₪؛ 100 قطعة=19.5₪؛ 500 قطعة=72₪. https://jabaristore.com/?app=product.show.3736
+- الجعبري#3735 ↔ صنف#2423: synced؛ بالضمة=16.5₪؛ 5 ضمم=62₪. https://jabaristore.com/?app=product.show.3735
+- الجعبري#3734 ↔ صنف#2424: synced؛ بالضمة=21.5₪؛ 5 ضمم=90₪. https://jabaristore.com/?app=product.show.3734
+- الجعبري#3733 ↔ صنف#2425: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3733
+- الجعبري#3729 ↔ صنف#3056: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3729
+- الجعبري#3728 ↔ صنف#3057: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3728
+- الجعبري#3727 ↔ صنف#3058: no_options؛ ورد صناعي ورق ( زهري فاتح ). https://jabaristore.com/?app=product.show.3727
+- الجعبري#3726 ↔ صنف#3059: no_options؛ ورد صناعي ورق ( كحلي ). https://jabaristore.com/?app=product.show.3726
+- الجعبري#3725 ↔ صنف#3060: no_options؛ ورد صناعي ورق ( اخضر جيشي ). https://jabaristore.com/?app=product.show.3725
+- الجعبري#3724 ↔ صنف#3061: no_options؛ ورد صناعي ورق ( فوشي ). https://jabaristore.com/?app=product.show.3724
+- الجعبري#3723 ↔ صنف#3062: no_options؛ ورد صناعي ورق ( بنفسجي ). https://jabaristore.com/?app=product.show.3723
+- الجعبري#3722 ↔ صنف#3063: no_options؛ ورد صناعي ورق ( برتقالي فاتح ). https://jabaristore.com/?app=product.show.3722
+- الجعبري#3721 ↔ صنف#3064: no_options؛ ورد صناعي ورق ( اصفر ). https://jabaristore.com/?app=product.show.3721
+- الجعبري#3720 ↔ صنف#2426: synced؛ 0.4mm=16.5₪؛ 0.5mm=16.5₪؛ 0.6mm=16.5₪؛ 0.7mm=16.5₪؛ 0.8mm=16.5₪. https://jabaristore.com/?app=product.show.3720
+- الجعبري#3719 ↔ صنف#3065: no_options؛ صينية جرانيت دائري اسود كود 46. https://jabaristore.com/?app=product.show.3719
+- الجعبري#3716 ↔ صنف#3066: no_options؛ صينية جرانيت اسود يد زاوية كود 6. https://jabaristore.com/?app=product.show.3716
+- الجعبري#3715 ↔ صنف#3067: no_options؛ مضايف زجاج لون اخضر مريمي كود 51. https://jabaristore.com/?app=product.show.3715
+- الجعبري#3709 ↔ صنف#3068: synced؛ باكيت ( نصف كيلو )=26.5₪؛ 5 باكيت=105₪. https://jabaristore.com/?app=product.show.3709
+- الجعبري#3708 ↔ صنف#3069: synced؛ باكيت ( نصف كيلو )=26.5₪؛ 5 باكيت=105₪. https://jabaristore.com/?app=product.show.3708
+- الجعبري#3707 ↔ صنف#3070: synced؛ باكيت ( نصف كيلو )=26.5₪؛ 5 باكيت=105₪. https://jabaristore.com/?app=product.show.3707
+- الجعبري#3706 ↔ صنف#3071: synced؛ باكيت ( نصف كيلو )=26.5₪؛ 5 باكيت=105₪. https://jabaristore.com/?app=product.show.3706
+- الجعبري#3705 ↔ صنف#3072: synced؛ لفظ الجلالة ( الله )=16.5₪؛ لفظ الجلالة (الرحمن )=16.5₪؛ لفظ الجلالة ( الرحيم )=16.5₪؛ لفظ الجلالة ( الوهاب )=16.5₪؛ لفظ الجلالة ( الرزاق )=16.5₪؛ لفظ الجلالة ( اللطيف )=16.5₪. https://jabaristore.com/?app=product.show.3705
+- الجعبري#3704 ↔ صنف#3073: synced؛ 10 قطعة=21.5₪؛ 50 قطعة=95₪. https://jabaristore.com/?app=product.show.3704
+- الجعبري#3703 ↔ صنف#3074: synced؛ 10 قطعة=26.5₪؛ 50 قطعة=105₪. https://jabaristore.com/?app=product.show.3703
+- الجعبري#3702 ↔ صنف#3075: synced؛ 10 قطعة=28.5₪؛ 50 قطعة=130₪. https://jabaristore.com/?app=product.show.3702
+- الجعبري#3701 ↔ صنف#3076: synced؛ 10 قطعة=31.5₪؛ 50 قطعة=145₪. https://jabaristore.com/?app=product.show.3701
+- الجعبري#3700 ↔ صنف#3077: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3700
+- الجعبري#3699 ↔ صنف#3078: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3699
+- الجعبري#3698 ↔ صنف#3079: synced؛ بالقطعة=4₪؛ 25 قطعة=85₪. https://jabaristore.com/?app=product.show.3698
+- الجعبري#3697 ↔ صنف#3080: synced؛ كبير / بالقطعة=3.5₪؛ كبير / 25 قطعة=80₪؛ صغير / بالقطعة=3₪؛ صغير / 25 قطعة=52₪. https://jabaristore.com/?app=product.show.3697
+- الجعبري#3696 ↔ صنف#3081: synced؛ كبير / بالقطعة=3.5₪؛ كبير / 25 قطعة=80₪؛ صغير / بالقطعة=3₪؛ صغير / 25 قطعة=52₪. https://jabaristore.com/?app=product.show.3696
+- الجعبري#3695 ↔ صنف#3082: synced؛ كبير / بالقطعة=3.5₪؛ كبير / 25 قطعة=80₪؛ صغير / بالقطعة=3₪؛ صغير / 25 قطعة=52₪. https://jabaristore.com/?app=product.show.3695
+- الجعبري#3694 ↔ صنف#3083: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3694
+- الجعبري#3693 ↔ صنف#3084: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3693
+- الجعبري#3690 ↔ صنف#3085: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3690
+- الجعبري#3688 ↔ صنف#3086: no_options؛ مضيفة حجر ( الحصان ) & علبة PVC شفاف. https://jabaristore.com/?app=product.show.3688
+- الجعبري#3687 ↔ صنف#3087: synced؛ علبة كرتون ابيض=4₪؛ علبة كرتون شفاف Pvc=4.5₪. https://jabaristore.com/?app=product.show.3687
+- الجعبري#3673 ↔ صنف#3088: synced؛ مع تغليف=7₪؛ بدون تغليف=5.5₪. https://jabaristore.com/?app=product.show.3673
