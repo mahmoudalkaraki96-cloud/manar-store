@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:20:29.467965+03:00",
+  "updated_at": "2026-10-19T23:28:47.556524+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -8051,6 +8051,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 3436, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2436\", \"source_url\": \"https://jabaristore.com/?app=product.show.3082\"}",
       "updated_at": 1792441226636
+    },
+    {
+      "source_id": 3076,
+      "mode": "apply",
+      "product_id": 2437,
+      "status": "synced",
+      "detail": "{\"item_number\": 3437, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2437\", \"source_url\": \"https://jabaristore.com/?app=product.show.3076\"}",
+      "updated_at": 1792441236609
+    },
+    {
+      "source_id": 3075,
+      "mode": "apply",
+      "product_id": 2438,
+      "status": "synced",
+      "detail": "{\"item_number\": 3438, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2438\", \"source_url\": \"https://jabaristore.com/?app=product.show.3075\"}",
+      "updated_at": 1792441246615
+    },
+    {
+      "source_id": 3073,
+      "mode": "apply",
+      "product_id": 2439,
+      "status": "synced",
+      "detail": "{\"item_number\": 3439, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2439\", \"source_url\": \"https://jabaristore.com/?app=product.show.3073\"}",
+      "updated_at": 1792441256847
+    },
+    {
+      "source_id": 3072,
+      "mode": "apply",
+      "product_id": 2440,
+      "status": "synced",
+      "detail": "{\"item_number\": 3440, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2440\", \"source_url\": \"https://jabaristore.com/?app=product.show.3072\"}",
+      "updated_at": 1792441266614
+    },
+    {
+      "source_id": 3071,
+      "mode": "apply",
+      "product_id": 2441,
+      "status": "synced",
+      "detail": "{\"item_number\": 3441, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2441\", \"source_url\": \"https://jabaristore.com/?app=product.show.3071\"}",
+      "updated_at": 1792441276626
+    },
+    {
+      "source_id": 3070,
+      "mode": "apply",
+      "product_id": 2442,
+      "status": "synced",
+      "detail": "{\"item_number\": 3442, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2442\", \"source_url\": \"https://jabaristore.com/?app=product.show.3070\"}",
+      "updated_at": 1792441286679
+    },
+    {
+      "source_id": 3069,
+      "mode": "apply",
+      "product_id": 2443,
+      "status": "synced",
+      "detail": "{\"item_number\": 3443, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2443\", \"source_url\": \"https://jabaristore.com/?app=product.show.3069\"}",
+      "updated_at": 1792441296627
+    },
+    {
+      "source_id": 3066,
+      "mode": "apply",
+      "product_id": 2444,
+      "status": "synced",
+      "detail": "{\"item_number\": 3444, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2444\", \"source_url\": \"https://jabaristore.com/?app=product.show.3066\"}",
+      "updated_at": 1792441306611
+    },
+    {
+      "source_id": 3064,
+      "mode": "apply",
+      "product_id": 2445,
+      "status": "synced",
+      "detail": "{\"item_number\": 3445, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2445\", \"source_url\": \"https://jabaristore.com/?app=product.show.3064\"}",
+      "updated_at": 1792441316637
+    },
+    {
+      "source_id": 3063,
+      "mode": "apply",
+      "product_id": 2446,
+      "status": "synced",
+      "detail": "{\"item_number\": 3446, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2446\", \"source_url\": \"https://jabaristore.com/?app=product.show.3063\"}",
+      "updated_at": 1792441326630
+    },
+    {
+      "source_id": 3062,
+      "mode": "apply",
+      "product_id": 2447,
+      "status": "synced",
+      "detail": "{\"item_number\": 3447, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2447\", \"source_url\": \"https://jabaristore.com/?app=product.show.3062\"}",
+      "updated_at": 1792441336630
+    },
+    {
+      "source_id": 3061,
+      "mode": "apply",
+      "product_id": 2448,
+      "status": "synced",
+      "detail": "{\"item_number\": 3448, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2448\", \"source_url\": \"https://jabaristore.com/?app=product.show.3061\"}",
+      "updated_at": 1792441346649
+    },
+    {
+      "source_id": 3060,
+      "mode": "apply",
+      "product_id": 2449,
+      "status": "synced",
+      "detail": "{\"item_number\": 3449, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2449\", \"source_url\": \"https://jabaristore.com/?app=product.show.3060\"}",
+      "updated_at": 1792441356872
+    },
+    {
+      "source_id": 3057,
+      "mode": "apply",
+      "product_id": 2450,
+      "status": "synced",
+      "detail": "{\"item_number\": 3450, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2450\", \"source_url\": \"https://jabaristore.com/?app=product.show.3057\"}",
+      "updated_at": 1792441366829
+    },
+    {
+      "source_id": 3055,
+      "mode": "apply",
+      "product_id": 2451,
+      "status": "synced",
+      "detail": "{\"item_number\": 3451, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2451\", \"source_url\": \"https://jabaristore.com/?app=product.show.3055\"}",
+      "updated_at": 1792441376791
+    },
+    {
+      "source_id": 3053,
+      "mode": "apply",
+      "product_id": 2452,
+      "status": "synced",
+      "detail": "{\"item_number\": 3452, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2452\", \"source_url\": \"https://jabaristore.com/?app=product.show.3053\"}",
+      "updated_at": 1792441386870
+    },
+    {
+      "source_id": 3052,
+      "mode": "apply",
+      "product_id": 2453,
+      "status": "synced",
+      "detail": "{\"item_number\": 3453, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2453\", \"source_url\": \"https://jabaristore.com/?app=product.show.3052\"}",
+      "updated_at": 1792441396638
+    },
+    {
+      "source_id": 3051,
+      "mode": "apply",
+      "product_id": 2454,
+      "status": "synced",
+      "detail": "{\"item_number\": 3454, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2454\", \"source_url\": \"https://jabaristore.com/?app=product.show.3051\"}",
+      "updated_at": 1792441406871
+    },
+    {
+      "source_id": 3050,
+      "mode": "apply",
+      "product_id": 2455,
+      "status": "synced",
+      "detail": "{\"item_number\": 3455, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2455\", \"source_url\": \"https://jabaristore.com/?app=product.show.3050\"}",
+      "updated_at": 1792441416881
+    },
+    {
+      "source_id": 3049,
+      "mode": "apply",
+      "product_id": 2456,
+      "status": "synced",
+      "detail": "{\"item_number\": 3456, \"name\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 1.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2456\", \"source_url\": \"https://jabaristore.com/?app=product.show.3049\"}",
+      "updated_at": 1792441426879
+    },
+    {
+      "source_id": 3047,
+      "mode": "apply",
+      "product_id": 2457,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3457}",
+      "updated_at": 1792441436576
+    },
+    {
+      "source_id": 3045,
+      "mode": "apply",
+      "product_id": 2458,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3458}",
+      "updated_at": 1792441446336
+    },
+    {
+      "source_id": 3044,
+      "mode": "apply",
+      "product_id": 2459,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3459, \"source\": {\"title\": \"ماء مقطر ( تعبئة 4 كيلو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441456567
+    },
+    {
+      "source_id": 3043,
+      "mode": "apply",
+      "product_id": 2460,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3460, \"source\": {\"title\": \"ماء مقطر ( تعبئة 1 كيلو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441466333
+    },
+    {
+      "source_id": 3042,
+      "mode": "apply",
+      "product_id": 2461,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3461, \"source\": {\"title\": \"كحول 99% ( تعبئة 1 كيلو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441476342
+    },
+    {
+      "source_id": 3041,
+      "mode": "apply",
+      "product_id": 2462,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3462, \"source\": {\"title\": \"ستاند خشبي ( ارتفاع 44 ، عمق 17 ، عرض 30 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441486562
+    },
+    {
+      "source_id": 3039,
+      "mode": "apply",
+      "product_id": 2463,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3463}",
+      "updated_at": 1792441496338
+    },
+    {
+      "source_id": 3038,
+      "mode": "apply",
+      "product_id": 2464,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3464}",
+      "updated_at": 1792441506352
+    },
+    {
+      "source_id": 3037,
+      "mode": "apply",
+      "product_id": 2465,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3465}",
+      "updated_at": 1792441516609
+    },
+    {
+      "source_id": 3036,
+      "mode": "apply",
+      "product_id": 2466,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3466}",
+      "updated_at": 1792441526339
+    },
+    {
+      "source_id": 3035,
+      "mode": "apply",
+      "product_id": 2467,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3467}",
+      "updated_at": 1792441536340
+    },
+    {
+      "source_id": 3034,
+      "mode": "apply",
+      "product_id": 2468,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3468}",
+      "updated_at": 1792441546339
+    },
+    {
+      "source_id": 3033,
+      "mode": "apply",
+      "product_id": 2469,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3469}",
+      "updated_at": 1792441556340
+    },
+    {
+      "source_id": 3032,
+      "mode": "apply",
+      "product_id": 2470,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3470}",
+      "updated_at": 1792441566737
+    },
+    {
+      "source_id": 3027,
+      "mode": "apply",
+      "product_id": 1429,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2429, \"source\": {\"title\": \"تل كرستال خمري غامق (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441576322
+    },
+    {
+      "source_id": 3025,
+      "mode": "apply",
+      "product_id": 1430,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2430, \"source\": {\"title\": \"تل كرستال احمر (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441586595
+    },
+    {
+      "source_id": 3024,
+      "mode": "apply",
+      "product_id": 2471,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3471, \"source\": {\"title\": \"تل كرستال ايفري (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441596349
+    },
+    {
+      "source_id": 3023,
+      "mode": "apply",
+      "product_id": 2472,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3472, \"source\": {\"title\": \"تل كرستال ازرق (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441606554
+    },
+    {
+      "source_id": 3022,
+      "mode": "apply",
+      "product_id": 2473,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3473, \"source\": {\"title\": \"تل كرستال فوشي (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441616628
+    },
+    {
+      "source_id": 3021,
+      "mode": "apply",
+      "product_id": 2474,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3474, \"source\": {\"title\": \"تل كرستال زهري غامق (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441626643
+    },
+    {
+      "source_id": 3020,
+      "mode": "apply",
+      "product_id": 2475,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3475, \"source\": {\"title\": \"تل كرستال زهري (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441636594
+    },
+    {
+      "source_id": 3019,
+      "mode": "apply",
+      "product_id": 2476,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3476, \"source\": {\"title\": \"تل كرستال خمري (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441646537
+    },
+    {
+      "source_id": 3018,
+      "mode": "apply",
+      "product_id": 2477,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3477, \"source\": {\"title\": \"تل كرستال بصلي فاتح (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441656324
+    },
+    {
+      "source_id": 3017,
+      "mode": "apply",
+      "product_id": 2478,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3478, \"source\": {\"title\": \"تل ناعم زيتي (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441666321
+    },
+    {
+      "source_id": 3016,
+      "mode": "apply",
+      "product_id": 2479,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3479, \"source\": {\"title\": \"تل ناعم ابيض (عرض 3 متر) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441676340
+    },
+    {
+      "source_id": 3015,
+      "mode": "apply",
+      "product_id": 2480,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3480, \"source\": {\"title\": \"تل ناعم ازرق (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441686570
+    },
+    {
+      "source_id": 3014,
+      "mode": "apply",
+      "product_id": 2481,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3481, \"source\": {\"title\": \"تل ناعم سكني (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441696767
+    },
+    {
+      "source_id": 3012,
+      "mode": "apply",
+      "product_id": 2482,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3482, \"source\": {\"title\": \"تل ناعم زهري (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441706324
+    },
+    {
+      "source_id": 3011,
+      "mode": "apply",
+      "product_id": 2483,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3483, \"source\": {\"title\": \"تل ناعم احمر (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441716353
+    },
+    {
+      "source_id": 3010,
+      "mode": "apply",
+      "product_id": 2484,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3484, \"source\": {\"title\": \"تل ناعم زهري غامق (عرض 160 سم ) // 1 متر //\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441726358
     }
   ]
 }

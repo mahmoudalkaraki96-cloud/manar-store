@@ -3401,3 +3401,64 @@
 - الجعبري#3086 ↔ صنف#3434: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3086
 - الجعبري#3083 ↔ صنف#3435: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3083
 - الجعبري#3082 ↔ صنف#3436: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3082
+
+
+### 2026-10-19T23:28:47.556524+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:28:47.556524+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 617, "synced": 327, "unsupported_source_price": 112}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3076 ↔ صنف#3437: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3076
+- الجعبري#3075 ↔ صنف#3438: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3075
+- الجعبري#3073 ↔ صنف#3439: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3073
+- الجعبري#3072 ↔ صنف#3440: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3072
+- الجعبري#3071 ↔ صنف#3441: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3071
+- الجعبري#3070 ↔ صنف#3442: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3070
+- الجعبري#3069 ↔ صنف#3443: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3069
+- الجعبري#3066 ↔ صنف#3444: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3066
+- الجعبري#3064 ↔ صنف#3445: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3064
+- الجعبري#3063 ↔ صنف#3446: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3063
+- الجعبري#3062 ↔ صنف#3447: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3062
+- الجعبري#3061 ↔ صنف#3448: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3061
+- الجعبري#3060 ↔ صنف#3449: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3060
+- الجعبري#3057 ↔ صنف#3450: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3057
+- الجعبري#3055 ↔ صنف#3451: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3055
+- الجعبري#3053 ↔ صنف#3452: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3053
+- الجعبري#3052 ↔ صنف#3453: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3052
+- الجعبري#3051 ↔ صنف#3454: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3051
+- الجعبري#3050 ↔ صنف#3455: synced؛ لفة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3050
+- الجعبري#3049 ↔ صنف#3456: synced؛ بالقطعة=4₪؛ ربطة - 10 لفات=24.5₪. https://jabaristore.com/?app=product.show.3049
+- الجعبري#3047 ↔ صنف#3457: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3047
+- الجعبري#3045 ↔ صنف#3458: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3045
+- الجعبري#3044 ↔ صنف#3459: no_options؛ ماء مقطر ( تعبئة 4 كيلو ). https://jabaristore.com/?app=product.show.3044
+- الجعبري#3043 ↔ صنف#3460: no_options؛ ماء مقطر ( تعبئة 1 كيلو ). https://jabaristore.com/?app=product.show.3043
+- الجعبري#3042 ↔ صنف#3461: no_options؛ كحول 99% ( تعبئة 1 كيلو ). https://jabaristore.com/?app=product.show.3042
+- الجعبري#3041 ↔ صنف#3462: no_options؛ ستاند خشبي ( ارتفاع 44 ، عمق 17 ، عرض 30 ). https://jabaristore.com/?app=product.show.3041
+- الجعبري#3039 ↔ صنف#3463: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3039
+- الجعبري#3038 ↔ صنف#3464: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3038
+- الجعبري#3037 ↔ صنف#3465: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3037
+- الجعبري#3036 ↔ صنف#3466: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3036
+- الجعبري#3035 ↔ صنف#3467: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3035
+- الجعبري#3034 ↔ صنف#3468: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3034
+- الجعبري#3033 ↔ صنف#3469: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3033
+- الجعبري#3032 ↔ صنف#3470: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3032
+- الجعبري#3027 ↔ صنف#2429: no_options؛ تل كرستال خمري غامق (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3027
+- الجعبري#3025 ↔ صنف#2430: no_options؛ تل كرستال احمر (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3025
+- الجعبري#3024 ↔ صنف#3471: no_options؛ تل كرستال ايفري (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3024
+- الجعبري#3023 ↔ صنف#3472: no_options؛ تل كرستال ازرق (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3023
+- الجعبري#3022 ↔ صنف#3473: no_options؛ تل كرستال فوشي (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3022
+- الجعبري#3021 ↔ صنف#3474: no_options؛ تل كرستال زهري غامق (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3021
+- الجعبري#3020 ↔ صنف#3475: no_options؛ تل كرستال زهري (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3020
+- الجعبري#3019 ↔ صنف#3476: no_options؛ تل كرستال خمري (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3019
+- الجعبري#3018 ↔ صنف#3477: no_options؛ تل كرستال بصلي فاتح (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3018
+- الجعبري#3017 ↔ صنف#3478: no_options؛ تل ناعم زيتي (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3017
+- الجعبري#3016 ↔ صنف#3479: no_options؛ تل ناعم ابيض (عرض 3 متر) // 1 متر //. https://jabaristore.com/?app=product.show.3016
+- الجعبري#3015 ↔ صنف#3480: no_options؛ تل ناعم ازرق (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3015
+- الجعبري#3014 ↔ صنف#3481: no_options؛ تل ناعم سكني (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3014
+- الجعبري#3012 ↔ صنف#3482: no_options؛ تل ناعم زهري (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3012
+- الجعبري#3011 ↔ صنف#3483: no_options؛ تل ناعم احمر (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3011
+- الجعبري#3010 ↔ صنف#3484: no_options؛ تل ناعم زهري غامق (عرض 160 سم ) // 1 متر //. https://jabaristore.com/?app=product.show.3010
