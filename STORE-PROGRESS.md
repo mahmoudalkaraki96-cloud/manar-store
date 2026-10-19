@@ -1000,3 +1000,64 @@
 - دوفش#1149 ↔ صنف#1366: synced؛ 12 حبة=15₪. https://dofesh.ps/?app=product.show.1149
 - دوفش#1148 ↔ صنف#1367: no_options؛ صندوق كرتون مع قاطع 24 لون سكري. https://dofesh.ps/?app=product.show.1148
 - دوفش#1147 ↔ صنف#1368: synced؛ 12 حبة=18₪. https://dofesh.ps/?app=product.show.1147
+
+
+### 2026-10-19T14:52:48.549872+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T14:52:48.549872+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 83, "no_options": 111, "missing_source": 2, "unsupported_customization_or_minimum": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1146 ↔ صنف#1369: no_options؛ ورد صناعي تفتيح كبير. https://dofesh.ps/?app=product.show.1146
+- دوفش#1145 ↔ صنف#1370: no_options؛ ورد صناعي تفتيح كبير. https://dofesh.ps/?app=product.show.1145
+- دوفش#1144 ↔ صنف#1371: no_options؛ ورد صناعي تفتيح كبير. https://dofesh.ps/?app=product.show.1144
+- دوفش#1143 ↔ صنف#1372: no_options؛ ورد صناعي تفتيح كبير. https://dofesh.ps/?app=product.show.1143
+- دوفش#1142 ↔ صنف#1153: synced؛ 25 حبة=10₪. https://dofesh.ps/?app=product.show.1142
+- دوفش#1141 ↔ صنف#1373: no_options؛ ستاند اكريلك 3 ظهريات ارتفاع 34 سم. https://dofesh.ps/?app=product.show.1141
+- دوفش#1140 ↔ صنف#1374: synced؛ 50 قطعة=15₪؛ 100 قطعة=20₪. https://dofesh.ps/?app=product.show.1140
+- دوفش#1139 ↔ صنف#1375: synced؛ 6.5*8=3₪؛ 6.5*6=2.5₪. https://dofesh.ps/?app=product.show.1139
+- دوفش#1138 ↔ صنف#1376: synced؛ 10 حبة=15₪. https://dofesh.ps/?app=product.show.1138
+- دوفش#1137 ↔ صنف#1377: synced؛ 10 حبة=10₪. https://dofesh.ps/?app=product.show.1137
+- دوفش#1136 ↔ صنف#1378: synced؛ مع الحصان / بالحبة=10₪؛ مع الحصان / 10 حبة (دزينة )=80₪؛ بدون الحصان / بالحبة=4₪؛ بدون الحصان / 10 حبة (دزينة )=30₪. https://dofesh.ps/?app=product.show.1136
+- دوفش#1135 ↔ صنف#1379: synced؛ بالحبة=1₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.1135
+- دوفش#1134 ↔ صنف#1380: no_options؛ ضمة ورد دوار الشمس 10افرع. https://dofesh.ps/?app=product.show.1134
+- دوفش#1133 ↔ صنف#1381: no_options؛ ضمة ورد 12 فرع. https://dofesh.ps/?app=product.show.1133
+- دوفش#1132 ↔ صنف#1382: no_options؛ ضمة ورد 12 فرع. https://dofesh.ps/?app=product.show.1132
+- دوفش#1131 ↔ صنف#1383: no_options؛ ضمة ورد حبات 12 فرع. https://dofesh.ps/?app=product.show.1131
+- دوفش#1130 ↔ صنف#1384: no_options؛ ضمة ورد منتور. https://dofesh.ps/?app=product.show.1130
+- دوفش#1129 ↔ صنف#1385: no_options؛ ضمة ورد منتور. https://dofesh.ps/?app=product.show.1129
+- دوفش#1128 ↔ صنف#1386: no_options؛ ضمة ورد منتور مميز. https://dofesh.ps/?app=product.show.1128
+- دوفش#1127 ↔ صنف#1387: no_options؛ ورد جوري مخمل 7افرع. https://dofesh.ps/?app=product.show.1127
+- دوفش#1125 ↔ صنف#1388: no_options؛ ورد جوري مخمل 7 افرع. https://dofesh.ps/?app=product.show.1125
+- دوفش#1124 ↔ صنف#1389: no_options؛ ورد جوري مخمل 7 افرع. https://dofesh.ps/?app=product.show.1124
+- دوفش#1123 ↔ صنف#1390: no_options؛ ورد تيوليب خمري. https://dofesh.ps/?app=product.show.1123
+- دوفش#1122 ↔ صنف#1391: no_options؛ ضمة ورد تفتيح كبير 11 عرق. https://dofesh.ps/?app=product.show.1122
+- دوفش#1121 ↔ صنف#1392: no_options؛ ستاند اكريلك للصواني وتلابيس الذهب ارتفاع 24 cm. https://dofesh.ps/?app=product.show.1121
+- دوفش#1120 ↔ صنف#1393: no_options؛ ستاند اكريلك للصواني وتلابيس الذهب مقاس 34 cm. https://dofesh.ps/?app=product.show.1120
+- دوفش#1119 ↔ صنف#1394: no_options؛ بخاخ عطر فاخر 10 مل. https://dofesh.ps/?app=product.show.1119
+- دوفش#1118 ↔ صنف#1395: no_options؛ بخاخ عطر فاخر 10 مل. https://dofesh.ps/?app=product.show.1118
+- دوفش#1117 ↔ صنف#1396: synced؛ بالحبة=20₪؛ 10 حبة=150₪. https://dofesh.ps/?app=product.show.1117
+- دوفش#1116 ↔ صنف#1397: synced؛ 25 حبة=20₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1116
+- دوفش#1115 ↔ صنف#1398: synced؛ 50 حبة=10₪. https://dofesh.ps/?app=product.show.1115
+- دوفش#1114 ↔ صنف#1399: synced؛ 50حبة=10₪. https://dofesh.ps/?app=product.show.1114
+- دوفش#1113 ↔ صنف#1400: synced؛ 50 حبة=10₪. https://dofesh.ps/?app=product.show.1113
+- دوفش#1112 ↔ صنف#1401: synced؛ 50حبة=10₪. https://dofesh.ps/?app=product.show.1112
+- دوفش#1111 ↔ صنف#1402: no_options؛ علب كرتون كبريت مقاس( 5*5*1.5). https://dofesh.ps/?app=product.show.1111
+- دوفش#1110 ↔ صنف#1403: synced؛ بالحبة=3₪؛ 50 حبة=120₪. https://dofesh.ps/?app=product.show.1110
+- دوفش#1109 ↔ صنف#1404: synced؛ بالحبة=2.5₪؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1109
+- دوفش#1108 ↔ صنف#1405: synced؛ 12 حبة=30₪. https://dofesh.ps/?app=product.show.1108
+- دوفش#1107 ↔ صنف#1406: synced؛ 12 حبة=18₪. https://dofesh.ps/?app=product.show.1107
+- دوفش#1106 ↔ صنف#1407: no_options؛ ببيونة نص سم. https://dofesh.ps/?app=product.show.1106
+- دوفش#1105 ↔ صنف#1408: synced؛ 10 حبة=30₪. https://dofesh.ps/?app=product.show.1105
+- دوفش#1104 ↔ صنف#1409: synced؛ 10حبة=30₪. https://dofesh.ps/?app=product.show.1104
+- دوفش#1103 ↔ صنف#1410: synced؛ 10 قطعة=25₪. https://dofesh.ps/?app=product.show.1103
+- دوفش#1102 ↔ صنف#1411: no_options؛ شنتة اكريلك شفاف مع سلسلة نحاس (عرض9 عمق 6.5 ارتفاع 12). https://dofesh.ps/?app=product.show.1102
+- دوفش#1101 ↔ صنف#1154: synced؛ بالحبة=2₪؛ 50 حبة=75₪؛ 100 حبة=130₪. https://dofesh.ps/?app=product.show.1101
+- دوفش#1100 ↔ صنف#1412: synced؛ مع الكرتونة=8₪؛ بدون كرتونة=12₪؛ الكرتونة لحالها=5₪. https://dofesh.ps/?app=product.show.1100
+- دوفش#1099 ↔ صنف#1413: synced؛ 10 حبة=5₪؛ 50 حبة=15₪؛ 100 حبة=20₪. https://dofesh.ps/?app=product.show.1099
+- دوفش#1098 ↔ صنف#1414: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1098
+- دوفش#1097 ↔ صنف#1415: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1097
+- دوفش#1096 ↔ صنف#1416: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1096
