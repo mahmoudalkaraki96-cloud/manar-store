@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T20:19:35.601901+03:00",
+  "updated_at": "2026-10-19T20:29:00.601307+03:00",
   "run_mode": "apply",
-  "run_status": "paused_error",
-  "run_processed": 2,
+  "run_status": "completed_batch",
+  "run_processed": 50,
   "results": [
     {
       "source_id": 1298,
@@ -5640,9 +5640,401 @@
       "source_id": 563,
       "mode": "apply",
       "product_id": 847,
-      "status": "error",
+      "status": "unsupported_source_price",
       "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 1847}",
-      "updated_at": 1792430374661
+      "updated_at": 1792430449620
+    },
+    {
+      "source_id": 562,
+      "mode": "apply",
+      "product_id": 848,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1848, \"source\": {\"title\": \"عطر جو 50مل مغلف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430459559
+    },
+    {
+      "source_id": 561,
+      "mode": "apply",
+      "product_id": 849,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1849, \"source\": {\"title\": \"معطر جو 50 مل مميز مع تغليف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792430469556
+    },
+    {
+      "source_id": 559,
+      "mode": "apply",
+      "product_id": 850,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1850, \"source\": {\"title\": \"معطر جو مدور50مل مع عودان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792430479702
+    },
+    {
+      "source_id": 558,
+      "mode": "apply",
+      "product_id": 851,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1851, \"source\": {\"title\": \"معطر جو مدور50مل مع عودان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792430489565
+    },
+    {
+      "source_id": 557,
+      "mode": "apply",
+      "product_id": 852,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1852, \"source\": {\"title\": \"معطر جو 50مل مدور مع عودان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792430499292
+    },
+    {
+      "source_id": 556,
+      "mode": "apply",
+      "product_id": 853,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1853, \"source\": {\"title\": \"سلة حديد 5حلقات فضي 40سم ارتفاع مع صينية خشب ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792430509522
+    },
+    {
+      "source_id": 555,
+      "mode": "apply",
+      "product_id": 854,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1854, \"source\": {\"title\": \"سلة حديد 5 حلقات لون ذهبي ارتفاع 40سم مع صينية خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792430519299
+    },
+    {
+      "source_id": 554,
+      "mode": "apply",
+      "product_id": 855,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1855, \"source\": {\"title\": \"سلة حديد مدورة فضي 46.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792430529301
+    },
+    {
+      "source_id": 553,
+      "mode": "apply",
+      "product_id": 856,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1856, \"source\": {\"title\": \"سلة حديد مدورة حلقتين لون ذهبي قطر الدائرة 46.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792430539413
+    },
+    {
+      "source_id": 552,
+      "mode": "apply",
+      "product_id": 857,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1857, \"source\": {\"title\": \"كرمية قوس قزح حجم صغير 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792430549305
+    },
+    {
+      "source_id": 551,
+      "mode": "apply",
+      "product_id": 858,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1858, \"source\": {\"title\": \"مكريمية قوس قزح حجم صغير 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792430559546
+    },
+    {
+      "source_id": 550,
+      "mode": "apply",
+      "product_id": 859,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1859, \"source\": {\"title\": \"مكرمية قوس قزح حجم صغير 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792430569505
+    },
+    {
+      "source_id": 549,
+      "mode": "apply",
+      "product_id": 178,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1178, \"source\": {\"title\": \"دائرة اكريلك 10 سم شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792430579555
+    },
+    {
+      "source_id": 548,
+      "mode": "apply",
+      "product_id": 179,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1179, \"source\": {\"title\": \"اكريلك سداسي شفاف 10 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792430589296
+    },
+    {
+      "source_id": 547,
+      "mode": "apply",
+      "product_id": 860,
+      "status": "synced",
+      "detail": "{\"item_number\": 1860, \"name\": \"صينية خشب مقاس (60*40سم)\", \"before_price\": 3500, \"before_variants\": [], \"source\": {\"title\": \"صينية خشب\", \"variants\": [{\"name\": \"40*30\", \"price\": 1500, \"active\": true}, {\"name\": \"60*40\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/860\", \"source_url\": \"https://dofesh.ps/?app=product.show.547\"}",
+      "updated_at": 1792430599680
+    },
+    {
+      "source_id": 546,
+      "mode": "apply",
+      "product_id": 861,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1861, \"source\": {\"title\": \"معطر جو سحاب مميز مقاس(16.5*6.5*3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430609344
+    },
+    {
+      "source_id": 545,
+      "mode": "apply",
+      "product_id": 862,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1862, \"source\": {\"title\": \"كوتة سلة للورد والهدايا (36*21سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792430619557
+    },
+    {
+      "source_id": 544,
+      "mode": "apply",
+      "product_id": 863,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1863, \"source\": {\"title\": \"كوتة سلة للورد والتوزيعات (36*21سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792430629531
+    },
+    {
+      "source_id": 543,
+      "mode": "apply",
+      "product_id": 864,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1864, \"source\": {\"title\": \"ورق لاصق مطبوع مقاس A4\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792430639524
+    },
+    {
+      "source_id": 541,
+      "mode": "apply",
+      "product_id": 865,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1865, \"source\": {\"title\": \"فراش كرتون قياس(4.5*2.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792430649673
+    },
+    {
+      "source_id": 540,
+      "mode": "apply",
+      "product_id": 180,
+      "status": "synced",
+      "detail": "{\"item_number\": 1180, \"name\": \"حصان خشب8سم زهري\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"حصان خشب8سم زهري\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": false}, {\"name\": \"6 حبة\", \"price\": 1200, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/180\", \"source_url\": \"https://dofesh.ps/?app=product.show.540\"}",
+      "updated_at": 1792430659900
+    },
+    {
+      "source_id": 539,
+      "mode": "apply",
+      "product_id": 181,
+      "status": "synced",
+      "detail": "{\"item_number\": 1181, \"name\": \"حصان خشب 8سم ابيض\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"حصان خشب 8سم ابيض\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"6 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/181\", \"source_url\": \"https://dofesh.ps/?app=product.show.539\"}",
+      "updated_at": 1792430669824
+    },
+    {
+      "source_id": 537,
+      "mode": "apply",
+      "product_id": 182,
+      "status": "synced",
+      "detail": "{\"item_number\": 1182, \"name\": \"تيبل لامب اكريلك شفاف مع اضائة مقاس 12سم\", \"before_price\": 3600, \"before_variants\": [], \"source\": {\"title\": \"تيبل لامب اكريلك شفاف مع اضائة مقاس 12سم\", \"variants\": [{\"name\": \"12 حبة\", \"price\": 3600, \"active\": true}, {\"name\": \"48 حبة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/182\", \"source_url\": \"https://dofesh.ps/?app=product.show.537\"}",
+      "updated_at": 1792430679947
+    },
+    {
+      "source_id": 534,
+      "mode": "apply",
+      "product_id": 866,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1866, \"source\": {\"title\": \"ستاند خشب x ارتفاع 80سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}}",
+      "updated_at": 1792430689307
+    },
+    {
+      "source_id": 533,
+      "mode": "apply",
+      "product_id": 867,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1867, \"source\": {\"title\": \"علبة كرتون شباك للمسك مقاس (11*7.5*3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792430699603
+    },
+    {
+      "source_id": 532,
+      "mode": "apply",
+      "product_id": 868,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1868, \"source\": {\"title\": \"عطر لانكوم 30مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792430709510
+    },
+    {
+      "source_id": 531,
+      "mode": "apply",
+      "product_id": 869,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1869, \"source\": {\"title\": \"عطر ysl مركز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792430719283
+    },
+    {
+      "source_id": 530,
+      "mode": "apply",
+      "product_id": 870,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1870, \"source\": {\"title\": \"عطر سي 30مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792430729290
+    },
+    {
+      "source_id": 529,
+      "mode": "apply",
+      "product_id": 871,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1871, \"source\": {\"title\": \"عطر 30مل ysl\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792430739298
+    },
+    {
+      "source_id": 528,
+      "mode": "apply",
+      "product_id": 872,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1872, \"source\": {\"title\": \"مبخرة وردة سيراميك (10*4)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792430749544
+    },
+    {
+      "source_id": 527,
+      "mode": "apply",
+      "product_id": 873,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1873, \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792430759523
+    },
+    {
+      "source_id": 526,
+      "mode": "apply",
+      "product_id": 874,
+      "status": "synced",
+      "detail": "{\"item_number\": 1874, \"name\": \"مبخرة ريزون\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"store_url\": \"https://manarstore.ps/product/874\", \"source_url\": \"https://dofesh.ps/?app=product.show.526\"}",
+      "updated_at": 1792430769760
+    },
+    {
+      "source_id": 525,
+      "mode": "apply",
+      "product_id": 875,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1875, \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430779295
+    },
+    {
+      "source_id": 524,
+      "mode": "apply",
+      "product_id": 876,
+      "status": "synced",
+      "detail": "{\"item_number\": 1876, \"name\": \"مبخرة ريزون\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 30000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 55000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/876\", \"source_url\": \"https://dofesh.ps/?app=product.show.524\"}",
+      "updated_at": 1792430789788
+    },
+    {
+      "source_id": 523,
+      "mode": "apply",
+      "product_id": 877,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1877, \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430799294
+    },
+    {
+      "source_id": 522,
+      "mode": "apply",
+      "product_id": 878,
+      "status": "synced",
+      "detail": "{\"item_number\": 1878, \"name\": \"مبخرة ريزون\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"store_url\": \"https://manarstore.ps/product/878\", \"source_url\": \"https://dofesh.ps/?app=product.show.522\"}",
+      "updated_at": 1792430809556
+    },
+    {
+      "source_id": 520,
+      "mode": "apply",
+      "product_id": 879,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1879, \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430819290
+    },
+    {
+      "source_id": 518,
+      "mode": "apply",
+      "product_id": 880,
+      "status": "synced",
+      "detail": "{\"item_number\": 1880, \"name\": \"مبخرة ريزون\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"store_url\": \"https://manarstore.ps/product/880\", \"source_url\": \"https://dofesh.ps/?app=product.show.518\"}",
+      "updated_at": 1792430829784
+    },
+    {
+      "source_id": 517,
+      "mode": "apply",
+      "product_id": 881,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1881, \"source\": {\"title\": \"مبخرة فخار\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430839300
+    },
+    {
+      "source_id": 516,
+      "mode": "apply",
+      "product_id": 882,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1882, \"source\": {\"title\": \"مبخرة ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430849294
+    },
+    {
+      "source_id": 515,
+      "mode": "apply",
+      "product_id": 217,
+      "status": "synced",
+      "detail": "{\"item_number\": 1217, \"name\": \"مبخرة مزخرفة فخار\", \"before_price\": 800, \"before_variants\": [{\"id\": 226, \"sku\": null, \"price_agorot\": 800, \"active\": 1, \"stock_quantity\": 10000, \"name\": \"بالحبة\"}, {\"id\": 227, \"sku\": null, \"price_agorot\": 36000, \"active\": 1, \"stock_quantity\": 10000, \"name\": \"60 حبة (كرتونة)\"}], \"source\": {\"title\": \"مبخرة مزخرفة فخار\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"60 حبة\", \"price\": 36000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/217\", \"source_url\": \"https://dofesh.ps/?app=product.show.515\"}",
+      "updated_at": 1792430859531
+    },
+    {
+      "source_id": 514,
+      "mode": "apply",
+      "product_id": 883,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1883, \"source\": {\"title\": \"مروحة ريش كثيف حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792430869285
+    },
+    {
+      "source_id": 513,
+      "mode": "apply",
+      "product_id": 884,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1884, \"source\": {\"title\": \"سكرية زجاج 8عرض ارتفاع9\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792430879304
+    },
+    {
+      "source_id": 512,
+      "mode": "apply",
+      "product_id": 885,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1885, \"source\": {\"title\": \"سكرية زجاج مطبقية (6.5*9.5)سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792430889603
+    },
+    {
+      "source_id": 511,
+      "mode": "apply",
+      "product_id": 886,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1886, \"source\": {\"title\": \"كيس كرتون (6.5*8) ابيض سادى\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792430899649
+    },
+    {
+      "source_id": 510,
+      "mode": "apply",
+      "product_id": 887,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1887, \"source\": {\"title\": \"صينية خشب للضيافة مقاس(40*30)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792430909509
+    },
+    {
+      "source_id": 509,
+      "mode": "apply",
+      "product_id": 888,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1888, \"source\": {\"title\": \"علبة شفاف (8*8*12سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792430919521
+    },
+    {
+      "source_id": 508,
+      "mode": "apply",
+      "product_id": 889,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1889, \"source\": {\"title\": \"علبة بلاستيك شفاف (7*7*10سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792430929598
+    },
+    {
+      "source_id": 507,
+      "mode": "apply",
+      "product_id": 890,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1890, \"source\": {\"title\": \"عطر مسك 25مل اصلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792430939639
     }
   ]
 }

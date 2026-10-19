@@ -1711,3 +1711,64 @@
 - دوفش#566 ↔ صنف#1845: no_options؛ ورد فلل 60 حبة بالبكيت. https://dofesh.ps/?app=product.show.566
 - دوفش#564 ↔ صنف#1846: synced؛ بالحبة=2₪؛ 10 حبة=18₪. https://dofesh.ps/?app=product.show.564
 - دوفش#563 ↔ صنف#1847: error؛ simple_price_not_verified. https://dofesh.ps/?app=product.show.563
+
+
+### 2026-10-19T20:29:00.601307+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T20:29:00.601307+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 278, "no_options": 439, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 2, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#563 ↔ صنف#1847: unsupported_source_price؛ simple_price_not_verified. https://dofesh.ps/?app=product.show.563
+- دوفش#562 ↔ صنف#1848: no_options؛ عطر جو 50مل مغلف. https://dofesh.ps/?app=product.show.562
+- دوفش#561 ↔ صنف#1849: no_options؛ معطر جو 50 مل مميز مع تغليف. https://dofesh.ps/?app=product.show.561
+- دوفش#559 ↔ صنف#1850: no_options؛ معطر جو مدور50مل مع عودان. https://dofesh.ps/?app=product.show.559
+- دوفش#558 ↔ صنف#1851: no_options؛ معطر جو مدور50مل مع عودان. https://dofesh.ps/?app=product.show.558
+- دوفش#557 ↔ صنف#1852: no_options؛ معطر جو 50مل مدور مع عودان. https://dofesh.ps/?app=product.show.557
+- دوفش#556 ↔ صنف#1853: no_options؛ سلة حديد 5حلقات فضي 40سم ارتفاع مع صينية خشب ابيض. https://dofesh.ps/?app=product.show.556
+- دوفش#555 ↔ صنف#1854: no_options؛ سلة حديد 5 حلقات لون ذهبي ارتفاع 40سم مع صينية خشب. https://dofesh.ps/?app=product.show.555
+- دوفش#554 ↔ صنف#1855: no_options؛ سلة حديد مدورة فضي 46.5 سم. https://dofesh.ps/?app=product.show.554
+- دوفش#553 ↔ صنف#1856: no_options؛ سلة حديد مدورة حلقتين لون ذهبي قطر الدائرة 46.5 سم. https://dofesh.ps/?app=product.show.553
+- دوفش#552 ↔ صنف#1857: no_options؛ كرمية قوس قزح حجم صغير 4سم. https://dofesh.ps/?app=product.show.552
+- دوفش#551 ↔ صنف#1858: no_options؛ مكريمية قوس قزح حجم صغير 4سم. https://dofesh.ps/?app=product.show.551
+- دوفش#550 ↔ صنف#1859: no_options؛ مكرمية قوس قزح حجم صغير 4سم. https://dofesh.ps/?app=product.show.550
+- دوفش#549 ↔ صنف#1178: no_options؛ دائرة اكريلك 10 سم شفاف. https://dofesh.ps/?app=product.show.549
+- دوفش#548 ↔ صنف#1179: no_options؛ اكريلك سداسي شفاف 10 سم. https://dofesh.ps/?app=product.show.548
+- دوفش#547 ↔ صنف#1860: synced؛ 40*30=15₪؛ 60*40=30₪. https://dofesh.ps/?app=product.show.547
+- دوفش#546 ↔ صنف#1861: no_options؛ معطر جو سحاب مميز مقاس(16.5*6.5*3). https://dofesh.ps/?app=product.show.546
+- دوفش#545 ↔ صنف#1862: no_options؛ كوتة سلة للورد والهدايا (36*21سم). https://dofesh.ps/?app=product.show.545
+- دوفش#544 ↔ صنف#1863: no_options؛ كوتة سلة للورد والتوزيعات (36*21سم). https://dofesh.ps/?app=product.show.544
+- دوفش#543 ↔ صنف#1864: no_options؛ ورق لاصق مطبوع مقاس A4. https://dofesh.ps/?app=product.show.543
+- دوفش#541 ↔ صنف#1865: no_options؛ فراش كرتون قياس(4.5*2.5سم). https://dofesh.ps/?app=product.show.541
+- دوفش#540 ↔ صنف#1180: synced؛ بالحبة=4₪؛ 6 حبة=12₪. https://dofesh.ps/?app=product.show.540
+- دوفش#539 ↔ صنف#1181: synced؛ بالحبة=3₪؛ 6 حبة=15₪. https://dofesh.ps/?app=product.show.539
+- دوفش#537 ↔ صنف#1182: synced؛ 12 حبة=36₪؛ 48 حبة=120₪. https://dofesh.ps/?app=product.show.537
+- دوفش#534 ↔ صنف#1866: no_options؛ ستاند خشب x ارتفاع 80سم. https://dofesh.ps/?app=product.show.534
+- دوفش#533 ↔ صنف#1867: no_options؛ علبة كرتون شباك للمسك مقاس (11*7.5*3). https://dofesh.ps/?app=product.show.533
+- دوفش#532 ↔ صنف#1868: no_options؛ عطر لانكوم 30مل. https://dofesh.ps/?app=product.show.532
+- دوفش#531 ↔ صنف#1869: no_options؛ عطر ysl مركز. https://dofesh.ps/?app=product.show.531
+- دوفش#530 ↔ صنف#1870: no_options؛ عطر سي 30مل. https://dofesh.ps/?app=product.show.530
+- دوفش#529 ↔ صنف#1871: no_options؛ عطر 30مل ysl. https://dofesh.ps/?app=product.show.529
+- دوفش#528 ↔ صنف#1872: no_options؛ مبخرة وردة سيراميك (10*4). https://dofesh.ps/?app=product.show.528
+- دوفش#527 ↔ صنف#1873: no_options؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.527
+- دوفش#526 ↔ صنف#1874: synced؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.526
+- دوفش#525 ↔ صنف#1875: no_options؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.525
+- دوفش#524 ↔ صنف#1876: synced؛ بالحبة=7₪؛ 50 حبة=300₪؛ 100 حبة=550₪. https://dofesh.ps/?app=product.show.524
+- دوفش#523 ↔ صنف#1877: no_options؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.523
+- دوفش#522 ↔ صنف#1878: synced؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.522
+- دوفش#520 ↔ صنف#1879: no_options؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.520
+- دوفش#518 ↔ صنف#1880: synced؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.518
+- دوفش#517 ↔ صنف#1881: no_options؛ مبخرة فخار. https://dofesh.ps/?app=product.show.517
+- دوفش#516 ↔ صنف#1882: no_options؛ مبخرة ريزون. https://dofesh.ps/?app=product.show.516
+- دوفش#515 ↔ صنف#1217: synced؛ بالحبة=7₪؛ 60 حبة=360₪. https://dofesh.ps/?app=product.show.515
+- دوفش#514 ↔ صنف#1883: no_options؛ مروحة ريش كثيف حجم كبير. https://dofesh.ps/?app=product.show.514
+- دوفش#513 ↔ صنف#1884: no_options؛ سكرية زجاج 8عرض ارتفاع9. https://dofesh.ps/?app=product.show.513
+- دوفش#512 ↔ صنف#1885: no_options؛ سكرية زجاج مطبقية (6.5*9.5)سم. https://dofesh.ps/?app=product.show.512
+- دوفش#511 ↔ صنف#1886: no_options؛ كيس كرتون (6.5*8) ابيض سادى. https://dofesh.ps/?app=product.show.511
+- دوفش#510 ↔ صنف#1887: no_options؛ صينية خشب للضيافة مقاس(40*30). https://dofesh.ps/?app=product.show.510
+- دوفش#509 ↔ صنف#1888: no_options؛ علبة شفاف (8*8*12سم). https://dofesh.ps/?app=product.show.509
+- دوفش#508 ↔ صنف#1889: no_options؛ علبة بلاستيك شفاف (7*7*10سم). https://dofesh.ps/?app=product.show.508
+- دوفش#507 ↔ صنف#1890: no_options؛ عطر مسك 25مل اصلي. https://dofesh.ps/?app=product.show.507
