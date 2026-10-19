@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:05:38.899975+03:00",
+  "updated_at": "2026-10-19T22:13:58.322102+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -4445,12 +4445,412 @@
       "updated_at": 1792436737883
     },
     {
+      "source_id": 3829,
+      "mode": "apply",
+      "product_id": 1998,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2998, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436745420
+    },
+    {
+      "source_id": 3828,
+      "mode": "apply",
+      "product_id": 1999,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2999, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436755651
+    },
+    {
+      "source_id": 3826,
+      "mode": "apply",
+      "product_id": 2000,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3000, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436765643
+    },
+    {
+      "source_id": 3825,
+      "mode": "apply",
+      "product_id": 2001,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3001, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436775413
+    },
+    {
+      "source_id": 3824,
+      "mode": "apply",
+      "product_id": 2002,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3002, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436785391
+    },
+    {
+      "source_id": 3823,
+      "mode": "apply",
+      "product_id": 2003,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3003, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436795412
+    },
+    {
+      "source_id": 3821,
+      "mode": "apply",
+      "product_id": 2004,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3004, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436805638
+    },
+    {
+      "source_id": 3819,
+      "mode": "apply",
+      "product_id": 2005,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3005, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436815389
+    },
+    {
+      "source_id": 3817,
+      "mode": "apply",
+      "product_id": 2006,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3006, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436825410
+    },
+    {
+      "source_id": 3816,
+      "mode": "apply",
+      "product_id": 2007,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3007, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436835418
+    },
+    {
+      "source_id": 3815,
+      "mode": "apply",
+      "product_id": 2008,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3008, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436845408
+    },
+    {
+      "source_id": 3814,
+      "mode": "apply",
+      "product_id": 2009,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3009, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436855599
+    },
+    {
+      "source_id": 3812,
+      "mode": "apply",
+      "product_id": 2010,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3010, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436865399
+    },
+    {
+      "source_id": 3811,
+      "mode": "apply",
+      "product_id": 2011,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3011, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436875391
+    },
+    {
+      "source_id": 3810,
+      "mode": "apply",
+      "product_id": 2012,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3012, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436885547
+    },
+    {
+      "source_id": 3803,
+      "mode": "apply",
+      "product_id": 2013,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3013, \"source\": {\"title\": \"قطع تزين ذهبي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436895575
+    },
+    {
+      "source_id": 3802,
+      "mode": "apply",
+      "product_id": 2014,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3014, \"source\": {\"title\": \"قطع تزين فضي شوكولاتة ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792436905529
+    },
+    {
+      "source_id": 3797,
+      "mode": "apply",
+      "product_id": 2015,
+      "status": "synced",
+      "detail": "{\"item_number\": 3015, \"name\": \"علب كرتون سحاب ( 3*12*6 سم )\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 3*12*6 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"50 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 3*12*6 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"50 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2015\", \"source_url\": \"https://jabaristore.com/?app=product.show.3797\"}",
+      "updated_at": 1792436915830
+    },
+    {
+      "source_id": 3796,
+      "mode": "apply",
+      "product_id": 2016,
+      "status": "synced",
+      "detail": "{\"item_number\": 3016, \"name\": \"علب كرتون سحاب ( 4*13*10 سم )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 4*13*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"50 قطعة\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 4*13*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 5500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"50 قطعة\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2016\", \"source_url\": \"https://jabaristore.com/?app=product.show.3796\"}",
+      "updated_at": 1792436925886
+    },
+    {
+      "source_id": 3795,
+      "mode": "apply",
+      "product_id": 2017,
+      "status": "synced",
+      "detail": "{\"item_number\": 3017, \"name\": \"علب كرتون سحاب ( 5*10*10 سم )\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 5*10*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 5*10*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2017\", \"source_url\": \"https://jabaristore.com/?app=product.show.3795\"}",
+      "updated_at": 1792436935733
+    },
+    {
+      "source_id": 3794,
+      "mode": "apply",
+      "product_id": 2018,
+      "status": "synced",
+      "detail": "{\"item_number\": 3018, \"name\": \"علب كرتون سحاب ( 3*10*10 سم )\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 3*10*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 3*10*10 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2018\", \"source_url\": \"https://jabaristore.com/?app=product.show.3794\"}",
+      "updated_at": 1792436945886
+    },
+    {
+      "source_id": 3793,
+      "mode": "apply",
+      "product_id": 2019,
+      "status": "synced",
+      "detail": "{\"item_number\": 3019, \"name\": \"علب كرتون سحاب ( 4*14*8.5 سم )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 4*14*8.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"50 قطعة\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 4*14*8.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 5500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"50 قطعة\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2019\", \"source_url\": \"https://jabaristore.com/?app=product.show.3793\"}",
+      "updated_at": 1792436955873
+    },
+    {
+      "source_id": 3792,
+      "mode": "apply",
+      "product_id": 2020,
+      "status": "synced",
+      "detail": "{\"item_number\": 3020, \"name\": \"علب كرتون سحاب ( 3*14*7 سم )\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون سحاب ( 3*14*7 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"50 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون سحاب ( 3*14*7 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"50 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2020\", \"source_url\": \"https://jabaristore.com/?app=product.show.3792\"}",
+      "updated_at": 1792436965808
+    },
+    {
+      "source_id": 3788,
+      "mode": "apply",
+      "product_id": 2021,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3021}",
+      "updated_at": 1792436975391
+    },
+    {
+      "source_id": 3787,
+      "mode": "apply",
+      "product_id": 2022,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3022}",
+      "updated_at": 1792436985402
+    },
+    {
+      "source_id": 3786,
+      "mode": "apply",
+      "product_id": 1417,
+      "status": "synced",
+      "detail": "{\"item_number\": 2417, \"name\": \"ببيونه ستان عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1417\", \"source_url\": \"https://jabaristore.com/?app=product.show.3786\"}",
+      "updated_at": 1792436995718
+    },
+    {
+      "source_id": 3785,
+      "mode": "apply",
+      "product_id": 1418,
+      "status": "synced",
+      "detail": "{\"item_number\": 2418, \"name\": \"ببيونه ستان ( نود ) عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ( نود ) عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ( نود ) عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1418\", \"source_url\": \"https://jabaristore.com/?app=product.show.3785\"}",
+      "updated_at": 1792437005707
+    },
+    {
+      "source_id": 3784,
+      "mode": "apply",
+      "product_id": 1419,
+      "status": "synced",
+      "detail": "{\"item_number\": 2419, \"name\": \"ببيونه شيفون ( ليلكي ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ليلكي ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ليلكي ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1419\", \"source_url\": \"https://jabaristore.com/?app=product.show.3784\"}",
+      "updated_at": 1792437015950
+    },
+    {
+      "source_id": 3783,
+      "mode": "apply",
+      "product_id": 1420,
+      "status": "synced",
+      "detail": "{\"item_number\": 2420, \"name\": \"ببيونه شيفون ( ذهبي ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ذهبي ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ذهبي ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1420\", \"source_url\": \"https://jabaristore.com/?app=product.show.3783\"}",
+      "updated_at": 1792437025684
+    },
+    {
+      "source_id": 3782,
+      "mode": "apply",
+      "product_id": 2023,
+      "status": "synced",
+      "detail": "{\"item_number\": 3023, \"name\": \"ببيونه شيفون ( نود ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( نود ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( نود ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2023\", \"source_url\": \"https://jabaristore.com/?app=product.show.3782\"}",
+      "updated_at": 1792437035682
+    },
+    {
       "source_id": 3780,
       "mode": "apply",
       "product_id": 1421,
       "status": "synced",
       "detail": "{\"item_number\": 2421, \"name\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1421\", \"source_url\": \"https://jabaristore.com/?app=product.show.3780\"}",
       "updated_at": 1792431214977
+    },
+    {
+      "source_id": 3779,
+      "mode": "apply",
+      "product_id": 2024,
+      "status": "synced",
+      "detail": "{\"item_number\": 3024, \"name\": \"ببيونه شيفون ( ابيض ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ابيض ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ابيض ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2024\", \"source_url\": \"https://jabaristore.com/?app=product.show.3779\"}",
+      "updated_at": 1792437045996
+    },
+    {
+      "source_id": 3778,
+      "mode": "apply",
+      "product_id": 2025,
+      "status": "synced",
+      "detail": "{\"item_number\": 3025, \"name\": \"ببيونه شيفون ( زهر فاتح ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زهر فاتح ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زهر فاتح ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2025\", \"source_url\": \"https://jabaristore.com/?app=product.show.3778\"}",
+      "updated_at": 1792437055831
+    },
+    {
+      "source_id": 3777,
+      "mode": "apply",
+      "product_id": 2026,
+      "status": "synced",
+      "detail": "{\"item_number\": 3026, \"name\": \"ببيونه شيفون ( ازرق فاتح ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ازرق فاتح ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ازرق فاتح ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2026\", \"source_url\": \"https://jabaristore.com/?app=product.show.3777\"}",
+      "updated_at": 1792437065715
+    },
+    {
+      "source_id": 3776,
+      "mode": "apply",
+      "product_id": 2027,
+      "status": "synced",
+      "detail": "{\"item_number\": 3027, \"name\": \"ببيونه شيفون ( زهر ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زهر ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زهر ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2027\", \"source_url\": \"https://jabaristore.com/?app=product.show.3776\"}",
+      "updated_at": 1792437075667
+    },
+    {
+      "source_id": 3775,
+      "mode": "apply",
+      "product_id": 2028,
+      "status": "synced",
+      "detail": "{\"item_number\": 3028, \"name\": \"ببيونه شيفون ( ازرق ) عرض 4 سم\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ازرق ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ازرق ) عرض 4 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"200 قطعة\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2028\", \"source_url\": \"https://jabaristore.com/?app=product.show.3775\"}",
+      "updated_at": 1792437085943
+    },
+    {
+      "source_id": 3774,
+      "mode": "apply",
+      "product_id": 2029,
+      "status": "synced",
+      "detail": "{\"item_number\": 3029, \"name\": \"ببيونه شيفون ( ابيض ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ابيض ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ابيض ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2029\", \"source_url\": \"https://jabaristore.com/?app=product.show.3774\"}",
+      "updated_at": 1792437095931
+    },
+    {
+      "source_id": 3773,
+      "mode": "apply",
+      "product_id": 2030,
+      "status": "synced",
+      "detail": "{\"item_number\": 3030, \"name\": \"ببيونه شيفون ( خمري ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( خمري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2030\", \"source_url\": \"https://jabaristore.com/?app=product.show.3773\"}",
+      "updated_at": 1792437105711
+    },
+    {
+      "source_id": 3772,
+      "mode": "apply",
+      "product_id": 2031,
+      "status": "synced",
+      "detail": "{\"item_number\": 3031, \"name\": \"ببيونه شيفون ( ازرق ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ازرق ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ازرق ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2031\", \"source_url\": \"https://jabaristore.com/?app=product.show.3772\"}",
+      "updated_at": 1792437115696
+    },
+    {
+      "source_id": 3771,
+      "mode": "apply",
+      "product_id": 2032,
+      "status": "synced",
+      "detail": "{\"item_number\": 3032, \"name\": \"ببيونه شيفون ( كحلي ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( كحلي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( كحلي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2032\", \"source_url\": \"https://jabaristore.com/?app=product.show.3771\"}",
+      "updated_at": 1792437125673
+    },
+    {
+      "source_id": 3769,
+      "mode": "apply",
+      "product_id": 2033,
+      "status": "synced",
+      "detail": "{\"item_number\": 3033, \"name\": \"ببيونه شيفون ( توتي ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( توتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( توتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2033\", \"source_url\": \"https://jabaristore.com/?app=product.show.3769\"}",
+      "updated_at": 1792437135921
+    },
+    {
+      "source_id": 3768,
+      "mode": "apply",
+      "product_id": 1422,
+      "status": "synced",
+      "detail": "{\"item_number\": 2422, \"name\": \"ببيونه شيفون ( ليلكي فاتح ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ليلكي فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ليلكي فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1422\", \"source_url\": \"https://jabaristore.com/?app=product.show.3768\"}",
+      "updated_at": 1792437145955
+    },
+    {
+      "source_id": 3767,
+      "mode": "apply",
+      "product_id": 2034,
+      "status": "synced",
+      "detail": "{\"item_number\": 3034, \"name\": \"ببيونه شيفون ( زيتي ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زيتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زيتي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2034\", \"source_url\": \"https://jabaristore.com/?app=product.show.3767\"}",
+      "updated_at": 1792437155953
+    },
+    {
+      "source_id": 3766,
+      "mode": "apply",
+      "product_id": 2035,
+      "status": "synced",
+      "detail": "{\"item_number\": 3035, \"name\": \"ببيونه شيفون ( ليلكي ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ليلكي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ليلكي ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2035\", \"source_url\": \"https://jabaristore.com/?app=product.show.3766\"}",
+      "updated_at": 1792437165812
+    },
+    {
+      "source_id": 3765,
+      "mode": "apply",
+      "product_id": 2036,
+      "status": "synced",
+      "detail": "{\"item_number\": 3036, \"name\": \"ببيونه شيفون ( زيتي فاتح ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زيتي فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زيتي فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2036\", \"source_url\": \"https://jabaristore.com/?app=product.show.3765\"}",
+      "updated_at": 1792437176018
+    },
+    {
+      "source_id": 3764,
+      "mode": "apply",
+      "product_id": 2037,
+      "status": "synced",
+      "detail": "{\"item_number\": 3037, \"name\": \"ببيونه شيفون ( زهر فاتح ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زهر فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زهر فاتح ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2037\", \"source_url\": \"https://jabaristore.com/?app=product.show.3764\"}",
+      "updated_at": 1792437185835
+    },
+    {
+      "source_id": 3763,
+      "mode": "apply",
+      "product_id": 2038,
+      "status": "synced",
+      "detail": "{\"item_number\": 3038, \"name\": \"ببيونه شيفون ( ايفري ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( ايفري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( ايفري ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2038\", \"source_url\": \"https://jabaristore.com/?app=product.show.3763\"}",
+      "updated_at": 1792437195905
+    },
+    {
+      "source_id": 3762,
+      "mode": "apply",
+      "product_id": 2039,
+      "status": "synced",
+      "detail": "{\"item_number\": 3039, \"name\": \"ببيونه شيفون ( زهر ) عرض 1 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه شيفون ( زهر ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه شيفون ( زهر ) عرض 1 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"500 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2039\", \"source_url\": \"https://jabaristore.com/?app=product.show.3762\"}",
+      "updated_at": 1792437205872
+    },
+    {
+      "source_id": 3758,
+      "mode": "apply",
+      "product_id": 2040,
+      "status": "synced",
+      "detail": "{\"item_number\": 3040, \"name\": \"ببيونه ستان مع لولو ( ازرق ) عرض 2.5 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان مع لولو ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"100 قطعة\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"200 قطعة\", \"price\": 3400, \"active\": false, \"supplier_price\": 3200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان مع لولو ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1200, \"active\": false}, {\"name\": \"100 قطعة\", \"price\": 2000, \"active\": false}, {\"name\": \"200 قطعة\", \"price\": 3200, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"100 قطعة\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"200 قطعة\", \"price\": 3400, \"active\": false, \"supplier_price\": 3200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2040\", \"source_url\": \"https://jabaristore.com/?app=product.show.3758\"}",
+      "updated_at": 1792437215936
+    },
+    {
+      "source_id": 3756,
+      "mode": "apply",
+      "product_id": 2041,
+      "status": "synced",
+      "detail": "{\"item_number\": 3041, \"name\": \"ببيونه ستان مع لولو ( ليلكي ) عرض 2.5 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان مع لولو ( ليلكي ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"100 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"200 قطعة\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان مع لولو ( ليلكي ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 3200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"100 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"200 قطعة\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2041\", \"source_url\": \"https://jabaristore.com/?app=product.show.3756\"}",
+      "updated_at": 1792437225685
+    },
+    {
+      "source_id": 3753,
+      "mode": "apply",
+      "product_id": 2042,
+      "status": "synced",
+      "detail": "{\"item_number\": 3042, \"name\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ( ازرق ) عرض 2.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 2200, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"100 قطعة\", \"price\": 2350, \"active\": true, \"supplier_price\": 2200}, {\"name\": \"200 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2042\", \"source_url\": \"https://jabaristore.com/?app=product.show.3753\"}",
+      "updated_at": 1792437235671
     }
   ]
 }

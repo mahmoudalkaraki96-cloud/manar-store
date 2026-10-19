@@ -2852,3 +2852,64 @@
 - الجعبري#3834 ↔ صنف#2995: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3834
 - الجعبري#3833 ↔ صنف#2996: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3833
 - الجعبري#3832 ↔ صنف#2997: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3832
+
+
+### 2026-10-19T22:13:58.322102+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T22:13:58.322102+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 369, "synced": 174, "unsupported_source_price": 63}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3829 ↔ صنف#2998: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3829
+- الجعبري#3828 ↔ صنف#2999: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3828
+- الجعبري#3826 ↔ صنف#3000: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3826
+- الجعبري#3825 ↔ صنف#3001: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3825
+- الجعبري#3824 ↔ صنف#3002: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3824
+- الجعبري#3823 ↔ صنف#3003: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3823
+- الجعبري#3821 ↔ صنف#3004: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3821
+- الجعبري#3819 ↔ صنف#3005: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3819
+- الجعبري#3817 ↔ صنف#3006: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3817
+- الجعبري#3816 ↔ صنف#3007: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3816
+- الجعبري#3815 ↔ صنف#3008: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3815
+- الجعبري#3814 ↔ صنف#3009: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3814
+- الجعبري#3812 ↔ صنف#3010: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3812
+- الجعبري#3811 ↔ صنف#3011: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3811
+- الجعبري#3810 ↔ صنف#3012: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3810
+- الجعبري#3803 ↔ صنف#3013: no_options؛ قطع تزين ذهبي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3803
+- الجعبري#3802 ↔ صنف#3014: no_options؛ قطع تزين فضي شوكولاتة ( 50 قطعة ). https://jabaristore.com/?app=product.show.3802
+- الجعبري#3797 ↔ صنف#3015: synced؛ 10 قطعة=12.5₪؛ 50 قطعة=47₪. https://jabaristore.com/?app=product.show.3797
+- الجعبري#3796 ↔ صنف#3016: synced؛ 10 قطعة=14.5₪؛ 50 قطعة=57₪. https://jabaristore.com/?app=product.show.3796
+- الجعبري#3795 ↔ صنف#3017: synced؛ 10 قطعة=11₪؛ 50 قطعة=47₪. https://jabaristore.com/?app=product.show.3795
+- الجعبري#3794 ↔ صنف#3018: synced؛ 10 قطعة=10₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3794
+- الجعبري#3793 ↔ صنف#3019: synced؛ 10 قطعة=14.5₪؛ 50 قطعة=57₪. https://jabaristore.com/?app=product.show.3793
+- الجعبري#3792 ↔ صنف#3020: synced؛ 10 قطعة=13.5₪؛ 50 قطعة=52₪. https://jabaristore.com/?app=product.show.3792
+- الجعبري#3788 ↔ صنف#3021: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3788
+- الجعبري#3787 ↔ صنف#3022: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3787
+- الجعبري#3786 ↔ صنف#2417: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.3786
+- الجعبري#3785 ↔ صنف#2418: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.3785
+- الجعبري#3784 ↔ صنف#2419: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3784
+- الجعبري#3783 ↔ صنف#2420: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3783
+- الجعبري#3782 ↔ صنف#3023: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3782
+- الجعبري#3779 ↔ صنف#3024: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3779
+- الجعبري#3778 ↔ صنف#3025: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3778
+- الجعبري#3777 ↔ صنف#3026: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3777
+- الجعبري#3776 ↔ صنف#3027: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3776
+- الجعبري#3775 ↔ صنف#3028: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3775
+- الجعبري#3774 ↔ صنف#3029: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3774
+- الجعبري#3773 ↔ صنف#3030: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3773
+- الجعبري#3772 ↔ صنف#3031: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3772
+- الجعبري#3771 ↔ صنف#3032: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3771
+- الجعبري#3769 ↔ صنف#3033: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3769
+- الجعبري#3768 ↔ صنف#2422: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3768
+- الجعبري#3767 ↔ صنف#3034: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3767
+- الجعبري#3766 ↔ صنف#3035: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3766
+- الجعبري#3765 ↔ صنف#3036: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3765
+- الجعبري#3764 ↔ صنف#3037: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3764
+- الجعبري#3763 ↔ صنف#3038: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3763
+- الجعبري#3762 ↔ صنف#3039: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 500 قطعة=62₪. https://jabaristore.com/?app=product.show.3762
+- الجعبري#3758 ↔ صنف#3040: synced؛ 50 قطعة=13.5₪؛ 100 قطعة=21.5₪؛ 200 قطعة=34₪. https://jabaristore.com/?app=product.show.3758
+- الجعبري#3756 ↔ صنف#3041: synced؛ 50 قطعة=13.5₪؛ 100 قطعة=21.5₪؛ 200 قطعة=34₪. https://jabaristore.com/?app=product.show.3756
+- الجعبري#3753 ↔ صنف#3042: synced؛ 50 قطعة=14.5₪؛ 100 قطعة=23.5₪؛ 200 قطعة=37₪. https://jabaristore.com/?app=product.show.3753
