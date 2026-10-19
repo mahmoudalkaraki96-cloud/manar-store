@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:47:14.498188+03:00",
+  "updated_at": "2026-10-19T22:55:33.669122+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -6451,6 +6451,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 3238, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2238\", \"source_url\": \"https://jabaristore.com/?app=product.show.3387\"}",
       "updated_at": 1792439231687
+    },
+    {
+      "source_id": 3386,
+      "mode": "apply",
+      "product_id": 2239,
+      "status": "synced",
+      "detail": "{\"item_number\": 3239, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2239\", \"source_url\": \"https://jabaristore.com/?app=product.show.3386\"}",
+      "updated_at": 1792439242017
+    },
+    {
+      "source_id": 3385,
+      "mode": "apply",
+      "product_id": 2240,
+      "status": "synced",
+      "detail": "{\"item_number\": 3240, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2240\", \"source_url\": \"https://jabaristore.com/?app=product.show.3385\"}",
+      "updated_at": 1792439252213
+    },
+    {
+      "source_id": 3384,
+      "mode": "apply",
+      "product_id": 2241,
+      "status": "synced",
+      "detail": "{\"item_number\": 3241, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2241\", \"source_url\": \"https://jabaristore.com/?app=product.show.3384\"}",
+      "updated_at": 1792439262028
+    },
+    {
+      "source_id": 3383,
+      "mode": "apply",
+      "product_id": 2242,
+      "status": "synced",
+      "detail": "{\"item_number\": 3242, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2242\", \"source_url\": \"https://jabaristore.com/?app=product.show.3383\"}",
+      "updated_at": 1792439272019
+    },
+    {
+      "source_id": 3382,
+      "mode": "apply",
+      "product_id": 2243,
+      "status": "synced",
+      "detail": "{\"item_number\": 3243, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2243\", \"source_url\": \"https://jabaristore.com/?app=product.show.3382\"}",
+      "updated_at": 1792439282019
+    },
+    {
+      "source_id": 3381,
+      "mode": "apply",
+      "product_id": 2244,
+      "status": "synced",
+      "detail": "{\"item_number\": 3244, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2244\", \"source_url\": \"https://jabaristore.com/?app=product.show.3381\"}",
+      "updated_at": 1792439292007
+    },
+    {
+      "source_id": 3380,
+      "mode": "apply",
+      "product_id": 2245,
+      "status": "synced",
+      "detail": "{\"item_number\": 3245, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2245\", \"source_url\": \"https://jabaristore.com/?app=product.show.3380\"}",
+      "updated_at": 1792439302247
+    },
+    {
+      "source_id": 3379,
+      "mode": "apply",
+      "product_id": 2246,
+      "status": "synced",
+      "detail": "{\"item_number\": 3246, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2246\", \"source_url\": \"https://jabaristore.com/?app=product.show.3379\"}",
+      "updated_at": 1792439312257
+    },
+    {
+      "source_id": 3378,
+      "mode": "apply",
+      "product_id": 2247,
+      "status": "synced",
+      "detail": "{\"item_number\": 3247, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2247\", \"source_url\": \"https://jabaristore.com/?app=product.show.3378\"}",
+      "updated_at": 1792439322010
+    },
+    {
+      "source_id": 3377,
+      "mode": "apply",
+      "product_id": 2248,
+      "status": "synced",
+      "detail": "{\"item_number\": 3248, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2248\", \"source_url\": \"https://jabaristore.com/?app=product.show.3377\"}",
+      "updated_at": 1792439332001
+    },
+    {
+      "source_id": 3376,
+      "mode": "apply",
+      "product_id": 2249,
+      "status": "synced",
+      "detail": "{\"item_number\": 3249, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2249\", \"source_url\": \"https://jabaristore.com/?app=product.show.3376\"}",
+      "updated_at": 1792439342215
+    },
+    {
+      "source_id": 3375,
+      "mode": "apply",
+      "product_id": 2250,
+      "status": "synced",
+      "detail": "{\"item_number\": 3250, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2250\", \"source_url\": \"https://jabaristore.com/?app=product.show.3375\"}",
+      "updated_at": 1792439352373
+    },
+    {
+      "source_id": 3374,
+      "mode": "apply",
+      "product_id": 2251,
+      "status": "synced",
+      "detail": "{\"item_number\": 3251, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2251\", \"source_url\": \"https://jabaristore.com/?app=product.show.3374\"}",
+      "updated_at": 1792439362025
+    },
+    {
+      "source_id": 3373,
+      "mode": "apply",
+      "product_id": 2252,
+      "status": "synced",
+      "detail": "{\"item_number\": 3252, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2252\", \"source_url\": \"https://jabaristore.com/?app=product.show.3373\"}",
+      "updated_at": 1792439372021
+    },
+    {
+      "source_id": 3372,
+      "mode": "apply",
+      "product_id": 2253,
+      "status": "synced",
+      "detail": "{\"item_number\": 3253, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2253\", \"source_url\": \"https://jabaristore.com/?app=product.show.3372\"}",
+      "updated_at": 1792439382201
+    },
+    {
+      "source_id": 3371,
+      "mode": "apply",
+      "product_id": 2254,
+      "status": "synced",
+      "detail": "{\"item_number\": 3254, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2254\", \"source_url\": \"https://jabaristore.com/?app=product.show.3371\"}",
+      "updated_at": 1792439392330
+    },
+    {
+      "source_id": 3370,
+      "mode": "apply",
+      "product_id": 2255,
+      "status": "synced",
+      "detail": "{\"item_number\": 3255, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2255\", \"source_url\": \"https://jabaristore.com/?app=product.show.3370\"}",
+      "updated_at": 1792439402281
+    },
+    {
+      "source_id": 3369,
+      "mode": "apply",
+      "product_id": 2256,
+      "status": "synced",
+      "detail": "{\"item_number\": 3256, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2256\", \"source_url\": \"https://jabaristore.com/?app=product.show.3369\"}",
+      "updated_at": 1792439412282
+    },
+    {
+      "source_id": 3368,
+      "mode": "apply",
+      "product_id": 2257,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3257}",
+      "updated_at": 1792439421740
+    },
+    {
+      "source_id": 3367,
+      "mode": "apply",
+      "product_id": 2258,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3258}",
+      "updated_at": 1792439431905
+    },
+    {
+      "source_id": 3366,
+      "mode": "apply",
+      "product_id": 2259,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3259}",
+      "updated_at": 1792439441992
+    },
+    {
+      "source_id": 3365,
+      "mode": "apply",
+      "product_id": 2260,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3260}",
+      "updated_at": 1792439451749
+    },
+    {
+      "source_id": 3364,
+      "mode": "apply",
+      "product_id": 2261,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3261}",
+      "updated_at": 1792439461953
+    },
+    {
+      "source_id": 3363,
+      "mode": "apply",
+      "product_id": 2262,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3262}",
+      "updated_at": 1792439471734
+    },
+    {
+      "source_id": 3362,
+      "mode": "apply",
+      "product_id": 2263,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3263}",
+      "updated_at": 1792439481740
+    },
+    {
+      "source_id": 3359,
+      "mode": "apply",
+      "product_id": 2264,
+      "status": "synced",
+      "detail": "{\"item_number\": 3264, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2264\", \"source_url\": \"https://jabaristore.com/?app=product.show.3359\"}",
+      "updated_at": 1792439492010
+    },
+    {
+      "source_id": 3358,
+      "mode": "apply",
+      "product_id": 2265,
+      "status": "synced",
+      "detail": "{\"item_number\": 3265, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2265\", \"source_url\": \"https://jabaristore.com/?app=product.show.3358\"}",
+      "updated_at": 1792439501998
+    },
+    {
+      "source_id": 3357,
+      "mode": "apply",
+      "product_id": 2266,
+      "status": "synced",
+      "detail": "{\"item_number\": 3266, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2266\", \"source_url\": \"https://jabaristore.com/?app=product.show.3357\"}",
+      "updated_at": 1792439512301
+    },
+    {
+      "source_id": 3356,
+      "mode": "apply",
+      "product_id": 2267,
+      "status": "synced",
+      "detail": "{\"item_number\": 3267, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2267\", \"source_url\": \"https://jabaristore.com/?app=product.show.3356\"}",
+      "updated_at": 1792439522111
+    },
+    {
+      "source_id": 3355,
+      "mode": "apply",
+      "product_id": 2268,
+      "status": "synced",
+      "detail": "{\"item_number\": 3268, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2268\", \"source_url\": \"https://jabaristore.com/?app=product.show.3355\"}",
+      "updated_at": 1792439532210
+    },
+    {
+      "source_id": 3354,
+      "mode": "apply",
+      "product_id": 2269,
+      "status": "synced",
+      "detail": "{\"item_number\": 3269, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2269\", \"source_url\": \"https://jabaristore.com/?app=product.show.3354\"}",
+      "updated_at": 1792439542053
+    },
+    {
+      "source_id": 3353,
+      "mode": "apply",
+      "product_id": 2270,
+      "status": "synced",
+      "detail": "{\"item_number\": 3270, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2270\", \"source_url\": \"https://jabaristore.com/?app=product.show.3353\"}",
+      "updated_at": 1792439552037
+    },
+    {
+      "source_id": 3352,
+      "mode": "apply",
+      "product_id": 2271,
+      "status": "synced",
+      "detail": "{\"item_number\": 3271, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2271\", \"source_url\": \"https://jabaristore.com/?app=product.show.3352\"}",
+      "updated_at": 1792439562042
+    },
+    {
+      "source_id": 3351,
+      "mode": "apply",
+      "product_id": 2272,
+      "status": "synced",
+      "detail": "{\"item_number\": 3272, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2272\", \"source_url\": \"https://jabaristore.com/?app=product.show.3351\"}",
+      "updated_at": 1792439572275
+    },
+    {
+      "source_id": 3350,
+      "mode": "apply",
+      "product_id": 2273,
+      "status": "synced",
+      "detail": "{\"item_number\": 3273, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2273\", \"source_url\": \"https://jabaristore.com/?app=product.show.3350\"}",
+      "updated_at": 1792439582016
+    },
+    {
+      "source_id": 3349,
+      "mode": "apply",
+      "product_id": 2274,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3274, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439591733
+    },
+    {
+      "source_id": 3348,
+      "mode": "apply",
+      "product_id": 2275,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3275, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439601721
+    },
+    {
+      "source_id": 3347,
+      "mode": "apply",
+      "product_id": 2276,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3276, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439611731
+    },
+    {
+      "source_id": 3346,
+      "mode": "apply",
+      "product_id": 2277,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3277, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439621734
+    },
+    {
+      "source_id": 3345,
+      "mode": "apply",
+      "product_id": 2278,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3278, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439631959
+    },
+    {
+      "source_id": 3344,
+      "mode": "apply",
+      "product_id": 2279,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3279, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439641979
+    },
+    {
+      "source_id": 3343,
+      "mode": "apply",
+      "product_id": 2280,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3280, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439651988
+    },
+    {
+      "source_id": 3342,
+      "mode": "apply",
+      "product_id": 2281,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3281, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439661958
+    },
+    {
+      "source_id": 3341,
+      "mode": "apply",
+      "product_id": 2282,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3282, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439671944
+    },
+    {
+      "source_id": 3340,
+      "mode": "apply",
+      "product_id": 2283,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3283, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439681753
+    },
+    {
+      "source_id": 3339,
+      "mode": "apply",
+      "product_id": 2284,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3284, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439691975
+    },
+    {
+      "source_id": 3338,
+      "mode": "apply",
+      "product_id": 2285,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3285, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439701745
+    },
+    {
+      "source_id": 3337,
+      "mode": "apply",
+      "product_id": 2286,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3286, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439711986
+    },
+    {
+      "source_id": 3336,
+      "mode": "apply",
+      "product_id": 2287,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3287, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439721743
+    },
+    {
+      "source_id": 3335,
+      "mode": "apply",
+      "product_id": 2288,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3288, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439731987
     }
   ]
 }
