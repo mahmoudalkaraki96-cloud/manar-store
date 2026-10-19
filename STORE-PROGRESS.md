@@ -2167,3 +2167,62 @@
 - الجعبري#4324 ↔ صنف#2617: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4324
 - الجعبري#4323 ↔ صنف#2618: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4323
 - الجعبري#4322 ↔ صنف#2619: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( شهد العسل ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4322
+### 2026-10-19T21:02:09.537203+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T21:02:09.537203+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 301, "no_options": 615, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#341 ↔ صنف#2029: no_options؛ رد سولو 7سم. https://dofesh.ps/?app=product.show.341
+- دوفش#340 ↔ صنف#2030: no_options؛ ورد سولو 7سم. https://dofesh.ps/?app=product.show.340
+- دوفش#339 ↔ صنف#2031: no_options؛ ورد قرنفل قماش مخمل 4سم. https://dofesh.ps/?app=product.show.339
+- دوفش#338 ↔ صنف#2032: no_options؛ ورد قرنفل قماش مخمل 4سم. https://dofesh.ps/?app=product.show.338
+- دوفش#337 ↔ صنف#2033: no_options؛ ورد قرنفل قماش مخمل 4سم. https://dofesh.ps/?app=product.show.337
+- دوفش#336 ↔ صنف#2034: no_options؛ ورد قرنفل 4سم ابيض. https://dofesh.ps/?app=product.show.336
+- دوفش#335 ↔ صنف#2035: no_options؛ شبر ورق 3سم /100متر. https://dofesh.ps/?app=product.show.335
+- دوفش#334 ↔ صنف#2036: no_options؛ تعليقة باب اكريلك 35 سم. https://dofesh.ps/?app=product.show.334
+- دوفش#333 ↔ صنف#2037: no_options؛ تعليقة اكريلك ذهبي 35 سم. https://dofesh.ps/?app=product.show.333
+- دوفش#332 ↔ صنف#2038: no_options؛ تعليقة باب اكريلك خلفية شفاف (35سم). https://dofesh.ps/?app=product.show.332
+- دوفش#331 ↔ صنف#2039: no_options؛ تعليقة باب اكريلك خلفية شفاف 35سم (في بيتنا عريس). https://dofesh.ps/?app=product.show.331
+- دوفش#330 ↔ صنف#1103: no_options؛ ملبس لوز نابا1 (الاصلي ). https://dofesh.ps/?app=product.show.330
+- دوفش#329 ↔ صنف#1104: no_options؛ ملبس لوز نابا1(الاصلي). https://dofesh.ps/?app=product.show.329
+- دوفش#328 ↔ صنف#1105: no_options؛ ملبس لوز نابا 1(الاصلي ). https://dofesh.ps/?app=product.show.328
+- دوفش#327 ↔ صنف#1106: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.327
+- دوفش#326 ↔ صنف#1107: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.326
+- دوفش#325 ↔ صنف#1108: synced؛ بالحبة=1₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.325
+- دوفش#324 ↔ صنف#2040: no_options؛ مدالية ميلامين (بلاستيك مقوى). https://dofesh.ps/?app=product.show.324
+- دوفش#323 ↔ صنف#2041: no_options؛ مدالية ميلامين(بلاستيك مقوى). https://dofesh.ps/?app=product.show.323
+- دوفش#322 ↔ صنف#2042: no_options؛ مدالية ميلامين (بلاستيك مقوى) شكل صدفة. https://dofesh.ps/?app=product.show.322
+- دوفش#321 ↔ صنف#2043: no_options؛ لب زجاج فاضي لتعبئة العطر 30 مل. https://dofesh.ps/?app=product.show.321
+- دوفش#320 ↔ صنف#2044: no_options؛ علب زجاج لتعبئة العطر 30 مل. https://dofesh.ps/?app=product.show.320
+- دوفش#319 ↔ صنف#2045: no_options؛ حبل مثلث 3متر. https://dofesh.ps/?app=product.show.319
+- دوفش#318 ↔ صنف#2046: no_options؛ حبل مثلث 3 متر. https://dofesh.ps/?app=product.show.318
+- دوفش#317 ↔ صنف#2047: no_options؛ حبل مثلثات 3 متر. https://dofesh.ps/?app=product.show.317
+- دوفش#316 ↔ صنف#2048: no_options؛ حبل مثلثات 3 متر. https://dofesh.ps/?app=product.show.316
+- دوفش#315 ↔ صنف#2049: no_options؛ حبل مثلثات 3متر. https://dofesh.ps/?app=product.show.315
+- دوفش#314 ↔ صنف#2050: no_options؛ حبل مثلث للتزيين 3متر. https://dofesh.ps/?app=product.show.314
+- دوفش#313 ↔ صنف#2051: no_options؛ حبل مثلث 3متر. https://dofesh.ps/?app=product.show.313
+- دوفش#312 ↔ صنف#2052: no_options؛ شبر بالونات بلاستيك (25متر). https://dofesh.ps/?app=product.show.312
+- دوفش#311 ↔ صنف#2053: no_options؛ شبر بالونات بلاستيك (25متر). https://dofesh.ps/?app=product.show.311
+- دوفش#310 ↔ صنف#2054: no_options؛ شبر بلاستيك بالونات (25 متر). https://dofesh.ps/?app=product.show.310
+- دوفش#309 ↔ صنف#2055: no_options؛ شبر بلاستيك للبالونات (25متر). https://dofesh.ps/?app=product.show.309
+- دوفش#307 ↔ صنف#2056: no_options؛ صندوق كرتون لاب توب للشوكولاتة. https://dofesh.ps/?app=product.show.307
+- دوفش#305 ↔ صنف#2057: no_options؛ صندوق كرتون لاب توب للشوكولاتة. https://dofesh.ps/?app=product.show.305
+- دوفش#304 ↔ صنف#2058: no_options؛ صندوق كرتون لاب توب للشوكولاتة. https://dofesh.ps/?app=product.show.304
+- دوفش#303 ↔ صنف#1221: no_options؛ صندوق كرتون لاب توب للشوكولاتة(ابيض). https://dofesh.ps/?app=product.show.303
+- دوفش#302 ↔ صنف#2059: no_options؛ سلة قش حجم صغير للتوزيعات. https://dofesh.ps/?app=product.show.302
+- دوفش#301 ↔ صنف#1031: no_options؛ سترس محجر 9 متر اصلي. https://dofesh.ps/?app=product.show.301
+- دوفش#300 ↔ صنف#1032: no_options؛ رول لولو نص حبة 60 متر لون لولي. https://dofesh.ps/?app=product.show.300
+- دوفش#299 ↔ صنف#1033: no_options؛ رول لولو نص حبة 60 متر ازرق. https://dofesh.ps/?app=product.show.299
+- دوفش#298 ↔ صنف#1034: no_options؛ رول لولو نص حبة 60 متر زهري. https://dofesh.ps/?app=product.show.298
+- دوفش#297 ↔ صنف#1035: no_options؛ رول لولو 60 متر ابيض. https://dofesh.ps/?app=product.show.297
+- دوفش#296 ↔ صنف#1036: no_options؛ رول لولو 60متر ذهبي. https://dofesh.ps/?app=product.show.296
+- دوفش#295 ↔ صنف#1037: no_options؛ رول لولو 60متر لون لولي. https://dofesh.ps/?app=product.show.295
+- دوفش#294 ↔ صنف#2060: no_options؛ صندوق اكريلك مع ايد لولو مقاس cnc (8.5*6) ذهبي. https://dofesh.ps/?app=product.show.294
+- دوفش#293 ↔ صنف#2061: no_options؛ مبخرة نحاس مع قاعدة جبص (10*10*15). https://dofesh.ps/?app=product.show.293
+- دوفش#292 ↔ صنف#1095: no_options؛ تول مدور مقصوص (24سم) تركواز. https://dofesh.ps/?app=product.show.292
+- دوفش#291 ↔ صنف#1096: no_options؛ تول مدور (24سم) احمر. https://dofesh.ps/?app=product.show.291
+- دوفش#290 ↔ صنف#1097: no_options؛ تول مدور مقصوص (24سم) فوشي. https://dofesh.ps/?app=product.show.290

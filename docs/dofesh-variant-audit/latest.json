@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:53:52.535221+03:00",
+  "updated_at": "2026-10-19T21:02:09.537203+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -7235,6 +7235,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2028, \"source\": {\"title\": \"ورد سولو 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
       "updated_at": 1792432431595
+    },
+    {
+      "source_id": 341,
+      "mode": "apply",
+      "product_id": 1029,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2029, \"source\": {\"title\": \"رد سولو 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432438651
+    },
+    {
+      "source_id": 340,
+      "mode": "apply",
+      "product_id": 1030,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2030, \"source\": {\"title\": \"ورد سولو 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432448465
+    },
+    {
+      "source_id": 339,
+      "mode": "apply",
+      "product_id": 1031,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2031, \"source\": {\"title\": \"ورد قرنفل قماش مخمل 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432458379
+    },
+    {
+      "source_id": 338,
+      "mode": "apply",
+      "product_id": 1032,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2032, \"source\": {\"title\": \"ورد قرنفل قماش مخمل 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432468382
+    },
+    {
+      "source_id": 337,
+      "mode": "apply",
+      "product_id": 1033,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2033, \"source\": {\"title\": \"ورد قرنفل قماش مخمل 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432478574
+    },
+    {
+      "source_id": 336,
+      "mode": "apply",
+      "product_id": 1034,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2034, \"source\": {\"title\": \"ورد قرنفل 4سم ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432488360
+    },
+    {
+      "source_id": 335,
+      "mode": "apply",
+      "product_id": 1035,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2035, \"source\": {\"title\": \"شبر ورق 3سم /100متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432498366
+    },
+    {
+      "source_id": 334,
+      "mode": "apply",
+      "product_id": 1036,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2036, \"source\": {\"title\": \"تعليقة باب اكريلك 35 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792432508673
+    },
+    {
+      "source_id": 333,
+      "mode": "apply",
+      "product_id": 1037,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2037, \"source\": {\"title\": \"تعليقة اكريلك ذهبي 35 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792432518359
+    },
+    {
+      "source_id": 332,
+      "mode": "apply",
+      "product_id": 1038,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2038, \"source\": {\"title\": \"تعليقة باب اكريلك خلفية شفاف (35سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792432528359
+    },
+    {
+      "source_id": 331,
+      "mode": "apply",
+      "product_id": 1039,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2039, \"source\": {\"title\": \"تعليقة باب اكريلك خلفية شفاف 35سم (في بيتنا عريس)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792432538395
+    },
+    {
+      "source_id": 330,
+      "mode": "apply",
+      "product_id": 103,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1103, \"source\": {\"title\": \"ملبس لوز نابا1 (الاصلي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432548365
+    },
+    {
+      "source_id": 329,
+      "mode": "apply",
+      "product_id": 104,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1104, \"source\": {\"title\": \"ملبس لوز نابا1(الاصلي)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432558364
+    },
+    {
+      "source_id": 328,
+      "mode": "apply",
+      "product_id": 105,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1105, \"source\": {\"title\": \"ملبس لوز نابا 1(الاصلي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432568438
+    },
+    {
+      "source_id": 327,
+      "mode": "apply",
+      "product_id": 106,
+      "status": "synced",
+      "detail": "{\"item_number\": 1106, \"name\": \"شوكولاتة اسطواني (8*2)\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة اسطواني (8*2)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/106\", \"source_url\": \"https://dofesh.ps/?app=product.show.327\"}",
+      "updated_at": 1792432578641
+    },
+    {
+      "source_id": 326,
+      "mode": "apply",
+      "product_id": 107,
+      "status": "synced",
+      "detail": "{\"item_number\": 1107, \"name\": \"شوكولاتة جذح الشجرة\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة جذح الشجرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/107\", \"source_url\": \"https://dofesh.ps/?app=product.show.326\"}",
+      "updated_at": 1792432588630
+    },
+    {
+      "source_id": 325,
+      "mode": "apply",
+      "product_id": 108,
+      "status": "synced",
+      "detail": "{\"item_number\": 1108, \"name\": \"شوكولاتة راس قلب\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة راس قلب\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/108\", \"source_url\": \"https://dofesh.ps/?app=product.show.325\"}",
+      "updated_at": 1792432598634
+    },
+    {
+      "source_id": 324,
+      "mode": "apply",
+      "product_id": 1040,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2040, \"source\": {\"title\": \"مدالية ميلامين (بلاستيك مقوى)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792432608398
+    },
+    {
+      "source_id": 323,
+      "mode": "apply",
+      "product_id": 1041,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2041, \"source\": {\"title\": \"مدالية ميلامين(بلاستيك مقوى)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792432618606
+    },
+    {
+      "source_id": 322,
+      "mode": "apply",
+      "product_id": 1042,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2042, \"source\": {\"title\": \"مدالية ميلامين (بلاستيك مقوى) شكل صدفة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792432628593
+    },
+    {
+      "source_id": 321,
+      "mode": "apply",
+      "product_id": 1043,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2043, \"source\": {\"title\": \"لب زجاج فاضي لتعبئة العطر 30 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792432638363
+    },
+    {
+      "source_id": 320,
+      "mode": "apply",
+      "product_id": 1044,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2044, \"source\": {\"title\": \"علب زجاج لتعبئة العطر 30 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432648617
+    },
+    {
+      "source_id": 319,
+      "mode": "apply",
+      "product_id": 1045,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2045, \"source\": {\"title\": \"حبل مثلث 3متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432658427
+    },
+    {
+      "source_id": 318,
+      "mode": "apply",
+      "product_id": 1046,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2046, \"source\": {\"title\": \"حبل مثلث 3 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432668592
+    },
+    {
+      "source_id": 317,
+      "mode": "apply",
+      "product_id": 1047,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2047, \"source\": {\"title\": \"حبل مثلثات 3 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432678407
+    },
+    {
+      "source_id": 316,
+      "mode": "apply",
+      "product_id": 1048,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2048, \"source\": {\"title\": \"حبل مثلثات 3 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432688616
+    },
+    {
+      "source_id": 315,
+      "mode": "apply",
+      "product_id": 1049,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2049, \"source\": {\"title\": \"حبل مثلثات 3متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432698621
+    },
+    {
+      "source_id": 314,
+      "mode": "apply",
+      "product_id": 1050,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2050, \"source\": {\"title\": \"حبل مثلث للتزيين 3متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432708628
+    },
+    {
+      "source_id": 313,
+      "mode": "apply",
+      "product_id": 1051,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2051, \"source\": {\"title\": \"حبل مثلث 3متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432718367
+    },
+    {
+      "source_id": 312,
+      "mode": "apply",
+      "product_id": 1052,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2052, \"source\": {\"title\": \"شبر بالونات بلاستيك (25متر)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432728581
+    },
+    {
+      "source_id": 311,
+      "mode": "apply",
+      "product_id": 1053,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2053, \"source\": {\"title\": \"شبر بالونات بلاستيك (25متر)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432738643
+    },
+    {
+      "source_id": 310,
+      "mode": "apply",
+      "product_id": 1054,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2054, \"source\": {\"title\": \"شبر بلاستيك بالونات (25 متر)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432748739
+    },
+    {
+      "source_id": 309,
+      "mode": "apply",
+      "product_id": 1055,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2055, \"source\": {\"title\": \"شبر بلاستيك للبالونات (25متر)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432758383
+    },
+    {
+      "source_id": 307,
+      "mode": "apply",
+      "product_id": 1056,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2056, \"source\": {\"title\": \"صندوق كرتون لاب توب للشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432768697
+    },
+    {
+      "source_id": 305,
+      "mode": "apply",
+      "product_id": 1057,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2057, \"source\": {\"title\": \"صندوق كرتون لاب توب للشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432778602
+    },
+    {
+      "source_id": 304,
+      "mode": "apply",
+      "product_id": 1058,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2058, \"source\": {\"title\": \"صندوق كرتون لاب توب للشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432788489
+    },
+    {
+      "source_id": 303,
+      "mode": "apply",
+      "product_id": 221,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1221, \"source\": {\"title\": \"صندوق كرتون لاب توب للشوكولاتة(ابيض)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432798425
+    },
+    {
+      "source_id": 302,
+      "mode": "apply",
+      "product_id": 1059,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2059, \"source\": {\"title\": \"سلة قش حجم صغير للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792432808367
+    },
+    {
+      "source_id": 301,
+      "mode": "apply",
+      "product_id": 31,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1031, \"source\": {\"title\": \"سترس محجر 9 متر اصلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792432818467
+    },
+    {
+      "source_id": 300,
+      "mode": "apply",
+      "product_id": 32,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1032, \"source\": {\"title\": \"رول لولو نص حبة 60 متر لون لولي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432828366
+    },
+    {
+      "source_id": 299,
+      "mode": "apply",
+      "product_id": 33,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1033, \"source\": {\"title\": \"رول لولو نص حبة 60 متر ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432838381
+    },
+    {
+      "source_id": 298,
+      "mode": "apply",
+      "product_id": 34,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1034, \"source\": {\"title\": \"رول لولو نص حبة 60 متر زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792432848373
+    },
+    {
+      "source_id": 297,
+      "mode": "apply",
+      "product_id": 35,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1035, \"source\": {\"title\": \"رول لولو 60 متر ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792432858368
+    },
+    {
+      "source_id": 296,
+      "mode": "apply",
+      "product_id": 36,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1036, \"source\": {\"title\": \"رول لولو 60متر ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792432868626
+    },
+    {
+      "source_id": 295,
+      "mode": "apply",
+      "product_id": 37,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1037, \"source\": {\"title\": \"رول لولو 60متر لون لولي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792432878605
+    },
+    {
+      "source_id": 294,
+      "mode": "apply",
+      "product_id": 1060,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2060, \"source\": {\"title\": \"صندوق اكريلك مع ايد لولو مقاس cnc (8.5*6) ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792432888696
+    },
+    {
+      "source_id": 293,
+      "mode": "apply",
+      "product_id": 1061,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2061, \"source\": {\"title\": \"مبخرة نحاس مع قاعدة جبص (10*10*15)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792432898591
+    },
+    {
+      "source_id": 292,
+      "mode": "apply",
+      "product_id": 95,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1095, \"source\": {\"title\": \"تول مدور مقصوص (24سم) تركواز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432908718
+    },
+    {
+      "source_id": 291,
+      "mode": "apply",
+      "product_id": 96,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1096, \"source\": {\"title\": \"تول مدور (24سم) احمر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432918668
+    },
+    {
+      "source_id": 290,
+      "mode": "apply",
+      "product_id": 97,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1097, \"source\": {\"title\": \"تول مدور مقصوص (24سم) فوشي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432928614
     }
   ]
 }
