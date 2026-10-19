@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:55:33.669122+03:00",
+  "updated_at": "2026-10-19T23:03:51.851886+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -6851,6 +6851,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3288, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792439731987
+    },
+    {
+      "source_id": 3334,
+      "mode": "apply",
+      "product_id": 2289,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3289, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439740659
+    },
+    {
+      "source_id": 3333,
+      "mode": "apply",
+      "product_id": 2290,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3290, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439750651
+    },
+    {
+      "source_id": 3332,
+      "mode": "apply",
+      "product_id": 2291,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3291, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439760667
+    },
+    {
+      "source_id": 3331,
+      "mode": "apply",
+      "product_id": 2292,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3292, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439770646
+    },
+    {
+      "source_id": 3330,
+      "mode": "apply",
+      "product_id": 2293,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3293, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439780440
+    },
+    {
+      "source_id": 3329,
+      "mode": "apply",
+      "product_id": 2294,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3294, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439790433
+    },
+    {
+      "source_id": 3328,
+      "mode": "apply",
+      "product_id": 1427,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2427, \"source\": {\"title\": \"قماش الكوفية ( عرض 1.60 متر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439800451
+    },
+    {
+      "source_id": 3327,
+      "mode": "apply",
+      "product_id": 1428,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2428, \"source\": {\"title\": \"قماش تطريز فلاحي ( عرض 1.60 متر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439810446
+    },
+    {
+      "source_id": 3326,
+      "mode": "apply",
+      "product_id": 2295,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3295, \"source\": {\"title\": \"اسلاك وبرية اسود ~ 100قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439820434
+    },
+    {
+      "source_id": 3325,
+      "mode": "apply",
+      "product_id": 2296,
+      "status": "synced",
+      "detail": "{\"item_number\": 3296, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اخضر وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"زيتي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اخضر وسط\", \"price\": 1000, \"active\": true}, {\"name\": \"زيتي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اخضر وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"زيتي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2296\", \"source_url\": \"https://jabaristore.com/?app=product.show.3325\"}",
+      "updated_at": 1792439830724
+    },
+    {
+      "source_id": 3324,
+      "mode": "apply",
+      "product_id": 2297,
+      "status": "synced",
+      "detail": "{\"item_number\": 3297, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اخضر العلم\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اخضر زيتوني\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اخضر العلم\", \"price\": 1000, \"active\": true}, {\"name\": \"اخضر زيتوني\", \"price\": 1000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اخضر العلم\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اخضر زيتوني\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2297\", \"source_url\": \"https://jabaristore.com/?app=product.show.3324\"}",
+      "updated_at": 1792439840726
+    },
+    {
+      "source_id": 3323,
+      "mode": "apply",
+      "product_id": 2298,
+      "status": "synced",
+      "detail": "{\"item_number\": 3298, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ازرق غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ازرق غامق\", \"price\": 1000, \"active\": true}, {\"name\": \"نيلي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ازرق غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2298\", \"source_url\": \"https://jabaristore.com/?app=product.show.3323\"}",
+      "updated_at": 1792439850756
+    },
+    {
+      "source_id": 3322,
+      "mode": "apply",
+      "product_id": 2299,
+      "status": "synced",
+      "detail": "{\"item_number\": 3299, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ازرق مائل لليلكي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ازرق\", \"price\": 1000, \"active\": true}, {\"name\": \"ازرق مائل لليلكي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ازرق مائل لليلكي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2299\", \"source_url\": \"https://jabaristore.com/?app=product.show.3322\"}",
+      "updated_at": 1792439860703
+    },
+    {
+      "source_id": 3321,
+      "mode": "apply",
+      "product_id": 2300,
+      "status": "synced",
+      "detail": "{\"item_number\": 3300, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"تركواز فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"تركواز وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"تركواز غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"تركواز فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"تركواز وسط\", \"price\": 1000, \"active\": true}, {\"name\": \"تركواز غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"تركواز فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"تركواز وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"تركواز غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2300\", \"source_url\": \"https://jabaristore.com/?app=product.show.3321\"}",
+      "updated_at": 1792439870998
+    },
+    {
+      "source_id": 3320,
+      "mode": "apply",
+      "product_id": 2301,
+      "status": "synced",
+      "detail": "{\"item_number\": 3301, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ليلكي وسط\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ليلكي غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نود غامق\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ليلكي وسط\", \"price\": 1000, \"active\": false}, {\"name\": \"ليلكي غامق\", \"price\": 1000, \"active\": true}, {\"name\": \"نود غامق\", \"price\": 1000, \"active\": false}, {\"name\": \"نيلي\", \"price\": 1000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ليلكي وسط\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ليلكي غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نود غامق\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2301\", \"source_url\": \"https://jabaristore.com/?app=product.show.3320\"}",
+      "updated_at": 1792439880975
+    },
+    {
+      "source_id": 3319,
+      "mode": "apply",
+      "product_id": 2302,
+      "status": "synced",
+      "detail": "{\"item_number\": 3302, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ليلكي باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ليلكي باهت\", \"price\": 1000, \"active\": true}, {\"name\": \"ليلكي فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"ليلكي وسط\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ليلكي باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي وسط\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2302\", \"source_url\": \"https://jabaristore.com/?app=product.show.3319\"}",
+      "updated_at": 1792439890691
+    },
+    {
+      "source_id": 3318,
+      "mode": "apply",
+      "product_id": 2303,
+      "status": "synced",
+      "detail": "{\"item_number\": 3303, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"بيج / صفار\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بيج / ذهبي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"بيج / صفار\", \"price\": 1000, \"active\": false}, {\"name\": \"بيج / ذهبي\", \"price\": 1000, \"active\": false}, {\"name\": \"بني\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بيج / صفار\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بيج / ذهبي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2303\", \"source_url\": \"https://jabaristore.com/?app=product.show.3318\"}",
+      "updated_at": 1792439900723
+    },
+    {
+      "source_id": 3317,
+      "mode": "apply",
+      "product_id": 2304,
+      "status": "synced",
+      "detail": "{\"item_number\": 3304, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"زهري باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فوشي باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"زهري باهت\", \"price\": 1000, \"active\": true}, {\"name\": \"نود\", \"price\": 1000, \"active\": true}, {\"name\": \"فوشي باهت\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"زهري باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فوشي باهت\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2304\", \"source_url\": \"https://jabaristore.com/?app=product.show.3317\"}",
+      "updated_at": 1792439910818
+    },
+    {
+      "source_id": 3316,
+      "mode": "apply",
+      "product_id": 2305,
+      "status": "synced",
+      "detail": "{\"item_number\": 3305, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فوشي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"زهري\", \"price\": 1000, \"active\": true}, {\"name\": \"فوشي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فوشي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2305\", \"source_url\": \"https://jabaristore.com/?app=product.show.3316\"}",
+      "updated_at": 1792439921087
+    },
+    {
+      "source_id": 3315,
+      "mode": "apply",
+      "product_id": 2306,
+      "status": "synced",
+      "detail": "{\"item_number\": 3306, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"احمر فاقع\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"احمر فاقع\", \"price\": 1000, \"active\": true}, {\"name\": \"احمر\", \"price\": 1000, \"active\": true}, {\"name\": \"احمر غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"احمر فاقع\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2306\", \"source_url\": \"https://jabaristore.com/?app=product.show.3315\"}",
+      "updated_at": 1792439930932
+    },
+    {
+      "source_id": 3314,
+      "mode": "apply",
+      "product_id": 2307,
+      "status": "synced",
+      "detail": "{\"item_number\": 3307, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"خمري فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"خمري غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"خمري فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"خمري غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"خمري فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"خمري غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2307\", \"source_url\": \"https://jabaristore.com/?app=product.show.3314\"}",
+      "updated_at": 1792439940962
+    },
+    {
+      "source_id": 3313,
+      "mode": "apply",
+      "product_id": 2308,
+      "status": "synced",
+      "detail": "{\"item_number\": 3308, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"برتقالي فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"برتقالي غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"برتقالي فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"برتقالي غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"برتقالي فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"برتقالي غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2308\", \"source_url\": \"https://jabaristore.com/?app=product.show.3313\"}",
+      "updated_at": 1792439950930
+    },
+    {
+      "source_id": 3312,
+      "mode": "apply",
+      "product_id": 2309,
+      "status": "synced",
+      "detail": "{\"item_number\": 3309, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اصفر فاقع\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اصفر ليموني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اصفر غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"اصفر فاقع\", \"price\": 1000, \"active\": true}, {\"name\": \"اصفر ليموني\", \"price\": 1000, \"active\": true}, {\"name\": \"اصفر غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اصفر فاقع\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اصفر ليموني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اصفر غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2309\", \"source_url\": \"https://jabaristore.com/?app=product.show.3312\"}",
+      "updated_at": 1792439960726
+    },
+    {
+      "source_id": 3311,
+      "mode": "apply",
+      "product_id": 2310,
+      "status": "synced",
+      "detail": "{\"item_number\": 3310, \"name\": \"أسلاك وبرية ~ 100قطعة ~\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"سكري فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"سكري غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اسلاك وبرية ~ 100قطعة ~\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"سكري فاتح\", \"price\": 1000, \"active\": true}, {\"name\": \"سكري غامق\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"سكري فاتح\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"سكري غامق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2310\", \"source_url\": \"https://jabaristore.com/?app=product.show.3311\"}",
+      "updated_at": 1792439971040
+    },
+    {
+      "source_id": 3310,
+      "mode": "apply",
+      "product_id": 2311,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3311, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439980446
+    },
+    {
+      "source_id": 3309,
+      "mode": "apply",
+      "product_id": 2312,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3312, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439990432
+    },
+    {
+      "source_id": 3308,
+      "mode": "apply",
+      "product_id": 2313,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3313, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440000444
+    },
+    {
+      "source_id": 3307,
+      "mode": "apply",
+      "product_id": 2314,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3314, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440010674
+    },
+    {
+      "source_id": 3306,
+      "mode": "apply",
+      "product_id": 2315,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3315, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440020440
+    },
+    {
+      "source_id": 3305,
+      "mode": "apply",
+      "product_id": 2316,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3316, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440030444
+    },
+    {
+      "source_id": 3304,
+      "mode": "apply",
+      "product_id": 2317,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3317, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440040440
+    },
+    {
+      "source_id": 3303,
+      "mode": "apply",
+      "product_id": 2318,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3318, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440050416
+    },
+    {
+      "source_id": 3302,
+      "mode": "apply",
+      "product_id": 2319,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3319, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440060698
+    },
+    {
+      "source_id": 3301,
+      "mode": "apply",
+      "product_id": 2320,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3320, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440070431
+    },
+    {
+      "source_id": 3300,
+      "mode": "apply",
+      "product_id": 2321,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3321, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440080432
+    },
+    {
+      "source_id": 3299,
+      "mode": "apply",
+      "product_id": 2322,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3322, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440090439
+    },
+    {
+      "source_id": 3298,
+      "mode": "apply",
+      "product_id": 2323,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3323, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440100417
+    },
+    {
+      "source_id": 3297,
+      "mode": "apply",
+      "product_id": 2324,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3324, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440110415
+    },
+    {
+      "source_id": 3296,
+      "mode": "apply",
+      "product_id": 2325,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3325, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440120708
+    },
+    {
+      "source_id": 3295,
+      "mode": "apply",
+      "product_id": 2326,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3326, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440130442
+    },
+    {
+      "source_id": 3294,
+      "mode": "apply",
+      "product_id": 2327,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3327, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440140704
+    },
+    {
+      "source_id": 3293,
+      "mode": "apply",
+      "product_id": 2328,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3328, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440150654
+    },
+    {
+      "source_id": 3292,
+      "mode": "apply",
+      "product_id": 2329,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3329, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440160646
+    },
+    {
+      "source_id": 3291,
+      "mode": "apply",
+      "product_id": 2330,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3330, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440170650
+    },
+    {
+      "source_id": 3290,
+      "mode": "apply",
+      "product_id": 2331,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3331, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440180649
+    },
+    {
+      "source_id": 3289,
+      "mode": "apply",
+      "product_id": 2332,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3332, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440190675
+    },
+    {
+      "source_id": 3288,
+      "mode": "apply",
+      "product_id": 2333,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3333, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440200739
+    },
+    {
+      "source_id": 3287,
+      "mode": "apply",
+      "product_id": 2334,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3334, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440210720
+    },
+    {
+      "source_id": 3286,
+      "mode": "apply",
+      "product_id": 2335,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3335, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440220436
+    },
+    {
+      "source_id": 3285,
+      "mode": "apply",
+      "product_id": 2336,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3336, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440230645
     }
   ]
 }
