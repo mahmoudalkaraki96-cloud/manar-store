@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-10-19T14:11:40.270463+03:00",
-  "run_mode": "preview",
+  "updated_at": "2026-10-19T14:13:36.281809+03:00",
+  "run_mode": "apply",
   "run_status": "completed_batch",
   "results": [
+    {
+      "source_id": 1298,
+      "mode": "apply",
+      "product_id": 240,
+      "status": "synced",
+      "detail": "{\"item_number\": 1240, \"name\": \"مبخرة مدورة خيطان ارتفاع ٨ سم\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة مدورة خيطان ارتفاع ٨ سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 25000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 50000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/240\", \"source_url\": \"https://dofesh.ps/?app=product.show.1298\"}",
+      "updated_at": 1792408376281
+    },
     {
       "source_id": 1298,
       "mode": "preview",
@@ -10,6 +18,14 @@
       "status": "ready",
       "detail": "{\"item_number\": 1240, \"source\": {\"title\": \"مبخرة مدورة خيطان ارتفاع ٨ سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 25000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 50000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
       "updated_at": 1792408259864
+    },
+    {
+      "source_id": 1297,
+      "mode": "apply",
+      "product_id": 241,
+      "status": "synced",
+      "detail": "{\"item_number\": 1241, \"name\": \"مبخرة هرم قاعدة بنية ارتفاع ١٠ سم\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة هرم قاعدة بنية ارتفاع ١٠ سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 30000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 55000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/241\", \"source_url\": \"https://dofesh.ps/?app=product.show.1297\"}",
+      "updated_at": 1792408385799
     },
     {
       "source_id": 1297,
@@ -21,6 +37,14 @@
     },
     {
       "source_id": 1296,
+      "mode": "apply",
+      "product_id": 242,
+      "status": "synced",
+      "detail": "{\"item_number\": 1242, \"name\": \"علبة حرتون غطاء شفاف مقاس ١٥*١٥*٤\", \"before_price\": 2000, \"before_variants\": [], \"source\": {\"title\": \"علبة حرتون غطاء شفاف مقاس ١٥*١٥*٤\", \"variants\": [{\"name\": \"10 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/242\", \"source_url\": \"https://dofesh.ps/?app=product.show.1296\"}",
+      "updated_at": 1792408396170
+    },
+    {
+      "source_id": 1296,
       "mode": "preview",
       "product_id": 242,
       "status": "ready",
@@ -29,11 +53,27 @@
     },
     {
       "source_id": 1295,
+      "mode": "apply",
+      "product_id": 243,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1243, \"source\": {\"title\": \"شمعة اقحوان معطرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792408405834
+    },
+    {
+      "source_id": 1295,
       "mode": "preview",
       "product_id": 243,
       "status": "no_options",
       "detail": "{\"item_number\": 1243, \"source\": {\"title\": \"شمعة اقحوان معطرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
       "updated_at": 1792408289759
+    },
+    {
+      "source_id": 1294,
+      "mode": "apply",
+      "product_id": 244,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1244, \"source\": {\"title\": \"شمعة بوكيه ورد مغلفة مع ريحة ارتفاع ٨ سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792408415691
     },
     {
       "source_id": 1294,
