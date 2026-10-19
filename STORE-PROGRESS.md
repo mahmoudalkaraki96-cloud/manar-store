@@ -3035,3 +3035,64 @@
 - الجعبري#3622 ↔ صنف#3136: no_options؛ خرز كرستال زجاج مضلع موج ( 8 ملم ). https://jabaristore.com/?app=product.show.3622
 - الجعبري#3621 ↔ صنف#3137: no_options؛ خرز كرستال زجاج مضلع موج ( 8 ملم ). https://jabaristore.com/?app=product.show.3621
 - الجعبري#3620 ↔ صنف#3138: no_options؛ خرز كرستال زجاج مضلع موج ( 8 ملم ). https://jabaristore.com/?app=product.show.3620
+
+
+### 2026-10-19T22:38:54.008405+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T22:38:54.008405+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 447, "synced": 228, "unsupported_source_price": 81}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3619 ↔ صنف#3139: no_options؛ خرز كرستال زجاج مضلع موج ( 8 ملم ). https://jabaristore.com/?app=product.show.3619
+- الجعبري#3618 ↔ صنف#3140: no_options؛ خرز كرستال زجاج مضلع موج ( 8 ملم ). https://jabaristore.com/?app=product.show.3618
+- الجعبري#3617 ↔ صنف#3141: no_options؛ كلف تراث (4 سم) 25 متر. https://jabaristore.com/?app=product.show.3617
+- الجعبري#3613 ↔ صنف#3142: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3613
+- الجعبري#3612 ↔ صنف#3143: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3612
+- الجعبري#3611 ↔ صنف#3144: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3611
+- الجعبري#3610 ↔ صنف#3145: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3610
+- الجعبري#3609 ↔ صنف#3146: synced؛ بالقطعة=9₪؛ 25 قطعة=195₪. https://jabaristore.com/?app=product.show.3609
+- الجعبري#3608 ↔ صنف#3147: synced؛ بالقطعة=9₪؛ 25 قطعة=195₪. https://jabaristore.com/?app=product.show.3608
+- الجعبري#3607 ↔ صنف#3148: synced؛ بالقطعة=9₪؛ 25 قطعة=195₪. https://jabaristore.com/?app=product.show.3607
+- الجعبري#3606 ↔ صنف#3149: synced؛ بالقطعة=8₪؛ 25 قطعة=170₪. https://jabaristore.com/?app=product.show.3606
+- الجعبري#3605 ↔ صنف#3150: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3605
+- الجعبري#3604 ↔ صنف#3151: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3604
+- الجعبري#3603 ↔ صنف#3152: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3603
+- الجعبري#3602 ↔ صنف#3153: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3602
+- الجعبري#3601 ↔ صنف#3154: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3601
+- الجعبري#3600 ↔ صنف#3155: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3600
+- الجعبري#3599 ↔ صنف#3156: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3599
+- الجعبري#3598 ↔ صنف#3157: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3598
+- الجعبري#3597 ↔ صنف#3158: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3597
+- الجعبري#3596 ↔ صنف#3159: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3596
+- الجعبري#3595 ↔ صنف#3160: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3595
+- الجعبري#3594 ↔ صنف#3161: no_options؛ حامل مصحف اكريلك قاعدة ~ رخام ابيض ~. https://jabaristore.com/?app=product.show.3594
+- الجعبري#3593 ↔ صنف#3162: synced؛ ابيض / 10 قطعة=15.5₪؛ ابيض / 100 قطعة=130₪؛ بني / 10 قطعة=15.5₪؛ بني / 100 قطعة=130₪؛ ذهبي / 10 قطعة=15.5₪؛ ذهبي / 100 قطعة=130₪. https://jabaristore.com/?app=product.show.3593
+- الجعبري#3592 ↔ صنف#3163: synced؛ 10 قطعة=13.5₪؛ 100 قطعة=105₪. https://jabaristore.com/?app=product.show.3592
+- الجعبري#3589 ↔ صنف#3164: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3589
+- الجعبري#3588 ↔ صنف#3165: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3588
+- الجعبري#3587 ↔ صنف#3166: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3587
+- الجعبري#3586 ↔ صنف#3167: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3586
+- الجعبري#3585 ↔ صنف#3168: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3585
+- الجعبري#3581 ↔ صنف#3169: no_options؛ ورق مقصقص بيج ( 30 غرام ). https://jabaristore.com/?app=product.show.3581
+- الجعبري#3577 ↔ صنف#3170: no_options؛ ورق مقصقص سكري ( 30 غرام ). https://jabaristore.com/?app=product.show.3577
+- الجعبري#3571 ↔ صنف#3171: no_options؛ ورق مقصقص ابيض ( 30غرام ). https://jabaristore.com/?app=product.show.3571
+- الجعبري#3570 ↔ صنف#3172: no_options؛ مبخرة وردة مع كيس عمرة مباركة. https://jabaristore.com/?app=product.show.3570
+- الجعبري#3568 ↔ صنف#3173: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3568
+- الجعبري#3567 ↔ صنف#3174: synced؛ 10 قطعة=13.5₪؛ 50 قطعة=52₪. https://jabaristore.com/?app=product.show.3567
+- الجعبري#3566 ↔ صنف#3175: synced؛ 10 قطعة=13.5₪؛ 50 قطعة=52₪. https://jabaristore.com/?app=product.show.3566
+- الجعبري#3564 ↔ صنف#3176: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3564
+- الجعبري#3563 ↔ صنف#3177: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3563
+- الجعبري#3562 ↔ صنف#3178: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3562
+- الجعبري#3561 ↔ صنف#3179: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3561
+- الجعبري#3560 ↔ صنف#3180: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3560
+- الجعبري#3559 ↔ صنف#3181: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3559
+- الجعبري#3558 ↔ صنف#3182: synced؛ 10 قطعة=13.5₪؛ 50 قطعة=52₪. https://jabaristore.com/?app=product.show.3558
+- الجعبري#3555 ↔ صنف#3183: no_options؛ لاصق E6000 ( الامريكي الاصلي ) 109.4ml. https://jabaristore.com/?app=product.show.3555
+- الجعبري#3554 ↔ صنف#3184: no_options؛ مراه حجم كبير اطار جلد ( كود 35 ). https://jabaristore.com/?app=product.show.3554
+- الجعبري#3553 ↔ صنف#3185: no_options؛ مراه خشب كبير ( كود 29 ). https://jabaristore.com/?app=product.show.3553
+- الجعبري#3552 ↔ صنف#3186: no_options؛ صحن الفيل ( كود 15 ). https://jabaristore.com/?app=product.show.3552
+- الجعبري#3549 ↔ صنف#3187: no_options؛ مزهرية دونات اسود ( طقم 3 قطعة ) كود 4. https://jabaristore.com/?app=product.show.3549
+- الجعبري#3548 ↔ صنف#3188: no_options؛ تحف قاعدة جرانيت ( طقم 2 قطعة ) كود 53. https://jabaristore.com/?app=product.show.3548
