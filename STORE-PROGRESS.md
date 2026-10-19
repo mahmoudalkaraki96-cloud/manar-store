@@ -2466,3 +2466,23 @@
 - دوفش#185 ↔ صنف#2109: synced؛ زهري=15₪. https://dofesh.ps/?app=product.show.185
 - دوفش#184 ↔ صنف#2110: synced؛ بني=15₪. https://dofesh.ps/?app=product.show.184
 - دوفش#183 ↔ صنف#2111: no_options؛ شبر قماش 50 متر بيج. https://dofesh.ps/?app=product.show.183
+
+
+### 2026-10-19T21:20:11.831987+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T21:20:11.831987+03:00
+- Mode: apply
+- Status: paused_error
+- Counts: {"synced": 328, "no_options": 688, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 17, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#182 ↔ صنف#2112: no_options؛ شبر قماش 50 متر ابيض. https://dofesh.ps/?app=product.show.182
+- دوفش#181 ↔ صنف#2113: synced؛ خمري=15₪. https://dofesh.ps/?app=product.show.181
+- دوفش#180 ↔ صنف#2114: synced؛ احمر=15₪. https://dofesh.ps/?app=product.show.180
+- دوفش#179 ↔ صنف#2115: synced؛ ابيض=15₪؛ بيج=15₪؛ ازرق فاتح=15₪؛ زهري=15₪؛ بني=15₪؛ خمري=15₪؛ احمر=15₪؛ اخضر زيتي=15₪؛ كحلي=15₪. https://dofesh.ps/?app=product.show.179
+- دوفش#178 ↔ صنف#1068: matched؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=25₪؛ 100 حبة=50₪. https://dofesh.ps/?app=product.show.178
+- دوفش#177 ↔ صنف#2116: synced؛ ابيض=4₪. https://dofesh.ps/?app=product.show.177
+- دوفش#176 ↔ صنف#2117: synced؛ بالحبة=15₪؛ 50 حبة=500₪. https://dofesh.ps/?app=product.show.176
+- دوفش#175 ↔ صنف#2118: synced؛ ذهبي=60₪. https://dofesh.ps/?app=product.show.175
+- دوفش#174 ↔ صنف#2119: error؛ invalid_choice_label. https://dofesh.ps/?app=product.show.174

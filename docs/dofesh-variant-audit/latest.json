@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T21:18:45.171288+03:00",
+  "updated_at": "2026-10-19T21:20:11.831987+03:00",
   "run_mode": "apply",
-  "run_status": "completed_batch",
-  "run_processed": 50,
+  "run_status": "paused_error",
+  "run_processed": 9,
   "results": [
     {
       "source_id": 1298,
@@ -8435,6 +8435,78 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2111, \"source\": {\"title\": \"شبر قماش 50 متر بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
       "updated_at": 1792433923879
+    },
+    {
+      "source_id": 182,
+      "mode": "apply",
+      "product_id": 1112,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2112, \"source\": {\"title\": \"شبر قماش 50 متر ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433930763
+    },
+    {
+      "source_id": 181,
+      "mode": "apply",
+      "product_id": 1113,
+      "status": "synced",
+      "detail": "{\"item_number\": 2113, \"name\": \"شبر قماش 50 متر خمري\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر خمري\", \"variants\": [{\"name\": \"خمري\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1113\", \"source_url\": \"https://dofesh.ps/?app=product.show.181\"}",
+      "updated_at": 1792433941014
+    },
+    {
+      "source_id": 180,
+      "mode": "apply",
+      "product_id": 1114,
+      "status": "synced",
+      "detail": "{\"item_number\": 2114, \"name\": \"شبر قماش 50 متر أحمر\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر احمر\", \"variants\": [{\"name\": \"احمر\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1114\", \"source_url\": \"https://dofesh.ps/?app=product.show.180\"}",
+      "updated_at": 1792433951023
+    },
+    {
+      "source_id": 179,
+      "mode": "apply",
+      "product_id": 1115,
+      "status": "synced",
+      "detail": "{\"item_number\": 2115, \"name\": \"شبر قماش (50) متر\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش (50) متر\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1500, \"active\": false}, {\"name\": \"بيج\", \"price\": 1500, \"active\": false}, {\"name\": \"ازرق فاتح\", \"price\": 1500, \"active\": true}, {\"name\": \"زهري\", \"price\": 1500, \"active\": true}, {\"name\": \"بني\", \"price\": 1500, \"active\": true}, {\"name\": \"خمري\", \"price\": 1500, \"active\": true}, {\"name\": \"احمر\", \"price\": 1500, \"active\": true}, {\"name\": \"اخضر زيتي\", \"price\": 1500, \"active\": true}, {\"name\": \"كحلي\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1115\", \"source_url\": \"https://dofesh.ps/?app=product.show.179\"}",
+      "updated_at": 1792433961044
+    },
+    {
+      "source_id": 178,
+      "mode": "apply",
+      "product_id": 68,
+      "status": "matched",
+      "detail": "{\"item_number\": 1068, \"source\": {\"title\": \"اساور نحاس (8سم)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433971068
+    },
+    {
+      "source_id": 177,
+      "mode": "apply",
+      "product_id": 1116,
+      "status": "synced",
+      "detail": "{\"item_number\": 2116, \"name\": \"شمعة المحارة الكونكريت\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شمعة المحارة الكونكريت\", \"variants\": [{\"name\": \"ابيض\", \"price\": 400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1116\", \"source_url\": \"https://dofesh.ps/?app=product.show.177\"}",
+      "updated_at": 1792433980992
+    },
+    {
+      "source_id": 176,
+      "mode": "apply",
+      "product_id": 1117,
+      "status": "synced",
+      "detail": "{\"item_number\": 2117, \"name\": \"صندوق سداسي لعلب المحابس (8*8*4.5 سم) ذهبي\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"صندوق سداسي لعلب المحابس (8*8*4.5 سم) ذهبي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 50000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1117\", \"source_url\": \"https://dofesh.ps/?app=product.show.176\"}",
+      "updated_at": 1792433991147
+    },
+    {
+      "source_id": 175,
+      "mode": "apply",
+      "product_id": 1118,
+      "status": "synced",
+      "detail": "{\"item_number\": 2118, \"name\": \"صندوق زجاج اطار ذهبي مقسم 3 أقسام (30*20سم)\", \"before_price\": 6000, \"before_variants\": [], \"source\": {\"title\": \"صندوق زجاج اطار ذهبي مقسم 3 اقسام (30*20سم)\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1118\", \"source_url\": \"https://dofesh.ps/?app=product.show.175\"}",
+      "updated_at": 1792434001130
+    },
+    {
+      "source_id": 174,
+      "mode": "apply",
+      "product_id": 1119,
+      "status": "error",
+      "detail": "{\"reason\": \"invalid_choice_label\", \"item_number\": 2119}",
+      "updated_at": 1792434011017
     }
   ]
 }
