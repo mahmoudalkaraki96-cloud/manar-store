@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:03:51.851886+03:00",
+  "updated_at": "2026-10-19T23:12:09.588921+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -7251,6 +7251,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3336, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792440230645
+    },
+    {
+      "source_id": 3284,
+      "mode": "apply",
+      "product_id": 2337,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3337, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440238229
+    },
+    {
+      "source_id": 3283,
+      "mode": "apply",
+      "product_id": 2338,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3338, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440248224
+    },
+    {
+      "source_id": 3282,
+      "mode": "apply",
+      "product_id": 2339,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3339, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440258236
+    },
+    {
+      "source_id": 3281,
+      "mode": "apply",
+      "product_id": 2340,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3340, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440268224
+    },
+    {
+      "source_id": 3280,
+      "mode": "apply",
+      "product_id": 2341,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3341, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440278209
+    },
+    {
+      "source_id": 3279,
+      "mode": "apply",
+      "product_id": 2342,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3342, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440288510
+    },
+    {
+      "source_id": 3278,
+      "mode": "apply",
+      "product_id": 2343,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3343, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440298221
+    },
+    {
+      "source_id": 3277,
+      "mode": "apply",
+      "product_id": 2344,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3344, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440308427
+    },
+    {
+      "source_id": 3276,
+      "mode": "apply",
+      "product_id": 2345,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3345, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440318223
+    },
+    {
+      "source_id": 3275,
+      "mode": "apply",
+      "product_id": 2346,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3346, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440328211
+    },
+    {
+      "source_id": 3274,
+      "mode": "apply",
+      "product_id": 2347,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3347, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440338218
+    },
+    {
+      "source_id": 3273,
+      "mode": "apply",
+      "product_id": 2348,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3348, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440348230
+    },
+    {
+      "source_id": 3272,
+      "mode": "apply",
+      "product_id": 2349,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3349, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440358229
+    },
+    {
+      "source_id": 3271,
+      "mode": "apply",
+      "product_id": 2350,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3350, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440368445
+    },
+    {
+      "source_id": 3270,
+      "mode": "apply",
+      "product_id": 2351,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3351, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440378445
+    },
+    {
+      "source_id": 3269,
+      "mode": "apply",
+      "product_id": 2352,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3352, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440388437
+    },
+    {
+      "source_id": 3268,
+      "mode": "apply",
+      "product_id": 2353,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3353, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440398525
+    },
+    {
+      "source_id": 3267,
+      "mode": "apply",
+      "product_id": 2354,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3354, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440408229
+    },
+    {
+      "source_id": 3266,
+      "mode": "apply",
+      "product_id": 2355,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3355}",
+      "updated_at": 1792440418453
+    },
+    {
+      "source_id": 3265,
+      "mode": "apply",
+      "product_id": 2356,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3356}",
+      "updated_at": 1792440428450
+    },
+    {
+      "source_id": 3264,
+      "mode": "apply",
+      "product_id": 2357,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3357}",
+      "updated_at": 1792440438203
+    },
+    {
+      "source_id": 3263,
+      "mode": "apply",
+      "product_id": 2358,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3358, \"source\": {\"title\": \"قطع اكريلك ( فضي ) للزينة ~ اية الكرسي~(7*3.5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440448225
+    },
+    {
+      "source_id": 3222,
+      "mode": "apply",
+      "product_id": 2359,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3359, \"source\": {\"title\": \"لاصق جوترمان HT2 الاصلي ( صنع الماني ) 30gr\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440458455
+    },
+    {
+      "source_id": 3221,
+      "mode": "apply",
+      "product_id": 2360,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3360, \"source\": {\"title\": \"اعواد بخور ( عنبر ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440468413
+    },
+    {
+      "source_id": 3220,
+      "mode": "apply",
+      "product_id": 2361,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3361, \"source\": {\"title\": \"اعواد بخور ( المسك ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440478448
+    },
+    {
+      "source_id": 3219,
+      "mode": "apply",
+      "product_id": 2362,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3362, \"source\": {\"title\": \"اعواد بخور ( خشب الصندل ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440488223
+    },
+    {
+      "source_id": 3218,
+      "mode": "apply",
+      "product_id": 2363,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3363, \"source\": {\"title\": \"اعواد بخور ( العود ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440498470
+    },
+    {
+      "source_id": 3217,
+      "mode": "apply",
+      "product_id": 2364,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3364}",
+      "updated_at": 1792440508230
+    },
+    {
+      "source_id": 3212,
+      "mode": "apply",
+      "product_id": 2365,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3365, \"source\": {\"title\": \"عبوة بخور نفل ( رائحة الجنة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440518200
+    },
+    {
+      "source_id": 3211,
+      "mode": "apply",
+      "product_id": 2366,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3366, \"source\": {\"title\": \"عبوة بخور نفل ( زهور الجنة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440528415
+    },
+    {
+      "source_id": 3210,
+      "mode": "apply",
+      "product_id": 2367,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3367, \"source\": {\"title\": \"عبوة بخور نفل ( عود الجنة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440538486
+    },
+    {
+      "source_id": 3205,
+      "mode": "apply",
+      "product_id": 2368,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3368, \"source\": {\"title\": \"مصحف كامل غلاف ( فضي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440548220
+    },
+    {
+      "source_id": 3200,
+      "mode": "apply",
+      "product_id": 2369,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3369, \"source\": {\"title\": \"خيط قصب فضي رفيع (140 غرام)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440558232
+    },
+    {
+      "source_id": 3199,
+      "mode": "apply",
+      "product_id": 2370,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3370, \"source\": {\"title\": \"خيط قصب ذهبي رفيع (140 غرام)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440568436
+    },
+    {
+      "source_id": 3184,
+      "mode": "apply",
+      "product_id": 2371,
+      "status": "synced",
+      "detail": "{\"item_number\": 3371, \"name\": \"قطع اكريلك للزينة ~ عمرة مباركة ~ ( 2.5 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ عمرة مباركة ~ ( 2.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ عمرة مباركة ~ ( 2.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2371\", \"source_url\": \"https://jabaristore.com/?app=product.show.3184\"}",
+      "updated_at": 1792440578552
+    },
+    {
+      "source_id": 3183,
+      "mode": "apply",
+      "product_id": 2372,
+      "status": "synced",
+      "detail": "{\"item_number\": 3372, \"name\": \"قطع اكريلك للزينة ~ اذكروا صغيري بدعوة ~ ( 3 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ اذكروا صغيري بدعوة ~ ( 3 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ اذكروا صغيري بدعوة ~ ( 3 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2372\", \"source_url\": \"https://jabaristore.com/?app=product.show.3183\"}",
+      "updated_at": 1792440588499
+    },
+    {
+      "source_id": 3182,
+      "mode": "apply",
+      "product_id": 2373,
+      "status": "synced",
+      "detail": "{\"item_number\": 3373, \"name\": \"قطع اكريلك للزينة ~ اذكرونا بدعوة حب ~ ( 3 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ اذكرونا بدعوة حب ~ ( 3 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ اذكرونا بدعوة حب ~ ( 3 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2373\", \"source_url\": \"https://jabaristore.com/?app=product.show.3182\"}",
+      "updated_at": 1792440598508
+    },
+    {
+      "source_id": 3181,
+      "mode": "apply",
+      "product_id": 2374,
+      "status": "synced",
+      "detail": "{\"item_number\": 3374, \"name\": \"قطع اكريلك للزينة ~ بارك الله لكما وبارك عليكما وجمع بينكما في خير ~ ( 1.2*5 سم )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ بارك الله لكما وبارك عليكما وجمع بينكما في خير ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ بارك الله لكما وبارك عليكما وجمع بينكما في خير ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2374\", \"source_url\": \"https://jabaristore.com/?app=product.show.3181\"}",
+      "updated_at": 1792440608505
+    },
+    {
+      "source_id": 3180,
+      "mode": "apply",
+      "product_id": 2375,
+      "status": "synced",
+      "detail": "{\"item_number\": 3375, \"name\": \"قطع اكريلك للزينة ~ خطوبة مباركة ~ ( 1.2*5 سم )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ خطوبة مباركة ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ خطوبة مباركة ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2375\", \"source_url\": \"https://jabaristore.com/?app=product.show.3180\"}",
+      "updated_at": 1792440618754
+    },
+    {
+      "source_id": 3179,
+      "mode": "apply",
+      "product_id": 2376,
+      "status": "synced",
+      "detail": "{\"item_number\": 3376, \"name\": \"قطع اكريلك للزينة ~ اللهم أنبته نباتاً حسناً ~ ( 1.2*5 سم )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ اللهم انبته نباتا حسنا ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ اللهم انبته نباتا حسنا ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2376\", \"source_url\": \"https://jabaristore.com/?app=product.show.3179\"}",
+      "updated_at": 1792440628700
+    },
+    {
+      "source_id": 3178,
+      "mode": "apply",
+      "product_id": 2377,
+      "status": "synced",
+      "detail": "{\"item_number\": 3377, \"name\": \"قطع اكريلك للزينة ~ اللهم أنبتها نباتاً حسناً ~ ( 1.2*5 سم )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ~ اللهم انبتها نباتا حسنا ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ~ اللهم انبتها نباتا حسنا ~ ( 1.2*5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"50 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2377\", \"source_url\": \"https://jabaristore.com/?app=product.show.3178\"}",
+      "updated_at": 1792440638790
+    },
+    {
+      "source_id": 3177,
+      "mode": "apply",
+      "product_id": 2378,
+      "status": "synced",
+      "detail": "{\"item_number\": 3378, \"name\": \"قطع اكريلك للزينة ( 3.5*2 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( 3.5*2 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( 3.5*2 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2378\", \"source_url\": \"https://jabaristore.com/?app=product.show.3177\"}",
+      "updated_at": 1792440648760
+    },
+    {
+      "source_id": 3176,
+      "mode": "apply",
+      "product_id": 2379,
+      "status": "synced",
+      "detail": "{\"item_number\": 3379, \"name\": \"قطع اكريلك للزينة ( 3.5*2.5 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( 3.5*2.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( 3.5*2.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2379\", \"source_url\": \"https://jabaristore.com/?app=product.show.3176\"}",
+      "updated_at": 1792440658507
+    },
+    {
+      "source_id": 3175,
+      "mode": "apply",
+      "product_id": 2380,
+      "status": "synced",
+      "detail": "{\"item_number\": 3380, \"name\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2380\", \"source_url\": \"https://jabaristore.com/?app=product.show.3175\"}",
+      "updated_at": 1792440668789
+    },
+    {
+      "source_id": 3174,
+      "mode": "apply",
+      "product_id": 2381,
+      "status": "synced",
+      "detail": "{\"item_number\": 3381, \"name\": \"قطع اكريلك للزينة ( 2*3سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( 2*3سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( 2*3سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2381\", \"source_url\": \"https://jabaristore.com/?app=product.show.3174\"}",
+      "updated_at": 1792440678475
+    },
+    {
+      "source_id": 3173,
+      "mode": "apply",
+      "product_id": 2382,
+      "status": "synced",
+      "detail": "{\"item_number\": 3382, \"name\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة ( 2.5*3.5 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2382\", \"source_url\": \"https://jabaristore.com/?app=product.show.3173\"}",
+      "updated_at": 1792440688694
+    },
+    {
+      "source_id": 3172,
+      "mode": "apply",
+      "product_id": 2383,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3383, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440698236
+    },
+    {
+      "source_id": 3169,
+      "mode": "apply",
+      "product_id": 2384,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3384, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440708433
+    },
+    {
+      "source_id": 3168,
+      "mode": "apply",
+      "product_id": 2385,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3385, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440718237
+    },
+    {
+      "source_id": 3167,
+      "mode": "apply",
+      "product_id": 2386,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3386, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440728430
     }
   ]
 }

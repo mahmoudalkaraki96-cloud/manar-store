@@ -3279,3 +3279,64 @@
 - الجعبري#3287 ↔ صنف#3334: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3287
 - الجعبري#3286 ↔ صنف#3335: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3286
 - الجعبري#3285 ↔ صنف#3336: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3285
+
+
+### 2026-10-19T23:12:09.588921+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:12:09.588921+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 568, "synced": 293, "unsupported_source_price": 95}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3284 ↔ صنف#3337: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3284
+- الجعبري#3283 ↔ صنف#3338: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3283
+- الجعبري#3282 ↔ صنف#3339: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3282
+- الجعبري#3281 ↔ صنف#3340: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3281
+- الجعبري#3280 ↔ صنف#3341: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3280
+- الجعبري#3279 ↔ صنف#3342: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3279
+- الجعبري#3278 ↔ صنف#3343: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3278
+- الجعبري#3277 ↔ صنف#3344: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3277
+- الجعبري#3276 ↔ صنف#3345: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3276
+- الجعبري#3275 ↔ صنف#3346: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3275
+- الجعبري#3274 ↔ صنف#3347: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3274
+- الجعبري#3273 ↔ صنف#3348: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3273
+- الجعبري#3272 ↔ صنف#3349: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3272
+- الجعبري#3271 ↔ صنف#3350: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3271
+- الجعبري#3270 ↔ صنف#3351: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3270
+- الجعبري#3269 ↔ صنف#3352: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3269
+- الجعبري#3268 ↔ صنف#3353: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3268
+- الجعبري#3267 ↔ صنف#3354: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3267
+- الجعبري#3266 ↔ صنف#3355: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3266
+- الجعبري#3265 ↔ صنف#3356: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3265
+- الجعبري#3264 ↔ صنف#3357: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3264
+- الجعبري#3263 ↔ صنف#3358: no_options؛ قطع اكريلك ( فضي ) للزينة ~ اية الكرسي~(7*3.5 سم ). https://jabaristore.com/?app=product.show.3263
+- الجعبري#3222 ↔ صنف#3359: no_options؛ لاصق جوترمان HT2 الاصلي ( صنع الماني ) 30gr. https://jabaristore.com/?app=product.show.3222
+- الجعبري#3221 ↔ صنف#3360: no_options؛ اعواد بخور ( عنبر ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.3221
+- الجعبري#3220 ↔ صنف#3361: no_options؛ اعواد بخور ( المسك ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.3220
+- الجعبري#3219 ↔ صنف#3362: no_options؛ اعواد بخور ( خشب الصندل ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.3219
+- الجعبري#3218 ↔ صنف#3363: no_options؛ اعواد بخور ( العود ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.3218
+- الجعبري#3217 ↔ صنف#3364: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3217
+- الجعبري#3212 ↔ صنف#3365: no_options؛ عبوة بخور نفل ( رائحة الجنة ). https://jabaristore.com/?app=product.show.3212
+- الجعبري#3211 ↔ صنف#3366: no_options؛ عبوة بخور نفل ( زهور الجنة ). https://jabaristore.com/?app=product.show.3211
+- الجعبري#3210 ↔ صنف#3367: no_options؛ عبوة بخور نفل ( عود الجنة ). https://jabaristore.com/?app=product.show.3210
+- الجعبري#3205 ↔ صنف#3368: no_options؛ مصحف كامل غلاف ( فضي ). https://jabaristore.com/?app=product.show.3205
+- الجعبري#3200 ↔ صنف#3369: no_options؛ خيط قصب فضي رفيع (140 غرام). https://jabaristore.com/?app=product.show.3200
+- الجعبري#3199 ↔ صنف#3370: no_options؛ خيط قصب ذهبي رفيع (140 غرام). https://jabaristore.com/?app=product.show.3199
+- الجعبري#3184 ↔ صنف#3371: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3184
+- الجعبري#3183 ↔ صنف#3372: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3183
+- الجعبري#3182 ↔ صنف#3373: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3182
+- الجعبري#3181 ↔ صنف#3374: synced؛ 10 قطعة=16.5₪؛ 50 قطعة=62₪. https://jabaristore.com/?app=product.show.3181
+- الجعبري#3180 ↔ صنف#3375: synced؛ 10 قطعة=16.5₪؛ 50 قطعة=62₪. https://jabaristore.com/?app=product.show.3180
+- الجعبري#3179 ↔ صنف#3376: synced؛ 10 قطعة=16.5₪؛ 50 قطعة=62₪. https://jabaristore.com/?app=product.show.3179
+- الجعبري#3178 ↔ صنف#3377: synced؛ 10 قطعة=16.5₪؛ 50 قطعة=62₪. https://jabaristore.com/?app=product.show.3178
+- الجعبري#3177 ↔ صنف#3378: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3177
+- الجعبري#3176 ↔ صنف#3379: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3176
+- الجعبري#3175 ↔ صنف#3380: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3175
+- الجعبري#3174 ↔ صنف#3381: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3174
+- الجعبري#3173 ↔ صنف#3382: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3173
+- الجعبري#3172 ↔ صنف#3383: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3172
+- الجعبري#3169 ↔ صنف#3384: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3169
+- الجعبري#3168 ↔ صنف#3385: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3168
+- الجعبري#3167 ↔ صنف#3386: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3167
