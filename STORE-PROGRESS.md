@@ -3096,3 +3096,64 @@
 - الجعبري#3552 ↔ صنف#3186: no_options؛ صحن الفيل ( كود 15 ). https://jabaristore.com/?app=product.show.3552
 - الجعبري#3549 ↔ صنف#3187: no_options؛ مزهرية دونات اسود ( طقم 3 قطعة ) كود 4. https://jabaristore.com/?app=product.show.3549
 - الجعبري#3548 ↔ صنف#3188: no_options؛ تحف قاعدة جرانيت ( طقم 2 قطعة ) كود 53. https://jabaristore.com/?app=product.show.3548
+
+
+### 2026-10-19T22:47:14.498188+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T22:47:14.498188+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 484, "synced": 238, "unsupported_source_price": 84}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3546 ↔ صنف#3189: no_options؛ تحف معدن ثقيل ( طقم 2 قطعة) كود 20. https://jabaristore.com/?app=product.show.3546
+- الجعبري#3545 ↔ صنف#3190: no_options؛ تحف معدن ثقيل ( طقم 2 قطعة ) كود 54. https://jabaristore.com/?app=product.show.3545
+- الجعبري#3544 ↔ صنف#3191: no_options؛ صحن فواكة معدن ذهبي ( كود 12 ). https://jabaristore.com/?app=product.show.3544
+- الجعبري#3543 ↔ صنف#3192: no_options؛ صحن فواكة معدن اسود ( كود 11 ). https://jabaristore.com/?app=product.show.3543
+- الجعبري#3542 ↔ صنف#3193: no_options؛ ثيمات خشبية(3*4 سم) 10 قطعة. https://jabaristore.com/?app=product.show.3542
+- الجعبري#3541 ↔ صنف#3194: no_options؛ قواعد حلق اذن ( 10 قطعة ). https://jabaristore.com/?app=product.show.3541
+- الجعبري#3517 ↔ صنف#3195: no_options؛ اكياس هدايا تركي (1) - 30*22 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3517
+- الجعبري#3516 ↔ صنف#3196: no_options؛ وعاء اعقاب السجائر حجر. https://jabaristore.com/?app=product.show.3516
+- الجعبري#3515 ↔ صنف#3197: no_options؛ اكياس هدايا تركي (2) - 38*26 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3515
+- الجعبري#3514 ↔ صنف#3198: no_options؛ اكياس هدايا تركي (3) - 45*33 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3514
+- الجعبري#3513 ↔ صنف#3199: no_options؛ مضيفة حجر. https://jabaristore.com/?app=product.show.3513
+- الجعبري#3512 ↔ صنف#3200: no_options؛ مضيفة حجر. https://jabaristore.com/?app=product.show.3512
+- الجعبري#3511 ↔ صنف#3201: no_options؛ اكياس هدايا تركي (4) - 50*40 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3511
+- الجعبري#3510 ↔ صنف#3202: no_options؛ اكياس هدايا تركي (5) - 60*50 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3510
+- الجعبري#3509 ↔ صنف#3203: no_options؛ اكياس هدايا تركي (6) - 70*60 سم / ربطة 50 قطعة. https://jabaristore.com/?app=product.show.3509
+- الجعبري#3476 ↔ صنف#3204: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3476
+- الجعبري#3475 ↔ صنف#3205: synced؛ بالكيلو=62₪؛ كرتونة 5 كيلو=285₪. https://jabaristore.com/?app=product.show.3475
+- الجعبري#3474 ↔ صنف#3206: synced؛ بالكيلو=62₪؛ كرتونة 5 كيلو=285₪. https://jabaristore.com/?app=product.show.3474
+- الجعبري#3473 ↔ صنف#3207: synced؛ بالكيلو=62₪؛ كرتونة 5 كيلو=285₪. https://jabaristore.com/?app=product.show.3473
+- الجعبري#3464 ↔ صنف#3208: no_options؛ قطع ريزن للتوزيعات. https://jabaristore.com/?app=product.show.3464
+- الجعبري#3462 ↔ صنف#3209: no_options؛ قطع ريزن للتوزيعات. https://jabaristore.com/?app=product.show.3462
+- الجعبري#3461 ↔ صنف#3210: no_options؛ قطع ريزن للتوزيعات. https://jabaristore.com/?app=product.show.3461
+- الجعبري#3460 ↔ صنف#3211: no_options؛ قطع ريزن للتوزيعات. https://jabaristore.com/?app=product.show.3460
+- الجعبري#3459 ↔ صنف#3212: no_options؛ قطع ريزن للتوزيعات. https://jabaristore.com/?app=product.show.3459
+- الجعبري#3458 ↔ صنف#3213: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3458
+- الجعبري#3457 ↔ صنف#3214: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3457
+- الجعبري#3435 ↔ صنف#3215: synced؛ ابيض=28.5₪؛ ذهبي=28.5₪؛ بني=28.5₪. https://jabaristore.com/?app=product.show.3435
+- الجعبري#3417 ↔ صنف#3216: no_options؛ خيط ليف ابيض ( 12MM ) ~ 1 كيلو ~. https://jabaristore.com/?app=product.show.3417
+- الجعبري#3416 ↔ صنف#3217: no_options؛ خيط ليف ابيض ( 8MM ) ~ 1 كيلو ~. https://jabaristore.com/?app=product.show.3416
+- الجعبري#3415 ↔ صنف#3218: no_options؛ خيط ليف ابيض ( 4MM ) ~ 1 كيلو ~. https://jabaristore.com/?app=product.show.3415
+- الجعبري#3414 ↔ صنف#3219: no_options؛ لفظ الجلالة بلاستيك 3D ( 3.5 سم ) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3414
+- الجعبري#3413 ↔ صنف#3220: no_options؛ لفظ الجلالة بلاستيك 3D ( 3.5 سم ) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3413
+- الجعبري#3412 ↔ صنف#3221: no_options؛ كوستر خيش 7 سم ( 10 قطعة ). https://jabaristore.com/?app=product.show.3412
+- الجعبري#3411 ↔ صنف#3222: no_options؛ كوستر خيش 7 سم ( 10 قطعة ). https://jabaristore.com/?app=product.show.3411
+- الجعبري#3410 ↔ صنف#3223: no_options؛ ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3410
+- الجعبري#3409 ↔ صنف#3224: no_options؛ ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3409
+- الجعبري#3408 ↔ صنف#3225: no_options؛ ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3408
+- الجعبري#3407 ↔ صنف#3226: no_options؛ ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة ). https://jabaristore.com/?app=product.show.3407
+- الجعبري#3404 ↔ صنف#3227: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3404
+- الجعبري#3403 ↔ صنف#3228: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3403
+- الجعبري#3401 ↔ صنف#3229: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3401
+- الجعبري#3400 ↔ صنف#3230: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3400
+- الجعبري#3397 ↔ صنف#3231: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3397
+- الجعبري#3395 ↔ صنف#3232: no_options؛ قوالب اكريلك للشمع و الشوكولاته. https://jabaristore.com/?app=product.show.3395
+- الجعبري#3392 ↔ صنف#3233: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3392
+- الجعبري#3391 ↔ صنف#3234: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3391
+- الجعبري#3390 ↔ صنف#3235: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3390
+- الجعبري#3389 ↔ صنف#3236: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3389
+- الجعبري#3388 ↔ صنف#3237: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3388
+- الجعبري#3387 ↔ صنف#3238: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.3387

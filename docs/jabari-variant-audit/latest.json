@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:38:54.008405+03:00",
+  "updated_at": "2026-10-19T22:47:14.498188+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -6051,6 +6051,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3188, \"source\": {\"title\": \"تحف قاعدة جرانيت ( طقم 2 قطعة ) كود 53\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 11900}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792438732885
+    },
+    {
+      "source_id": 3546,
+      "mode": "apply",
+      "product_id": 2189,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3189, \"source\": {\"title\": \"تحف معدن ثقيل ( طقم 2 قطعة) كود 20\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 11900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438741101
+    },
+    {
+      "source_id": 3545,
+      "mode": "apply",
+      "product_id": 2190,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3190, \"source\": {\"title\": \"تحف معدن ثقيل ( طقم 2 قطعة ) كود 54\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 11900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438751301
+    },
+    {
+      "source_id": 3544,
+      "mode": "apply",
+      "product_id": 2191,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3191, \"source\": {\"title\": \"صحن فواكة معدن ذهبي ( كود 12 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438761086
+    },
+    {
+      "source_id": 3543,
+      "mode": "apply",
+      "product_id": 2192,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3192, \"source\": {\"title\": \"صحن فواكة معدن اسود ( كود 11 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438771332
+    },
+    {
+      "source_id": 3542,
+      "mode": "apply",
+      "product_id": 2193,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3193, \"source\": {\"title\": \"ثيمات خشبية(3*4 سم) 10 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438781069
+    },
+    {
+      "source_id": 3541,
+      "mode": "apply",
+      "product_id": 2194,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3194, \"source\": {\"title\": \"قواعد حلق اذن ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438791089
+    },
+    {
+      "source_id": 3517,
+      "mode": "apply",
+      "product_id": 2195,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3195, \"source\": {\"title\": \"اكياس هدايا تركي (1) - 30*22 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438801085
+    },
+    {
+      "source_id": 3516,
+      "mode": "apply",
+      "product_id": 2196,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3196, \"source\": {\"title\": \"وعاء اعقاب السجائر حجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438811322
+    },
+    {
+      "source_id": 3515,
+      "mode": "apply",
+      "product_id": 2197,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3197, \"source\": {\"title\": \"اكياس هدايا تركي (2) - 38*26 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438821272
+    },
+    {
+      "source_id": 3514,
+      "mode": "apply",
+      "product_id": 2198,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3198, \"source\": {\"title\": \"اكياس هدايا تركي (3) - 45*33 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438831075
+    },
+    {
+      "source_id": 3513,
+      "mode": "apply",
+      "product_id": 2199,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3199, \"source\": {\"title\": \"مضيفة حجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438841062
+    },
+    {
+      "source_id": 3512,
+      "mode": "apply",
+      "product_id": 2200,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3200, \"source\": {\"title\": \"مضيفة حجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438851082
+    },
+    {
+      "source_id": 3511,
+      "mode": "apply",
+      "product_id": 2201,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3201, \"source\": {\"title\": \"اكياس هدايا تركي (4) - 50*40 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438861086
+    },
+    {
+      "source_id": 3510,
+      "mode": "apply",
+      "product_id": 2202,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3202, \"source\": {\"title\": \"اكياس هدايا تركي (5) - 60*50 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438871088
+    },
+    {
+      "source_id": 3509,
+      "mode": "apply",
+      "product_id": 2203,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3203, \"source\": {\"title\": \"اكياس هدايا تركي (6) - 70*60 سم / ربطة 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438881215
+    },
+    {
+      "source_id": 3476,
+      "mode": "apply",
+      "product_id": 2204,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3204}",
+      "updated_at": 1792438891085
+    },
+    {
+      "source_id": 3475,
+      "mode": "apply",
+      "product_id": 2205,
+      "status": "synced",
+      "detail": "{\"item_number\": 3205, \"name\": \"شوكلاتة (زهري) مستطيلة Lily\", \"before_price\": 5700, \"before_variants\": [], \"source\": {\"title\": \"شوكلاتة (زهري) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكلاتة (زهري) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 27500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2205\", \"source_url\": \"https://jabaristore.com/?app=product.show.3475\"}",
+      "updated_at": 1792438901504
+    },
+    {
+      "source_id": 3474,
+      "mode": "apply",
+      "product_id": 2206,
+      "status": "synced",
+      "detail": "{\"item_number\": 3206, \"name\": \"شوكلاتة (ابيض) مستطيلة Lily\", \"before_price\": 5700, \"before_variants\": [], \"source\": {\"title\": \"شوكلاتة (ابيض) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكلاتة (ابيض) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 27500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2206\", \"source_url\": \"https://jabaristore.com/?app=product.show.3474\"}",
+      "updated_at": 1792438911498
+    },
+    {
+      "source_id": 3473,
+      "mode": "apply",
+      "product_id": 2207,
+      "status": "synced",
+      "detail": "{\"item_number\": 3207, \"name\": \"شوكلاتة (ازرق) مستطيلة Lily\", \"before_price\": 5700, \"before_variants\": [], \"source\": {\"title\": \"شوكلاتة (ازرق) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكلاتة (ازرق) مستطيلة Lily\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 27500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"كرتونة 5 كيلو\", \"price\": 28500, \"active\": true, \"supplier_price\": 27500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2207\", \"source_url\": \"https://jabaristore.com/?app=product.show.3473\"}",
+      "updated_at": 1792438921661
+    },
+    {
+      "source_id": 3464,
+      "mode": "apply",
+      "product_id": 2208,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3208, \"source\": {\"title\": \"قطع ريزن للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438931198
+    },
+    {
+      "source_id": 3462,
+      "mode": "apply",
+      "product_id": 2209,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3209, \"source\": {\"title\": \"قطع ريزن للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438941428
+    },
+    {
+      "source_id": 3461,
+      "mode": "apply",
+      "product_id": 2210,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3210, \"source\": {\"title\": \"قطع ريزن للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438951072
+    },
+    {
+      "source_id": 3460,
+      "mode": "apply",
+      "product_id": 2211,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3211, \"source\": {\"title\": \"قطع ريزن للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438961200
+    },
+    {
+      "source_id": 3459,
+      "mode": "apply",
+      "product_id": 2212,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3212, \"source\": {\"title\": \"قطع ريزن للتوزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438971249
+    },
+    {
+      "source_id": 3458,
+      "mode": "apply",
+      "product_id": 2213,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3213}",
+      "updated_at": 1792438981196
+    },
+    {
+      "source_id": 3457,
+      "mode": "apply",
+      "product_id": 2214,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3214}",
+      "updated_at": 1792438991302
+    },
+    {
+      "source_id": 3435,
+      "mode": "apply",
+      "product_id": 2215,
+      "status": "synced",
+      "detail": "{\"item_number\": 3215, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*15*15 ( 10 قطع )\", \"before_price\": 2350, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*15*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"ذهبي\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"بني\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 15*15*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2700, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 2700, \"active\": true}, {\"name\": \"بني\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"ذهبي\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"بني\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2215\", \"source_url\": \"https://jabaristore.com/?app=product.show.3435\"}",
+      "updated_at": 1792439001508
+    },
+    {
+      "source_id": 3417,
+      "mode": "apply",
+      "product_id": 2216,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3216, \"source\": {\"title\": \"خيط ليف ابيض ( 12MM ) ~ 1 كيلو ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439011093
+    },
+    {
+      "source_id": 3416,
+      "mode": "apply",
+      "product_id": 2217,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3217, \"source\": {\"title\": \"خيط ليف ابيض ( 8MM ) ~ 1 كيلو ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439021402
+    },
+    {
+      "source_id": 3415,
+      "mode": "apply",
+      "product_id": 2218,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3218, \"source\": {\"title\": \"خيط ليف ابيض ( 4MM ) ~ 1 كيلو ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439031152
+    },
+    {
+      "source_id": 3414,
+      "mode": "apply",
+      "product_id": 2219,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3219, \"source\": {\"title\": \"لفظ الجلالة بلاستيك 3D ( 3.5 سم ) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439041087
+    },
+    {
+      "source_id": 3413,
+      "mode": "apply",
+      "product_id": 2220,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3220, \"source\": {\"title\": \"لفظ الجلالة بلاستيك 3D ( 3.5 سم ) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439051100
+    },
+    {
+      "source_id": 3412,
+      "mode": "apply",
+      "product_id": 2221,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3221, \"source\": {\"title\": \"كوستر خيش 7 سم ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439061060
+    },
+    {
+      "source_id": 3411,
+      "mode": "apply",
+      "product_id": 2222,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3222, \"source\": {\"title\": \"كوستر خيش 7 سم ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439071239
+    },
+    {
+      "source_id": 3410,
+      "mode": "apply",
+      "product_id": 2223,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3223, \"source\": {\"title\": \"ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439081229
+    },
+    {
+      "source_id": 3409,
+      "mode": "apply",
+      "product_id": 2224,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3224, \"source\": {\"title\": \"ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439091092
+    },
+    {
+      "source_id": 3408,
+      "mode": "apply",
+      "product_id": 2225,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3225, \"source\": {\"title\": \"ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439101088
+    },
+    {
+      "source_id": 3407,
+      "mode": "apply",
+      "product_id": 2226,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3226, \"source\": {\"title\": \"ببيونة قماش محزز (2.5*3.8 سم) ( 10 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439111370
+    },
+    {
+      "source_id": 3404,
+      "mode": "apply",
+      "product_id": 2227,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3227, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439121093
+    },
+    {
+      "source_id": 3403,
+      "mode": "apply",
+      "product_id": 2228,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3228, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439131295
+    },
+    {
+      "source_id": 3401,
+      "mode": "apply",
+      "product_id": 2229,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3229, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439141313
+    },
+    {
+      "source_id": 3400,
+      "mode": "apply",
+      "product_id": 2230,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3230, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439151305
+    },
+    {
+      "source_id": 3397,
+      "mode": "apply",
+      "product_id": 2231,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3231, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439161530
+    },
+    {
+      "source_id": 3395,
+      "mode": "apply",
+      "product_id": 2232,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3232, \"source\": {\"title\": \"قوالب اكريلك للشمع و الشوكولاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792439171401
+    },
+    {
+      "source_id": 3392,
+      "mode": "apply",
+      "product_id": 2233,
+      "status": "synced",
+      "detail": "{\"item_number\": 3233, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2233\", \"source_url\": \"https://jabaristore.com/?app=product.show.3392\"}",
+      "updated_at": 1792439181559
+    },
+    {
+      "source_id": 3391,
+      "mode": "apply",
+      "product_id": 2234,
+      "status": "synced",
+      "detail": "{\"item_number\": 3234, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2234\", \"source_url\": \"https://jabaristore.com/?app=product.show.3391\"}",
+      "updated_at": 1792439191616
+    },
+    {
+      "source_id": 3390,
+      "mode": "apply",
+      "product_id": 2235,
+      "status": "synced",
+      "detail": "{\"item_number\": 3235, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2235\", \"source_url\": \"https://jabaristore.com/?app=product.show.3390\"}",
+      "updated_at": 1792439201585
+    },
+    {
+      "source_id": 3389,
+      "mode": "apply",
+      "product_id": 2236,
+      "status": "synced",
+      "detail": "{\"item_number\": 3236, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2236\", \"source_url\": \"https://jabaristore.com/?app=product.show.3389\"}",
+      "updated_at": 1792439211369
+    },
+    {
+      "source_id": 3388,
+      "mode": "apply",
+      "product_id": 2237,
+      "status": "synced",
+      "detail": "{\"item_number\": 3237, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2237\", \"source_url\": \"https://jabaristore.com/?app=product.show.3388\"}",
+      "updated_at": 1792439221385
+    },
+    {
+      "source_id": 3387,
+      "mode": "apply",
+      "product_id": 2238,
+      "status": "synced",
+      "detail": "{\"item_number\": 3238, \"name\": \"قطع اكريلك للزينة\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك للزينة\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2238\", \"source_url\": \"https://jabaristore.com/?app=product.show.3387\"}",
+      "updated_at": 1792439231687
     }
   ]
 }
