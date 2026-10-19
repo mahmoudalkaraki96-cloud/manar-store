@@ -67,7 +67,7 @@ export async function saveOrderEdit(db:Database,id:number,body:Row){
    for(const field of definitions){const label=String(field.label),value=text(submitted[label]);if(Number(field.required)&&!value)throw new OrderEditError("الحقل "+label+" مطلوب");if(value.length>Number(field.max_length||60))throw new OrderEditError("الحقل "+label+" أطول من المسموح");if(value)customizations[label]=value}
    lines.push({productId,variantId,itemNumber:Number(product.item_number),productName:String(product.name),variantLabel:label,customizations:JSON.stringify(customizations),notes:null,quantity,unit});
   }
- }else lines.push(...oldLines);
+ }else lines.push(...oldLines.map(line=>({...line})));
  const shipping=body.shipping===undefined?Number(current.shipping_agorot):money(body.shipping,"التوصيل");
  const discount=body.discount===undefined?Number(current.discount_agorot):money(body.discount,"الخصم");
  const oldFees=(await db.prepare("SELECT label,amount_agorot FROM order_extra_fees WHERE order_id=?").bind(id).all<Row>()).results;
