@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T19:28:28.494855+03:00",
+  "updated_at": "2026-10-19T20:19:35.601901+03:00",
   "run_mode": "apply",
-  "run_status": "completed_batch",
-  "run_processed": 50,
+  "run_status": "paused_error",
+  "run_processed": 2,
   "results": [
     {
       "source_id": 1298,
@@ -4040,9 +4040,9 @@
       "source_id": 778,
       "mode": "apply",
       "product_id": 686,
-      "status": "error",
+      "status": "unsupported_source_price",
       "detail": "{\"reason\": \"invalid_price\", \"item_number\": 1686}",
-      "updated_at": 1792413781165
+      "updated_at": 1792430366976
     },
     {
       "source_id": 777,
@@ -5243,6 +5243,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1813, \"source\": {\"title\": \"مسك طهارة 3مل الاصلي زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
       "updated_at": 1792427307994
+    },
+    {
+      "source_id": 614,
+      "mode": "apply",
+      "product_id": 814,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1814, \"source\": {\"title\": \"مسك طهارة 3مل الاصلي ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427315152
+    },
+    {
+      "source_id": 613,
+      "mode": "apply",
+      "product_id": 815,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1815, \"source\": {\"title\": \"ستاند بصمة شكل كتاب مع قاعدة مقاس(34*25سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792427325062
+    },
+    {
+      "source_id": 612,
+      "mode": "apply",
+      "product_id": 816,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1816, \"source\": {\"title\": \"علبة بلاستيك مستطيلة مع طابة اكريلك شفاف مقاس(8*5سم) 12 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427335058
+    },
+    {
+      "source_id": 611,
+      "mode": "apply",
+      "product_id": 166,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1166, \"source\": {\"title\": \"علبة بلاستيك ذهبي مدورة مع تاج مقاس(7*3.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427345058
+    },
+    {
+      "source_id": 609,
+      "mode": "apply",
+      "product_id": 216,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1216, \"source\": {\"title\": \"مراية خشب مع ستاند مقاس (12*8سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427355061
+    },
+    {
+      "source_id": 608,
+      "mode": "apply",
+      "product_id": 817,
+      "status": "matched",
+      "detail": "{\"item_number\": 1817, \"source\": {\"title\": \"مراية حديد قلاب بيضاوي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792427365318
+    },
+    {
+      "source_id": 607,
+      "mode": "apply",
+      "product_id": 818,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1818, \"source\": {\"title\": \"ورد فلل 60 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792427375065
+    },
+    {
+      "source_id": 606,
+      "mode": "apply",
+      "product_id": 819,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1819, \"source\": {\"title\": \"سبح كرستال اسود 33خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792427385315
+    },
+    {
+      "source_id": 605,
+      "mode": "apply",
+      "product_id": 820,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1820, \"source\": {\"title\": \"سبح كرستال اخضر 33خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427395057
+    },
+    {
+      "source_id": 604,
+      "mode": "apply",
+      "product_id": 821,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1821, \"source\": {\"title\": \"سبح كرستال ابيض شفاف 33 خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427405288
+    },
+    {
+      "source_id": 603,
+      "mode": "apply",
+      "product_id": 167,
+      "status": "synced",
+      "detail": "{\"item_number\": 1167, \"name\": \"تول مع لولو لتغليف الورد والمسكات\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"تول مع لولو لتغليف الورد والمسكات\", \"variants\": [{\"name\": \"بالمتر\", \"price\": 500, \"active\": true}, {\"name\": \"3 متر\", \"price\": 1000, \"active\": true}, {\"name\": \"20 متر (لفة كاملة )\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/167\", \"source_url\": \"https://dofesh.ps/?app=product.show.603\"}",
+      "updated_at": 1792427415373
+    },
+    {
+      "source_id": 602,
+      "mode": "apply",
+      "product_id": 168,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1168, \"source\": {\"title\": \"شنتة بلاستيك مقوى شفاف (بديل الاكريلك) مقاس (11*4.5*9)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427425069
+    },
+    {
+      "source_id": 601,
+      "mode": "apply",
+      "product_id": 169,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1169, \"source\": {\"title\": \"شنتة بلاستيك مقوى (بديل الاكريلك ) مقاس (8.5*4*6)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427435282
+    },
+    {
+      "source_id": 600,
+      "mode": "apply",
+      "product_id": 170,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1170, \"source\": {\"title\": \"سلكون عريض اصلي شفاف (1كيلو)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792427445284
+    },
+    {
+      "source_id": 599,
+      "mode": "apply",
+      "product_id": 171,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1171, \"source\": {\"title\": \"سلكون رفيع اصلي ( ا كيلو)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792427455071
+    },
+    {
+      "source_id": 598,
+      "mode": "apply",
+      "product_id": 30,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1030, \"source\": {\"title\": \"لولو نص حبة 8 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792427465065
+    },
+    {
+      "source_id": 597,
+      "mode": "apply",
+      "product_id": 822,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1822, \"source\": {\"title\": \"صندوق كرتون لاب توب مقاس كبير (43*22*8)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792427475065
+    },
+    {
+      "source_id": 596,
+      "mode": "apply",
+      "product_id": 823,
+      "status": "synced",
+      "detail": "{\"item_number\": 1823, \"name\": \"ورد لولو 1.5سم\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد لولو 1.5سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/823\", \"source_url\": \"https://dofesh.ps/?app=product.show.596\"}",
+      "updated_at": 1792427485500
+    },
+    {
+      "source_id": 595,
+      "mode": "apply",
+      "product_id": 824,
+      "status": "synced",
+      "detail": "{\"item_number\": 1824, \"name\": \"ورد لولو 2سم\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد لولو 2سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/824\", \"source_url\": \"https://dofesh.ps/?app=product.show.595\"}",
+      "updated_at": 1792427495342
+    },
+    {
+      "source_id": 594,
+      "mode": "apply",
+      "product_id": 825,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1825, \"source\": {\"title\": \"معطر جو خام 400مل رائحة مميزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}}",
+      "updated_at": 1792427505129
+    },
+    {
+      "source_id": 593,
+      "mode": "apply",
+      "product_id": 172,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1172, \"source\": {\"title\": \"مقص اصلي نوع مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792427515329
+    },
+    {
+      "source_id": 592,
+      "mode": "apply",
+      "product_id": 173,
+      "status": "synced",
+      "detail": "{\"item_number\": 1173, \"name\": \"طابة اكريلك ثقيل ( متوفرة ب ٣ مقاسات )\", \"before_price\": 1600, \"before_variants\": [], \"source\": {\"title\": \"طابة اكريلك ثقيل ( متوفرة ب 3 مقاسات )\", \"variants\": [{\"name\": \"8 سم\", \"price\": 2000, \"active\": true}, {\"name\": \"7 سم\", \"price\": 2000, \"active\": true}, {\"name\": \"6 سم\", \"price\": 1600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/173\", \"source_url\": \"https://dofesh.ps/?app=product.show.592\"}",
+      "updated_at": 1792427525695
+    },
+    {
+      "source_id": 591,
+      "mode": "apply",
+      "product_id": 826,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1826, \"source\": {\"title\": \"تاج بلاستيك اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792427535123
+    },
+    {
+      "source_id": 590,
+      "mode": "apply",
+      "product_id": 827,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1827, \"source\": {\"title\": \"ختم عثماني سلكون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427545083
+    },
+    {
+      "source_id": 589,
+      "mode": "apply",
+      "product_id": 828,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1828, \"source\": {\"title\": \"ختم عثماني سلكون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427555068
+    },
+    {
+      "source_id": 588,
+      "mode": "apply",
+      "product_id": 829,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1829, \"source\": {\"title\": \"ختم عثماني سلكون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427565271
+    },
+    {
+      "source_id": 587,
+      "mode": "apply",
+      "product_id": 830,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1830, \"source\": {\"title\": \"ختم سلكون عثماني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427575284
+    },
+    {
+      "source_id": 586,
+      "mode": "apply",
+      "product_id": 831,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1831, \"source\": {\"title\": \"ختم عثماني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427585069
+    },
+    {
+      "source_id": 585,
+      "mode": "apply",
+      "product_id": 832,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1832, \"source\": {\"title\": \"وردة عظم بيج لتزيين الشوكولاتعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 50, \"simple_price\": 50}}",
+      "updated_at": 1792427595065
+    },
+    {
+      "source_id": 584,
+      "mode": "apply",
+      "product_id": 833,
+      "status": "synced",
+      "detail": "{\"item_number\": 1833, \"name\": \"دب عظم لتزيين الشوكولاتة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"دب عظم لتزيين الشوكولاتة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/833\", \"source_url\": \"https://dofesh.ps/?app=product.show.584\"}",
+      "updated_at": 1792427605551
+    },
+    {
+      "source_id": 583,
+      "mode": "apply",
+      "product_id": 834,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1834, \"source\": {\"title\": \"دب عظم لتزيين الشوكولاتة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 50}}",
+      "updated_at": 1792427615287
+    },
+    {
+      "source_id": 582,
+      "mode": "apply",
+      "product_id": 835,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1835, \"source\": {\"title\": \"ببيونة عظم بيج لتزيين الشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 50, \"simple_price\": 50}}",
+      "updated_at": 1792427625274
+    },
+    {
+      "source_id": 581,
+      "mode": "apply",
+      "product_id": 836,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1836, \"source\": {\"title\": \"ببيونة عظم بني لتزيين لاشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 50, \"simple_price\": 50}}",
+      "updated_at": 1792427635225
+    },
+    {
+      "source_id": 580,
+      "mode": "apply",
+      "product_id": 837,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1837, \"source\": {\"title\": \"دب عظم شكل ارنب لتزيين الشوكولاتة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 50}}",
+      "updated_at": 1792427645269
+    },
+    {
+      "source_id": 579,
+      "mode": "apply",
+      "product_id": 838,
+      "status": "synced",
+      "detail": "{\"item_number\": 1838, \"name\": \"دب عظم لتززين الشوكولاتة\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"دب عظم لتززين الشوكولاتة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/838\", \"source_url\": \"https://dofesh.ps/?app=product.show.579\"}",
+      "updated_at": 1792427655614
+    },
+    {
+      "source_id": 578,
+      "mode": "apply",
+      "product_id": 839,
+      "status": "synced",
+      "detail": "{\"item_number\": 1839, \"name\": \"دب عظم لتزيين التوزيعات\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"دب عظم لتزيين التوزيعات\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}, {\"name\": \"الف حبة\", \"price\": 30000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/839\", \"source_url\": \"https://dofesh.ps/?app=product.show.578\"}",
+      "updated_at": 1792427665441
+    },
+    {
+      "source_id": 577,
+      "mode": "apply",
+      "product_id": 174,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1174, \"source\": {\"title\": \"مغناطيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 25}}",
+      "updated_at": 1792427675235
+    },
+    {
+      "source_id": 576,
+      "mode": "apply",
+      "product_id": 175,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1175, \"source\": {\"title\": \"سكرية اكريلك لولي مقاس (7*5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427685224
+    },
+    {
+      "source_id": 575,
+      "mode": "apply",
+      "product_id": 176,
+      "status": "synced",
+      "detail": "{\"item_number\": 1176, \"name\": \"برواز بلاستيك شفاط مع قاعدة مدورة (11*11سم)\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"برواز بلاستيك شفاط مع قاعدة مدورة (11*11سم)\", \"variants\": [{\"name\": \"11 سم\", \"price\": 300, \"active\": false}, {\"name\": \"9 سم\", \"price\": 250, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/176\", \"source_url\": \"https://dofesh.ps/?app=product.show.575\"}",
+      "updated_at": 1792427695453
+    },
+    {
+      "source_id": 574,
+      "mode": "apply",
+      "product_id": 840,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1840, \"source\": {\"title\": \"صفاية مبخرة كروم مقاس(7*2سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427705226
+    },
+    {
+      "source_id": 573,
+      "mode": "apply",
+      "product_id": 841,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1841, \"source\": {\"title\": \"مصفاية مبخرة كروم مقاس (5.5*1سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 130}}",
+      "updated_at": 1792427715070
+    },
+    {
+      "source_id": 572,
+      "mode": "apply",
+      "product_id": 842,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1842, \"source\": {\"title\": \"مصفاية مبخرة ذهبي كروم مقاس(6*2سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792427725069
+    },
+    {
+      "source_id": 571,
+      "mode": "apply",
+      "product_id": 177,
+      "status": "synced",
+      "detail": "{\"item_number\": 1177, \"name\": \"مشط خشب بامبو (10*5سم)\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"مشط خشب بامبو (10*5سم)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 7500, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/177\", \"source_url\": \"https://dofesh.ps/?app=product.show.571\"}",
+      "updated_at": 1792427735311
+    },
+    {
+      "source_id": 570,
+      "mode": "apply",
+      "product_id": 66,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1066, \"source\": {\"title\": \"اسوارة لتزين الشوكولاتة (قطر3سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792427745072
+    },
+    {
+      "source_id": 569,
+      "mode": "apply",
+      "product_id": 67,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1067, \"source\": {\"title\": \"اسوارة للتوزيعات قطر6سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 70}}",
+      "updated_at": 1792427755066
+    },
+    {
+      "source_id": 568,
+      "mode": "apply",
+      "product_id": 843,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1843, \"source\": {\"title\": \"ورد فلل 60 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792427765072
+    },
+    {
+      "source_id": 567,
+      "mode": "apply",
+      "product_id": 844,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1844, \"source\": {\"title\": \"ورد فلل 60 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792427775235
+    },
+    {
+      "source_id": 566,
+      "mode": "apply",
+      "product_id": 845,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1845, \"source\": {\"title\": \"ورد فلل 60 حبة بالبكيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792427785071
+    },
+    {
+      "source_id": 564,
+      "mode": "apply",
+      "product_id": 846,
+      "status": "synced",
+      "detail": "{\"item_number\": 1846, \"name\": \"مراية حديد حجم صغير توزيعة مقاس(10*5سم)\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"مراية حديد حجم صغير توزيعة مقاس(10*5سم)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/846\", \"source_url\": \"https://dofesh.ps/?app=product.show.564\"}",
+      "updated_at": 1792427795710
+    },
+    {
+      "source_id": 563,
+      "mode": "apply",
+      "product_id": 847,
+      "status": "error",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 1847}",
+      "updated_at": 1792430374661
     }
   ]
 }

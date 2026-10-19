@@ -1649,3 +1649,65 @@
 - توقف التشغيل39282498313 بعد تنفيذ الدفعة الرابعة عند دوفش564/صنف1846؛ تعارض append في STORE-PROGRESS أثناء rebase مع تحديث ADMIN-ORDER-EDIT منع حفظ آخر تقرير. سجل D1 الذري يحفظ العمليات المنفذة.
 - الإصلاح: دمج union محلي لهذا الملف في workflow فقط للحفاظ على إدخالات الطرفين، وإعادة محاولة push عند تقدم main دون force، ونسخة artifact للتقارير عند الفشل. التقرير التالي يستعيد سطور عمليات D1 الغائبة عن progress.
 - نجحت الاختبارات20 وتجربة دمج إدخالين متزامنين دون فقد. التالي تشغيل apply من دوفش777 لتجاوز السعر غير الصالح778، مع تخطي المكتمل في D1 واستكمال المتبقي. الصور وحالة نشر المنتجات محفوظة.
+
+
+### 2026-10-19T20:19:35.601901+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T20:19:35.601901+03:00
+- Mode: apply
+- Status: paused_error
+- Counts: {"synced": 269, "no_options": 399, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 1, "unsupported_supplier_removed_options": 1, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#778 ↔ صنف#1686: unsupported_source_price؛ invalid_price. https://dofesh.ps/?app=product.show.778
+- دوفش#614 ↔ صنف#1814: no_options؛ مسك طهارة 3مل الاصلي ابيض. https://dofesh.ps/?app=product.show.614
+- دوفش#613 ↔ صنف#1815: no_options؛ ستاند بصمة شكل كتاب مع قاعدة مقاس(34*25سم). https://dofesh.ps/?app=product.show.613
+- دوفش#612 ↔ صنف#1816: no_options؛ علبة بلاستيك مستطيلة مع طابة اكريلك شفاف مقاس(8*5سم) 12 حبة بالبكيت. https://dofesh.ps/?app=product.show.612
+- دوفش#611 ↔ صنف#1166: no_options؛ علبة بلاستيك ذهبي مدورة مع تاج مقاس(7*3.5سم). https://dofesh.ps/?app=product.show.611
+- دوفش#609 ↔ صنف#1216: no_options؛ مراية خشب مع ستاند مقاس (12*8سم). https://dofesh.ps/?app=product.show.609
+- دوفش#608 ↔ صنف#1817: matched؛ بالحبة=7₪؛ 10 حبة=60₪. https://dofesh.ps/?app=product.show.608
+- دوفش#607 ↔ صنف#1818: no_options؛ ورد فلل 60 حبة بالبكيت. https://dofesh.ps/?app=product.show.607
+- دوفش#606 ↔ صنف#1819: no_options؛ سبح كرستال اسود 33خرزة. https://dofesh.ps/?app=product.show.606
+- دوفش#605 ↔ صنف#1820: no_options؛ سبح كرستال اخضر 33خرزة. https://dofesh.ps/?app=product.show.605
+- دوفش#604 ↔ صنف#1821: no_options؛ سبح كرستال ابيض شفاف 33 خرزة. https://dofesh.ps/?app=product.show.604
+- دوفش#603 ↔ صنف#1167: synced؛ بالمتر=5₪؛ 3 متر=10₪؛ 20 متر (لفة كاملة )=40₪. https://dofesh.ps/?app=product.show.603
+- دوفش#602 ↔ صنف#1168: no_options؛ شنتة بلاستيك مقوى شفاف (بديل الاكريلك) مقاس (11*4.5*9). https://dofesh.ps/?app=product.show.602
+- دوفش#601 ↔ صنف#1169: no_options؛ شنتة بلاستيك مقوى (بديل الاكريلك ) مقاس (8.5*4*6). https://dofesh.ps/?app=product.show.601
+- دوفش#600 ↔ صنف#1170: no_options؛ سلكون عريض اصلي شفاف (1كيلو). https://dofesh.ps/?app=product.show.600
+- دوفش#599 ↔ صنف#1171: no_options؛ سلكون رفيع اصلي ( ا كيلو). https://dofesh.ps/?app=product.show.599
+- دوفش#598 ↔ صنف#1030: no_options؛ لولو نص حبة 8 مل. https://dofesh.ps/?app=product.show.598
+- دوفش#597 ↔ صنف#1822: no_options؛ صندوق كرتون لاب توب مقاس كبير (43*22*8). https://dofesh.ps/?app=product.show.597
+- دوفش#596 ↔ صنف#1823: synced؛ بالحبة=0.5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.596
+- دوفش#595 ↔ صنف#1824: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.595
+- دوفش#594 ↔ صنف#1825: no_options؛ معطر جو خام 400مل رائحة مميزة. https://dofesh.ps/?app=product.show.594
+- دوفش#593 ↔ صنف#1172: no_options؛ مقص اصلي نوع مميز. https://dofesh.ps/?app=product.show.593
+- دوفش#592 ↔ صنف#1173: synced؛ 8 سم=20₪؛ 7 سم=20₪؛ 6 سم=16₪. https://dofesh.ps/?app=product.show.592
+- دوفش#591 ↔ صنف#1826: no_options؛ تاج بلاستيك اكسسوار محجر. https://dofesh.ps/?app=product.show.591
+- دوفش#590 ↔ صنف#1827: no_options؛ ختم عثماني سلكون. https://dofesh.ps/?app=product.show.590
+- دوفش#589 ↔ صنف#1828: no_options؛ ختم عثماني سلكون. https://dofesh.ps/?app=product.show.589
+- دوفش#588 ↔ صنف#1829: no_options؛ ختم عثماني سلكون. https://dofesh.ps/?app=product.show.588
+- دوفش#587 ↔ صنف#1830: no_options؛ ختم سلكون عثماني. https://dofesh.ps/?app=product.show.587
+- دوفش#586 ↔ صنف#1831: no_options؛ ختم عثماني. https://dofesh.ps/?app=product.show.586
+- دوفش#585 ↔ صنف#1832: unsupported_customization_or_minimum؛ وردة عظم بيج لتزيين الشوكولاتعة. https://dofesh.ps/?app=product.show.585
+- دوفش#584 ↔ صنف#1833: synced؛ بالحبة=1₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.584
+- دوفش#583 ↔ صنف#1834: unsupported_customization_or_minimum؛ بالحبة=0.5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.583
+- دوفش#582 ↔ صنف#1835: unsupported_customization_or_minimum؛ ببيونة عظم بيج لتزيين الشوكولاتة. https://dofesh.ps/?app=product.show.582
+- دوفش#581 ↔ صنف#1836: unsupported_customization_or_minimum؛ ببيونة عظم بني لتزيين لاشوكولاتة. https://dofesh.ps/?app=product.show.581
+- دوفش#580 ↔ صنف#1837: unsupported_customization_or_minimum؛ بالحبة=0.5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.580
+- دوفش#579 ↔ صنف#1838: synced؛ بالحبة=0.5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.579
+- دوفش#578 ↔ صنف#1839: synced؛ بالحبة=0.5₪؛ 50 حبة=20₪؛ الف حبة=300₪. https://dofesh.ps/?app=product.show.578
+- دوفش#577 ↔ صنف#1174: no_options؛ مغناطيس. https://dofesh.ps/?app=product.show.577
+- دوفش#576 ↔ صنف#1175: no_options؛ سكرية اكريلك لولي مقاس (7*5سم). https://dofesh.ps/?app=product.show.576
+- دوفش#575 ↔ صنف#1176: synced؛ 11 سم=3₪؛ 9 سم=2.5₪. https://dofesh.ps/?app=product.show.575
+- دوفش#574 ↔ صنف#1840: no_options؛ صفاية مبخرة كروم مقاس(7*2سم). https://dofesh.ps/?app=product.show.574
+- دوفش#573 ↔ صنف#1841: no_options؛ مصفاية مبخرة كروم مقاس (5.5*1سم). https://dofesh.ps/?app=product.show.573
+- دوفش#572 ↔ صنف#1842: no_options؛ مصفاية مبخرة ذهبي كروم مقاس(6*2سم). https://dofesh.ps/?app=product.show.572
+- دوفش#571 ↔ صنف#1177: synced؛ بالحبة=2₪؛ 50 حبة=75₪؛ 100 حبة=120₪. https://dofesh.ps/?app=product.show.571
+- دوفش#570 ↔ صنف#1066: no_options؛ اسوارة لتزين الشوكولاتة (قطر3سم). https://dofesh.ps/?app=product.show.570
+- دوفش#569 ↔ صنف#1067: no_options؛ اسوارة للتوزيعات قطر6سم. https://dofesh.ps/?app=product.show.569
+- دوفش#568 ↔ صنف#1843: no_options؛ ورد فلل 60 حبة بالبكيت. https://dofesh.ps/?app=product.show.568
+- دوفش#567 ↔ صنف#1844: no_options؛ ورد فلل 60 حبة بالبكيت. https://dofesh.ps/?app=product.show.567
+- دوفش#566 ↔ صنف#1845: no_options؛ ورد فلل 60 حبة بالبكيت. https://dofesh.ps/?app=product.show.566
+- دوفش#564 ↔ صنف#1846: synced؛ بالحبة=2₪؛ 10 حبة=18₪. https://dofesh.ps/?app=product.show.564
+- دوفش#563 ↔ صنف#1847: error؛ simple_price_not_verified. https://dofesh.ps/?app=product.show.563
