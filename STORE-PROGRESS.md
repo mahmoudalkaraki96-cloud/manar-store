@@ -1866,3 +1866,64 @@
 - دوفش#451 ↔ صنف#1932: no_options؛ ورق شجر حديد. https://dofesh.ps/?app=product.show.451
 - دوفش#450 ↔ صنف#1933: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.450
 - دوفش#449 ↔ صنف#1934: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.449
+
+
+### 2026-10-19T20:42:34.098603+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T20:42:34.098603+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 44, "synced": 12}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4494 ↔ صنف#2319: no_options؛ ستاند دبل اكريلك ( قاعده & ظهر ). https://jabaristore.com/?app=product.show.4494
+- الجعبري#4493 ↔ صنف#2320: no_options؛ مضيفة زجاج عريض 13*8 سم. https://jabaristore.com/?app=product.show.4493
+- الجعبري#4492 ↔ صنف#2321: no_options؛ مضيفة زجاج قبة 14*8.5 سم. https://jabaristore.com/?app=product.show.4492
+- الجعبري#4490 ↔ صنف#2322: no_options؛ ورق مقصوص ( زهري ) - 100 غرام. https://jabaristore.com/?app=product.show.4490
+- الجعبري#4489 ↔ صنف#2323: no_options؛ ورق مقصوص ( ازرق ) - 100 غرام. https://jabaristore.com/?app=product.show.4489
+- الجعبري#4488 ↔ صنف#2324: no_options؛ ورق مقصوص ( بيج ) - 100 غرام. https://jabaristore.com/?app=product.show.4488
+- الجعبري#4487 ↔ صنف#2325: no_options؛ ورق مقصوص ( ايفري ) - 100 غرام. https://jabaristore.com/?app=product.show.4487
+- الجعبري#4486 ↔ صنف#2326: no_options؛ ورق مقصوص ( ابيض ) - 100 غرام. https://jabaristore.com/?app=product.show.4486
+- الجعبري#4485 ↔ صنف#2327: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4485
+- الجعبري#4484 ↔ صنف#2328: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4484
+- الجعبري#4483 ↔ صنف#2329: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4483
+- الجعبري#4482 ↔ صنف#2330: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4482
+- الجعبري#4481 ↔ صنف#2331: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4481
+- الجعبري#4480 ↔ صنف#2332: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4480
+- الجعبري#4479 ↔ صنف#2333: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4479
+- الجعبري#4478 ↔ صنف#2334: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4478
+- الجعبري#4477 ↔ صنف#2335: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4477
+- الجعبري#4476 ↔ صنف#2336: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4476
+- الجعبري#4475 ↔ صنف#2337: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4475
+- الجعبري#4474 ↔ صنف#2338: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4474
+- الجعبري#4473 ↔ صنف#2339: no_options؛ ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4473
+- الجعبري#4472 ↔ صنف#2340: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4472
+- الجعبري#4471 ↔ صنف#2341: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4471
+- الجعبري#4470 ↔ صنف#2342: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4470
+- الجعبري#4469 ↔ صنف#2343: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4469
+- الجعبري#4468 ↔ صنف#2344: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4468
+- الجعبري#4467 ↔ صنف#2345: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4467
+- الجعبري#4466 ↔ صنف#2346: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4466
+- الجعبري#4465 ↔ صنف#2347: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4465
+- الجعبري#4464 ↔ صنف#2348: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4464
+- الجعبري#4463 ↔ صنف#2349: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4463
+- الجعبري#4462 ↔ صنف#2350: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4462
+- الجعبري#4461 ↔ صنف#2351: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4461
+- الجعبري#4460 ↔ صنف#2352: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4460
+- الجعبري#4459 ↔ صنف#2353: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4459
+- الجعبري#4458 ↔ صنف#2354: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4458
+- الجعبري#4457 ↔ صنف#2355: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4457
+- الجعبري#4456 ↔ صنف#2356: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4456
+- الجعبري#4455 ↔ صنف#2357: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4455
+- الجعبري#4454 ↔ صنف#2358: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4454
+- الجعبري#4453 ↔ صنف#2359: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4453
+- الجعبري#4452 ↔ صنف#2360: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4452
+- الجعبري#4451 ↔ صنف#2361: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4451
+- الجعبري#4450 ↔ صنف#2362: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4450
+- الجعبري#4449 ↔ صنف#2363: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4449
+- الجعبري#4448 ↔ صنف#2364: no_options؛ علاقة ملابس للبيبي خشب 26*17سم. https://jabaristore.com/?app=product.show.4448
+- الجعبري#4447 ↔ صنف#2365: no_options؛ مراه اكريلك للدبل ~ قاعدة خشب ~ 40*40 سم. https://jabaristore.com/?app=product.show.4447
+- الجعبري#4446 ↔ صنف#2366: no_options؛ مراه اكريلك للدبل ~ قاعدة خشب ~ 35*35 سم. https://jabaristore.com/?app=product.show.4446
+- الجعبري#4445 ↔ صنف#2367: no_options؛ مراه اكريلك للدبل ~ قاعدة خشب ~ 30*30 سم. https://jabaristore.com/?app=product.show.4445
+- الجعبري#4444 ↔ صنف#2368: no_options؛ صينية اكريلك ( 3*10*10 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4444

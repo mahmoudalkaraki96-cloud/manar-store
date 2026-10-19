@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T20:33:37.219041+03:00",
+  "updated_at": "2026-10-19T20:42:34.098603+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 1,
+  "run_processed": 50,
   "results": [
     {
       "source_id": 4499,
@@ -43,6 +43,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2318, \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792431148546
+    },
+    {
+      "source_id": 4494,
+      "mode": "apply",
+      "product_id": 1319,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2319, \"source\": {\"title\": \"ستاند دبل اكريلك ( قاعده & ظهر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431263846
+    },
+    {
+      "source_id": 4493,
+      "mode": "apply",
+      "product_id": 1320,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2320, \"source\": {\"title\": \"مضيفة زجاج عريض 13*8 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431273666
+    },
+    {
+      "source_id": 4492,
+      "mode": "apply",
+      "product_id": 1321,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2321, \"source\": {\"title\": \"مضيفة زجاج قبة 14*8.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431283721
+    },
+    {
+      "source_id": 4490,
+      "mode": "apply",
+      "product_id": 1322,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2322, \"source\": {\"title\": \"ورق مقصوص ( زهري ) - 100 غرام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431293749
+    },
+    {
+      "source_id": 4489,
+      "mode": "apply",
+      "product_id": 1323,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2323, \"source\": {\"title\": \"ورق مقصوص ( ازرق ) - 100 غرام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431303755
+    },
+    {
+      "source_id": 4488,
+      "mode": "apply",
+      "product_id": 1324,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2324, \"source\": {\"title\": \"ورق مقصوص ( بيج ) - 100 غرام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431313482
+    },
+    {
+      "source_id": 4487,
+      "mode": "apply",
+      "product_id": 1325,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2325, \"source\": {\"title\": \"ورق مقصوص ( ايفري ) - 100 غرام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431323701
+    },
+    {
+      "source_id": 4486,
+      "mode": "apply",
+      "product_id": 1326,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2326, \"source\": {\"title\": \"ورق مقصوص ( ابيض ) - 100 غرام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431333483
+    },
+    {
+      "source_id": 4485,
+      "mode": "apply",
+      "product_id": 1327,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2327, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431343470
+    },
+    {
+      "source_id": 4484,
+      "mode": "apply",
+      "product_id": 1328,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2328, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431353732
+    },
+    {
+      "source_id": 4483,
+      "mode": "apply",
+      "product_id": 1329,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2329, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431363482
+    },
+    {
+      "source_id": 4482,
+      "mode": "apply",
+      "product_id": 1330,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2330, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431373466
+    },
+    {
+      "source_id": 4481,
+      "mode": "apply",
+      "product_id": 1331,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2331, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431383712
+    },
+    {
+      "source_id": 4480,
+      "mode": "apply",
+      "product_id": 1332,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2332, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431393491
+    },
+    {
+      "source_id": 4479,
+      "mode": "apply",
+      "product_id": 1333,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2333, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431403495
+    },
+    {
+      "source_id": 4478,
+      "mode": "apply",
+      "product_id": 1334,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2334, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431413482
+    },
+    {
+      "source_id": 4477,
+      "mode": "apply",
+      "product_id": 1335,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2335, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431423500
+    },
+    {
+      "source_id": 4476,
+      "mode": "apply",
+      "product_id": 1336,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2336, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431433708
+    },
+    {
+      "source_id": 4475,
+      "mode": "apply",
+      "product_id": 1337,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2337, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431443498
+    },
+    {
+      "source_id": 4474,
+      "mode": "apply",
+      "product_id": 1338,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2338, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431453724
+    },
+    {
+      "source_id": 4473,
+      "mode": "apply",
+      "product_id": 1339,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2339, \"source\": {\"title\": \"ثيمات خشبية طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431463699
+    },
+    {
+      "source_id": 4472,
+      "mode": "apply",
+      "product_id": 1340,
+      "status": "synced",
+      "detail": "{\"item_number\": 2340, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1340\", \"source_url\": \"https://jabaristore.com/?app=product.show.4472\"}",
+      "updated_at": 1792431473773
+    },
+    {
+      "source_id": 4471,
+      "mode": "apply",
+      "product_id": 1341,
+      "status": "synced",
+      "detail": "{\"item_number\": 2341, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1341\", \"source_url\": \"https://jabaristore.com/?app=product.show.4471\"}",
+      "updated_at": 1792431484038
+    },
+    {
+      "source_id": 4470,
+      "mode": "apply",
+      "product_id": 1342,
+      "status": "synced",
+      "detail": "{\"item_number\": 2342, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1342\", \"source_url\": \"https://jabaristore.com/?app=product.show.4470\"}",
+      "updated_at": 1792431494119
+    },
+    {
+      "source_id": 4469,
+      "mode": "apply",
+      "product_id": 1343,
+      "status": "synced",
+      "detail": "{\"item_number\": 2343, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1343\", \"source_url\": \"https://jabaristore.com/?app=product.show.4469\"}",
+      "updated_at": 1792431503762
+    },
+    {
+      "source_id": 4468,
+      "mode": "apply",
+      "product_id": 1344,
+      "status": "synced",
+      "detail": "{\"item_number\": 2344, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1344\", \"source_url\": \"https://jabaristore.com/?app=product.show.4468\"}",
+      "updated_at": 1792431513990
+    },
+    {
+      "source_id": 4467,
+      "mode": "apply",
+      "product_id": 1345,
+      "status": "synced",
+      "detail": "{\"item_number\": 2345, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1345\", \"source_url\": \"https://jabaristore.com/?app=product.show.4467\"}",
+      "updated_at": 1792431523792
+    },
+    {
+      "source_id": 4466,
+      "mode": "apply",
+      "product_id": 1346,
+      "status": "synced",
+      "detail": "{\"item_number\": 2346, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1346\", \"source_url\": \"https://jabaristore.com/?app=product.show.4466\"}",
+      "updated_at": 1792431533961
+    },
+    {
+      "source_id": 4465,
+      "mode": "apply",
+      "product_id": 1347,
+      "status": "synced",
+      "detail": "{\"item_number\": 2347, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1347\", \"source_url\": \"https://jabaristore.com/?app=product.show.4465\"}",
+      "updated_at": 1792431543778
+    },
+    {
+      "source_id": 4464,
+      "mode": "apply",
+      "product_id": 1348,
+      "status": "synced",
+      "detail": "{\"item_number\": 2348, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1348\", \"source_url\": \"https://jabaristore.com/?app=product.show.4464\"}",
+      "updated_at": 1792431554141
+    },
+    {
+      "source_id": 4463,
+      "mode": "apply",
+      "product_id": 1349,
+      "status": "synced",
+      "detail": "{\"item_number\": 2349, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1349\", \"source_url\": \"https://jabaristore.com/?app=product.show.4463\"}",
+      "updated_at": 1792431563770
+    },
+    {
+      "source_id": 4462,
+      "mode": "apply",
+      "product_id": 1350,
+      "status": "synced",
+      "detail": "{\"item_number\": 2350, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1350\", \"source_url\": \"https://jabaristore.com/?app=product.show.4462\"}",
+      "updated_at": 1792431573781
+    },
+    {
+      "source_id": 4461,
+      "mode": "apply",
+      "product_id": 1351,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2351, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431583497
+    },
+    {
+      "source_id": 4460,
+      "mode": "apply",
+      "product_id": 1352,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2352, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431593469
+    },
+    {
+      "source_id": 4459,
+      "mode": "apply",
+      "product_id": 1353,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2353, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431603499
+    },
+    {
+      "source_id": 4458,
+      "mode": "apply",
+      "product_id": 1354,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2354, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431613471
+    },
+    {
+      "source_id": 4457,
+      "mode": "apply",
+      "product_id": 1355,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2355, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431623486
+    },
+    {
+      "source_id": 4456,
+      "mode": "apply",
+      "product_id": 1356,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2356, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431633688
+    },
+    {
+      "source_id": 4455,
+      "mode": "apply",
+      "product_id": 1357,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2357, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431643682
+    },
+    {
+      "source_id": 4454,
+      "mode": "apply",
+      "product_id": 1358,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2358, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431653468
+    },
+    {
+      "source_id": 4453,
+      "mode": "apply",
+      "product_id": 1359,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2359, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431663471
+    },
+    {
+      "source_id": 4452,
+      "mode": "apply",
+      "product_id": 1360,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2360, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431673489
+    },
+    {
+      "source_id": 4451,
+      "mode": "apply",
+      "product_id": 1361,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2361, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431683701
+    },
+    {
+      "source_id": 4450,
+      "mode": "apply",
+      "product_id": 1362,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2362, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431693773
+    },
+    {
+      "source_id": 4449,
+      "mode": "apply",
+      "product_id": 1363,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2363, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431703738
+    },
+    {
+      "source_id": 4448,
+      "mode": "apply",
+      "product_id": 1364,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2364, \"source\": {\"title\": \"علاقة ملابس للبيبي خشب 26*17سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431713709
+    },
+    {
+      "source_id": 4447,
+      "mode": "apply",
+      "product_id": 1365,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2365, \"source\": {\"title\": \"مراه اكريلك للدبل ~ قاعدة خشب ~ 40*40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431723482
+    },
+    {
+      "source_id": 4446,
+      "mode": "apply",
+      "product_id": 1366,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2366, \"source\": {\"title\": \"مراه اكريلك للدبل ~ قاعدة خشب ~ 35*35 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431733810
+    },
+    {
+      "source_id": 4445,
+      "mode": "apply",
+      "product_id": 1367,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2367, \"source\": {\"title\": \"مراه اكريلك للدبل ~ قاعدة خشب ~ 30*30 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431743708
+    },
+    {
+      "source_id": 4444,
+      "mode": "apply",
+      "product_id": 1368,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2368, \"source\": {\"title\": \"صينية اكريلك ( 3*10*10 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431753499
     },
     {
       "source_id": 3780,
