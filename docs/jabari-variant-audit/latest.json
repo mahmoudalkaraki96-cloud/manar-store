@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T22:22:17.498695+03:00",
+  "updated_at": "2026-10-19T22:30:35.815550+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -5251,6 +5251,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 3088, \"name\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر جادور ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 600, \"active\": true}, {\"name\": \"بدون تغليف\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2088\", \"source_url\": \"https://jabaristore.com/?app=product.show.3673\"}",
       "updated_at": 1792437735149
+    },
+    {
+      "source_id": 3672,
+      "mode": "apply",
+      "product_id": 2089,
+      "status": "synced",
+      "detail": "{\"item_number\": 3089, \"name\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 600, \"active\": true}, {\"name\": \"بدون تغليف\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2089\", \"source_url\": \"https://jabaristore.com/?app=product.show.3672\"}",
+      "updated_at": 1792437744449
+    },
+    {
+      "source_id": 3671,
+      "mode": "apply",
+      "product_id": 2090,
+      "status": "synced",
+      "detail": "{\"item_number\": 3090, \"name\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر ميني ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 600, \"active\": true}, {\"name\": \"بدون تغليف\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2090\", \"source_url\": \"https://jabaristore.com/?app=product.show.3671\"}",
+      "updated_at": 1792437754692
+    },
+    {
+      "source_id": 3670,
+      "mode": "apply",
+      "product_id": 2091,
+      "status": "synced",
+      "detail": "{\"item_number\": 3091, \"name\": \"عطر مسك العروس ~30ml~ & علبة تغليف ابيض\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"عطر مسك العروس ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"بدون تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر مسك العروس ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": true}, {\"name\": \"بدون تغليف\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"بدون تغليف\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2091\", \"source_url\": \"https://jabaristore.com/?app=product.show.3670\"}",
+      "updated_at": 1792437764732
+    },
+    {
+      "source_id": 3667,
+      "mode": "apply",
+      "product_id": 2092,
+      "status": "synced",
+      "detail": "{\"item_number\": 3092, \"name\": \"عطر جميلة لافيرن ~30ml~ & علبة تغليف ابيض\", \"before_price\": 750, \"before_variants\": [], \"source\": {\"title\": \"عطر جميلة لافيرن ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"بدون علبة\", \"price\": 750, \"active\": true, \"supplier_price\": 650}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر جميلة لافيرن ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 750, \"active\": true}, {\"name\": \"بدون علبة\", \"price\": 650, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع علبة كرتون ابيض خاصة\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"بدون علبة\", \"price\": 750, \"active\": true, \"supplier_price\": 650}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2092\", \"source_url\": \"https://jabaristore.com/?app=product.show.3667\"}",
+      "updated_at": 1792437774477
+    },
+    {
+      "source_id": 3666,
+      "mode": "apply",
+      "product_id": 2093,
+      "status": "synced",
+      "detail": "{\"item_number\": 3093, \"name\": \"عطر ماي واي ~30ml~ & علبة تغليف ابيض\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"عطر ماي واي ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": false, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر ماي واي ~30ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 600, \"active\": false}, {\"name\": \"بدون تغليف\", \"price\": 500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"بدون تغليف\", \"price\": 550, \"active\": false, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2093\", \"source_url\": \"https://jabaristore.com/?app=product.show.3666\"}",
+      "updated_at": 1792437784426
+    },
+    {
+      "source_id": 3664,
+      "mode": "apply",
+      "product_id": 2094,
+      "status": "synced",
+      "detail": "{\"item_number\": 3094, \"name\": \"عطر جادور قلم ~35ml~ & علبة تغليف ابيض\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"عطر جادور قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر جادور قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 400, \"active\": false}, {\"name\": \"بدون تغليف\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2094\", \"source_url\": \"https://jabaristore.com/?app=product.show.3664\"}",
+      "updated_at": 1792437794727
+    },
+    {
+      "source_id": 3663,
+      "mode": "apply",
+      "product_id": 2095,
+      "status": "synced",
+      "detail": "{\"item_number\": 3095, \"name\": \"عطر جوتشي قلم ~35ml~ & علبة تغليف ابيض\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"عطر جوتشي قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر جوتشي قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 400, \"active\": false}, {\"name\": \"بدون تغليف\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2095\", \"source_url\": \"https://jabaristore.com/?app=product.show.3663\"}",
+      "updated_at": 1792437804605
+    },
+    {
+      "source_id": 3662,
+      "mode": "apply",
+      "product_id": 2096,
+      "status": "synced",
+      "detail": "{\"item_number\": 3096, \"name\": \"عطر لا فيدا قلم ~35ml~ & علبة تغليف ابيض\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"عطر لا فيدا قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عطر لا فيدا قلم ~35ml~ & علبة تغليف ابيض\", \"variants\": [{\"name\": \"مع تغليف\", \"price\": 400, \"active\": false}, {\"name\": \"بدون تغليف\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"مع تغليف\", \"price\": 450, \"active\": false, \"supplier_price\": 400}, {\"name\": \"بدون تغليف\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2096\", \"source_url\": \"https://jabaristore.com/?app=product.show.3662\"}",
+      "updated_at": 1792437814448
+    },
+    {
+      "source_id": 3661,
+      "mode": "apply",
+      "product_id": 2097,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3097, \"source\": {\"title\": \"صندوق زجاج مستطيل ( 30*20 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437824156
+    },
+    {
+      "source_id": 3660,
+      "mode": "apply",
+      "product_id": 2098,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3098, \"source\": {\"title\": \"صندوق زجاج مستطيل ( 32*23 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437834192
+    },
+    {
+      "source_id": 3659,
+      "mode": "apply",
+      "product_id": 2099,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3099, \"source\": {\"title\": \"صندوق زجاج مستطيل ( 35*25 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437844172
+    },
+    {
+      "source_id": 3658,
+      "mode": "apply",
+      "product_id": 2100,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3100, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437854172
+    },
+    {
+      "source_id": 3657,
+      "mode": "apply",
+      "product_id": 2101,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3101, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437864172
+    },
+    {
+      "source_id": 3656,
+      "mode": "apply",
+      "product_id": 2102,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3102, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437874181
+    },
+    {
+      "source_id": 3655,
+      "mode": "apply",
+      "product_id": 2103,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3103, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437884507
+    },
+    {
+      "source_id": 3654,
+      "mode": "apply",
+      "product_id": 2104,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3104, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437894460
+    },
+    {
+      "source_id": 3653,
+      "mode": "apply",
+      "product_id": 2105,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3105, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437904379
+    },
+    {
+      "source_id": 3652,
+      "mode": "apply",
+      "product_id": 2106,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3106, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437914399
+    },
+    {
+      "source_id": 3651,
+      "mode": "apply",
+      "product_id": 2107,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3107, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437924408
+    },
+    {
+      "source_id": 3650,
+      "mode": "apply",
+      "product_id": 2108,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3108, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437934418
+    },
+    {
+      "source_id": 3649,
+      "mode": "apply",
+      "product_id": 2109,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3109, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437944444
+    },
+    {
+      "source_id": 3648,
+      "mode": "apply",
+      "product_id": 2110,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3110, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437954183
+    },
+    {
+      "source_id": 3647,
+      "mode": "apply",
+      "product_id": 2111,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3111, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437964431
+    },
+    {
+      "source_id": 3646,
+      "mode": "apply",
+      "product_id": 2112,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3112, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437974425
+    },
+    {
+      "source_id": 3645,
+      "mode": "apply",
+      "product_id": 2113,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3113, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437984168
+    },
+    {
+      "source_id": 3644,
+      "mode": "apply",
+      "product_id": 2114,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3114, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792437994175
+    },
+    {
+      "source_id": 3643,
+      "mode": "apply",
+      "product_id": 2115,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3115, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438004172
+    },
+    {
+      "source_id": 3642,
+      "mode": "apply",
+      "product_id": 2116,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3116, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438014172
+    },
+    {
+      "source_id": 3641,
+      "mode": "apply",
+      "product_id": 2117,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3117, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438024391
+    },
+    {
+      "source_id": 3640,
+      "mode": "apply",
+      "product_id": 2118,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3118, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438034408
+    },
+    {
+      "source_id": 3639,
+      "mode": "apply",
+      "product_id": 2119,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3119, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438044155
+    },
+    {
+      "source_id": 3638,
+      "mode": "apply",
+      "product_id": 2120,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3120, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438054444
+    },
+    {
+      "source_id": 3637,
+      "mode": "apply",
+      "product_id": 2121,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3121, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438064172
+    },
+    {
+      "source_id": 3636,
+      "mode": "apply",
+      "product_id": 2122,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3122, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438074191
+    },
+    {
+      "source_id": 3635,
+      "mode": "apply",
+      "product_id": 2123,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3123, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438084195
+    },
+    {
+      "source_id": 3634,
+      "mode": "apply",
+      "product_id": 2124,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3124, \"source\": {\"title\": \"خرز كرستال زجاج سداسي ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438094183
+    },
+    {
+      "source_id": 3633,
+      "mode": "apply",
+      "product_id": 2125,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3125, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438104177
+    },
+    {
+      "source_id": 3632,
+      "mode": "apply",
+      "product_id": 2126,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3126, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438114175
+    },
+    {
+      "source_id": 3631,
+      "mode": "apply",
+      "product_id": 2127,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3127, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438124429
+    },
+    {
+      "source_id": 3630,
+      "mode": "apply",
+      "product_id": 2128,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3128, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438134413
+    },
+    {
+      "source_id": 3629,
+      "mode": "apply",
+      "product_id": 2129,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3129, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438144389
+    },
+    {
+      "source_id": 3628,
+      "mode": "apply",
+      "product_id": 2130,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3130, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438154435
+    },
+    {
+      "source_id": 3627,
+      "mode": "apply",
+      "product_id": 2131,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3131, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438164363
+    },
+    {
+      "source_id": 3626,
+      "mode": "apply",
+      "product_id": 2132,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3132, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438174156
+    },
+    {
+      "source_id": 3625,
+      "mode": "apply",
+      "product_id": 2133,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3133, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438184469
+    },
+    {
+      "source_id": 3624,
+      "mode": "apply",
+      "product_id": 2134,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3134, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438194156
+    },
+    {
+      "source_id": 3623,
+      "mode": "apply",
+      "product_id": 2135,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3135, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438204178
+    },
+    {
+      "source_id": 3622,
+      "mode": "apply",
+      "product_id": 2136,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3136, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438214372
+    },
+    {
+      "source_id": 3621,
+      "mode": "apply",
+      "product_id": 2137,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3137, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438224159
+    },
+    {
+      "source_id": 3620,
+      "mode": "apply",
+      "product_id": 2138,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3138, \"source\": {\"title\": \"خرز كرستال زجاج مضلع موج ( 8 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792438234362
     }
   ]
 }
