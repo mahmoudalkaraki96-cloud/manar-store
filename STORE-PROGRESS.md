@@ -939,3 +939,64 @@
 - دوفش#1203 ↔ صنف#1324: synced؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1203
 - دوفش#1202 ↔ صنف#1325: synced؛ بالدزينة=6₪. https://dofesh.ps/?app=product.show.1202
 - دوفش#1201 ↔ صنف#1145: synced؛ بالحبة=15₪؛ 10 حبة=100₪. https://dofesh.ps/?app=product.show.1201
+
+
+### 2026-10-19T14:44:32.026493+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T14:44:32.026493+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 60, "no_options": 84, "missing_source": 2, "unsupported_customization_or_minimum": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1200 ↔ صنف#1326: synced؛ بالحبة=3₪؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1200
+- دوفش#1199 ↔ صنف#1327: no_options؛ عطر يارا غطاء خشبي مغلفة. https://dofesh.ps/?app=product.show.1199
+- دوفش#1198 ↔ صنف#1328: no_options؛ بخاخ 5 مل زجاج. https://dofesh.ps/?app=product.show.1198
+- دوفش#1197 ↔ صنف#1329: no_options؛ جاط حنا مميز. https://dofesh.ps/?app=product.show.1197
+- دوفش#1196 ↔ صنف#1146: no_options؛ كريم لالين ابيض اصلي. https://dofesh.ps/?app=product.show.1196
+- دوفش#1195 ↔ صنف#1330: synced؛ بالحبة=1₪؛ 50 حبة=40₪. https://dofesh.ps/?app=product.show.1195
+- دوفش#1193 ↔ صنف#1331: no_options؛ دب تخرج حجم كبير 35سم. https://dofesh.ps/?app=product.show.1193
+- دوفش#1192 ↔ صنف#1147: no_options؛ كاسة عروس كبيرة للتزيين ارتفاع 30 cm. https://dofesh.ps/?app=product.show.1192
+- دوفش#1191 ↔ صنف#1332: no_options؛ قاعدة اكريلك مستطيل ذهبي مقاس (40*24) cm. https://dofesh.ps/?app=product.show.1191
+- دوفش#1190 ↔ صنف#1333: no_options؛ ورد زيتون. https://dofesh.ps/?app=product.show.1190
+- دوفش#1189 ↔ صنف#1334: synced؛ بالحبة=8₪؛ 12 حبة=80₪. https://dofesh.ps/?app=product.show.1189
+- دوفش#1188 ↔ صنف#1335: no_options؛ طربوش راس خمري مع شرشوبة. https://dofesh.ps/?app=product.show.1188
+- دوفش#1187 ↔ صنف#1336: no_options؛ مبخرة زيت سيراميك. https://dofesh.ps/?app=product.show.1187
+- دوفش#1186 ↔ صنف#1337: no_options؛ مبخرة زيت سيراميك. https://dofesh.ps/?app=product.show.1186
+- دوفش#1185 ↔ صنف#1148: no_options؛ علاقة فضي معدنية (50 حبة ). https://dofesh.ps/?app=product.show.1185
+- دوفش#1184 ↔ صنف#1338: no_options؛ ورد كالا. https://dofesh.ps/?app=product.show.1184
+- دوفش#1183 ↔ صنف#1339: synced؛ بالحبة=2.5₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.1183
+- دوفش#1182 ↔ صنف#1340: synced؛ بالحبة=2.5₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.1182
+- دوفش#1181 ↔ صنف#1341: synced؛ بالحبة=2.5₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.1181
+- دوفش#1180 ↔ صنف#1342: synced؛ بالحبة=2.5₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.1180
+- دوفش#1179 ↔ صنف#1343: synced؛ بالحبة=4₪؛ 12 حبة=36₪. https://dofesh.ps/?app=product.show.1179
+- دوفش#1178 ↔ صنف#1344: synced؛ بالحبة=4₪؛ 12 حبة=36₪. https://dofesh.ps/?app=product.show.1178
+- دوفش#1177 ↔ صنف#1345: no_options؛ راس لتلبيسة الذهب مع ايد. https://dofesh.ps/?app=product.show.1177
+- دوفش#1176 ↔ صنف#1149: synced؛ بالحبة=4₪؛ 4 حبة=10₪؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1176
+- دوفش#1175 ↔ صنف#1346: no_options؛ شبر مبارك التخرج 25 متر. https://dofesh.ps/?app=product.show.1175
+- دوفش#1174 ↔ صنف#1150: synced؛ بالحبة=70₪؛ 5 حبة=250₪. https://dofesh.ps/?app=product.show.1174
+- دوفش#1173 ↔ صنف#1151: no_options؛ ماكنة لزيق رفيع جودة مميزة. https://dofesh.ps/?app=product.show.1173
+- دوفش#1171 ↔ صنف#1347: synced؛ بالحبة=1₪؛ 12 حبة=10₪؛ 100 حبة=80₪. https://dofesh.ps/?app=product.show.1171
+- دوفش#1170 ↔ صنف#1348: synced؛ بالحبة=1₪؛ 12 حبة=10₪؛ 100 حبة=80₪. https://dofesh.ps/?app=product.show.1170
+- دوفش#1169 ↔ صنف#1349: synced؛ بيج / بالحبة=1₪؛ بيج / 12حبة=10₪؛ بيج / 100 حبة=80₪؛ نهدي / بالحبة=1₪؛ نهدي / 12حبة=10₪؛ نهدي / 100 حبة=80₪. https://dofesh.ps/?app=product.show.1169
+- دوفش#1167 ↔ صنف#1350: no_options؛ علب كرتون للعيد 50 حبة. https://dofesh.ps/?app=product.show.1167
+- دوفش#1166 ↔ صنف#1351: no_options؛ علب كرتون للعيد 50 حبة. https://dofesh.ps/?app=product.show.1166
+- دوفش#1165 ↔ صنف#1352: no_options؛ علب كرتون للعيد. https://dofesh.ps/?app=product.show.1165
+- دوفش#1164 ↔ صنف#1353: no_options؛ علب كرتون للعيد. https://dofesh.ps/?app=product.show.1164
+- دوفش#1163 ↔ صنف#1354: unsupported_customization_or_minimum؛ ظهريات صواني الحج. https://dofesh.ps/?app=product.show.1163
+- دوفش#1161 ↔ صنف#1355: no_options؛ مبخرة كعبة ريزن. https://dofesh.ps/?app=product.show.1161
+- دوفش#1160 ↔ صنف#1356: no_options؛ تعليقة باب اطار خشبي مع كتابة اكريلك في بيتنا عروس. https://dofesh.ps/?app=product.show.1160
+- دوفش#1159 ↔ صنف#1357: no_options؛ تعليقة باب اطار خشب مع كتابة اكريلك في بيتنا عريس. https://dofesh.ps/?app=product.show.1159
+- دوفش#1158 ↔ صنف#1358: no_options؛ تعليقة باب اطار خشب مع عبارة اكريلك في بيتنا حناء. https://dofesh.ps/?app=product.show.1158
+- دوفش#1157 ↔ صنف#1359: no_options؛ ستاند خشب مبزر للهدايا وتلابيس الذهب ( ارتفاع 38/عرض 34/عمق15). https://dofesh.ps/?app=product.show.1157
+- دوفش#1156 ↔ صنف#1152: synced؛ بالدزينة=24₪. https://dofesh.ps/?app=product.show.1156
+- دوفش#1155 ↔ صنف#1360: no_options؛ ستاند ذهب مع عبارة وقطع لعرض الذهب. https://dofesh.ps/?app=product.show.1155
+- دوفش#1154 ↔ صنف#1361: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1154
+- دوفش#1153 ↔ صنف#1362: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1153
+- دوفش#1152 ↔ صنف#1363: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1152
+- دوفش#1151 ↔ صنف#1364: no_options؛ شمع معطر مزين. https://dofesh.ps/?app=product.show.1151
+- دوفش#1150 ↔ صنف#1365: no_options؛ شمع معطر مزين. https://dofesh.ps/?app=product.show.1150
+- دوفش#1149 ↔ صنف#1366: synced؛ 12 حبة=15₪. https://dofesh.ps/?app=product.show.1149
+- دوفش#1148 ↔ صنف#1367: no_options؛ صندوق كرتون مع قاطع 24 لون سكري. https://dofesh.ps/?app=product.show.1148
+- دوفش#1147 ↔ صنف#1368: synced؛ 12 حبة=18₪. https://dofesh.ps/?app=product.show.1147
