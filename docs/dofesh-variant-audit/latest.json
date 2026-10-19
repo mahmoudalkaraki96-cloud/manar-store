@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T15:34:16.378488+03:00",
+  "updated_at": "2026-10-19T15:42:34.439476+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -3619,6 +3619,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1637, \"source\": {\"title\": \"شبر تول 25 متر ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
       "updated_at": 1792413255542
+    },
+    {
+      "source_id": 832,
+      "mode": "apply",
+      "product_id": 638,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1638, \"source\": {\"title\": \"ورد فلل مع لولو لون بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413262985
+    },
+    {
+      "source_id": 831,
+      "mode": "apply",
+      "product_id": 639,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1639, \"source\": {\"title\": \"ورد ففل مع لولو ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413273144
+    },
+    {
+      "source_id": 830,
+      "mode": "apply",
+      "product_id": 640,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1640, \"source\": {\"title\": \"عطر yara moi\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792413282826
+    },
+    {
+      "source_id": 829,
+      "mode": "apply",
+      "product_id": 641,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1641, \"source\": {\"title\": \"علبة كرتون للمسك مقاس( 8*8*13)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792413292882
+    },
+    {
+      "source_id": 828,
+      "mode": "apply",
+      "product_id": 201,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1201, \"source\": {\"title\": \"اشكال اكرليك للتخرج\", \"variants\": [{\"name\": \"ذهبي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي لاصق / 30 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"ذهبي لاصق / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"فضي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"فضي لاصق / 30 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"فضي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي لاصق / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"اسود لاصق / 10 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"اسود لاصق / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"اسود لاصق / 50 قطعة\", \"price\": 6000, \"active\": true}, {\"name\": \"اسود لاصق / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"ذهبي مع خشب / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي مع خشب / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"ذهبي مع خشب / 50 قطعة\", \"price\": 5500, \"active\": true}, {\"name\": \"ذهبي مع خشب / 100 قطعة\", \"price\": 11000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792413302901
+    },
+    {
+      "source_id": 827,
+      "mode": "apply",
+      "product_id": 642,
+      "status": "synced",
+      "detail": "{\"item_number\": 1642, \"name\": \"علبة اكريلك شفاف مقاس (٨*٨*٨)\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"علبة اكريلك شفاف مقاس (8*8*8)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": false}, {\"name\": \"6 حبة\", \"price\": 1800, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/642\", \"source_url\": \"https://dofesh.ps/?app=product.show.827\"}",
+      "updated_at": 1792413313199
+    },
+    {
+      "source_id": 825,
+      "mode": "apply",
+      "product_id": 160,
+      "status": "synced",
+      "detail": "{\"item_number\": 1160, \"name\": \"قنينة زمزم سادى ١١ سم\", \"before_price\": 1200, \"before_variants\": [], \"source\": {\"title\": \"قنينة زمزم سادى 11 سم\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/160\", \"source_url\": \"https://dofesh.ps/?app=product.show.825\"}",
+      "updated_at": 1792413323289
+    },
+    {
+      "source_id": 824,
+      "mode": "apply",
+      "product_id": 643,
+      "status": "synced",
+      "detail": "{\"item_number\": 1643, \"name\": \"علبة bvc قاعدتين كرتون مقاس (8*8*12)\", \"before_price\": 2000, \"before_variants\": [], \"source\": {\"title\": \"علبة bvc قاعدتين كرتون مقاس (8*8*12)\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/643\", \"source_url\": \"https://dofesh.ps/?app=product.show.824\"}",
+      "updated_at": 1792413333280
+    },
+    {
+      "source_id": 823,
+      "mode": "apply",
+      "product_id": 644,
+      "status": "synced",
+      "detail": "{\"item_number\": 1644, \"name\": \"علبة bvc قاعدة كرتون مقاس (8*8*14)\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"علبة bvc قاعدة كرتون مقاس (8*8*14)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"10\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/644\", \"source_url\": \"https://dofesh.ps/?app=product.show.823\"}",
+      "updated_at": 1792413343337
+    },
+    {
+      "source_id": 822,
+      "mode": "apply",
+      "product_id": 645,
+      "status": "synced",
+      "detail": "{\"item_number\": 1645, \"name\": \"علبة bvc مقاس (18*12*6)\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"علبة bvc مقاس (18*12*6)\", \"variants\": [{\"name\": \"1\", \"price\": 400, \"active\": true}, {\"name\": \"10\", \"price\": 3000, \"active\": true}, {\"name\": \"50\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/645\", \"source_url\": \"https://dofesh.ps/?app=product.show.822\"}",
+      "updated_at": 1792413353291
+    },
+    {
+      "source_id": 821,
+      "mode": "apply",
+      "product_id": 646,
+      "status": "synced",
+      "detail": "{\"item_number\": 1646, \"name\": \"مبخرة الكتروني\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة الكتروني\", \"variants\": [{\"name\": \"حبة واحدة\", \"price\": 700, \"active\": false}, {\"name\": \"50\", \"price\": 30000, \"active\": false}, {\"name\": \"100\", \"price\": 50000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/646\", \"source_url\": \"https://dofesh.ps/?app=product.show.821\"}",
+      "updated_at": 1792413363406
+    },
+    {
+      "source_id": 820,
+      "mode": "apply",
+      "product_id": 647,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1647, \"source\": {\"title\": \"علبة bvc مقاس 15*12*3\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413373144
+    },
+    {
+      "source_id": 819,
+      "mode": "apply",
+      "product_id": 648,
+      "status": "synced",
+      "detail": "{\"item_number\": 1648, \"name\": \"مبخرة تراث مدور\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"مبخرة تراث مدور\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"store_url\": \"https://manarstore.ps/product/648\", \"source_url\": \"https://dofesh.ps/?app=product.show.819\"}",
+      "updated_at": 1792413383586
+    },
+    {
+      "source_id": 818,
+      "mode": "apply",
+      "product_id": 649,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1649, \"source\": {\"title\": \"تاج اكريلك ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792413393020
+    },
+    {
+      "source_id": 817,
+      "mode": "apply",
+      "product_id": 650,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1650, \"source\": {\"title\": \"مبخرة شرفتونا جدلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792413403058
+    },
+    {
+      "source_id": 816,
+      "mode": "apply",
+      "product_id": 651,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1651, \"source\": {\"title\": \"مبخرة شرفتونا اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792413412931
+    },
+    {
+      "source_id": 814,
+      "mode": "apply",
+      "product_id": 652,
+      "status": "synced",
+      "detail": "{\"item_number\": 1652, \"name\": \"مبخرة مستطيلة مبزرة\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"مبخرة مستطيلة مبزرة\", \"variants\": [{\"name\": \"مع علبة كرتون\", \"price\": 800, \"active\": true}, {\"name\": \"بدون علبة كرتون\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/652\", \"source_url\": \"https://dofesh.ps/?app=product.show.814\"}",
+      "updated_at": 1792413423375
+    },
+    {
+      "source_id": 813,
+      "mode": "apply",
+      "product_id": 653,
+      "status": "synced",
+      "detail": "{\"item_number\": 1653, \"name\": \"منظم اكسسوار جلد\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"منظم اكسسوار جلد\", \"variants\": [{\"name\": \"ابيض / حبة وحدة\", \"price\": 600, \"active\": true}, {\"name\": \"ابيض / 10 حبة\", \"price\": 600, \"active\": false}, {\"name\": \"ابيض / 50 حبة\", \"price\": 600, \"active\": false}, {\"name\": \"بيج / حبة وحدة\", \"price\": 600, \"active\": true}, {\"name\": \"بيج / 10 حبة\", \"price\": 600, \"active\": false}, {\"name\": \"بيج / 50 حبة\", \"price\": 600, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/653\", \"source_url\": \"https://dofesh.ps/?app=product.show.813\"}",
+      "updated_at": 1792413433302
+    },
+    {
+      "source_id": 812,
+      "mode": "apply",
+      "product_id": 654,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1654, \"source\": {\"title\": \"كعبة كرتون مقاس (6*6*6)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413443040
+    },
+    {
+      "source_id": 811,
+      "mode": "apply",
+      "product_id": 655,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1655, \"source\": {\"title\": \"مصحف الكهف رسمة كعبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792413453044
+    },
+    {
+      "source_id": 810,
+      "mode": "apply",
+      "product_id": 656,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1656, \"source\": {\"title\": \"عطر غزال\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792413462824
+    },
+    {
+      "source_id": 809,
+      "mode": "apply",
+      "product_id": 657,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1657, \"source\": {\"title\": \"طقم بوديكير جلد 6 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792413473197
+    },
+    {
+      "source_id": 808,
+      "mode": "apply",
+      "product_id": 658,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1658, \"source\": {\"title\": \"طقم بوديكير 6 قطعة جلد ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792413482821
+    },
+    {
+      "source_id": 807,
+      "mode": "apply",
+      "product_id": 659,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1659, \"source\": {\"title\": \"اية الكرسي كرستال\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792413492946
+    },
+    {
+      "source_id": 806,
+      "mode": "apply",
+      "product_id": 660,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1660, \"source\": {\"title\": \"شنتة اكريلك وسط\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792413503094
+    },
+    {
+      "source_id": 805,
+      "mode": "apply",
+      "product_id": 661,
+      "status": "synced",
+      "detail": "{\"item_number\": 1661, \"name\": \"اية الكرسي كرستال قياس 11*8.5\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"اية الكرسي كرستال قياس 11*8.5\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": false}, {\"name\": \"50 حبة\", \"price\": 30000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/661\", \"source_url\": \"https://dofesh.ps/?app=product.show.805\"}",
+      "updated_at": 1792413513328
+    },
+    {
+      "source_id": 804,
+      "mode": "apply",
+      "product_id": 662,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1662, \"source\": {\"title\": \"شمعة مع قاعدة حجر مع غلاف صحاب مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792413522931
+    },
+    {
+      "source_id": 803,
+      "mode": "apply",
+      "product_id": 663,
+      "status": "synced",
+      "detail": "{\"item_number\": 1663, \"name\": \"علبة bvc مقاس (10*10*10)\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"علبة bvc مقاس (10*10*10)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/663\", \"source_url\": \"https://dofesh.ps/?app=product.show.803\"}",
+      "updated_at": 1792413533147
+    },
+    {
+      "source_id": 802,
+      "mode": "apply",
+      "product_id": 664,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1664, \"source\": {\"title\": \"اكسسوار وردة محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413542870
+    },
+    {
+      "source_id": 801,
+      "mode": "apply",
+      "product_id": 665,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1665, \"source\": {\"title\": \"شنتة اكريلك شفاف مقاس (6*6*15)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792413552828
+    },
+    {
+      "source_id": 800,
+      "mode": "apply",
+      "product_id": 666,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1666, \"source\": {\"title\": \"سبحة بامبو خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792413562834
+    },
+    {
+      "source_id": 799,
+      "mode": "apply",
+      "product_id": 667,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1667, \"source\": {\"title\": \"بكلة ستان زيتي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413573015
+    },
+    {
+      "source_id": 798,
+      "mode": "apply",
+      "product_id": 668,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1668, \"source\": {\"title\": \"بكلة ستان نود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413582825
+    },
+    {
+      "source_id": 797,
+      "mode": "apply",
+      "product_id": 669,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1669, \"source\": {\"title\": \"بكلة ستان بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413593174
+    },
+    {
+      "source_id": 796,
+      "mode": "apply",
+      "product_id": 670,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1670, \"source\": {\"title\": \"بكلة ستان ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413603070
+    },
+    {
+      "source_id": 795,
+      "mode": "apply",
+      "product_id": 671,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1671, \"source\": {\"title\": \"بكلة خمري ستان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413612823
+    },
+    {
+      "source_id": 794,
+      "mode": "apply",
+      "product_id": 672,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1672, \"source\": {\"title\": \"حماتي الغالية اكريلك 5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792413623064
+    },
+    {
+      "source_id": 793,
+      "mode": "apply",
+      "product_id": 673,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1673, \"source\": {\"title\": \"امي الحبيبة اكريلك 5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792413633145
+    },
+    {
+      "source_id": 792,
+      "mode": "apply",
+      "product_id": 674,
+      "status": "synced",
+      "detail": "{\"item_number\": 1674, \"name\": \"قطعة اكمريلك مدور مع حفر مقاس 4 سم\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"قطعة اكمريلك مدور مع حفر مقاس 4 سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/674\", \"source_url\": \"https://dofesh.ps/?app=product.show.792\"}",
+      "updated_at": 1792413643302
+    },
+    {
+      "source_id": 791,
+      "mode": "apply",
+      "product_id": 675,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1675, \"source\": {\"title\": \"كعبة اكريلك 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792413652927
+    },
+    {
+      "source_id": 790,
+      "mode": "apply",
+      "product_id": 676,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1676, \"source\": {\"title\": \"كرتون بيبي بنت 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792413663054
+    },
+    {
+      "source_id": 789,
+      "mode": "apply",
+      "product_id": 677,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1677, \"source\": {\"title\": \"كرتون بيبي ولد 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792413672936
+    },
+    {
+      "source_id": 788,
+      "mode": "apply",
+      "product_id": 678,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1678, \"source\": {\"title\": \"كعبة كرتون 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792413683119
+    },
+    {
+      "source_id": 787,
+      "mode": "apply",
+      "product_id": 161,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1161, \"source\": {\"title\": \"جزدان تراث قماش مقاس 15*10\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792413693100
+    },
+    {
+      "source_id": 786,
+      "mode": "apply",
+      "product_id": 162,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1162, \"source\": {\"title\": \"شجرة عظم 7 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 8000}}",
+      "updated_at": 1792413703186
+    },
+    {
+      "source_id": 785,
+      "mode": "apply",
+      "product_id": 679,
+      "status": "synced",
+      "detail": "{\"item_number\": 1679, \"name\": \"زجاج كرستال مقلوب مقاس(9*4.5) (كبير)\", \"before_price\": 1800, \"before_variants\": [], \"source\": {\"title\": \"زجاج كرستال مقلوب مقاس(9*4.5) (كبير)\", \"variants\": [{\"name\": \"6 حبة\", \"price\": 1800, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/679\", \"source_url\": \"https://dofesh.ps/?app=product.show.785\"}",
+      "updated_at": 1792413713084
+    },
+    {
+      "source_id": 784,
+      "mode": "apply",
+      "product_id": 680,
+      "status": "synced",
+      "detail": "{\"item_number\": 1680, \"name\": \"كرستال مقلوب مقاس (8*3.5cm) صغير\", \"before_price\": 2400, \"before_variants\": [], \"source\": {\"title\": \"كرستال مقلوب مقاس (8*3.5cm) صغير\", \"variants\": [{\"name\": \"12 حبة\", \"price\": 2400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/680\", \"source_url\": \"https://dofesh.ps/?app=product.show.784\"}",
+      "updated_at": 1792413723200
+    },
+    {
+      "source_id": 783,
+      "mode": "apply",
+      "product_id": 681,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1681, \"source\": {\"title\": \"اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413732950
+    },
+    {
+      "source_id": 782,
+      "mode": "apply",
+      "product_id": 682,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1682, \"source\": {\"title\": \"اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413742868
+    },
+    {
+      "source_id": 781,
+      "mode": "apply",
+      "product_id": 683,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1683, \"source\": {\"title\": \"اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792413752947
     }
   ]
 }

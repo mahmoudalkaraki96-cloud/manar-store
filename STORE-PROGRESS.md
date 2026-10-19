@@ -1366,3 +1366,64 @@
 - دوفش#835 ↔ صنف#1635: no_options؛ شبر تول معرق ازرق 25 متر. https://dofesh.ps/?app=product.show.835
 - دوفش#834 ↔ صنف#1636: no_options؛ شبر تول معرق بيج 25 متر. https://dofesh.ps/?app=product.show.834
 - دوفش#833 ↔ صنف#1637: no_options؛ شبر تول 25 متر ابيض. https://dofesh.ps/?app=product.show.833
+
+
+### 2026-10-19T15:42:34.439476+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:42:34.439476+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 229, "no_options": 253, "missing_source": 3, "unsupported_customization_or_minimum": 4, "matched": 8}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#832 ↔ صنف#1638: no_options؛ ورد فلل مع لولو لون بيج. https://dofesh.ps/?app=product.show.832
+- دوفش#831 ↔ صنف#1639: no_options؛ ورد ففل مع لولو ابيض. https://dofesh.ps/?app=product.show.831
+- دوفش#830 ↔ صنف#1640: no_options؛ عطر yara moi. https://dofesh.ps/?app=product.show.830
+- دوفش#829 ↔ صنف#1641: no_options؛ علبة كرتون للمسك مقاس( 8*8*13). https://dofesh.ps/?app=product.show.829
+- دوفش#828 ↔ صنف#1201: unsupported_customization_or_minimum؛ ذهبي لاصق / 10 قطعة=15₪؛ ذهبي لاصق / 30 قطعة=35₪؛ ذهبي لاصق / 50 قطعة=50₪؛ ذهبي لاصق / 100 قطعة=95₪؛ فضي لاصق / 10 قطعة=15₪؛ فضي لاصق / 30 قطعة=35₪؛ فضي لاصق / 50 قطعة=50₪؛ فضي لاصق / 100 قطعة=95₪؛ اسود لاصق / 10 قطعة=20₪؛ اسود لاصق / 30 قطعة=40₪؛ اسود لاصق / 50 قطعة=60₪؛ اسود لاصق / 100 قطعة=120₪؛ ذهبي مع خشب / 10 قطعة=15₪؛ ذهبي مع خشب / 30 قطعة=40₪؛ ذهبي مع خشب / 50 قطعة=55₪؛ ذهبي مع خشب / 100 قطعة=110₪. https://dofesh.ps/?app=product.show.828
+- دوفش#827 ↔ صنف#1642: synced؛ بالحبة=3₪؛ 6 حبة=18₪. https://dofesh.ps/?app=product.show.827
+- دوفش#825 ↔ صنف#1160: synced؛ بالدزينة=12₪. https://dofesh.ps/?app=product.show.825
+- دوفش#824 ↔ صنف#1643: synced؛ 10 قطعة=20₪؛ 50 قطعة=90₪. https://dofesh.ps/?app=product.show.824
+- دوفش#823 ↔ صنف#1644: synced؛ بالحبة=3₪؛ 10=25₪. https://dofesh.ps/?app=product.show.823
+- دوفش#822 ↔ صنف#1645: synced؛ 1=4₪؛ 10=30₪؛ 50=100₪. https://dofesh.ps/?app=product.show.822
+- دوفش#821 ↔ صنف#1646: synced؛ حبة واحدة=7₪؛ 50=300₪؛ 100=500₪. https://dofesh.ps/?app=product.show.821
+- دوفش#820 ↔ صنف#1647: no_options؛ علبة bvc مقاس 15*12*3. https://dofesh.ps/?app=product.show.820
+- دوفش#819 ↔ صنف#1648: synced؛ مبخرة تراث مدور. https://dofesh.ps/?app=product.show.819
+- دوفش#818 ↔ صنف#1649: no_options؛ تاج اكريلك ذهبي. https://dofesh.ps/?app=product.show.818
+- دوفش#817 ↔ صنف#1650: no_options؛ مبخرة شرفتونا جدلة. https://dofesh.ps/?app=product.show.817
+- دوفش#816 ↔ صنف#1651: no_options؛ مبخرة شرفتونا اسود. https://dofesh.ps/?app=product.show.816
+- دوفش#814 ↔ صنف#1652: synced؛ مع علبة كرتون=8₪؛ بدون علبة كرتون=6₪. https://dofesh.ps/?app=product.show.814
+- دوفش#813 ↔ صنف#1653: synced؛ ابيض / حبة وحدة=6₪؛ ابيض / 10 حبة=6₪؛ ابيض / 50 حبة=6₪؛ بيج / حبة وحدة=6₪؛ بيج / 10 حبة=6₪؛ بيج / 50 حبة=6₪. https://dofesh.ps/?app=product.show.813
+- دوفش#812 ↔ صنف#1654: no_options؛ كعبة كرتون مقاس (6*6*6). https://dofesh.ps/?app=product.show.812
+- دوفش#811 ↔ صنف#1655: no_options؛ مصحف الكهف رسمة كعبة. https://dofesh.ps/?app=product.show.811
+- دوفش#810 ↔ صنف#1656: no_options؛ عطر غزال. https://dofesh.ps/?app=product.show.810
+- دوفش#809 ↔ صنف#1657: no_options؛ طقم بوديكير جلد 6 قطعة. https://dofesh.ps/?app=product.show.809
+- دوفش#808 ↔ صنف#1658: no_options؛ طقم بوديكير 6 قطعة جلد ابيض. https://dofesh.ps/?app=product.show.808
+- دوفش#807 ↔ صنف#1659: no_options؛ اية الكرسي كرستال. https://dofesh.ps/?app=product.show.807
+- دوفش#806 ↔ صنف#1660: no_options؛ شنتة اكريلك وسط. https://dofesh.ps/?app=product.show.806
+- دوفش#805 ↔ صنف#1661: synced؛ بالحبة=7₪؛ 50 حبة=300₪. https://dofesh.ps/?app=product.show.805
+- دوفش#804 ↔ صنف#1662: no_options؛ شمعة مع قاعدة حجر مع غلاف صحاب مميز. https://dofesh.ps/?app=product.show.804
+- دوفش#803 ↔ صنف#1663: synced؛ بالحبة=2₪؛ 10 حبة=17₪. https://dofesh.ps/?app=product.show.803
+- دوفش#802 ↔ صنف#1664: no_options؛ اكسسوار وردة محجر. https://dofesh.ps/?app=product.show.802
+- دوفش#801 ↔ صنف#1665: no_options؛ شنتة اكريلك شفاف مقاس (6*6*15). https://dofesh.ps/?app=product.show.801
+- دوفش#800 ↔ صنف#1666: no_options؛ سبحة بامبو خشب. https://dofesh.ps/?app=product.show.800
+- دوفش#799 ↔ صنف#1667: no_options؛ بكلة ستان زيتي. https://dofesh.ps/?app=product.show.799
+- دوفش#798 ↔ صنف#1668: no_options؛ بكلة ستان نود. https://dofesh.ps/?app=product.show.798
+- دوفش#797 ↔ صنف#1669: no_options؛ بكلة ستان بيج. https://dofesh.ps/?app=product.show.797
+- دوفش#796 ↔ صنف#1670: no_options؛ بكلة ستان ذهبي. https://dofesh.ps/?app=product.show.796
+- دوفش#795 ↔ صنف#1671: no_options؛ بكلة خمري ستان. https://dofesh.ps/?app=product.show.795
+- دوفش#794 ↔ صنف#1672: no_options؛ حماتي الغالية اكريلك 5 سم. https://dofesh.ps/?app=product.show.794
+- دوفش#793 ↔ صنف#1673: no_options؛ امي الحبيبة اكريلك 5 سم. https://dofesh.ps/?app=product.show.793
+- دوفش#792 ↔ صنف#1674: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.792
+- دوفش#791 ↔ صنف#1675: no_options؛ كعبة اكريلك 4 سم. https://dofesh.ps/?app=product.show.791
+- دوفش#790 ↔ صنف#1676: no_options؛ كرتون بيبي بنت 4 سم. https://dofesh.ps/?app=product.show.790
+- دوفش#789 ↔ صنف#1677: no_options؛ كرتون بيبي ولد 4 سم. https://dofesh.ps/?app=product.show.789
+- دوفش#788 ↔ صنف#1678: no_options؛ كعبة كرتون 4 سم. https://dofesh.ps/?app=product.show.788
+- دوفش#787 ↔ صنف#1161: no_options؛ جزدان تراث قماش مقاس 15*10. https://dofesh.ps/?app=product.show.787
+- دوفش#786 ↔ صنف#1162: no_options؛ شجرة عظم 7 فروع. https://dofesh.ps/?app=product.show.786
+- دوفش#785 ↔ صنف#1679: synced؛ 6 حبة=18₪. https://dofesh.ps/?app=product.show.785
+- دوفش#784 ↔ صنف#1680: synced؛ 12 حبة=24₪. https://dofesh.ps/?app=product.show.784
+- دوفش#783 ↔ صنف#1681: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.783
+- دوفش#782 ↔ صنف#1682: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.782
+- دوفش#781 ↔ صنف#1683: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.781
