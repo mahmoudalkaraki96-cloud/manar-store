@@ -1986,3 +1986,64 @@
 - دوفش#397 ↔ صنف#1979: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.397
 - دوفش#396 ↔ صنف#1980: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.396
 - دوفش#395 ↔ صنف#1981: no_options؛ سلة مزينة لون نود للاعراس. https://dofesh.ps/?app=product.show.395
+
+
+### 2026-10-19T20:50:52.315290+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T20:50:52.315290+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 88, "synced": 18}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4443 ↔ صنف#2369: synced؛ بدون علبة خاصة=3.5₪؛ مع علبة كرتون ابيض مخصصة=4.5₪. https://jabaristore.com/?app=product.show.4443
+- الجعبري#4441 ↔ صنف#2370: no_options؛ عطر زيرجوف الذهبي 30Ml. https://jabaristore.com/?app=product.show.4441
+- الجعبري#4440 ↔ صنف#2371: no_options؛ عطر Gold Lady ( 30 مل). https://jabaristore.com/?app=product.show.4440
+- الجعبري#4439 ↔ صنف#2372: no_options؛ عطر Pink Lady ( 30 مل). https://jabaristore.com/?app=product.show.4439
+- الجعبري#4438 ↔ صنف#2373: no_options؛ عطر مسك قصة ~ 30ml~. https://jabaristore.com/?app=product.show.4438
+- الجعبري#4437 ↔ صنف#2374: no_options؛ عطر جورجينا ~ 30ml~. https://jabaristore.com/?app=product.show.4437
+- الجعبري#4436 ↔ صنف#2375: no_options؛ عطر قصة Mystical ( 30 مل ). https://jabaristore.com/?app=product.show.4436
+- الجعبري#4435 ↔ صنف#2376: no_options؛ عطر زيرجوف ايربا بورا ~ 30ml~. https://jabaristore.com/?app=product.show.4435
+- الجعبري#4433 ↔ صنف#2377: no_options؛ مروحة شكل ريش باللون الزهر مع فيونكة شيفون. https://jabaristore.com/?app=product.show.4433
+- الجعبري#4432 ↔ صنف#2378: no_options؛ مروحة شكل ريش باللون الايفري مع فيونكة شيفون. https://jabaristore.com/?app=product.show.4432
+- الجعبري#4429 ↔ صنف#2379: no_options؛ وعاء زجاج 8*15 سم (فارغ بدون شمع). https://jabaristore.com/?app=product.show.4429
+- الجعبري#4428 ↔ صنف#2380: no_options؛ طربوش احمر للشوكلاتة ( 12 قطعة ). https://jabaristore.com/?app=product.show.4428
+- الجعبري#4427 ↔ صنف#2381: no_options؛ مباخر سيراميك ( مجسم الكعبة 🕋) 6.5*6.5 سم. https://jabaristore.com/?app=product.show.4427
+- الجعبري#4426 ↔ صنف#2382: no_options؛ اكياس بلور مقبض جلد دائري لون ابيض (10 قطعة) 9*14*16 سم. https://jabaristore.com/?app=product.show.4426
+- الجعبري#4425 ↔ صنف#2383: no_options؛ تل لتغليف الورد ( ايفري حافة لولو ). https://jabaristore.com/?app=product.show.4425
+- الجعبري#4424 ↔ صنف#2384: no_options؛ مباخر سيراميك 6*6 سم. https://jabaristore.com/?app=product.show.4424
+- الجعبري#4423 ↔ صنف#2385: no_options؛ عصي مضيئة. https://jabaristore.com/?app=product.show.4423
+- الجعبري#4408 ↔ صنف#2386: no_options؛ مروحة / مراوح خشبية 🪭. https://jabaristore.com/?app=product.show.4408
+- الجعبري#4407 ↔ صنف#2387: no_options؛ مروحة / مراوح كرتون يد بلاستيك 🪭. https://jabaristore.com/?app=product.show.4407
+- الجعبري#4406 ↔ صنف#2388: no_options؛ مروحة / مراوح بلاستيك فضي 🪭. https://jabaristore.com/?app=product.show.4406
+- الجعبري#4405 ↔ صنف#2546: no_options؛ مروحة / مراوح بلاستيك ذهبي 🪭. https://jabaristore.com/?app=product.show.4405
+- الجعبري#4404 ↔ صنف#2547: no_options؛ مروحة / مراوح كرتون مع رسمة ( ورد 🌷 ). https://jabaristore.com/?app=product.show.4404
+- الجعبري#4403 ↔ صنف#2548: no_options؛ مروحة / مراوح كرتون مع رسمة ( ورد 🌷 ). https://jabaristore.com/?app=product.show.4403
+- الجعبري#4402 ↔ صنف#2549: synced؛ بالقطعة=3₪؛ 50 قطعة=105₪. https://jabaristore.com/?app=product.show.4402
+- الجعبري#4401 ↔ صنف#2550: no_options؛ بكج هدايا للمعتمرين. https://jabaristore.com/?app=product.show.4401
+- الجعبري#4400 ↔ صنف#2551: no_options؛ قام ايلاينر اسود. https://jabaristore.com/?app=product.show.4400
+- الجعبري#4398 ↔ صنف#2552: no_options؛ مطربان زجاج غطاء معدن. https://jabaristore.com/?app=product.show.4398
+- الجعبري#4397 ↔ صنف#2389: synced؛ بالقطعة=7₪؛ بالدزينة (12قطعة)=50₪. https://jabaristore.com/?app=product.show.4397
+- الجعبري#4396 ↔ صنف#2390: synced؛ بالقطعة=7₪؛ بالدزينة (12قطعة)=50₪. https://jabaristore.com/?app=product.show.4396
+- الجعبري#4395 ↔ صنف#2391: synced؛ بالقطعة=7₪؛ بالدزينة (12قطعة)=50₪. https://jabaristore.com/?app=product.show.4395
+- الجعبري#4394 ↔ صنف#2392: synced؛ بالقطعة=7₪؛ بالدزينة (12قطعة)=50₪. https://jabaristore.com/?app=product.show.4394
+- الجعبري#4393 ↔ صنف#2553: no_options؛ صندوق خشب مغطاه بالاكريلك ( 4*6*8 سم ). https://jabaristore.com/?app=product.show.4393
+- الجعبري#4392 ↔ صنف#2554: no_options؛ اعواد بخور SHALIMAR سداسي ( روز ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4392
+- الجعبري#4391 ↔ صنف#2555: no_options؛ اعواد بخور SHALIMAR سداسي ( فريش روز ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4391
+- الجعبري#4390 ↔ صنف#2556: no_options؛ اعواد بخور SHALIMAR سداسي ( صندل ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4390
+- الجعبري#4389 ↔ صنف#2557: no_options؛ اعواد بخور SHALIMAR سداسي ( الفراولة ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4389
+- الجعبري#4388 ↔ صنف#2558: no_options؛ اعواد بخور SHALIMAR سداسي ( عود الخليج ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4388
+- الجعبري#4387 ↔ صنف#2559: no_options؛ اعواد بخور SHALIMAR سداسي ( مانجا ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4387
+- الجعبري#4386 ↔ صنف#2560: no_options؛ اعواد بخور SHALIMAR سداسي ( الوردة الصفراء ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4386
+- الجعبري#4385 ↔ صنف#2561: no_options؛ اعواد بخور SHALIMAR سداسي ( CHAMPA ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4385
+- الجعبري#4384 ↔ صنف#2562: no_options؛ اعواد بخور SHALIMAR سداسي ( عؤدة ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4384
+- الجعبري#4383 ↔ صنف#2563: no_options؛ اعواد بخور SHALIMAR سداسي ( فانيلا ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4383
+- الجعبري#4382 ↔ صنف#2564: no_options؛ اعواد بخور SHALIMAR سداسي ( الوردة البيضاء ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4382
+- الجعبري#4381 ↔ صنف#2565: no_options؛ اعواد بخور SHALIMAR سداسي ( ياسمين ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4381
+- الجعبري#4380 ↔ صنف#2566: no_options؛ اعواد بخور SHALIMAR سداسي ( غاردينيا ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4380
+- الجعبري#4379 ↔ صنف#2567: no_options؛ اعواد بخور SHALIMAR سداسي ( صندل زعفران ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4379
+- الجعبري#4378 ↔ صنف#2568: no_options؛ اعواد بخور SHALIMAR سداسي ( امبر ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4378
+- الجعبري#4377 ↔ صنف#2569: no_options؛ اعواد بخور SHALIMAR سداسي ( لوتس ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4377
+- الجعبري#4376 ↔ صنف#2570: no_options؛ اعواد بخور SHALIMAR سداسي ( ميره ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4376
+- الجعبري#4375 ↔ صنف#2571: no_options؛ اعواد بخور SHALIMAR سداسي ( تيوب روز ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4375

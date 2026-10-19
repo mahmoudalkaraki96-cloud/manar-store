@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:42:34.098603+03:00",
+  "updated_at": "2026-10-19T20:50:52.315290+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -443,6 +443,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2368, \"source\": {\"title\": \"صينية اكريلك ( 3*10*10 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2400}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792431753499
+    },
+    {
+      "source_id": 4443,
+      "mode": "apply",
+      "product_id": 1369,
+      "status": "synced",
+      "detail": "{\"item_number\": 2369, \"name\": \"عبوة زجاج بلور رش للعطور رأس ذهبي 30 مل ( فارغة )\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج بلور رش للعطور راس ذهبي 30 مل ( فارغة )\", \"variants\": [{\"name\": \"بدون علبة خاصة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"مع علبة كرتون ابيض مخصصة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج بلور رش للعطور راس ذهبي 30 مل ( فارغة )\", \"variants\": [{\"name\": \"بدون علبة خاصة\", \"price\": 300, \"active\": true}, {\"name\": \"مع علبة كرتون ابيض مخصصة\", \"price\": 400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بدون علبة خاصة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"مع علبة كرتون ابيض مخصصة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1369\", \"source_url\": \"https://jabaristore.com/?app=product.show.4443\"}",
+      "updated_at": 1792431761712
+    },
+    {
+      "source_id": 4441,
+      "mode": "apply",
+      "product_id": 1370,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2370, \"source\": {\"title\": \"عطر زيرجوف الذهبي 30Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431771664
+    },
+    {
+      "source_id": 4440,
+      "mode": "apply",
+      "product_id": 1371,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2371, \"source\": {\"title\": \"عطر Gold Lady ( 30 مل)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431781428
+    },
+    {
+      "source_id": 4439,
+      "mode": "apply",
+      "product_id": 1372,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2372, \"source\": {\"title\": \"عطر Pink Lady ( 30 مل)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431791418
+    },
+    {
+      "source_id": 4438,
+      "mode": "apply",
+      "product_id": 1373,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2373, \"source\": {\"title\": \"عطر مسك قصة ~ 30ml~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431801404
+    },
+    {
+      "source_id": 4437,
+      "mode": "apply",
+      "product_id": 1374,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2374, \"source\": {\"title\": \"عطر جورجينا ~ 30ml~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431811632
+    },
+    {
+      "source_id": 4436,
+      "mode": "apply",
+      "product_id": 1375,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2375, \"source\": {\"title\": \"عطر قصة Mystical ( 30 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431821410
+    },
+    {
+      "source_id": 4435,
+      "mode": "apply",
+      "product_id": 1376,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2376, \"source\": {\"title\": \"عطر زيرجوف ايربا بورا ~ 30ml~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431831661
+    },
+    {
+      "source_id": 4433,
+      "mode": "apply",
+      "product_id": 1377,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2377, \"source\": {\"title\": \"مروحة شكل ريش باللون الزهر مع فيونكة شيفون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431841406
+    },
+    {
+      "source_id": 4432,
+      "mode": "apply",
+      "product_id": 1378,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2378, \"source\": {\"title\": \"مروحة شكل ريش باللون الايفري مع فيونكة شيفون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431851430
+    },
+    {
+      "source_id": 4429,
+      "mode": "apply",
+      "product_id": 1379,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2379, \"source\": {\"title\": \"وعاء زجاج 8*15 سم (فارغ بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431861424
+    },
+    {
+      "source_id": 4428,
+      "mode": "apply",
+      "product_id": 1380,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2380, \"source\": {\"title\": \"طربوش احمر للشوكلاتة ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431871423
+    },
+    {
+      "source_id": 4427,
+      "mode": "apply",
+      "product_id": 1381,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2381, \"source\": {\"title\": \"مباخر سيراميك ( مجسم الكعبة 🕋) 6.5*6.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431881697
+    },
+    {
+      "source_id": 4426,
+      "mode": "apply",
+      "product_id": 1382,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2382, \"source\": {\"title\": \"اكياس بلور مقبض جلد دائري لون ابيض (10 قطعة) 9*14*16 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431891434
+    },
+    {
+      "source_id": 4425,
+      "mode": "apply",
+      "product_id": 1383,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2383, \"source\": {\"title\": \"تل لتغليف الورد ( ايفري حافة لولو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431901421
+    },
+    {
+      "source_id": 4424,
+      "mode": "apply",
+      "product_id": 1384,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2384, \"source\": {\"title\": \"مباخر سيراميك 6*6 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431911431
+    },
+    {
+      "source_id": 4423,
+      "mode": "apply",
+      "product_id": 1385,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2385, \"source\": {\"title\": \"عصي مضيئة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431921431
+    },
+    {
+      "source_id": 4408,
+      "mode": "apply",
+      "product_id": 1386,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2386, \"source\": {\"title\": \"مروحة / مراوح خشبية 🪭\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431931664
+    },
+    {
+      "source_id": 4407,
+      "mode": "apply",
+      "product_id": 1387,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2387, \"source\": {\"title\": \"مروحة / مراوح كرتون يد بلاستيك 🪭\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431941724
+    },
+    {
+      "source_id": 4406,
+      "mode": "apply",
+      "product_id": 1388,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2388, \"source\": {\"title\": \"مروحة / مراوح بلاستيك فضي 🪭\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431951422
+    },
+    {
+      "source_id": 4405,
+      "mode": "apply",
+      "product_id": 1546,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2546, \"source\": {\"title\": \"مروحة / مراوح بلاستيك ذهبي 🪭\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431961443
+    },
+    {
+      "source_id": 4404,
+      "mode": "apply",
+      "product_id": 1547,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2547, \"source\": {\"title\": \"مروحة / مراوح كرتون مع رسمة ( ورد 🌷 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431971680
+    },
+    {
+      "source_id": 4403,
+      "mode": "apply",
+      "product_id": 1548,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2548, \"source\": {\"title\": \"مروحة / مراوح كرتون مع رسمة ( ورد 🌷 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792431981441
+    },
+    {
+      "source_id": 4402,
+      "mode": "apply",
+      "product_id": 1549,
+      "status": "synced",
+      "detail": "{\"item_number\": 2549, \"name\": \"كُتيب سورة الكهف جيشي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"كتيب سورة الكهف جيشي\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"كتيب سورة الكهف جيشي\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1549\", \"source_url\": \"https://jabaristore.com/?app=product.show.4402\"}",
+      "updated_at": 1792431991969
+    },
+    {
+      "source_id": 4401,
+      "mode": "apply",
+      "product_id": 1550,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2550, \"source\": {\"title\": \"بكج هدايا للمعتمرين\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 14900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432001445
+    },
+    {
+      "source_id": 4400,
+      "mode": "apply",
+      "product_id": 1551,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2551, \"source\": {\"title\": \"قام ايلاينر اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432011740
+    },
+    {
+      "source_id": 4398,
+      "mode": "apply",
+      "product_id": 1552,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2552, \"source\": {\"title\": \"مطربان زجاج غطاء معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432021441
+    },
+    {
+      "source_id": 4397,
+      "mode": "apply",
+      "product_id": 1389,
+      "status": "synced",
+      "detail": "{\"item_number\": 2389, \"name\": \"قبة مريول مدرسية\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 600, \"active\": true}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 4800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1389\", \"source_url\": \"https://jabaristore.com/?app=product.show.4397\"}",
+      "updated_at": 1792432031700
+    },
+    {
+      "source_id": 4396,
+      "mode": "apply",
+      "product_id": 1390,
+      "status": "synced",
+      "detail": "{\"item_number\": 2390, \"name\": \"قبة مريول مدرسية\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 600, \"active\": true}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 4800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1390\", \"source_url\": \"https://jabaristore.com/?app=product.show.4396\"}",
+      "updated_at": 1792432041953
+    },
+    {
+      "source_id": 4395,
+      "mode": "apply",
+      "product_id": 1391,
+      "status": "synced",
+      "detail": "{\"item_number\": 2391, \"name\": \"قبة مريول مدرسية\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 600, \"active\": true}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 4800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1391\", \"source_url\": \"https://jabaristore.com/?app=product.show.4395\"}",
+      "updated_at": 1792432051732
+    },
+    {
+      "source_id": 4394,
+      "mode": "apply",
+      "product_id": 1392,
+      "status": "synced",
+      "detail": "{\"item_number\": 2392, \"name\": \"قبة مريول مدرسية\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قبة مريول مدرسية\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 600, \"active\": true}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 4800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بالدزينة (12قطعة)\", \"price\": 5000, \"active\": true, \"supplier_price\": 4800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1392\", \"source_url\": \"https://jabaristore.com/?app=product.show.4394\"}",
+      "updated_at": 1792432061938
+    },
+    {
+      "source_id": 4393,
+      "mode": "apply",
+      "product_id": 1553,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2553, \"source\": {\"title\": \"صندوق خشب مغطاه بالاكريلك ( 4*6*8 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432071436
+    },
+    {
+      "source_id": 4392,
+      "mode": "apply",
+      "product_id": 1554,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2554, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( روز ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432081432
+    },
+    {
+      "source_id": 4391,
+      "mode": "apply",
+      "product_id": 1555,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2555, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( فريش روز ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432091426
+    },
+    {
+      "source_id": 4390,
+      "mode": "apply",
+      "product_id": 1556,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2556, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( صندل ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432101445
+    },
+    {
+      "source_id": 4389,
+      "mode": "apply",
+      "product_id": 1557,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2557, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( الفراولة ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432111410
+    },
+    {
+      "source_id": 4388,
+      "mode": "apply",
+      "product_id": 1558,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2558, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( عود الخليج ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432121646
+    },
+    {
+      "source_id": 4387,
+      "mode": "apply",
+      "product_id": 1559,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2559, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( مانجا ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432131728
+    },
+    {
+      "source_id": 4386,
+      "mode": "apply",
+      "product_id": 1560,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2560, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( الوردة الصفراء ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432141405
+    },
+    {
+      "source_id": 4385,
+      "mode": "apply",
+      "product_id": 1561,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2561, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( CHAMPA ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432151421
+    },
+    {
+      "source_id": 4384,
+      "mode": "apply",
+      "product_id": 1562,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2562, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( عؤدة ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432161687
+    },
+    {
+      "source_id": 4383,
+      "mode": "apply",
+      "product_id": 1563,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2563, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( فانيلا ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432171633
+    },
+    {
+      "source_id": 4382,
+      "mode": "apply",
+      "product_id": 1564,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2564, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( الوردة البيضاء ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432181647
+    },
+    {
+      "source_id": 4381,
+      "mode": "apply",
+      "product_id": 1565,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2565, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( ياسمين ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432191675
+    },
+    {
+      "source_id": 4380,
+      "mode": "apply",
+      "product_id": 1566,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2566, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( غاردينيا ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432201656
+    },
+    {
+      "source_id": 4379,
+      "mode": "apply",
+      "product_id": 1567,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2567, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( صندل زعفران ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432211668
+    },
+    {
+      "source_id": 4378,
+      "mode": "apply",
+      "product_id": 1568,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2568, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( امبر ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432221678
+    },
+    {
+      "source_id": 4377,
+      "mode": "apply",
+      "product_id": 1569,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2569, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( لوتس ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432231424
+    },
+    {
+      "source_id": 4376,
+      "mode": "apply",
+      "product_id": 1570,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2570, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( ميره ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432241428
+    },
+    {
+      "source_id": 4375,
+      "mode": "apply",
+      "product_id": 1571,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2571, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( تيوب روز ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432251428
     },
     {
       "source_id": 3780,
