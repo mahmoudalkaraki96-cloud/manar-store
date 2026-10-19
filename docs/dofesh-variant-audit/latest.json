@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:10:26.818715+03:00",
+  "updated_at": "2026-10-19T21:18:45.171288+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -8035,6 +8035,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2095, \"source\": {\"title\": \"س حنا تراث بدوي احمرمع ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
       "updated_at": 1792433425824
+    },
+    {
+      "source_id": 234,
+      "mode": "apply",
+      "product_id": 1096,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2096, \"source\": {\"title\": \"سلة حنا تراث بدوي احمر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792433433853
+    },
+    {
+      "source_id": 233,
+      "mode": "apply",
+      "product_id": 42,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1042, \"source\": {\"title\": \"ريزون تعليقة ازرق محجر 6سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433443650
+    },
+    {
+      "source_id": 232,
+      "mode": "apply",
+      "product_id": 43,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1043, \"source\": {\"title\": \"ريزون مذهب سادى بدون حجر7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433453683
+    },
+    {
+      "source_id": 231,
+      "mode": "apply",
+      "product_id": 44,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1044, \"source\": {\"title\": \"ريزون محجر مدور زهري 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433463850
+    },
+    {
+      "source_id": 230,
+      "mode": "apply",
+      "product_id": 45,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1045, \"source\": {\"title\": \"ريزن مدور محجر فضي 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433473628
+    },
+    {
+      "source_id": 229,
+      "mode": "apply",
+      "product_id": 46,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1046, \"source\": {\"title\": \"ريزون محجر مدور ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433483629
+    },
+    {
+      "source_id": 228,
+      "mode": "apply",
+      "product_id": 47,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1047, \"source\": {\"title\": \"ريزون محجر ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433493650
+    },
+    {
+      "source_id": 227,
+      "mode": "apply",
+      "product_id": 48,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1048, \"source\": {\"title\": \"ريزون محجر ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433503632
+    },
+    {
+      "source_id": 226,
+      "mode": "apply",
+      "product_id": 49,
+      "status": "matched",
+      "detail": "{\"item_number\": 1049, \"source\": {\"title\": \"ريزون ازرق محجر\", \"variants\": [{\"name\": \"مدور\", \"price\": 300, \"active\": true}, {\"name\": \"مشرف\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433514012
+    },
+    {
+      "source_id": 225,
+      "mode": "apply",
+      "product_id": 50,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1050, \"source\": {\"title\": \"ريزون محجر زهري 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433523851
+    },
+    {
+      "source_id": 224,
+      "mode": "apply",
+      "product_id": 51,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1051, \"source\": {\"title\": \"ريزون زهري محجر 7 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792433533638
+    },
+    {
+      "source_id": 223,
+      "mode": "apply",
+      "product_id": 1097,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2097, \"source\": {\"title\": \"ملعقة عسل 8 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 60}}",
+      "updated_at": 1792433543871
+    },
+    {
+      "source_id": 222,
+      "mode": "apply",
+      "product_id": 1098,
+      "status": "synced",
+      "detail": "{\"item_number\": 2098, \"name\": \"مطربان عسل (50مل)غطاء ذهبي\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"مطربان عسل (50مل)غطاء ذهبي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": false}, {\"name\": \"12 حبة\", \"price\": 1200, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1098\", \"source_url\": \"https://dofesh.ps/?app=product.show.222\"}",
+      "updated_at": 1792433554013
+    },
+    {
+      "source_id": 221,
+      "mode": "apply",
+      "product_id": 1099,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2099, \"source\": {\"title\": \"مطربان عسل (25مل)غطاء ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792433563634
+    },
+    {
+      "source_id": 219,
+      "mode": "apply",
+      "product_id": 109,
+      "status": "synced",
+      "detail": "{\"item_number\": 1109, \"name\": \"شوكولاتة فضي مستطيل 7.5*4سم\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة فضي مستطيل 7.5*4سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/109\", \"source_url\": \"https://dofesh.ps/?app=product.show.219\"}",
+      "updated_at": 1792433573888
+    },
+    {
+      "source_id": 218,
+      "mode": "apply",
+      "product_id": 110,
+      "status": "synced",
+      "detail": "{\"item_number\": 1110, \"name\": \"شوكولاتة ليلي مربع فضي 4*4سم\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة ليلي مربع فضي 4*4سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/110\", \"source_url\": \"https://dofesh.ps/?app=product.show.218\"}",
+      "updated_at": 1792433583989
+    },
+    {
+      "source_id": 217,
+      "mode": "apply",
+      "product_id": 111,
+      "status": "synced",
+      "detail": "{\"item_number\": 1111, \"name\": \"شوكولاتة ليلي مربع ذهبي 4*4سم\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة ليلي مربع ذهبي 4*4سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/111\", \"source_url\": \"https://dofesh.ps/?app=product.show.217\"}",
+      "updated_at": 1792433593896
+    },
+    {
+      "source_id": 216,
+      "mode": "apply",
+      "product_id": 112,
+      "status": "synced",
+      "detail": "{\"item_number\": 1112, \"name\": \"شوكولاتة ليلي ذهبي طويل 7.5*4سم\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة ليلي ذهبي طويل 7.5*4سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/112\", \"source_url\": \"https://dofesh.ps/?app=product.show.216\"}",
+      "updated_at": 1792433604180
+    },
+    {
+      "source_id": 215,
+      "mode": "apply",
+      "product_id": 69,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1069, \"source\": {\"title\": \"قماش ستان نود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433613895
+    },
+    {
+      "source_id": 214,
+      "mode": "apply",
+      "product_id": 70,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1070, \"source\": {\"title\": \"قماش ستان نهدي غامق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433623908
+    },
+    {
+      "source_id": 213,
+      "mode": "apply",
+      "product_id": 71,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1071, \"source\": {\"title\": \"قماش ستان نهدي فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433633934
+    },
+    {
+      "source_id": 212,
+      "mode": "apply",
+      "product_id": 72,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1072, \"source\": {\"title\": \"قماش ستان ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433643642
+    },
+    {
+      "source_id": 211,
+      "mode": "apply",
+      "product_id": 73,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1073, \"source\": {\"title\": \"قماش ستان زهر فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433653878
+    },
+    {
+      "source_id": 210,
+      "mode": "apply",
+      "product_id": 74,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1074, \"source\": {\"title\": \"قماش ستان فستقي اخضر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433663887
+    },
+    {
+      "source_id": 209,
+      "mode": "apply",
+      "product_id": 75,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1075, \"source\": {\"title\": \"قماش ستان زهر غامق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433673638
+    },
+    {
+      "source_id": 208,
+      "mode": "apply",
+      "product_id": 76,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1076, \"source\": {\"title\": \"قماش ستان زيتي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433683866
+    },
+    {
+      "source_id": 207,
+      "mode": "apply",
+      "product_id": 77,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1077, \"source\": {\"title\": \"قماش ستان اخضر فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433693626
+    },
+    {
+      "source_id": 206,
+      "mode": "apply",
+      "product_id": 78,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1078, \"source\": {\"title\": \"قماش ستان اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433703630
+    },
+    {
+      "source_id": 205,
+      "mode": "apply",
+      "product_id": 79,
+      "status": "matched",
+      "detail": "{\"item_number\": 1079, \"source\": {\"title\": \"قماش ستان برتقالي\", \"variants\": [{\"name\": \"برتقالي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433713891
+    },
+    {
+      "source_id": 204,
+      "mode": "apply",
+      "product_id": 80,
+      "status": "matched",
+      "detail": "{\"item_number\": 1080, \"source\": {\"title\": \"قماش ستان خمري\", \"variants\": [{\"name\": \"خمري\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433723640
+    },
+    {
+      "source_id": 203,
+      "mode": "apply",
+      "product_id": 81,
+      "status": "matched",
+      "detail": "{\"item_number\": 1081, \"source\": {\"title\": \"قماش ستان بني\", \"variants\": [{\"name\": \"بني\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433733857
+    },
+    {
+      "source_id": 202,
+      "mode": "apply",
+      "product_id": 82,
+      "status": "matched",
+      "detail": "{\"item_number\": 1082, \"source\": {\"title\": \"قماش ستان كحلي\", \"variants\": [{\"name\": \"كحلي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433743639
+    },
+    {
+      "source_id": 201,
+      "mode": "apply",
+      "product_id": 83,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1083, \"source\": {\"title\": \"قماش ستان بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433753635
+    },
+    {
+      "source_id": 200,
+      "mode": "apply",
+      "product_id": 84,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1084, \"source\": {\"title\": \"قماش ستان ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792433763628
+    },
+    {
+      "source_id": 199,
+      "mode": "apply",
+      "product_id": 85,
+      "status": "matched",
+      "detail": "{\"item_number\": 1085, \"source\": {\"title\": \"قماش ستان ازرق سماوي\", \"variants\": [{\"name\": \"ازرق سماوي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433773636
+    },
+    {
+      "source_id": 198,
+      "mode": "apply",
+      "product_id": 86,
+      "status": "matched",
+      "detail": "{\"item_number\": 1086, \"source\": {\"title\": \"قماش ستان احمر\", \"variants\": [{\"name\": \"احمر\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}}",
+      "updated_at": 1792433783860
+    },
+    {
+      "source_id": 197,
+      "mode": "apply",
+      "product_id": 131,
+      "status": "synced",
+      "detail": "{\"item_number\": 1131, \"name\": \"قماش ستان\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"قماش ستان\", \"variants\": [{\"name\": \"ازرق\", \"price\": 700, \"active\": true}, {\"name\": \"زهر\", \"price\": 700, \"active\": true}, {\"name\": \"بيج\", \"price\": 700, \"active\": true}, {\"name\": \"ابيض\", \"price\": 700, \"active\": true}, {\"name\": \"اسود\", \"price\": 700, \"active\": true}, {\"name\": \"خمري\", \"price\": 700, \"active\": true}, {\"name\": \"كحلي\", \"price\": 700, \"active\": true}, {\"name\": \"بني\", \"price\": 700, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 700, \"active\": true}, {\"name\": \"نهدي\", \"price\": 700, \"active\": true}, {\"name\": \"نيلي\", \"price\": 700, \"active\": true}, {\"name\": \"تركواز\", \"price\": 700, \"active\": true}, {\"name\": \"اخضر فاتح\", \"price\": 700, \"active\": true}, {\"name\": \"اخضر زيتي\", \"price\": 700, \"active\": true}, {\"name\": \"بنفسجي غامق\", \"price\": 700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/131\", \"source_url\": \"https://dofesh.ps/?app=product.show.197\"}",
+      "updated_at": 1792433793932
+    },
+    {
+      "source_id": 195,
+      "mode": "apply",
+      "product_id": 54,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1054, \"source\": {\"title\": \"فازة كونكريت مدحبر8سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792433803641
+    },
+    {
+      "source_id": 194,
+      "mode": "apply",
+      "product_id": 1100,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2100, \"source\": {\"title\": \"علبة دبل شفاف كرستنال (4*4)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792433813712
+    },
+    {
+      "source_id": 193,
+      "mode": "apply",
+      "product_id": 1101,
+      "status": "synced",
+      "detail": "{\"item_number\": 2101, \"name\": \"علبة دبل جلد أبيض مع حز ذهبي (6*6*4سم)\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"علبة دبل جلد ابيض مع حز ذهبي (6*6*4سم)\", \"variants\": [{\"name\": \"ابيض\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1101\", \"source_url\": \"https://dofesh.ps/?app=product.show.193\"}",
+      "updated_at": 1792433823896
+    },
+    {
+      "source_id": 192,
+      "mode": "apply",
+      "product_id": 1102,
+      "status": "synced",
+      "detail": "{\"item_number\": 2102, \"name\": \"علبة مخمل للدبل أسود(6*6سم)\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"علبة مخمل للدبل اسود(6*6سم)\", \"variants\": [{\"name\": \"اسود\", \"price\": 400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1102\", \"source_url\": \"https://dofesh.ps/?app=product.show.192\"}",
+      "updated_at": 1792433834187
+    },
+    {
+      "source_id": 191,
+      "mode": "apply",
+      "product_id": 1103,
+      "status": "synced",
+      "detail": "{\"item_number\": 2103, \"name\": \"هرم خواتم كبير(10*9سم)\", \"before_price\": 1300, \"before_variants\": [], \"source\": {\"title\": \"هرم خواتم كبير(10*9سم)\", \"variants\": [{\"name\": \"بيج\", \"price\": 1300, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1103\", \"source_url\": \"https://dofesh.ps/?app=product.show.191\"}",
+      "updated_at": 1792433843916
+    },
+    {
+      "source_id": 190,
+      "mode": "apply",
+      "product_id": 1104,
+      "status": "synced",
+      "detail": "{\"item_number\": 2104, \"name\": \"هرم للخواتم حجم صغير (6*4سم)\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"هرم للخواتم حجم صغير (6*4سم)\", \"variants\": [{\"name\": \"بيج\", \"price\": 600, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1104\", \"source_url\": \"https://dofesh.ps/?app=product.show.190\"}",
+      "updated_at": 1792433854117
+    },
+    {
+      "source_id": 189,
+      "mode": "apply",
+      "product_id": 1105,
+      "status": "synced",
+      "detail": "{\"item_number\": 2105, \"name\": \"شبر قماش 50 متر سكني\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر سكني\", \"variants\": [{\"name\": \"سكني\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1105\", \"source_url\": \"https://dofesh.ps/?app=product.show.189\"}",
+      "updated_at": 1792433864150
+    },
+    {
+      "source_id": 188,
+      "mode": "apply",
+      "product_id": 1106,
+      "status": "synced",
+      "detail": "{\"item_number\": 2106, \"name\": \"شبر قماش 50 متر كحلي\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر كحلي\", \"variants\": [{\"name\": \"كحلي\", \"price\": 1500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1106\", \"source_url\": \"https://dofesh.ps/?app=product.show.188\"}",
+      "updated_at": 1792433873869
+    },
+    {
+      "source_id": 187,
+      "mode": "apply",
+      "product_id": 1107,
+      "status": "synced",
+      "detail": "{\"item_number\": 2107, \"name\": \"شبر قماش 50 متر أزرق غامق\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر ازرق غامق\", \"variants\": [{\"name\": \"ازرق غامق\", \"price\": 1500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1107\", \"source_url\": \"https://dofesh.ps/?app=product.show.187\"}",
+      "updated_at": 1792433884137
+    },
+    {
+      "source_id": 186,
+      "mode": "apply",
+      "product_id": 1108,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2108, \"source\": {\"title\": \"شبر قماش 50 متر ازرق فاتح\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433893897
+    },
+    {
+      "source_id": 185,
+      "mode": "apply",
+      "product_id": 1109,
+      "status": "synced",
+      "detail": "{\"item_number\": 2109, \"name\": \"شبر قماش 50 متر زهري\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر زهري\", \"variants\": [{\"name\": \"زهري\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1109\", \"source_url\": \"https://dofesh.ps/?app=product.show.185\"}",
+      "updated_at": 1792433904071
+    },
+    {
+      "source_id": 184,
+      "mode": "apply",
+      "product_id": 1110,
+      "status": "synced",
+      "detail": "{\"item_number\": 2110, \"name\": \"شبر قماش 50 متر بني\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر قماش 50 متر بني\", \"variants\": [{\"name\": \"بني\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1110\", \"source_url\": \"https://dofesh.ps/?app=product.show.184\"}",
+      "updated_at": 1792433914190
+    },
+    {
+      "source_id": 183,
+      "mode": "apply",
+      "product_id": 1111,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2111, \"source\": {\"title\": \"شبر قماش 50 متر بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792433923879
     }
   ]
 }

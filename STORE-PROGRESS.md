@@ -2407,3 +2407,62 @@
 - الجعبري#4199 ↔ صنف#2715: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 888 ). https://jabaristore.com/?app=product.show.4199
 - الجعبري#4198 ↔ صنف#2716: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 911 ). https://jabaristore.com/?app=product.show.4198
 - الجعبري#4197 ↔ صنف#2717: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 911 ). https://jabaristore.com/?app=product.show.4197
+### 2026-10-19T21:18:45.171288+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T21:18:45.171288+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 322, "no_options": 687, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 16, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#234 ↔ صنف#2096: no_options؛ سلة حنا تراث بدوي احمر. https://dofesh.ps/?app=product.show.234
+- دوفش#233 ↔ صنف#1042: no_options؛ ريزون تعليقة ازرق محجر 6سم. https://dofesh.ps/?app=product.show.233
+- دوفش#232 ↔ صنف#1043: no_options؛ ريزون مذهب سادى بدون حجر7سم. https://dofesh.ps/?app=product.show.232
+- دوفش#231 ↔ صنف#1044: no_options؛ ريزون محجر مدور زهري 7سم. https://dofesh.ps/?app=product.show.231
+- دوفش#230 ↔ صنف#1045: no_options؛ ريزن مدور محجر فضي 7سم. https://dofesh.ps/?app=product.show.230
+- دوفش#229 ↔ صنف#1046: no_options؛ ريزون محجر مدور ذهبي. https://dofesh.ps/?app=product.show.229
+- دوفش#228 ↔ صنف#1047: no_options؛ ريزون محجر ذهبي. https://dofesh.ps/?app=product.show.228
+- دوفش#227 ↔ صنف#1048: no_options؛ ريزون محجر ذهبي. https://dofesh.ps/?app=product.show.227
+- دوفش#226 ↔ صنف#1049: matched؛ مدور=3₪؛ مشرف=3₪. https://dofesh.ps/?app=product.show.226
+- دوفش#225 ↔ صنف#1050: no_options؛ ريزون محجر زهري 7سم. https://dofesh.ps/?app=product.show.225
+- دوفش#224 ↔ صنف#1051: no_options؛ ريزون زهري محجر 7 سم. https://dofesh.ps/?app=product.show.224
+- دوفش#223 ↔ صنف#2097: no_options؛ ملعقة عسل 8 سم. https://dofesh.ps/?app=product.show.223
+- دوفش#222 ↔ صنف#2098: synced؛ بالحبة=1.5₪؛ 12 حبة=12₪. https://dofesh.ps/?app=product.show.222
+- دوفش#221 ↔ صنف#2099: no_options؛ مطربان عسل (25مل)غطاء ذهبي. https://dofesh.ps/?app=product.show.221
+- دوفش#219 ↔ صنف#1109: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.219
+- دوفش#218 ↔ صنف#1110: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.218
+- دوفش#217 ↔ صنف#1111: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.217
+- دوفش#216 ↔ صنف#1112: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.216
+- دوفش#215 ↔ صنف#1069: no_options؛ قماش ستان نود. https://dofesh.ps/?app=product.show.215
+- دوفش#214 ↔ صنف#1070: no_options؛ قماش ستان نهدي غامق. https://dofesh.ps/?app=product.show.214
+- دوفش#213 ↔ صنف#1071: no_options؛ قماش ستان نهدي فاتح. https://dofesh.ps/?app=product.show.213
+- دوفش#212 ↔ صنف#1072: no_options؛ قماش ستان ذهبي. https://dofesh.ps/?app=product.show.212
+- دوفش#211 ↔ صنف#1073: no_options؛ قماش ستان زهر فاتح. https://dofesh.ps/?app=product.show.211
+- دوفش#210 ↔ صنف#1074: no_options؛ قماش ستان فستقي اخضر. https://dofesh.ps/?app=product.show.210
+- دوفش#209 ↔ صنف#1075: no_options؛ قماش ستان زهر غامق. https://dofesh.ps/?app=product.show.209
+- دوفش#208 ↔ صنف#1076: no_options؛ قماش ستان زيتي. https://dofesh.ps/?app=product.show.208
+- دوفش#207 ↔ صنف#1077: no_options؛ قماش ستان اخضر فاتح. https://dofesh.ps/?app=product.show.207
+- دوفش#206 ↔ صنف#1078: no_options؛ قماش ستان اسود. https://dofesh.ps/?app=product.show.206
+- دوفش#205 ↔ صنف#1079: matched؛ برتقالي=10₪. https://dofesh.ps/?app=product.show.205
+- دوفش#204 ↔ صنف#1080: matched؛ خمري=10₪. https://dofesh.ps/?app=product.show.204
+- دوفش#203 ↔ صنف#1081: matched؛ بني=10₪. https://dofesh.ps/?app=product.show.203
+- دوفش#202 ↔ صنف#1082: matched؛ كحلي=10₪. https://dofesh.ps/?app=product.show.202
+- دوفش#201 ↔ صنف#1083: no_options؛ قماش ستان بيج. https://dofesh.ps/?app=product.show.201
+- دوفش#200 ↔ صنف#1084: no_options؛ قماش ستان ابيض. https://dofesh.ps/?app=product.show.200
+- دوفش#199 ↔ صنف#1085: matched؛ ازرق سماوي=10₪. https://dofesh.ps/?app=product.show.199
+- دوفش#198 ↔ صنف#1086: matched؛ احمر=10₪. https://dofesh.ps/?app=product.show.198
+- دوفش#197 ↔ صنف#1131: synced؛ ازرق=7₪؛ زهر=7₪؛ بيج=7₪؛ ابيض=7₪؛ اسود=7₪؛ خمري=7₪؛ كحلي=7₪؛ بني=7₪؛ ذهبي=7₪؛ نهدي=7₪؛ نيلي=7₪؛ تركواز=7₪؛ اخضر فاتح=7₪؛ اخضر زيتي=7₪؛ بنفسجي غامق=7₪. https://dofesh.ps/?app=product.show.197
+- دوفش#195 ↔ صنف#1054: no_options؛ فازة كونكريت مدحبر8سم. https://dofesh.ps/?app=product.show.195
+- دوفش#194 ↔ صنف#2100: no_options؛ علبة دبل شفاف كرستنال (4*4). https://dofesh.ps/?app=product.show.194
+- دوفش#193 ↔ صنف#2101: synced؛ ابيض=6₪. https://dofesh.ps/?app=product.show.193
+- دوفش#192 ↔ صنف#2102: synced؛ اسود=4₪. https://dofesh.ps/?app=product.show.192
+- دوفش#191 ↔ صنف#2103: synced؛ بيج=13₪. https://dofesh.ps/?app=product.show.191
+- دوفش#190 ↔ صنف#2104: synced؛ بيج=6₪. https://dofesh.ps/?app=product.show.190
+- دوفش#189 ↔ صنف#2105: synced؛ سكني=15₪. https://dofesh.ps/?app=product.show.189
+- دوفش#188 ↔ صنف#2106: synced؛ كحلي=15₪. https://dofesh.ps/?app=product.show.188
+- دوفش#187 ↔ صنف#2107: synced؛ ازرق غامق=15₪. https://dofesh.ps/?app=product.show.187
+- دوفش#186 ↔ صنف#2108: no_options؛ شبر قماش 50 متر ازرق فاتح. https://dofesh.ps/?app=product.show.186
+- دوفش#185 ↔ صنف#2109: synced؛ زهري=15₪. https://dofesh.ps/?app=product.show.185
+- دوفش#184 ↔ صنف#2110: synced؛ بني=15₪. https://dofesh.ps/?app=product.show.184
+- دوفش#183 ↔ صنف#2111: no_options؛ شبر قماش 50 متر بيج. https://dofesh.ps/?app=product.show.183
