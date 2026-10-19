@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:53:44.790914+03:00",
+  "updated_at": "2026-10-20T00:02:05.497019+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -9651,6 +9651,406 @@
       "status": "unsupported_source_price",
       "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3634}",
       "updated_at": 1792443223286
+    },
+    {
+      "source_id": 2764,
+      "mode": "apply",
+      "product_id": 2635,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3635}",
+      "updated_at": 1792443232766
+    },
+    {
+      "source_id": 2763,
+      "mode": "apply",
+      "product_id": 2636,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3636}",
+      "updated_at": 1792443242515
+    },
+    {
+      "source_id": 2752,
+      "mode": "apply",
+      "product_id": 1431,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2431, \"source\": {\"title\": \"مقص (اصلي) صغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443252509
+    },
+    {
+      "source_id": 2751,
+      "mode": "apply",
+      "product_id": 1432,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2432, \"source\": {\"title\": \"مقص اصلي كبير - نصلة قصيرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443262500
+    },
+    {
+      "source_id": 2750,
+      "mode": "apply",
+      "product_id": 2637,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3637, \"source\": {\"title\": \"مسابح - سبح لولو 99 حبة ( ابيض )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443272736
+    },
+    {
+      "source_id": 2749,
+      "mode": "apply",
+      "product_id": 2638,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3638, \"source\": {\"title\": \"خرز لولو ابيض مبزر ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443282509
+    },
+    {
+      "source_id": 2748,
+      "mode": "apply",
+      "product_id": 2639,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3639, \"source\": {\"title\": \"خرز لولو ابيض مبزر ( 12 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443292496
+    },
+    {
+      "source_id": 2747,
+      "mode": "apply",
+      "product_id": 2640,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3640, \"source\": {\"title\": \"خرز لولو سكري مبزر ( 10 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443302528
+    },
+    {
+      "source_id": 2746,
+      "mode": "apply",
+      "product_id": 2641,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3641, \"source\": {\"title\": \"خرز لولو سكري مبزر ( 12 ملم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792443312512
+    },
+    {
+      "source_id": 2744,
+      "mode": "apply",
+      "product_id": 2642,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3642}",
+      "updated_at": 1792443322534
+    },
+    {
+      "source_id": 2743,
+      "mode": "apply",
+      "product_id": 2643,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3643}",
+      "updated_at": 1792443332830
+    },
+    {
+      "source_id": 2742,
+      "mode": "apply",
+      "product_id": 2644,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3644}",
+      "updated_at": 1792443342760
+    },
+    {
+      "source_id": 2741,
+      "mode": "apply",
+      "product_id": 2645,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3645}",
+      "updated_at": 1792443352665
+    },
+    {
+      "source_id": 2739,
+      "mode": "apply",
+      "product_id": 2646,
+      "status": "synced",
+      "detail": "{\"item_number\": 3646, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2646\", \"source_url\": \"https://jabaristore.com/?app=product.show.2739\"}",
+      "updated_at": 1792443363046
+    },
+    {
+      "source_id": 2738,
+      "mode": "apply",
+      "product_id": 2647,
+      "status": "synced",
+      "detail": "{\"item_number\": 3647, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2647\", \"source_url\": \"https://jabaristore.com/?app=product.show.2738\"}",
+      "updated_at": 1792443373028
+    },
+    {
+      "source_id": 2737,
+      "mode": "apply",
+      "product_id": 2648,
+      "status": "synced",
+      "detail": "{\"item_number\": 3648, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2648\", \"source_url\": \"https://jabaristore.com/?app=product.show.2737\"}",
+      "updated_at": 1792443383024
+    },
+    {
+      "source_id": 2736,
+      "mode": "apply",
+      "product_id": 2649,
+      "status": "synced",
+      "detail": "{\"item_number\": 3649, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2649\", \"source_url\": \"https://jabaristore.com/?app=product.show.2736\"}",
+      "updated_at": 1792443392783
+    },
+    {
+      "source_id": 2735,
+      "mode": "apply",
+      "product_id": 2650,
+      "status": "synced",
+      "detail": "{\"item_number\": 3650, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2650\", \"source_url\": \"https://jabaristore.com/?app=product.show.2735\"}",
+      "updated_at": 1792443402762
+    },
+    {
+      "source_id": 2734,
+      "mode": "apply",
+      "product_id": 2651,
+      "status": "synced",
+      "detail": "{\"item_number\": 3651, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2651\", \"source_url\": \"https://jabaristore.com/?app=product.show.2734\"}",
+      "updated_at": 1792443412810
+    },
+    {
+      "source_id": 2733,
+      "mode": "apply",
+      "product_id": 2652,
+      "status": "synced",
+      "detail": "{\"item_number\": 3652, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2652\", \"source_url\": \"https://jabaristore.com/?app=product.show.2733\"}",
+      "updated_at": 1792443422883
+    },
+    {
+      "source_id": 2732,
+      "mode": "apply",
+      "product_id": 2653,
+      "status": "synced",
+      "detail": "{\"item_number\": 3653, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2653\", \"source_url\": \"https://jabaristore.com/?app=product.show.2732\"}",
+      "updated_at": 1792443432807
+    },
+    {
+      "source_id": 2731,
+      "mode": "apply",
+      "product_id": 2654,
+      "status": "synced",
+      "detail": "{\"item_number\": 3654, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2654\", \"source_url\": \"https://jabaristore.com/?app=product.show.2731\"}",
+      "updated_at": 1792443442802
+    },
+    {
+      "source_id": 2730,
+      "mode": "apply",
+      "product_id": 2655,
+      "status": "synced",
+      "detail": "{\"item_number\": 3655, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2655\", \"source_url\": \"https://jabaristore.com/?app=product.show.2730\"}",
+      "updated_at": 1792443452810
+    },
+    {
+      "source_id": 2729,
+      "mode": "apply",
+      "product_id": 2656,
+      "status": "synced",
+      "detail": "{\"item_number\": 3656, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": false}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2656\", \"source_url\": \"https://jabaristore.com/?app=product.show.2729\"}",
+      "updated_at": 1792443462985
+    },
+    {
+      "source_id": 2728,
+      "mode": "apply",
+      "product_id": 2657,
+      "status": "synced",
+      "detail": "{\"item_number\": 3657, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2657\", \"source_url\": \"https://jabaristore.com/?app=product.show.2728\"}",
+      "updated_at": 1792443473023
+    },
+    {
+      "source_id": 2727,
+      "mode": "apply",
+      "product_id": 2658,
+      "status": "synced",
+      "detail": "{\"item_number\": 3658, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2658\", \"source_url\": \"https://jabaristore.com/?app=product.show.2727\"}",
+      "updated_at": 1792443482798
+    },
+    {
+      "source_id": 2726,
+      "mode": "apply",
+      "product_id": 2659,
+      "status": "synced",
+      "detail": "{\"item_number\": 3659, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2659\", \"source_url\": \"https://jabaristore.com/?app=product.show.2726\"}",
+      "updated_at": 1792443493059
+    },
+    {
+      "source_id": 2725,
+      "mode": "apply",
+      "product_id": 2660,
+      "status": "synced",
+      "detail": "{\"item_number\": 3660, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2660\", \"source_url\": \"https://jabaristore.com/?app=product.show.2725\"}",
+      "updated_at": 1792443502796
+    },
+    {
+      "source_id": 2724,
+      "mode": "apply",
+      "product_id": 2661,
+      "status": "synced",
+      "detail": "{\"item_number\": 3661, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2661\", \"source_url\": \"https://jabaristore.com/?app=product.show.2724\"}",
+      "updated_at": 1792443512796
+    },
+    {
+      "source_id": 2723,
+      "mode": "apply",
+      "product_id": 2662,
+      "status": "synced",
+      "detail": "{\"item_number\": 3662, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2662\", \"source_url\": \"https://jabaristore.com/?app=product.show.2723\"}",
+      "updated_at": 1792443522780
+    },
+    {
+      "source_id": 2722,
+      "mode": "apply",
+      "product_id": 2663,
+      "status": "synced",
+      "detail": "{\"item_number\": 3663, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2663\", \"source_url\": \"https://jabaristore.com/?app=product.show.2722\"}",
+      "updated_at": 1792443533009
+    },
+    {
+      "source_id": 2721,
+      "mode": "apply",
+      "product_id": 2664,
+      "status": "synced",
+      "detail": "{\"item_number\": 3664, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2664\", \"source_url\": \"https://jabaristore.com/?app=product.show.2721\"}",
+      "updated_at": 1792443543041
+    },
+    {
+      "source_id": 2720,
+      "mode": "apply",
+      "product_id": 2665,
+      "status": "synced",
+      "detail": "{\"item_number\": 3665, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2665\", \"source_url\": \"https://jabaristore.com/?app=product.show.2720\"}",
+      "updated_at": 1792443552827
+    },
+    {
+      "source_id": 2719,
+      "mode": "apply",
+      "product_id": 2666,
+      "status": "synced",
+      "detail": "{\"item_number\": 3666, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2666\", \"source_url\": \"https://jabaristore.com/?app=product.show.2719\"}",
+      "updated_at": 1792443562774
+    },
+    {
+      "source_id": 2718,
+      "mode": "apply",
+      "product_id": 2667,
+      "status": "synced",
+      "detail": "{\"item_number\": 3667, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2667\", \"source_url\": \"https://jabaristore.com/?app=product.show.2718\"}",
+      "updated_at": 1792443572782
+    },
+    {
+      "source_id": 2717,
+      "mode": "apply",
+      "product_id": 2668,
+      "status": "synced",
+      "detail": "{\"item_number\": 3668, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2668\", \"source_url\": \"https://jabaristore.com/?app=product.show.2717\"}",
+      "updated_at": 1792443583177
+    },
+    {
+      "source_id": 2716,
+      "mode": "apply",
+      "product_id": 2669,
+      "status": "synced",
+      "detail": "{\"item_number\": 3669, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2669\", \"source_url\": \"https://jabaristore.com/?app=product.show.2716\"}",
+      "updated_at": 1792443593000
+    },
+    {
+      "source_id": 2715,
+      "mode": "apply",
+      "product_id": 2670,
+      "status": "synced",
+      "detail": "{\"item_number\": 3670, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2670\", \"source_url\": \"https://jabaristore.com/?app=product.show.2715\"}",
+      "updated_at": 1792443603030
+    },
+    {
+      "source_id": 2714,
+      "mode": "apply",
+      "product_id": 2671,
+      "status": "synced",
+      "detail": "{\"item_number\": 3671, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2671\", \"source_url\": \"https://jabaristore.com/?app=product.show.2714\"}",
+      "updated_at": 1792443613113
+    },
+    {
+      "source_id": 2713,
+      "mode": "apply",
+      "product_id": 2672,
+      "status": "synced",
+      "detail": "{\"item_number\": 3672, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2672\", \"source_url\": \"https://jabaristore.com/?app=product.show.2713\"}",
+      "updated_at": 1792443622812
+    },
+    {
+      "source_id": 2712,
+      "mode": "apply",
+      "product_id": 2673,
+      "status": "synced",
+      "detail": "{\"item_number\": 3673, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2673\", \"source_url\": \"https://jabaristore.com/?app=product.show.2712\"}",
+      "updated_at": 1792443632798
+    },
+    {
+      "source_id": 2711,
+      "mode": "apply",
+      "product_id": 2674,
+      "status": "synced",
+      "detail": "{\"item_number\": 3674, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2674\", \"source_url\": \"https://jabaristore.com/?app=product.show.2711\"}",
+      "updated_at": 1792443643020
+    },
+    {
+      "source_id": 2710,
+      "mode": "apply",
+      "product_id": 2675,
+      "status": "synced",
+      "detail": "{\"item_number\": 3675, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2675\", \"source_url\": \"https://jabaristore.com/?app=product.show.2710\"}",
+      "updated_at": 1792443653037
+    },
+    {
+      "source_id": 2709,
+      "mode": "apply",
+      "product_id": 2676,
+      "status": "synced",
+      "detail": "{\"item_number\": 3676, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2676\", \"source_url\": \"https://jabaristore.com/?app=product.show.2709\"}",
+      "updated_at": 1792443662818
+    },
+    {
+      "source_id": 2708,
+      "mode": "apply",
+      "product_id": 2677,
+      "status": "synced",
+      "detail": "{\"item_number\": 3677, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2677\", \"source_url\": \"https://jabaristore.com/?app=product.show.2708\"}",
+      "updated_at": 1792443672816
+    },
+    {
+      "source_id": 2707,
+      "mode": "apply",
+      "product_id": 2678,
+      "status": "synced",
+      "detail": "{\"item_number\": 3678, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2678\", \"source_url\": \"https://jabaristore.com/?app=product.show.2707\"}",
+      "updated_at": 1792443682978
+    },
+    {
+      "source_id": 2706,
+      "mode": "apply",
+      "product_id": 2679,
+      "status": "synced",
+      "detail": "{\"item_number\": 3679, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2679\", \"source_url\": \"https://jabaristore.com/?app=product.show.2706\"}",
+      "updated_at": 1792443692774
+    },
+    {
+      "source_id": 2705,
+      "mode": "apply",
+      "product_id": 2680,
+      "status": "synced",
+      "detail": "{\"item_number\": 3680, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2680\", \"source_url\": \"https://jabaristore.com/?app=product.show.2705\"}",
+      "updated_at": 1792443702919
+    },
+    {
+      "source_id": 2704,
+      "mode": "apply",
+      "product_id": 2681,
+      "status": "synced",
+      "detail": "{\"item_number\": 3681, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2681\", \"source_url\": \"https://jabaristore.com/?app=product.show.2704\"}",
+      "updated_at": 1792443712987
+    },
+    {
+      "source_id": 2703,
+      "mode": "apply",
+      "product_id": 2682,
+      "status": "synced",
+      "detail": "{\"item_number\": 3682, \"name\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2.5 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 500, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2682\", \"source_url\": \"https://jabaristore.com/?app=product.show.2703\"}",
+      "updated_at": 1792443722834
     }
   ]
 }
