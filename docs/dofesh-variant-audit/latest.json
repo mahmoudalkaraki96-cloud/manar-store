@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T15:01:05.370518+03:00",
+  "updated_at": "2026-10-19T15:09:23.990372+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -2019,6 +2019,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1450, \"source\": {\"title\": \"سلة بدون ايد مزينة قماش مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
       "updated_at": 1792411264640
+    },
+    {
+      "source_id": 1040,
+      "mode": "apply",
+      "product_id": 451,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1451, \"source\": {\"title\": \"سلة مزينة قماش مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792411271695
+    },
+    {
+      "source_id": 1039,
+      "mode": "apply",
+      "product_id": 452,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1452, \"source\": {\"title\": \"سلة مزينة قماش مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792411281573
+    },
+    {
+      "source_id": 1038,
+      "mode": "apply",
+      "product_id": 453,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1453, \"source\": {\"title\": \"سلة مزينة قماش مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792411291797
+    },
+    {
+      "source_id": 1037,
+      "mode": "apply",
+      "product_id": 454,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1454, \"source\": {\"title\": \"سلة مزينة قماش مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7000}}",
+      "updated_at": 1792411301608
+    },
+    {
+      "source_id": 1036,
+      "mode": "apply",
+      "product_id": 455,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1455, \"source\": {\"title\": \"كيس تول شفاف ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792411311555
+    },
+    {
+      "source_id": 1035,
+      "mode": "apply",
+      "product_id": 456,
+      "status": "synced",
+      "detail": "{\"item_number\": 1456, \"name\": \"كيس خيش مزين\", \"before_price\": 2000, \"before_variants\": [], \"source\": {\"title\": \"كيس خيش مزين\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 2000, \"active\": true}, {\"name\": \"4 درزن\", \"price\": 7200, \"active\": true}, {\"name\": \"10 درزن\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/456\", \"source_url\": \"https://dofesh.ps/?app=product.show.1035\"}",
+      "updated_at": 1792411321899
+    },
+    {
+      "source_id": 1034,
+      "mode": "apply",
+      "product_id": 457,
+      "status": "synced",
+      "detail": "{\"item_number\": 1457, \"name\": \"كيس ستان مزين\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"كيس ستان مزين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"بالدرزن\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/457\", \"source_url\": \"https://dofesh.ps/?app=product.show.1034\"}",
+      "updated_at": 1792411331862
+    },
+    {
+      "source_id": 1033,
+      "mode": "apply",
+      "product_id": 458,
+      "status": "synced",
+      "detail": "{\"item_number\": 1458, \"name\": \"كيس ستان مزين\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"كيس ستان مزين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"بالدرزن\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/458\", \"source_url\": \"https://dofesh.ps/?app=product.show.1033\"}",
+      "updated_at": 1792411342007
+    },
+    {
+      "source_id": 1032,
+      "mode": "apply",
+      "product_id": 459,
+      "status": "synced",
+      "detail": "{\"item_number\": 1459, \"name\": \"كيس خيش مقاس (10*13)\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"كيس خيش مقاس (10*13)\", \"variants\": [{\"name\": \"بالدرزن\", \"price\": 1000, \"active\": true}, {\"name\": \"4 دزينة\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/459\", \"source_url\": \"https://dofesh.ps/?app=product.show.1032\"}",
+      "updated_at": 1792411351979
+    },
+    {
+      "source_id": 1031,
+      "mode": "apply",
+      "product_id": 460,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1460, \"source\": {\"title\": \"علبة كرتون غطاء شفاف مقاس (10*10*3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792411361718
+    },
+    {
+      "source_id": 1030,
+      "mode": "apply",
+      "product_id": 461,
+      "status": "synced",
+      "detail": "{\"item_number\": 1461, \"name\": \"توزيعة شكل دلة قهوة ذهبية\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"توزيعة شكل دلة قهوة ذهبية\", \"variants\": [{\"name\": \"بالحبة / كبير\", \"price\": 400, \"active\": true}, {\"name\": \"بالحبة / وسط\", \"price\": 300, \"active\": true}, {\"name\": \"بالحبة / صغير\", \"price\": 200, \"active\": false}, {\"name\": \"12 حبة / كبير\", \"price\": 4000, \"active\": true}, {\"name\": \"12 حبة / وسط\", \"price\": 3000, \"active\": true}, {\"name\": \"12 حبة / صغير\", \"price\": 2000, \"active\": false}, {\"name\": \"50 حبة / كبير\", \"price\": 15000, \"active\": true}, {\"name\": \"50 حبة / وسط\", \"price\": 10000, \"active\": true}, {\"name\": \"50 حبة / صغير\", \"price\": 7000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/461\", \"source_url\": \"https://dofesh.ps/?app=product.show.1030\"}",
+      "updated_at": 1792411371978
+    },
+    {
+      "source_id": 1029,
+      "mode": "apply",
+      "product_id": 462,
+      "status": "synced",
+      "detail": "{\"item_number\": 1462, \"name\": \"علبة كرتون غطاء شفاف مقاس (15*9*3)\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون غطاء شفاف مقاس (15*9*3)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/462\", \"source_url\": \"https://dofesh.ps/?app=product.show.1029\"}",
+      "updated_at": 1792411382078
+    },
+    {
+      "source_id": 1028,
+      "mode": "apply",
+      "product_id": 463,
+      "status": "synced",
+      "detail": "{\"item_number\": 1463, \"name\": \"مطبقية سكرية ريزون ثقيل مع غطاء اكريلك شفاف مقاس 7.5cm\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مطبقية سكرية ريزون ثقيل مع غطاء اكريلك شفاف مقاس 7.5cm\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/463\", \"source_url\": \"https://dofesh.ps/?app=product.show.1028\"}",
+      "updated_at": 1792411391996
+    },
+    {
+      "source_id": 1027,
+      "mode": "apply",
+      "product_id": 464,
+      "status": "synced",
+      "detail": "{\"item_number\": 1464, \"name\": \"مطبقية سكرية ريزون ثقيل مقاس 7.5 cm عرض وارتفاع 4.5cm\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مطبقية سكرية ريزون ثقيل مقاس 7.5 cm عرض وارتفاع 4.5cm\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/464\", \"source_url\": \"https://dofesh.ps/?app=product.show.1027\"}",
+      "updated_at": 1792411401976
+    },
+    {
+      "source_id": 1026,
+      "mode": "apply",
+      "product_id": 465,
+      "status": "synced",
+      "detail": "{\"item_number\": 1465, \"name\": \"شمعة سكرية مع شمعة وردة دوار الشمس (معطرة)\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شمعة سكرية مع شمعة وردة دوار الشمس (معطرة)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/465\", \"source_url\": \"https://dofesh.ps/?app=product.show.1026\"}",
+      "updated_at": 1792411412047
+    },
+    {
+      "source_id": 1025,
+      "mode": "apply",
+      "product_id": 466,
+      "status": "synced",
+      "detail": "{\"item_number\": 1466, \"name\": \"مبخرة وردة كرستال 10سم\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة وردة كرستال 10سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/466\", \"source_url\": \"https://dofesh.ps/?app=product.show.1025\"}",
+      "updated_at": 1792411421957
+    },
+    {
+      "source_id": 1024,
+      "mode": "apply",
+      "product_id": 467,
+      "status": "missing_source",
+      "detail": "{\"reason\": \"supplier_404\", \"item_number\": 1467}",
+      "updated_at": 1792411431023
+    },
+    {
+      "source_id": 1023,
+      "mode": "apply",
+      "product_id": 468,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1468, \"source\": {\"title\": \"طبعات خشب للعيد\", \"variants\": [{\"name\": \"1 قطعة\", \"price\": 250, \"active\": true}, {\"name\": \"14 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"30 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792411441880
+    },
+    {
+      "source_id": 1022,
+      "mode": "apply",
+      "product_id": 469,
+      "status": "synced",
+      "detail": "{\"item_number\": 1469, \"name\": \"ورق طباعة غلوس لميع لاصق\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق طباعة غلوس لميع لاصق\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": false}, {\"name\": \"20 حبة (بكيت كامل )\", \"price\": 900, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/469\", \"source_url\": \"https://dofesh.ps/?app=product.show.1022\"}",
+      "updated_at": 1792411451790
+    },
+    {
+      "source_id": 1020,
+      "mode": "apply",
+      "product_id": 470,
+      "status": "synced",
+      "detail": "{\"item_number\": 1470, \"name\": \"ورق طباعة شفاف\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"ورق طباعة شفاف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"50 حبة (بكيت)\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/470\", \"source_url\": \"https://dofesh.ps/?app=product.show.1020\"}",
+      "updated_at": 1792411461860
+    },
+    {
+      "source_id": 1019,
+      "mode": "apply",
+      "product_id": 471,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1471, \"source\": {\"title\": \"اشكال العيد اكرليك\", \"variants\": [{\"name\": \"ذهبي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي لاصق / 30 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"خشبي سادة / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"خشبي سادة / 30 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"خشبي سادة / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"فضي لاصق / 30 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"فضي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792411471823
+    },
+    {
+      "source_id": 1018,
+      "mode": "apply",
+      "product_id": 472,
+      "status": "synced",
+      "detail": "{\"item_number\": 1472, \"name\": \"صندوق كرتون ابيض سادى مقاس (39*28*7)\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون ابيض سادى مقاس (39*28*7)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 4000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 17500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/472\", \"source_url\": \"https://dofesh.ps/?app=product.show.1018\"}",
+      "updated_at": 1792411481754
+    },
+    {
+      "source_id": 1017,
+      "mode": "apply",
+      "product_id": 473,
+      "status": "synced",
+      "detail": "{\"item_number\": 1473, \"name\": \"توزيعة عمرة ستاند اكريلك مع مسك ٦ سم مع سبحة وعلبة فخمة\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"توزيعة عمرة ستاند اكريلك مع مسك 6 سم مع سبحة وعلبة فخمة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 1500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 13000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 55000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/473\", \"source_url\": \"https://dofesh.ps/?app=product.show.1017\"}",
+      "updated_at": 1792411491972
+    },
+    {
+      "source_id": 1016,
+      "mode": "apply",
+      "product_id": 474,
+      "status": "synced",
+      "detail": "{\"item_number\": 1474, \"name\": \"صينية خشب مدورة مقاس قطر ٢٥ سم\", \"before_price\": 3000, \"before_variants\": [], \"source\": {\"title\": \"صينية خشب مدورة مقاس قطر 25 سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 3000, \"active\": true}, {\"name\": \"5 قطعة\", \"price\": 12500, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/474\", \"source_url\": \"https://dofesh.ps/?app=product.show.1016\"}",
+      "updated_at": 1792411501912
+    },
+    {
+      "source_id": 1015,
+      "mode": "apply",
+      "product_id": 475,
+      "status": "synced",
+      "detail": "{\"item_number\": 1475, \"name\": \"ستاند اكريلك بيضاوي مع حز ذهبي ٣ مقاسات\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"ستاند اكريلك بيضاوي مع حز ذهبي 3 مقاسات\", \"variants\": [{\"name\": \"12*8 / بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"12*8 / 12حبة\", \"price\": 3000, \"active\": true}, {\"name\": \"12*8 / 48 حبة\", \"price\": 9600, \"active\": true}, {\"name\": \"15*10 / بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"15*10 / 12حبة\", \"price\": 4800, \"active\": true}, {\"name\": \"15*10 / 48 حبة\", \"price\": 14400, \"active\": true}, {\"name\": \"25*15 / بالحبة\", \"price\": 1500, \"active\": true}, {\"name\": \"25*15 / 12حبة\", \"price\": 14400, \"active\": true}, {\"name\": \"25*15 / 48 حبة\", \"price\": 38400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/475\", \"source_url\": \"https://dofesh.ps/?app=product.show.1015\"}",
+      "updated_at": 1792411511866
+    },
+    {
+      "source_id": 1014,
+      "mode": "apply",
+      "product_id": 476,
+      "status": "synced",
+      "detail": "{\"item_number\": 1476, \"name\": \"ستاند اكريلك مذهب شفاف مقاس 6*6*12\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"ستاند اكريلك مذهب شفاف مقاس 6*6*12\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"12حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"48 حبة\", \"price\": 9600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/476\", \"source_url\": \"https://dofesh.ps/?app=product.show.1014\"}",
+      "updated_at": 1792411521854
+    },
+    {
+      "source_id": 1012,
+      "mode": "apply",
+      "product_id": 477,
+      "status": "synced",
+      "detail": "{\"item_number\": 1477, \"name\": \"ورد تول للتزيين (ازرق )\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد تول للتزيين (ازرق )\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/477\", \"source_url\": \"https://dofesh.ps/?app=product.show.1012\"}",
+      "updated_at": 1792411531880
+    },
+    {
+      "source_id": 1011,
+      "mode": "apply",
+      "product_id": 478,
+      "status": "synced",
+      "detail": "{\"item_number\": 1478, \"name\": \"ورد تول للتزيين (ابيض )\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد تول للتزيين (ابيض )\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/478\", \"source_url\": \"https://dofesh.ps/?app=product.show.1011\"}",
+      "updated_at": 1792411542285
+    },
+    {
+      "source_id": 1010,
+      "mode": "apply",
+      "product_id": 479,
+      "status": "synced",
+      "detail": "{\"item_number\": 1479, \"name\": \"علبة كرتون هرم سادى (كونس) ارتفاع 15 سم\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون هرم سادى (كونس) ارتفاع 15 سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"25 حبة\", \"price\": 2000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/479\", \"source_url\": \"https://dofesh.ps/?app=product.show.1010\"}",
+      "updated_at": 1792411551776
+    },
+    {
+      "source_id": 1009,
+      "mode": "apply",
+      "product_id": 480,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1480, \"source\": {\"title\": \"طقم صواني خشب 2 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}}",
+      "updated_at": 1792411561600
+    },
+    {
+      "source_id": 1008,
+      "mode": "apply",
+      "product_id": 481,
+      "status": "synced",
+      "detail": "{\"item_number\": 1481, \"name\": \"ورد سولو صغير\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد سولو صغير\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/481\", \"source_url\": \"https://dofesh.ps/?app=product.show.1008\"}",
+      "updated_at": 1792411571861
+    },
+    {
+      "source_id": 1007,
+      "mode": "apply",
+      "product_id": 482,
+      "status": "synced",
+      "detail": "{\"item_number\": 1482, \"name\": \"ورد سولو صغير\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد سولو صغير\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/482\", \"source_url\": \"https://dofesh.ps/?app=product.show.1007\"}",
+      "updated_at": 1792411581851
+    },
+    {
+      "source_id": 1006,
+      "mode": "apply",
+      "product_id": 483,
+      "status": "synced",
+      "detail": "{\"item_number\": 1483, \"name\": \"ورد سولو صغير\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد سولو صغير\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/483\", \"source_url\": \"https://dofesh.ps/?app=product.show.1006\"}",
+      "updated_at": 1792411591866
+    },
+    {
+      "source_id": 1005,
+      "mode": "apply",
+      "product_id": 484,
+      "status": "synced",
+      "detail": "{\"item_number\": 1484, \"name\": \"ورد سولو صغير\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"ورد سولو صغير\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/484\", \"source_url\": \"https://dofesh.ps/?app=product.show.1005\"}",
+      "updated_at": 1792411601838
+    },
+    {
+      "source_id": 1004,
+      "mode": "apply",
+      "product_id": 485,
+      "status": "synced",
+      "detail": "{\"item_number\": 1485, \"name\": \"ورد اضاليا حبة كبيرة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد اضاليا حبة كبيرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/485\", \"source_url\": \"https://dofesh.ps/?app=product.show.1004\"}",
+      "updated_at": 1792411611961
+    },
+    {
+      "source_id": 1003,
+      "mode": "apply",
+      "product_id": 486,
+      "status": "synced",
+      "detail": "{\"item_number\": 1486, \"name\": \"ورد اضاليا حبة كبيرة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد اضاليا حبة كبيرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/486\", \"source_url\": \"https://dofesh.ps/?app=product.show.1003\"}",
+      "updated_at": 1792411621987
+    },
+    {
+      "source_id": 1002,
+      "mode": "apply",
+      "product_id": 487,
+      "status": "synced",
+      "detail": "{\"item_number\": 1487, \"name\": \"ورد اضاليا حبة كبيرة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد اضاليا حبة كبيرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/487\", \"source_url\": \"https://dofesh.ps/?app=product.show.1002\"}",
+      "updated_at": 1792411632001
+    },
+    {
+      "source_id": 1001,
+      "mode": "apply",
+      "product_id": 488,
+      "status": "synced",
+      "detail": "{\"item_number\": 1488, \"name\": \"ورد اضاليا حبة كبيرة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد اضاليا حبة كبيرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/488\", \"source_url\": \"https://dofesh.ps/?app=product.show.1001\"}",
+      "updated_at": 1792411641861
+    },
+    {
+      "source_id": 1000,
+      "mode": "apply",
+      "product_id": 489,
+      "status": "synced",
+      "detail": "{\"item_number\": 1489, \"name\": \"ورد اضاليا حبة كبيرة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد اضاليا حبة كبيرة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/489\", \"source_url\": \"https://dofesh.ps/?app=product.show.1000\"}",
+      "updated_at": 1792411651998
+    },
+    {
+      "source_id": 999,
+      "mode": "apply",
+      "product_id": 490,
+      "status": "synced",
+      "detail": "{\"item_number\": 1490, \"name\": \"ورد للتزيين فلل\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد للتزيين فلل\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/490\", \"source_url\": \"https://dofesh.ps/?app=product.show.999\"}",
+      "updated_at": 1792411662133
+    },
+    {
+      "source_id": 998,
+      "mode": "apply",
+      "product_id": 491,
+      "status": "synced",
+      "detail": "{\"item_number\": 1491, \"name\": \"ورد للتزيين فلل\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد للتزيين فلل\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/491\", \"source_url\": \"https://dofesh.ps/?app=product.show.998\"}",
+      "updated_at": 1792411672010
+    },
+    {
+      "source_id": 997,
+      "mode": "apply",
+      "product_id": 492,
+      "status": "synced",
+      "detail": "{\"item_number\": 1492, \"name\": \"ورد دوار شمس للتزيين\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد دوار شمس للتزيين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/492\", \"source_url\": \"https://dofesh.ps/?app=product.show.997\"}",
+      "updated_at": 1792411682019
+    },
+    {
+      "source_id": 996,
+      "mode": "apply",
+      "product_id": 493,
+      "status": "synced",
+      "detail": "{\"item_number\": 1493, \"name\": \"ورد للتزيين دوار شمس\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد للتزيين دوار شمس\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/493\", \"source_url\": \"https://dofesh.ps/?app=product.show.996\"}",
+      "updated_at": 1792411691831
+    },
+    {
+      "source_id": 995,
+      "mode": "apply",
+      "product_id": 494,
+      "status": "synced",
+      "detail": "{\"item_number\": 1494, \"name\": \"ورد ستان للتزيين\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان للتزيين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/494\", \"source_url\": \"https://dofesh.ps/?app=product.show.995\"}",
+      "updated_at": 1792411701972
+    },
+    {
+      "source_id": 994,
+      "mode": "apply",
+      "product_id": 495,
+      "status": "synced",
+      "detail": "{\"item_number\": 1495, \"name\": \"ورد ستان للتزين\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان للتزين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/495\", \"source_url\": \"https://dofesh.ps/?app=product.show.994\"}",
+      "updated_at": 1792411711749
+    },
+    {
+      "source_id": 993,
+      "mode": "apply",
+      "product_id": 496,
+      "status": "synced",
+      "detail": "{\"item_number\": 1496, \"name\": \"ورد ستان للتزيين\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان للتزيين\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/496\", \"source_url\": \"https://dofesh.ps/?app=product.show.993\"}",
+      "updated_at": 1792411721967
+    },
+    {
+      "source_id": 992,
+      "mode": "apply",
+      "product_id": 102,
+      "status": "synced",
+      "detail": "{\"item_number\": 1102, \"name\": \"شوكولاتة سيجار ليلي\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة سيجار ليلي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"بالكيلو\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/102\", \"source_url\": \"https://dofesh.ps/?app=product.show.992\"}",
+      "updated_at": 1792411732103
+    },
+    {
+      "source_id": 990,
+      "mode": "apply",
+      "product_id": 497,
+      "status": "synced",
+      "detail": "{\"item_number\": 1497, \"name\": \"ورد ستان لفة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان لفة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 800, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/497\", \"source_url\": \"https://dofesh.ps/?app=product.show.990\"}",
+      "updated_at": 1792411741856
+    },
+    {
+      "source_id": 989,
+      "mode": "apply",
+      "product_id": 498,
+      "status": "synced",
+      "detail": "{\"item_number\": 1498, \"name\": \"ورد ستان لفة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان لفة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/498\", \"source_url\": \"https://dofesh.ps/?app=product.show.989\"}",
+      "updated_at": 1792411752010
+    },
+    {
+      "source_id": 988,
+      "mode": "apply",
+      "product_id": 499,
+      "status": "synced",
+      "detail": "{\"item_number\": 1499, \"name\": \"ورد ستان لفة\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد ستان لفة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/499\", \"source_url\": \"https://dofesh.ps/?app=product.show.988\"}",
+      "updated_at": 1792411762024
     }
   ]
 }

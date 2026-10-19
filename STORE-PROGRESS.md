@@ -1122,3 +1122,64 @@
 - دوفش#1043 ↔ صنف#1448: no_options؛ سلة مزينة قماش مخمل بدون ايد. https://dofesh.ps/?app=product.show.1043
 - دوفش#1042 ↔ صنف#1449: no_options؛ سلة مزينة قماش مخمل بدون ايد. https://dofesh.ps/?app=product.show.1042
 - دوفش#1041 ↔ صنف#1450: no_options؛ سلة بدون ايد مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1041
+
+
+### 2026-10-19T15:09:23.990372+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:09:23.990372+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 148, "no_options": 136, "missing_source": 3, "unsupported_customization_or_minimum": 3, "matched": 7}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1040 ↔ صنف#1451: no_options؛ سلة مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1040
+- دوفش#1039 ↔ صنف#1452: no_options؛ سلة مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1039
+- دوفش#1038 ↔ صنف#1453: no_options؛ سلة مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1038
+- دوفش#1037 ↔ صنف#1454: no_options؛ سلة مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1037
+- دوفش#1036 ↔ صنف#1455: no_options؛ كيس تول شفاف ابيض. https://dofesh.ps/?app=product.show.1036
+- دوفش#1035 ↔ صنف#1456: synced؛ بالدزينة=20₪؛ 4 درزن=72₪؛ 10 درزن=150₪. https://dofesh.ps/?app=product.show.1035
+- دوفش#1034 ↔ صنف#1457: synced؛ بالحبة=2₪؛ بالدرزن=20₪. https://dofesh.ps/?app=product.show.1034
+- دوفش#1033 ↔ صنف#1458: synced؛ بالحبة=2₪؛ بالدرزن=20₪. https://dofesh.ps/?app=product.show.1033
+- دوفش#1032 ↔ صنف#1459: synced؛ بالدرزن=10₪؛ 4 دزينة=36₪. https://dofesh.ps/?app=product.show.1032
+- دوفش#1031 ↔ صنف#1460: no_options؛ علبة كرتون غطاء شفاف مقاس (10*10*3). https://dofesh.ps/?app=product.show.1031
+- دوفش#1030 ↔ صنف#1461: synced؛ بالحبة / كبير=4₪؛ بالحبة / وسط=3₪؛ بالحبة / صغير=2₪؛ 12 حبة / كبير=40₪؛ 12 حبة / وسط=30₪؛ 12 حبة / صغير=20₪؛ 50 حبة / كبير=150₪؛ 50 حبة / وسط=100₪؛ 50 حبة / صغير=70₪. https://dofesh.ps/?app=product.show.1030
+- دوفش#1029 ↔ صنف#1462: synced؛ بالحبة=2₪؛ 10 حبة=15₪؛ 50 حبة=75₪. https://dofesh.ps/?app=product.show.1029
+- دوفش#1028 ↔ صنف#1463: synced؛ بالحبة=7₪؛ 10 حبة=60₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.1028
+- دوفش#1027 ↔ صنف#1464: synced؛ بالحبة=7₪؛ 10 حبة=60₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.1027
+- دوفش#1026 ↔ صنف#1465: synced؛ بالحبة=7₪؛ 10 حبة=60₪؛ 50 حبة=250₪. https://dofesh.ps/?app=product.show.1026
+- دوفش#1025 ↔ صنف#1466: synced؛ بالحبة=7₪؛ 10 حبة=60₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.1025
+- دوفش#1024 ↔ صنف#1467: missing_source؛ supplier_404. https://dofesh.ps/?app=product.show.1024
+- دوفش#1023 ↔ صنف#1468: unsupported_customization_or_minimum؛ 1 قطعة=2.5₪؛ 14 قطعة=25₪؛ 30 قطعة=60₪. https://dofesh.ps/?app=product.show.1023
+- دوفش#1022 ↔ صنف#1469: synced؛ بالحبة=1₪؛ 20 حبة (بكيت كامل )=9₪. https://dofesh.ps/?app=product.show.1022
+- دوفش#1020 ↔ صنف#1470: synced؛ بالحبة=1.5₪؛ 50 حبة (بكيت)=50₪. https://dofesh.ps/?app=product.show.1020
+- دوفش#1019 ↔ صنف#1471: unsupported_customization_or_minimum؛ ذهبي لاصق / 10 قطعة=15₪؛ ذهبي لاصق / 30 قطعة=35₪؛ ذهبي لاصق / 50 قطعة=50₪؛ خشبي سادة / 10 قطعة=15₪؛ خشبي سادة / 30 قطعة=35₪؛ خشبي سادة / 50 قطعة=50₪؛ فضي لاصق / 10 قطعة=15₪؛ فضي لاصق / 30 قطعة=35₪؛ فضي لاصق / 50 قطعة=50₪. https://dofesh.ps/?app=product.show.1019
+- دوفش#1018 ↔ صنف#1472: synced؛ بالحبة=5₪؛ 10 حبة=40₪؛ 50 حبة=175₪. https://dofesh.ps/?app=product.show.1018
+- دوفش#1017 ↔ صنف#1473: synced؛ بالحبة=15₪؛ 10 حبة=130₪؛ 50 حبة=550₪. https://dofesh.ps/?app=product.show.1017
+- دوفش#1016 ↔ صنف#1474: synced؛ بالحبة=30₪؛ 5 قطعة=125₪؛ 10 قطعة=250₪. https://dofesh.ps/?app=product.show.1016
+- دوفش#1015 ↔ صنف#1475: synced؛ 12*8 / بالحبة=3₪؛ 12*8 / 12حبة=30₪؛ 12*8 / 48 حبة=96₪؛ 15*10 / بالحبة=5₪؛ 15*10 / 12حبة=48₪؛ 15*10 / 48 حبة=144₪؛ 25*15 / بالحبة=15₪؛ 25*15 / 12حبة=144₪؛ 25*15 / 48 حبة=384₪. https://dofesh.ps/?app=product.show.1015
+- دوفش#1014 ↔ صنف#1476: synced؛ بالحبة=3₪؛ 12حبة=25₪؛ 48 حبة=96₪. https://dofesh.ps/?app=product.show.1014
+- دوفش#1012 ↔ صنف#1477: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1012
+- دوفش#1011 ↔ صنف#1478: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1011
+- دوفش#1010 ↔ صنف#1479: synced؛ بالحبة=1₪؛ 25 حبة=20₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.1010
+- دوفش#1009 ↔ صنف#1480: no_options؛ طقم صواني خشب 2 قطعة. https://dofesh.ps/?app=product.show.1009
+- دوفش#1008 ↔ صنف#1481: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1008
+- دوفش#1007 ↔ صنف#1482: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1007
+- دوفش#1006 ↔ صنف#1483: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1006
+- دوفش#1005 ↔ صنف#1484: synced؛ بالحبة=0.5₪؛ 50 حبة=15₪. https://dofesh.ps/?app=product.show.1005
+- دوفش#1004 ↔ صنف#1485: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1004
+- دوفش#1003 ↔ صنف#1486: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1003
+- دوفش#1002 ↔ صنف#1487: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1002
+- دوفش#1001 ↔ صنف#1488: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1001
+- دوفش#1000 ↔ صنف#1489: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.1000
+- دوفش#999 ↔ صنف#1490: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.999
+- دوفش#998 ↔ صنف#1491: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.998
+- دوفش#997 ↔ صنف#1492: synced؛ بالحبة=1₪؛ 10 حبة=5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.997
+- دوفش#996 ↔ صنف#1493: synced؛ بالحبة=1₪؛ 10 حبة=5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.996
+- دوفش#995 ↔ صنف#1494: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.995
+- دوفش#994 ↔ صنف#1495: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.994
+- دوفش#993 ↔ صنف#1496: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.993
+- دوفش#992 ↔ صنف#1102: synced؛ بالحبة=1.5₪؛ بالكيلو=65₪. https://dofesh.ps/?app=product.show.992
+- دوفش#990 ↔ صنف#1497: synced؛ بالحبة=1₪؛ 10 حبة=8₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.990
+- دوفش#989 ↔ صنف#1498: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.989
+- دوفش#988 ↔ صنف#1499: synced؛ بالحبة=1₪؛ 10 حبة=7₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.988
