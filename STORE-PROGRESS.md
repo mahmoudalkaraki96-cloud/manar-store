@@ -1427,3 +1427,17 @@
 - دوفش#783 ↔ صنف#1681: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.783
 - دوفش#782 ↔ صنف#1682: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.782
 - دوفش#781 ↔ صنف#1683: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.781
+
+
+### 2026-10-19T15:43:02.468808+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:43:02.468808+03:00
+- Mode: apply
+- Status: paused_error
+- Counts: {"synced": 229, "no_options": 255, "missing_source": 3, "unsupported_customization_or_minimum": 4, "matched": 8, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#780 ↔ صنف#1684: no_options؛ علبة زجاج لزيت الزيتون. https://dofesh.ps/?app=product.show.780
+- دوفش#779 ↔ صنف#1685: no_options؛ علبة bvc مقاس 6*6*12. https://dofesh.ps/?app=product.show.779
+- دوفش#778 ↔ صنف#1686: error؛ invalid_price. https://dofesh.ps/?app=product.show.778

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T15:42:34.439476+03:00",
+  "updated_at": "2026-10-19T15:43:02.468808+03:00",
   "run_mode": "apply",
-  "run_status": "completed_batch",
-  "run_processed": 50,
+  "run_status": "paused_error",
+  "run_processed": 3,
   "results": [
     {
       "source_id": 1298,
@@ -4019,6 +4019,30 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1683, \"source\": {\"title\": \"اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
       "updated_at": 1792413752947
+    },
+    {
+      "source_id": 780,
+      "mode": "apply",
+      "product_id": 684,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1684, \"source\": {\"title\": \"علبة زجاج لزيت الزيتون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792413761162
+    },
+    {
+      "source_id": 779,
+      "mode": "apply",
+      "product_id": 685,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1685, \"source\": {\"title\": \"علبة bvc مقاس 6*6*12\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792413771068
+    },
+    {
+      "source_id": 778,
+      "mode": "apply",
+      "product_id": 686,
+      "status": "error",
+      "detail": "{\"reason\": \"invalid_price\", \"item_number\": 1686}",
+      "updated_at": 1792413781165
     }
   ]
 }
