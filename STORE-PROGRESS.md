@@ -1927,3 +1927,62 @@
 - الجعبري#4446 ↔ صنف#2366: no_options؛ مراه اكريلك للدبل ~ قاعدة خشب ~ 35*35 سم. https://jabaristore.com/?app=product.show.4446
 - الجعبري#4445 ↔ صنف#2367: no_options؛ مراه اكريلك للدبل ~ قاعدة خشب ~ 30*30 سم. https://jabaristore.com/?app=product.show.4445
 - الجعبري#4444 ↔ صنف#2368: no_options؛ صينية اكريلك ( 3*10*10 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4444
+### 2026-10-19T20:45:35.551115+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T20:45:35.551115+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 297, "no_options": 519, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#448 ↔ صنف#1935: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.448
+- دوفش#447 ↔ صنف#1936: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.447
+- دوفش#446 ↔ صنف#1937: no_options؛ اكياس شفاف (50*35+3)لاصق. https://dofesh.ps/?app=product.show.446
+- دوفش#445 ↔ صنف#1938: no_options؛ اكياس شفاف (22*37+3)لاصق. https://dofesh.ps/?app=product.show.445
+- دوفش#444 ↔ صنف#1939: no_options؛ اكياس شفاف (25*18)بدون لاصق. https://dofesh.ps/?app=product.show.444
+- دوفش#443 ↔ صنف#1940: no_options؛ اكياس النايلون شفاف (13*17+3)مع لاصق. https://dofesh.ps/?app=product.show.443
+- دوفش#442 ↔ صنف#1941: no_options؛ اكياس نايلون شفاف (9*12+3) مع لاصق. https://dofesh.ps/?app=product.show.442
+- دوفش#441 ↔ صنف#1186: synced؛ 50حبة=15₪؛ 100حبة=25₪؛ 1000حبة=200₪. https://dofesh.ps/?app=product.show.441
+- دوفش#440 ↔ صنف#1942: synced؛ بالحبة=1₪؛ 10 حبة=10₪؛ 50 حبة=45₪. https://dofesh.ps/?app=product.show.440
+- دوفش#439 ↔ صنف#1943: synced؛ بالحبة=1₪؛ 10 حبة=10₪؛ 50 حبة=70₪. https://dofesh.ps/?app=product.show.439
+- دوفش#438 ↔ صنف#1944: synced؛ ابيض / بالحبة=1₪؛ ابيض / 10 حبة=9₪؛ ابيض / 50 حبة=40₪؛ ذهبي / بالحبة=1₪؛ ذهبي / 10 حبة=9₪؛ ذهبي / 50 حبة=40₪. https://dofesh.ps/?app=product.show.438
+- دوفش#437 ↔ صنف#1945: no_options؛ علبة شفاف مع قاعدة كرتون وغطاء كرتون (8.5*8.5*14). https://dofesh.ps/?app=product.show.437
+- دوفش#435 ↔ صنف#1946: no_options؛ كيس بلاستيك مقوى مع ايد (11*8*3). https://dofesh.ps/?app=product.show.435
+- دوفش#433 ↔ صنف#1947: no_options؛ علبة شفاف مستطيل (18*10*15). https://dofesh.ps/?app=product.show.433
+- دوفش#432 ↔ صنف#1948: no_options؛ علبة شفاف (7*7*7). https://dofesh.ps/?app=product.show.432
+- دوفش#431 ↔ صنف#1949: no_options؛ علبة شفاف مع قاعدة ذهبي (9*9*5). https://dofesh.ps/?app=product.show.431
+- دوفش#430 ↔ صنف#1950: no_options؛ علبة شفاف مع قاعدة ذهبي (13*9*4). https://dofesh.ps/?app=product.show.430
+- دوفش#429 ↔ صنف#1951: no_options؛ علبة شفاف قاعدة ابيض (10*10*12). https://dofesh.ps/?app=product.show.429
+- دوفش#428 ↔ صنف#1952: no_options؛ علب شفاف (6*6*6) قاعدة ذهبي. https://dofesh.ps/?app=product.show.428
+- دوفش#427 ↔ صنف#1953: no_options؛ علبة شفاف مع ايد (8*8*12) قاعدة ابيض. https://dofesh.ps/?app=product.show.427
+- دوفش#426 ↔ صنف#1954: no_options؛ علبة شفاف (7.5*7.5*12) قاعدة ابيض. https://dofesh.ps/?app=product.show.426
+- دوفش#425 ↔ صنف#1955: no_options؛ علبة شفاف (5*5*8) قاعدة ذهبي. https://dofesh.ps/?app=product.show.425
+- دوفش#424 ↔ صنف#1956: synced؛ بالحبة=1.5₪؛ 10 حبة=10₪. https://dofesh.ps/?app=product.show.424
+- دوفش#423 ↔ صنف#1957: no_options؛ علبة شفاف (6*6*10)قاعدة ذهبي. https://dofesh.ps/?app=product.show.423
+- دوفش#422 ↔ صنف#1958: no_options؛ علبة شفاف (9*9*12) قاعدة ذهبي. https://dofesh.ps/?app=product.show.422
+- دوفش#421 ↔ صنف#1959: no_options؛ علبة شفاف (10*10*15) قاعدة ذهبي. https://dofesh.ps/?app=product.show.421
+- دوفش#420 ↔ صنف#1218: no_options؛ علبة شفاف قاعدة ذهبي (10*10*14). https://dofesh.ps/?app=product.show.420
+- دوفش#418 ↔ صنف#1960: no_options؛ رد قرنفل وسط (15فرع). https://dofesh.ps/?app=product.show.418
+- دوفش#416 ↔ صنف#1961: no_options؛ ورد قرنفل حبة كبيرة (7فروع). https://dofesh.ps/?app=product.show.416
+- دوفش#415 ↔ صنف#1962: no_options؛ ورد قرنفل حبة كبيرة (7فروع). https://dofesh.ps/?app=product.show.415
+- دوفش#414 ↔ صنف#1963: no_options؛ ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة). https://dofesh.ps/?app=product.show.414
+- دوفش#413 ↔ صنف#1964: no_options؛ ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة). https://dofesh.ps/?app=product.show.413
+- دوفش#412 ↔ صنف#1965: no_options؛ ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة). https://dofesh.ps/?app=product.show.412
+- دوفش#411 ↔ صنف#1219: synced؛ مبخرة الاناناس. https://dofesh.ps/?app=product.show.411
+- دوفش#410 ↔ صنف#1966: no_options؛ ورد جوري 9 فروع. https://dofesh.ps/?app=product.show.410
+- دوفش#409 ↔ صنف#1967: no_options؛ ورد جوري 9 فروع. https://dofesh.ps/?app=product.show.409
+- دوفش#408 ↔ صنف#1968: no_options؛ ورد جوري 9 فروع. https://dofesh.ps/?app=product.show.408
+- دوفش#407 ↔ صنف#1969: no_options؛ تحفة تخرج 10سم. https://dofesh.ps/?app=product.show.407
+- دوفش#406 ↔ صنف#1970: no_options؛ تحفة بيبي 7سم. https://dofesh.ps/?app=product.show.406
+- دوفش#405 ↔ صنف#1971: no_options؛ تحفة بيبي 13سم. https://dofesh.ps/?app=product.show.405
+- دوفش#404 ↔ صنف#1972: no_options؛ تحفة بيبي 6سم. https://dofesh.ps/?app=product.show.404
+- دوفش#403 ↔ صنف#1973: no_options؛ تحفة عروس وعريس 13سم. https://dofesh.ps/?app=product.show.403
+- دوفش#402 ↔ صنف#1974: no_options؛ تحفة عروس وعريس حجم كبير 10سم. https://dofesh.ps/?app=product.show.402
+- دوفش#401 ↔ صنف#1975: no_options؛ شف طاولة ذهبي لميع(137*183سم). https://dofesh.ps/?app=product.show.401
+- دوفش#400 ↔ صنف#1976: no_options؛ شف طاولة (137*183سم). https://dofesh.ps/?app=product.show.400
+- دوفش#399 ↔ صنف#1977: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.399
+- دوفش#398 ↔ صنف#1978: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.398
+- دوفش#397 ↔ صنف#1979: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.397
+- دوفش#396 ↔ صنف#1980: no_options؛ شرشف طاولة (137*183سم). https://dofesh.ps/?app=product.show.396
+- دوفش#395 ↔ صنف#1981: no_options؛ سلة مزينة لون نود للاعراس. https://dofesh.ps/?app=product.show.395

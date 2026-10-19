@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:37:18.173013+03:00",
+  "updated_at": "2026-10-19T20:45:35.551115+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -6435,6 +6435,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1934, \"source\": {\"title\": \"خرز محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
       "updated_at": 1792431436859
+    },
+    {
+      "source_id": 448,
+      "mode": "apply",
+      "product_id": 935,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1935, \"source\": {\"title\": \"خرز محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431444814
+    },
+    {
+      "source_id": 447,
+      "mode": "apply",
+      "product_id": 936,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1936, \"source\": {\"title\": \"خرز محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431454851
+    },
+    {
+      "source_id": 446,
+      "mode": "apply",
+      "product_id": 937,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1937, \"source\": {\"title\": \"اكياس شفاف (50*35+3)لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}}",
+      "updated_at": 1792431464794
+    },
+    {
+      "source_id": 445,
+      "mode": "apply",
+      "product_id": 938,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1938, \"source\": {\"title\": \"اكياس شفاف (22*37+3)لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792431474591
+    },
+    {
+      "source_id": 444,
+      "mode": "apply",
+      "product_id": 939,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1939, \"source\": {\"title\": \"اكياس شفاف (25*18)بدون لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792431484591
+    },
+    {
+      "source_id": 443,
+      "mode": "apply",
+      "product_id": 940,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1940, \"source\": {\"title\": \"اكياس النايلون شفاف (13*17+3)مع لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792431494634
+    },
+    {
+      "source_id": 442,
+      "mode": "apply",
+      "product_id": 941,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1941, \"source\": {\"title\": \"اكياس نايلون شفاف (9*12+3) مع لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431504587
+    },
+    {
+      "source_id": 441,
+      "mode": "apply",
+      "product_id": 186,
+      "status": "synced",
+      "detail": "{\"item_number\": 1186, \"name\": \"علاقة  ذهبي\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"علاقة ذهبي\", \"variants\": [{\"name\": \"50حبة\", \"price\": 1500, \"active\": true}, {\"name\": \"100حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"1000حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/186\", \"source_url\": \"https://dofesh.ps/?app=product.show.441\"}",
+      "updated_at": 1792431515052
+    },
+    {
+      "source_id": 440,
+      "mode": "apply",
+      "product_id": 942,
+      "status": "synced",
+      "detail": "{\"item_number\": 1942, \"name\": \"علبة كرتون غطاء شفاف مقاس (8*8*3)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون غطاء شفاف مقاس (8*8*3)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/942\", \"source_url\": \"https://dofesh.ps/?app=product.show.440\"}",
+      "updated_at": 1792431524852
+    },
+    {
+      "source_id": 439,
+      "mode": "apply",
+      "product_id": 943,
+      "status": "synced",
+      "detail": "{\"item_number\": 1943, \"name\": \"علبة كرتون غطاء شفاف (7*7*3)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون غطاء شفاف (7*7*3)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/943\", \"source_url\": \"https://dofesh.ps/?app=product.show.439\"}",
+      "updated_at": 1792431535074
+    },
+    {
+      "source_id": 438,
+      "mode": "apply",
+      "product_id": 944,
+      "status": "synced",
+      "detail": "{\"item_number\": 1944, \"name\": \"علبة كرتون غطاء شفاف مقاس (9*9*3)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون غطاء شفاف مقاس (9*9*3)\", \"variants\": [{\"name\": \"ابيض / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"ابيض / 10 حبة\", \"price\": 900, \"active\": true}, {\"name\": \"ابيض / 50 حبة\", \"price\": 4000, \"active\": true}, {\"name\": \"ذهبي / بالحبة\", \"price\": 100, \"active\": false}, {\"name\": \"ذهبي / 10 حبة\", \"price\": 900, \"active\": false}, {\"name\": \"ذهبي / 50 حبة\", \"price\": 4000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/944\", \"source_url\": \"https://dofesh.ps/?app=product.show.438\"}",
+      "updated_at": 1792431545080
+    },
+    {
+      "source_id": 437,
+      "mode": "apply",
+      "product_id": 945,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1945, \"source\": {\"title\": \"علبة شفاف مع قاعدة كرتون وغطاء كرتون (8.5*8.5*14)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792431554585
+    },
+    {
+      "source_id": 435,
+      "mode": "apply",
+      "product_id": 946,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1946, \"source\": {\"title\": \"كيس بلاستيك مقوى مع ايد (11*8*3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792431564592
+    },
+    {
+      "source_id": 433,
+      "mode": "apply",
+      "product_id": 947,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1947, \"source\": {\"title\": \"علبة شفاف مستطيل (18*10*15)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792431574827
+    },
+    {
+      "source_id": 432,
+      "mode": "apply",
+      "product_id": 948,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1948, \"source\": {\"title\": \"علبة شفاف (7*7*7)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792431584591
+    },
+    {
+      "source_id": 431,
+      "mode": "apply",
+      "product_id": 949,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1949, \"source\": {\"title\": \"علبة شفاف مع قاعدة ذهبي (9*9*5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792431594601
+    },
+    {
+      "source_id": 430,
+      "mode": "apply",
+      "product_id": 950,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1950, \"source\": {\"title\": \"علبة شفاف مع قاعدة ذهبي (13*9*4)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792431604657
+    },
+    {
+      "source_id": 429,
+      "mode": "apply",
+      "product_id": 951,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1951, \"source\": {\"title\": \"علبة شفاف قاعدة ابيض (10*10*12)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792431614606
+    },
+    {
+      "source_id": 428,
+      "mode": "apply",
+      "product_id": 952,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1952, \"source\": {\"title\": \"علب شفاف (6*6*6) قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792431624961
+    },
+    {
+      "source_id": 427,
+      "mode": "apply",
+      "product_id": 953,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1953, \"source\": {\"title\": \"علبة شفاف مع ايد (8*8*12) قاعدة ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792431635018
+    },
+    {
+      "source_id": 426,
+      "mode": "apply",
+      "product_id": 954,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1954, \"source\": {\"title\": \"علبة شفاف (7.5*7.5*12) قاعدة ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792431644913
+    },
+    {
+      "source_id": 425,
+      "mode": "apply",
+      "product_id": 955,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1955, \"source\": {\"title\": \"علبة شفاف (5*5*8) قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792431654833
+    },
+    {
+      "source_id": 424,
+      "mode": "apply",
+      "product_id": 956,
+      "status": "synced",
+      "detail": "{\"item_number\": 1956, \"name\": \"علبة شفاف (5*5*12) قاعدة ذهبي\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"علبة شفاف (5*5*12) قاعدة ذهبي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 150, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/956\", \"source_url\": \"https://dofesh.ps/?app=product.show.424\"}",
+      "updated_at": 1792431664943
+    },
+    {
+      "source_id": 423,
+      "mode": "apply",
+      "product_id": 957,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1957, \"source\": {\"title\": \"علبة شفاف (6*6*10)قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792431674613
+    },
+    {
+      "source_id": 422,
+      "mode": "apply",
+      "product_id": 958,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1958, \"source\": {\"title\": \"علبة شفاف (9*9*12) قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792431684600
+    },
+    {
+      "source_id": 421,
+      "mode": "apply",
+      "product_id": 959,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1959, \"source\": {\"title\": \"علبة شفاف (10*10*15) قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792431694836
+    },
+    {
+      "source_id": 420,
+      "mode": "apply",
+      "product_id": 218,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1218, \"source\": {\"title\": \"علبة شفاف قاعدة ذهبي (10*10*14)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792431704591
+    },
+    {
+      "source_id": 418,
+      "mode": "apply",
+      "product_id": 960,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1960, \"source\": {\"title\": \"رد قرنفل وسط (15فرع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792431714719
+    },
+    {
+      "source_id": 416,
+      "mode": "apply",
+      "product_id": 961,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1961, \"source\": {\"title\": \"ورد قرنفل حبة كبيرة (7فروع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792431724847
+    },
+    {
+      "source_id": 415,
+      "mode": "apply",
+      "product_id": 962,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1962, \"source\": {\"title\": \"ورد قرنفل حبة كبيرة (7فروع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792431734840
+    },
+    {
+      "source_id": 414,
+      "mode": "apply",
+      "product_id": 963,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1963, \"source\": {\"title\": \"ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792431744593
+    },
+    {
+      "source_id": 413,
+      "mode": "apply",
+      "product_id": 964,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1964, \"source\": {\"title\": \"ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792431754598
+    },
+    {
+      "source_id": 412,
+      "mode": "apply",
+      "product_id": 965,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1965, \"source\": {\"title\": \"ضمة ورد دوار شمس (5 حبة وردة و4 اكسسوار اخضر بالضمة الوحدة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792431764686
+    },
+    {
+      "source_id": 411,
+      "mode": "apply",
+      "product_id": 219,
+      "status": "synced",
+      "detail": "{\"item_number\": 1219, \"name\": \"مبخرة الأناناس\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"مبخرة الاناناس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"store_url\": \"https://manarstore.ps/product/219\", \"source_url\": \"https://dofesh.ps/?app=product.show.411\"}",
+      "updated_at": 1792431775044
+    },
+    {
+      "source_id": 410,
+      "mode": "apply",
+      "product_id": 966,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1966, \"source\": {\"title\": \"ورد جوري 9 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431784601
+    },
+    {
+      "source_id": 409,
+      "mode": "apply",
+      "product_id": 967,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1967, \"source\": {\"title\": \"ورد جوري 9 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792431794589
+    },
+    {
+      "source_id": 408,
+      "mode": "apply",
+      "product_id": 968,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1968, \"source\": {\"title\": \"ورد جوري 9 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431804615
+    },
+    {
+      "source_id": 407,
+      "mode": "apply",
+      "product_id": 969,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1969, \"source\": {\"title\": \"تحفة تخرج 10سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431814809
+    },
+    {
+      "source_id": 406,
+      "mode": "apply",
+      "product_id": 970,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1970, \"source\": {\"title\": \"تحفة بيبي 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431824587
+    },
+    {
+      "source_id": 405,
+      "mode": "apply",
+      "product_id": 971,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1971, \"source\": {\"title\": \"تحفة بيبي 13سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431834831
+    },
+    {
+      "source_id": 404,
+      "mode": "apply",
+      "product_id": 972,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1972, \"source\": {\"title\": \"تحفة بيبي 6سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431844592
+    },
+    {
+      "source_id": 403,
+      "mode": "apply",
+      "product_id": 973,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1973, \"source\": {\"title\": \"تحفة عروس وعريس 13سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431854858
+    },
+    {
+      "source_id": 402,
+      "mode": "apply",
+      "product_id": 974,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1974, \"source\": {\"title\": \"تحفة عروس وعريس حجم كبير 10سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431864598
+    },
+    {
+      "source_id": 401,
+      "mode": "apply",
+      "product_id": 975,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1975, \"source\": {\"title\": \"شف طاولة ذهبي لميع(137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431874830
+    },
+    {
+      "source_id": 400,
+      "mode": "apply",
+      "product_id": 976,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1976, \"source\": {\"title\": \"شف طاولة (137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431884854
+    },
+    {
+      "source_id": 399,
+      "mode": "apply",
+      "product_id": 977,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1977, \"source\": {\"title\": \"شرشف طاولة (137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431894828
+    },
+    {
+      "source_id": 398,
+      "mode": "apply",
+      "product_id": 978,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1978, \"source\": {\"title\": \"شرشف طاولة (137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431904845
+    },
+    {
+      "source_id": 397,
+      "mode": "apply",
+      "product_id": 979,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1979, \"source\": {\"title\": \"شرشف طاولة (137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792431914597
+    },
+    {
+      "source_id": 396,
+      "mode": "apply",
+      "product_id": 980,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1980, \"source\": {\"title\": \"شرشف طاولة (137*183سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792431924590
+    },
+    {
+      "source_id": 395,
+      "mode": "apply",
+      "product_id": 981,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1981, \"source\": {\"title\": \"سلة مزينة لون نود للاعراس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792431934629
     }
   ]
 }
