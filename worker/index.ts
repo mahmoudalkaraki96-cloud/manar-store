@@ -1,3 +1,4 @@
+import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {runSupplierImports,readSupplierImports} from "./supplier-import";
 import {readAdminDashboard,dayStart,calendarDays} from "./admin-dashboard";
 import {readBrowserActivity,purgeBrowserActivity} from "./browser-activity";
@@ -1019,44 +1020,23 @@ async function readOrders(env:Env){
   await ensureOrderExtrasSchema(env);
   await ensureOrderPolicyColumns(env);
   const [orders,items,mediaResult,feesResult]=await Promise.all([
-    env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,accepted_policy_version,policy_accepted_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
+    env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,edit_version,total_agorot,payment_method,payment_status,notes,created_at,updated_at,accepted_policy_version,policy_accepted_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
     env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
     env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all(),
     env.DB.prepare("SELECT id,order_id,label,amount_agorot FROM order_extra_fees ORDER BY id").all()
   ]);
   const media=mediaResult.results as Array<Record<string,unknown>>;
-  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
+  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,discount:Number(order.discount_agorot)/100,editVersion:Number(order.edit_version||0),total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
 async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContext){
-  await ensureOrderExtrasSchema(env);
-  const body=await parseJson(request),status=asText(body.status),submittedFees=Array.isArray(body.extraFees)?body.extraFees as Array<Record<string,unknown>>:null;
-  const fees=submittedFees?.map(fee=>({label:asText(fee.label).slice(0,100),amount:Math.max(0,Math.round(Number(fee.amount||0)*100))})).filter(fee=>fee.label&&fee.amount>0).slice(0,20)||null;
-  if(submittedFees&&fees?.length!==submittedFees.length)return json({error:"سبب ومبلغ كل رسم إضافي مطلوبان"},{status:400});
-  if(!orderStatuses.includes(status as typeof orderStatuses[number]))return json({error:"حالة الطلب غير صحيحة"},{status:400});
-  const current=await env.DB.prepare("SELECT status FROM orders WHERE id=? AND deleted_at IS NULL").bind(id).first<{status:string}>();
-  if(!current)return json({error:"الطلب غير موجود"},{status:404});
-  const shipping=Math.max(0,Math.round(Number(body.shipping??0)*100)),now=Date.now(),existingFeeTotal=fees?0:Number((await env.DB.prepare("SELECT COALESCE(SUM(amount_agorot),0) AS total FROM order_extra_fees WHERE order_id=?").bind(id).first<{total:number}>())?.total||0),feeTotal=fees?fees.reduce((sum,fee)=>sum+fee.amount,0):existingFeeTotal,statements=[env.DB.prepare("UPDATE orders SET status=?,shipping_agorot=?,total_agorot=subtotal_agorot+?+?,updated_at=? WHERE id=?").bind(status,shipping,shipping,feeTotal,now,id)];
-  if(fees){statements.push(env.DB.prepare("DELETE FROM order_extra_fees WHERE order_id=?").bind(id));for(const fee of fees)statements.push(env.DB.prepare("INSERT INTO order_extra_fees (order_id,label,amount_agorot,created_at) VALUES (?,?,?,?)").bind(id,fee.label,fee.amount,now))}
-  if(current.status==="new"&&status==="confirmed"){
-    const items=await env.DB.prepare("SELECT id,product_id,variant_id,product_name,variant_label,quantity FROM order_items WHERE order_id=?").bind(id).all();
-    for(const item of items.results as Array<Record<string,unknown>>){
-      const quantity=Number(item.quantity);
-      let resolvedVariantId=item.variant_id==null?null:Number(item.variant_id);
-      let stock=resolvedVariantId?await env.DB.prepare("SELECT stock_quantity FROM product_variants WHERE id=? AND product_id=? AND active=1").bind(resolvedVariantId,Number(item.product_id)).first<{stock_quantity:number}>():null;
-      if(!stock&&item.variant_label&&item.product_id!=null){
-        const replacement=await env.DB.prepare("SELECT v.id,v.stock_quantity FROM product_variants v JOIN variant_option_values vov ON vov.variant_id=v.id JOIN product_option_values pov ON pov.id=vov.option_value_id WHERE v.product_id=? AND pov.value=? AND v.active=1 LIMIT 1").bind(Number(item.product_id),String(item.variant_label)).first<{id:number;stock_quantity:number}>();
-        if(replacement){resolvedVariantId=Number(replacement.id);stock={stock_quantity:Number(replacement.stock_quantity)};statements.push(env.DB.prepare("UPDATE order_items SET variant_id=? WHERE id=?").bind(resolvedVariantId,Number(item.id)))}
-      }
-      if(!resolvedVariantId)stock=await env.DB.prepare("SELECT stock_quantity FROM products WHERE id=? AND deleted_at IS NULL").bind(Number(item.product_id)).first<{stock_quantity:number}>();
-      if(!stock||Number(stock.stock_quantity)<quantity)return json({error:`لا يمكن تأكيد الطلب: المتوفر من ${String(item.product_name)}${item.variant_label?` — ${String(item.variant_label)}`:""} هو ${Number(stock?.stock_quantity||0)} فقط`},{status:409});
-      if(resolvedVariantId)statements.push(env.DB.prepare("UPDATE product_variants SET stock_quantity=stock_quantity-?,updated_at=? WHERE id=?").bind(quantity,now,resolvedVariantId));
-      if(item.product_id!=null)statements.push(env.DB.prepare("UPDATE products SET stock_quantity=CASE WHEN ? IS NULL THEN stock_quantity-? ELSE stock_quantity END,order_count=order_count+?,updated_at=? WHERE id=?").bind(resolvedVariantId,quantity,quantity,now,Number(item.product_id)));
-    }
-  }
-  await env.DB.batch(statements);
-  if(current.status!==status)ctx.waitUntil(notifyOrderStatus(env,id,status).catch(()=>console.error("order_status_push_failed")));
+ await ensureOrderExtrasSchema(env);
+ await ensureCustomizationSchema(env);
+ try{
+  const result=await saveOrderEdit(env.DB,id,await parseJson(request));
+  if(result.previousStatus!==result.status)ctx.waitUntil(notifyOrderStatus(env,id,result.status).catch(()=>console.error("order_status_push_failed")));
   return json({ok:true});
+ }catch(error){if(error instanceof OrderEditError)return json({error:error.message},{status:error.status});throw error}
 }
 
 async function readCatalog(env: Env, includeInactive = false) {
