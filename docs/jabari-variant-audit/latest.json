@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:59:10.026888+03:00",
+  "updated_at": "2026-10-19T21:07:29.620150+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -1243,6 +1243,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2619, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( شهد العسل ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792432749094
+    },
+    {
+      "source_id": 4321,
+      "mode": "apply",
+      "product_id": 1620,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2620, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( ريجينسي ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432756548
+    },
+    {
+      "source_id": 4320,
+      "mode": "apply",
+      "product_id": 1621,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2621, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( امبر )3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432766548
+    },
+    {
+      "source_id": 4319,
+      "mode": "apply",
+      "product_id": 1622,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2622, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( عود ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432776674
+    },
+    {
+      "source_id": 4318,
+      "mode": "apply",
+      "product_id": 1623,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2623, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( هارموني ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432786785
+    },
+    {
+      "source_id": 4317,
+      "mode": "apply",
+      "product_id": 1624,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2624, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( ليالي العرب ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432796667
+    },
+    {
+      "source_id": 4316,
+      "mode": "apply",
+      "product_id": 1625,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2625, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة الياقوت ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432806558
+    },
+    {
+      "source_id": 4315,
+      "mode": "apply",
+      "product_id": 1626,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2626, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة زمرد ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432816694
+    },
+    {
+      "source_id": 4314,
+      "mode": "apply",
+      "product_id": 1627,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2627, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة الماس ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432826531
+    },
+    {
+      "source_id": 4313,
+      "mode": "apply",
+      "product_id": 1628,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2628, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة روبي ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432836549
+    },
+    {
+      "source_id": 4312,
+      "mode": "apply",
+      "product_id": 1629,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2629, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( شهد عسل ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432846540
+    },
+    {
+      "source_id": 4311,
+      "mode": "apply",
+      "product_id": 1630,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2630, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( العنبر ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432856563
+    },
+    {
+      "source_id": 4310,
+      "mode": "apply",
+      "product_id": 1631,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2631, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( ورد ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432866532
+    },
+    {
+      "source_id": 4309,
+      "mode": "apply",
+      "product_id": 1632,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2632, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( المسك الازرق ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432876706
+    },
+    {
+      "source_id": 4308,
+      "mode": "apply",
+      "product_id": 1633,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2633, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( الليالي العربية عود ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432886802
+    },
+    {
+      "source_id": 4307,
+      "mode": "apply",
+      "product_id": 1634,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2634, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( سفن وندز ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432896554
+    },
+    {
+      "source_id": 4306,
+      "mode": "apply",
+      "product_id": 1635,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2635, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( لافندر ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432906560
+    },
+    {
+      "source_id": 4305,
+      "mode": "apply",
+      "product_id": 1636,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2636, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( عود ال الابيض ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432916852
+    },
+    {
+      "source_id": 4304,
+      "mode": "apply",
+      "product_id": 1637,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2637, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 2 ساعة ( صندل ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432926794
+    },
+    {
+      "source_id": 4303,
+      "mode": "apply",
+      "product_id": 1638,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2638, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( ورد ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432936532
+    },
+    {
+      "source_id": 4302,
+      "mode": "apply",
+      "product_id": 1639,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2639, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( المسك ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432946750
+    },
+    {
+      "source_id": 4301,
+      "mode": "apply",
+      "product_id": 1640,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2640, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( عؤدة ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432956781
+    },
+    {
+      "source_id": 4300,
+      "mode": "apply",
+      "product_id": 1641,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2641, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( الخزامي ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432966567
+    },
+    {
+      "source_id": 4299,
+      "mode": "apply",
+      "product_id": 1642,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2642, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( شهد عسل ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432976806
+    },
+    {
+      "source_id": 4297,
+      "mode": "apply",
+      "product_id": 1643,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2643, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( جازمين ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432986553
+    },
+    {
+      "source_id": 4296,
+      "mode": "apply",
+      "product_id": 1644,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2644, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( امبر ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432996831
+    },
+    {
+      "source_id": 4295,
+      "mode": "apply",
+      "product_id": 1645,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2645, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( الخليج عود ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433006554
+    },
+    {
+      "source_id": 4294,
+      "mode": "apply",
+      "product_id": 1646,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2646, \"source\": {\"title\": \"اقماع بخور SHALIMAR ( صندل ) 7 قمع & قاعدة معدن\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433016553
+    },
+    {
+      "source_id": 4293,
+      "mode": "apply",
+      "product_id": 1647,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2647, \"source\": {\"title\": \"شوكلاتة (زهري) قلب Lily ( 1 كغم . تقريبا 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433026842
+    },
+    {
+      "source_id": 4292,
+      "mode": "apply",
+      "product_id": 1648,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2648, \"source\": {\"title\": \"شوكلاتة (احمر) قلب Lily ( 1 كغم . تقريبا 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433036547
+    },
+    {
+      "source_id": 4291,
+      "mode": "apply",
+      "product_id": 1649,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2649, \"source\": {\"title\": \"شوكلاتة (ذهبي) قلب Lily ( 1 كغم . تقريبا 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433046565
+    },
+    {
+      "source_id": 4290,
+      "mode": "apply",
+      "product_id": 1650,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2650, \"source\": {\"title\": \"شوكلاتة (فضي) قلب Lily ( 1 كغم . تقريبا 100 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433056763
+    },
+    {
+      "source_id": 4288,
+      "mode": "apply",
+      "product_id": 1651,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2651, \"source\": {\"title\": \"كلفة دنتيل ابيض ( 25 متر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433066674
+    },
+    {
+      "source_id": 4287,
+      "mode": "apply",
+      "product_id": 1652,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2652, \"source\": {\"title\": \"فواحة عطر & حجر نفاذ للعطر ( ابيض )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433076534
+    },
+    {
+      "source_id": 4286,
+      "mode": "apply",
+      "product_id": 1653,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2653, \"source\": {\"title\": \"فواحة عطر & حجر نفاذ للعطر ( ازرق )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433086776
+    },
+    {
+      "source_id": 4285,
+      "mode": "apply",
+      "product_id": 1654,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2654, \"source\": {\"title\": \"فواحة عطر & حجر نفاذ للعطر ( زهري )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433096583
+    },
+    {
+      "source_id": 4283,
+      "mode": "apply",
+      "product_id": 1655,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2655, \"source\": {\"title\": \"ملكان مخمل قاعده معدن ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433106570
+    },
+    {
+      "source_id": 4282,
+      "mode": "apply",
+      "product_id": 1656,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2656, \"source\": {\"title\": \"رقبة مخمل مع قاعدة معدن 30 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433116793
+    },
+    {
+      "source_id": 4279,
+      "mode": "apply",
+      "product_id": 1657,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2657, \"source\": {\"title\": \"مضيفة زجاج عصفور 🐤 ( بدون شمع فارغة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433126782
+    },
+    {
+      "source_id": 4278,
+      "mode": "apply",
+      "product_id": 1658,
+      "status": "synced",
+      "detail": "{\"item_number\": 2658, \"name\": \"Elite Bow Box شنطة الفيونكة الفاخرة ( 12 قطعة )\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"Elite Bow Box شنطة الفيونكة الفاخرة ( 12 قطعة )\", \"variants\": [{\"name\": \"فيونكة بيج\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"فيونكة زهر\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"فيونكة ازرق\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"Elite Bow Box شنطة الفيونكة الفاخرة ( 12 قطعة )\", \"variants\": [{\"name\": \"فيونكة بيج\", \"price\": 1800, \"active\": true}, {\"name\": \"فيونكة زهر\", \"price\": 1800, \"active\": true}, {\"name\": \"فيونكة ازرق\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"فيونكة بيج\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"فيونكة زهر\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"فيونكة ازرق\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1658\", \"source_url\": \"https://jabaristore.com/?app=product.show.4278\"}",
+      "updated_at": 1792433137233
+    },
+    {
+      "source_id": 4277,
+      "mode": "apply",
+      "product_id": 1659,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2659, \"source\": {\"title\": \"مكحلة اصلي - نحاسي هندي - فارغة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433146800
+    },
+    {
+      "source_id": 4269,
+      "mode": "apply",
+      "product_id": 1660,
+      "status": "synced",
+      "detail": "{\"item_number\": 2660, \"name\": \"فواحة عطرية مع تصميم وطاقية تخرج\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"فواحة عطرية مع تصميم وطاقية تخرج\", \"variants\": [{\"name\": \"30 مل\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"50 مل\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"فواحة عطرية مع تصميم وطاقية تخرج\", \"variants\": [{\"name\": \"30 مل\", \"price\": 600, \"active\": false}, {\"name\": \"50 مل\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"30 مل\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"50 مل\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1660\", \"source_url\": \"https://jabaristore.com/?app=product.show.4269\"}",
+      "updated_at": 1792433156859
+    },
+    {
+      "source_id": 4268,
+      "mode": "apply",
+      "product_id": 1661,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2661, \"source\": {\"title\": \"عبوة زجاج - فارغة - 5 مل - للسيارة (غطاء + اعواد خشب) & حبل قطني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433166787
+    },
+    {
+      "source_id": 4267,
+      "mode": "apply",
+      "product_id": 1662,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2662, \"source\": {\"title\": \"سلة جلد مع كيس مخمل ( 12 قطعةه )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433176797
+    },
+    {
+      "source_id": 4266,
+      "mode": "apply",
+      "product_id": 1663,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2663, \"source\": {\"title\": \"سلة جلد مع كيس مخمل ( 12 قطعةه )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433186780
+    },
+    {
+      "source_id": 4265,
+      "mode": "apply",
+      "product_id": 1664,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2664, \"source\": {\"title\": \"سلة جلد مع كيس مخمل ( 12 قطعةه )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433196831
+    },
+    {
+      "source_id": 4264,
+      "mode": "apply",
+      "product_id": 1665,
+      "status": "synced",
+      "detail": "{\"item_number\": 2665, \"name\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1665\", \"source_url\": \"https://jabaristore.com/?app=product.show.4264\"}",
+      "updated_at": 1792433206820
+    },
+    {
+      "source_id": 4263,
+      "mode": "apply",
+      "product_id": 1666,
+      "status": "synced",
+      "detail": "{\"item_number\": 2666, \"name\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1666\", \"source_url\": \"https://jabaristore.com/?app=product.show.4263\"}",
+      "updated_at": 1792433217079
+    },
+    {
+      "source_id": 4262,
+      "mode": "apply",
+      "product_id": 1667,
+      "status": "synced",
+      "detail": "{\"item_number\": 2667, \"name\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك اسود للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1667\", \"source_url\": \"https://jabaristore.com/?app=product.show.4262\"}",
+      "updated_at": 1792433227067
+    },
+    {
+      "source_id": 4261,
+      "mode": "apply",
+      "product_id": 1668,
+      "status": "synced",
+      "detail": "{\"item_number\": 2668, \"name\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1668\", \"source_url\": \"https://jabaristore.com/?app=product.show.4261\"}",
+      "updated_at": 1792433237040
+    },
+    {
+      "source_id": 4260,
+      "mode": "apply",
+      "product_id": 1669,
+      "status": "synced",
+      "detail": "{\"item_number\": 2669, \"name\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1669\", \"source_url\": \"https://jabaristore.com/?app=product.show.4260\"}",
+      "updated_at": 1792433247128
     },
     {
       "source_id": 3780,

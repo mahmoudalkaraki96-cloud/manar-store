@@ -2226,3 +2226,64 @@
 - دوفش#292 ↔ صنف#1095: no_options؛ تول مدور مقصوص (24سم) تركواز. https://dofesh.ps/?app=product.show.292
 - دوفش#291 ↔ صنف#1096: no_options؛ تول مدور (24سم) احمر. https://dofesh.ps/?app=product.show.291
 - دوفش#290 ↔ صنف#1097: no_options؛ تول مدور مقصوص (24سم) فوشي. https://dofesh.ps/?app=product.show.290
+
+
+### 2026-10-19T21:07:29.620150+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:07:29.620150+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 179, "synced": 25, "unsupported_source_price": 2}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4321 ↔ صنف#2620: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( ريجينسي ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4321
+- الجعبري#4320 ↔ صنف#2621: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( امبر )3 عود * 40 سم. https://jabaristore.com/?app=product.show.4320
+- الجعبري#4319 ↔ صنف#2622: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( عود ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4319
+- الجعبري#4318 ↔ صنف#2623: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( هارموني ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4318
+- الجعبري#4317 ↔ صنف#2624: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( ليالي العرب ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4317
+- الجعبري#4316 ↔ صنف#2625: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة الياقوت ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4316
+- الجعبري#4315 ↔ صنف#2626: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة زمرد ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4315
+- الجعبري#4314 ↔ صنف#2627: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة الماس ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4314
+- الجعبري#4313 ↔ صنف#2628: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( جوهرة روبي ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4313
+- الجعبري#4312 ↔ صنف#2629: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( شهد عسل ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4312
+- الجعبري#4311 ↔ صنف#2630: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( العنبر ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4311
+- الجعبري#4310 ↔ صنف#2631: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( ورد ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4310
+- الجعبري#4309 ↔ صنف#2632: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( المسك الازرق ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4309
+- الجعبري#4308 ↔ صنف#2633: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( الليالي العربية عود ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4308
+- الجعبري#4307 ↔ صنف#2634: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( سفن وندز ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4307
+- الجعبري#4306 ↔ صنف#2635: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( لافندر ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4306
+- الجعبري#4305 ↔ صنف#2636: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( عود ال الابيض ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4305
+- الجعبري#4304 ↔ صنف#2637: no_options؛ اعواد بخور SHALIMAR مستطيل 2 ساعة ( صندل ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4304
+- الجعبري#4303 ↔ صنف#2638: no_options؛ اقماع بخور SHALIMAR ( ورد ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4303
+- الجعبري#4302 ↔ صنف#2639: no_options؛ اقماع بخور SHALIMAR ( المسك ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4302
+- الجعبري#4301 ↔ صنف#2640: no_options؛ اقماع بخور SHALIMAR ( عؤدة ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4301
+- الجعبري#4300 ↔ صنف#2641: no_options؛ اقماع بخور SHALIMAR ( الخزامي ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4300
+- الجعبري#4299 ↔ صنف#2642: no_options؛ اقماع بخور SHALIMAR ( شهد عسل ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4299
+- الجعبري#4297 ↔ صنف#2643: no_options؛ اقماع بخور SHALIMAR ( جازمين ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4297
+- الجعبري#4296 ↔ صنف#2644: no_options؛ اقماع بخور SHALIMAR ( امبر ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4296
+- الجعبري#4295 ↔ صنف#2645: no_options؛ اقماع بخور SHALIMAR ( الخليج عود ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4295
+- الجعبري#4294 ↔ صنف#2646: no_options؛ اقماع بخور SHALIMAR ( صندل ) 7 قمع & قاعدة معدن. https://jabaristore.com/?app=product.show.4294
+- الجعبري#4293 ↔ صنف#2647: no_options؛ شوكلاتة (زهري) قلب Lily ( 1 كغم . تقريبا 100 قطعة ). https://jabaristore.com/?app=product.show.4293
+- الجعبري#4292 ↔ صنف#2648: no_options؛ شوكلاتة (احمر) قلب Lily ( 1 كغم . تقريبا 100 قطعة ). https://jabaristore.com/?app=product.show.4292
+- الجعبري#4291 ↔ صنف#2649: no_options؛ شوكلاتة (ذهبي) قلب Lily ( 1 كغم . تقريبا 100 قطعة ). https://jabaristore.com/?app=product.show.4291
+- الجعبري#4290 ↔ صنف#2650: no_options؛ شوكلاتة (فضي) قلب Lily ( 1 كغم . تقريبا 100 قطعة ). https://jabaristore.com/?app=product.show.4290
+- الجعبري#4288 ↔ صنف#2651: no_options؛ كلفة دنتيل ابيض ( 25 متر ). https://jabaristore.com/?app=product.show.4288
+- الجعبري#4287 ↔ صنف#2652: no_options؛ فواحة عطر & حجر نفاذ للعطر ( ابيض ). https://jabaristore.com/?app=product.show.4287
+- الجعبري#4286 ↔ صنف#2653: no_options؛ فواحة عطر & حجر نفاذ للعطر ( ازرق ). https://jabaristore.com/?app=product.show.4286
+- الجعبري#4285 ↔ صنف#2654: no_options؛ فواحة عطر & حجر نفاذ للعطر ( زهري ). https://jabaristore.com/?app=product.show.4285
+- الجعبري#4283 ↔ صنف#2655: no_options؛ ملكان مخمل قاعده معدن ذهبي. https://jabaristore.com/?app=product.show.4283
+- الجعبري#4282 ↔ صنف#2656: no_options؛ رقبة مخمل مع قاعدة معدن 30 سم. https://jabaristore.com/?app=product.show.4282
+- الجعبري#4279 ↔ صنف#2657: no_options؛ مضيفة زجاج عصفور 🐤 ( بدون شمع فارغة). https://jabaristore.com/?app=product.show.4279
+- الجعبري#4278 ↔ صنف#2658: synced؛ فيونكة بيج=19.5₪؛ فيونكة زهر=19.5₪؛ فيونكة ازرق=19.5₪. https://jabaristore.com/?app=product.show.4278
+- الجعبري#4277 ↔ صنف#2659: no_options؛ مكحلة اصلي - نحاسي هندي - فارغة. https://jabaristore.com/?app=product.show.4277
+- الجعبري#4269 ↔ صنف#2660: synced؛ 30 مل=7₪؛ 50 مل=9₪. https://jabaristore.com/?app=product.show.4269
+- الجعبري#4268 ↔ صنف#2661: no_options؛ عبوة زجاج - فارغة - 5 مل - للسيارة (غطاء + اعواد خشب) & حبل قطني. https://jabaristore.com/?app=product.show.4268
+- الجعبري#4267 ↔ صنف#2662: no_options؛ سلة جلد مع كيس مخمل ( 12 قطعةه ). https://jabaristore.com/?app=product.show.4267
+- الجعبري#4266 ↔ صنف#2663: no_options؛ سلة جلد مع كيس مخمل ( 12 قطعةه ). https://jabaristore.com/?app=product.show.4266
+- الجعبري#4265 ↔ صنف#2664: no_options؛ سلة جلد مع كيس مخمل ( 12 قطعةه ). https://jabaristore.com/?app=product.show.4265
+- الجعبري#4264 ↔ صنف#2665: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4264
+- الجعبري#4263 ↔ صنف#2666: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4263
+- الجعبري#4262 ↔ صنف#2667: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4262
+- الجعبري#4261 ↔ صنف#2668: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4261
+- الجعبري#4260 ↔ صنف#2669: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4260
