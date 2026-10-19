@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:50:52.315290+03:00",
+  "updated_at": "2026-10-19T20:59:10.026888+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -843,6 +843,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2571, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( تيوب روز ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792432251428
+    },
+    {
+      "source_id": 4374,
+      "mode": "apply",
+      "product_id": 1572,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2572, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( زعفران ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432259316
+    },
+    {
+      "source_id": 4373,
+      "mode": "apply",
+      "product_id": 1573,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2573, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( FRANGIPANI ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432269108
+    },
+    {
+      "source_id": 4372,
+      "mode": "apply",
+      "product_id": 1574,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2574, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( الباتشولي ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432279085
+    },
+    {
+      "source_id": 4371,
+      "mode": "apply",
+      "product_id": 1575,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2575, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( المسك ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432289585
+    },
+    {
+      "source_id": 4370,
+      "mode": "apply",
+      "product_id": 1576,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2576, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( زنبق ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432299301
+    },
+    {
+      "source_id": 4369,
+      "mode": "apply",
+      "product_id": 1577,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2577, \"source\": {\"title\": \"اعواد بخور '' يدي '' مستطيل ( 7 نكهات ) & عطر هدية 28 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432309445
+    },
+    {
+      "source_id": 4368,
+      "mode": "apply",
+      "product_id": 1578,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2578, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل ( يارا ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432319118
+    },
+    {
+      "source_id": 4367,
+      "mode": "apply",
+      "product_id": 1579,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2579, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل ( الطوري ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432329345
+    },
+    {
+      "source_id": 4366,
+      "mode": "apply",
+      "product_id": 1580,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2580, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل ( شهد العسل ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432339102
+    },
+    {
+      "source_id": 4365,
+      "mode": "apply",
+      "product_id": 1581,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2581, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل ( خمرة ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432349099
+    },
+    {
+      "source_id": 4364,
+      "mode": "apply",
+      "product_id": 1582,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2582, \"source\": {\"title\": \"اعواد بخور ( ياسمين ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432359346
+    },
+    {
+      "source_id": 4363,
+      "mode": "apply",
+      "product_id": 1583,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2583, \"source\": {\"title\": \"اعواد بخور ( الخزامي ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432369115
+    },
+    {
+      "source_id": 4361,
+      "mode": "apply",
+      "product_id": 1584,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2584, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432379343
+    },
+    {
+      "source_id": 4360,
+      "mode": "apply",
+      "product_id": 1585,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2585, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432389109
+    },
+    {
+      "source_id": 4359,
+      "mode": "apply",
+      "product_id": 1586,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2586, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432399108
+    },
+    {
+      "source_id": 4357,
+      "mode": "apply",
+      "product_id": 1587,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2587, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432409110
+    },
+    {
+      "source_id": 4356,
+      "mode": "apply",
+      "product_id": 1588,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2588, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432419094
+    },
+    {
+      "source_id": 4355,
+      "mode": "apply",
+      "product_id": 1589,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2589, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432429327
+    },
+    {
+      "source_id": 4354,
+      "mode": "apply",
+      "product_id": 1590,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2590, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432439297
+    },
+    {
+      "source_id": 4353,
+      "mode": "apply",
+      "product_id": 1591,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2591, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432449401
+    },
+    {
+      "source_id": 4352,
+      "mode": "apply",
+      "product_id": 1592,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2592, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432459305
+    },
+    {
+      "source_id": 4351,
+      "mode": "apply",
+      "product_id": 1593,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2593, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432469336
+    },
+    {
+      "source_id": 4350,
+      "mode": "apply",
+      "product_id": 1594,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2594, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432479125
+    },
+    {
+      "source_id": 4348,
+      "mode": "apply",
+      "product_id": 1595,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2595, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432489091
+    },
+    {
+      "source_id": 4347,
+      "mode": "apply",
+      "product_id": 1393,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2393}",
+      "updated_at": 1792432499361
+    },
+    {
+      "source_id": 4346,
+      "mode": "apply",
+      "product_id": 1394,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2394}",
+      "updated_at": 1792432509111
+    },
+    {
+      "source_id": 4345,
+      "mode": "apply",
+      "product_id": 1596,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2596, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( لافندر ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432519322
+    },
+    {
+      "source_id": 4344,
+      "mode": "apply",
+      "product_id": 1597,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2597, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( دفقة الفواكه ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432529320
+    },
+    {
+      "source_id": 4343,
+      "mode": "apply",
+      "product_id": 1598,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2598, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( كريك اوكيد ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432539106
+    },
+    {
+      "source_id": 4342,
+      "mode": "apply",
+      "product_id": 1599,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2599, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( MelFlower ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432549318
+    },
+    {
+      "source_id": 4341,
+      "mode": "apply",
+      "product_id": 1600,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2600, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي ( فانتازيا ) 20 عود * 23 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432559108
+    },
+    {
+      "source_id": 4340,
+      "mode": "apply",
+      "product_id": 1601,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2601, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (عنبر) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432569112
+    },
+    {
+      "source_id": 4339,
+      "mode": "apply",
+      "product_id": 1602,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2602, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (قرفة جوز الهند ) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432579095
+    },
+    {
+      "source_id": 4338,
+      "mode": "apply",
+      "product_id": 1603,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2603, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (الاوركيد) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432589124
+    },
+    {
+      "source_id": 4337,
+      "mode": "apply",
+      "product_id": 1604,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2604, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (زنبق) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432599314
+    },
+    {
+      "source_id": 4336,
+      "mode": "apply",
+      "product_id": 1605,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2605, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (غاردينيا) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432609092
+    },
+    {
+      "source_id": 4335,
+      "mode": "apply",
+      "product_id": 1606,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2606, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (لبان) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432619094
+    },
+    {
+      "source_id": 4334,
+      "mode": "apply",
+      "product_id": 1607,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2607, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (المسك) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432629110
+    },
+    {
+      "source_id": 4333,
+      "mode": "apply",
+      "product_id": 1608,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2608, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (الخليج عود) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432639114
+    },
+    {
+      "source_id": 4332,
+      "mode": "apply",
+      "product_id": 1609,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2609, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (وردة حمراء) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432649132
+    },
+    {
+      "source_id": 4331,
+      "mode": "apply",
+      "product_id": 1610,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2610, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (اناناس) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432659371
+    },
+    {
+      "source_id": 4330,
+      "mode": "apply",
+      "product_id": 1611,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2611, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (دعاء) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432669247
+    },
+    {
+      "source_id": 4329,
+      "mode": "apply",
+      "product_id": 1612,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2612, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (عؤدة) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432679265
+    },
+    {
+      "source_id": 4328,
+      "mode": "apply",
+      "product_id": 1613,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2613, \"source\": {\"title\": \"اعواد بخور SHALIMAR سداسي 2 ساعة (ياسمين) 10 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432689310
+    },
+    {
+      "source_id": 4327,
+      "mode": "apply",
+      "product_id": 1614,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2614, \"source\": {\"title\": \"علبة عطر رش جلد ( 10 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432699228
+    },
+    {
+      "source_id": 4326,
+      "mode": "apply",
+      "product_id": 1615,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2615, \"source\": {\"title\": \"علبة عطر رش جلد ( 10 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432709108
+    },
+    {
+      "source_id": 4325,
+      "mode": "apply",
+      "product_id": 1616,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2616, \"source\": {\"title\": \"علبة عطر رش جلد ( 10 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432719341
+    },
+    {
+      "source_id": 4324,
+      "mode": "apply",
+      "product_id": 1617,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2617, \"source\": {\"title\": \"علبة عطر رش جلد ( 10 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432729255
+    },
+    {
+      "source_id": 4323,
+      "mode": "apply",
+      "product_id": 1618,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2618, \"source\": {\"title\": \"علبة عطر رش جلد ( 10 مل )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432739112
+    },
+    {
+      "source_id": 4322,
+      "mode": "apply",
+      "product_id": 1619,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2619, \"source\": {\"title\": \"اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( شهد العسل ) 3 عود * 40 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792432749094
     },
     {
       "source_id": 3780,

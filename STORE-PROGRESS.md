@@ -2106,3 +2106,64 @@
 - دوفش#344 ↔ صنف#2026: no_options؛ ورد سولو7سم. https://dofesh.ps/?app=product.show.344
 - دوفش#343 ↔ صنف#2027: no_options؛ ورد سولو7سم. https://dofesh.ps/?app=product.show.343
 - دوفش#342 ↔ صنف#2028: no_options؛ ورد سولو 7سم. https://dofesh.ps/?app=product.show.342
+
+
+### 2026-10-19T20:59:10.026888+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T20:59:10.026888+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 136, "synced": 18, "unsupported_source_price": 2}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4374 ↔ صنف#2572: no_options؛ اعواد بخور SHALIMAR سداسي ( زعفران ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4374
+- الجعبري#4373 ↔ صنف#2573: no_options؛ اعواد بخور SHALIMAR سداسي ( FRANGIPANI ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4373
+- الجعبري#4372 ↔ صنف#2574: no_options؛ اعواد بخور SHALIMAR سداسي ( الباتشولي ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4372
+- الجعبري#4371 ↔ صنف#2575: no_options؛ اعواد بخور SHALIMAR سداسي ( المسك ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4371
+- الجعبري#4370 ↔ صنف#2576: no_options؛ اعواد بخور SHALIMAR سداسي ( زنبق ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4370
+- الجعبري#4369 ↔ صنف#2577: no_options؛ اعواد بخور '' يدي '' مستطيل ( 7 نكهات ) & عطر هدية 28 عود * 23 سم. https://jabaristore.com/?app=product.show.4369
+- الجعبري#4368 ↔ صنف#2578: no_options؛ اعواد بخور SHALIMAR مستطيل ( يارا ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4368
+- الجعبري#4367 ↔ صنف#2579: no_options؛ اعواد بخور SHALIMAR مستطيل ( الطوري ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4367
+- الجعبري#4366 ↔ صنف#2580: no_options؛ اعواد بخور SHALIMAR مستطيل ( شهد العسل ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4366
+- الجعبري#4365 ↔ صنف#2581: no_options؛ اعواد بخور SHALIMAR مستطيل ( خمرة ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4365
+- الجعبري#4364 ↔ صنف#2582: no_options؛ اعواد بخور ( ياسمين ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4364
+- الجعبري#4363 ↔ صنف#2583: no_options؛ اعواد بخور ( الخزامي ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4363
+- الجعبري#4361 ↔ صنف#2584: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4361
+- الجعبري#4360 ↔ صنف#2585: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4360
+- الجعبري#4359 ↔ صنف#2586: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4359
+- الجعبري#4357 ↔ صنف#2587: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4357
+- الجعبري#4356 ↔ صنف#2588: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4356
+- الجعبري#4355 ↔ صنف#2589: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4355
+- الجعبري#4354 ↔ صنف#2590: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4354
+- الجعبري#4353 ↔ صنف#2591: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4353
+- الجعبري#4352 ↔ صنف#2592: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4352
+- الجعبري#4351 ↔ صنف#2593: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4351
+- الجعبري#4350 ↔ صنف#2594: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4350
+- الجعبري#4348 ↔ صنف#2595: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.4348
+- الجعبري#4347 ↔ صنف#2393: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4347
+- الجعبري#4346 ↔ صنف#2394: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4346
+- الجعبري#4345 ↔ صنف#2596: no_options؛ اعواد بخور SHALIMAR سداسي ( لافندر ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4345
+- الجعبري#4344 ↔ صنف#2597: no_options؛ اعواد بخور SHALIMAR سداسي ( دفقة الفواكه ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4344
+- الجعبري#4343 ↔ صنف#2598: no_options؛ اعواد بخور SHALIMAR سداسي ( كريك اوكيد ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4343
+- الجعبري#4342 ↔ صنف#2599: no_options؛ اعواد بخور SHALIMAR سداسي ( MelFlower ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4342
+- الجعبري#4341 ↔ صنف#2600: no_options؛ اعواد بخور SHALIMAR سداسي ( فانتازيا ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4341
+- الجعبري#4340 ↔ صنف#2601: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (عنبر) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4340
+- الجعبري#4339 ↔ صنف#2602: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (قرفة جوز الهند ) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4339
+- الجعبري#4338 ↔ صنف#2603: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (الاوركيد) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4338
+- الجعبري#4337 ↔ صنف#2604: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (زنبق) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4337
+- الجعبري#4336 ↔ صنف#2605: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (غاردينيا) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4336
+- الجعبري#4335 ↔ صنف#2606: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (لبان) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4335
+- الجعبري#4334 ↔ صنف#2607: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (المسك) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4334
+- الجعبري#4333 ↔ صنف#2608: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (الخليج عود) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4333
+- الجعبري#4332 ↔ صنف#2609: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (وردة حمراء) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4332
+- الجعبري#4331 ↔ صنف#2610: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (اناناس) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4331
+- الجعبري#4330 ↔ صنف#2611: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (دعاء) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4330
+- الجعبري#4329 ↔ صنف#2612: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (عؤدة) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4329
+- الجعبري#4328 ↔ صنف#2613: no_options؛ اعواد بخور SHALIMAR سداسي 2 ساعة (ياسمين) 10 عود * 40 سم. https://jabaristore.com/?app=product.show.4328
+- الجعبري#4327 ↔ صنف#2614: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4327
+- الجعبري#4326 ↔ صنف#2615: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4326
+- الجعبري#4325 ↔ صنف#2616: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4325
+- الجعبري#4324 ↔ صنف#2617: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4324
+- الجعبري#4323 ↔ صنف#2618: no_options؛ علبة عطر رش جلد ( 10 مل ). https://jabaristore.com/?app=product.show.4323
+- الجعبري#4322 ↔ صنف#2619: no_options؛ اعواد بخور SHALIMAR مستطيل 3:30 ساعة ( شهد العسل ) 3 عود * 40 سم. https://jabaristore.com/?app=product.show.4322
