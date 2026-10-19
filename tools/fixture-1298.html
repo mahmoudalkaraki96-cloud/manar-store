@@ -1,0 +1,71 @@
+<div class="printable-content" id="this-is-product"><div class="product-content  responsive-content "><div class="flex-row"><div class="sc-120 mc-58 lc-58"><div class="sc-show mc-hide lc-hide"><h1 class="product-title"><strong>مبخرة مدورة خيطان ارتفاع ٨ سم</strong></h1><div class="product-sub-title"></div></div> <style>.owl-dots {margin-top: 3px !important;   /*position: absolute;*/ }
+.owl-dots button:focus{outline: none; }
+.owl-next , .owl-prev{background: #fff !important;  color:#000 !important;}
+.carousel{   border: none; box-shadow: none; padding-top: 0;  margin-bottom:0px;   }</style><div style="position: relative;"> <div class="carousel-slide-number">1 / 1</div><div class="carousel owl-carousel owl-theme owl-rtl owl-loaded"> <div class="owl-stage-outer owl-height" style="height: 421px;"><div class="owl-stage" style="width: 461px; transform: translate3d(0px, 0px, 0px); transition: all;"><div class="owl-item active" style="width: 461px;"><div class="item" style="position: relative;"><div class="product-carousel-caption"></div><img src="upload/09-2026/product/4D3CCC36-A9DF-4EAA-8A21-1040876E484C-IDX.png" loading="eager" fetchpriority="high"></div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><span class="material-icons md-36 notranslate">arrow_forward_ios</span></button><button type="button" role="presentation" class="owl-next disabled"><span class="material-icons md-36 notranslate">arrow_back_ios</span></button></div><div class="owl-dots disabled"></div></div>   <div class="product-carousel-promotional-mark"></div></div><div class="flex-row"> <span class="flex-row" style="width: 50%"> <span class=" text-color-warm" style="margin-bottom: 12px; position: relative; z-index: 1;"> <span class="material-icons md-28 notranslate" data-wishlist="1298" style="cursor: pointer; padding:6px;">favorite_border</span> </span> </span> 
+ <span class="flex-row-reverse" style="width: 50%"> <span class=" text-color-warm" style="margin-bottom: 12px; position: relative; z-index: 1;"> 
+ </span> </span></div> 
+ 
+ <script> 
+$( document ).ready(function() {
+    let owl=$('.owl-carousel');
+
+		owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+			let total = event.item.count;
+
+			let index = event.item.index - event.relatedTarget._clones.length / 2;
+			index = (index % total + total) % total; // safe modulus
+
+			$('.carousel-slide-number').text((index + 1) + " / " + total);
+		});
+
+    
+        owl.owlCarousel({
+        nav: true, 
+        dots: false,
+        navText: ["<span class='material-icons md-36 notranslate'>arrow_forward_ios</span>", "<span class='material-icons md-36 notranslate'>arrow_back_ios</span>"],
+        items : 1,
+        rtl:true,
+         autoHeight:true,
+         mouseDrag: false, // will enable panzoom
+         
+         onInitialized: checkFirstImage
+            });
+
+            function checkFirstImage() {
+            let firstImage = $('.owl-carousel .item img');
+                if (!firstImage.prop('complete')) {
+                firstImage.on('load', function() {
+                $('.owl-carousel').trigger('refresh.owl.carousel');
+                });
+                }
+             }
+
+        
+        
+        
+ 
+});
+ 
+    
+
+  
+
+function liveImageTocarousel(search){
+     let arr=["d41d8cd98f00b204e9800998ecf8427e"];
+    let find_carousel_item=arr.indexOf(search);
+    if(find_carousel_item!=-1)
+    $('.carousel').trigger('to.owl.carousel', find_carousel_item);
+}  
+
+ 
+ </script> </div><div class="sc-hide mc-2 lc-2"></div><div class="sc-120 mc-60 lc-60"><div class="sc-hide mc-show lc-show"><h1 class="product-title"><strong>مبخرة مدورة خيطان ارتفاع ٨ سم</strong></h1><div class="product-sub-title"></div><hr></div><form id="product" method="post" action="./?app=product.orderAction.addToCart" autocomplete="off"><input type="hidden" name="id"><div class="property-wrapper"><div class="property-name">السعر</div>   <div class="property-content"><span class="price" id="price">6 - 500<sup class="notranslate">₪</sup></span></div></div>     <hr><div id="in-stock-warning" class="property-not-selected-alert sc-hide mc-hide lc-hide"><span class="material-icons md-inline notranslate">warning</span> هذا الإختيار لم يعد متوفر في متجرنا</div><div id="color-warning" class="property-not-selected-alert sc-hide mc-hide lc-hide"><span class="material-icons md-inline notranslate">warning</span> لطفاً قم باختيار اللون</div><div id="size-warning" class="property-not-selected-alert sc-hide mc-hide lc-hide"><span class="material-icons md-inline notranslate">warning</span> لطفاً قم باختيار اختر العدد</div><div class="property-wrapper"><div class="property-name">اختر اختر العدد </div>   <div class="property-content"><span class="sizeSelectorShowValue"> </span></div>  </div> <div class="sc-120 mc-120 lc-120">  <input type="radio" id="s0" name="size" value="بالحبة" class="hidden-radio" onclick="  changePrice('6','');  liveImageTocarousel('63293529c806938b5551c5a0ae1a03f8'); showSelected('size','بالحبة',this.id); showInfo('size','');" required=""><label class="color-selector" for="s0">بالحبة</label><input type="radio" id="s1" name="size" value="50 حبة" class="hidden-radio" onclick="  changePrice('250','');  liveImageTocarousel('e5cfb256b1b786da1afec4552180efdb'); showSelected('size','50 حبة',this.id); showInfo('size','');" required=""><label class="color-selector" for="s1">50 حبة</label><input type="radio" id="s2" name="size" value="100 حبة" class="hidden-radio" onclick="  changePrice('500','');  liveImageTocarousel('f544a248d530367ce047aca2c9aac589'); showSelected('size','100 حبة',this.id); showInfo('size','');" required=""><label class="color-selector" for="s2">100 حبة</label> <div class="size-info"></div></div>  <hr><div id="available-quantity-section" style="display: none"><div class="property-wrapper"><div class="property-name">الكمية المتوفرة</div><div class="property-content text-color-success" id="available-quantity-value"></div></div><hr></div><div class="flex-row"><div class="sc-120 mc-120 lc-120"><div class="property-name">اختر الكمية &nbsp;  <span class="text-color-warm" id="minimum_order_quantity_notice"></span> <span class="text-color-warm" id="maximum_order_quantity_notice"></span> &nbsp; <span class="product-in-cart" data-in-cart="1298">المنتج في سلتك</span> </div></div><div class="sc-120 mc-120 lc-120"><div class="property-content" style=" padding-top: 6px; "><div style="border: 1px solid var(--colorSuccessDark1) ; vertical-align: middle;  display: inline-block;   border-radius: 6px; padding: 5px;  height:44px; margin-bottom: 6px; margin-left: 12px;"><span class="quantity-control" onclick="if(document.querySelector('#quantity').value &gt; 1) document.querySelector('#quantity').value --; quantityRestrection()"> - </span><input type="number" name="quantity" id="quantity" class="quantity-selector" value="1" step="1" min="1" max="" onchange="quantityRestrection()"><span class="quantity-control" onclick="document.querySelector('#quantity').value ++ ; quantityRestrection()"> + </span></div><div style=" margin-bottom: 6px; vertical-align: middle;  display: inline-block;  "> <button onclick="checkForm();" type="submit" name="addToCart" id="addToCart" value="addToCart" class="button button-large skeleton  button-style-success-dark has-animation-blink" style="margin:0; padding: 10px; height:44px;"><span class="material-icons md-inline md-flip notranslate">shopping_cart</span> شراء هذا المنتج</button></div></div></div></div><hr><div class="property-wrapper"><div class="property-name">طريقة الدفع</div><div class="property-content">الدفع عند الإستلام<br><span style="opacity: 0.6">ببساطة نقوم بايصال المنتج لغاية منزلك وتقوم بدفع الثمن لموظف التوصيل.</span></div></div><hr><div class="flex-row app-in-review-hide"><div class="sc-80 mc-80 lc-80"><span class=" text-size-small-xx copy-text-icon  " style="cursor: pointer" data-text-to-copy="https://dofesh.ps/p/1298"><span class="material-icons md-inline  md-20 ">public</span> نسخ رابط المنتج </span></div><script>$('.copy-text-icon').on('click', function() {
+
+			copyText($(this).attr('data-text-to-copy'));
+
+			let saveThisHtml=$(this).html();
+			let clickedEle = $(this);
+			$(this).html("<span class=' text-color-success material-icons md-inline  md-20 notranslate' >check_circle</span> ");
+			setTimeout(function (){ $(clickedEle).html(saveThisHtml); },1500);
+
+
+		});</script><div class="flex-row-reverse  sc-40 mc-40 lc-40"><span class=" text-size-small-xx    " style="cursor: pointer" onclick="modalImage('https://qr.un-web.com/qr.php?data=https://dofesh.ps/p/1298')">QR <span class="material-icons md-inline  md-20">qr_code</span></span></div></div></form></div></div></div></div><p>رقم المنتج 1298</p>
