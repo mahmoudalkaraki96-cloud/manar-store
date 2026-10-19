@@ -2346,3 +2346,64 @@
 - دوفش#237 ↔ صنف#1191: no_options؛ فراش حديد اكسسوار (عرض 4 سم) ذهبي / 50 حبة بالكيس. https://dofesh.ps/?app=product.show.237
 - دوفش#236 ↔ صنف#2094: no_options؛ سلة اعراس ابيض. https://dofesh.ps/?app=product.show.236
 - دوفش#235 ↔ صنف#2095: no_options؛ س حنا تراث بدوي احمرمع ابيض. https://dofesh.ps/?app=product.show.235
+
+
+### 2026-10-19T21:15:47.034121+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:15:47.034121+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 214, "synced": 34, "unsupported_source_price": 8}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4259 ↔ صنف#2670: synced؛ 10 قطعة=11₪؛ 50 قطعة=42₪. https://jabaristore.com/?app=product.show.4259
+- الجعبري#4258 ↔ صنف#2671: no_options؛ ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4258
+- الجعبري#4257 ↔ صنف#2672: no_options؛ ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4257
+- الجعبري#4256 ↔ صنف#2673: no_options؛ ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.4256
+- الجعبري#4255 ↔ صنف#2674: synced؛ 10 قطعة=16.5₪. https://jabaristore.com/?app=product.show.4255
+- الجعبري#4247 ↔ صنف#2675: no_options؛ سلة جلد مع كيس مخمل ( 12 قطعةه ). https://jabaristore.com/?app=product.show.4247
+- الجعبري#4246 ↔ صنف#2395: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4246
+- الجعبري#4245 ↔ صنف#2676: no_options؛ شنطة جلد (12)قطعة لون بيج. https://jabaristore.com/?app=product.show.4245
+- الجعبري#4244 ↔ صنف#2396: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4244
+- الجعبري#4243 ↔ صنف#2677: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4243
+- الجعبري#4242 ↔ صنف#2678: no_options؛ صواني تخرج خشب مع تصميم cnc. https://jabaristore.com/?app=product.show.4242
+- الجعبري#4241 ↔ صنف#2679: no_options؛ صواني تخرج خشب مع تصميم cnc. https://jabaristore.com/?app=product.show.4241
+- الجعبري#4240 ↔ صنف#2680: no_options؛ صواني تخرج خشب مع تصميم cnc. https://jabaristore.com/?app=product.show.4240
+- الجعبري#4239 ↔ صنف#2681: no_options؛ صواني تخرج خشب مع ظهر. https://jabaristore.com/?app=product.show.4239
+- الجعبري#4238 ↔ صنف#2682: no_options؛ صواني تخرج خشب مع ظهر. https://jabaristore.com/?app=product.show.4238
+- الجعبري#4237 ↔ صنف#2683: no_options؛ صواني تخرج خشب مع ظهر. https://jabaristore.com/?app=product.show.4237
+- الجعبري#4236 ↔ صنف#2684: no_options؛ صواني تخرج خشب مع ظهر. https://jabaristore.com/?app=product.show.4236
+- الجعبري#4235 ↔ صنف#2685: no_options؛ شوكولاته تخرج. https://jabaristore.com/?app=product.show.4235
+- الجعبري#4234 ↔ صنف#2686: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4234
+- الجعبري#4233 ↔ صنف#2687: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4233
+- الجعبري#4232 ↔ صنف#2688: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4232
+- الجعبري#4231 ↔ صنف#2689: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4231
+- الجعبري#4230 ↔ صنف#2690: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4230
+- الجعبري#4228 ↔ صنف#2691: synced؛ بالكيلو=57₪. https://jabaristore.com/?app=product.show.4228
+- الجعبري#4227 ↔ صنف#2692: synced؛ بالكيلو=62₪. https://jabaristore.com/?app=product.show.4227
+- الجعبري#4224 ↔ صنف#2693: no_options؛ علبة خواتم جلد ابيض ( مع اضاءة ). https://jabaristore.com/?app=product.show.4224
+- الجعبري#4222 ↔ صنف#2694: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4222
+- الجعبري#4221 ↔ صنف#2695: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4221
+- الجعبري#4220 ↔ صنف#2696: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4220
+- الجعبري#4218 ↔ صنف#2697: no_options؛ شريط لولو نص حبة 4 مل ابيض 60 يرد ( كودxv12 ). https://jabaristore.com/?app=product.show.4218
+- الجعبري#4217 ↔ صنف#2698: no_options؛ شريط لولو نص حبة 4 مل ايفري 60 يرد ( كودxv12 ). https://jabaristore.com/?app=product.show.4217
+- الجعبري#4216 ↔ صنف#2699: no_options؛ شريط لولو نص حبة 6 مل ابيض 30 يرد ( كودxv13). https://jabaristore.com/?app=product.show.4216
+- الجعبري#4215 ↔ صنف#2700: no_options؛ شريط لولو نص حبة 6 مل ايفري 30 يرد ( كودxv18 ). https://jabaristore.com/?app=product.show.4215
+- الجعبري#4214 ↔ صنف#2701: no_options؛ شريط لولو نص حبة 8 مل ابيض 25 متر ( كودxv29 ). https://jabaristore.com/?app=product.show.4214
+- الجعبري#4213 ↔ صنف#2702: no_options؛ شريط لولو نص حبة 8 مل ايفري 25 متر ( كودxv29 ). https://jabaristore.com/?app=product.show.4213
+- الجعبري#4212 ↔ صنف#2703: no_options؛ شريط لولو نص حبة 10 مل ابيض 15 يرد ( كودxv37 ). https://jabaristore.com/?app=product.show.4212
+- الجعبري#4211 ↔ صنف#2704: no_options؛ شريط لولو نص حبة 10 مل ايفري 15 يرد ( كودxv37 ). https://jabaristore.com/?app=product.show.4211
+- الجعبري#4210 ↔ صنف#2705: no_options؛ شريط لولو ابيض 10 يرد ( كود 545 ). https://jabaristore.com/?app=product.show.4210
+- الجعبري#4209 ↔ صنف#2706: no_options؛ شريط لولو ايفري 10 يرد ( كود 545 ). https://jabaristore.com/?app=product.show.4209
+- الجعبري#4207 ↔ صنف#2707: no_options؛ شريط لولو ايفري 10 يرد ( كود 559 ). https://jabaristore.com/?app=product.show.4207
+- الجعبري#4206 ↔ صنف#2708: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 809 ). https://jabaristore.com/?app=product.show.4206
+- الجعبري#4205 ↔ صنف#2709: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 809 ). https://jabaristore.com/?app=product.show.4205
+- الجعبري#4204 ↔ صنف#2710: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 828 ). https://jabaristore.com/?app=product.show.4204
+- الجعبري#4203 ↔ صنف#2711: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 828 ). https://jabaristore.com/?app=product.show.4203
+- الجعبري#4202 ↔ صنف#2712: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 884 ). https://jabaristore.com/?app=product.show.4202
+- الجعبري#4201 ↔ صنف#2713: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 884 ). https://jabaristore.com/?app=product.show.4201
+- الجعبري#4200 ↔ صنف#2714: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 888 ). https://jabaristore.com/?app=product.show.4200
+- الجعبري#4199 ↔ صنف#2715: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 888 ). https://jabaristore.com/?app=product.show.4199
+- الجعبري#4198 ↔ صنف#2716: no_options؛ شريط لولو ابيض مع كرستال 10 يرد ( كود 911 ). https://jabaristore.com/?app=product.show.4198
+- الجعبري#4197 ↔ صنف#2717: no_options؛ شريط لولو ايفري مع كرستال 10 يرد ( كود 911 ). https://jabaristore.com/?app=product.show.4197

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:07:29.620150+03:00",
+  "updated_at": "2026-10-19T21:15:47.034121+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -1643,6 +1643,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 2669, \"name\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1669\", \"source_url\": \"https://jabaristore.com/?app=product.show.4260\"}",
       "updated_at": 1792433247128
+    },
+    {
+      "source_id": 4259,
+      "mode": "apply",
+      "product_id": 1670,
+      "status": "synced",
+      "detail": "{\"item_number\": 2670, \"name\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع اكريلك ذهبي للزينة ( تخرج )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1670\", \"source_url\": \"https://jabaristore.com/?app=product.show.4259\"}",
+      "updated_at": 1792433256540
+    },
+    {
+      "source_id": 4258,
+      "mode": "apply",
+      "product_id": 1671,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2671, \"source\": {\"title\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433266558
+    },
+    {
+      "source_id": 4257,
+      "mode": "apply",
+      "product_id": 1672,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2672, \"source\": {\"title\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433276289
+    },
+    {
+      "source_id": 4256,
+      "mode": "apply",
+      "product_id": 1673,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2673, \"source\": {\"title\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433286481
+    },
+    {
+      "source_id": 4255,
+      "mode": "apply",
+      "product_id": 1674,
+      "status": "synced",
+      "detail": "{\"item_number\": 2674, \"name\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطع ~\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ثيمات خشبية تخرج طباعة UV (3.7 سم) ~ 10 قطعة ~\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1674\", \"source_url\": \"https://jabaristore.com/?app=product.show.4255\"}",
+      "updated_at": 1792433296522
+    },
+    {
+      "source_id": 4247,
+      "mode": "apply",
+      "product_id": 1675,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2675, \"source\": {\"title\": \"سلة جلد مع كيس مخمل ( 12 قطعةه )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433306307
+    },
+    {
+      "source_id": 4246,
+      "mode": "apply",
+      "product_id": 1395,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2395}",
+      "updated_at": 1792433316304
+    },
+    {
+      "source_id": 4245,
+      "mode": "apply",
+      "product_id": 1676,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2676, \"source\": {\"title\": \"شنطة جلد (12)قطعة لون بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433326275
+    },
+    {
+      "source_id": 4244,
+      "mode": "apply",
+      "product_id": 1396,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2396}",
+      "updated_at": 1792433336275
+    },
+    {
+      "source_id": 4243,
+      "mode": "apply",
+      "product_id": 1677,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2677}",
+      "updated_at": 1792433346300
+    },
+    {
+      "source_id": 4242,
+      "mode": "apply",
+      "product_id": 1678,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2678, \"source\": {\"title\": \"صواني تخرج خشب مع تصميم cnc\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433356289
+    },
+    {
+      "source_id": 4241,
+      "mode": "apply",
+      "product_id": 1679,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2679, \"source\": {\"title\": \"صواني تخرج خشب مع تصميم cnc\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433366488
+    },
+    {
+      "source_id": 4240,
+      "mode": "apply",
+      "product_id": 1680,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2680, \"source\": {\"title\": \"صواني تخرج خشب مع تصميم cnc\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433376278
+    },
+    {
+      "source_id": 4239,
+      "mode": "apply",
+      "product_id": 1681,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2681, \"source\": {\"title\": \"صواني تخرج خشب مع ظهر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433386521
+    },
+    {
+      "source_id": 4238,
+      "mode": "apply",
+      "product_id": 1682,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2682, \"source\": {\"title\": \"صواني تخرج خشب مع ظهر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433396261
+    },
+    {
+      "source_id": 4237,
+      "mode": "apply",
+      "product_id": 1683,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2683, \"source\": {\"title\": \"صواني تخرج خشب مع ظهر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433406549
+    },
+    {
+      "source_id": 4236,
+      "mode": "apply",
+      "product_id": 1684,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2684, \"source\": {\"title\": \"صواني تخرج خشب مع ظهر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433416493
+    },
+    {
+      "source_id": 4235,
+      "mode": "apply",
+      "product_id": 1685,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2685, \"source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433426608
+    },
+    {
+      "source_id": 4234,
+      "mode": "apply",
+      "product_id": 1686,
+      "status": "synced",
+      "detail": "{\"item_number\": 2686, \"name\": \"شوكولاته تخرج\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1686\", \"source_url\": \"https://jabaristore.com/?app=product.show.4234\"}",
+      "updated_at": 1792433436851
+    },
+    {
+      "source_id": 4233,
+      "mode": "apply",
+      "product_id": 1687,
+      "status": "synced",
+      "detail": "{\"item_number\": 2687, \"name\": \"شوكولاته تخرج\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1687\", \"source_url\": \"https://jabaristore.com/?app=product.show.4233\"}",
+      "updated_at": 1792433446757
+    },
+    {
+      "source_id": 4232,
+      "mode": "apply",
+      "product_id": 1688,
+      "status": "synced",
+      "detail": "{\"item_number\": 2688, \"name\": \"شوكولاته تخرج\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1688\", \"source_url\": \"https://jabaristore.com/?app=product.show.4232\"}",
+      "updated_at": 1792433456796
+    },
+    {
+      "source_id": 4231,
+      "mode": "apply",
+      "product_id": 1689,
+      "status": "synced",
+      "detail": "{\"item_number\": 2689, \"name\": \"شوكولاته تخرج\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته تخرج\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1689\", \"source_url\": \"https://jabaristore.com/?app=product.show.4231\"}",
+      "updated_at": 1792433466727
+    },
+    {
+      "source_id": 4230,
+      "mode": "apply",
+      "product_id": 1690,
+      "status": "synced",
+      "detail": "{\"item_number\": 2690, \"name\": \"شوكولاتة It’s A Girl\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاتة It’s A Girl\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاتة It’s A Girl\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1690\", \"source_url\": \"https://jabaristore.com/?app=product.show.4230\"}",
+      "updated_at": 1792433476786
+    },
+    {
+      "source_id": 4228,
+      "mode": "apply",
+      "product_id": 1691,
+      "status": "synced",
+      "detail": "{\"item_number\": 2691, \"name\": \"شوكولاته غلاف اسود\", \"before_price\": 5700, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته غلاف اسود\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته غلاف اسود\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 5500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1691\", \"source_url\": \"https://jabaristore.com/?app=product.show.4228\"}",
+      "updated_at": 1792433486540
+    },
+    {
+      "source_id": 4227,
+      "mode": "apply",
+      "product_id": 1692,
+      "status": "synced",
+      "detail": "{\"item_number\": 2692, \"name\": \"شوكولاته it’s a boy\", \"before_price\": 6200, \"before_variants\": [], \"source\": {\"title\": \"شوكولاته it’s a boy\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شوكولاته it’s a boy\", \"variants\": [{\"name\": \"بالكيلو\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالكيلو\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1692\", \"source_url\": \"https://jabaristore.com/?app=product.show.4227\"}",
+      "updated_at": 1792433496790
+    },
+    {
+      "source_id": 4224,
+      "mode": "apply",
+      "product_id": 1693,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2693, \"source\": {\"title\": \"علبة خواتم جلد ابيض ( مع اضاءة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433506263
+    },
+    {
+      "source_id": 4222,
+      "mode": "apply",
+      "product_id": 1694,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2694}",
+      "updated_at": 1792433516548
+    },
+    {
+      "source_id": 4221,
+      "mode": "apply",
+      "product_id": 1695,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2695}",
+      "updated_at": 1792433526586
+    },
+    {
+      "source_id": 4220,
+      "mode": "apply",
+      "product_id": 1696,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2696}",
+      "updated_at": 1792433536283
+    },
+    {
+      "source_id": 4218,
+      "mode": "apply",
+      "product_id": 1697,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2697, \"source\": {\"title\": \"شريط لولو نص حبة 4 مل ابيض 60 يرد ( كودxv12 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433546294
+    },
+    {
+      "source_id": 4217,
+      "mode": "apply",
+      "product_id": 1698,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2698, \"source\": {\"title\": \"شريط لولو نص حبة 4 مل ايفري 60 يرد ( كودxv12 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433556279
+    },
+    {
+      "source_id": 4216,
+      "mode": "apply",
+      "product_id": 1699,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2699, \"source\": {\"title\": \"شريط لولو نص حبة 6 مل ابيض 30 يرد ( كودxv13)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433566567
+    },
+    {
+      "source_id": 4215,
+      "mode": "apply",
+      "product_id": 1700,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2700, \"source\": {\"title\": \"شريط لولو نص حبة 6 مل ايفري 30 يرد ( كودxv18 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433576281
+    },
+    {
+      "source_id": 4214,
+      "mode": "apply",
+      "product_id": 1701,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2701, \"source\": {\"title\": \"شريط لولو نص حبة 8 مل ابيض 25 متر ( كودxv29 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433586287
+    },
+    {
+      "source_id": 4213,
+      "mode": "apply",
+      "product_id": 1702,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2702, \"source\": {\"title\": \"شريط لولو نص حبة 8 مل ايفري 25 متر ( كودxv29 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433596277
+    },
+    {
+      "source_id": 4212,
+      "mode": "apply",
+      "product_id": 1703,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2703, \"source\": {\"title\": \"شريط لولو نص حبة 10 مل ابيض 15 يرد ( كودxv37 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433606461
+    },
+    {
+      "source_id": 4211,
+      "mode": "apply",
+      "product_id": 1704,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2704, \"source\": {\"title\": \"شريط لولو نص حبة 10 مل ايفري 15 يرد ( كودxv37 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433616267
+    },
+    {
+      "source_id": 4210,
+      "mode": "apply",
+      "product_id": 1705,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2705, \"source\": {\"title\": \"شريط لولو ابيض 10 يرد ( كود 545 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433626282
+    },
+    {
+      "source_id": 4209,
+      "mode": "apply",
+      "product_id": 1706,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2706, \"source\": {\"title\": \"شريط لولو ايفري 10 يرد ( كود 545 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433636277
+    },
+    {
+      "source_id": 4207,
+      "mode": "apply",
+      "product_id": 1707,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2707, \"source\": {\"title\": \"شريط لولو ايفري 10 يرد ( كود 559 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433646294
+    },
+    {
+      "source_id": 4206,
+      "mode": "apply",
+      "product_id": 1708,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2708, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 809 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433656527
+    },
+    {
+      "source_id": 4205,
+      "mode": "apply",
+      "product_id": 1709,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2709, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 809 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433666566
+    },
+    {
+      "source_id": 4204,
+      "mode": "apply",
+      "product_id": 1710,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2710, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 828 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433676502
+    },
+    {
+      "source_id": 4203,
+      "mode": "apply",
+      "product_id": 1711,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2711, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 828 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433686484
+    },
+    {
+      "source_id": 4202,
+      "mode": "apply",
+      "product_id": 1712,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2712, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 884 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433696291
+    },
+    {
+      "source_id": 4201,
+      "mode": "apply",
+      "product_id": 1713,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2713, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 884 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433706529
+    },
+    {
+      "source_id": 4200,
+      "mode": "apply",
+      "product_id": 1714,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2714, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 888 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433716537
+    },
+    {
+      "source_id": 4199,
+      "mode": "apply",
+      "product_id": 1715,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2715, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 888 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433726296
+    },
+    {
+      "source_id": 4198,
+      "mode": "apply",
+      "product_id": 1716,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2716, \"source\": {\"title\": \"شريط لولو ابيض مع كرستال 10 يرد ( كود 911 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433736522
+    },
+    {
+      "source_id": 4197,
+      "mode": "apply",
+      "product_id": 1717,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2717, \"source\": {\"title\": \"شريط لولو ايفري مع كرستال 10 يرد ( كود 911 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792433746291
     },
     {
       "source_id": 3780,
