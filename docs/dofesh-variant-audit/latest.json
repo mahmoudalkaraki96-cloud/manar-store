@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T15:43:02.468808+03:00",
+  "updated_at": "2026-10-19T19:28:28.494855+03:00",
   "run_mode": "apply",
-  "run_status": "paused_error",
-  "run_processed": 3,
+  "run_status": "completed_batch",
+  "run_processed": 50,
   "results": [
     {
       "source_id": 1298,
@@ -4043,6 +4043,1206 @@
       "status": "error",
       "detail": "{\"reason\": \"invalid_price\", \"item_number\": 1686}",
       "updated_at": 1792413781165
+    },
+    {
+      "source_id": 777,
+      "mode": "apply",
+      "product_id": 687,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1687, \"source\": {\"title\": \"علبة سحاب للمسك (14*8.5*4.5 سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792425823046
+    },
+    {
+      "source_id": 776,
+      "mode": "apply",
+      "product_id": 688,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1688, \"source\": {\"title\": \"مسك اصلي بخاخ 30 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792425833203
+    },
+    {
+      "source_id": 775,
+      "mode": "apply",
+      "product_id": 202,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1202, \"source\": {\"title\": \"مصليات هدايا للحج والعمرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792425843035
+    },
+    {
+      "source_id": 774,
+      "mode": "apply",
+      "product_id": 689,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1689, \"source\": {\"title\": \"اشكال حج وعمرة اكرليك حجم صغير\", \"variants\": [{\"name\": \"ذهبي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي لاصق / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"ذهبي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي لاصق / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"فضي لاصق / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"فضي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"اسود لاصق / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"اسود لاصق / 25 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"اسود لاصق / 50 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792425853132
+    },
+    {
+      "source_id": 773,
+      "mode": "apply",
+      "product_id": 690,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1690, \"source\": {\"title\": \"اكسسوار سداسي محجر فضي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792425862931
+    },
+    {
+      "source_id": 772,
+      "mode": "apply",
+      "product_id": 691,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1691, \"source\": {\"title\": \"اكسسوار محجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792425873145
+    },
+    {
+      "source_id": 771,
+      "mode": "apply",
+      "product_id": 692,
+      "status": "synced",
+      "detail": "{\"item_number\": 1692, \"name\": \"ورد فلل\", \"before_price\": 3000, \"before_variants\": [], \"source\": {\"title\": \"ورد فلل\", \"variants\": [{\"name\": \"اسود\", \"price\": 3000, \"active\": true}, {\"name\": \"بني فاتح\", \"price\": 3000, \"active\": true}, {\"name\": \"بني غامق\", \"price\": 3000, \"active\": true}, {\"name\": \"بيج\", \"price\": 3000, \"active\": true}, {\"name\": \"احمر\", \"price\": 3000, \"active\": true}, {\"name\": \"نود\", \"price\": 3000, \"active\": true}, {\"name\": \"خمري\", \"price\": 3000, \"active\": true}, {\"name\": \"ابيض\", \"price\": 3000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 3000, \"active\": true}, {\"name\": \"زهري\", \"price\": 3000, \"active\": true}, {\"name\": \"كحلي\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/692\", \"source_url\": \"https://dofesh.ps/?app=product.show.771\"}",
+      "updated_at": 1792425883301
+    },
+    {
+      "source_id": 770,
+      "mode": "apply",
+      "product_id": 693,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1693, \"source\": {\"title\": \"لولو حب مقاس 10مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425893132
+    },
+    {
+      "source_id": 769,
+      "mode": "apply",
+      "product_id": 694,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1694, \"source\": {\"title\": \"لولو حبة كاملة قياس 1.2مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425903057
+    },
+    {
+      "source_id": 767,
+      "mode": "apply",
+      "product_id": 695,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1695, \"source\": {\"title\": \"لولو حبة كاملة 8 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792425913044
+    },
+    {
+      "source_id": 766,
+      "mode": "apply",
+      "product_id": 696,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1696, \"source\": {\"title\": \"لولو حبة كاملة 8 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425923018
+    },
+    {
+      "source_id": 765,
+      "mode": "apply",
+      "product_id": 697,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1697, \"source\": {\"title\": \"لولو حبة كاملة 6 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425933056
+    },
+    {
+      "source_id": 764,
+      "mode": "apply",
+      "product_id": 698,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1698, \"source\": {\"title\": \"لولو نص حبة 6 مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425943018
+    },
+    {
+      "source_id": 763,
+      "mode": "apply",
+      "product_id": 699,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1699, \"source\": {\"title\": \"لولو نص حبة جودة ممتازة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425952827
+    },
+    {
+      "source_id": 762,
+      "mode": "apply",
+      "product_id": 700,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1700, \"source\": {\"title\": \"لولو نص حبة جودة ممتازة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792425963055
+    },
+    {
+      "source_id": 761,
+      "mode": "apply",
+      "product_id": 701,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1701, \"source\": {\"title\": \"مراي اكريلك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792425973076
+    },
+    {
+      "source_id": 760,
+      "mode": "apply",
+      "product_id": 702,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1702, \"source\": {\"title\": \"دائرة اكريلك للدبل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792425983026
+    },
+    {
+      "source_id": 759,
+      "mode": "apply",
+      "product_id": 703,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1703, \"source\": {\"title\": \"دائرة اكريلك لتلبيسة الدبل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792425992824
+    },
+    {
+      "source_id": 758,
+      "mode": "apply",
+      "product_id": 704,
+      "status": "synced",
+      "detail": "{\"item_number\": 1704, \"name\": \"تلبيسة ذهب شكل خاتم\", \"before_price\": 3500, \"before_variants\": [], \"source\": {\"title\": \"تلبيسة ذهب شكل خاتم\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 3500, \"active\": true}, {\"name\": \"فضي\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/704\", \"source_url\": \"https://dofesh.ps/?app=product.show.758\"}",
+      "updated_at": 1792426003151
+    },
+    {
+      "source_id": 757,
+      "mode": "apply",
+      "product_id": 705,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1705, \"source\": {\"title\": \"تلبيسة ذهب شكل خاتم - لون ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}}",
+      "updated_at": 1792426012831
+    },
+    {
+      "source_id": 756,
+      "mode": "apply",
+      "product_id": 706,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1706, \"source\": {\"title\": \"مراية اكريلك قاعدة خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426023010
+    },
+    {
+      "source_id": 755,
+      "mode": "apply",
+      "product_id": 707,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1707, \"source\": {\"title\": \"كيس مغشى مقاس 20*15*8.5\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426032822
+    },
+    {
+      "source_id": 754,
+      "mode": "apply",
+      "product_id": 53,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1053, \"source\": {\"title\": \"سيارة كونكريت (بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792426043017
+    },
+    {
+      "source_id": 753,
+      "mode": "apply",
+      "product_id": 708,
+      "status": "synced",
+      "detail": "{\"item_number\": 1708, \"name\": \"مبخرة كرستال مع غطاء نحاسي مميز\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"مبخرة كرستال مع غطاء نحاسي مميز\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/708\", \"source_url\": \"https://dofesh.ps/?app=product.show.753\"}",
+      "updated_at": 1792426053062
+    },
+    {
+      "source_id": 752,
+      "mode": "apply",
+      "product_id": 709,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1709, \"source\": {\"title\": \"مبخرة كرستال مع غطاء نحاسي مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426063056
+    },
+    {
+      "source_id": 751,
+      "mode": "apply",
+      "product_id": 710,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1710, \"source\": {\"title\": \"مبخرة كرستال مع غطاء نحاسي مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426073065
+    },
+    {
+      "source_id": 750,
+      "mode": "apply",
+      "product_id": 711,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1711, \"source\": {\"title\": \"مسبحة لولو 33 خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426082831
+    },
+    {
+      "source_id": 749,
+      "mode": "apply",
+      "product_id": 712,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1712, \"source\": {\"title\": \"مسبحة لولو 33 خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426092828
+    },
+    {
+      "source_id": 748,
+      "mode": "apply",
+      "product_id": 713,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1713, \"source\": {\"title\": \"مسبحة كرستال 33 خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426102830
+    },
+    {
+      "source_id": 746,
+      "mode": "apply",
+      "product_id": 714,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1714, \"source\": {\"title\": \"مسبحة كرستال 33خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426112828
+    },
+    {
+      "source_id": 745,
+      "mode": "apply",
+      "product_id": 715,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1715, \"source\": {\"title\": \"مسبحة كرستال 33 خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426123055
+    },
+    {
+      "source_id": 743,
+      "mode": "apply",
+      "product_id": 716,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1716, \"source\": {\"title\": \"مراية اكريلك شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426133073
+    },
+    {
+      "source_id": 742,
+      "mode": "apply",
+      "product_id": 717,
+      "status": "synced",
+      "detail": "{\"item_number\": 1717, \"name\": \"مراية حديد مدورة قلاب\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"مراية حديد مدورة قلاب\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 500, \"active\": true}, {\"name\": \"فضي\", \"price\": 400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/717\", \"source_url\": \"https://dofesh.ps/?app=product.show.742\"}",
+      "updated_at": 1792426143260
+    },
+    {
+      "source_id": 741,
+      "mode": "apply",
+      "product_id": 718,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1718, \"source\": {\"title\": \"كيس مغشى ايد جلد مربعة مقاس(16*15*8سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426153015
+    },
+    {
+      "source_id": 740,
+      "mode": "apply",
+      "product_id": 719,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1719, \"source\": {\"title\": \"كيس مغشى مع ايد جلد مقاس(16*15*8سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426162826
+    },
+    {
+      "source_id": 739,
+      "mode": "apply",
+      "product_id": 720,
+      "status": "synced",
+      "detail": "{\"item_number\": 1720, \"name\": \"كيس مغشى مع ايد خيش\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"كيس مغشى مع ايد خيش\", \"variants\": [{\"name\": \"20*15*9 cm\", \"price\": 300, \"active\": true}, {\"name\": \"15*13.5*6\", \"price\": 250, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/720\", \"source_url\": \"https://dofesh.ps/?app=product.show.739\"}",
+      "updated_at": 1792426173285
+    },
+    {
+      "source_id": 738,
+      "mode": "apply",
+      "product_id": 721,
+      "status": "synced",
+      "detail": "{\"item_number\": 1721, \"name\": \"علبة كرتون لتغليف تحفة الحصان مقاس (20*18)\", \"before_price\": 5000, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون لتغليف تحفة الحصان مقاس (20*18)\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/721\", \"source_url\": \"https://dofesh.ps/?app=product.show.738\"}",
+      "updated_at": 1792426186933
+    },
+    {
+      "source_id": 737,
+      "mode": "apply",
+      "product_id": 722,
+      "status": "synced",
+      "detail": "{\"item_number\": 1722, \"name\": \"حمالة معطر الجو\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"حمالة معطر الجو\", \"variants\": [{\"name\": \"مع معطر\", \"price\": 1500, \"active\": true}, {\"name\": \"بدون معطر\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/722\", \"source_url\": \"https://dofesh.ps/?app=product.show.737\"}",
+      "updated_at": 1792426193325
+    },
+    {
+      "source_id": 736,
+      "mode": "apply",
+      "product_id": 116,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1116, \"source\": {\"title\": \"خيط لميع فضي 100 متر باللفة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426205307
+    },
+    {
+      "source_id": 735,
+      "mode": "apply",
+      "product_id": 115,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1115, \"source\": {\"title\": \"خيط مذهب 100 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426213053
+    },
+    {
+      "source_id": 734,
+      "mode": "apply",
+      "product_id": 723,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1723, \"source\": {\"title\": \"ظهرية صواني ذهبية لكتابة الاسماء\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426222837
+    },
+    {
+      "source_id": 733,
+      "mode": "apply",
+      "product_id": 724,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1724, \"source\": {\"title\": \"ظهرية صواني لكتابة الاسم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426233057
+    },
+    {
+      "source_id": 732,
+      "mode": "apply",
+      "product_id": 725,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1725, \"source\": {\"title\": \"ظهرية صواني لكتابة الاسم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426242832
+    },
+    {
+      "source_id": 731,
+      "mode": "apply",
+      "product_id": 726,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1726, \"source\": {\"title\": \"ظهر صينية لكتابة الاسم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426253180
+    },
+    {
+      "source_id": 730,
+      "mode": "apply",
+      "product_id": 727,
+      "status": "synced",
+      "detail": "{\"item_number\": 1727, \"name\": \"دب عظم\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"دب عظم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/727\", \"source_url\": \"https://dofesh.ps/?app=product.show.730\"}",
+      "updated_at": 1792426263057
+    },
+    {
+      "source_id": 729,
+      "mode": "apply",
+      "product_id": 728,
+      "status": "synced",
+      "detail": "{\"item_number\": 1728, \"name\": \"دب عظم\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"دب عظم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": true}, {\"name\": \"50 حبة (بكيت)\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/728\", \"source_url\": \"https://dofesh.ps/?app=product.show.729\"}",
+      "updated_at": 1792426273061
+    },
+    {
+      "source_id": 728,
+      "mode": "apply",
+      "product_id": 729,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1729, \"source\": {\"title\": \"ورد ثلج صناعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426282836
+    },
+    {
+      "source_id": 727,
+      "mode": "apply",
+      "product_id": 730,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1730, \"source\": {\"title\": \"ورد ثلج صناعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426292833
+    },
+    {
+      "source_id": 726,
+      "mode": "apply",
+      "product_id": 731,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1731, \"source\": {\"title\": \"شمع نجمة البحر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792426303054
+    },
+    {
+      "source_id": 723,
+      "mode": "apply",
+      "product_id": 203,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1203, \"source\": {\"title\": \"ظهرية اكرليك وخشب للصواني\", \"variants\": [{\"name\": \"ذهبي وخشب\", \"price\": 3500, \"active\": true}, {\"name\": \"فضي وخشب\", \"price\": 3500, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426312989
+    },
+    {
+      "source_id": 721,
+      "mode": "apply",
+      "product_id": 732,
+      "status": "synced",
+      "detail": "{\"item_number\": 1732, \"name\": \"قطعة اكريلك (اللهم انبتها نباتا حسنا)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"قطعة اكريلك (اللهم انبتها نباتا حسنا)\", \"variants\": [{\"name\": \"حبة واحدة\", \"price\": 100, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/732\", \"source_url\": \"https://dofesh.ps/?app=product.show.721\"}",
+      "updated_at": 1792426320763
+    },
+    {
+      "source_id": 720,
+      "mode": "apply",
+      "product_id": 733,
+      "status": "synced",
+      "detail": "{\"item_number\": 1733, \"name\": \"قطعة اكريلك لاصق (اللهم انبته نباتا حسنا)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"قطعة اكريلك لاصق (اللهم انبته نباتا حسنا)\", \"variants\": [{\"name\": \"حبة واحدة\", \"price\": 100, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"50قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/733\", \"source_url\": \"https://dofesh.ps/?app=product.show.720\"}",
+      "updated_at": 1792426330455
+    },
+    {
+      "source_id": 719,
+      "mode": "apply",
+      "product_id": 163,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1163, \"source\": {\"title\": \"علاقة تبانات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792426340271
+    },
+    {
+      "source_id": 718,
+      "mode": "apply",
+      "product_id": 734,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1734, \"source\": {\"title\": \"مبخرة زيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792426350213
+    },
+    {
+      "source_id": 717,
+      "mode": "apply",
+      "product_id": 204,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1204, \"source\": {\"title\": \"منظم اكسسوار جلد مميز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}}",
+      "updated_at": 1792426360171
+    },
+    {
+      "source_id": 716,
+      "mode": "apply",
+      "product_id": 735,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1735, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426370438
+    },
+    {
+      "source_id": 715,
+      "mode": "apply",
+      "product_id": 736,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1736, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426380416
+    },
+    {
+      "source_id": 714,
+      "mode": "apply",
+      "product_id": 737,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1737, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426390418
+    },
+    {
+      "source_id": 713,
+      "mode": "apply",
+      "product_id": 738,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1738, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426400384
+    },
+    {
+      "source_id": 712,
+      "mode": "apply",
+      "product_id": 739,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1739, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426410259
+    },
+    {
+      "source_id": 711,
+      "mode": "apply",
+      "product_id": 740,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1740, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426420183
+    },
+    {
+      "source_id": 710,
+      "mode": "apply",
+      "product_id": 741,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1741, \"source\": {\"title\": \"شبر تول شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426430171
+    },
+    {
+      "source_id": 709,
+      "mode": "apply",
+      "product_id": 205,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1205, \"source\": {\"title\": \"اكرليك لاصق نقش صغير\", \"variants\": [{\"name\": \"1 قطعة / مستطيل\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / مربع\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / دائري\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / قلب حب\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / خاتم\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / فراشة\", \"price\": 200, \"active\": true}, {\"name\": \"1 قطعة / دبدوب\", \"price\": 200, \"active\": true}, {\"name\": \"10 قطعة / مستطيل\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / مربع\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / دائري\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / قلب حب\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / خاتم\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / فراشة\", \"price\": 1800, \"active\": true}, {\"name\": \"10 قطعة / دبدوب\", \"price\": 1800, \"active\": true}, {\"name\": \"25 قطعة / مستطيل\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / مربع\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / دائري\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / قلب حب\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / خاتم\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / فراشة\", \"price\": 3500, \"active\": true}, {\"name\": \"25 قطعة / دبدوب\", \"price\": 3500, \"active\": true}, {\"name\": \"30 قطعة / مستطيل\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / مربع\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / دائري\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / قلب حب\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / خاتم\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / فراشة\", \"price\": 4200, \"active\": true}, {\"name\": \"30 قطعة / دبدوب\", \"price\": 4200, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426440552
+    },
+    {
+      "source_id": 708,
+      "mode": "apply",
+      "product_id": 206,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1206, \"source\": {\"title\": \"اكريلك نقش وطباعة صغير\", \"variants\": [{\"name\": \"ذهبي لاصق / 1 قطعة\", \"price\": 250, \"active\": true}, {\"name\": \"ذهبي لاصق / 10 قطعة\", \"price\": 2300, \"active\": true}, {\"name\": \"ذهبي لاصق / 25 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي لاصق / 1 قطعة\", \"price\": 250, \"active\": true}, {\"name\": \"فضي لاصق / 10 قطعة\", \"price\": 2300, \"active\": true}, {\"name\": \"فضي لاصق / 25 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426450509
+    },
+    {
+      "source_id": 707,
+      "mode": "apply",
+      "product_id": 742,
+      "status": "synced",
+      "detail": "{\"item_number\": 1742, \"name\": \"صينية خشب\", \"before_price\": 4000, \"before_variants\": [], \"source\": {\"title\": \"صينية خشب\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 4000, \"active\": false}, {\"name\": \"5 حبة\", \"price\": 15000, \"active\": false}, {\"name\": \"10 حبة\", \"price\": 25000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/742\", \"source_url\": \"https://dofesh.ps/?app=product.show.707\"}",
+      "updated_at": 1792426460587
+    },
+    {
+      "source_id": 706,
+      "mode": "apply",
+      "product_id": 743,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1743, \"source\": {\"title\": \"علبة bvc مقاس (8*8*8)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792426470379
+    },
+    {
+      "source_id": 705,
+      "mode": "apply",
+      "product_id": 744,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1744, \"source\": {\"title\": \"خرز مع فتحة تعليقة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426480173
+    },
+    {
+      "source_id": 703,
+      "mode": "apply",
+      "product_id": 745,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1745, \"source\": {\"title\": \"ورد جفسو ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426490179
+    },
+    {
+      "source_id": 702,
+      "mode": "apply",
+      "product_id": 746,
+      "status": "synced",
+      "detail": "{\"item_number\": 1746, \"name\": \"سفنج للورد الصناعي\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"سفنج للورد الصناعي\", \"variants\": [{\"name\": \"حبة واحدة\", \"price\": 800, \"active\": true}, {\"name\": \"20 حبة كرتونة كاملة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/746\", \"source_url\": \"https://dofesh.ps/?app=product.show.702\"}",
+      "updated_at": 1792426500390
+    },
+    {
+      "source_id": 701,
+      "mode": "apply",
+      "product_id": 207,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1207, \"source\": {\"title\": \"ظهرية قطعتين خشب مطبوع للصواني\", \"variants\": [{\"name\": \"ظهرية قطعتين\", \"price\": 5000, \"active\": true}, {\"name\": \"ظهرية قطعتين + 10 قطعة صغيرة من نفس الشكل\", \"price\": 6500, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426510182
+    },
+    {
+      "source_id": 700,
+      "mode": "apply",
+      "product_id": 747,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1747, \"source\": {\"title\": \"توزيعة مبخرة ماربل مغلفة مع اسماء العرسان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792426520170
+    },
+    {
+      "source_id": 699,
+      "mode": "apply",
+      "product_id": 748,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1748, \"source\": {\"title\": \"توزيعة شمع ببل مع علبة اكريلك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792426530283
+    },
+    {
+      "source_id": 698,
+      "mode": "apply",
+      "product_id": 749,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1749, \"source\": {\"title\": \"مطبقية شمع مزينة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792426540412
+    },
+    {
+      "source_id": 697,
+      "mode": "apply",
+      "product_id": 750,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1750, \"source\": {\"title\": \"توزيعة قفص حديد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426550175
+    },
+    {
+      "source_id": 696,
+      "mode": "apply",
+      "product_id": 751,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1751, \"source\": {\"title\": \"علب دبل شكل بطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792426560456
+    },
+    {
+      "source_id": 695,
+      "mode": "apply",
+      "product_id": 752,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1752, \"source\": {\"title\": \"توزيعة شمع خشب اسطواني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792426570174
+    },
+    {
+      "source_id": 694,
+      "mode": "apply",
+      "product_id": 753,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1753, \"source\": {\"title\": \"توزيعة مراية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792426580173
+    },
+    {
+      "source_id": 693,
+      "mode": "apply",
+      "product_id": 754,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1754, \"source\": {\"title\": \"تعليقة في بيتنا عريس تراث\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426590275
+    },
+    {
+      "source_id": 692,
+      "mode": "apply",
+      "product_id": 755,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1755, \"source\": {\"title\": \"تعليقة باب بيبي بنت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426600438
+    },
+    {
+      "source_id": 691,
+      "mode": "apply",
+      "product_id": 756,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1756, \"source\": {\"title\": \"تعليقة باب بيبي ولد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426610172
+    },
+    {
+      "source_id": 690,
+      "mode": "apply",
+      "product_id": 757,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1757, \"source\": {\"title\": \"تعليقة باب دائرية مع دب وطابات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}}",
+      "updated_at": 1792426620395
+    },
+    {
+      "source_id": 689,
+      "mode": "apply",
+      "product_id": 208,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1208, \"source\": {\"title\": \"توزيعة صحن كونكريت مع مبخرة الاناناس ومعطر جو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792426630533
+    },
+    {
+      "source_id": 688,
+      "mode": "apply",
+      "product_id": 758,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1758, \"source\": {\"title\": \"توزيعة صحن كونكريت مع معطر جو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792426640419
+    },
+    {
+      "source_id": 687,
+      "mode": "apply",
+      "product_id": 759,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1759, \"source\": {\"title\": \"عطر بيبي باودر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792426650375
+    },
+    {
+      "source_id": 686,
+      "mode": "apply",
+      "product_id": 760,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1760, \"source\": {\"title\": \"كوستر دائرة شفاف اكريلك 10 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792426660408
+    },
+    {
+      "source_id": 685,
+      "mode": "apply",
+      "product_id": 761,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1761, \"source\": {\"title\": \"علبة بلاستيك شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426670388
+    },
+    {
+      "source_id": 684,
+      "mode": "apply",
+      "product_id": 762,
+      "status": "synced",
+      "detail": "{\"item_number\": 1762, \"name\": \"شبر ستان 1.5 سم\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/762\", \"source_url\": \"https://dofesh.ps/?app=product.show.684\"}",
+      "updated_at": 1792426680656
+    },
+    {
+      "source_id": 683,
+      "mode": "apply",
+      "product_id": 763,
+      "status": "synced",
+      "detail": "{\"item_number\": 1763, \"name\": \"شبر ستان 1.5 سم نيلي\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم نيلي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/763\", \"source_url\": \"https://dofesh.ps/?app=product.show.683\"}",
+      "updated_at": 1792426690426
+    },
+    {
+      "source_id": 682,
+      "mode": "apply",
+      "product_id": 764,
+      "status": "synced",
+      "detail": "{\"item_number\": 1764, \"name\": \"شبر ستان 1.5 سم خمري\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1.5 سم خمري\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/764\", \"source_url\": \"https://dofesh.ps/?app=product.show.682\"}",
+      "updated_at": 1792426700792
+    },
+    {
+      "source_id": 680,
+      "mode": "apply",
+      "product_id": 765,
+      "status": "synced",
+      "detail": "{\"item_number\": 1765, \"name\": \"مبخرة فنجان لون خشبي\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"مبخرة فنجان لون خشبي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 700, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 6500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/765\", \"source_url\": \"https://dofesh.ps/?app=product.show.680\"}",
+      "updated_at": 1792426710534
+    },
+    {
+      "source_id": 679,
+      "mode": "apply",
+      "product_id": 766,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1766, \"source\": {\"title\": \"علب زجاج حناء 6سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426720284
+    },
+    {
+      "source_id": 678,
+      "mode": "apply",
+      "product_id": 209,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1209, \"source\": {\"title\": \"طبعات خشب صغير للتوزيعات\", \"variants\": [{\"name\": \"Baby Blue / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"Baby Blue / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"Baby Blue / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"Baby Blue / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"Baby Pink / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"Baby Pink / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"Baby Pink / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"Baby Pink / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"Baby Green / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"Baby Green / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"Baby Green / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"Baby Green / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"Baby Ohers / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"Baby Ohers / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"Baby Ohers / 30 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"Baby Ohers / 50 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426730555
+    },
+    {
+      "source_id": 677,
+      "mode": "apply",
+      "product_id": 164,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1164, \"source\": {\"title\": \"فرد سلكون اصلي حجم كبير حرارتين\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}}",
+      "updated_at": 1792426740174
+    },
+    {
+      "source_id": 676,
+      "mode": "apply",
+      "product_id": 165,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1165, \"source\": {\"title\": \"فرد سلكون اصلي حجم صغير حرارتين\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792426750624
+    },
+    {
+      "source_id": 675,
+      "mode": "apply",
+      "product_id": 210,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 1210, \"source\": {\"title\": \"اسماء اكريلك صغير للتوزيعات\", \"variants\": [{\"name\": \"ذهبي لاصق / 1 قطعة\", \"price\": 150, \"active\": true}, {\"name\": \"ذهبي لاصق / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي لاصق / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"ذهبي لاصق / 30 قطعة\", \"price\": 3300, \"active\": true}, {\"name\": \"ذهبي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي لاصق / 1 قطعة\", \"price\": 150, \"active\": true}, {\"name\": \"فضي لاصق / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"فضي لاصق / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"فضي لاصق / 30 قطعة\", \"price\": 3300, \"active\": true}, {\"name\": \"فضي لاصق / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"ذهبي وخشب / 1 قطعة\", \"price\": 150, \"active\": true}, {\"name\": \"ذهبي وخشب / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي وخشب / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"ذهبي وخشب / 30 قطعة\", \"price\": 3300, \"active\": true}, {\"name\": \"ذهبي وخشب / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"فضي وخشب / 1 قطعة\", \"price\": 150, \"active\": true}, {\"name\": \"فضي وخشب / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"فضي وخشب / 25 قطعة\", \"price\": 3000, \"active\": true}, {\"name\": \"فضي وخشب / 30 قطعة\", \"price\": 3300, \"active\": true}, {\"name\": \"فضي وخشب / 50 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"اسود لاصق / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"اسود لاصق / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"اسود لاصق / 25 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"اسود لاصق / 30 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"اسود لاصق / 50 قطعة\", \"price\": 6500, \"active\": true}, {\"name\": \"ابيض لاصق / 1 قطعة\", \"price\": 200, \"active\": true}, {\"name\": \"ابيض لاصق / 10 قطعة\", \"price\": 1800, \"active\": true}, {\"name\": \"ابيض لاصق / 25 قطعة\", \"price\": 4000, \"active\": true}, {\"name\": \"ابيض لاصق / 30 قطعة\", \"price\": 5000, \"active\": true}, {\"name\": \"ابيض لاصق / 50 قطعة\", \"price\": 6500, \"active\": true}], \"custom_fields\": true, \"minimum\": 1}}",
+      "updated_at": 1792426760331
+    },
+    {
+      "source_id": 674,
+      "mode": "apply",
+      "product_id": 41,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1041, \"source\": {\"title\": \"ريزون محجر مع علاقة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426770402
+    },
+    {
+      "source_id": 673,
+      "mode": "apply",
+      "product_id": 767,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1767, \"source\": {\"title\": \"اكسسوار مع لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426780173
+    },
+    {
+      "source_id": 672,
+      "mode": "apply",
+      "product_id": 768,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1768, \"source\": {\"title\": \"اكسسوار مع لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426790170
+    },
+    {
+      "source_id": 671,
+      "mode": "apply",
+      "product_id": 769,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1769, \"source\": {\"title\": \"علبة دبل مع اضاءة ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}}",
+      "updated_at": 1792426800188
+    },
+    {
+      "source_id": 670,
+      "mode": "apply",
+      "product_id": 770,
+      "status": "unsupported_supplier_removed_options",
+      "detail": "{\"item_number\": 1770, \"source\": {\"title\": \"علبة دبل جلد ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792426810177
+    },
+    {
+      "source_id": 669,
+      "mode": "apply",
+      "product_id": 771,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1771, \"source\": {\"title\": \"اطار اساور جلد ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426818235
+    },
+    {
+      "source_id": 668,
+      "mode": "apply",
+      "product_id": 772,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1772, \"source\": {\"title\": \"اطار للاساور لون خيش\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426827988
+    },
+    {
+      "source_id": 667,
+      "mode": "apply",
+      "product_id": 773,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1773, \"source\": {\"title\": \"اطار اساور مخمل اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426838192
+    },
+    {
+      "source_id": 666,
+      "mode": "apply",
+      "product_id": 774,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1774, \"source\": {\"title\": \"ايد عظم مقاس كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792426847986
+    },
+    {
+      "source_id": 665,
+      "mode": "apply",
+      "product_id": 775,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1775, \"source\": {\"title\": \"ايد عظم اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792426857985
+    },
+    {
+      "source_id": 664,
+      "mode": "apply",
+      "product_id": 776,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1776, \"source\": {\"title\": \"ستاند رقبة للذهب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426868328
+    },
+    {
+      "source_id": 663,
+      "mode": "apply",
+      "product_id": 777,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1777, \"source\": {\"title\": \"ستاند رقبة للذهب اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792426878302
+    },
+    {
+      "source_id": 662,
+      "mode": "apply",
+      "product_id": 778,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1778, \"source\": {\"title\": \"صندوق كرتون مع قاطع داخلي مع زوايا حديد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426887985
+    },
+    {
+      "source_id": 661,
+      "mode": "apply",
+      "product_id": 779,
+      "status": "missing_source",
+      "detail": "{\"reason\": \"supplier_404\", \"item_number\": 1779}",
+      "updated_at": 1792426897553
+    },
+    {
+      "source_id": 660,
+      "mode": "apply",
+      "product_id": 780,
+      "status": "synced",
+      "detail": "{\"item_number\": 1780, \"name\": \"كيس كرتون لتغليف العطور والشوكولاتة\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"كيس كرتون لتغليف العطور والشوكولاتة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 10000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/780\", \"source_url\": \"https://dofesh.ps/?app=product.show.660\"}",
+      "updated_at": 1792426908543
+    },
+    {
+      "source_id": 659,
+      "mode": "apply",
+      "product_id": 781,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1781, \"source\": {\"title\": \"كيس هرمي سادى لتغليف العطر والشوكولا\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426918253
+    },
+    {
+      "source_id": 658,
+      "mode": "apply",
+      "product_id": 211,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1211, \"source\": {\"title\": \"كيس شنتة كرتون ايد ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792426927990
+    },
+    {
+      "source_id": 657,
+      "mode": "apply",
+      "product_id": 782,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1782, \"source\": {\"title\": \"كيس ysl\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792426938429
+    },
+    {
+      "source_id": 656,
+      "mode": "apply",
+      "product_id": 783,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1783, \"source\": {\"title\": \"كيس ديور مستطيل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792426948195
+    },
+    {
+      "source_id": 655,
+      "mode": "apply",
+      "product_id": 784,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1784, \"source\": {\"title\": \"كيس هرم للحناء\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792426958286
+    },
+    {
+      "source_id": 654,
+      "mode": "apply",
+      "product_id": 212,
+      "status": "synced",
+      "detail": "{\"item_number\": 1212, \"name\": \"كيس جوتشي اخضر\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"كيس جوتشي اخضر\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": false}, {\"name\": \"10 حبة\", \"price\": 3000, \"active\": false}, {\"name\": \"50 حبة\", \"price\": 10000, \"active\": false}, {\"name\": \"100 حبة\", \"price\": 15000, \"active\": false}, {\"name\": \"500 حبة\", \"price\": 60000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/212\", \"source_url\": \"https://dofesh.ps/?app=product.show.654\"}",
+      "updated_at": 1792426968235
+    },
+    {
+      "source_id": 652,
+      "mode": "apply",
+      "product_id": 785,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1785, \"source\": {\"title\": \"كيس شانيل مع ايد فتحة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792426978188
+    },
+    {
+      "source_id": 651,
+      "mode": "apply",
+      "product_id": 213,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1213, \"source\": {\"title\": \"كيس ديور لون ذهبي مع ايد فتحة(10*12*5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792426987987
+    },
+    {
+      "source_id": 650,
+      "mode": "apply",
+      "product_id": 214,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1214, \"source\": {\"title\": \"كيس جوتشي مع ايد فتحة (10*12*5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792426998245
+    },
+    {
+      "source_id": 649,
+      "mode": "apply",
+      "product_id": 215,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1215, \"source\": {\"title\": \"كيس ديور مع ايد فتحة (10*12*5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427007991
+    },
+    {
+      "source_id": 646,
+      "mode": "apply",
+      "product_id": 786,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1786, \"source\": {\"title\": \"كيس جوتشي مطاول (15*7*5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792427018199
+    },
+    {
+      "source_id": 644,
+      "mode": "apply",
+      "product_id": 787,
+      "status": "synced",
+      "detail": "{\"item_number\": 1787, \"name\": \"ببيونة ستان ١.٥ سم طبقتين\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونة ستان 1.5 سم طبقتين\", \"variants\": [{\"name\": \"احمر\", \"price\": 1000, \"active\": true}, {\"name\": \"خمري\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"بيج\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true}, {\"name\": \"كحلي\", \"price\": 1000, \"active\": false}, {\"name\": \"نهدي\", \"price\": 1000, \"active\": true}, {\"name\": \"زهري\", \"price\": 1000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 1000, \"active\": true}, {\"name\": \"اسود\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/787\", \"source_url\": \"https://dofesh.ps/?app=product.show.644\"}",
+      "updated_at": 1792427028215
+    },
+    {
+      "source_id": 643,
+      "mode": "apply",
+      "product_id": 788,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1788, \"source\": {\"title\": \"كيس مخمل مع صورة الكعبة باللون الذهبي الحراري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427037985
+    },
+    {
+      "source_id": 642,
+      "mode": "apply",
+      "product_id": 789,
+      "status": "synced",
+      "detail": "{\"item_number\": 1789, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/789\", \"source_url\": \"https://dofesh.ps/?app=product.show.642\"}",
+      "updated_at": 1792427048270
+    },
+    {
+      "source_id": 641,
+      "mode": "apply",
+      "product_id": 790,
+      "status": "synced",
+      "detail": "{\"item_number\": 1790, \"name\": \"ورق تغليف بيج\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف بيج\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/790\", \"source_url\": \"https://dofesh.ps/?app=product.show.641\"}",
+      "updated_at": 1792427058448
+    },
+    {
+      "source_id": 640,
+      "mode": "apply",
+      "product_id": 791,
+      "status": "synced",
+      "detail": "{\"item_number\": 1791, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/791\", \"source_url\": \"https://dofesh.ps/?app=product.show.640\"}",
+      "updated_at": 1792427068227
+    },
+    {
+      "source_id": 639,
+      "mode": "apply",
+      "product_id": 792,
+      "status": "synced",
+      "detail": "{\"item_number\": 1792, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/792\", \"source_url\": \"https://dofesh.ps/?app=product.show.639\"}",
+      "updated_at": 1792427078429
+    },
+    {
+      "source_id": 638,
+      "mode": "apply",
+      "product_id": 793,
+      "status": "synced",
+      "detail": "{\"item_number\": 1793, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/793\", \"source_url\": \"https://dofesh.ps/?app=product.show.638\"}",
+      "updated_at": 1792427088294
+    },
+    {
+      "source_id": 637,
+      "mode": "apply",
+      "product_id": 794,
+      "status": "synced",
+      "detail": "{\"item_number\": 1794, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/794\", \"source_url\": \"https://dofesh.ps/?app=product.show.637\"}",
+      "updated_at": 1792427098438
+    },
+    {
+      "source_id": 636,
+      "mode": "apply",
+      "product_id": 795,
+      "status": "synced",
+      "detail": "{\"item_number\": 1795, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/795\", \"source_url\": \"https://dofesh.ps/?app=product.show.636\"}",
+      "updated_at": 1792427108342
+    },
+    {
+      "source_id": 635,
+      "mode": "apply",
+      "product_id": 796,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1796, \"source\": {\"title\": \"تغليف ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427118266
+    },
+    {
+      "source_id": 634,
+      "mode": "apply",
+      "product_id": 797,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1797, \"source\": {\"title\": \"رق تغليف خمري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427128306
+    },
+    {
+      "source_id": 633,
+      "mode": "apply",
+      "product_id": 798,
+      "status": "synced",
+      "detail": "{\"item_number\": 1798, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة (بكيت كامل)\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/798\", \"source_url\": \"https://dofesh.ps/?app=product.show.633\"}",
+      "updated_at": 1792427138412
+    },
+    {
+      "source_id": 632,
+      "mode": "apply",
+      "product_id": 799,
+      "status": "synced",
+      "detail": "{\"item_number\": 1799, \"name\": \"ورق تغليف\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورق تغليف\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"20 حبة\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/799\", \"source_url\": \"https://dofesh.ps/?app=product.show.632\"}",
+      "updated_at": 1792427148546
+    },
+    {
+      "source_id": 631,
+      "mode": "apply",
+      "product_id": 800,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1800, \"source\": {\"title\": \"صدفة اكريلك شفاف مع اطار ذهبي (9.5*7.5)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427158184
+    },
+    {
+      "source_id": 630,
+      "mode": "apply",
+      "product_id": 801,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1801, \"source\": {\"title\": \"دب شكل راس بني صغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792427168225
+    },
+    {
+      "source_id": 629,
+      "mode": "apply",
+      "product_id": 802,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1802, \"source\": {\"title\": \"دب قماش 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427178170
+    },
+    {
+      "source_id": 628,
+      "mode": "apply",
+      "product_id": 803,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1803, \"source\": {\"title\": \"دب قماش 4سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427188310
+    },
+    {
+      "source_id": 627,
+      "mode": "apply",
+      "product_id": 804,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1804, \"source\": {\"title\": \"علبة كرتون سحاب ذهبي مع ابيض (14*7*4)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427197994
+    },
+    {
+      "source_id": 625,
+      "mode": "apply",
+      "product_id": 805,
+      "status": "synced",
+      "detail": "{\"item_number\": 1805, \"name\": \"علبة كرتون غطاء شفاف مقاس (16*6*2)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون غطاء شفاف مقاس (16*6*2)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/805\", \"source_url\": \"https://dofesh.ps/?app=product.show.625\"}",
+      "updated_at": 1792427208498
+    },
+    {
+      "source_id": 624,
+      "mode": "apply",
+      "product_id": 806,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1806, \"source\": {\"title\": \"اكسسوار لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792427218220
+    },
+    {
+      "source_id": 623,
+      "mode": "apply",
+      "product_id": 807,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1807, \"source\": {\"title\": \"اكسسوار مدور محجر 3سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792427228263
+    },
+    {
+      "source_id": 622,
+      "mode": "apply",
+      "product_id": 808,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1808, \"source\": {\"title\": \"زاوية حديد 5.5سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 40}}",
+      "updated_at": 1792427237992
+    },
+    {
+      "source_id": 621,
+      "mode": "apply",
+      "product_id": 809,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1809, \"source\": {\"title\": \"برواز حديد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792427248035
+    },
+    {
+      "source_id": 620,
+      "mode": "apply",
+      "product_id": 810,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1810, \"source\": {\"title\": \"برواز حديد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792427258179
+    },
+    {
+      "source_id": 619,
+      "mode": "apply",
+      "product_id": 811,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1811, \"source\": {\"title\": \"كرمية قوس قزح 8*6\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792427267991
+    },
+    {
+      "source_id": 618,
+      "mode": "apply",
+      "product_id": 812,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1812, \"source\": {\"title\": \"مكرمية قوس قزح 8*6 ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427277995
+    },
+    {
+      "source_id": 617,
+      "mode": "apply",
+      "product_id": 123,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1123, \"source\": {\"title\": \"صابون معطر سادى(7*5*1سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427287988
+    },
+    {
+      "source_id": 616,
+      "mode": "apply",
+      "product_id": 124,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1124, \"source\": {\"title\": \"صابون معطر محزز مقاس(5.5*4*1سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}}",
+      "updated_at": 1792427298231
+    },
+    {
+      "source_id": 615,
+      "mode": "apply",
+      "product_id": 813,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1813, \"source\": {\"title\": \"مسك طهارة 3مل الاصلي زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792427307994
     }
   ]
 }
