@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T20:45:35.551115+03:00",
+  "updated_at": "2026-10-19T20:53:52.535221+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -6835,6 +6835,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1981, \"source\": {\"title\": \"سلة مزينة لون نود للاعراس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
       "updated_at": 1792431934629
+    },
+    {
+      "source_id": 394,
+      "mode": "apply",
+      "product_id": 982,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1982, \"source\": {\"title\": \"سلة مزينة لون خمري للاعراس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792431941790
+    },
+    {
+      "source_id": 393,
+      "mode": "apply",
+      "product_id": 983,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1983, \"source\": {\"title\": \"سلة مزينة لون نيلي للاعراس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792431951695
+    },
+    {
+      "source_id": 392,
+      "mode": "apply",
+      "product_id": 984,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1984, \"source\": {\"title\": \"سلة مزينة لون اسود للاعراس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792431961763
+    },
+    {
+      "source_id": 391,
+      "mode": "apply",
+      "product_id": 187,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1187, \"source\": {\"title\": \"ايد مسكة كرستال ارتفاع 15.5سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}}",
+      "updated_at": 1792431971622
+    },
+    {
+      "source_id": 390,
+      "mode": "apply",
+      "product_id": 985,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1985, \"source\": {\"title\": \"سترس محجر مربعات 5مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792431981579
+    },
+    {
+      "source_id": 389,
+      "mode": "apply",
+      "product_id": 986,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1986, \"source\": {\"title\": \"سترس محجر 1سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792431991572
+    },
+    {
+      "source_id": 388,
+      "mode": "apply",
+      "product_id": 987,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1987, \"source\": {\"title\": \"سترس اخضر 4مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432001573
+    },
+    {
+      "source_id": 387,
+      "mode": "apply",
+      "product_id": 988,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1988, \"source\": {\"title\": \"سترس زهري 4مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432011613
+    },
+    {
+      "source_id": 386,
+      "mode": "apply",
+      "product_id": 989,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1989, \"source\": {\"title\": \"سترس ازرق 4مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432021642
+    },
+    {
+      "source_id": 384,
+      "mode": "apply",
+      "product_id": 990,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1990, \"source\": {\"title\": \"رس محجر 2مل خرزة رفيعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792432031931
+    },
+    {
+      "source_id": 383,
+      "mode": "apply",
+      "product_id": 991,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1991, \"source\": {\"title\": \"سترس محجر لون فضي 4مل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432041822
+    },
+    {
+      "source_id": 382,
+      "mode": "apply",
+      "product_id": 220,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1220, \"source\": {\"title\": \"منظم اكسسوار مخمل 10*10سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432051893
+    },
+    {
+      "source_id": 381,
+      "mode": "apply",
+      "product_id": 992,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1992, \"source\": {\"title\": \"منظم اكسسور مخمل 10*10سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432061796
+    },
+    {
+      "source_id": 380,
+      "mode": "apply",
+      "product_id": 993,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1993, \"source\": {\"title\": \"منظم اكسسوار مربع مخمل مقاس 10*10\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432071564
+    },
+    {
+      "source_id": 377,
+      "mode": "apply",
+      "product_id": 994,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1994, \"source\": {\"title\": \"ورد اكسسوار فضي بلاستيك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792432081582
+    },
+    {
+      "source_id": 376,
+      "mode": "apply",
+      "product_id": 995,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1995, \"source\": {\"title\": \"ورد دوار شمس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432091756
+    },
+    {
+      "source_id": 375,
+      "mode": "apply",
+      "product_id": 996,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1996, \"source\": {\"title\": \"رد دوار شمس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792432101694
+    },
+    {
+      "source_id": 374,
+      "mode": "apply",
+      "product_id": 997,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1997, \"source\": {\"title\": \"ورد دوار شمس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432111953
+    },
+    {
+      "source_id": 373,
+      "mode": "apply",
+      "product_id": 998,
+      "status": "synced",
+      "detail": "{\"item_number\": 1998, \"name\": \"علبة كرتون سادى مقاس 6*6*6\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون سادى مقاس (6*6*6)\", \"variants\": [{\"name\": \"ابيض\", \"price\": 100, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 100, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/998\", \"source_url\": \"https://dofesh.ps/?app=product.show.373\"}",
+      "updated_at": 1792432121970
+    },
+    {
+      "source_id": 372,
+      "mode": "apply",
+      "product_id": 999,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1999, \"source\": {\"title\": \"توزيعة دلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432131890
+    },
+    {
+      "source_id": 371,
+      "mode": "apply",
+      "product_id": 1000,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2000, \"source\": {\"title\": \"توزيعة دلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432141695
+    },
+    {
+      "source_id": 370,
+      "mode": "apply",
+      "product_id": 1001,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2001, \"source\": {\"title\": \"توزيعة دلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432151781
+    },
+    {
+      "source_id": 369,
+      "mode": "apply",
+      "product_id": 1002,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2002, \"source\": {\"title\": \"توزيعة دلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432161768
+    },
+    {
+      "source_id": 368,
+      "mode": "apply",
+      "product_id": 1003,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2003, \"source\": {\"title\": \"قفص سداسي مغلف بتول\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792432171762
+    },
+    {
+      "source_id": 367,
+      "mode": "apply",
+      "product_id": 1004,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2004, \"source\": {\"title\": \"قفص حديد ذهبي مع ايد لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792432181663
+    },
+    {
+      "source_id": 366,
+      "mode": "apply",
+      "product_id": 188,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1188, \"source\": {\"title\": \"كوستر خشب 8-10 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432191696
+    },
+    {
+      "source_id": 365,
+      "mode": "apply",
+      "product_id": 1005,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2005, \"source\": {\"title\": \"تغليقة اية الكرسي اكريلك ذهبي مع مغناطيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432201694
+    },
+    {
+      "source_id": 364,
+      "mode": "apply",
+      "product_id": 1006,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2006, \"source\": {\"title\": \"تغليقة اية الكرسي اكريلك ذهبي مع مغناطيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792432211581
+    },
+    {
+      "source_id": 363,
+      "mode": "apply",
+      "product_id": 1007,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2007, \"source\": {\"title\": \"مصحف ياسين (10*7.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432221827
+    },
+    {
+      "source_id": 362,
+      "mode": "apply",
+      "product_id": 1008,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2008, \"source\": {\"title\": \"طقم مصحف وسبحة لولو وسبحة عداد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432231575
+    },
+    {
+      "source_id": 361,
+      "mode": "apply",
+      "product_id": 1009,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2009, \"source\": {\"title\": \"طقم مصحف مع سبحة لولو وسبحة عداد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432241572
+    },
+    {
+      "source_id": 360,
+      "mode": "apply",
+      "product_id": 1010,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2010, \"source\": {\"title\": \"طقم مصحف مع سبحة لولو وسبحة عداد اصبع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792432251706
+    },
+    {
+      "source_id": 359,
+      "mode": "apply",
+      "product_id": 1011,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2011, \"source\": {\"title\": \"مسبحة لولو 99حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432261575
+    },
+    {
+      "source_id": 358,
+      "mode": "apply",
+      "product_id": 1012,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2012, \"source\": {\"title\": \"مسبحة لولو 99حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432271576
+    },
+    {
+      "source_id": 357,
+      "mode": "apply",
+      "product_id": 1013,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2013, \"source\": {\"title\": \"مسبحة لولو 99 حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432281575
+    },
+    {
+      "source_id": 356,
+      "mode": "apply",
+      "product_id": 1014,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2014, \"source\": {\"title\": \"مسبحة لولو 99حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432291567
+    },
+    {
+      "source_id": 355,
+      "mode": "apply",
+      "product_id": 1015,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2015, \"source\": {\"title\": \"سبحة لولو 99 حبة لون لؤلؤي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432301585
+    },
+    {
+      "source_id": 354,
+      "mode": "apply",
+      "product_id": 1016,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2016, \"source\": {\"title\": \"سبحة لولو 99حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432311582
+    },
+    {
+      "source_id": 353,
+      "mode": "apply",
+      "product_id": 1017,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2017, \"source\": {\"title\": \"ورد فلل ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432321628
+    },
+    {
+      "source_id": 352,
+      "mode": "apply",
+      "product_id": 1018,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2018, \"source\": {\"title\": \"ورد ذهبي للتزيين\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792432331706
+    },
+    {
+      "source_id": 351,
+      "mode": "apply",
+      "product_id": 1019,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2019, \"source\": {\"title\": \"ورد ثلج فلل ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792432341690
+    },
+    {
+      "source_id": 350,
+      "mode": "apply",
+      "product_id": 1020,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2020, \"source\": {\"title\": \"ورد ثلج فلل بيج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792432351586
+    },
+    {
+      "source_id": 349,
+      "mode": "apply",
+      "product_id": 1021,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2021, \"source\": {\"title\": \"ورد فلل ثلج ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792432361695
+    },
+    {
+      "source_id": 348,
+      "mode": "apply",
+      "product_id": 1022,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2022, \"source\": {\"title\": \"ورد فلل ثلج ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792432371831
+    },
+    {
+      "source_id": 347,
+      "mode": "apply",
+      "product_id": 1023,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2023, \"source\": {\"title\": \"وردة قماش تول مذهب مع لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432381917
+    },
+    {
+      "source_id": 346,
+      "mode": "apply",
+      "product_id": 1024,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2024, \"source\": {\"title\": \"ورد سولو9سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432391605
+    },
+    {
+      "source_id": 345,
+      "mode": "apply",
+      "product_id": 1025,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2025, \"source\": {\"title\": \"ورد سولو9سم مع غلتر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792432401893
+    },
+    {
+      "source_id": 344,
+      "mode": "apply",
+      "product_id": 1026,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2026, \"source\": {\"title\": \"ورد سولو7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432411577
+    },
+    {
+      "source_id": 343,
+      "mode": "apply",
+      "product_id": 1027,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2027, \"source\": {\"title\": \"ورد سولو7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432421929
+    },
+    {
+      "source_id": 342,
+      "mode": "apply",
+      "product_id": 1028,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2028, \"source\": {\"title\": \"ورد سولو 7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792432431595
     }
   ]
 }

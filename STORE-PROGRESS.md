@@ -2047,3 +2047,62 @@
 - الجعبري#4377 ↔ صنف#2569: no_options؛ اعواد بخور SHALIMAR سداسي ( لوتس ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4377
 - الجعبري#4376 ↔ صنف#2570: no_options؛ اعواد بخور SHALIMAR سداسي ( ميره ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4376
 - الجعبري#4375 ↔ صنف#2571: no_options؛ اعواد بخور SHALIMAR سداسي ( تيوب روز ) 20 عود * 23 سم. https://jabaristore.com/?app=product.show.4375
+### 2026-10-19T20:53:52.535221+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T20:53:52.535221+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 298, "no_options": 568, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#394 ↔ صنف#1982: no_options؛ سلة مزينة لون خمري للاعراس. https://dofesh.ps/?app=product.show.394
+- دوفش#393 ↔ صنف#1983: no_options؛ سلة مزينة لون نيلي للاعراس. https://dofesh.ps/?app=product.show.393
+- دوفش#392 ↔ صنف#1984: no_options؛ سلة مزينة لون اسود للاعراس. https://dofesh.ps/?app=product.show.392
+- دوفش#391 ↔ صنف#1187: no_options؛ ايد مسكة كرستال ارتفاع 15.5سم. https://dofesh.ps/?app=product.show.391
+- دوفش#390 ↔ صنف#1985: no_options؛ سترس محجر مربعات 5مل. https://dofesh.ps/?app=product.show.390
+- دوفش#389 ↔ صنف#1986: no_options؛ سترس محجر 1سم. https://dofesh.ps/?app=product.show.389
+- دوفش#388 ↔ صنف#1987: no_options؛ سترس اخضر 4مل. https://dofesh.ps/?app=product.show.388
+- دوفش#387 ↔ صنف#1988: no_options؛ سترس زهري 4مل. https://dofesh.ps/?app=product.show.387
+- دوفش#386 ↔ صنف#1989: no_options؛ سترس ازرق 4مل. https://dofesh.ps/?app=product.show.386
+- دوفش#384 ↔ صنف#1990: no_options؛ رس محجر 2مل خرزة رفيعة. https://dofesh.ps/?app=product.show.384
+- دوفش#383 ↔ صنف#1991: no_options؛ سترس محجر لون فضي 4مل. https://dofesh.ps/?app=product.show.383
+- دوفش#382 ↔ صنف#1220: no_options؛ منظم اكسسوار مخمل 10*10سم. https://dofesh.ps/?app=product.show.382
+- دوفش#381 ↔ صنف#1992: no_options؛ منظم اكسسور مخمل 10*10سم. https://dofesh.ps/?app=product.show.381
+- دوفش#380 ↔ صنف#1993: no_options؛ منظم اكسسوار مربع مخمل مقاس 10*10. https://dofesh.ps/?app=product.show.380
+- دوفش#377 ↔ صنف#1994: no_options؛ ورد اكسسوار فضي بلاستيك. https://dofesh.ps/?app=product.show.377
+- دوفش#376 ↔ صنف#1995: no_options؛ ورد دوار شمس. https://dofesh.ps/?app=product.show.376
+- دوفش#375 ↔ صنف#1996: no_options؛ رد دوار شمس. https://dofesh.ps/?app=product.show.375
+- دوفش#374 ↔ صنف#1997: no_options؛ ورد دوار شمس. https://dofesh.ps/?app=product.show.374
+- دوفش#373 ↔ صنف#1998: synced؛ ابيض=1₪؛ ذهبي=1₪. https://dofesh.ps/?app=product.show.373
+- دوفش#372 ↔ صنف#1999: no_options؛ توزيعة دلة. https://dofesh.ps/?app=product.show.372
+- دوفش#371 ↔ صنف#2000: no_options؛ توزيعة دلة. https://dofesh.ps/?app=product.show.371
+- دوفش#370 ↔ صنف#2001: no_options؛ توزيعة دلة. https://dofesh.ps/?app=product.show.370
+- دوفش#369 ↔ صنف#2002: no_options؛ توزيعة دلة. https://dofesh.ps/?app=product.show.369
+- دوفش#368 ↔ صنف#2003: no_options؛ قفص سداسي مغلف بتول. https://dofesh.ps/?app=product.show.368
+- دوفش#367 ↔ صنف#2004: no_options؛ قفص حديد ذهبي مع ايد لولو. https://dofesh.ps/?app=product.show.367
+- دوفش#366 ↔ صنف#1188: no_options؛ كوستر خشب 8-10 سم. https://dofesh.ps/?app=product.show.366
+- دوفش#365 ↔ صنف#2005: no_options؛ تغليقة اية الكرسي اكريلك ذهبي مع مغناطيس. https://dofesh.ps/?app=product.show.365
+- دوفش#364 ↔ صنف#2006: no_options؛ تغليقة اية الكرسي اكريلك ذهبي مع مغناطيس. https://dofesh.ps/?app=product.show.364
+- دوفش#363 ↔ صنف#2007: no_options؛ مصحف ياسين (10*7.5سم). https://dofesh.ps/?app=product.show.363
+- دوفش#362 ↔ صنف#2008: no_options؛ طقم مصحف وسبحة لولو وسبحة عداد. https://dofesh.ps/?app=product.show.362
+- دوفش#361 ↔ صنف#2009: no_options؛ طقم مصحف مع سبحة لولو وسبحة عداد. https://dofesh.ps/?app=product.show.361
+- دوفش#360 ↔ صنف#2010: no_options؛ طقم مصحف مع سبحة لولو وسبحة عداد اصبع. https://dofesh.ps/?app=product.show.360
+- دوفش#359 ↔ صنف#2011: no_options؛ مسبحة لولو 99حبة. https://dofesh.ps/?app=product.show.359
+- دوفش#358 ↔ صنف#2012: no_options؛ مسبحة لولو 99حبة. https://dofesh.ps/?app=product.show.358
+- دوفش#357 ↔ صنف#2013: no_options؛ مسبحة لولو 99 حبة. https://dofesh.ps/?app=product.show.357
+- دوفش#356 ↔ صنف#2014: no_options؛ مسبحة لولو 99حبة. https://dofesh.ps/?app=product.show.356
+- دوفش#355 ↔ صنف#2015: no_options؛ سبحة لولو 99 حبة لون لؤلؤي. https://dofesh.ps/?app=product.show.355
+- دوفش#354 ↔ صنف#2016: no_options؛ سبحة لولو 99حبة. https://dofesh.ps/?app=product.show.354
+- دوفش#353 ↔ صنف#2017: no_options؛ ورد فلل ذهبي. https://dofesh.ps/?app=product.show.353
+- دوفش#352 ↔ صنف#2018: no_options؛ ورد ذهبي للتزيين. https://dofesh.ps/?app=product.show.352
+- دوفش#351 ↔ صنف#2019: no_options؛ ورد ثلج فلل ابيض. https://dofesh.ps/?app=product.show.351
+- دوفش#350 ↔ صنف#2020: no_options؛ ورد ثلج فلل بيج. https://dofesh.ps/?app=product.show.350
+- دوفش#349 ↔ صنف#2021: no_options؛ ورد فلل ثلج ازرق. https://dofesh.ps/?app=product.show.349
+- دوفش#348 ↔ صنف#2022: no_options؛ ورد فلل ثلج ذهبي. https://dofesh.ps/?app=product.show.348
+- دوفش#347 ↔ صنف#2023: no_options؛ وردة قماش تول مذهب مع لولو. https://dofesh.ps/?app=product.show.347
+- دوفش#346 ↔ صنف#2024: no_options؛ ورد سولو9سم. https://dofesh.ps/?app=product.show.346
+- دوفش#345 ↔ صنف#2025: no_options؛ ورد سولو9سم مع غلتر. https://dofesh.ps/?app=product.show.345
+- دوفش#344 ↔ صنف#2026: no_options؛ ورد سولو7سم. https://dofesh.ps/?app=product.show.344
+- دوفش#343 ↔ صنف#2027: no_options؛ ورد سولو7سم. https://dofesh.ps/?app=product.show.343
+- دوفش#342 ↔ صنف#2028: no_options؛ ورد سولو 7سم. https://dofesh.ps/?app=product.show.342
