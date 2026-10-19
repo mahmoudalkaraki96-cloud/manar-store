@@ -40,6 +40,9 @@ jobs:
       - name: Verify anonymous browser activity and grouped carts
         run: node --test tests/browser-activity.test.cjs
 
+      - name: Verify order edits and stock rollback
+        run: node --test tests/order-edit.test.cjs
+
       - name: Build
         run: npm run build
 

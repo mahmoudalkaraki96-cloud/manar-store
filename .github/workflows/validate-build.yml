@@ -20,4 +20,5 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: node --experimental-strip-types --test tests/meta-pixel.test.mjs
+      - run: node --test tests/order-edit.test.cjs
       - run: npm run build
