@@ -1061,3 +1061,64 @@
 - دوفش#1098 ↔ صنف#1414: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1098
 - دوفش#1097 ↔ صنف#1415: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1097
 - دوفش#1096 ↔ صنف#1416: no_options؛ عرق لولو للمسكات. https://dofesh.ps/?app=product.show.1096
+
+
+### 2026-10-19T15:01:05.370518+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:01:05.370518+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 108, "no_options": 129, "missing_source": 2, "unsupported_customization_or_minimum": 1, "matched": 7}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1095 ↔ صنف#1417: no_options؛ عطر جوتشي 30 مل. https://dofesh.ps/?app=product.show.1095
+- دوفش#1094 ↔ صنف#1418: no_options؛ عطر جوتشي 30 مل. https://dofesh.ps/?app=product.show.1094
+- دوفش#1093 ↔ صنف#1419: no_options؛ عطر جوتشي 30 مل. https://dofesh.ps/?app=product.show.1093
+- دوفش#1092 ↔ صنف#1155: no_options؛ لزيق رفيع 2سم. https://dofesh.ps/?app=product.show.1092
+- دوفش#1091 ↔ صنف#1420: no_options؛ سبلاش عطر. https://dofesh.ps/?app=product.show.1091
+- دوفش#1090 ↔ صنف#1156: synced؛ بالحبة=5₪؛ 5 حبة=16₪. https://dofesh.ps/?app=product.show.1090
+- دوفش#1089 ↔ صنف#1421: no_options؛ مبخرة نحاس فضي. https://dofesh.ps/?app=product.show.1089
+- دوفش#1088 ↔ صنف#1422: no_options؛ مبخرة نحاس فضي. https://dofesh.ps/?app=product.show.1088
+- دوفش#1087 ↔ صنف#2313: synced؛ 12 حبة=40₪؛ 48 حبة=160₪. https://dofesh.ps/?app=product.show.1087
+- دوفش#1086 ↔ صنف#1423: synced؛ بالحبة=12₪؛ 12 حبة=120₪. https://dofesh.ps/?app=product.show.1086
+- دوفش#1083 ↔ صنف#1113: no_options؛ حبل ايد لولو للطابة الاكريلك. https://dofesh.ps/?app=product.show.1083
+- دوفش#1082 ↔ صنف#1114: no_options؛ سترس محجر 10 متر. https://dofesh.ps/?app=product.show.1082
+- دوفش#1081 ↔ صنف#1424: synced؛ بالدزينة=18₪. https://dofesh.ps/?app=product.show.1081
+- دوفش#1080 ↔ صنف#1425: synced؛ بالدزينة=18₪. https://dofesh.ps/?app=product.show.1080
+- دوفش#1079 ↔ صنف#1426: synced؛ بالدزينة=20₪. https://dofesh.ps/?app=product.show.1079
+- دوفش#1078 ↔ صنف#1427: synced؛ بالدزينة=12₪. https://dofesh.ps/?app=product.show.1078
+- دوفش#1077 ↔ صنف#1428: synced؛ بالدزينىة=20₪. https://dofesh.ps/?app=product.show.1077
+- دوفش#1076 ↔ صنف#1429: synced؛ بالحبة=1₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.1076
+- دوفش#1075 ↔ صنف#1430: synced؛ بالحبة=1.5₪؛ 50 حبة=60₪. https://dofesh.ps/?app=product.show.1075
+- دوفش#1074 ↔ صنف#1192: matched؛ مع المبخرة النحاسية الطربوش=30₪؛ بدون المبخرة الطربوش=25₪. https://dofesh.ps/?app=product.show.1074
+- دوفش#1073 ↔ صنف#1193: matched؛ 10 حبة=40₪؛ 50 حبة=150₪؛ 100 حبة=250₪. https://dofesh.ps/?app=product.show.1073
+- دوفش#1072 ↔ صنف#1194: matched؛ بالحبة=4₪؛ 50 حبة=200₪؛ 100 حبة=190₪. https://dofesh.ps/?app=product.show.1072
+- دوفش#1071 ↔ صنف#1195: matched؛ 10 حبة=40₪؛ 50 حبة=150₪؛ 100 حبة=250₪. https://dofesh.ps/?app=product.show.1071
+- دوفش#1070 ↔ صنف#1196: no_options؛ صينية خشب محزز جودة عالية جدا. https://dofesh.ps/?app=product.show.1070
+- دوفش#1069 ↔ صنف#1431: synced؛ بالحبة=6₪؛ 10 حبة=50₪؛ 50 حبة=250₪. https://dofesh.ps/?app=product.show.1069
+- دوفش#1068 ↔ صنف#1197: no_options؛ علبة كرستال للمسك. https://dofesh.ps/?app=product.show.1068
+- دوفش#1067 ↔ صنف#1432: synced؛ بالمتر=3₪؛ باللفة=50₪. https://dofesh.ps/?app=product.show.1067
+- دوفش#1065 ↔ صنف#1157: synced؛ بالمتر=5₪؛ باللفة=25₪. https://dofesh.ps/?app=product.show.1065
+- دوفش#1063 ↔ صنف#1433: no_options؛ ستاند للعرض دائري 3 قطعة. https://dofesh.ps/?app=product.show.1063
+- دوفش#1062 ↔ صنف#1198: matched؛ بالحبة=3₪؛ 10 حبة=25₪؛ 50 حبة=100₪؛ 100 حبة=200₪؛ 500 حبة=800₪. https://dofesh.ps/?app=product.show.1062
+- دوفش#1061 ↔ صنف#1199: matched؛ بالحبة=4₪؛ 10 حبة=30₪؛ 50 حبة=120₪؛ 100حبة=200₪. https://dofesh.ps/?app=product.show.1061
+- دوفش#1060 ↔ صنف#1200: matched؛ بالحبة=3₪؛ 10 حبة=25₪؛ 50 حبة=100₪؛ 100 حبة=200₪. https://dofesh.ps/?app=product.show.1060
+- دوفش#1059 ↔ صنف#1434: synced؛ بالحبة=4₪؛ 50 حبة=100₪؛ 100 حبة=190₪. https://dofesh.ps/?app=product.show.1059
+- دوفش#1058 ↔ صنف#1435: synced؛ بالحبة=4₪؛ 50 حبة=150₪؛ 100 حبة=250₪. https://dofesh.ps/?app=product.show.1058
+- دوفش#1057 ↔ صنف#1436: synced؛ بالحبة=4₪؛ 10 حبة=30₪؛ 50 حبة=200₪؛ 100 حبة=150₪؛ 500 حبة=600₪. https://dofesh.ps/?app=product.show.1057
+- دوفش#1056 ↔ صنف#1437: synced؛ بالحبة=50₪؛ 5 حبة=175₪. https://dofesh.ps/?app=product.show.1056
+- دوفش#1055 ↔ صنف#1438: synced؛ بالحبة=50₪؛ 5 حبة=175₪. https://dofesh.ps/?app=product.show.1055
+- دوفش#1054 ↔ صنف#1439: no_options؛ صينية خشب مزينة. https://dofesh.ps/?app=product.show.1054
+- دوفش#1053 ↔ صنف#1440: no_options؛ صينية خشب مزينة للبيبي لون ازرق مقاس 40*30cm. https://dofesh.ps/?app=product.show.1053
+- دوفش#1051 ↔ صنف#1441: synced؛ بالدزينة=10₪؛ 10دزينة=70₪. https://dofesh.ps/?app=product.show.1051
+- دوفش#1050 ↔ صنف#1442: synced؛ بالدزينة=10₪؛ 10 دزينة=70₪. https://dofesh.ps/?app=product.show.1050
+- دوفش#1049 ↔ صنف#1158: synced؛ بالحبة=10₪؛ بالجوز=18₪. https://dofesh.ps/?app=product.show.1049
+- دوفش#1048 ↔ صنف#1443: synced؛ بالحبة=15₪؛ 10 حبة=120₪. https://dofesh.ps/?app=product.show.1048
+- دوفش#1047 ↔ صنف#1444: synced؛ بالدزينة=10₪؛ 10 دزينة=70₪. https://dofesh.ps/?app=product.show.1047
+- دوفش#1046 ↔ صنف#1445: synced؛ بالدزينة=10₪؛ 10 دزينة=70₪. https://dofesh.ps/?app=product.show.1046
+- دوفش#1045 ↔ صنف#1446: synced؛ بالدزينة=10₪؛ 10 دزينة=70₪. https://dofesh.ps/?app=product.show.1045
+- دوفش#1044 ↔ صنف#1447: no_options؛ قماش لايكرا بيج غامق. https://dofesh.ps/?app=product.show.1044
+- دوفش#1043 ↔ صنف#1448: no_options؛ سلة مزينة قماش مخمل بدون ايد. https://dofesh.ps/?app=product.show.1043
+- دوفش#1042 ↔ صنف#1449: no_options؛ سلة مزينة قماش مخمل بدون ايد. https://dofesh.ps/?app=product.show.1042
+- دوفش#1041 ↔ صنف#1450: no_options؛ سلة بدون ايد مزينة قماش مخمل. https://dofesh.ps/?app=product.show.1041
