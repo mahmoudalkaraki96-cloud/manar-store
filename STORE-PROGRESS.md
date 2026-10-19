@@ -2669,3 +2669,64 @@
 - الجعبري#4011 ↔ صنف#2857: synced؛ ذهبي=4.5₪؛ فضي=4.5₪. https://jabaristore.com/?app=product.show.4011
 - الجعبري#4010 ↔ صنف#2858: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4010
 - الجعبري#4009 ↔ صنف#2859: synced؛ ذهبي=3.5₪؛ فضي=3.5₪. https://jabaristore.com/?app=product.show.4009
+
+
+### 2026-10-19T21:49:03.993823+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:49:03.993823+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 294, "synced": 108, "unsupported_source_price": 54}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4008 ↔ صنف#2860: synced؛ ذهبي=4₪؛ فضي=4₪. https://jabaristore.com/?app=product.show.4008
+- الجعبري#4007 ↔ صنف#2861: no_options؛ عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4007
+- الجعبري#4006 ↔ صنف#2862: no_options؛ عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4006
+- الجعبري#4005 ↔ صنف#2863: no_options؛ عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4005
+- الجعبري#4004 ↔ صنف#2864: no_options؛ عبوة زجاج للعطر 200Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4004
+- الجعبري#4003 ↔ صنف#2865: no_options؛ عبوة زجاج للعطر 220Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4003
+- الجعبري#4002 ↔ صنف#2866: no_options؛ عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4002
+- الجعبري#4001 ↔ صنف#2867: no_options؛ عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4001
+- الجعبري#4000 ↔ صنف#2868: no_options؛ عبوة زجاج للعطر 150Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.4000
+- الجعبري#3999 ↔ صنف#2869: no_options؛ عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.3999
+- الجعبري#3998 ↔ صنف#2870: no_options؛ عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.3998
+- الجعبري#3997 ↔ صنف#2871: no_options؛ عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.3997
+- الجعبري#3996 ↔ صنف#2872: no_options؛ عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك. https://jabaristore.com/?app=product.show.3996
+- الجعبري#3994 ↔ صنف#2873: no_options؛ رول اورغنزا اسود ( 48CM * 9M ). https://jabaristore.com/?app=product.show.3994
+- الجعبري#3993 ↔ صنف#2874: no_options؛ رول اورغنزا ازرق ( 48CM * 9M ). https://jabaristore.com/?app=product.show.3993
+- الجعبري#3992 ↔ صنف#2875: no_options؛ رول اورغنزا فضي ( 48CM * 9M ). https://jabaristore.com/?app=product.show.3992
+- الجعبري#3991 ↔ صنف#2876: no_options؛ رول اورغنزا زهري ( 48CM * 9M ). https://jabaristore.com/?app=product.show.3991
+- الجعبري#3990 ↔ صنف#2877: no_options؛ رول اورغنزا ذهبي ( 48CM * 9M ). https://jabaristore.com/?app=product.show.3990
+- الجعبري#3988 ↔ صنف#2878: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3988
+- الجعبري#3987 ↔ صنف#2879: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3987
+- الجعبري#3986 ↔ صنف#2880: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3986
+- الجعبري#3983 ↔ صنف#2881: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3983
+- الجعبري#3981 ↔ صنف#2882: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3981
+- الجعبري#3979 ↔ صنف#2883: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3979
+- الجعبري#3978 ↔ صنف#2884: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3978
+- الجعبري#3976 ↔ صنف#2885: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3976
+- الجعبري#3974 ↔ صنف#2886: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3974
+- الجعبري#3973 ↔ صنف#2887: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3973
+- الجعبري#3972 ↔ صنف#2888: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3972
+- الجعبري#3971 ↔ صنف#2889: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3971
+- الجعبري#3970 ↔ صنف#2890: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3970
+- الجعبري#3968 ↔ صنف#2891: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3968
+- الجعبري#3956 ↔ صنف#2892: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3956
+- الجعبري#3954 ↔ صنف#2893: no_options؛ بيانو موسيقي ديكور فاخر 🎶. https://jabaristore.com/?app=product.show.3954
+- الجعبري#3953 ↔ صنف#2894: no_options؛ Luna Case ~ شنطة لونا. https://jabaristore.com/?app=product.show.3953
+- الجعبري#3951 ↔ صنف#2895: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3951
+- الجعبري#3950 ↔ صنف#2896: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3950
+- الجعبري#3949 ↔ صنف#2897: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3949
+- الجعبري#3948 ↔ صنف#2405: no_options؛ حجر الملح ( 1 كيلو ). https://jabaristore.com/?app=product.show.3948
+- الجعبري#3947 ↔ صنف#2898: no_options؛ مبخرة حجر & تغليف كرتون. https://jabaristore.com/?app=product.show.3947
+- الجعبري#3945 ↔ صنف#2406: no_options؛ فرد حراري ( 300W ). https://jabaristore.com/?app=product.show.3945
+- الجعبري#3943 ↔ صنف#2407: no_options؛ مادة عزل ضد الماء للكونكريت ( مع لمعة ). https://jabaristore.com/?app=product.show.3943
+- الجعبري#3942 ↔ صنف#2408: no_options؛ مادة صناعة الحجر و الكونكريت ( 1400 غرام ). https://jabaristore.com/?app=product.show.3942
+- الجعبري#3940 ↔ صنف#2899: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.3940
+- الجعبري#3938 ↔ صنف#2900: synced؛ ابيض=150₪؛ احمر=150₪. https://jabaristore.com/?app=product.show.3938
+- الجعبري#3937 ↔ صنف#2901: no_options؛ شنطة اكريلك يد لولو & كرستال ( 40*18*32 ). https://jabaristore.com/?app=product.show.3937
+- الجعبري#3936 ↔ صنف#2902: no_options؛ شنطة اكريلك يد لولو & كرستال ( 30*19*21 ). https://jabaristore.com/?app=product.show.3936
+- الجعبري#3935 ↔ صنف#2903: no_options؛ شنطة اكريلك يد لولو & كرستال ( 40*18*32 ). https://jabaristore.com/?app=product.show.3935
+- الجعبري#3934 ↔ صنف#2409: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3934
+- الجعبري#3933 ↔ صنف#2410: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3933

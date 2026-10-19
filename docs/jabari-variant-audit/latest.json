@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:40:46.467799+03:00",
+  "updated_at": "2026-10-19T21:49:03.993823+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -3243,6 +3243,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 2859, \"name\": \"عبوة زجاج للعطر 120Ml & سدادة مطاط غطاء بلاستيك\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج للعطر 120Ml & سدادة مطاط غطاء بلاستيك\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"فضي\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج للعطر 120Ml & سدادة مطاط غطاء بلاستيك\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 300, \"active\": true}, {\"name\": \"فضي\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"فضي\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1859\", \"source_url\": \"https://jabaristore.com/?app=product.show.4009\"}",
       "updated_at": 1792435244171
+    },
+    {
+      "source_id": 4008,
+      "mode": "apply",
+      "product_id": 1860,
+      "status": "synced",
+      "detail": "{\"item_number\": 2860, \"name\": \"عبوة زجاج للعطر 150Ml & سدادة مطاط غطاء بلاستيك\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"عبوة زجاج للعطر 150Ml & سدادة مطاط غطاء بلاستيك\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"فضي\", \"price\": 400, \"active\": true, \"supplier_price\": 350}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عبوة زجاج للعطر 150Ml & سدادة مطاط غطاء بلاستيك\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 350, \"active\": true}, {\"name\": \"فضي\", \"price\": 350, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"فضي\", \"price\": 400, \"active\": true, \"supplier_price\": 350}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1860\", \"source_url\": \"https://jabaristore.com/?app=product.show.4008\"}",
+      "updated_at": 1792435253404
+    },
+    {
+      "source_id": 4007,
+      "mode": "apply",
+      "product_id": 1861,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2861, \"source\": {\"title\": \"عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435262939
+    },
+    {
+      "source_id": 4006,
+      "mode": "apply",
+      "product_id": 1862,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2862, \"source\": {\"title\": \"عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435272916
+    },
+    {
+      "source_id": 4005,
+      "mode": "apply",
+      "product_id": 1863,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2863, \"source\": {\"title\": \"عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435282934
+    },
+    {
+      "source_id": 4004,
+      "mode": "apply",
+      "product_id": 1864,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2864, \"source\": {\"title\": \"عبوة زجاج للعطر 200Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435292939
+    },
+    {
+      "source_id": 4003,
+      "mode": "apply",
+      "product_id": 1865,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2865, \"source\": {\"title\": \"عبوة زجاج للعطر 220Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435303177
+    },
+    {
+      "source_id": 4002,
+      "mode": "apply",
+      "product_id": 1866,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2866, \"source\": {\"title\": \"عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435313175
+    },
+    {
+      "source_id": 4001,
+      "mode": "apply",
+      "product_id": 1867,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2867, \"source\": {\"title\": \"عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435322930
+    },
+    {
+      "source_id": 4000,
+      "mode": "apply",
+      "product_id": 1868,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2868, \"source\": {\"title\": \"عبوة زجاج للعطر 150Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435332920
+    },
+    {
+      "source_id": 3999,
+      "mode": "apply",
+      "product_id": 1869,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2869, \"source\": {\"title\": \"عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435342946
+    },
+    {
+      "source_id": 3998,
+      "mode": "apply",
+      "product_id": 1870,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2870, \"source\": {\"title\": \"عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435352940
+    },
+    {
+      "source_id": 3997,
+      "mode": "apply",
+      "product_id": 1871,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2871, \"source\": {\"title\": \"عبوة زجاج للعطر 50Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435363133
+    },
+    {
+      "source_id": 3996,
+      "mode": "apply",
+      "product_id": 1872,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2872, \"source\": {\"title\": \"عبوة زجاج للعطر 100Ml & سدادة مطاط راس اكريليك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435372938
+    },
+    {
+      "source_id": 3994,
+      "mode": "apply",
+      "product_id": 1873,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2873, \"source\": {\"title\": \"رول اورغنزا اسود ( 48CM * 9M )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435382937
+    },
+    {
+      "source_id": 3993,
+      "mode": "apply",
+      "product_id": 1874,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2874, \"source\": {\"title\": \"رول اورغنزا ازرق ( 48CM * 9M )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435392916
+    },
+    {
+      "source_id": 3992,
+      "mode": "apply",
+      "product_id": 1875,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2875, \"source\": {\"title\": \"رول اورغنزا فضي ( 48CM * 9M )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435403135
+    },
+    {
+      "source_id": 3991,
+      "mode": "apply",
+      "product_id": 1876,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2876, \"source\": {\"title\": \"رول اورغنزا زهري ( 48CM * 9M )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435413156
+    },
+    {
+      "source_id": 3990,
+      "mode": "apply",
+      "product_id": 1877,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2877, \"source\": {\"title\": \"رول اورغنزا ذهبي ( 48CM * 9M )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435423135
+    },
+    {
+      "source_id": 3988,
+      "mode": "apply",
+      "product_id": 1878,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2878}",
+      "updated_at": 1792435433183
+    },
+    {
+      "source_id": 3987,
+      "mode": "apply",
+      "product_id": 1879,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2879}",
+      "updated_at": 1792435442954
+    },
+    {
+      "source_id": 3986,
+      "mode": "apply",
+      "product_id": 1880,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2880}",
+      "updated_at": 1792435452955
+    },
+    {
+      "source_id": 3983,
+      "mode": "apply",
+      "product_id": 1881,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2881}",
+      "updated_at": 1792435463144
+    },
+    {
+      "source_id": 3981,
+      "mode": "apply",
+      "product_id": 1882,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2882}",
+      "updated_at": 1792435472960
+    },
+    {
+      "source_id": 3979,
+      "mode": "apply",
+      "product_id": 1883,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2883}",
+      "updated_at": 1792435483235
+    },
+    {
+      "source_id": 3978,
+      "mode": "apply",
+      "product_id": 1884,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2884}",
+      "updated_at": 1792435493169
+    },
+    {
+      "source_id": 3976,
+      "mode": "apply",
+      "product_id": 1885,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2885}",
+      "updated_at": 1792435503206
+    },
+    {
+      "source_id": 3974,
+      "mode": "apply",
+      "product_id": 1886,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2886}",
+      "updated_at": 1792435512920
+    },
+    {
+      "source_id": 3973,
+      "mode": "apply",
+      "product_id": 1887,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2887}",
+      "updated_at": 1792435522950
+    },
+    {
+      "source_id": 3972,
+      "mode": "apply",
+      "product_id": 1888,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2888}",
+      "updated_at": 1792435532947
+    },
+    {
+      "source_id": 3971,
+      "mode": "apply",
+      "product_id": 1889,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2889}",
+      "updated_at": 1792435542941
+    },
+    {
+      "source_id": 3970,
+      "mode": "apply",
+      "product_id": 1890,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2890}",
+      "updated_at": 1792435553203
+    },
+    {
+      "source_id": 3968,
+      "mode": "apply",
+      "product_id": 1891,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2891}",
+      "updated_at": 1792435562944
+    },
+    {
+      "source_id": 3956,
+      "mode": "apply",
+      "product_id": 1892,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2892}",
+      "updated_at": 1792435573142
+    },
+    {
+      "source_id": 3954,
+      "mode": "apply",
+      "product_id": 1893,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2893, \"source\": {\"title\": \"بيانو موسيقي ديكور فاخر 🎶\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435582949
+    },
+    {
+      "source_id": 3953,
+      "mode": "apply",
+      "product_id": 1894,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2894, \"source\": {\"title\": \"Luna Case ~ شنطة لونا\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435592966
+    },
+    {
+      "source_id": 3951,
+      "mode": "apply",
+      "product_id": 1895,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2895}",
+      "updated_at": 1792435602952
+    },
+    {
+      "source_id": 3950,
+      "mode": "apply",
+      "product_id": 1896,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2896}",
+      "updated_at": 1792435612920
+    },
+    {
+      "source_id": 3949,
+      "mode": "apply",
+      "product_id": 1897,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2897}",
+      "updated_at": 1792435622957
+    },
+    {
+      "source_id": 3948,
+      "mode": "apply",
+      "product_id": 1405,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2405, \"source\": {\"title\": \"حجر الملح ( 1 كيلو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435632937
+    },
+    {
+      "source_id": 3947,
+      "mode": "apply",
+      "product_id": 1898,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2898, \"source\": {\"title\": \"مبخرة حجر & تغليف كرتون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435642948
+    },
+    {
+      "source_id": 3945,
+      "mode": "apply",
+      "product_id": 1406,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2406, \"source\": {\"title\": \"فرد حراري ( 300W )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435653613
+    },
+    {
+      "source_id": 3943,
+      "mode": "apply",
+      "product_id": 1407,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2407, \"source\": {\"title\": \"مادة عزل ضد الماء للكونكريت ( مع لمعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 9000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435663083
+    },
+    {
+      "source_id": 3942,
+      "mode": "apply",
+      "product_id": 1408,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2408, \"source\": {\"title\": \"مادة صناعة الحجر و الكونكريت ( 1400 غرام )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435673061
+    },
+    {
+      "source_id": 3940,
+      "mode": "apply",
+      "product_id": 1899,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2899, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435683065
+    },
+    {
+      "source_id": 3938,
+      "mode": "apply",
+      "product_id": 1900,
+      "status": "synced",
+      "detail": "{\"item_number\": 2900, \"name\": \"قفص عصافير اكريلك & قاعدة خشب ( 35*20*30 )\", \"before_price\": 15000, \"before_variants\": [], \"source\": {\"title\": \"قفص عصافير اكريلك & قاعدة خشب ( 35*20*30 )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"احمر\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قفص عصافير اكريلك & قاعدة خشب ( 35*20*30 )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 14000, \"active\": true}, {\"name\": \"احمر\", \"price\": 14000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"احمر\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1900\", \"source_url\": \"https://jabaristore.com/?app=product.show.3938\"}",
+      "updated_at": 1792435693378
+    },
+    {
+      "source_id": 3937,
+      "mode": "apply",
+      "product_id": 1901,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2901, \"source\": {\"title\": \"شنطة اكريلك يد لولو & كرستال ( 40*18*32 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 8000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435702955
+    },
+    {
+      "source_id": 3936,
+      "mode": "apply",
+      "product_id": 1902,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2902, \"source\": {\"title\": \"شنطة اكريلك يد لولو & كرستال ( 30*19*21 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435712963
+    },
+    {
+      "source_id": 3935,
+      "mode": "apply",
+      "product_id": 1903,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2903, \"source\": {\"title\": \"شنطة اكريلك يد لولو & كرستال ( 40*18*32 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 8000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792435723099
+    },
+    {
+      "source_id": 3934,
+      "mode": "apply",
+      "product_id": 1409,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2409}",
+      "updated_at": 1792435733159
+    },
+    {
+      "source_id": 3933,
+      "mode": "apply",
+      "product_id": 1410,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2410}",
+      "updated_at": 1792435743082
     },
     {
       "source_id": 3780,
