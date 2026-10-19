@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T15:17:40.555073+03:00",
+  "updated_at": "2026-10-19T15:25:59.469599+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -2819,6 +2819,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 1039, \"source\": {\"title\": \"ريزون حجم كبير سادى مقاس 28 سم مع قاعدة ذهبية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
       "updated_at": 1792412259784
+    },
+    {
+      "source_id": 935,
+      "mode": "apply",
+      "product_id": 40,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1040, \"source\": {\"title\": \"ريزون حجم كبير مع قاعدة ذهبية مقاس 28 سم محجر من الاطراف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412266806
+    },
+    {
+      "source_id": 934,
+      "mode": "apply",
+      "product_id": 547,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1547, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412276704
+    },
+    {
+      "source_id": 933,
+      "mode": "apply",
+      "product_id": 548,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1548, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412286891
+    },
+    {
+      "source_id": 932,
+      "mode": "apply",
+      "product_id": 549,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1549, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412296711
+    },
+    {
+      "source_id": 931,
+      "mode": "apply",
+      "product_id": 550,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1550, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412306689
+    },
+    {
+      "source_id": 930,
+      "mode": "apply",
+      "product_id": 551,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1551, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412316768
+    },
+    {
+      "source_id": 929,
+      "mode": "apply",
+      "product_id": 552,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1552, \"source\": {\"title\": \"سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}}",
+      "updated_at": 1792412326665
+    },
+    {
+      "source_id": 928,
+      "mode": "apply",
+      "product_id": 94,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1094, \"source\": {\"title\": \"كيس تول سادى مقاس طول 15 عرض 10\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792412336608
+    },
+    {
+      "source_id": 927,
+      "mode": "apply",
+      "product_id": 553,
+      "status": "synced",
+      "detail": "{\"item_number\": 1553, \"name\": \"عمرة مباركة اكريلك مقاس ٤.٥ سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"عمرة مباركة اكريلك مقاس 4.5 سم\", \"variants\": [{\"name\": \"10 حبة\", \"price\": 1000, \"active\": true}, {\"name\": \"20 حبة\", \"price\": 1700, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/553\", \"source_url\": \"https://dofesh.ps/?app=product.show.927\"}",
+      "updated_at": 1792412347224
+    },
+    {
+      "source_id": 926,
+      "mode": "apply",
+      "product_id": 554,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1554, \"source\": {\"title\": \"علبة bvcشفاف مقاس (7*7*15)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792412356863
+    },
+    {
+      "source_id": 925,
+      "mode": "apply",
+      "product_id": 555,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1555, \"source\": {\"title\": \"علبة bvc مقاس (7*7*12)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}}",
+      "updated_at": 1792412366854
+    },
+    {
+      "source_id": 924,
+      "mode": "apply",
+      "product_id": 556,
+      "status": "synced",
+      "detail": "{\"item_number\": 1556, \"name\": \"ستاند خشب مع عبارة بارك الله لكما وبارك عليكما وجمع بينكما في خير بدون القطع الي عليها قياس (عرض 50 سم ارتفاع 12 سم عمق 35 سم)\", \"before_price\": 4000, \"before_variants\": [], \"source\": {\"title\": \"ستاند خشب مع عبارة بارك الله لكما وبارك عليكما وجمع بينكما في خير بدون القطع الي عليها قياس (عرض 50 سم ارتفاع 12 سم عمق 35 سم)\", \"variants\": [{\"name\": \"مع العبارة\", \"price\": 7000, \"active\": true}, {\"name\": \"بدون العبارة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/556\", \"source_url\": \"https://dofesh.ps/?app=product.show.924\"}",
+      "updated_at": 1792412377114
+    },
+    {
+      "source_id": 923,
+      "mode": "apply",
+      "product_id": 557,
+      "status": "synced",
+      "detail": "{\"item_number\": 1557, \"name\": \"علبة bvcشفاف مقاس (12*12*15)\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"علبة bvcشفاف مقاس (12*12*15)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"10حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/557\", \"source_url\": \"https://dofesh.ps/?app=product.show.923\"}",
+      "updated_at": 1792412387093
+    },
+    {
+      "source_id": 922,
+      "mode": "apply",
+      "product_id": 558,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1558, \"source\": {\"title\": \"طبعة سورة الفلق شفاف للريزون مقاس 4.5 *3.5\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792412396828
+    },
+    {
+      "source_id": 921,
+      "mode": "apply",
+      "product_id": 559,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1559, \"source\": {\"title\": \"طبعة اية الكرسي شفاف مقصوصة للريزن مقاس 4.5*3.5\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792412406820
+    },
+    {
+      "source_id": 920,
+      "mode": "apply",
+      "product_id": 560,
+      "status": "synced",
+      "detail": "{\"item_number\": 1560, \"name\": \"كيس شفاف بدون لاصق مقاس 56*44\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"كيس شفاف بدون لاصق مقاس 56*44\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10حبة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/560\", \"source_url\": \"https://dofesh.ps/?app=product.show.920\"}",
+      "updated_at": 1792412416888
+    },
+    {
+      "source_id": 919,
+      "mode": "apply",
+      "product_id": 561,
+      "status": "synced",
+      "detail": "{\"item_number\": 1561, \"name\": \"كيس شفاف بدون لاصق مقاس 90*60\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"كيس شفاف بدون لاصق مقاس 90*60\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/561\", \"source_url\": \"https://dofesh.ps/?app=product.show.919\"}",
+      "updated_at": 1792412426877
+    },
+    {
+      "source_id": 918,
+      "mode": "apply",
+      "product_id": 562,
+      "status": "synced",
+      "detail": "{\"item_number\": 1562, \"name\": \"كيس شفاف بدون لاصق مقاس 50*70\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"كيس شفاف بدون لاصق مقاس 50*70\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 200, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 1500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/562\", \"source_url\": \"https://dofesh.ps/?app=product.show.918\"}",
+      "updated_at": 1792412437100
+    },
+    {
+      "source_id": 917,
+      "mode": "apply",
+      "product_id": 563,
+      "status": "synced",
+      "detail": "{\"item_number\": 1563, \"name\": \"كيس شفاف ثقيل مقاس 120*80 بدون لاصق\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"كيس شفاف ثقيل مقاس 120*80 بدون لاصق\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/563\", \"source_url\": \"https://dofesh.ps/?app=product.show.917\"}",
+      "updated_at": 1792412447235
+    },
+    {
+      "source_id": 916,
+      "mode": "apply",
+      "product_id": 564,
+      "status": "synced",
+      "detail": "{\"item_number\": 1564, \"name\": \"كيس نايلون شفاف بدون لاصق وزن ثقيل مقاس 100*70\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"كيس نايلون شفاف بدون لاصق وزن ثقيل مقاس 100*70\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/564\", \"source_url\": \"https://dofesh.ps/?app=product.show.916\"}",
+      "updated_at": 1792412457221
+    },
+    {
+      "source_id": 915,
+      "mode": "apply",
+      "product_id": 565,
+      "status": "synced",
+      "detail": "{\"item_number\": 1565, \"name\": \"كيس نايلون شفاف مقاس (56*43+3)\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"كيس نايلون شفاف مقاس (56*43+3)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 3000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/565\", \"source_url\": \"https://dofesh.ps/?app=product.show.915\"}",
+      "updated_at": 1792412467155
+    },
+    {
+      "source_id": 914,
+      "mode": "apply",
+      "product_id": 566,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1566, \"source\": {\"title\": \"كيس نايلون شفاف مقاس (28*35+3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}}",
+      "updated_at": 1792412476610
+    },
+    {
+      "source_id": 913,
+      "mode": "apply",
+      "product_id": 567,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1567, \"source\": {\"title\": \"كيس نايلون شفاف مقاس (35*50+3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}}",
+      "updated_at": 1792412486702
+    },
+    {
+      "source_id": 912,
+      "mode": "apply",
+      "product_id": 568,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1568, \"source\": {\"title\": \"كيس نايلون شفاف مقاس(10*10+3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792412497009
+    },
+    {
+      "source_id": 911,
+      "mode": "apply",
+      "product_id": 569,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1569, \"source\": {\"title\": \"كيس نايلون شفاف مقاس (12*18+3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792412506610
+    },
+    {
+      "source_id": 910,
+      "mode": "apply",
+      "product_id": 570,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1570, \"source\": {\"title\": \"كيس نايلون شفاف مقاس( 8*12+3)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792412516611
+    },
+    {
+      "source_id": 909,
+      "mode": "apply",
+      "product_id": 571,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1571, \"source\": {\"title\": \"ببيونة 2سم (100) حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792412526608
+    },
+    {
+      "source_id": 908,
+      "mode": "apply",
+      "product_id": 572,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1572, \"source\": {\"title\": \"ببيونة 2 سم (100) حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792412536620
+    },
+    {
+      "source_id": 907,
+      "mode": "apply",
+      "product_id": 573,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1573, \"source\": {\"title\": \"ببيونة 2 سم (100)حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792412546892
+    },
+    {
+      "source_id": 906,
+      "mode": "apply",
+      "product_id": 574,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1574, \"source\": {\"title\": \"ببيونة 2 سم (100) حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792412556826
+    },
+    {
+      "source_id": 904,
+      "mode": "apply",
+      "product_id": 575,
+      "status": "synced",
+      "detail": "{\"item_number\": 1575, \"name\": \"حبل سترس محجر ٩ متر\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"حبل سترس محجر 9 متر\", \"variants\": [{\"name\": \"1 متر\", \"price\": 500, \"active\": true}, {\"name\": \"لفة كاملة 9 متر\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/575\", \"source_url\": \"https://dofesh.ps/?app=product.show.904\"}",
+      "updated_at": 1792412566967
+    },
+    {
+      "source_id": 903,
+      "mode": "apply",
+      "product_id": 576,
+      "status": "synced",
+      "detail": "{\"item_number\": 1576, \"name\": \"حبل اكسسوار محجر ٩ متر\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"حبل اكسسوار محجر 9 متر\", \"variants\": [{\"name\": \"1 متر\", \"price\": 500, \"active\": true}, {\"name\": \"لفة كاملة 9 متر\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/576\", \"source_url\": \"https://dofesh.ps/?app=product.show.903\"}",
+      "updated_at": 1792412577177
+    },
+    {
+      "source_id": 902,
+      "mode": "apply",
+      "product_id": 577,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1577, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412586615
+    },
+    {
+      "source_id": 901,
+      "mode": "apply",
+      "product_id": 578,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1578, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412596920
+    },
+    {
+      "source_id": 900,
+      "mode": "apply",
+      "product_id": 579,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1579, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412606839
+    },
+    {
+      "source_id": 899,
+      "mode": "apply",
+      "product_id": 580,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1580, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412616874
+    },
+    {
+      "source_id": 898,
+      "mode": "apply",
+      "product_id": 581,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1581, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412626922
+    },
+    {
+      "source_id": 897,
+      "mode": "apply",
+      "product_id": 582,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1582, \"source\": {\"title\": \"شير محزز 2.5سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412636612
+    },
+    {
+      "source_id": 896,
+      "mode": "apply",
+      "product_id": 583,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1583, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412646725
+    },
+    {
+      "source_id": 895,
+      "mode": "apply",
+      "product_id": 584,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1584, \"source\": {\"title\": \"شبر محزز 2.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}}",
+      "updated_at": 1792412656861
+    },
+    {
+      "source_id": 894,
+      "mode": "apply",
+      "product_id": 585,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1585, \"source\": {\"title\": \"شمع مدور 50 حبة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792412666815
+    },
+    {
+      "source_id": 893,
+      "mode": "apply",
+      "product_id": 52,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1052, \"source\": {\"title\": \"حصان كونكريت مذهب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792412676935
+    },
+    {
+      "source_id": 892,
+      "mode": "apply",
+      "product_id": 586,
+      "status": "synced",
+      "detail": "{\"item_number\": 1586, \"name\": \"شبر ستان عرض 1.5 cm\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان عرض 1.5 cm\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/586\", \"source_url\": \"https://dofesh.ps/?app=product.show.892\"}",
+      "updated_at": 1792412687174
+    },
+    {
+      "source_id": 891,
+      "mode": "apply",
+      "product_id": 587,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1587, \"source\": {\"title\": \"معطر جو فواح سيراميك مع حجر وردة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792412696614
+    },
+    {
+      "source_id": 890,
+      "mode": "apply",
+      "product_id": 588,
+      "status": "synced",
+      "detail": "{\"item_number\": 1588, \"name\": \"شنتة اكريلك شفاف\", \"before_price\": 3000, \"before_variants\": [], \"source\": {\"title\": \"شنتة اكريلك شفاف\", \"variants\": [{\"name\": \"28*18*14\", \"price\": 3000, \"active\": true}, {\"name\": \"33*22*18\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/588\", \"source_url\": \"https://dofesh.ps/?app=product.show.890\"}",
+      "updated_at": 1792412706885
+    },
+    {
+      "source_id": 889,
+      "mode": "apply",
+      "product_id": 589,
+      "status": "synced",
+      "detail": "{\"item_number\": 1589, \"name\": \"فواح مربع عطر الياسمين مع وردة حجر\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"فواح مربع عطر الياسمين مع وردة حجر\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 1000, \"active\": false}, {\"name\": \"40 حبة\", \"price\": 20000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/589\", \"source_url\": \"https://dofesh.ps/?app=product.show.889\"}",
+      "updated_at": 1792412717075
+    },
+    {
+      "source_id": 888,
+      "mode": "apply",
+      "product_id": 590,
+      "status": "synced",
+      "detail": "{\"item_number\": 1590, \"name\": \"صندوق كرتون غطاء شفاف\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون غطاء شفاف\", \"variants\": [{\"name\": \"25*25*4\", \"price\": 500, \"active\": true}, {\"name\": \"30*30*4\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/590\", \"source_url\": \"https://dofesh.ps/?app=product.show.888\"}",
+      "updated_at": 1792412727191
+    },
+    {
+      "source_id": 887,
+      "mode": "apply",
+      "product_id": 591,
+      "status": "synced",
+      "detail": "{\"item_number\": 1591, \"name\": \"شبر ستان ١ سم لون خمري\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1 سم لون خمري\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/591\", \"source_url\": \"https://dofesh.ps/?app=product.show.887\"}",
+      "updated_at": 1792412737134
+    },
+    {
+      "source_id": 886,
+      "mode": "apply",
+      "product_id": 592,
+      "status": "synced",
+      "detail": "{\"item_number\": 1592, \"name\": \"شبر ستان ١ سم لون اسود\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1 سم لون اسود\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/592\", \"source_url\": \"https://dofesh.ps/?app=product.show.886\"}",
+      "updated_at": 1792412746961
+    },
+    {
+      "source_id": 885,
+      "mode": "apply",
+      "product_id": 593,
+      "status": "synced",
+      "detail": "{\"item_number\": 1593, \"name\": \"شبر ستان ١ سم لون نيلي\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1 سم لون نيلي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/593\", \"source_url\": \"https://dofesh.ps/?app=product.show.885\"}",
+      "updated_at": 1792412757180
     }
   ]
 }

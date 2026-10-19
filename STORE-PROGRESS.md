@@ -1244,3 +1244,64 @@
 - دوفش#938 ↔ صنف#1159: no_options؛ حصان خشب ارتفاع 8 سم. https://dofesh.ps/?app=product.show.938
 - دوفش#937 ↔ صنف#1546: no_options؛ طقم طاولة 2 حبة خشب مبزر مميز. https://dofesh.ps/?app=product.show.937
 - دوفش#936 ↔ صنف#1039: no_options؛ ريزون حجم كبير سادى مقاس 28 سم مع قاعدة ذهبية. https://dofesh.ps/?app=product.show.936
+
+
+### 2026-10-19T15:25:59.469599+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T15:25:59.469599+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 202, "no_options": 182, "missing_source": 3, "unsupported_customization_or_minimum": 3, "matched": 7}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#935 ↔ صنف#1040: no_options؛ ريزون حجم كبير مع قاعدة ذهبية مقاس 28 سم محجر من الاطراف. https://dofesh.ps/?app=product.show.935
+- دوفش#934 ↔ صنف#1547: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.934
+- دوفش#933 ↔ صنف#1548: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.933
+- دوفش#932 ↔ صنف#1549: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.932
+- دوفش#931 ↔ صنف#1550: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.931
+- دوفش#930 ↔ صنف#1551: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.930
+- دوفش#929 ↔ صنف#1552: no_options؛ سبحة لولو 23 حبة لولو طول 15 سم شامل الشرشوبة. https://dofesh.ps/?app=product.show.929
+- دوفش#928 ↔ صنف#1094: no_options؛ كيس تول سادى مقاس طول 15 عرض 10. https://dofesh.ps/?app=product.show.928
+- دوفش#927 ↔ صنف#1553: synced؛ 10 حبة=10₪؛ 20 حبة=17₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.927
+- دوفش#926 ↔ صنف#1554: no_options؛ علبة bvcشفاف مقاس (7*7*15). https://dofesh.ps/?app=product.show.926
+- دوفش#925 ↔ صنف#1555: no_options؛ علبة bvc مقاس (7*7*12). https://dofesh.ps/?app=product.show.925
+- دوفش#924 ↔ صنف#1556: synced؛ مع العبارة=70₪؛ بدون العبارة=40₪. https://dofesh.ps/?app=product.show.924
+- دوفش#923 ↔ صنف#1557: synced؛ بالحبة=3₪؛ 10حبة=25₪؛ 50 حبة=100₪. https://dofesh.ps/?app=product.show.923
+- دوفش#922 ↔ صنف#1558: no_options؛ طبعة سورة الفلق شفاف للريزون مقاس 4.5 *3.5. https://dofesh.ps/?app=product.show.922
+- دوفش#921 ↔ صنف#1559: no_options؛ طبعة اية الكرسي شفاف مقصوصة للريزن مقاس 4.5*3.5. https://dofesh.ps/?app=product.show.921
+- دوفش#920 ↔ صنف#1560: synced؛ بالحبة=2₪؛ 10حبة=10₪؛ 50 حبة=25₪. https://dofesh.ps/?app=product.show.920
+- دوفش#919 ↔ صنف#1561: synced؛ بالحبة=3₪؛ 10 حبة=20₪؛ 50 حبة=35₪. https://dofesh.ps/?app=product.show.919
+- دوفش#918 ↔ صنف#1562: synced؛ بالحبة=2₪؛ 10 حبة=15₪؛ 50 حبة=30₪. https://dofesh.ps/?app=product.show.918
+- دوفش#917 ↔ صنف#1563: synced؛ بالحبة=4₪؛ 10 حبة=25₪؛ 50 حبة=50₪. https://dofesh.ps/?app=product.show.917
+- دوفش#916 ↔ صنف#1564: synced؛ بالحبة=3₪؛ 10 حبة=20₪؛ 50 حبة=45₪. https://dofesh.ps/?app=product.show.916
+- دوفش#915 ↔ صنف#1565: synced؛ بالحبة=1₪؛ 50 حبة=30₪؛ 100 حبة=50₪. https://dofesh.ps/?app=product.show.915
+- دوفش#914 ↔ صنف#1566: no_options؛ كيس نايلون شفاف مقاس (28*35+3). https://dofesh.ps/?app=product.show.914
+- دوفش#913 ↔ صنف#1567: no_options؛ كيس نايلون شفاف مقاس (35*50+3). https://dofesh.ps/?app=product.show.913
+- دوفش#912 ↔ صنف#1568: no_options؛ كيس نايلون شفاف مقاس(10*10+3). https://dofesh.ps/?app=product.show.912
+- دوفش#911 ↔ صنف#1569: no_options؛ كيس نايلون شفاف مقاس (12*18+3). https://dofesh.ps/?app=product.show.911
+- دوفش#910 ↔ صنف#1570: no_options؛ كيس نايلون شفاف مقاس( 8*12+3). https://dofesh.ps/?app=product.show.910
+- دوفش#909 ↔ صنف#1571: no_options؛ ببيونة 2سم (100) حبة. https://dofesh.ps/?app=product.show.909
+- دوفش#908 ↔ صنف#1572: no_options؛ ببيونة 2 سم (100) حبة. https://dofesh.ps/?app=product.show.908
+- دوفش#907 ↔ صنف#1573: no_options؛ ببيونة 2 سم (100)حبة. https://dofesh.ps/?app=product.show.907
+- دوفش#906 ↔ صنف#1574: no_options؛ ببيونة 2 سم (100) حبة. https://dofesh.ps/?app=product.show.906
+- دوفش#904 ↔ صنف#1575: synced؛ 1 متر=5₪؛ لفة كاملة 9 متر=30₪. https://dofesh.ps/?app=product.show.904
+- دوفش#903 ↔ صنف#1576: synced؛ 1 متر=5₪؛ لفة كاملة 9 متر=30₪. https://dofesh.ps/?app=product.show.903
+- دوفش#902 ↔ صنف#1577: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.902
+- دوفش#901 ↔ صنف#1578: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.901
+- دوفش#900 ↔ صنف#1579: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.900
+- دوفش#899 ↔ صنف#1580: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.899
+- دوفش#898 ↔ صنف#1581: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.898
+- دوفش#897 ↔ صنف#1582: no_options؛ شير محزز 2.5سم. https://dofesh.ps/?app=product.show.897
+- دوفش#896 ↔ صنف#1583: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.896
+- دوفش#895 ↔ صنف#1584: no_options؛ شبر محزز 2.5 سم. https://dofesh.ps/?app=product.show.895
+- دوفش#894 ↔ صنف#1585: no_options؛ شمع مدور 50 حبة. https://dofesh.ps/?app=product.show.894
+- دوفش#893 ↔ صنف#1052: no_options؛ حصان كونكريت مذهب. https://dofesh.ps/?app=product.show.893
+- دوفش#892 ↔ صنف#1586: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.892
+- دوفش#891 ↔ صنف#1587: no_options؛ معطر جو فواح سيراميك مع حجر وردة. https://dofesh.ps/?app=product.show.891
+- دوفش#890 ↔ صنف#1588: synced؛ 28*18*14=30₪؛ 33*22*18=50₪. https://dofesh.ps/?app=product.show.890
+- دوفش#889 ↔ صنف#1589: synced؛ بالحبة=10₪؛ 40 حبة=200₪. https://dofesh.ps/?app=product.show.889
+- دوفش#888 ↔ صنف#1590: synced؛ 25*25*4=5₪؛ 30*30*4=5₪. https://dofesh.ps/?app=product.show.888
+- دوفش#887 ↔ صنف#1591: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.887
+- دوفش#886 ↔ صنف#1592: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.886
+- دوفش#885 ↔ صنف#1593: synced؛ بالحبة=4₪؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.885
