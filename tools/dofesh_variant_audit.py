@@ -98,7 +98,13 @@ class SupplierBlocked(RuntimeError):
     pass
 
 
+class SupplierMissing(RuntimeError):
+    pass
+
+
 def parse_product(data, source_id):
+    if 'الصفحة المطلوبة غير متوفرة' in data:
+        raise SupplierMissing('supplier_404')
     if re.search(r'cf-chl-|captcha|access denied|too many requests|temporarily blocked|403 Forbidden', data, re.I):
         raise SupplierBlocked('supplier_block_page')
     tree = HTML(data).root
@@ -170,6 +176,8 @@ def fetch_product(source_id):
             raise ValueError('supplier_response_too_large')
         return data.decode('utf-8', errors='strict')
     except HTTPError as e:
+        if e.code == 404:
+            raise SupplierMissing('supplier_404') from None
         if e.code in (403, 429):
             raise SupplierBlocked(f'HTTP_{e.code}') from None
         raise RuntimeError(f'supplier_HTTP_{e.code}') from None
@@ -240,7 +248,8 @@ def decide(p, source):
 
 
 def save_result(db, source_id, mode, p, status, detail, token):
-    db.query('INSERT INTO dofesh_variant_audit VALUES(?,?,?,?,?,?,?) ON CONFLICT(source_id,mode) DO UPDATE SET status=excluded.status,detail=excluded.detail,token=excluded.token,updated_at=excluded.updated_at',
+    detail.setdefault('item_number',p.get('item_number'))
+    db.query("INSERT INTO dofesh_variant_audit VALUES(?,?,?,?,?,?,?) ON CONFLICT(source_id,mode) DO UPDATE SET status=CASE WHEN dofesh_variant_audit.status='synced' THEN 'synced_verification_error' ELSE excluded.status END,detail=CASE WHEN dofesh_variant_audit.status='synced' THEN json_set(dofesh_variant_audit.detail,'$.verification_error',json(excluded.detail)) ELSE excluded.detail END,token=excluded.token,updated_at=excluded.updated_at",
              [source_id, mode, p['id'], status, json.dumps(detail, ensure_ascii=False), token, int(time.time()*1000)])
 
 
@@ -283,9 +292,12 @@ def apply_variants(db, source_id, p, source, token, stock):
         raise RuntimeError('post_apply_variants_not_verified')
 
 
-def report(db, folder, mode, status):
-    rows = db.query('SELECT source_id,mode,product_id,status,detail,updated_at FROM dofesh_variant_audit ORDER BY source_id DESC,mode')
-    data = {'updated_at': datetime.now(ZoneInfo('Asia/Hebron')).isoformat(), 'run_mode': mode, 'run_status': status, 'results': rows}
+def report(db, folder, mode, status, current_token=None, progress_file=Path('STORE-PROGRESS.md'), processed_count=None):
+    rows = db.query('SELECT source_id,mode,product_id,status,detail,updated_at,token FROM dofesh_variant_audit ORDER BY source_id DESC,mode')
+    current_rows=[r.copy() for r in rows if r['token']==current_token]
+    for r in rows:
+        r.pop('token',None)
+    data = {'updated_at': datetime.now(ZoneInfo('Asia/Hebron')).isoformat(), 'run_mode': mode, 'run_status': status, 'run_processed':processed_count if processed_count is not None else len(current_rows), 'results': rows}
     folder.mkdir(parents=True, exist_ok=True)
     (folder/'latest.json').write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     counts = {}
@@ -296,23 +308,26 @@ def report(db, folder, mode, status):
     (folder/'summary.md').write_text(text, encoding='utf-8')
     changed=[]
     for row in rows:
-        if row['mode']=='apply' and row['status']=='synced':
+        if row['mode']=='apply' and row['status'].startswith('synced'):
             d=json.loads(row['detail'])
             changed.append({'source_id':row['source_id'],'item_number':d['item_number'],'name':d['name'],
                             'before':json.dumps({'price':d['before_price'],'variants':d['before_variants']},ensure_ascii=False),
                             'after':json.dumps(d['source'],ensure_ascii=False),
                             'store_url':d['store_url'],'source_url':d['source_url'],'method':'script'})
-    progress=Path('STORE-PROGRESS.md')
+    progress=progress_file
     historical=progress.read_text(encoding='utf-8') if progress.exists() else ''
     start=historical.find('— DOFESH-VARIANT-AUDIT')
     for paragraph in historical[max(start,0):].split('\n\n'):
-        if not paragraph.strip().startswith('- تحديث') or not re.search('أُضيف|أضيفت|أُضيفت',paragraph):
+        paragraph=paragraph.strip().split('\n- ')[0]
+        if not paragraph.startswith('- تحديث') or not re.search(r'أ[\u064b-\u065f]*ضيف',paragraph):
             continue
         sid=re.search(r'دوفش\s*#(\d+)',paragraph)
+        if not sid:
+            sid=re.search(r'dofesh-(\d+)|product\.show\.(\d+)',paragraph)
         item=re.search(r'(?:المنتج|الصنف)(?:\s+الموجود)?\s*#(\d+)',paragraph)
         if not sid or not item:
             continue
-        source_id=int(sid[1])
+        source_id=int(next(g for g in sid.groups() if g is not None))
         if any(c['source_id']==source_id for c in changed):
             continue
         links=re.findall(r'https://manarstore\.ps/product/\d+',paragraph)
@@ -322,11 +337,31 @@ def report(db, folder, mode, status):
     fields=['source_id','item_number','name','before','after','store_url','source_url','method']
     with (folder/'changed-products.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(changed)
-    body=''.join('<tr>'+''.join('<td>'+html.escape(str(c[k]))+'</td>' for k in fields)+'</tr>' for c in changed)
-    (folder/'changed-products.html').write_text('<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><title>تقرير تعديلات دوفش</title><style>body{font:16px Arial;padding:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere}tr:nth-child(even){background:#fafafa}</style><h1>كل الأصناف المعدّلة من دوفش</h1><p>'+html.escape(data['updated_at'])+'</p><p>الأسعار الآلية بالأغورات؛100أغورة=1شيكل. التعديلات اليدوية من سجل progress التاريخي.</p><table><tr>'+''.join('<th>'+k+'</th>' for k in fields)+'</tr>'+body+'</table></html>',encoding='utf-8')
+    def human(c, key):
+        if c['method']=='script' and key in ('before','after'):
+            value=json.loads(c[key])
+            lines=[]
+            if key=='before':
+                lines.append(f"السعر الأساسي: {value['price']/100:g} ₪")
+                lines.extend(f"{v['name']}: {(v['price_agorot'] or 0)/100:g} ₪" for v in value['variants'])
+            else:
+                lines.extend(f"{v['name']}: {v['price']/100:g} ₪"+(' (غير متاح)' if not v['active'] else '') for v in value['variants'])
+                if not value['variants']:
+                    lines.append(f"{value['simple_price']/100:g} ₪")
+            return html.escape('\n'.join(lines))
+        if key.endswith('_url') and c[key]:
+            url=html.escape(c[key],quote=True)
+            return f'<a href="{url}">فتح المنتج</a>'
+        return html.escape(str(c[key]))
+    body=''.join('<tr>'+''.join('<td>'+human(c,k)+'</td>' for k in fields)+'</tr>' for c in changed)
+    (folder/'changed-products.html').write_text('<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><title>تقرير تعديلات دوفش</title><style>body{font:16px Arial;padding:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere}tr:nth-child(even){background:#fafafa}</style><h1>كل الأصناف المعدّلة من دوفش</h1><p>'+html.escape(data['updated_at'])+'</p><p>الأسعار المعروضة بالشيكل؛ بيانات CSV التفصيلية بالأغورات (100أغورة=1شيكل). التعديلات اليدوية من سجل progress التاريخي.</p><table><tr>'+''.join('<th>'+k+'</th>' for k in fields)+'</tr>'+body+'</table></html>',encoding='utf-8')
     if progress.exists():
         with progress.open('a',encoding='utf-8') as f:
             f.write('\n\n### '+data['updated_at']+' — DOFESH-VARIANT-BATCH\n'+text+'- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.\n- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.\n')
+            for row in current_rows:
+                d=json.loads(row['detail']);source=d.get('source',{})
+                variants='؛ '.join(f"{v['name']}={v['price']/100:g}₪" for v in source.get('variants',[]))
+                f.write(f"- دوفش#{row['source_id']} ↔ صنف#{d.get('item_number','?')}: {row['status']}؛ {variants or source.get('title',d.get('reason',''))}. https://dofesh.ps/?app=product.show.{row['source_id']}\n")
     if os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
             f.write(text)
@@ -349,7 +384,7 @@ def main():
     lease = db.batch([('UPDATE dofesh_variant_audit_lock SET token=?,expires_at=? WHERE id=1 AND expires_at<?', [token,now+900000,now])])
     if lease[0]['meta'].get('changes') != 1:
         raise RuntimeError('audit_already_running')
-    status, last_request = 'interrupted', 0
+    status, last_request, processed = 'interrupted', 0, 0
     try:
         # Only explicitly linked imported products; ambiguity is reported, never guessed.
         rows = db.query("SELECT CAST(substr(k.keyword,8) AS INTEGER) AS source_id,p.id FROM product_keywords k JOIN products p ON p.id=k.product_id WHERE k.keyword GLOB 'dofesh-[0-9]*' AND p.deleted_at IS NULL ORDER BY source_id DESC")
@@ -361,6 +396,7 @@ def main():
         done = {r['source_id'] for r in db.query('SELECT source_id FROM dofesh_variant_audit WHERE mode=? AND status NOT IN (\'blocked\',\'error\')', [args.mode])}
         selected = [sid for sid in groups if sid not in done][:args.limit]
         for sid in selected:
+            processed+=1
             renewal=db.batch([('UPDATE dofesh_variant_audit_lock SET expires_at=? WHERE id=1 AND token=?',[int(time.time()*1000)+900000,token])])
             if renewal[0]['meta'].get('changes')!=1:
                 raise RuntimeError('audit_lease_lost')
@@ -384,20 +420,23 @@ def main():
                 else:
                     save_result(db,sid,args.mode,p,decision,{'item_number':p['item_number'],'source':source},token)
                 print(f"source={sid} item={p['item_number']} status={decision}",flush=True)
+            except SupplierMissing as e:
+                save_result(db,sid,args.mode,p,'missing_source',{'reason':str(e)},token)
+                print(f"source={sid} item={p['item_number']} status=missing_source",flush=True)
             except SupplierBlocked as e:
                 save_result(db,sid,args.mode,p,'blocked',{'reason':str(e)},token)
                 status='paused_blocked'
                 break
             except Exception as e:
                 # No retries after a response, parsing, apply, or connection failure.
-                save_result(db,sid,args.mode,p,'error',{'reason':str(e)[:120] if isinstance(e,ValueError) else type(e).__name__},token)
+                save_result(db,sid,args.mode,p,'error',{'reason':str(e)[:120] if isinstance(e,(ValueError,RuntimeError)) else type(e).__name__},token)
                 status='paused_error'
                 break
         else:
             status='completed_batch'
     finally:
         try:
-            report(db,args.report_dir,args.mode,status)
+            report(db,args.report_dir,args.mode,status,token,processed_count=processed)
         finally:
             db.query('UPDATE dofesh_variant_audit_lock SET expires_at=0 WHERE id=1 AND token=?',[token])
     if status=='paused_error':

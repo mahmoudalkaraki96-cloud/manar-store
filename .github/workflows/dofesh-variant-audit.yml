@@ -20,6 +20,10 @@ on:
         description: Seconds between supplier requests (minimum 5)
         default: '10'
         required: true
+      batches:
+        description: Number of sequential batches (1-25); stop on block or completion
+        default: '1'
+        required: true
 
 permissions:
   contents: write
@@ -31,7 +35,7 @@ concurrency:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
         with:
@@ -49,7 +53,23 @@ jobs:
           AUDIT_START: ${{ inputs.start }}
           AUDIT_LIMIT: ${{ inputs.limit }}
           AUDIT_DELAY: ${{ inputs.delay }}
-        run: python tools/dofesh_variant_audit.py --mode "$AUDIT_MODE" --start "$AUDIT_START" --limit "$AUDIT_LIMIT" --delay "$AUDIT_DELAY"
+          AUDIT_BATCHES: ${{ inputs.batches }}
+        run: |
+          python -c 'import os; n=int(os.environ["AUDIT_BATCHES"]); assert 1 <= n <= 25'
+          git config user.name 'Manar catalog audit'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for batch in $(seq 1 "$AUDIT_BATCHES"); do
+            python tools/dofesh_variant_audit.py --mode "$AUDIT_MODE" --start "$AUDIT_START" --limit "$AUDIT_LIMIT" --delay "$AUDIT_DELAY"
+            git add docs/dofesh-variant-audit STORE-PROGRESS.md
+            if ! git diff --cached --quiet; then
+              git commit -m "docs: Dofesh batch $batch results [skip ci]"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+            state=$(python -c 'import json; print(json.load(open("docs/dofesh-variant-audit/latest.json"))["run_status"])')
+            processed=$(python -c 'import json; print(json.load(open("docs/dofesh-variant-audit/latest.json"))["run_processed"])')
+            if [ "$state" != completed_batch ] || [ "$processed" = 0 ]; then break; fi
+          done
       - name: Save reports and progress on GitHub
         if: always()
         run: |

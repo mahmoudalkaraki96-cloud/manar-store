@@ -1,6 +1,9 @@
 import sqlite3
 import unittest
 from pathlib import Path
+import tempfile
+from unittest.mock import patch
+from datetime import timezone
 import dofesh_variant_audit as a
 
 
@@ -73,6 +76,9 @@ class Tests(unittest.TestCase):
     def test_block(self):
         with self.assertRaises(a.SupplierBlocked):a.parse_product('403 Forbidden',1298)
 
+    def test_removed_source_is_distinct_from_block(self):
+        with self.assertRaises(a.SupplierMissing):a.parse_product('<h2>404 نأسف الصفحة المطلوبة غير متوفرة في الوقت الحالي</h2>',1298)
+
     def test_bad_identity(self):
         with self.assertRaises(ValueError):a.parse_product(page(sid=1),1298)
 
@@ -134,6 +140,28 @@ class Tests(unittest.TestCase):
         a.apply_variants(db,1298,a.snapshot(db,1),s,'test',10000)
         self.assertEqual(a.snapshot(db,1)['price_agorot'],600)
         self.assertEqual(db.query('SELECT * FROM product_options'),[])
+
+    def test_verification_failure_preserves_change_history(self):
+        import json
+        db=LocalDB();p=a.snapshot(db,1);a.apply_variants(db,1298,p,self.source(),'test',10000)
+        a.save_result(db,1298,'apply',p,'error',{'reason':'post_apply'},'test')
+        row=db.query('SELECT status,detail FROM dofesh_variant_audit')[0]
+        self.assertEqual(row['status'],'synced_verification_error')
+        self.assertEqual(json.loads(row['detail'])['before_price'],700)
+
+    def test_reports_have_changes_and_before_after(self):
+        db=LocalDB();a.apply_variants(db,1298,a.snapshot(db,1),self.source(),'test',10000)
+        with patch.object(a,'ZoneInfo',lambda _:timezone.utc):
+            folder=Path('test-report-output').resolve()
+            folder.mkdir(exist_ok=True)
+            progress=folder/'progress.md'
+            progress.write_text('# Test progress\n',encoding='utf-8')
+            a.report(db,folder,'apply','completed_batch','test',progress)
+            text=(folder/'changed-products.html').read_text(encoding='utf-8')
+            self.assertIn('250 ₪',text)
+            self.assertIn('السعر الأساسي: 7 ₪',text)
+            self.assertTrue((folder/'changed-products.csv').exists())
+            self.assertIn('دوفش#1298',progress.read_text(encoding='utf-8'))
 
 
 if __name__=='__main__':unittest.main()

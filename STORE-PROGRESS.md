@@ -811,3 +811,70 @@
 - Per-product results: docs/dofesh-variant-audit/latest.json
 - تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
 - تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+
+
+
+### 2026-10-19T14:26:39.843104+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T14:26:39.843104+03:00
+- Mode: apply
+- Status: paused_error
+- Counts: {"synced": 9, "no_options": 38, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1298 ↔ صنف#1240: synced؛ بالحبة=6₪؛ 50 حبة=250₪؛ 100 حبة=500₪. https://dofesh.ps/?app=product.show.1298
+- دوفش#1297 ↔ صنف#1241: synced؛ بالحبة=7₪؛ 50 حبة=300₪؛ 100 حبة=550₪. https://dofesh.ps/?app=product.show.1297
+- دوفش#1296 ↔ صنف#1242: synced؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1296
+- دوفش#1295 ↔ صنف#1243: no_options؛ شمعة اقحوان معطرة. https://dofesh.ps/?app=product.show.1295
+- دوفش#1294 ↔ صنف#1244: no_options؛ شمعة بوكيه ورد مغلفة مع ريحة ارتفاع ٨ سم. https://dofesh.ps/?app=product.show.1294
+- دوفش#1293 ↔ صنف#1245: synced؛ 10 حبة=25₪. https://dofesh.ps/?app=product.show.1293
+- دوفش#1292 ↔ صنف#1246: synced؛ بالحبة=2₪؛ 10حبة=20₪. https://dofesh.ps/?app=product.show.1292
+- دوفش#1291 ↔ صنف#1247: synced؛ 20 حبة=40₪؛ 50 حبة=85₪. https://dofesh.ps/?app=product.show.1291
+- دوفش#1290 ↔ صنف#1248: no_options؛ علبة كرتون غطاء شفاف لتغليف المروحة مقاس (22*6*3). https://dofesh.ps/?app=product.show.1290
+- دوفش#1289 ↔ صنف#1249: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1289
+- دوفش#1288 ↔ صنف#1250: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1288
+- دوفش#1287 ↔ صنف#1251: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1287
+- دوفش#1286 ↔ صنف#1252: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1286
+- دوفش#1285 ↔ صنف#1253: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1285
+- دوفش#1284 ↔ صنف#1254: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1284
+- دوفش#1283 ↔ صنف#1255: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1283
+- دوفش#1282 ↔ صنف#1256: no_options؛ شبر تراث عرض 2.5 سم (50يارد). https://dofesh.ps/?app=product.show.1282
+- دوفش#1281 ↔ صنف#1257: no_options؛ مصحف جلد مقاس 9*6. https://dofesh.ps/?app=product.show.1281
+- دوفش#1279 ↔ صنف#1135: synced؛ احمر=20₪؛ ابيض مع سكني=20₪؛ بيج مذهب=20₪؛ زهري=20₪. https://dofesh.ps/?app=product.show.1279
+- دوفش#1278 ↔ صنف#1258: no_options؛ معطر جو فواح مميز. https://dofesh.ps/?app=product.show.1278
+- دوفش#1277 ↔ صنف#1259: synced؛ بالحبة=7₪؛ 10 حبة=50₪. https://dofesh.ps/?app=product.show.1277
+- دوفش#1276 ↔ صنف#1260: no_options؛ مبخرة كرستال صافي مميزة ارتفاع 13cm. https://dofesh.ps/?app=product.show.1276
+- دوفش#1275 ↔ صنف#1261: no_options؛ سكرية سيراميك مميزة. https://dofesh.ps/?app=product.show.1275
+- دوفش#1274 ↔ صنف#1262: no_options؛ سكرية سيراميك مميزة. https://dofesh.ps/?app=product.show.1274
+- دوفش#1273 ↔ صنف#1136: no_options؛ فنجان سادى 12حبة. https://dofesh.ps/?app=product.show.1273
+- دوفش#1272 ↔ صنف#1263: no_options؛ مبخرة كونكريت بيضاوي. https://dofesh.ps/?app=product.show.1272
+- دوفش#1271 ↔ صنف#1264: no_options؛ صينية لتلبيس الذهب. https://dofesh.ps/?app=product.show.1271
+- دوفش#1270 ↔ صنف#1265: no_options؛ صينية خشب مع ايد اكريلك ذهبية مقاس 40*26. https://dofesh.ps/?app=product.show.1270
+- دوفش#1269 ↔ صنف#1266: no_options؛ صينية خشب مع ايد اكريلك ذهبية مقاس 40*27. https://dofesh.ps/?app=product.show.1269
+- دوفش#1268 ↔ صنف#1267: no_options؛ صينية خشب مع ايد اكريلك مقاس 40*30. https://dofesh.ps/?app=product.show.1268
+- دوفش#1267 ↔ صنف#1268: no_options؛ كرت كرتون تخرج مقاس 15*1.5 عدد 25 كرت. https://dofesh.ps/?app=product.show.1267
+- دوفش#1266 ↔ صنف#1269: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1266
+- دوفش#1265 ↔ صنف#1270: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1265
+- دوفش#1264 ↔ صنف#1271: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1264
+- دوفش#1263 ↔ صنف#1272: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1263
+- دوفش#1262 ↔ صنف#1273: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1262
+- دوفش#1261 ↔ صنف#1274: no_options؛ كرت حناء بدون الحناء والزجاج عدد 25 كرت. https://dofesh.ps/?app=product.show.1261
+- دوفش#1260 ↔ صنف#1137: no_options؛ ستاند اكريلك اصواني الذهب لون فضي ارتفاع 28 سم. https://dofesh.ps/?app=product.show.1260
+- دوفش#1259 ↔ صنف#1138: no_options؛ ستاند اكريلك امي الغالية ارتفاع 24 سم. https://dofesh.ps/?app=product.show.1259
+- دوفش#1258 ↔ صنف#1139: no_options؛ ستاند اكريلك حماتي الغالية ارتفاع 24 سم. https://dofesh.ps/?app=product.show.1258
+- دوفش#1257 ↔ صنف#1140: no_options؛ كلفة ليرات 10 يارد خفيفة. https://dofesh.ps/?app=product.show.1257
+- دوفش#1256 ↔ صنف#1141: synced؛ بالحبة=2₪؛ 50 حبة (بكيت)=75₪. https://dofesh.ps/?app=product.show.1256
+- دوفش#1255 ↔ صنف#1275: no_options؛ قماش لايكرا لون ابيض عرض 1.5 متر. https://dofesh.ps/?app=product.show.1255
+- دوفش#1254 ↔ صنف#1142: no_options؛ سكرية اكريلك 12 حبة. https://dofesh.ps/?app=product.show.1254
+- دوفش#1253 ↔ صنف#1276: no_options؛ توزيعة دلة مخمل احمر 12 حبة بالبكيت. https://dofesh.ps/?app=product.show.1253
+- دوفش#1252 ↔ صنف#1277: no_options؛ شمع الكتروني بطارية. https://dofesh.ps/?app=product.show.1252
+- دوفش#1251 ↔ صنف#1143: no_options؛ شمع اصابع ابيض جودة ممتازة مقاس 25 سم. https://dofesh.ps/?app=product.show.1251
+- دوفش#1250 ↔ صنف#?: error؛ RuntimeError. https://dofesh.ps/?app=product.show.1250
+
+
+### 2026-10-19 14:26 (Asia/Hebron) — DOFESH-VARIANT-BATCH: تشغيل متحقق واستكمال
+- نجحت المعاينة وأول تطبيق5، ثم انتهى التشغيل39243267589 بعد فحص47صنفًا مكتملًا:9synced و38no_options؛ توقف#1250بخطأHTTP. تحقق المتصفح أن مصدر#1250يرجع404، وليس حظرًا؛ لم يُعدل صنفه.
+- أضيف تمييزmissing_source لصفحات404مع حفظها دون تعديل واستكمال التالي. يبقى403/429والأخطاءالأخرىتوقفًا تلقائيًا. نجحت20اختبارًا تشملHTMLفعليًا، والذرية والتكرار وحمايةالصوروالنشر، والتقاريروسجلprogress.
+- اعتماد أسعارالموردالصريحة عندتطابقرقم المصدر بإذن المستخدم، مع الحفاظعلىصورالمنتجات والنشر ومخزونالمتغيراتالقائمة. تقريرchanged-products.htmlيعرضقبل/بعدبالشيكل؛CSVيحفظالبياناتالمفصلة. يشمل50صنفًا معدّلًا حتىهذهالنسخة (41يدويًا موثقًا و9بالسكربت).
+- Workflowيدوييدعم1–25دفعةمتتابعة، ويحفظprogressوالتقاريرعلىGitHubبعدكلدفعة. التالي استئنافapplyمن#1250ب50صنفًالكلدفعةوفاصل10ثوانٍ،حتىاكتمالالنطاقأوتوقفالمورد. لاجدولةدوريةأواستدعاءاتAI.
