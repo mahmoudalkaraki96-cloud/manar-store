@@ -60,7 +60,11 @@ class Tests(unittest.TestCase):
 
     def test_two_dimensions(self):
         s=a.parse_product(page(radio('c0','10 قطع')+radio('c0s0','ذهبي','18')+radio('c0s1','فضي','18')),1298)
-        self.assertEqual(s['variants'][1]['name'],'10 قطع / فضي')
+        self.assertEqual(s['variants'][1]['name'],'10 قطعة / فضي')
+
+    def test_equivalent_existing_labels_do_not_duplicate(self):
+        self.assertEqual(a.norm('١٠ حبات'),a.norm('10 حبة'))
+        self.assertEqual(a.norm('أبيض'),a.norm('ابيض'))
 
     def test_related_products_excluded(self):
         s=a.parse_product(page()+radio('s99','unrelated','99'),1298)

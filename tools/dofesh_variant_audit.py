@@ -32,7 +32,11 @@ INSERT OR IGNORE INTO dofesh_variant_audit_lock VALUES(1,'',0);
 
 
 def norm(s):
-    return re.sub(r'\s+', ' ', str(s).replace('\u200f', '').replace('ـ', '')).strip()
+    s=str(s).translate(str.maketrans('٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹أإآ','01234567890123456789ااا'))
+    s=re.sub(r'[\u064b-\u065f\u200e\u200f]', '', s).replace('ـ','')
+    s=re.sub(r'(\d+)\s*حبات',r'\1 حبة',s)
+    s=re.sub(r'(\d+)\s*قطع(?!ة)',r'\1 قطعة',s)
+    return re.sub(r'\s+', ' ', s).strip()
 
 
 def money(s):
@@ -345,7 +349,7 @@ def main():
     lease = db.batch([('UPDATE dofesh_variant_audit_lock SET token=?,expires_at=? WHERE id=1 AND expires_at<?', [token,now+900000,now])])
     if lease[0]['meta'].get('changes') != 1:
         raise RuntimeError('audit_already_running')
-    status, last_request = 'completed_batch', 0
+    status, last_request = 'interrupted', 0
     try:
         # Only explicitly linked imported products; ambiguity is reported, never guessed.
         rows = db.query("SELECT CAST(substr(k.keyword,8) AS INTEGER) AS source_id,p.id FROM product_keywords k JOIN products p ON p.id=k.product_id WHERE k.keyword GLOB 'dofesh-[0-9]*' AND p.deleted_at IS NULL ORDER BY source_id DESC")
@@ -386,9 +390,11 @@ def main():
                 break
             except Exception as e:
                 # No retries after a response, parsing, apply, or connection failure.
-                save_result(db,sid,args.mode,p,'error',{'reason':type(e).__name__},token)
+                save_result(db,sid,args.mode,p,'error',{'reason':str(e)[:120] if isinstance(e,ValueError) else type(e).__name__},token)
                 status='paused_error'
                 break
+        else:
+            status='completed_batch'
     finally:
         try:
             report(db,args.report_dir,args.mode,status)
