@@ -1441,3 +1441,64 @@
 - دوفش#780 ↔ صنف#1684: no_options؛ علبة زجاج لزيت الزيتون. https://dofesh.ps/?app=product.show.780
 - دوفش#779 ↔ صنف#1685: no_options؛ علبة bvc مقاس 6*6*12. https://dofesh.ps/?app=product.show.779
 - دوفش#778 ↔ صنف#1686: error؛ invalid_price. https://dofesh.ps/?app=product.show.778
+
+
+### 2026-10-19T19:11:53.805379+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T19:11:53.805379+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 238, "no_options": 294, "missing_source": 3, "unsupported_customization_or_minimum": 6, "matched": 8, "error": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#777 ↔ صنف#1687: no_options؛ علبة سحاب للمسك (14*8.5*4.5 سم). https://dofesh.ps/?app=product.show.777
+- دوفش#776 ↔ صنف#1688: no_options؛ مسك اصلي بخاخ 30 مل. https://dofesh.ps/?app=product.show.776
+- دوفش#775 ↔ صنف#1202: no_options؛ مصليات هدايا للحج والعمرة. https://dofesh.ps/?app=product.show.775
+- دوفش#774 ↔ صنف#1689: unsupported_customization_or_minimum؛ ذهبي لاصق / 10 قطعة=15₪؛ ذهبي لاصق / 25 قطعة=30₪؛ ذهبي لاصق / 50 قطعة=50₪؛ فضي لاصق / 10 قطعة=15₪؛ فضي لاصق / 25 قطعة=30₪؛ فضي لاصق / 50 قطعة=50₪؛ اسود لاصق / 10 قطعة=18₪؛ اسود لاصق / 25 قطعة=35₪؛ اسود لاصق / 50 قطعة=60₪. https://dofesh.ps/?app=product.show.774
+- دوفش#773 ↔ صنف#1690: no_options؛ اكسسوار سداسي محجر فضي. https://dofesh.ps/?app=product.show.773
+- دوفش#772 ↔ صنف#1691: no_options؛ اكسسوار محجر. https://dofesh.ps/?app=product.show.772
+- دوفش#771 ↔ صنف#1692: synced؛ اسود=30₪؛ بني فاتح=30₪؛ بني غامق=30₪؛ بيج=30₪؛ احمر=30₪؛ نود=30₪؛ خمري=30₪؛ ابيض=30₪؛ ازرق=30₪؛ زهري=30₪؛ كحلي=30₪. https://dofesh.ps/?app=product.show.771
+- دوفش#770 ↔ صنف#1693: no_options؛ لولو حب مقاس 10مل. https://dofesh.ps/?app=product.show.770
+- دوفش#769 ↔ صنف#1694: no_options؛ لولو حبة كاملة قياس 1.2مل. https://dofesh.ps/?app=product.show.769
+- دوفش#767 ↔ صنف#1695: no_options؛ لولو حبة كاملة 8 مل. https://dofesh.ps/?app=product.show.767
+- دوفش#766 ↔ صنف#1696: no_options؛ لولو حبة كاملة 8 مل. https://dofesh.ps/?app=product.show.766
+- دوفش#765 ↔ صنف#1697: no_options؛ لولو حبة كاملة 6 مل. https://dofesh.ps/?app=product.show.765
+- دوفش#764 ↔ صنف#1698: no_options؛ لولو نص حبة 6 مل. https://dofesh.ps/?app=product.show.764
+- دوفش#763 ↔ صنف#1699: no_options؛ لولو نص حبة جودة ممتازة. https://dofesh.ps/?app=product.show.763
+- دوفش#762 ↔ صنف#1700: no_options؛ لولو نص حبة جودة ممتازة. https://dofesh.ps/?app=product.show.762
+- دوفش#761 ↔ صنف#1701: no_options؛ مراي اكريلك. https://dofesh.ps/?app=product.show.761
+- دوفش#760 ↔ صنف#1702: no_options؛ دائرة اكريلك للدبل. https://dofesh.ps/?app=product.show.760
+- دوفش#759 ↔ صنف#1703: no_options؛ دائرة اكريلك لتلبيسة الدبل. https://dofesh.ps/?app=product.show.759
+- دوفش#758 ↔ صنف#1704: synced؛ ذهبي=35₪؛ فضي=35₪. https://dofesh.ps/?app=product.show.758
+- دوفش#757 ↔ صنف#1705: no_options؛ تلبيسة ذهب شكل خاتم - لون ذهبي. https://dofesh.ps/?app=product.show.757
+- دوفش#756 ↔ صنف#1706: no_options؛ مراية اكريلك قاعدة خشب. https://dofesh.ps/?app=product.show.756
+- دوفش#755 ↔ صنف#1707: no_options؛ كيس مغشى مقاس 20*15*8.5. https://dofesh.ps/?app=product.show.755
+- دوفش#754 ↔ صنف#1053: no_options؛ سيارة كونكريت (بدون شمع). https://dofesh.ps/?app=product.show.754
+- دوفش#753 ↔ صنف#1708: synced؛ بالحبة=6₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.753
+- دوفش#752 ↔ صنف#1709: no_options؛ مبخرة كرستال مع غطاء نحاسي مميز. https://dofesh.ps/?app=product.show.752
+- دوفش#751 ↔ صنف#1710: no_options؛ مبخرة كرستال مع غطاء نحاسي مميز. https://dofesh.ps/?app=product.show.751
+- دوفش#750 ↔ صنف#1711: no_options؛ مسبحة لولو 33 خرزة. https://dofesh.ps/?app=product.show.750
+- دوفش#749 ↔ صنف#1712: no_options؛ مسبحة لولو 33 خرزة. https://dofesh.ps/?app=product.show.749
+- دوفش#748 ↔ صنف#1713: no_options؛ مسبحة كرستال 33 خرزة. https://dofesh.ps/?app=product.show.748
+- دوفش#746 ↔ صنف#1714: no_options؛ مسبحة كرستال 33خرزة. https://dofesh.ps/?app=product.show.746
+- دوفش#745 ↔ صنف#1715: no_options؛ مسبحة كرستال 33 خرزة. https://dofesh.ps/?app=product.show.745
+- دوفش#743 ↔ صنف#1716: no_options؛ مراية اكريلك شفاف. https://dofesh.ps/?app=product.show.743
+- دوفش#742 ↔ صنف#1717: synced؛ ذهبي=5₪؛ فضي=4₪. https://dofesh.ps/?app=product.show.742
+- دوفش#741 ↔ صنف#1718: no_options؛ كيس مغشى ايد جلد مربعة مقاس(16*15*8سم). https://dofesh.ps/?app=product.show.741
+- دوفش#740 ↔ صنف#1719: no_options؛ كيس مغشى مع ايد جلد مقاس(16*15*8سم). https://dofesh.ps/?app=product.show.740
+- دوفش#739 ↔ صنف#1720: synced؛ 20*15*9 cm=3₪؛ 15*13.5*6=2.5₪. https://dofesh.ps/?app=product.show.739
+- دوفش#738 ↔ صنف#1721: synced؛ بالدزينة=50₪. https://dofesh.ps/?app=product.show.738
+- دوفش#737 ↔ صنف#1722: synced؛ مع معطر=15₪؛ بدون معطر=10₪. https://dofesh.ps/?app=product.show.737
+- دوفش#736 ↔ صنف#1116: no_options؛ خيط لميع فضي 100 متر باللفة. https://dofesh.ps/?app=product.show.736
+- دوفش#735 ↔ صنف#1115: no_options؛ خيط مذهب 100 متر. https://dofesh.ps/?app=product.show.735
+- دوفش#734 ↔ صنف#1723: no_options؛ ظهرية صواني ذهبية لكتابة الاسماء. https://dofesh.ps/?app=product.show.734
+- دوفش#733 ↔ صنف#1724: no_options؛ ظهرية صواني لكتابة الاسم. https://dofesh.ps/?app=product.show.733
+- دوفش#732 ↔ صنف#1725: no_options؛ ظهرية صواني لكتابة الاسم. https://dofesh.ps/?app=product.show.732
+- دوفش#731 ↔ صنف#1726: no_options؛ ظهر صينية لكتابة الاسم. https://dofesh.ps/?app=product.show.731
+- دوفش#730 ↔ صنف#1727: synced؛ بالحبة=0.5₪؛ 50 قطعة=20₪. https://dofesh.ps/?app=product.show.730
+- دوفش#729 ↔ صنف#1728: synced؛ بالحبة=0.5₪؛ 50 حبة (بكيت)=20₪. https://dofesh.ps/?app=product.show.729
+- دوفش#728 ↔ صنف#1729: no_options؛ ورد ثلج صناعي. https://dofesh.ps/?app=product.show.728
+- دوفش#727 ↔ صنف#1730: no_options؛ ورد ثلج صناعي. https://dofesh.ps/?app=product.show.727
+- دوفش#726 ↔ صنف#1731: no_options؛ شمع نجمة البحر. https://dofesh.ps/?app=product.show.726
+- دوفش#723 ↔ صنف#1203: unsupported_customization_or_minimum؛ ذهبي وخشب=35₪؛ فضي وخشب=35₪. https://dofesh.ps/?app=product.show.723
