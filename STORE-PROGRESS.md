@@ -2547,3 +2547,64 @@
 - الجعبري#4148 ↔ صنف#2765: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4148
 - الجعبري#4147 ↔ صنف#2766: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4147
 - الجعبري#4146 ↔ صنف#2767: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4146
+
+
+### 2026-10-19T21:32:27.035447+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T21:32:27.035447+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 247, "synced": 82, "unsupported_source_price": 27}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#4145 ↔ صنف#2768: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4145
+- الجعبري#4144 ↔ صنف#2769: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4144
+- الجعبري#4143 ↔ صنف#2770: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4143
+- الجعبري#4142 ↔ صنف#2771: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4142
+- الجعبري#4141 ↔ صنف#2772: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4141
+- الجعبري#4140 ↔ صنف#2773: synced؛ بالقطعة=4₪؛ 25 قطعة=80₪. https://jabaristore.com/?app=product.show.4140
+- الجعبري#4139 ↔ صنف#2774: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4139
+- الجعبري#4138 ↔ صنف#2775: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4138
+- الجعبري#4137 ↔ صنف#2776: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4137
+- الجعبري#4136 ↔ صنف#2777: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4136
+- الجعبري#4135 ↔ صنف#2778: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4135
+- الجعبري#4134 ↔ صنف#2779: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4134
+- الجعبري#4133 ↔ صنف#2780: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4133
+- الجعبري#4132 ↔ صنف#2781: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4132
+- الجعبري#4131 ↔ صنف#2782: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4131
+- الجعبري#4130 ↔ صنف#2783: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4130
+- الجعبري#4129 ↔ صنف#2784: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4129
+- الجعبري#4128 ↔ صنف#2785: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4128
+- الجعبري#4126 ↔ صنف#2786: no_options؛ اكياس قماش نقشة بدوي ( 25 قطعة ). https://jabaristore.com/?app=product.show.4126
+- الجعبري#4125 ↔ صنف#2787: synced؛ كبير ( 6*9 سم )=22.5₪؛ صغير ( 5*8 سم )=19.5₪. https://jabaristore.com/?app=product.show.4125
+- الجعبري#4124 ↔ صنف#2788: synced؛ كبير ( 6*9 سم )=22.5₪؛ صغير ( 5*8 سم )=19.5₪. https://jabaristore.com/?app=product.show.4124
+- الجعبري#4123 ↔ صنف#2789: synced؛ كبير ( 6*9 سم )=22.5₪؛ صغير ( 5*8 سم )=19.5₪. https://jabaristore.com/?app=product.show.4123
+- الجعبري#4122 ↔ صنف#2790: no_options؛ اعواد بخور SHALIMAR عريضة ( جوري ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4122
+- الجعبري#4121 ↔ صنف#2791: no_options؛ اعواد بخور SHALIMAR عريضة ( مسك ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4121
+- الجعبري#4120 ↔ صنف#2792: no_options؛ اعواد بخور SHALIMAR عريضة ( ياسمين ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4120
+- الجعبري#4119 ↔ صنف#2793: no_options؛ اعواد بخور SHALIMAR عريضة ( زنبق ابيض ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4119
+- الجعبري#4118 ↔ صنف#2794: no_options؛ اعواد بخور SHALIMAR عريضة ( ياقوت ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4118
+- الجعبري#4117 ↔ صنف#2795: no_options؛ اعواد بخور SHALIMAR عريضة ( صندل ) 10 اعواد & قاعدة تثبيت. https://jabaristore.com/?app=product.show.4117
+- الجعبري#4096 ↔ صنف#2796: no_options؛ صينية اكريلك ( 3*8*8 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4096
+- الجعبري#4095 ↔ صنف#2797: no_options؛ شنطة اكريلك يد لولو ( 7.5*13*10 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4095
+- الجعبري#4094 ↔ صنف#2798: no_options؛ شنطة اكريلك يد لولو ( 4.5*9*7.5 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4094
+- الجعبري#4089 ↔ صنف#2799: no_options؛ شنطة اكريلك ( 5*5*9 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4089
+- الجعبري#4088 ↔ صنف#2800: no_options؛ شنطة اكريلك ( 4*4*8 cm ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.4088
+- الجعبري#4086 ↔ صنف#2801: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4086
+- الجعبري#4085 ↔ صنف#2802: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4085
+- الجعبري#4084 ↔ صنف#2803: synced؛ صينية مع ضهر=67₪؛ ضهر فقط=47₪. https://jabaristore.com/?app=product.show.4084
+- الجعبري#4083 ↔ صنف#2397: no_options؛ ملقط حبكة. https://jabaristore.com/?app=product.show.4083
+- الجعبري#4082 ↔ صنف#2804: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.4082
+- الجعبري#4080 ↔ صنف#2805: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4080
+- الجعبري#4079 ↔ صنف#2806: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4079
+- الجعبري#4078 ↔ صنف#2807: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4078
+- الجعبري#4077 ↔ صنف#2808: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4077
+- الجعبري#4076 ↔ صنف#2809: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4076
+- الجعبري#4075 ↔ صنف#2810: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4075
+- الجعبري#4074 ↔ صنف#2811: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4074
+- الجعبري#4073 ↔ صنف#2812: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4073
+- الجعبري#4072 ↔ صنف#2813: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4072
+- الجعبري#4071 ↔ صنف#2814: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4071
+- الجعبري#4070 ↔ صنف#2815: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4070
+- الجعبري#4069 ↔ صنف#2816: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.4069

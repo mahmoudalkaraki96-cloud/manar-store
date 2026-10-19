@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T21:24:07.474903+03:00",
+  "updated_at": "2026-10-19T21:32:27.035447+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -2443,6 +2443,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 2767, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1767\", \"source_url\": \"https://jabaristore.com/?app=product.show.4146\"}",
       "updated_at": 1792434245157
+    },
+    {
+      "source_id": 4145,
+      "mode": "apply",
+      "product_id": 1768,
+      "status": "synced",
+      "detail": "{\"item_number\": 2768, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1768\", \"source_url\": \"https://jabaristore.com/?app=product.show.4145\"}",
+      "updated_at": 1792434254935
+    },
+    {
+      "source_id": 4144,
+      "mode": "apply",
+      "product_id": 1769,
+      "status": "synced",
+      "detail": "{\"item_number\": 2769, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1769\", \"source_url\": \"https://jabaristore.com/?app=product.show.4144\"}",
+      "updated_at": 1792434264866
+    },
+    {
+      "source_id": 4143,
+      "mode": "apply",
+      "product_id": 1770,
+      "status": "synced",
+      "detail": "{\"item_number\": 2770, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1770\", \"source_url\": \"https://jabaristore.com/?app=product.show.4143\"}",
+      "updated_at": 1792434274643
+    },
+    {
+      "source_id": 4142,
+      "mode": "apply",
+      "product_id": 1771,
+      "status": "synced",
+      "detail": "{\"item_number\": 2771, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1771\", \"source_url\": \"https://jabaristore.com/?app=product.show.4142\"}",
+      "updated_at": 1792434284656
+    },
+    {
+      "source_id": 4141,
+      "mode": "apply",
+      "product_id": 1772,
+      "status": "synced",
+      "detail": "{\"item_number\": 2772, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1772\", \"source_url\": \"https://jabaristore.com/?app=product.show.4141\"}",
+      "updated_at": 1792434295107
+    },
+    {
+      "source_id": 4140,
+      "mode": "apply",
+      "product_id": 1773,
+      "status": "synced",
+      "detail": "{\"item_number\": 2773, \"name\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ميدالية خشب ( 5*7.5 سم ) طباعة UV\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 350, \"active\": true}, {\"name\": \"25 قطعة\", \"price\": 7500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"25 قطعة\", \"price\": 8000, \"active\": true, \"supplier_price\": 7500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1773\", \"source_url\": \"https://jabaristore.com/?app=product.show.4140\"}",
+      "updated_at": 1792434304688
+    },
+    {
+      "source_id": 4139,
+      "mode": "apply",
+      "product_id": 1774,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2774}",
+      "updated_at": 1792434314380
+    },
+    {
+      "source_id": 4138,
+      "mode": "apply",
+      "product_id": 1775,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2775}",
+      "updated_at": 1792434324359
+    },
+    {
+      "source_id": 4137,
+      "mode": "apply",
+      "product_id": 1776,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2776}",
+      "updated_at": 1792434334378
+    },
+    {
+      "source_id": 4136,
+      "mode": "apply",
+      "product_id": 1777,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2777}",
+      "updated_at": 1792434344371
+    },
+    {
+      "source_id": 4135,
+      "mode": "apply",
+      "product_id": 1778,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2778}",
+      "updated_at": 1792434354359
+    },
+    {
+      "source_id": 4134,
+      "mode": "apply",
+      "product_id": 1779,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2779}",
+      "updated_at": 1792434364358
+    },
+    {
+      "source_id": 4133,
+      "mode": "apply",
+      "product_id": 1780,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2780}",
+      "updated_at": 1792434374360
+    },
+    {
+      "source_id": 4132,
+      "mode": "apply",
+      "product_id": 1781,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2781}",
+      "updated_at": 1792434384376
+    },
+    {
+      "source_id": 4131,
+      "mode": "apply",
+      "product_id": 1782,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2782}",
+      "updated_at": 1792434394380
+    },
+    {
+      "source_id": 4130,
+      "mode": "apply",
+      "product_id": 1783,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2783}",
+      "updated_at": 1792434404509
+    },
+    {
+      "source_id": 4129,
+      "mode": "apply",
+      "product_id": 1784,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2784}",
+      "updated_at": 1792434414535
+    },
+    {
+      "source_id": 4128,
+      "mode": "apply",
+      "product_id": 1785,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2785}",
+      "updated_at": 1792434424385
+    },
+    {
+      "source_id": 4126,
+      "mode": "apply",
+      "product_id": 1786,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2786, \"source\": {\"title\": \"اكياس قماش نقشة بدوي ( 25 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434434534
+    },
+    {
+      "source_id": 4125,
+      "mode": "apply",
+      "product_id": 1787,
+      "status": "synced",
+      "detail": "{\"item_number\": 2787, \"name\": \"كوته اكريلك باللون الزهري ( 12 قطعة )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"كوته اكريلك باللون الزهري ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"كوته اكريلك باللون الزهري ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2100, \"active\": true}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1787\", \"source_url\": \"https://jabaristore.com/?app=product.show.4125\"}",
+      "updated_at": 1792434444803
+    },
+    {
+      "source_id": 4124,
+      "mode": "apply",
+      "product_id": 1788,
+      "status": "synced",
+      "detail": "{\"item_number\": 2788, \"name\": \"كوته اكريلك باللون الازرق ( 12 قطعة )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"كوته اكريلك باللون الازرق ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"كوته اكريلك باللون الازرق ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2100, \"active\": true}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1788\", \"source_url\": \"https://jabaristore.com/?app=product.show.4124\"}",
+      "updated_at": 1792434454822
+    },
+    {
+      "source_id": 4123,
+      "mode": "apply",
+      "product_id": 1789,
+      "status": "synced",
+      "detail": "{\"item_number\": 2789, \"name\": \"كوته اكريلك باللون الابيض ( 12 قطعة )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"كوته اكريلك باللون الابيض ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"كوته اكريلك باللون الابيض ( 12 قطعة )\", \"variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2100, \"active\": true}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير ( 6*9 سم )\", \"price\": 2250, \"active\": true, \"supplier_price\": 2100}, {\"name\": \"صغير ( 5*8 سم )\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1789\", \"source_url\": \"https://jabaristore.com/?app=product.show.4123\"}",
+      "updated_at": 1792434464804
+    },
+    {
+      "source_id": 4122,
+      "mode": "apply",
+      "product_id": 1790,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2790, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( جوري ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434474377
+    },
+    {
+      "source_id": 4121,
+      "mode": "apply",
+      "product_id": 1791,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2791, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( مسك ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434484565
+    },
+    {
+      "source_id": 4120,
+      "mode": "apply",
+      "product_id": 1792,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2792, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( ياسمين ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434494379
+    },
+    {
+      "source_id": 4119,
+      "mode": "apply",
+      "product_id": 1793,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2793, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( زنبق ابيض ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434504384
+    },
+    {
+      "source_id": 4118,
+      "mode": "apply",
+      "product_id": 1794,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2794, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( ياقوت ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434514371
+    },
+    {
+      "source_id": 4117,
+      "mode": "apply",
+      "product_id": 1795,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2795, \"source\": {\"title\": \"اعواد بخور SHALIMAR عريضة ( صندل ) 10 اعواد & قاعدة تثبيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434524375
+    },
+    {
+      "source_id": 4096,
+      "mode": "apply",
+      "product_id": 1796,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2796, \"source\": {\"title\": \"صينية اكريلك ( 3*8*8 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2100}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434534361
+    },
+    {
+      "source_id": 4095,
+      "mode": "apply",
+      "product_id": 1797,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2797, \"source\": {\"title\": \"شنطة اكريلك يد لولو ( 7.5*13*10 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434544375
+    },
+    {
+      "source_id": 4094,
+      "mode": "apply",
+      "product_id": 1798,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2798, \"source\": {\"title\": \"شنطة اكريلك يد لولو ( 4.5*9*7.5 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434554663
+    },
+    {
+      "source_id": 4089,
+      "mode": "apply",
+      "product_id": 1799,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2799, \"source\": {\"title\": \"شنطة اكريلك ( 5*5*9 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434564611
+    },
+    {
+      "source_id": 4088,
+      "mode": "apply",
+      "product_id": 1800,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2800, \"source\": {\"title\": \"شنطة اكريلك ( 4*4*8 cm ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434574630
+    },
+    {
+      "source_id": 4086,
+      "mode": "apply",
+      "product_id": 1801,
+      "status": "synced",
+      "detail": "{\"item_number\": 2801, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1801\", \"source_url\": \"https://jabaristore.com/?app=product.show.4086\"}",
+      "updated_at": 1792434584888
+    },
+    {
+      "source_id": 4085,
+      "mode": "apply",
+      "product_id": 1802,
+      "status": "synced",
+      "detail": "{\"item_number\": 2802, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1802\", \"source_url\": \"https://jabaristore.com/?app=product.show.4085\"}",
+      "updated_at": 1792434594820
+    },
+    {
+      "source_id": 4084,
+      "mode": "apply",
+      "product_id": 1803,
+      "status": "synced",
+      "detail": "{\"item_number\": 2803, \"name\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"before_price\": 4700, \"before_variants\": [], \"source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني خشب (26*34) & ضهر (22*34) CNC طباعة UV\", \"variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6500, \"active\": true}, {\"name\": \"ضهر فقط\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صينية مع ضهر\", \"price\": 6700, \"active\": true, \"supplier_price\": 6500}, {\"name\": \"ضهر فقط\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1803\", \"source_url\": \"https://jabaristore.com/?app=product.show.4084\"}",
+      "updated_at": 1792434604817
+    },
+    {
+      "source_id": 4083,
+      "mode": "apply",
+      "product_id": 1397,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2397, \"source\": {\"title\": \"ملقط حبكة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792434614360
+    },
+    {
+      "source_id": 4082,
+      "mode": "apply",
+      "product_id": 1804,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2804}",
+      "updated_at": 1792434624517
+    },
+    {
+      "source_id": 4080,
+      "mode": "apply",
+      "product_id": 1805,
+      "status": "synced",
+      "detail": "{\"item_number\": 2805, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1805\", \"source_url\": \"https://jabaristore.com/?app=product.show.4080\"}",
+      "updated_at": 1792434634682
+    },
+    {
+      "source_id": 4079,
+      "mode": "apply",
+      "product_id": 1806,
+      "status": "synced",
+      "detail": "{\"item_number\": 2806, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1806\", \"source_url\": \"https://jabaristore.com/?app=product.show.4079\"}",
+      "updated_at": 1792434644651
+    },
+    {
+      "source_id": 4078,
+      "mode": "apply",
+      "product_id": 1807,
+      "status": "synced",
+      "detail": "{\"item_number\": 2807, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1807\", \"source_url\": \"https://jabaristore.com/?app=product.show.4078\"}",
+      "updated_at": 1792434655001
+    },
+    {
+      "source_id": 4077,
+      "mode": "apply",
+      "product_id": 1808,
+      "status": "synced",
+      "detail": "{\"item_number\": 2808, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1808\", \"source_url\": \"https://jabaristore.com/?app=product.show.4077\"}",
+      "updated_at": 1792434664993
+    },
+    {
+      "source_id": 4076,
+      "mode": "apply",
+      "product_id": 1809,
+      "status": "synced",
+      "detail": "{\"item_number\": 2809, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1809\", \"source_url\": \"https://jabaristore.com/?app=product.show.4076\"}",
+      "updated_at": 1792434674974
+    },
+    {
+      "source_id": 4075,
+      "mode": "apply",
+      "product_id": 1810,
+      "status": "synced",
+      "detail": "{\"item_number\": 2810, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1810\", \"source_url\": \"https://jabaristore.com/?app=product.show.4075\"}",
+      "updated_at": 1792434684893
+    },
+    {
+      "source_id": 4074,
+      "mode": "apply",
+      "product_id": 1811,
+      "status": "synced",
+      "detail": "{\"item_number\": 2811, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1811\", \"source_url\": \"https://jabaristore.com/?app=product.show.4074\"}",
+      "updated_at": 1792434694894
+    },
+    {
+      "source_id": 4073,
+      "mode": "apply",
+      "product_id": 1812,
+      "status": "synced",
+      "detail": "{\"item_number\": 2812, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1812\", \"source_url\": \"https://jabaristore.com/?app=product.show.4073\"}",
+      "updated_at": 1792434704890
+    },
+    {
+      "source_id": 4072,
+      "mode": "apply",
+      "product_id": 1813,
+      "status": "synced",
+      "detail": "{\"item_number\": 2813, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1813\", \"source_url\": \"https://jabaristore.com/?app=product.show.4072\"}",
+      "updated_at": 1792434714659
+    },
+    {
+      "source_id": 4071,
+      "mode": "apply",
+      "product_id": 1814,
+      "status": "synced",
+      "detail": "{\"item_number\": 2814, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1814\", \"source_url\": \"https://jabaristore.com/?app=product.show.4071\"}",
+      "updated_at": 1792434724985
+    },
+    {
+      "source_id": 4070,
+      "mode": "apply",
+      "product_id": 1815,
+      "status": "synced",
+      "detail": "{\"item_number\": 2815, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1815\", \"source_url\": \"https://jabaristore.com/?app=product.show.4070\"}",
+      "updated_at": 1792434734929
+    },
+    {
+      "source_id": 4069,
+      "mode": "apply",
+      "product_id": 1816,
+      "status": "synced",
+      "detail": "{\"item_number\": 2816, \"name\": \"شبر ستان 4 سم ( 25 يرد )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 4 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 600, \"active\": true}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ربطة - 5 لفات\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1816\", \"source_url\": \"https://jabaristore.com/?app=product.show.4069\"}",
+      "updated_at": 1792434744852
     },
     {
       "source_id": 3780,
