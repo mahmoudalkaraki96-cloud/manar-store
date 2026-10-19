@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T14:26:39.843104+03:00",
+  "updated_at": "2026-10-19T14:36:13.606629+03:00",
   "run_mode": "apply",
-  "run_status": "paused_error",
-  "run_processed": 48,
+  "run_status": "completed_batch",
+  "run_processed": 50,
   "results": [
     {
       "source_id": 1298,
@@ -424,9 +424,401 @@
       "source_id": 1250,
       "mode": "apply",
       "product_id": 278,
-      "status": "error",
-      "detail": "{\"reason\": \"RuntimeError\"}",
-      "updated_at": 1792408932452
+      "status": "missing_source",
+      "detail": "{\"reason\": \"supplier_404\", \"item_number\": 1278}",
+      "updated_at": 1792409281019
+    },
+    {
+      "source_id": 1249,
+      "mode": "apply",
+      "product_id": 279,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1279, \"source\": {\"title\": \"شمتة اكريلك صافي مقاس 20*16*8\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409291717
+    },
+    {
+      "source_id": 1248,
+      "mode": "apply",
+      "product_id": 280,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1280, \"source\": {\"title\": \"مبخرة الكتروني ارتفاع 13 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792409301713
+    },
+    {
+      "source_id": 1247,
+      "mode": "apply",
+      "product_id": 281,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1281, \"source\": {\"title\": \"مبخرة مزخرفة وشح بني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}}",
+      "updated_at": 1792409311595
+    },
+    {
+      "source_id": 1246,
+      "mode": "apply",
+      "product_id": 282,
+      "status": "missing_source",
+      "detail": "{\"reason\": \"supplier_404\", \"item_number\": 1282}",
+      "updated_at": 1792409321010
+    },
+    {
+      "source_id": 1245,
+      "mode": "apply",
+      "product_id": 283,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1283, \"source\": {\"title\": \"ببيونة 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409331516
+    },
+    {
+      "source_id": 1244,
+      "mode": "apply",
+      "product_id": 284,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1284, \"source\": {\"title\": \"ببيونة 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409341492
+    },
+    {
+      "source_id": 1243,
+      "mode": "apply",
+      "product_id": 285,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1285, \"source\": {\"title\": \"ببيونة ستان 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409351732
+    },
+    {
+      "source_id": 1242,
+      "mode": "apply",
+      "product_id": 286,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1286, \"source\": {\"title\": \"ببيونة ستان 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409361378
+    },
+    {
+      "source_id": 1241,
+      "mode": "apply",
+      "product_id": 287,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1287, \"source\": {\"title\": \"ببيونة 1 سم لون ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409371711
+    },
+    {
+      "source_id": 1240,
+      "mode": "apply",
+      "product_id": 288,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1288, \"source\": {\"title\": \"ببيونة ستان 1 سم لون كحلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409381711
+    },
+    {
+      "source_id": 1239,
+      "mode": "apply",
+      "product_id": 289,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1289, \"source\": {\"title\": \"ببيونة ستان 1 سم لون نيلي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409391545
+    },
+    {
+      "source_id": 1238,
+      "mode": "apply",
+      "product_id": 290,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1290, \"source\": {\"title\": \"ببيونة ستان 1سم لون نود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409401729
+    },
+    {
+      "source_id": 1237,
+      "mode": "apply",
+      "product_id": 291,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1291, \"source\": {\"title\": \"ببيونة ستان 1سم اون خمري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409411378
+    },
+    {
+      "source_id": 1236,
+      "mode": "apply",
+      "product_id": 292,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1292, \"source\": {\"title\": \"ببيونة ستان 1 سم لون احمر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409421841
+    },
+    {
+      "source_id": 1235,
+      "mode": "apply",
+      "product_id": 144,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1144, \"source\": {\"title\": \"شرشوبة قماش مقاس 8 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792409431583
+    },
+    {
+      "source_id": 1234,
+      "mode": "apply",
+      "product_id": 293,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1293, \"source\": {\"title\": \"سبحة لولو 99حبة (اسود)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792409441497
+    },
+    {
+      "source_id": 1233,
+      "mode": "apply",
+      "product_id": 294,
+      "status": "synced",
+      "detail": "{\"item_number\": 1294, \"name\": \"كيس شفاف pvc مقاس (21*18*9)\", \"before_price\": 3000, \"before_variants\": [], \"source\": {\"title\": \"كيس شفاف pvc مقاس (21*18*9)\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/294\", \"source_url\": \"https://dofesh.ps/?app=product.show.1233\"}",
+      "updated_at": 1792409451629
+    },
+    {
+      "source_id": 1232,
+      "mode": "apply",
+      "product_id": 295,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1295, \"source\": {\"title\": \"فراش كرتون لتزين العطور\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409461591
+    },
+    {
+      "source_id": 1231,
+      "mode": "apply",
+      "product_id": 296,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1296, \"source\": {\"title\": \"فراش كرتون لتوزيعات العطور التست\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792409471545
+    },
+    {
+      "source_id": 1230,
+      "mode": "apply",
+      "product_id": 297,
+      "status": "synced",
+      "detail": "{\"item_number\": 1297, \"name\": \"كيس ديور حجم صغير\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"كيس ديور حجم صغير\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/297\", \"source_url\": \"https://dofesh.ps/?app=product.show.1230\"}",
+      "updated_at": 1792409481654
+    },
+    {
+      "source_id": 1229,
+      "mode": "apply",
+      "product_id": 298,
+      "status": "synced",
+      "detail": "{\"item_number\": 1298, \"name\": \"شبر ستان ٢.٥سم اون بني محروق\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم اون بني محروق\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/298\", \"source_url\": \"https://dofesh.ps/?app=product.show.1229\"}",
+      "updated_at": 1792409491983
+    },
+    {
+      "source_id": 1228,
+      "mode": "apply",
+      "product_id": 299,
+      "status": "synced",
+      "detail": "{\"item_number\": 1299, \"name\": \"شبر ستان٢.٥سم ذهبي\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان2.5سم ذهبي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 400, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/299\", \"source_url\": \"https://dofesh.ps/?app=product.show.1228\"}",
+      "updated_at": 1792409501725
+    },
+    {
+      "source_id": 1227,
+      "mode": "apply",
+      "product_id": 300,
+      "status": "synced",
+      "detail": "{\"item_number\": 1300, \"name\": \"شبر ستان ٢.٥سم زيتي\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم زيتي\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/300\", \"source_url\": \"https://dofesh.ps/?app=product.show.1227\"}",
+      "updated_at": 1792409511847
+    },
+    {
+      "source_id": 1226,
+      "mode": "apply",
+      "product_id": 301,
+      "status": "synced",
+      "detail": "{\"item_number\": 1301, \"name\": \"شبر ستان ٢.٥سم لون بني غامق\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم لون بني غامق\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/301\", \"source_url\": \"https://dofesh.ps/?app=product.show.1226\"}",
+      "updated_at": 1792409522008
+    },
+    {
+      "source_id": 1225,
+      "mode": "apply",
+      "product_id": 302,
+      "status": "synced",
+      "detail": "{\"item_number\": 1302, \"name\": \"شبر ستان ٢.٥سم\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم\", \"variants\": [{\"name\": \"باللفة\", \"price\": 400, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/302\", \"source_url\": \"https://dofesh.ps/?app=product.show.1225\"}",
+      "updated_at": 1792409531895
+    },
+    {
+      "source_id": 1224,
+      "mode": "apply",
+      "product_id": 303,
+      "status": "synced",
+      "detail": "{\"item_number\": 1303, \"name\": \"شبر ستان ٢.٥سم لون اسود\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم لون اسود\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": true}, {\"name\": \"5لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/303\", \"source_url\": \"https://dofesh.ps/?app=product.show.1224\"}",
+      "updated_at": 1792409542006
+    },
+    {
+      "source_id": 1223,
+      "mode": "apply",
+      "product_id": 304,
+      "status": "synced",
+      "detail": "{\"item_number\": 1304, \"name\": \"شبر ستان ٢.٥سم لون جيشي\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم لون جيشي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": true}, {\"name\": \"5لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/304\", \"source_url\": \"https://dofesh.ps/?app=product.show.1223\"}",
+      "updated_at": 1792409552064
+    },
+    {
+      "source_id": 1222,
+      "mode": "apply",
+      "product_id": 305,
+      "status": "synced",
+      "detail": "{\"item_number\": 1305, \"name\": \"شبر ستان ٢.٥سم لون بيج\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم لون بيج\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": false}, {\"name\": \"5 لفات\", \"price\": 2000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/305\", \"source_url\": \"https://dofesh.ps/?app=product.show.1222\"}",
+      "updated_at": 1792409561619
+    },
+    {
+      "source_id": 1221,
+      "mode": "apply",
+      "product_id": 306,
+      "status": "synced",
+      "detail": "{\"item_number\": 1306, \"name\": \"شبر ستان ٢.٥سم لون خمري\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2.5سم لون خمري\", \"variants\": [{\"name\": \"باللفة\", \"price\": 500, \"active\": true}, {\"name\": \"5 لفات\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/306\", \"source_url\": \"https://dofesh.ps/?app=product.show.1221\"}",
+      "updated_at": 1792409571658
+    },
+    {
+      "source_id": 1220,
+      "mode": "apply",
+      "product_id": 307,
+      "status": "synced",
+      "detail": "{\"item_number\": 1307, \"name\": \"شبر ستان ١سم لون بيج محزز ذهبي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون بيج محزز ذهبي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/307\", \"source_url\": \"https://dofesh.ps/?app=product.show.1220\"}",
+      "updated_at": 1792409581692
+    },
+    {
+      "source_id": 1219,
+      "mode": "apply",
+      "product_id": 308,
+      "status": "synced",
+      "detail": "{\"item_number\": 1308, \"name\": \"شبر ستان ١سم لون ابيض\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون ابيض\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/308\", \"source_url\": \"https://dofesh.ps/?app=product.show.1219\"}",
+      "updated_at": 1792409591626
+    },
+    {
+      "source_id": 1218,
+      "mode": "apply",
+      "product_id": 309,
+      "status": "synced",
+      "detail": "{\"item_number\": 1309, \"name\": \"شبر ستان ١سم لون سكني\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون سكني\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/309\", \"source_url\": \"https://dofesh.ps/?app=product.show.1218\"}",
+      "updated_at": 1792409601833
+    },
+    {
+      "source_id": 1217,
+      "mode": "apply",
+      "product_id": 310,
+      "status": "synced",
+      "detail": "{\"item_number\": 1310, \"name\": \"شبر ستان ١سم لون احمر\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون احمر\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/310\", \"source_url\": \"https://dofesh.ps/?app=product.show.1217\"}",
+      "updated_at": 1792409611700
+    },
+    {
+      "source_id": 1216,
+      "mode": "apply",
+      "product_id": 311,
+      "status": "synced",
+      "detail": "{\"item_number\": 1311, \"name\": \"شبر ستان ١سم لون ازرق غامق\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون ازرق غامق\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/311\", \"source_url\": \"https://dofesh.ps/?app=product.show.1216\"}",
+      "updated_at": 1792409622017
+    },
+    {
+      "source_id": 1215,
+      "mode": "apply",
+      "product_id": 312,
+      "status": "synced",
+      "detail": "{\"item_number\": 1312, \"name\": \"شبر ستان١سم لون ازرق سماوي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان1سم لون ازرق سماوي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/312\", \"source_url\": \"https://dofesh.ps/?app=product.show.1215\"}",
+      "updated_at": 1792409631818
+    },
+    {
+      "source_id": 1214,
+      "mode": "apply",
+      "product_id": 313,
+      "status": "synced",
+      "detail": "{\"item_number\": 1313, \"name\": \"شبر ستان ١سم لون نهدي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون نهدي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/313\", \"source_url\": \"https://dofesh.ps/?app=product.show.1214\"}",
+      "updated_at": 1792409641955
+    },
+    {
+      "source_id": 1213,
+      "mode": "apply",
+      "product_id": 314,
+      "status": "synced",
+      "detail": "{\"item_number\": 1314, \"name\": \"شبر ستان ١سم لون بيج محزز ذهبي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون بيج محزز ذهبي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/314\", \"source_url\": \"https://dofesh.ps/?app=product.show.1213\"}",
+      "updated_at": 1792409652047
+    },
+    {
+      "source_id": 1212,
+      "mode": "apply",
+      "product_id": 315,
+      "status": "synced",
+      "detail": "{\"item_number\": 1315, \"name\": \"شبر ستان ١سم لون ابيض محزز ذهبي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون ابيض محزز ذهبي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/315\", \"source_url\": \"https://dofesh.ps/?app=product.show.1212\"}",
+      "updated_at": 1792409661854
+    },
+    {
+      "source_id": 1211,
+      "mode": "apply",
+      "product_id": 316,
+      "status": "synced",
+      "detail": "{\"item_number\": 1316, \"name\": \"شبر ستان ١سم لون اخضر فستقي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون اخضر فستقي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/316\", \"source_url\": \"https://dofesh.ps/?app=product.show.1211\"}",
+      "updated_at": 1792409671830
+    },
+    {
+      "source_id": 1210,
+      "mode": "apply",
+      "product_id": 317,
+      "status": "synced",
+      "detail": "{\"item_number\": 1317, \"name\": \"شبر ستان ١سم لون نود\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون نود\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/317\", \"source_url\": \"https://dofesh.ps/?app=product.show.1210\"}",
+      "updated_at": 1792409681834
+    },
+    {
+      "source_id": 1209,
+      "mode": "apply",
+      "product_id": 318,
+      "status": "synced",
+      "detail": "{\"item_number\": 1318, \"name\": \"شبر ستان ١سم لون زهر\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون زهر\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/318\", \"source_url\": \"https://dofesh.ps/?app=product.show.1209\"}",
+      "updated_at": 1792409691863
+    },
+    {
+      "source_id": 1208,
+      "mode": "apply",
+      "product_id": 319,
+      "status": "synced",
+      "detail": "{\"item_number\": 1319, \"name\": \"شبر ستان١سم لون اخضر\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان1سم لون اخضر\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/319\", \"source_url\": \"https://dofesh.ps/?app=product.show.1208\"}",
+      "updated_at": 1792409701827
+    },
+    {
+      "source_id": 1207,
+      "mode": "apply",
+      "product_id": 320,
+      "status": "synced",
+      "detail": "{\"item_number\": 1320, \"name\": \"شبر ستان ١سم لون اخضر زيتي فاتح\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون اخضر زيتي فاتح\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/320\", \"source_url\": \"https://dofesh.ps/?app=product.show.1207\"}",
+      "updated_at": 1792409711922
+    },
+    {
+      "source_id": 1206,
+      "mode": "apply",
+      "product_id": 321,
+      "status": "synced",
+      "detail": "{\"item_number\": 1321, \"name\": \"شبر ستان ١سم لون اخضر زيتي\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون اخضر زيتي\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/321\", \"source_url\": \"https://dofesh.ps/?app=product.show.1206\"}",
+      "updated_at": 1792409721820
+    },
+    {
+      "source_id": 1205,
+      "mode": "apply",
+      "product_id": 322,
+      "status": "synced",
+      "detail": "{\"item_number\": 1322, \"name\": \"شبر ستان ١سم لون بيج\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون بيج\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/322\", \"source_url\": \"https://dofesh.ps/?app=product.show.1205\"}",
+      "updated_at": 1792409731903
+    },
+    {
+      "source_id": 1204,
+      "mode": "apply",
+      "product_id": 323,
+      "status": "synced",
+      "detail": "{\"item_number\": 1323, \"name\": \"شبر ستان ١سم لون برغموني\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 1سم لون برغموني\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/323\", \"source_url\": \"https://dofesh.ps/?app=product.show.1204\"}",
+      "updated_at": 1792409741885
+    },
+    {
+      "source_id": 1203,
+      "mode": "apply",
+      "product_id": 324,
+      "status": "synced",
+      "detail": "{\"item_number\": 1324, \"name\": \"علبة كرتون للتوزيعات مقاس (٧*٧*١٥)\", \"before_price\": 2000, \"before_variants\": [], \"source\": {\"title\": \"علبة كرتون للتوزيعات مقاس (7*7*15)\", \"variants\": [{\"name\": \"10 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/324\", \"source_url\": \"https://dofesh.ps/?app=product.show.1203\"}",
+      "updated_at": 1792409751629
+    },
+    {
+      "source_id": 1202,
+      "mode": "apply",
+      "product_id": 325,
+      "status": "synced",
+      "detail": "{\"item_number\": 1325, \"name\": \"كرتونة لتغليف الشوكولاتة مقاس (6.5*6*1.5)\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"كرتونة لتغليف الشوكولاتة مقاس (6.5*6*1.5)\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/325\", \"source_url\": \"https://dofesh.ps/?app=product.show.1202\"}",
+      "updated_at": 1792409762406
+    },
+    {
+      "source_id": 1201,
+      "mode": "apply",
+      "product_id": 145,
+      "status": "synced",
+      "detail": "{\"item_number\": 1145, \"name\": \"طاقية تخرج للراس\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"طاقية تخرج للراس\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 1500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/145\", \"source_url\": \"https://dofesh.ps/?app=product.show.1201\"}",
+      "updated_at": 1792409771782
     }
   ]
 }

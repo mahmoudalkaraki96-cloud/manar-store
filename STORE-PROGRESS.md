@@ -878,3 +878,64 @@
 - أضيف تمييزmissing_source لصفحات404مع حفظها دون تعديل واستكمال التالي. يبقى403/429والأخطاءالأخرىتوقفًا تلقائيًا. نجحت20اختبارًا تشملHTMLفعليًا، والذرية والتكرار وحمايةالصوروالنشر، والتقاريروسجلprogress.
 - اعتماد أسعارالموردالصريحة عندتطابقرقم المصدر بإذن المستخدم، مع الحفاظعلىصورالمنتجات والنشر ومخزونالمتغيراتالقائمة. تقريرchanged-products.htmlيعرضقبل/بعدبالشيكل؛CSVيحفظالبياناتالمفصلة. يشمل50صنفًا معدّلًا حتىهذهالنسخة (41يدويًا موثقًا و9بالسكربت).
 - Workflowيدوييدعم1–25دفعةمتتابعة، ويحفظprogressوالتقاريرعلىGitHubبعدكلدفعة. التالي استئنافapplyمن#1250ب50صنفًالكلدفعةوفاصل10ثوانٍ،حتىاكتمالالنطاقأوتوقفالمورد. لاجدولةدوريةأواستدعاءاتAI.
+
+
+### 2026-10-19T14:36:13.606629+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T14:36:13.606629+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 40, "no_options": 55, "missing_source": 2}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#1250 ↔ صنف#1278: missing_source؛ supplier_404. https://dofesh.ps/?app=product.show.1250
+- دوفش#1249 ↔ صنف#1279: no_options؛ شمتة اكريلك صافي مقاس 20*16*8. https://dofesh.ps/?app=product.show.1249
+- دوفش#1248 ↔ صنف#1280: no_options؛ مبخرة الكتروني ارتفاع 13 سم. https://dofesh.ps/?app=product.show.1248
+- دوفش#1247 ↔ صنف#1281: no_options؛ مبخرة مزخرفة وشح بني. https://dofesh.ps/?app=product.show.1247
+- دوفش#1246 ↔ صنف#1282: missing_source؛ supplier_404. https://dofesh.ps/?app=product.show.1246
+- دوفش#1245 ↔ صنف#1283: no_options؛ ببيونة 1 سم. https://dofesh.ps/?app=product.show.1245
+- دوفش#1244 ↔ صنف#1284: no_options؛ ببيونة 1 سم. https://dofesh.ps/?app=product.show.1244
+- دوفش#1243 ↔ صنف#1285: no_options؛ ببيونة ستان 1 سم. https://dofesh.ps/?app=product.show.1243
+- دوفش#1242 ↔ صنف#1286: no_options؛ ببيونة ستان 1 سم. https://dofesh.ps/?app=product.show.1242
+- دوفش#1241 ↔ صنف#1287: no_options؛ ببيونة 1 سم لون ابيض. https://dofesh.ps/?app=product.show.1241
+- دوفش#1240 ↔ صنف#1288: no_options؛ ببيونة ستان 1 سم لون كحلي. https://dofesh.ps/?app=product.show.1240
+- دوفش#1239 ↔ صنف#1289: no_options؛ ببيونة ستان 1 سم لون نيلي. https://dofesh.ps/?app=product.show.1239
+- دوفش#1238 ↔ صنف#1290: no_options؛ ببيونة ستان 1سم لون نود. https://dofesh.ps/?app=product.show.1238
+- دوفش#1237 ↔ صنف#1291: no_options؛ ببيونة ستان 1سم اون خمري. https://dofesh.ps/?app=product.show.1237
+- دوفش#1236 ↔ صنف#1292: no_options؛ ببيونة ستان 1 سم لون احمر. https://dofesh.ps/?app=product.show.1236
+- دوفش#1235 ↔ صنف#1144: no_options؛ شرشوبة قماش مقاس 8 سم. https://dofesh.ps/?app=product.show.1235
+- دوفش#1234 ↔ صنف#1293: no_options؛ سبحة لولو 99حبة (اسود). https://dofesh.ps/?app=product.show.1234
+- دوفش#1233 ↔ صنف#1294: synced؛ بالدزينة=30₪. https://dofesh.ps/?app=product.show.1233
+- دوفش#1232 ↔ صنف#1295: no_options؛ فراش كرتون لتزين العطور. https://dofesh.ps/?app=product.show.1232
+- دوفش#1231 ↔ صنف#1296: no_options؛ فراش كرتون لتوزيعات العطور التست. https://dofesh.ps/?app=product.show.1231
+- دوفش#1230 ↔ صنف#1297: synced؛ بالحبة=1₪؛ 50 حبة=40₪. https://dofesh.ps/?app=product.show.1230
+- دوفش#1229 ↔ صنف#1298: synced؛ باللفة=5₪؛ 5 لفات=20₪. https://dofesh.ps/?app=product.show.1229
+- دوفش#1228 ↔ صنف#1299: synced؛ باللفة=4₪؛ 5 لفات=15₪. https://dofesh.ps/?app=product.show.1228
+- دوفش#1227 ↔ صنف#1300: synced؛ بالحبة=5₪؛ 5 لفات=20₪. https://dofesh.ps/?app=product.show.1227
+- دوفش#1226 ↔ صنف#1301: synced؛ باللفة=5₪؛ 5 لفات=20₪. https://dofesh.ps/?app=product.show.1226
+- دوفش#1225 ↔ صنف#1302: synced؛ باللفة=4₪؛ 5 لفات=15₪. https://dofesh.ps/?app=product.show.1225
+- دوفش#1224 ↔ صنف#1303: synced؛ باللفة=5₪؛ 5لفات=20₪. https://dofesh.ps/?app=product.show.1224
+- دوفش#1223 ↔ صنف#1304: synced؛ باللفة=5₪؛ 5لفات=20₪. https://dofesh.ps/?app=product.show.1223
+- دوفش#1222 ↔ صنف#1305: synced؛ باللفة=5₪؛ 5 لفات=20₪. https://dofesh.ps/?app=product.show.1222
+- دوفش#1221 ↔ صنف#1306: synced؛ باللفة=5₪؛ 5 لفات=20₪. https://dofesh.ps/?app=product.show.1221
+- دوفش#1220 ↔ صنف#1307: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1220
+- دوفش#1219 ↔ صنف#1308: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1219
+- دوفش#1218 ↔ صنف#1309: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1218
+- دوفش#1217 ↔ صنف#1310: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1217
+- دوفش#1216 ↔ صنف#1311: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1216
+- دوفش#1215 ↔ صنف#1312: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1215
+- دوفش#1214 ↔ صنف#1313: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1214
+- دوفش#1213 ↔ صنف#1314: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1213
+- دوفش#1212 ↔ صنف#1315: synced؛ باللفة=3₪؛ 10لفات=25₪. https://dofesh.ps/?app=product.show.1212
+- دوفش#1211 ↔ صنف#1316: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1211
+- دوفش#1210 ↔ صنف#1317: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1210
+- دوفش#1209 ↔ صنف#1318: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1209
+- دوفش#1208 ↔ صنف#1319: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1208
+- دوفش#1207 ↔ صنف#1320: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1207
+- دوفش#1206 ↔ صنف#1321: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1206
+- دوفش#1205 ↔ صنف#1322: synced؛ باللفة=3₪؛ 10لفات=25₪. https://dofesh.ps/?app=product.show.1205
+- دوفش#1204 ↔ صنف#1323: synced؛ باللفة=3₪؛ 10 لفات=25₪. https://dofesh.ps/?app=product.show.1204
+- دوفش#1203 ↔ صنف#1324: synced؛ 10 حبة=20₪. https://dofesh.ps/?app=product.show.1203
+- دوفش#1202 ↔ صنف#1325: synced؛ بالدزينة=6₪. https://dofesh.ps/?app=product.show.1202
+- دوفش#1201 ↔ صنف#1145: synced؛ بالحبة=15₪؛ 10 حبة=100₪. https://dofesh.ps/?app=product.show.1201
