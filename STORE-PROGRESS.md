@@ -3340,3 +3340,64 @@
 - الجعبري#3169 ↔ صنف#3384: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3169
 - الجعبري#3168 ↔ صنف#3385: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3168
 - الجعبري#3167 ↔ صنف#3386: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3167
+
+
+### 2026-10-19T23:20:29.467965+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-19T23:20:29.467965+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 597, "synced": 307, "unsupported_source_price": 102}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#3165 ↔ صنف#3387: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3165
+- الجعبري#3164 ↔ صنف#3388: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3164
+- الجعبري#3163 ↔ صنف#3389: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3163
+- الجعبري#3161 ↔ صنف#3390: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3161
+- الجعبري#3160 ↔ صنف#3391: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3160
+- الجعبري#3159 ↔ صنف#3392: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3159
+- الجعبري#3158 ↔ صنف#3393: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3158
+- الجعبري#3157 ↔ صنف#3394: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3157
+- الجعبري#3156 ↔ صنف#3395: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3156
+- الجعبري#3155 ↔ صنف#3396: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3155
+- الجعبري#3154 ↔ صنف#3397: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3154
+- الجعبري#3152 ↔ صنف#3398: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3152
+- الجعبري#3150 ↔ صنف#3399: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3150
+- الجعبري#3149 ↔ صنف#3400: no_options؛ ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~. https://jabaristore.com/?app=product.show.3149
+- الجعبري#3143 ↔ صنف#3401: synced؛ ابيض=37₪؛ بني=37₪. https://jabaristore.com/?app=product.show.3143
+- الجعبري#3142 ↔ صنف#3402: no_options؛ علب كرتون نافذة شفاف سحاب (8 قسم) 5*13*21 سم / 10 قطعة code 118. https://jabaristore.com/?app=product.show.3142
+- الجعبري#3139 ↔ صنف#3403: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3139
+- الجعبري#3137 ↔ صنف#3404: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3137
+- الجعبري#3132 ↔ صنف#3405: synced؛ ابيض=21.5₪؛ بني=21.5₪. https://jabaristore.com/?app=product.show.3132
+- الجعبري#3131 ↔ صنف#3406: synced؛ ابيض=28.5₪؛ بني=28.5₪. https://jabaristore.com/?app=product.show.3131
+- الجعبري#3130 ↔ صنف#3407: synced؛ ابيض=14.5₪؛ بني=14.5₪. https://jabaristore.com/?app=product.show.3130
+- الجعبري#3129 ↔ صنف#3408: synced؛ ابيض=16.5₪؛ بني=16.5₪. https://jabaristore.com/?app=product.show.3129
+- الجعبري#3128 ↔ صنف#3409: no_options؛ علب كرتون غطاء بلور7*20*20 (10 قطعة) code 114. https://jabaristore.com/?app=product.show.3128
+- الجعبري#3126 ↔ صنف#3410: no_options؛ علب كرتون غطاء بلور7*25*25 (10 قطعة) code 115. https://jabaristore.com/?app=product.show.3126
+- الجعبري#3124 ↔ صنف#3411: no_options؛ علب كرتون غطاء بلور6.5*25*14 (10 قطعة) code 111. https://jabaristore.com/?app=product.show.3124
+- الجعبري#3122 ↔ صنف#3412: no_options؛ علب كرتون غطاء بلور7.5*30*30 (10 قطعة) code 116. https://jabaristore.com/?app=product.show.3122
+- الجعبري#3121 ↔ صنف#3413: no_options؛ علب كرتون غطاء بلور7.5*30*30 (10 قطعة) code 116. https://jabaristore.com/?app=product.show.3121
+- الجعبري#3118 ↔ صنف#3414: no_options؛ علب كرتون غطاء بلور 7.5*36*22 (10 قطعة) code 113. https://jabaristore.com/?app=product.show.3118
+- الجعبري#3117 ↔ صنف#3415: no_options؛ علب كرتون غطاء بلور6.9*30*17 (10 قطعة) code 112. https://jabaristore.com/?app=product.show.3117
+- الجعبري#3116 ↔ صنف#3416: no_options؛ علب كرتون غطاء بلور 7.5*36*22 (10 قطعة) code 113. https://jabaristore.com/?app=product.show.3116
+- الجعبري#3115 ↔ صنف#3417: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3115
+- الجعبري#3114 ↔ صنف#3418: no_options؛ تاج كرستال 13*9 cm. https://jabaristore.com/?app=product.show.3114
+- الجعبري#3113 ↔ صنف#3419: no_options؛ تاج كرستال 14*10 cm. https://jabaristore.com/?app=product.show.3113
+- الجعبري#3112 ↔ صنف#3420: no_options؛ تاج كرستال 14*10 cm. https://jabaristore.com/?app=product.show.3112
+- الجعبري#3111 ↔ صنف#3421: no_options؛ تاج كرستال 14*10 cm. https://jabaristore.com/?app=product.show.3111
+- الجعبري#3110 ↔ صنف#3422: no_options؛ تاج كرستال 14*10 cm. https://jabaristore.com/?app=product.show.3110
+- الجعبري#3109 ↔ صنف#3423: no_options؛ قطع لولو كرة مع علاقة كرستال ذهبي ( 50 قطعة ). https://jabaristore.com/?app=product.show.3109
+- الجعبري#3108 ↔ صنف#3424: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3108
+- الجعبري#3107 ↔ صنف#3425: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3107
+- الجعبري#3106 ↔ صنف#3426: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3106
+- الجعبري#3105 ↔ صنف#3427: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.3105
+- الجعبري#3101 ↔ صنف#3428: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3101
+- الجعبري#3099 ↔ صنف#3429: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3099
+- الجعبري#3097 ↔ صنف#3430: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3097
+- الجعبري#3095 ↔ صنف#3431: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3095
+- الجعبري#3093 ↔ صنف#3432: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3093
+- الجعبري#3090 ↔ صنف#3433: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3090
+- الجعبري#3086 ↔ صنف#3434: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3086
+- الجعبري#3083 ↔ صنف#3435: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3083
+- الجعبري#3082 ↔ صنف#3436: synced؛ لفة=4.5₪؛ ربطة - 10 لفات=26.5₪. https://jabaristore.com/?app=product.show.3082

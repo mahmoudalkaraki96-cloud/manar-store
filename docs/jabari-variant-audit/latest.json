@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T23:12:09.588921+03:00",
+  "updated_at": "2026-10-19T23:20:29.467965+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -7651,6 +7651,406 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3386, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792440728430
+    },
+    {
+      "source_id": 3165,
+      "mode": "apply",
+      "product_id": 2387,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3387, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440736147
+    },
+    {
+      "source_id": 3164,
+      "mode": "apply",
+      "product_id": 2388,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3388, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440746145
+    },
+    {
+      "source_id": 3163,
+      "mode": "apply",
+      "product_id": 2389,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3389, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440756137
+    },
+    {
+      "source_id": 3161,
+      "mode": "apply",
+      "product_id": 2390,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3390, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440766128
+    },
+    {
+      "source_id": 3160,
+      "mode": "apply",
+      "product_id": 2391,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3391, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440776395
+    },
+    {
+      "source_id": 3159,
+      "mode": "apply",
+      "product_id": 2392,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3392, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440786131
+    },
+    {
+      "source_id": 3158,
+      "mode": "apply",
+      "product_id": 2393,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3393, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440796375
+    },
+    {
+      "source_id": 3157,
+      "mode": "apply",
+      "product_id": 2394,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3394, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440806118
+    },
+    {
+      "source_id": 3156,
+      "mode": "apply",
+      "product_id": 2395,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3395, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440816117
+    },
+    {
+      "source_id": 3155,
+      "mode": "apply",
+      "product_id": 2396,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3396, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440826127
+    },
+    {
+      "source_id": 3154,
+      "mode": "apply",
+      "product_id": 2397,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3397, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440836350
+    },
+    {
+      "source_id": 3152,
+      "mode": "apply",
+      "product_id": 2398,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3398, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440846139
+    },
+    {
+      "source_id": 3150,
+      "mode": "apply",
+      "product_id": 2399,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3399, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440856393
+    },
+    {
+      "source_id": 3149,
+      "mode": "apply",
+      "product_id": 2400,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3400, \"source\": {\"title\": \"ثيمات خشبية طباعة ( 3.5 سم ) ~ 10 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440866463
+    },
+    {
+      "source_id": 3143,
+      "mode": "apply",
+      "product_id": 2401,
+      "status": "synced",
+      "detail": "{\"item_number\": 3401, \"name\": \"علب كرتون نافذة شفاف سحاب (12 قسم) 5*19.5*28 سم / 10 قطعة code 119\", \"before_price\": 3700, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون نافذة شفاف سحاب (12 قسم) 5*19.5*28 سم / 10 قطعة code 119\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون نافذة شفاف سحاب (12 قسم) 5*19.5*28 سم / 10 قطعة code 119\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": true}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2401\", \"source_url\": \"https://jabaristore.com/?app=product.show.3143\"}",
+      "updated_at": 1792440876637
+    },
+    {
+      "source_id": 3142,
+      "mode": "apply",
+      "product_id": 2402,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3402, \"source\": {\"title\": \"علب كرتون نافذة شفاف سحاب (8 قسم) 5*13*21 سم / 10 قطعة code 118\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440886346
+    },
+    {
+      "source_id": 3139,
+      "mode": "apply",
+      "product_id": 2403,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3403}",
+      "updated_at": 1792440896132
+    },
+    {
+      "source_id": 3137,
+      "mode": "apply",
+      "product_id": 2404,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3404}",
+      "updated_at": 1792440906314
+    },
+    {
+      "source_id": 3132,
+      "mode": "apply",
+      "product_id": 2405,
+      "status": "synced",
+      "detail": "{\"item_number\": 3405, \"name\": \"علب كرتون كامل 5*14.6*18(10 قطع) code 104\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 5*14.6*18(10 قطعة) code 104\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"بني\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 5*14.6*18(10 قطعة) code 104\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2000, \"active\": false}, {\"name\": \"بني\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"بني\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2405\", \"source_url\": \"https://jabaristore.com/?app=product.show.3132\"}",
+      "updated_at": 1792440916687
+    },
+    {
+      "source_id": 3131,
+      "mode": "apply",
+      "product_id": 2406,
+      "status": "synced",
+      "detail": "{\"item_number\": 3406, \"name\": \"علب كرتون كامل 7*11*32(10 قطع) code 110\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 7*11*32(10 قطعة) code 110\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2850, \"active\": false, \"supplier_price\": 2700}, {\"name\": \"بني\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 7*11*32(10 قطعة) code 110\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2700, \"active\": false}, {\"name\": \"بني\", \"price\": 2700, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2850, \"active\": false, \"supplier_price\": 2700}, {\"name\": \"بني\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2406\", \"source_url\": \"https://jabaristore.com/?app=product.show.3131\"}",
+      "updated_at": 1792440926685
+    },
+    {
+      "source_id": 3130,
+      "mode": "apply",
+      "product_id": 2407,
+      "status": "synced",
+      "detail": "{\"item_number\": 3407, \"name\": \"علب كرتون كامل 5*8.5*8.5(10 قطع) code 102\", \"before_price\": 1075, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 5*8.5*8.5(10 قطعة) code 102\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 5*8.5*8.5(10 قطعة) code 102\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1300, \"active\": false}, {\"name\": \"بني\", \"price\": 1300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2407\", \"source_url\": \"https://jabaristore.com/?app=product.show.3130\"}",
+      "updated_at": 1792440936441
+    },
+    {
+      "source_id": 3129,
+      "mode": "apply",
+      "product_id": 2408,
+      "status": "synced",
+      "detail": "{\"item_number\": 3408, \"name\": \"علب كرتون كامل 6*13*13(10 قطع)\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 6*13*13(10 قطعة)\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 6*13*13(10 قطعة)\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1500, \"active\": false}, {\"name\": \"بني\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2408\", \"source_url\": \"https://jabaristore.com/?app=product.show.3129\"}",
+      "updated_at": 1792440946624
+    },
+    {
+      "source_id": 3128,
+      "mode": "apply",
+      "product_id": 2409,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3409, \"source\": {\"title\": \"علب كرتون غطاء بلور7*20*20 (10 قطعة) code 114\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440956145
+    },
+    {
+      "source_id": 3126,
+      "mode": "apply",
+      "product_id": 2410,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3410, \"source\": {\"title\": \"علب كرتون غطاء بلور7*25*25 (10 قطعة) code 115\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440966153
+    },
+    {
+      "source_id": 3124,
+      "mode": "apply",
+      "product_id": 2411,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3411, \"source\": {\"title\": \"علب كرتون غطاء بلور6.5*25*14 (10 قطعة) code 111\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440976131
+    },
+    {
+      "source_id": 3122,
+      "mode": "apply",
+      "product_id": 2412,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3412, \"source\": {\"title\": \"علب كرتون غطاء بلور7.5*30*30 (10 قطعة) code 116\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440986399
+    },
+    {
+      "source_id": 3121,
+      "mode": "apply",
+      "product_id": 2413,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3413, \"source\": {\"title\": \"علب كرتون غطاء بلور7.5*30*30 (10 قطعة) code 116\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792440996133
+    },
+    {
+      "source_id": 3118,
+      "mode": "apply",
+      "product_id": 2414,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3414, \"source\": {\"title\": \"علب كرتون غطاء بلور 7.5*36*22 (10 قطعة) code 113\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441006116
+    },
+    {
+      "source_id": 3117,
+      "mode": "apply",
+      "product_id": 2415,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3415, \"source\": {\"title\": \"علب كرتون غطاء بلور6.9*30*17 (10 قطعة) code 112\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441016456
+    },
+    {
+      "source_id": 3116,
+      "mode": "apply",
+      "product_id": 2416,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3416, \"source\": {\"title\": \"علب كرتون غطاء بلور 7.5*36*22 (10 قطعة) code 113\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441026155
+    },
+    {
+      "source_id": 3115,
+      "mode": "apply",
+      "product_id": 2417,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3417}",
+      "updated_at": 1792441036152
+    },
+    {
+      "source_id": 3114,
+      "mode": "apply",
+      "product_id": 2418,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3418, \"source\": {\"title\": \"تاج كرستال 13*9 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441046116
+    },
+    {
+      "source_id": 3113,
+      "mode": "apply",
+      "product_id": 2419,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3419, \"source\": {\"title\": \"تاج كرستال 14*10 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441056143
+    },
+    {
+      "source_id": 3112,
+      "mode": "apply",
+      "product_id": 2420,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3420, \"source\": {\"title\": \"تاج كرستال 14*10 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441066374
+    },
+    {
+      "source_id": 3111,
+      "mode": "apply",
+      "product_id": 2421,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3421, \"source\": {\"title\": \"تاج كرستال 14*10 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441076342
+    },
+    {
+      "source_id": 3110,
+      "mode": "apply",
+      "product_id": 2422,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3422, \"source\": {\"title\": \"تاج كرستال 14*10 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441086145
+    },
+    {
+      "source_id": 3109,
+      "mode": "apply",
+      "product_id": 2423,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3423, \"source\": {\"title\": \"قطع لولو كرة مع علاقة كرستال ذهبي ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792441096347
+    },
+    {
+      "source_id": 3108,
+      "mode": "apply",
+      "product_id": 2424,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3424}",
+      "updated_at": 1792441106368
+    },
+    {
+      "source_id": 3107,
+      "mode": "apply",
+      "product_id": 2425,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3425}",
+      "updated_at": 1792441116120
+    },
+    {
+      "source_id": 3106,
+      "mode": "apply",
+      "product_id": 2426,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3426}",
+      "updated_at": 1792441126431
+    },
+    {
+      "source_id": 3105,
+      "mode": "apply",
+      "product_id": 2427,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3427}",
+      "updated_at": 1792441136315
+    },
+    {
+      "source_id": 3101,
+      "mode": "apply",
+      "product_id": 2428,
+      "status": "synced",
+      "detail": "{\"item_number\": 3428, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2428\", \"source_url\": \"https://jabaristore.com/?app=product.show.3101\"}",
+      "updated_at": 1792441146643
+    },
+    {
+      "source_id": 3099,
+      "mode": "apply",
+      "product_id": 2429,
+      "status": "synced",
+      "detail": "{\"item_number\": 3429, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2429\", \"source_url\": \"https://jabaristore.com/?app=product.show.3099\"}",
+      "updated_at": 1792441156629
+    },
+    {
+      "source_id": 3097,
+      "mode": "apply",
+      "product_id": 2430,
+      "status": "synced",
+      "detail": "{\"item_number\": 3430, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2430\", \"source_url\": \"https://jabaristore.com/?app=product.show.3097\"}",
+      "updated_at": 1792441166767
+    },
+    {
+      "source_id": 3095,
+      "mode": "apply",
+      "product_id": 2431,
+      "status": "synced",
+      "detail": "{\"item_number\": 3431, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2431\", \"source_url\": \"https://jabaristore.com/?app=product.show.3095\"}",
+      "updated_at": 1792441176619
+    },
+    {
+      "source_id": 3093,
+      "mode": "apply",
+      "product_id": 2432,
+      "status": "synced",
+      "detail": "{\"item_number\": 3432, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2432\", \"source_url\": \"https://jabaristore.com/?app=product.show.3093\"}",
+      "updated_at": 1792441186439
+    },
+    {
+      "source_id": 3090,
+      "mode": "apply",
+      "product_id": 2433,
+      "status": "synced",
+      "detail": "{\"item_number\": 3433, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2433\", \"source_url\": \"https://jabaristore.com/?app=product.show.3090\"}",
+      "updated_at": 1792441196697
+    },
+    {
+      "source_id": 3086,
+      "mode": "apply",
+      "product_id": 2434,
+      "status": "synced",
+      "detail": "{\"item_number\": 3434, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2434\", \"source_url\": \"https://jabaristore.com/?app=product.show.3086\"}",
+      "updated_at": 1792441206639
+    },
+    {
+      "source_id": 3083,
+      "mode": "apply",
+      "product_id": 2435,
+      "status": "synced",
+      "detail": "{\"item_number\": 3435, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2435\", \"source_url\": \"https://jabaristore.com/?app=product.show.3083\"}",
+      "updated_at": 1792441216404
+    },
+    {
+      "source_id": 3082,
+      "mode": "apply",
+      "product_id": 2436,
+      "status": "synced",
+      "detail": "{\"item_number\": 3436, \"name\": \"شبر ستان 2 سم ( 25 يرد )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر ستان 2 سم ( 25 يرد )\", \"variants\": [{\"name\": \"لفة\", \"price\": 400, \"active\": true}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"لفة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"ربطة - 10 لفات\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2436\", \"source_url\": \"https://jabaristore.com/?app=product.show.3082\"}",
+      "updated_at": 1792441226636
     }
   ]
 }
