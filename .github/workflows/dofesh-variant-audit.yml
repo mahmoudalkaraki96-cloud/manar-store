@@ -44,6 +44,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Preserve concurrent progress entries
+        shell: bash
+        run: |
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/dofesh-merge-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/dofesh-merge-attributes"
       - name: Test parser, atomic saves, idempotency and preservation
         run: python tools/test_dofesh_variant_audit.py
       - name: Audit and synchronize verified Dofesh products
@@ -63,8 +68,11 @@ jobs:
             git add docs/dofesh-variant-audit STORE-PROGRESS.md
             if ! git diff --cached --quiet; then
               git commit -m "docs: Dofesh batch $batch results [skip ci]"
-              git pull --rebase origin main
-              git push origin HEAD:main
+              for attempt in 1 2 3; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then break; fi
+                if [ "$attempt" = 3 ]; then exit 1; fi
+              done
             fi
             state=$(python -c 'import json; print(json.load(open("docs/dofesh-variant-audit/latest.json"))["run_status"])')
             processed=$(python -c 'import json; print(json.load(open("docs/dofesh-variant-audit/latest.json"))["run_processed"])')
@@ -79,5 +87,17 @@ jobs:
           git add docs/dofesh-variant-audit STORE-PROGRESS.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'docs: Dofesh variant audit results [skip ci]'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
+      - name: Preserve report snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dofesh-variant-results
+          path: |
+            docs/dofesh-variant-audit/
+            STORE-PROGRESS.md
+          retention-days: 30

@@ -358,7 +358,12 @@ def report(db, folder, mode, status, current_token=None, progress_file=Path('STO
     if progress.exists():
         with progress.open('a',encoding='utf-8') as f:
             f.write('\n\n### '+data['updated_at']+' — DOFESH-VARIANT-BATCH\n'+text+'- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.\n- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.\n')
-            for row in current_rows:
+            # Recover D1 operations whose previous report push failed.
+            progress_rows = [r for r in rows if r['mode'] == mode and (
+                r in current_rows or
+                f"- دوفش#{r['source_id']} ↔ صنف#{json.loads(r['detail']).get('item_number','?')}: {r['status']}؛" not in historical
+            )]
+            for row in progress_rows:
                 d=json.loads(row['detail']);source=d.get('source',{})
                 variants='؛ '.join(f"{v['name']}={v['price']/100:g}₪" for v in source.get('variants',[]))
                 f.write(f"- دوفش#{row['source_id']} ↔ صنف#{d.get('item_number','?')}: {row['status']}؛ {variants or source.get('title',d.get('reason',''))}. https://dofesh.ps/?app=product.show.{row['source_id']}\n")
