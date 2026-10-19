@@ -1807,3 +1807,62 @@
 - تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
 - تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
 - الجعبري#3780 ↔ صنف#2421: synced؛ 50 قطعة=16.5₪؛ 100 قطعة=26.5₪؛ 200 قطعة=47₪. https://jabaristore.com/?app=product.show.3780
+### 2026-10-19T20:37:18.173013+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-19T20:37:18.173013+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 291, "no_options": 475, "missing_source": 4, "unsupported_customization_or_minimum": 16, "matched": 9, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#506 ↔ صنف#1891: no_options؛ عطر شانيل 30مل. https://dofesh.ps/?app=product.show.506
+- دوفش#505 ↔ صنف#1892: no_options؛ عطر my way 30مل. https://dofesh.ps/?app=product.show.505
+- دوفش#504 ↔ صنف#1893: no_options؛ معطر جو اسطواني مع عودان. https://dofesh.ps/?app=product.show.504
+- دوفش#503 ↔ صنف#1894: no_options؛ معطر جو مربع مع عودان. https://dofesh.ps/?app=product.show.503
+- دوفش#502 ↔ صنف#1895: no_options؛ توزيعة اكريلك مع كيس مخمل ثقيل. https://dofesh.ps/?app=product.show.502
+- دوفش#501 ↔ صنف#1896: no_options؛ علبة كرتون بيبي. https://dofesh.ps/?app=product.show.501
+- دوفش#500 ↔ صنف#1897: no_options؛ علبة كرتون بيبي. https://dofesh.ps/?app=product.show.500
+- دوفش#499 ↔ صنف#1120: no_options؛ طبلة فخار. https://dofesh.ps/?app=product.show.499
+- دوفش#498 ↔ صنف#1183: synced؛ ذهبي=10₪؛ فضي=10₪؛ ازرق=10₪؛ زهري=10₪. https://dofesh.ps/?app=product.show.498
+- دوفش#497 ↔ صنف#1184: synced؛ كبير=3₪؛ صغير=2₪. https://dofesh.ps/?app=product.show.497
+- دوفش#495 ↔ صنف#1122: no_options؛ سلة فخار 12سم. https://dofesh.ps/?app=product.show.495
+- دوفش#494 ↔ صنف#1121: synced؛ 8سم=1₪؛ 10 سم=1.2₪. https://dofesh.ps/?app=product.show.494
+- دوفش#492 ↔ صنف#1898: no_options؛ ورد تيوليب ابيض(نوعية مميزة). https://dofesh.ps/?app=product.show.492
+- دوفش#491 ↔ صنف#1899: no_options؛ لايكرا زهري (1.5*1متر). https://dofesh.ps/?app=product.show.491
+- دوفش#490 ↔ صنف#1900: no_options؛ لايكرا نهدي مقاس 1.5*1 متر. https://dofesh.ps/?app=product.show.490
+- دوفش#489 ↔ صنف#1901: no_options؛ لايكرا ازرق غامق مقاس(1.5*1متر). https://dofesh.ps/?app=product.show.489
+- دوفش#488 ↔ صنف#1902: no_options؛ لايكرا خمري مقاس (1.5*1متر). https://dofesh.ps/?app=product.show.488
+- دوفش#487 ↔ صنف#1903: no_options؛ لايكرا بيج مقاس (1*1.5متر). https://dofesh.ps/?app=product.show.487
+- دوفش#486 ↔ صنف#1904: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.486
+- دوفش#485 ↔ صنف#1905: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.485
+- دوفش#484 ↔ صنف#1906: synced؛ باللفة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.484
+- دوفش#483 ↔ صنف#1907: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.483
+- دوفش#482 ↔ صنف#1908: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.482
+- دوفش#481 ↔ صنف#1909: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.481
+- دوفش#480 ↔ صنف#1910: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.480
+- دوفش#479 ↔ صنف#1911: synced؛ بالحبة=5₪؛ 10 حبة=35₪. https://dofesh.ps/?app=product.show.479
+- دوفش#478 ↔ صنف#1912: synced؛ 1 حبة=5₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.478
+- دوفش#477 ↔ صنف#1913: no_options؛ مسك طهارة 3مل الاصلي ازرق. https://dofesh.ps/?app=product.show.477
+- دوفش#476 ↔ صنف#1185: no_options؛ مسك الطهارة الاصلي (6مل). https://dofesh.ps/?app=product.show.476
+- دوفش#475 ↔ صنف#1914: unsupported_source_price؛ invalid_price. https://dofesh.ps/?app=product.show.475
+- دوفش#474 ↔ صنف#1915: no_options؛ خاتم تسبيح مزين سترس (زهري). https://dofesh.ps/?app=product.show.474
+- دوفش#473 ↔ صنف#1916: no_options؛ خاتم تسبيح عداد مزين سترس(ازرق). https://dofesh.ps/?app=product.show.473
+- دوفش#471 ↔ صنف#1917: no_options؛ خاتم تسبيح الكتروني زهري. https://dofesh.ps/?app=product.show.471
+- دوفش#470 ↔ صنف#1918: no_options؛ خاتم تسبيح الكتروني ازرق. https://dofesh.ps/?app=product.show.470
+- دوفش#469 ↔ صنف#1919: no_options؛ خاتم تسبيح الكتروني ابيض. https://dofesh.ps/?app=product.show.469
+- دوفش#468 ↔ صنف#1920: no_options؛ قنينة ماء زمزم سادى. https://dofesh.ps/?app=product.show.468
+- دوفش#467 ↔ صنف#1921: synced؛ بالدزينة=15₪. https://dofesh.ps/?app=product.show.467
+- دوفش#466 ↔ صنف#1922: no_options؛ مكرمية جدلة بيج (15 سم). https://dofesh.ps/?app=product.show.466
+- دوفش#465 ↔ صنف#1923: no_options؛ منديل رقص (22سم). https://dofesh.ps/?app=product.show.465
+- دوفش#464 ↔ صنف#1924: no_options؛ منديل كرت رقص(22سم). https://dofesh.ps/?app=product.show.464
+- دوفش#463 ↔ صنف#1925: no_options؛ منديل كرت للرقص(22سم) احمر. https://dofesh.ps/?app=product.show.463
+- دوفش#462 ↔ صنف#1926: no_options؛ منديل رقص (22سم). https://dofesh.ps/?app=product.show.462
+- دوفش#458 ↔ صنف#1927: no_options؛ مبخرة ريزن. https://dofesh.ps/?app=product.show.458
+- دوفش#457 ↔ صنف#1928: no_options؛ مبخرة ريزن. https://dofesh.ps/?app=product.show.457
+- دوفش#454 ↔ صنف#1929: no_options؛ فراش اكسسوار. https://dofesh.ps/?app=product.show.454
+- دوفش#453 ↔ صنف#1930: no_options؛ فراش اكسسوار. https://dofesh.ps/?app=product.show.453
+- دوفش#452 ↔ صنف#1931: no_options؛ ورق شجر حديد. https://dofesh.ps/?app=product.show.452
+- دوفش#451 ↔ صنف#1932: no_options؛ ورق شجر حديد. https://dofesh.ps/?app=product.show.451
+- دوفش#450 ↔ صنف#1933: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.450
+- دوفش#449 ↔ صنف#1934: no_options؛ خرز محجر. https://dofesh.ps/?app=product.show.449
