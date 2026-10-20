@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-20T11:40:14.943637+03:00",
+  "time": "2026-10-20T12:20:26.085464+03:00",
   "batch_id": "batch_6ad72226c0508190be517a27cf30b0b4",
   "products": [
     {
@@ -8,7 +8,7 @@
       "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حصان بيبي ازرق",
       "active": 1,
       "price_agorot": 7500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3786,
@@ -16,7 +16,7 @@
       "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حورية البحر",
       "active": 1,
       "price_agorot": 7500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3787,
@@ -24,7 +24,7 @@
       "name": "ستاند اكرليك مزخرف اسماء العروسين للخطوبة",
       "active": 1,
       "price_agorot": 9000,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3788,
@@ -32,7 +32,7 @@
       "name": "صندوق زجاج مع اطار نحاس ذهبي",
       "active": 1,
       "price_agorot": 6000,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3790,
@@ -40,7 +40,7 @@
       "name": "شنتة شفاف bvc",
       "active": 1,
       "price_agorot": 2500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3791,
@@ -48,7 +48,7 @@
       "name": "قطع اكريلك لتزيين الشوكولاتة شكل طاقية",
       "active": 1,
       "price_agorot": 1000,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3792,
@@ -56,7 +56,7 @@
       "name": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي",
       "active": 1,
       "price_agorot": 1000,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3793,
@@ -64,7 +64,7 @@
       "name": "قطع اكريلك لتزيين الشوكولاتة",
       "active": 1,
       "price_agorot": 800,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3794,
@@ -72,7 +72,7 @@
       "name": "قطع اكريلك لتزيين الشوكولاتة شكل كعبة",
       "active": 1,
       "price_agorot": 1000,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3795,
@@ -80,7 +80,7 @@
       "name": "كيس شفاف bvc محزز ابيض مع خيط",
       "active": 1,
       "price_agorot": 2500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3796,
@@ -88,7 +88,7 @@
       "name": "علبة شفاف bvc طبقتين كرتون",
       "active": 1,
       "price_agorot": 3500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     },
     {
       "id": 3797,
@@ -96,8 +96,9 @@
       "name": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )",
       "active": 1,
       "price_agorot": 3500,
-      "stock_quantity": 0
+      "stock_quantity": 10000
     }
   ],
-  "prices_and_stock_preserved": true
+  "prices_preserved": true,
+  "stock_set_to": 10000
 }
