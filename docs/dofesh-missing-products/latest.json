@@ -26,13 +26,13 @@
   "next_page": null,
   "catalog_complete": true,
   "status": "partial",
-  "updated_at": "2026-10-20T08:50:40.963961+03:00",
+  "updated_at": "2026-10-20T08:51:31.665922+03:00",
   "counts": {
     "present": 1264,
     "missing": 14,
     "possible_name_match": 1
   },
-  "detail_pending": 12,
+  "detail_pending": 7,
   "results": [
     {
       "source_id": 1421,
@@ -79,10 +79,12 @@
       "price": "60 - 500 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1418",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "صندوق زجاج مع اطار نحاس ذهبي",
+      "verified_at": "2026-10-20T08:50:46.493109+03:00"
     },
     {
       "source_id": 1417,
@@ -90,10 +92,12 @@
       "price": "15 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1417",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "قماش خيش بالمتر",
+      "verified_at": "2026-10-20T08:50:56.448776+03:00"
     },
     {
       "source_id": 1416,
@@ -101,10 +105,12 @@
       "price": "25 - 100 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1416",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "شنتة شفاف bvc",
+      "verified_at": "2026-10-20T08:51:06.495760+03:00"
     },
     {
       "source_id": 1414,
@@ -112,10 +118,12 @@
       "price": "10 - 40 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1414",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل طاقية",
+      "verified_at": "2026-10-20T08:51:16.758001+03:00"
     },
     {
       "source_id": 1413,
@@ -123,10 +131,12 @@
       "price": "10 - 40 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1413",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي",
+      "verified_at": "2026-10-20T08:51:26.498469+03:00"
     },
     {
       "source_id": 1411,

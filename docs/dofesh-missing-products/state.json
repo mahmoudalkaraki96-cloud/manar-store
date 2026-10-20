@@ -7690,6 +7690,31 @@
       "availability": "available",
       "verified_title": "ستاند اكرليك مزخرف اسماء العروسين للخطوبة",
       "verified_at": "2026-10-20T08:50:37.599896+03:00"
+    },
+    "1418": {
+      "availability": "available",
+      "verified_title": "صندوق زجاج مع اطار نحاس ذهبي",
+      "verified_at": "2026-10-20T08:50:46.493109+03:00"
+    },
+    "1417": {
+      "availability": "available",
+      "verified_title": "قماش خيش بالمتر",
+      "verified_at": "2026-10-20T08:50:56.448776+03:00"
+    },
+    "1416": {
+      "availability": "available",
+      "verified_title": "شنتة شفاف bvc",
+      "verified_at": "2026-10-20T08:51:06.495760+03:00"
+    },
+    "1414": {
+      "availability": "available",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل طاقية",
+      "verified_at": "2026-10-20T08:51:16.758001+03:00"
+    },
+    "1413": {
+      "availability": "available",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي",
+      "verified_at": "2026-10-20T08:51:26.498469+03:00"
     }
   },
   "pages": [
@@ -7719,11 +7744,11 @@
   "next_page": null,
   "catalog_complete": true,
   "status": "partial",
-  "updated_at": "2026-10-20T08:50:40.963961+03:00",
+  "updated_at": "2026-10-20T08:51:31.665922+03:00",
   "counts": {
     "present": 1264,
     "missing": 14,
     "possible_name_match": 1
   },
-  "detail_pending": 12
+  "detail_pending": 7
 }
