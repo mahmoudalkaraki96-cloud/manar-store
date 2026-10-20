@@ -1,4 +1,5 @@
 import {saveOrderEdit,OrderEditError} from "./order-edit";
+import {createManualOrder,ManualOrderError} from "./manual-order";
 import {runSupplierImports,readSupplierImports} from "./supplier-import";
 import {readAdminDashboard,dayStart,calendarDays} from "./admin-dashboard";
 import {readBrowserActivity,purgeBrowserActivity} from "./browser-activity";
@@ -675,6 +676,15 @@ async function ensureStorePoliciesSchema(env:Env){
   })().catch(error=>{storePoliciesReady=null;throw error});
   return storePoliciesReady;
 }
+let manualOrderSchemaReady:Promise<void>|null=null;
+async function ensureManualOrderSchema(env:Env){
+ if(!manualOrderSchemaReady)manualOrderSchemaReady=(async()=>{
+  const columns=await env.DB.prepare("PRAGMA table_info(orders)").all(),names=new Set((columns.results as Array<Record<string,unknown>>).map(row=>String(row.name)));
+  if(!names.has("order_source"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN order_source TEXT NOT NULL DEFAULT 'storefront'").run();
+  if(!names.has("order_source_channel"))await env.DB.prepare("ALTER TABLE orders ADD COLUMN order_source_channel TEXT").run();
+ })().catch(error=>{manualOrderSchemaReady=null;throw error});
+ return manualOrderSchemaReady;
+}
 let orderPolicyColumnsReady:Promise<void>|null=null;
 async function ensureOrderPolicyColumns(env:Env){
   if(!orderPolicyColumnsReady)orderPolicyColumnsReady=(async()=>{
@@ -1016,17 +1026,18 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
 }
 
 async function readOrders(env:Env){
+  await ensureManualOrderSchema(env);
   await ensureCustomizationSchema(env);
   await ensureOrderExtrasSchema(env);
   await ensureOrderPolicyColumns(env);
   const [orders,items,mediaResult,feesResult]=await Promise.all([
-    env.DB.prepare("SELECT id,order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,edit_version,total_agorot,payment_method,payment_status,notes,created_at,updated_at,accepted_policy_version,policy_accepted_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
+    env.DB.prepare("SELECT id,order_number,status,order_source,order_source_channel,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,edit_version,total_agorot,payment_method,payment_status,notes,created_at,updated_at,accepted_policy_version,policy_accepted_at FROM orders WHERE deleted_at IS NULL ORDER BY created_at DESC,id DESC").all(),
     env.DB.prepare("SELECT id,order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot FROM order_items ORDER BY id").all(),
     env.DB.prepare("SELECT product_id,variant_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all(),
     env.DB.prepare("SELECT id,order_id,label,amount_agorot FROM order_extra_fees ORDER BY id").all()
   ]);
   const media=mediaResult.results as Array<Record<string,unknown>>;
-  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,discount:Number(order.discount_agorot)/100,editVersion:Number(order.edit_version||0),total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
+  return (orders.results as Array<Record<string,unknown>>).map(order=>({id:Number(order.id),orderNumber:Number(order.order_number),status:String(order.status),source:String(order.order_source||"storefront"),sourceChannel:order.order_source_channel==null?null:String(order.order_source_channel),customerName:String(order.customer_name||""),phone:String(order.phone||""),address:String(order.address||""),city:String(order.city||""),subtotal:Number(order.subtotal_agorot)/100,shipping:Number(order.shipping_agorot)/100,discount:Number(order.discount_agorot)/100,editVersion:Number(order.edit_version||0),total:Number(order.total_agorot)/100,paymentMethod:String(order.payment_method),paymentStatus:String(order.payment_status),notes:String(order.notes||""),createdAt:Number(order.created_at),policyVersion:order.accepted_policy_version==null?null:Number(order.accepted_policy_version),policyAcceptedAt:order.policy_accepted_at==null?null:Number(order.policy_accepted_at),extraFees:(feesResult.results as Array<Record<string,unknown>>).filter(fee=>Number(fee.order_id)===Number(order.id)).map(fee=>({id:Number(fee.id),label:String(fee.label),amount:Number(fee.amount_agorot)/100})),items:(items.results as Array<Record<string,unknown>>).filter(item=>Number(item.order_id)===Number(order.id)).map(item=>{const productId=item.product_id==null?null:Number(item.product_id),variantId=item.variant_id==null?null:Number(item.variant_id),image=media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id!=null&&Number(entry.variant_id)===variantId)||media.find(entry=>Number(entry.product_id)===productId&&entry.variant_id==null);let customizations:Record<string,string>={};try{customizations=JSON.parse(String(item.customization_json||"{}")) as Record<string,string>}catch{}return{id:Number(item.id),productId,variantId,itemNumber:Number(item.item_number),productName:String(item.product_name),variantLabel:String(item.variant_label||""),customizations,imageUrl:String(image?.url||""),quantity:Number(item.quantity),unitPrice:Number(item.unit_price_agorot)/100,lineTotal:Number(item.line_total_agorot)/100}})}));
 }
 
 async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContext){
@@ -1479,7 +1490,11 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(purchaseMatch&&request.method==="DELETE"){await env.DB.prepare("UPDATE purchases SET deleted_at=?,updated_at=? WHERE id=? AND status='draft'").bind(Date.now(),Date.now(),Number(purchaseMatch[1])).run();return json({ok:true});}
   const postPurchaseMatch=url.pathname.match(/^\/api\/admin\/purchases\/(\d+)\/post$/);
   if(postPurchaseMatch&&request.method==="POST")return postPurchase(env,Number(postPurchaseMatch[1]));
-  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
+  if(request.method==="POST"&&url.pathname==="/api/admin/orders"){
+  await ensureManualOrderSchema(env);
+  try{return json(await createManualOrder(env.DB,await parseJson(request)))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
+ }
+ if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
   if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]),ctx);
   if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
