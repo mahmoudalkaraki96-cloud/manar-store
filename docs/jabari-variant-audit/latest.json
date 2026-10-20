@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T09:02:29.315963+03:00",
+  "updated_at": "2026-10-20T09:12:58.217360+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 125,
@@ -12051,6 +12051,1006 @@
       "status": "no_options",
       "detail": "{\"item_number\": 3930, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792476148258
+    },
+    {
+      "source_id": 2276,
+      "mode": "apply",
+      "product_id": 2931,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3931, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476155315
+    },
+    {
+      "source_id": 2275,
+      "mode": "apply",
+      "product_id": 2932,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3932, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476160369
+    },
+    {
+      "source_id": 2274,
+      "mode": "apply",
+      "product_id": 2933,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3933, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476165330
+    },
+    {
+      "source_id": 2271,
+      "mode": "apply",
+      "product_id": 2934,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3934, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476170372
+    },
+    {
+      "source_id": 2253,
+      "mode": "apply",
+      "product_id": 2935,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3935, \"source\": {\"title\": \"ايبوكسي ريزين 1:1\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476175339
+    },
+    {
+      "source_id": 2252,
+      "mode": "apply",
+      "product_id": 2936,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3936, \"source\": {\"title\": \"رول سلفان شفاف ( 50 متر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476180391
+    },
+    {
+      "source_id": 2251,
+      "mode": "apply",
+      "product_id": 2937,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3937, \"source\": {\"title\": \"رول سلفان شفاف ( 25 متر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476185444
+    },
+    {
+      "source_id": 2249,
+      "mode": "apply",
+      "product_id": 2938,
+      "status": "synced",
+      "detail": "{\"item_number\": 3938, \"name\": \"ستاند معدني 17 * 11 سم\", \"before_price\": 775, \"before_variants\": [], \"source\": {\"title\": \"ستاند معدني 17 * 11 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"10 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند معدني 17 * 11 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 900, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"10 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2938\", \"source_url\": \"https://jabaristore.com/?app=product.show.2249\"}",
+      "updated_at": 1792476190605
+    },
+    {
+      "source_id": 2248,
+      "mode": "apply",
+      "product_id": 2939,
+      "status": "synced",
+      "detail": "{\"item_number\": 3939, \"name\": \"ستاند معدني 15 * 9 سم\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"ستاند معدني 15 * 9 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند معدني 15 * 9 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 800, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2939\", \"source_url\": \"https://jabaristore.com/?app=product.show.2248\"}",
+      "updated_at": 1792476195568
+    },
+    {
+      "source_id": 2247,
+      "mode": "apply",
+      "product_id": 2940,
+      "status": "synced",
+      "detail": "{\"item_number\": 3940, \"name\": \"ستاند معدني 12 * 8 سم\", \"before_price\": 625, \"before_variants\": [], \"source\": {\"title\": \"ستاند معدني 12 * 8 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"10 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند معدني 12 * 8 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"10 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2940\", \"source_url\": \"https://jabaristore.com/?app=product.show.2247\"}",
+      "updated_at": 1792476200808
+    },
+    {
+      "source_id": 2246,
+      "mode": "apply",
+      "product_id": 2941,
+      "status": "synced",
+      "detail": "{\"item_number\": 3941, \"name\": \"ستاند معدني 10 * 6 سم\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"ستاند معدني 10 * 6 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"10 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند معدني 10 * 6 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 600, \"active\": true}, {\"name\": \"10 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"10 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2941\", \"source_url\": \"https://jabaristore.com/?app=product.show.2246\"}",
+      "updated_at": 1792476205771
+    },
+    {
+      "source_id": 2245,
+      "mode": "apply",
+      "product_id": 2942,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3942}",
+      "updated_at": 1792476210551
+    },
+    {
+      "source_id": 2244,
+      "mode": "apply",
+      "product_id": 2943,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3943}",
+      "updated_at": 1792476215554
+    },
+    {
+      "source_id": 2243,
+      "mode": "apply",
+      "product_id": 2944,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3944, \"source\": {\"title\": \"تل لتغليف الورد ( ابيض حافة ضو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476220622
+    },
+    {
+      "source_id": 2242,
+      "mode": "apply",
+      "product_id": 2945,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3945, \"source\": {\"title\": \"تل لتغليف الورد ( ابيض حافة لولو )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476225519
+    },
+    {
+      "source_id": 2241,
+      "mode": "apply",
+      "product_id": 2946,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3946, \"source\": {\"title\": \"تل لتغليف الورد ( اسود حافة اسود )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476230612
+    },
+    {
+      "source_id": 2240,
+      "mode": "apply",
+      "product_id": 2947,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3947, \"source\": {\"title\": \"تل لتغليف الورد ( ابيض حافة ذهبي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 550}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476235349
+    },
+    {
+      "source_id": 2239,
+      "mode": "apply",
+      "product_id": 2948,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3948, \"source\": {\"title\": \"تل لتغليف الورد ( ابيض حافه ابيض )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476240592
+    },
+    {
+      "source_id": 2234,
+      "mode": "apply",
+      "product_id": 2949,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3949}",
+      "updated_at": 1792476245334
+    },
+    {
+      "source_id": 2233,
+      "mode": "apply",
+      "product_id": 2950,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3950}",
+      "updated_at": 1792476250552
+    },
+    {
+      "source_id": 2232,
+      "mode": "apply",
+      "product_id": 1435,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2435, \"source\": {\"title\": \"مقص للاشغال اليدوية صغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476255554
+    },
+    {
+      "source_id": 2229,
+      "mode": "apply",
+      "product_id": 1436,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2436, \"source\": {\"title\": \"مقص كبير مع بيت حماية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476260597
+    },
+    {
+      "source_id": 2228,
+      "mode": "apply",
+      "product_id": 2951,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3951, \"source\": {\"title\": \"مقص حاد كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476265548
+    },
+    {
+      "source_id": 2227,
+      "mode": "apply",
+      "product_id": 2952,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3952, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476270395
+    },
+    {
+      "source_id": 2226,
+      "mode": "apply",
+      "product_id": 2953,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3953, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476275519
+    },
+    {
+      "source_id": 2225,
+      "mode": "apply",
+      "product_id": 2954,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3954, \"source\": {\"title\": \"مقص حاد للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476280393
+    },
+    {
+      "source_id": 2224,
+      "mode": "apply",
+      "product_id": 2955,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3955, \"source\": {\"title\": \"مقص حاد للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476285314
+    },
+    {
+      "source_id": 2223,
+      "mode": "apply",
+      "product_id": 2956,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3956, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476290400
+    },
+    {
+      "source_id": 2222,
+      "mode": "apply",
+      "product_id": 2957,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3957, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476295493
+    },
+    {
+      "source_id": 2221,
+      "mode": "apply",
+      "product_id": 2958,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3958, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476300387
+    },
+    {
+      "source_id": 2220,
+      "mode": "apply",
+      "product_id": 2959,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3959, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476305314
+    },
+    {
+      "source_id": 2219,
+      "mode": "apply",
+      "product_id": 2960,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3960, \"source\": {\"title\": \"مقص حاد كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476310410
+    },
+    {
+      "source_id": 2218,
+      "mode": "apply",
+      "product_id": 2961,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3961, \"source\": {\"title\": \"مقص حاد صغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476315530
+    },
+    {
+      "source_id": 2217,
+      "mode": "apply",
+      "product_id": 2962,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3962, \"source\": {\"title\": \"مقص ورق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476320393
+    },
+    {
+      "source_id": 2216,
+      "mode": "apply",
+      "product_id": 2963,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3963, \"source\": {\"title\": \"مقص للاشغال اليدوية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476325346
+    },
+    {
+      "source_id": 2214,
+      "mode": "apply",
+      "product_id": 2964,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3964, \"source\": {\"title\": \"فواحة سيراميك مع عطر 50ml & تغليف و زينة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476330406
+    },
+    {
+      "source_id": 2212,
+      "mode": "apply",
+      "product_id": 2965,
+      "status": "synced",
+      "detail": "{\"item_number\": 3965, \"name\": \"بخاخ رذاذ نانو للوجه\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"بخاخ رذاذ نانو للوجه\", \"variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"زهري\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"بخاخ رذاذ نانو للوجه\", \"variants\": [{\"name\": \"ابيض\", \"price\": 600, \"active\": true}, {\"name\": \"زهري\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"زهري\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2965\", \"source_url\": \"https://jabaristore.com/?app=product.show.2212\"}",
+      "updated_at": 1792476335604
+    },
+    {
+      "source_id": 2211,
+      "mode": "apply",
+      "product_id": 2966,
+      "status": "synced",
+      "detail": "{\"item_number\": 3966, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"خمري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فوشي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ليلكي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"خمري\", \"price\": 500, \"active\": true}, {\"name\": \"فوشي\", \"price\": 500, \"active\": true}, {\"name\": \"ليلكي\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"خمري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فوشي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ليلكي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2966\", \"source_url\": \"https://jabaristore.com/?app=product.show.2211\"}",
+      "updated_at": 1792476340630
+    },
+    {
+      "source_id": 2210,
+      "mode": "apply",
+      "product_id": 2967,
+      "status": "synced",
+      "detail": "{\"item_number\": 3967, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"برونز\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ابيض\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"زهري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"برونز\", \"price\": 500, \"active\": true}, {\"name\": \"ابيض\", \"price\": 500, \"active\": false}, {\"name\": \"زهري\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"برونز\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ابيض\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"زهري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2967\", \"source_url\": \"https://jabaristore.com/?app=product.show.2210\"}",
+      "updated_at": 1792476345842
+    },
+    {
+      "source_id": 2209,
+      "mode": "apply",
+      "product_id": 2968,
+      "status": "synced",
+      "detail": "{\"item_number\": 3968, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"زهري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ابيض\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"اخضر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"زهري\", \"price\": 500, \"active\": true}, {\"name\": \"ابيض\", \"price\": 500, \"active\": false}, {\"name\": \"اخضر\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"زهري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ابيض\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"اخضر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2968\", \"source_url\": \"https://jabaristore.com/?app=product.show.2209\"}",
+      "updated_at": 1792476350606
+    },
+    {
+      "source_id": 2208,
+      "mode": "apply",
+      "product_id": 2969,
+      "status": "synced",
+      "detail": "{\"item_number\": 3969, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"بني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"اصفر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"بني\", \"price\": 500, \"active\": true}, {\"name\": \"ازرق\", \"price\": 500, \"active\": true}, {\"name\": \"اصفر\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"اصفر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2969\", \"source_url\": \"https://jabaristore.com/?app=product.show.2208\"}",
+      "updated_at": 1792476355753
+    },
+    {
+      "source_id": 2207,
+      "mode": "apply",
+      "product_id": 2970,
+      "status": "synced",
+      "detail": "{\"item_number\": 3970, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"ازرق سماوي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فضي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"سكني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"ازرق سماوي\", \"price\": 500, \"active\": true}, {\"name\": \"فضي\", \"price\": 500, \"active\": true}, {\"name\": \"سكني\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ازرق سماوي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فضي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"سكني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2970\", \"source_url\": \"https://jabaristore.com/?app=product.show.2207\"}",
+      "updated_at": 1792476360653
+    },
+    {
+      "source_id": 2206,
+      "mode": "apply",
+      "product_id": 2971,
+      "status": "synced",
+      "detail": "{\"item_number\": 3971, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"برتقالي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ذهبي\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"برتقالي\", \"price\": 500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 500, \"active\": false}, {\"name\": \"ازرق\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"برتقالي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ذهبي\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2971\", \"source_url\": \"https://jabaristore.com/?app=product.show.2206\"}",
+      "updated_at": 1792476365585
+    },
+    {
+      "source_id": 2205,
+      "mode": "apply",
+      "product_id": 2972,
+      "status": "synced",
+      "detail": "{\"item_number\": 3972, \"name\": \"برق ناعم للزينة\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"اصفر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"اخضر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"برق ناعم للزينة\", \"variants\": [{\"name\": \"اصفر\", \"price\": 500, \"active\": true}, {\"name\": \"ازرق\", \"price\": 500, \"active\": true}, {\"name\": \"اخضر\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اصفر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"اخضر\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2972\", \"source_url\": \"https://jabaristore.com/?app=product.show.2205\"}",
+      "updated_at": 1792476370598
+    },
+    {
+      "source_id": 2204,
+      "mode": "apply",
+      "product_id": 2973,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3973, \"source\": {\"title\": \"كلفة ليرات عثماني مرصوص ( حبة صغيرة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476375500
+    },
+    {
+      "source_id": 2200,
+      "mode": "apply",
+      "product_id": 2974,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3974, \"source\": {\"title\": \"كرة اكريلك ( 5.50 سم ) ~ 12 قطعة ~\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476380376
+    },
+    {
+      "source_id": 2198,
+      "mode": "apply",
+      "product_id": 2975,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3975}",
+      "updated_at": 1792476385357
+    },
+    {
+      "source_id": 2196,
+      "mode": "apply",
+      "product_id": 2976,
+      "status": "synced",
+      "detail": "{\"item_number\": 3976, \"name\": \"اصابع سيليكون تايواني ( رفيع )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"اصابع سيليكون تايواني ( رفيع )\", \"variants\": [{\"name\": \"عدد / اصبع\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كيلو\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اصابع سيليكون تايواني ( رفيع )\", \"variants\": [{\"name\": \"عدد / اصبع\", \"price\": 100, \"active\": true}, {\"name\": \"كيلو\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"عدد / اصبع\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كيلو\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2976\", \"source_url\": \"https://jabaristore.com/?app=product.show.2196\"}",
+      "updated_at": 1792476390819
+    },
+    {
+      "source_id": 2195,
+      "mode": "apply",
+      "product_id": 2977,
+      "status": "synced",
+      "detail": "{\"item_number\": 3977, \"name\": \"اصابع سيليكون تايواني ( عريض )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"اصابع سيليكون تايواني ( عريض )\", \"variants\": [{\"name\": \"عدد / اصبع\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كيلو\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اصابع سيليكون تايواني ( عريض )\", \"variants\": [{\"name\": \"عدد / اصبع\", \"price\": 100, \"active\": true}, {\"name\": \"كيلو\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"عدد / اصبع\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كيلو\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2977\", \"source_url\": \"https://jabaristore.com/?app=product.show.2195\"}",
+      "updated_at": 1792476395802
+    },
+    {
+      "source_id": 2191,
+      "mode": "apply",
+      "product_id": 2978,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3978, \"source\": {\"title\": \"ورد صناعي ورق ( بنفسجي)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476400400
+    },
+    {
+      "source_id": 2190,
+      "mode": "apply",
+      "product_id": 2979,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3979, \"source\": {\"title\": \"ورد صناعي ورق ( ازرق )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476405334
+    },
+    {
+      "source_id": 2189,
+      "mode": "apply",
+      "product_id": 2980,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3980, \"source\": {\"title\": \"ورد صناعي ورق ( ازرق سماوي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476410391
+    },
+    {
+      "source_id": 2187,
+      "mode": "apply",
+      "product_id": 2981,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3981, \"source\": {\"title\": \"ورد صناعي ورق ( ابيض )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476415351
+    },
+    {
+      "source_id": 2186,
+      "mode": "apply",
+      "product_id": 2982,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3982, \"source\": {\"title\": \"ورد صناعي ورق ( زهر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476420402
+    },
+    {
+      "source_id": 2179,
+      "mode": "apply",
+      "product_id": 2983,
+      "status": "synced",
+      "detail": "{\"item_number\": 3983, \"name\": \"خاتم كرستال\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"خاتم كرستال\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"50 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خاتم كرستال\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 400, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"50 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2983\", \"source_url\": \"https://jabaristore.com/?app=product.show.2179\"}",
+      "updated_at": 1792476425579
+    },
+    {
+      "source_id": 2176,
+      "mode": "apply",
+      "product_id": 2984,
+      "status": "synced",
+      "detail": "{\"item_number\": 3984, \"name\": \"بيانو كرستال\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"بيانو كرستال\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"بيانو كرستال\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2984\", \"source_url\": \"https://jabaristore.com/?app=product.show.2176\"}",
+      "updated_at": 1792476430638
+    },
+    {
+      "source_id": 2171,
+      "mode": "apply",
+      "product_id": 2985,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3985}",
+      "updated_at": 1792476435547
+    },
+    {
+      "source_id": 2170,
+      "mode": "apply",
+      "product_id": 2986,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3986}",
+      "updated_at": 1792476440379
+    },
+    {
+      "source_id": 2169,
+      "mode": "apply",
+      "product_id": 2987,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3987}",
+      "updated_at": 1792476445541
+    },
+    {
+      "source_id": 2168,
+      "mode": "apply",
+      "product_id": 2988,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3988}",
+      "updated_at": 1792476450582
+    },
+    {
+      "source_id": 2167,
+      "mode": "apply",
+      "product_id": 2989,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3989}",
+      "updated_at": 1792476455451
+    },
+    {
+      "source_id": 2166,
+      "mode": "apply",
+      "product_id": 2990,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3990, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ازرق سماوي ، Skyblue )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476460564
+    },
+    {
+      "source_id": 2165,
+      "mode": "apply",
+      "product_id": 2991,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3991, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( بنفسجي ، Violet )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476465696
+    },
+    {
+      "source_id": 2164,
+      "mode": "apply",
+      "product_id": 2992,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3992, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ابيض ، White )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476470572
+    },
+    {
+      "source_id": 2163,
+      "mode": "apply",
+      "product_id": 2993,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3993, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ازرق ، Blue )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476475560
+    },
+    {
+      "source_id": 2162,
+      "mode": "apply",
+      "product_id": 2994,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3994, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( زهري ، Pink )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476480626
+    },
+    {
+      "source_id": 2161,
+      "mode": "apply",
+      "product_id": 2995,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3995, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( احمر كرزي ، Cherry )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476485378
+    },
+    {
+      "source_id": 2160,
+      "mode": "apply",
+      "product_id": 2996,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3996, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( احمر ، Red )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476490593
+    },
+    {
+      "source_id": 2159,
+      "mode": "apply",
+      "product_id": 2997,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3997, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ليلكي ، Purple )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476495570
+    },
+    {
+      "source_id": 2158,
+      "mode": "apply",
+      "product_id": 2998,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3998, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( اصفر ، Yellow )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476500580
+    },
+    {
+      "source_id": 2157,
+      "mode": "apply",
+      "product_id": 2999,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3999, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ازرق ياقوت ، Sapphire Blue )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476505602
+    },
+    {
+      "source_id": 2156,
+      "mode": "apply",
+      "product_id": 3000,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4000, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( فوشي ، Fuschia )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476510413
+    },
+    {
+      "source_id": 2155,
+      "mode": "apply",
+      "product_id": 3001,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4001, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( احمر ارجواني،Purplish Red )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476515537
+    },
+    {
+      "source_id": 2154,
+      "mode": "apply",
+      "product_id": 3002,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4002, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( فيروزي ، Peacock Blue )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476520607
+    },
+    {
+      "source_id": 2153,
+      "mode": "apply",
+      "product_id": 3003,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4003, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( قهوة ، coffee )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476525367
+    },
+    {
+      "source_id": 2152,
+      "mode": "apply",
+      "product_id": 3004,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4004, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( احمر وردي ، Rose red )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476530581
+    },
+    {
+      "source_id": 2151,
+      "mode": "apply",
+      "product_id": 3005,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4005, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( ليلكي ، Azure )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476535367
+    },
+    {
+      "source_id": 2150,
+      "mode": "apply",
+      "product_id": 3006,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4006, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( اسود ، Black )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476540406
+    },
+    {
+      "source_id": 2149,
+      "mode": "apply",
+      "product_id": 3007,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4007, \"source\": {\"title\": \"صبغات PIGMENT للايبوكسي ( بني ، Brown )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476545385
+    },
+    {
+      "source_id": 2144,
+      "mode": "apply",
+      "product_id": 3008,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4008, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476550378
+    },
+    {
+      "source_id": 2142,
+      "mode": "apply",
+      "product_id": 3009,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4009, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476555384
+    },
+    {
+      "source_id": 2140,
+      "mode": "apply",
+      "product_id": 3010,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4010, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476560379
+    },
+    {
+      "source_id": 2135,
+      "mode": "apply",
+      "product_id": 3011,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4011, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476565386
+    },
+    {
+      "source_id": 2134,
+      "mode": "apply",
+      "product_id": 3012,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4012, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476570378
+    },
+    {
+      "source_id": 2125,
+      "mode": "apply",
+      "product_id": 3013,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4013, \"source\": {\"title\": \"صبغات سائلة للشمع 10Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476575388
+    },
+    {
+      "source_id": 2117,
+      "mode": "apply",
+      "product_id": 3014,
+      "status": "synced",
+      "detail": "{\"item_number\": 4014, \"name\": \"زجاج مكسر ناعم جدا ( شفاف موج )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"زجاج مكسر ناعم جدا ( شفاف موج )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زجاج مكسر ناعم جدا ( شفاف موج )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1500, \"active\": true}, {\"name\": \"باكيت 450 غرام\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3014\", \"source_url\": \"https://jabaristore.com/?app=product.show.2117\"}",
+      "updated_at": 1792476580881
+    },
+    {
+      "source_id": 2115,
+      "mode": "apply",
+      "product_id": 3015,
+      "status": "synced",
+      "detail": "{\"item_number\": 4015, \"name\": \"زجاج عشوائي للزينة ( شفاف )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"زجاج عشوائي للزينة ( شفاف )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زجاج عشوائي للزينة ( شفاف )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1200, \"active\": true}, {\"name\": \"باكيت 450 غرام\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3015\", \"source_url\": \"https://jabaristore.com/?app=product.show.2115\"}",
+      "updated_at": 1792476585574
+    },
+    {
+      "source_id": 2112,
+      "mode": "apply",
+      "product_id": 3016,
+      "status": "synced",
+      "detail": "{\"item_number\": 4016, \"name\": \"زجاج مسكر ناعم ( شفاف )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"زجاج مسكر ناعم ( شفاف )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زجاج مسكر ناعم ( شفاف )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1500, \"active\": true}, {\"name\": \"باكيت 450 غرام\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3016\", \"source_url\": \"https://jabaristore.com/?app=product.show.2112\"}",
+      "updated_at": 1792476590615
+    },
+    {
+      "source_id": 2110,
+      "mode": "apply",
+      "product_id": 3017,
+      "status": "synced",
+      "detail": "{\"item_number\": 4017, \"name\": \"رقائق زجاج ( شفاف موج )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"رقائق زجاج ( شفاف موج )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"رقائق زجاج ( شفاف موج )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1500, \"active\": true}, {\"name\": \"باكيت 450 غرام\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"باكيت 450 غرام\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3017\", \"source_url\": \"https://jabaristore.com/?app=product.show.2110\"}",
+      "updated_at": 1792476595627
+    },
+    {
+      "source_id": 2108,
+      "mode": "apply",
+      "product_id": 3018,
+      "status": "synced",
+      "detail": "{\"item_number\": 4018, \"name\": \"حجر عشوائي للزينة ( ابيض )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"حجر عشوائي للزينة ( ابيض )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"حجر عشوائي للزينة ( ابيض )\", \"variants\": [{\"name\": \"100 غم\", \"price\": 1200, \"active\": true}, {\"name\": \"باكيت 450 غرام\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"باكيت 450 غرام\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3018\", \"source_url\": \"https://jabaristore.com/?app=product.show.2108\"}",
+      "updated_at": 1792476600812
+    },
+    {
+      "source_id": 2105,
+      "mode": "apply",
+      "product_id": 3019,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4019, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476605367
+    },
+    {
+      "source_id": 2104,
+      "mode": "apply",
+      "product_id": 3020,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4020, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476610625
+    },
+    {
+      "source_id": 2103,
+      "mode": "apply",
+      "product_id": 3021,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4021, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476615569
+    },
+    {
+      "source_id": 2102,
+      "mode": "apply",
+      "product_id": 3022,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4022, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476620386
+    },
+    {
+      "source_id": 2101,
+      "mode": "apply",
+      "product_id": 3023,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4023, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476625397
+    },
+    {
+      "source_id": 2100,
+      "mode": "apply",
+      "product_id": 3024,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4024, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476630398
+    },
+    {
+      "source_id": 2099,
+      "mode": "apply",
+      "product_id": 3025,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4025, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476635408
+    },
+    {
+      "source_id": 2098,
+      "mode": "apply",
+      "product_id": 3026,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4026, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476640384
+    },
+    {
+      "source_id": 2097,
+      "mode": "apply",
+      "product_id": 3027,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4027, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476645370
+    },
+    {
+      "source_id": 2096,
+      "mode": "apply",
+      "product_id": 3028,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4028, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476650411
+    },
+    {
+      "source_id": 2095,
+      "mode": "apply",
+      "product_id": 3029,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4029, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476655573
+    },
+    {
+      "source_id": 2093,
+      "mode": "apply",
+      "product_id": 3030,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4030, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476660580
+    },
+    {
+      "source_id": 2092,
+      "mode": "apply",
+      "product_id": 3031,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4031, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476665371
+    },
+    {
+      "source_id": 2091,
+      "mode": "apply",
+      "product_id": 3032,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4032, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476670384
+    },
+    {
+      "source_id": 2090,
+      "mode": "apply",
+      "product_id": 3033,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4033, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476675370
+    },
+    {
+      "source_id": 2089,
+      "mode": "apply",
+      "product_id": 3034,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4034, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476680381
+    },
+    {
+      "source_id": 2088,
+      "mode": "apply",
+      "product_id": 3035,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4035, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476685614
+    },
+    {
+      "source_id": 2087,
+      "mode": "apply",
+      "product_id": 3036,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4036, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476690543
+    },
+    {
+      "source_id": 2086,
+      "mode": "apply",
+      "product_id": 3037,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4037, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476695499
+    },
+    {
+      "source_id": 2085,
+      "mode": "apply",
+      "product_id": 3038,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4038, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476700602
+    },
+    {
+      "source_id": 2084,
+      "mode": "apply",
+      "product_id": 3039,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4039, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476705515
+    },
+    {
+      "source_id": 2083,
+      "mode": "apply",
+      "product_id": 3040,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4040, \"source\": {\"title\": \"صبغة بودرة ( MICA POWDER PIGMINT )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476710624
+    },
+    {
+      "source_id": 2082,
+      "mode": "apply",
+      "product_id": 3041,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4041}",
+      "updated_at": 1792476715394
+    },
+    {
+      "source_id": 2076,
+      "mode": "apply",
+      "product_id": 3042,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4042}",
+      "updated_at": 1792476720537
+    },
+    {
+      "source_id": 2072,
+      "mode": "apply",
+      "product_id": 3043,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4043, \"source\": {\"title\": \"حامل فتيل شمع ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476725581
+    },
+    {
+      "source_id": 2070,
+      "mode": "apply",
+      "product_id": 3044,
+      "status": "synced",
+      "detail": "{\"item_number\": 4044, \"name\": \"ورق ذهب - حجم كبير\", \"before_price\": 850, \"before_variants\": [], \"source\": {\"title\": \"ورق ذهب - حجم كبير\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"فضي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"جولدن رزو\", \"price\": 850, \"active\": true, \"supplier_price\": 750}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورق ذهب - حجم كبير\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 750, \"active\": true}, {\"name\": \"فضي\", \"price\": 750, \"active\": true}, {\"name\": \"جولدن رزو\", \"price\": 750, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"فضي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"جولدن رزو\", \"price\": 850, \"active\": true, \"supplier_price\": 750}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3044\", \"source_url\": \"https://jabaristore.com/?app=product.show.2070\"}",
+      "updated_at": 1792476730628
+    },
+    {
+      "source_id": 2069,
+      "mode": "apply",
+      "product_id": 3045,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4045, \"source\": {\"title\": \"شفرة ( اداة حف )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476735555
+    },
+    {
+      "source_id": 2068,
+      "mode": "apply",
+      "product_id": 3046,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4046, \"source\": {\"title\": \"دريل ( اداة حفر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476740611
+    },
+    {
+      "source_id": 2067,
+      "mode": "apply",
+      "product_id": 3047,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4047, \"source\": {\"title\": \"دريل ( اداة حفر ) مع سلك USB\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476745373
+    },
+    {
+      "source_id": 2066,
+      "mode": "apply",
+      "product_id": 3048,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4048, \"source\": {\"title\": \"فتيل شمع قطن 60 متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1100}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476750488
+    },
+    {
+      "source_id": 2065,
+      "mode": "apply",
+      "product_id": 3049,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4049, \"source\": {\"title\": \"يد صينية ذهبي ( 5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476755398
+    },
+    {
+      "source_id": 2064,
+      "mode": "apply",
+      "product_id": 3050,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4050, \"source\": {\"title\": \"يد صينية فضي ( 5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476760552
+    },
+    {
+      "source_id": 2063,
+      "mode": "apply",
+      "product_id": 3051,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4051, \"source\": {\"title\": \"يد صينية فضي ( 15 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476765371
+    },
+    {
+      "source_id": 2062,
+      "mode": "apply",
+      "product_id": 3052,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4052, \"source\": {\"title\": \"يد صينية ذهبي ( 15 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476770560
+    },
+    {
+      "source_id": 2060,
+      "mode": "apply",
+      "product_id": 3053,
+      "status": "synced",
+      "detail": "{\"item_number\": 4053, \"name\": \"فتيل خشبي مع قاعدة معدن ( 13 سم )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"فتيل خشبي مع قاعدة معدن ( 13 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"50 قطعة\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"فتيل خشبي مع قاعدة معدن ( 13 سم )\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 600, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 2300, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"50 قطعة\", \"price\": 2450, \"active\": true, \"supplier_price\": 2300}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3053\", \"source_url\": \"https://jabaristore.com/?app=product.show.2060\"}",
+      "updated_at": 1792476775833
     }
   ]
 }

@@ -4247,3 +4247,137 @@
 - {"id": 3796, "item_number": 4796, "name": "علبة شفاف bvc طبقتين كرتون", "active": 0, "stock_quantity": 0, "price_agorot": 3500, "source_id": 1408, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1408", "images": 2, "variants": 1, "fields": 0}
 - {"id": 3797, "item_number": 4797, "name": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )", "active": 0, "stock_quantity": 0, "price_agorot": 3500, "source_id": 1407, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1407", "images": 1, "variants": 1, "fields": 0}
 - {"source_id": 1396, "status": "already_present"}
+### 2026-10-20T09:12:58.217360+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T09:12:58.217360+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 811, "synced": 571, "unsupported_source_price": 249}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#2276 ↔ صنف#3931: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2276
+- الجعبري#2275 ↔ صنف#3932: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2275
+- الجعبري#2274 ↔ صنف#3933: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2274
+- الجعبري#2271 ↔ صنف#3934: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2271
+- الجعبري#2253 ↔ صنف#3935: no_options؛ ايبوكسي ريزين 1:1. https://jabaristore.com/?app=product.show.2253
+- الجعبري#2252 ↔ صنف#3936: no_options؛ رول سلفان شفاف ( 50 متر ). https://jabaristore.com/?app=product.show.2252
+- الجعبري#2251 ↔ صنف#3937: no_options؛ رول سلفان شفاف ( 25 متر ). https://jabaristore.com/?app=product.show.2251
+- الجعبري#2249 ↔ صنف#3938: synced؛ بالقطعة=10₪؛ 10 قطعة=95₪. https://jabaristore.com/?app=product.show.2249
+- الجعبري#2248 ↔ صنف#3939: synced؛ بالقطعة=9₪؛ 10 قطعة=85₪. https://jabaristore.com/?app=product.show.2248
+- الجعبري#2247 ↔ صنف#3940: synced؛ بالقطعة=8₪؛ 10 قطعة=72₪. https://jabaristore.com/?app=product.show.2247
+- الجعبري#2246 ↔ صنف#3941: synced؛ بالقطعة=7₪؛ 10 قطعة=62₪. https://jabaristore.com/?app=product.show.2246
+- الجعبري#2245 ↔ صنف#3942: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2245
+- الجعبري#2244 ↔ صنف#3943: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2244
+- الجعبري#2243 ↔ صنف#3944: no_options؛ تل لتغليف الورد ( ابيض حافة ضو ). https://jabaristore.com/?app=product.show.2243
+- الجعبري#2242 ↔ صنف#3945: no_options؛ تل لتغليف الورد ( ابيض حافة لولو ). https://jabaristore.com/?app=product.show.2242
+- الجعبري#2241 ↔ صنف#3946: no_options؛ تل لتغليف الورد ( اسود حافة اسود ). https://jabaristore.com/?app=product.show.2241
+- الجعبري#2240 ↔ صنف#3947: no_options؛ تل لتغليف الورد ( ابيض حافة ذهبي ). https://jabaristore.com/?app=product.show.2240
+- الجعبري#2239 ↔ صنف#3948: no_options؛ تل لتغليف الورد ( ابيض حافه ابيض ). https://jabaristore.com/?app=product.show.2239
+- الجعبري#2234 ↔ صنف#3949: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2234
+- الجعبري#2233 ↔ صنف#3950: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2233
+- الجعبري#2232 ↔ صنف#2435: no_options؛ مقص للاشغال اليدوية صغير. https://jabaristore.com/?app=product.show.2232
+- الجعبري#2229 ↔ صنف#2436: no_options؛ مقص كبير مع بيت حماية. https://jabaristore.com/?app=product.show.2229
+- الجعبري#2228 ↔ صنف#3951: no_options؛ مقص حاد كبير. https://jabaristore.com/?app=product.show.2228
+- الجعبري#2227 ↔ صنف#3952: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2227
+- الجعبري#2226 ↔ صنف#3953: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2226
+- الجعبري#2225 ↔ صنف#3954: no_options؛ مقص حاد للاشغال اليدوية. https://jabaristore.com/?app=product.show.2225
+- الجعبري#2224 ↔ صنف#3955: no_options؛ مقص حاد للاشغال اليدوية. https://jabaristore.com/?app=product.show.2224
+- الجعبري#2223 ↔ صنف#3956: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2223
+- الجعبري#2222 ↔ صنف#3957: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2222
+- الجعبري#2221 ↔ صنف#3958: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2221
+- الجعبري#2220 ↔ صنف#3959: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2220
+- الجعبري#2219 ↔ صنف#3960: no_options؛ مقص حاد كبير. https://jabaristore.com/?app=product.show.2219
+- الجعبري#2218 ↔ صنف#3961: no_options؛ مقص حاد صغير. https://jabaristore.com/?app=product.show.2218
+- الجعبري#2217 ↔ صنف#3962: no_options؛ مقص ورق. https://jabaristore.com/?app=product.show.2217
+- الجعبري#2216 ↔ صنف#3963: no_options؛ مقص للاشغال اليدوية. https://jabaristore.com/?app=product.show.2216
+- الجعبري#2214 ↔ صنف#3964: no_options؛ فواحة سيراميك مع عطر 50ml & تغليف و زينة. https://jabaristore.com/?app=product.show.2214
+- الجعبري#2212 ↔ صنف#3965: synced؛ ابيض=7₪؛ زهري=7₪. https://jabaristore.com/?app=product.show.2212
+- الجعبري#2211 ↔ صنف#3966: synced؛ خمري=5.5₪؛ فوشي=5.5₪؛ ليلكي=5.5₪. https://jabaristore.com/?app=product.show.2211
+- الجعبري#2210 ↔ صنف#3967: synced؛ برونز=5.5₪؛ ابيض=5.5₪؛ زهري=5.5₪. https://jabaristore.com/?app=product.show.2210
+- الجعبري#2209 ↔ صنف#3968: synced؛ زهري=5.5₪؛ ابيض=5.5₪؛ اخضر=5.5₪. https://jabaristore.com/?app=product.show.2209
+- الجعبري#2208 ↔ صنف#3969: synced؛ بني=5.5₪؛ ازرق=5.5₪؛ اصفر=5.5₪. https://jabaristore.com/?app=product.show.2208
+- الجعبري#2207 ↔ صنف#3970: synced؛ ازرق سماوي=5.5₪؛ فضي=5.5₪؛ سكني=5.5₪. https://jabaristore.com/?app=product.show.2207
+- الجعبري#2206 ↔ صنف#3971: synced؛ برتقالي=5.5₪؛ ذهبي=5.5₪؛ ازرق=5.5₪. https://jabaristore.com/?app=product.show.2206
+- الجعبري#2205 ↔ صنف#3972: synced؛ اصفر=5.5₪؛ ازرق=5.5₪؛ اخضر=5.5₪. https://jabaristore.com/?app=product.show.2205
+- الجعبري#2204 ↔ صنف#3973: no_options؛ كلفة ليرات عثماني مرصوص ( حبة صغيرة ). https://jabaristore.com/?app=product.show.2204
+- الجعبري#2200 ↔ صنف#3974: no_options؛ كرة اكريلك ( 5.50 سم ) ~ 12 قطعة ~. https://jabaristore.com/?app=product.show.2200
+- الجعبري#2198 ↔ صنف#3975: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2198
+- الجعبري#2196 ↔ صنف#3976: synced؛ عدد / اصبع=1.5₪؛ كيلو=26.5₪. https://jabaristore.com/?app=product.show.2196
+- الجعبري#2195 ↔ صنف#3977: synced؛ عدد / اصبع=1.5₪؛ كيلو=26.5₪. https://jabaristore.com/?app=product.show.2195
+- الجعبري#2191 ↔ صنف#3978: no_options؛ ورد صناعي ورق ( بنفسجي). https://jabaristore.com/?app=product.show.2191
+- الجعبري#2190 ↔ صنف#3979: no_options؛ ورد صناعي ورق ( ازرق ). https://jabaristore.com/?app=product.show.2190
+- الجعبري#2189 ↔ صنف#3980: no_options؛ ورد صناعي ورق ( ازرق سماوي ). https://jabaristore.com/?app=product.show.2189
+- الجعبري#2187 ↔ صنف#3981: no_options؛ ورد صناعي ورق ( ابيض ). https://jabaristore.com/?app=product.show.2187
+- الجعبري#2186 ↔ صنف#3982: no_options؛ ورد صناعي ورق ( زهر ). https://jabaristore.com/?app=product.show.2186
+- الجعبري#2179 ↔ صنف#3983: synced؛ بالقطعة=4.5₪؛ 50 قطعة=210₪. https://jabaristore.com/?app=product.show.2179
+- الجعبري#2176 ↔ صنف#3984: synced؛ بالقطعة=5.5₪؛ 50 قطعة=260₪. https://jabaristore.com/?app=product.show.2176
+- الجعبري#2171 ↔ صنف#3985: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2171
+- الجعبري#2170 ↔ صنف#3986: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2170
+- الجعبري#2169 ↔ صنف#3987: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2169
+- الجعبري#2168 ↔ صنف#3988: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2168
+- الجعبري#2167 ↔ صنف#3989: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2167
+- الجعبري#2166 ↔ صنف#3990: no_options؛ صبغات PIGMENT للايبوكسي ( ازرق سماوي ، Skyblue ). https://jabaristore.com/?app=product.show.2166
+- الجعبري#2165 ↔ صنف#3991: no_options؛ صبغات PIGMENT للايبوكسي ( بنفسجي ، Violet ). https://jabaristore.com/?app=product.show.2165
+- الجعبري#2164 ↔ صنف#3992: no_options؛ صبغات PIGMENT للايبوكسي ( ابيض ، White ). https://jabaristore.com/?app=product.show.2164
+- الجعبري#2163 ↔ صنف#3993: no_options؛ صبغات PIGMENT للايبوكسي ( ازرق ، Blue ). https://jabaristore.com/?app=product.show.2163
+- الجعبري#2162 ↔ صنف#3994: no_options؛ صبغات PIGMENT للايبوكسي ( زهري ، Pink ). https://jabaristore.com/?app=product.show.2162
+- الجعبري#2161 ↔ صنف#3995: no_options؛ صبغات PIGMENT للايبوكسي ( احمر كرزي ، Cherry ). https://jabaristore.com/?app=product.show.2161
+- الجعبري#2160 ↔ صنف#3996: no_options؛ صبغات PIGMENT للايبوكسي ( احمر ، Red ). https://jabaristore.com/?app=product.show.2160
+- الجعبري#2159 ↔ صنف#3997: no_options؛ صبغات PIGMENT للايبوكسي ( ليلكي ، Purple ). https://jabaristore.com/?app=product.show.2159
+- الجعبري#2158 ↔ صنف#3998: no_options؛ صبغات PIGMENT للايبوكسي ( اصفر ، Yellow ). https://jabaristore.com/?app=product.show.2158
+- الجعبري#2157 ↔ صنف#3999: no_options؛ صبغات PIGMENT للايبوكسي ( ازرق ياقوت ، Sapphire Blue ). https://jabaristore.com/?app=product.show.2157
+- الجعبري#2156 ↔ صنف#4000: no_options؛ صبغات PIGMENT للايبوكسي ( فوشي ، Fuschia ). https://jabaristore.com/?app=product.show.2156
+- الجعبري#2155 ↔ صنف#4001: no_options؛ صبغات PIGMENT للايبوكسي ( احمر ارجواني،Purplish Red ). https://jabaristore.com/?app=product.show.2155
+- الجعبري#2154 ↔ صنف#4002: no_options؛ صبغات PIGMENT للايبوكسي ( فيروزي ، Peacock Blue ). https://jabaristore.com/?app=product.show.2154
+- الجعبري#2153 ↔ صنف#4003: no_options؛ صبغات PIGMENT للايبوكسي ( قهوة ، coffee ). https://jabaristore.com/?app=product.show.2153
+- الجعبري#2152 ↔ صنف#4004: no_options؛ صبغات PIGMENT للايبوكسي ( احمر وردي ، Rose red ). https://jabaristore.com/?app=product.show.2152
+- الجعبري#2151 ↔ صنف#4005: no_options؛ صبغات PIGMENT للايبوكسي ( ليلكي ، Azure ). https://jabaristore.com/?app=product.show.2151
+- الجعبري#2150 ↔ صنف#4006: no_options؛ صبغات PIGMENT للايبوكسي ( اسود ، Black ). https://jabaristore.com/?app=product.show.2150
+- الجعبري#2149 ↔ صنف#4007: no_options؛ صبغات PIGMENT للايبوكسي ( بني ، Brown ). https://jabaristore.com/?app=product.show.2149
+- الجعبري#2144 ↔ صنف#4008: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2144
+- الجعبري#2142 ↔ صنف#4009: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2142
+- الجعبري#2140 ↔ صنف#4010: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2140
+- الجعبري#2135 ↔ صنف#4011: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2135
+- الجعبري#2134 ↔ صنف#4012: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2134
+- الجعبري#2125 ↔ صنف#4013: no_options؛ صبغات سائلة للشمع 10Ml. https://jabaristore.com/?app=product.show.2125
+- الجعبري#2117 ↔ صنف#4014: synced؛ 100 غم=16.5₪؛ باكيت 450 غرام=52₪. https://jabaristore.com/?app=product.show.2117
+- الجعبري#2115 ↔ صنف#4015: synced؛ 100 غم=13.5₪؛ باكيت 450 غرام=42₪. https://jabaristore.com/?app=product.show.2115
+- الجعبري#2112 ↔ صنف#4016: synced؛ 100 غم=16.5₪؛ باكيت 450 غرام=42₪. https://jabaristore.com/?app=product.show.2112
+- الجعبري#2110 ↔ صنف#4017: synced؛ 100 غم=16.5₪؛ باكيت 450 غرام=52₪. https://jabaristore.com/?app=product.show.2110
+- الجعبري#2108 ↔ صنف#4018: synced؛ 100 غم=13.5₪؛ باكيت 450 غرام=42₪. https://jabaristore.com/?app=product.show.2108
+- الجعبري#2105 ↔ صنف#4019: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2105
+- الجعبري#2104 ↔ صنف#4020: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2104
+- الجعبري#2103 ↔ صنف#4021: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2103
+- الجعبري#2102 ↔ صنف#4022: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2102
+- الجعبري#2101 ↔ صنف#4023: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2101
+- الجعبري#2100 ↔ صنف#4024: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2100
+- الجعبري#2099 ↔ صنف#4025: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2099
+- الجعبري#2098 ↔ صنف#4026: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2098
+- الجعبري#2097 ↔ صنف#4027: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2097
+- الجعبري#2096 ↔ صنف#4028: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2096
+- الجعبري#2095 ↔ صنف#4029: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2095
+- الجعبري#2093 ↔ صنف#4030: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2093
+- الجعبري#2092 ↔ صنف#4031: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2092
+- الجعبري#2091 ↔ صنف#4032: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2091
+- الجعبري#2090 ↔ صنف#4033: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2090
+- الجعبري#2089 ↔ صنف#4034: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2089
+- الجعبري#2088 ↔ صنف#4035: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2088
+- الجعبري#2087 ↔ صنف#4036: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2087
+- الجعبري#2086 ↔ صنف#4037: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2086
+- الجعبري#2085 ↔ صنف#4038: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2085
+- الجعبري#2084 ↔ صنف#4039: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2084
+- الجعبري#2083 ↔ صنف#4040: no_options؛ صبغة بودرة ( MICA POWDER PIGMINT ). https://jabaristore.com/?app=product.show.2083
+- الجعبري#2082 ↔ صنف#4041: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2082
+- الجعبري#2076 ↔ صنف#4042: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2076
+- الجعبري#2072 ↔ صنف#4043: no_options؛ حامل فتيل شمع ( 50 قطعة ). https://jabaristore.com/?app=product.show.2072
+- الجعبري#2070 ↔ صنف#4044: synced؛ ذهبي=8.5₪؛ فضي=8.5₪؛ جولدن رزو=8.5₪. https://jabaristore.com/?app=product.show.2070
+- الجعبري#2069 ↔ صنف#4045: no_options؛ شفرة ( اداة حف ). https://jabaristore.com/?app=product.show.2069
+- الجعبري#2068 ↔ صنف#4046: no_options؛ دريل ( اداة حفر ). https://jabaristore.com/?app=product.show.2068
+- الجعبري#2067 ↔ صنف#4047: no_options؛ دريل ( اداة حفر ) مع سلك USB. https://jabaristore.com/?app=product.show.2067
+- الجعبري#2066 ↔ صنف#4048: no_options؛ فتيل شمع قطن 60 متر. https://jabaristore.com/?app=product.show.2066
+- الجعبري#2065 ↔ صنف#4049: no_options؛ يد صينية ذهبي ( 5 سم ). https://jabaristore.com/?app=product.show.2065
+- الجعبري#2064 ↔ صنف#4050: no_options؛ يد صينية فضي ( 5 سم ). https://jabaristore.com/?app=product.show.2064
+- الجعبري#2063 ↔ صنف#4051: no_options؛ يد صينية فضي ( 15 سم ). https://jabaristore.com/?app=product.show.2063
+- الجعبري#2062 ↔ صنف#4052: no_options؛ يد صينية ذهبي ( 15 سم ). https://jabaristore.com/?app=product.show.2062
+- الجعبري#2060 ↔ صنف#4053: synced؛ 10 قطعة=7₪؛ 50 قطعة=24.5₪؛ 100 قطعة=37₪. https://jabaristore.com/?app=product.show.2060
