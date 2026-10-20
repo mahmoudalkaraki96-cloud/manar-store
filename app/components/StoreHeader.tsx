@@ -18,6 +18,7 @@ function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
   <Link className="searchResultLink" href={`/product/${p.id}`} onClick={onOpen}>
    <span className="searchResultVisual">{p.image?<img src={productThumbnail(p.image,320)} alt={p.name} loading="lazy" decoding="async" fetchPriority="low"/>:<span className="searchPlaceholder">▧</span>}<small className="searchItemBadge">#{p.itemNumber}</small></span>
    <b>{p.name}</b>
+   {!available&&<small className="searchSoldOutBadge">منتهي</small>}
   </Link>
   {variants.length>0&&<div className="searchVariantChoices" aria-label={`خيارات ${p.name} #${p.itemNumber}`}>{variants.map((v,index)=><button type="button" key={v.id??index} aria-pressed={selected===index} disabled={v.stock<=0} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} onClick={()=>setSelected(selected===index?null:index)}>{v.name}</button>)}</div>}
   <strong className="searchResultPrice" aria-live="polite" dir="ltr">{priceLabel}</strong>
