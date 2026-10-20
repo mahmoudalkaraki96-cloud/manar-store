@@ -4226,3 +4226,24 @@
 - سكربت dofesh_missing_draft_import.py وworkflowمستقلة، فحص ربط المصدر/الاسم مباشرة قبل الإضافة مع حاجزSQLذري لمنع التكرار. صورالمصدر وروابطالمورد والمتغيرات بأسعار دوفش وحقولالتخصيص تُحفظ؛ المنتجactive0ومخزونه0وكلالمتغيراتstock0. لايعدّل موجودًا ولاينشر.
 - اجتازت7اختباراتSQLite/HTMLحقيقي1421 تشملالصورتشفيرالمسار والمتغيراتوحقولاسمالبيبيوالملاحظة، مسودةحقيقية، الحفاظعلىالموجود، preview، التكرار، rollbackوحاجزالصنفالمحذوف. audit_logs تسجل كل استيراد داخل نفسمعاملةالحفظ؛ JSON/CSVوتقريرprogressبعدالجولة.
 - التالي تشغيلapply والتحقق من عددالمسوداتالحقيقي وحالةالنشر، ثم تسليم قائمةأرقامالأصناف.
+
+
+### 2026-10-20T09:10:50.782969+03:00 — DOFESH-MISSING-DRAFT-IMPORT
+## DOFESH-MISSING-DRAFT-IMPORT
+- Time: 2026-10-20T09:10:50.782969+03:00
+- Status: completed
+- Total saved imports: 13
+- {"id": 3785, "item_number": 4785, "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حصان بيبي ازرق", "active": 0, "stock_quantity": 0, "price_agorot": 7500, "source_id": 1421, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1421", "images": 1, "variants": 2, "fields": 2}
+- {"id": 3786, "item_number": 4786, "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حورية البحر", "active": 0, "stock_quantity": 0, "price_agorot": 7500, "source_id": 1420, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1420", "images": 1, "variants": 2, "fields": 2}
+- {"id": 3787, "item_number": 4787, "name": "ستاند اكرليك مزخرف اسماء العروسين للخطوبة", "active": 0, "stock_quantity": 0, "price_agorot": 9000, "source_id": 1419, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1419", "images": 1, "variants": 2, "fields": 2}
+- {"id": 3788, "item_number": 4788, "name": "صندوق زجاج مع اطار نحاس ذهبي", "active": 0, "stock_quantity": 0, "price_agorot": 6000, "source_id": 1418, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1418", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3789, "item_number": 4789, "name": "قماش خيش بالمتر", "active": 0, "stock_quantity": 0, "price_agorot": 1500, "source_id": 1417, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1417", "images": 1, "variants": 0, "fields": 0}
+- {"id": 3790, "item_number": 4790, "name": "شنتة شفاف bvc", "active": 0, "stock_quantity": 0, "price_agorot": 2500, "source_id": 1416, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1416", "images": 2, "variants": 2, "fields": 0}
+- {"id": 3791, "item_number": 4791, "name": "قطع اكريلك لتزيين الشوكولاتة شكل طاقية", "active": 0, "stock_quantity": 0, "price_agorot": 1000, "source_id": 1414, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1414", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3792, "item_number": 4792, "name": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي", "active": 0, "stock_quantity": 0, "price_agorot": 1000, "source_id": 1413, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1413", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3793, "item_number": 4793, "name": "قطع اكريلك لتزيين الشوكولاتة", "active": 0, "stock_quantity": 0, "price_agorot": 800, "source_id": 1411, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1411", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3794, "item_number": 4794, "name": "قطع اكريلك لتزيين الشوكولاتة شكل كعبة", "active": 0, "stock_quantity": 0, "price_agorot": 1000, "source_id": 1410, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1410", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3795, "item_number": 4795, "name": "كيس شفاف bvc محزز ابيض مع خيط", "active": 0, "stock_quantity": 0, "price_agorot": 2500, "source_id": 1409, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1409", "images": 1, "variants": 2, "fields": 0}
+- {"id": 3796, "item_number": 4796, "name": "علبة شفاف bvc طبقتين كرتون", "active": 0, "stock_quantity": 0, "price_agorot": 3500, "source_id": 1408, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1408", "images": 2, "variants": 1, "fields": 0}
+- {"id": 3797, "item_number": 4797, "name": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )", "active": 0, "stock_quantity": 0, "price_agorot": 3500, "source_id": 1407, "status": "imported_draft", "source_url": "https://dofesh.ps/?app=product.show.1407", "images": 1, "variants": 1, "fields": 0}
+- {"source_id": 1396, "status": "already_present"}
