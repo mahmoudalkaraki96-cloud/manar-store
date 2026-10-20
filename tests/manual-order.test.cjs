@@ -2,6 +2,7 @@ const {test}=require("node:test");
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
 const {stripTypeScriptTypes}=require("node:module");
+const {DatabaseSync}=require("node:sqlite");
 const modulePromise=import("data:text/javascript;base64,"+Buffer.from(stripTypeScriptTypes(fs.readFileSync("worker/manual-order.ts","utf8"),{mode:"transform"})).toString("base64"));
 function fixture(){
  const sql=new DatabaseSync(":memory:");
