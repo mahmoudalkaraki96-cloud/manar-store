@@ -5885,3 +5885,15 @@
 - الجعبري#79 ↔ صنف#2541: no_options؛ مباخر رخام. https://jabaristore.com/?app=product.show.79
 - الجعبري#60 ↔ صنف#2543: no_options؛ مراي يد ( جولد روز ). https://jabaristore.com/?app=product.show.60
 - الجعبري#54 ↔ صنف#2544: no_options؛ شنط اكسسوار مخمل ( اسود ). https://jabaristore.com/?app=product.show.54
+
+
+### 2026-10-20T14:31:59.563688+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T14:31:59.563688+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 1603, "synced": 868}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#39 ↔ صنف#4780: no_options؛ علب كرتون ابيض مع غطاء شفاف (3*15*12) 10 قطعة. https://jabaristore.com/?app=product.show.39

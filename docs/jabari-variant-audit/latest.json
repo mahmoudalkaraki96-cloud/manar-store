@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-20T14:31:53.323084+03:00",
+  "updated_at": "2026-10-20T14:31:59.563688+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 200,
+  "run_processed": 1,
   "results": [
     {
       "source_id": 4499,
@@ -19728,9 +19728,9 @@
       "source_id": 39,
       "mode": "apply",
       "product_id": 3780,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4780}",
-      "updated_at": 1792480969895
+      "status": "no_options",
+      "detail": "{\"item_number\": 4780, \"source\": {\"title\": \"علب كرتون ابيض مع غطاء شفاف (3*15*12) 10 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495918682
     },
     {
       "source_id": 35,
