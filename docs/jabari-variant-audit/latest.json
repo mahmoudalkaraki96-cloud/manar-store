@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-20T10:23:17.418014+03:00",
+  "updated_at": "2026-10-20T10:23:22.038565+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 90,
+  "run_processed": 0,
   "results": [
     {
       "source_id": 4499,

@@ -5307,3 +5307,14 @@
 - الجعبري#32 ↔ صنف#4783: synced؛ ابيض=9.5₪؛ بني=9.5₪؛ ذهبي=9.5₪. https://jabaristore.com/?app=product.show.32
 - الجعبري#27 ↔ صنف#2545: synced؛ ابيض / 10 قطعة=20.5₪؛ ابيض / 100 قطعة=180₪؛ بني / 10 قطعة=20.5₪؛ بني / 100 قطعة=180₪؛ ذهبي / 10 قطعة=20.5₪؛ ذهبي / 100 قطعة=180₪؛ فضي / 10 قطعة=20.5₪؛ فضي / 100 قطعة=180₪. https://jabaristore.com/?app=product.show.27
 - الجعبري#20 ↔ صنف#4784: synced؛ ابيض / 10 قطعة=7₪؛ ابيض / 100 قطعة=52₪؛ فضي / 10 قطعة=7₪؛ فضي / 100 قطعة=52₪؛ ذهبي / 10 قطعة=7₪؛ ذهبي / 100 قطعة=52₪؛ بني / 10 قطعة=7₪؛ بني / 100 قطعة=52₪. https://jabaristore.com/?app=product.show.20
+
+
+### 2026-10-20T10:23:22.038565+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T10:23:22.038565+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 1202, "synced": 868, "unsupported_source_price": 401}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
