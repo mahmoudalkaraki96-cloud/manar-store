@@ -3986,3 +3986,62 @@
 - Next listing page: None
 - No product/database writes.
 - التقرير: docs/dofesh-missing-products/missing-products.html وmissing-products.csv؛ لم تُضف أو تُنشر أو تُعدّل منتجات.
+### 2026-10-20T08:53:29.693533+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-20T08:53:29.693533+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 367, "no_options": 737, "missing_source": 5, "unsupported_customization_or_minimum": 17, "matched": 24, "unsupported_source_price": 4, "unsupported_supplier_removed_options": 2, "unsupported_source_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#95 ↔ صنف#2157: synced؛ ابيض / 6.5x4.5=2₪؛ اسود / 6.5x4.5=2₪؛ ازرق / 6.5x4.5=2₪؛ خمري / 6.5x4.5=2₪؛ زهري / 6.5x4.5=2₪. https://dofesh.ps/?app=product.show.95
+- دوفش#94 ↔ صنف#2158: no_options؛ علبة اكريلك شفاف مقاس 5*5. https://dofesh.ps/?app=product.show.94
+- دوفش#93 ↔ صنف#2159: no_options؛ تعليقة بيبي للباب مقاس 35 سم. https://dofesh.ps/?app=product.show.93
+- دوفش#92 ↔ صنف#2160: no_options؛ تعليقة بيبي للباب مقاس 35 سم. https://dofesh.ps/?app=product.show.92
+- دوفش#85 ↔ صنف#2161: synced؛ بالحبة=3₪؛ 12 حبة=24₪. https://dofesh.ps/?app=product.show.85
+- دوفش#84 ↔ صنف#2162: no_options؛ سورة البقرة ابيض. https://dofesh.ps/?app=product.show.84
+- دوفش#83 ↔ صنف#2163: no_options؛ مصحف البقرة زهري. https://dofesh.ps/?app=product.show.83
+- دوفش#80 ↔ صنف#2164: synced؛ بالحبة=3₪؛ 50 حبة=100₪. https://dofesh.ps/?app=product.show.80
+- دوفش#79 ↔ صنف#2165: no_options؛ مكرمية قوس قزح 3 اقواس 6*8 زهري. https://dofesh.ps/?app=product.show.79
+- دوفش#76 ↔ صنف#2166: synced؛ بالدزينة=15₪؛ 34 دزينة=408₪. https://dofesh.ps/?app=product.show.76
+- دوفش#75 ↔ صنف#2167: no_options؛ ببلز كبير 6*6*6 زهري. https://dofesh.ps/?app=product.show.75
+- دوفش#74 ↔ صنف#2168: no_options؛ شمع ببلز حجم كبير 6*6*6 ازرق. https://dofesh.ps/?app=product.show.74
+- دوفش#73 ↔ صنف#1224: no_options؛ شمع ببلز حجم كبير 6*6*6 لون ابيض. https://dofesh.ps/?app=product.show.73
+- دوفش#71 ↔ صنف#2169: no_options؛ ع اقحوان زهر 5 سم. https://dofesh.ps/?app=product.show.71
+- دوفش#70 ↔ صنف#2170: no_options؛ شع ورد الاقحوان ابيض مع الاصفر 5 سم. https://dofesh.ps/?app=product.show.70
+- دوفش#69 ↔ صنف#2171: no_options؛ شمع ببلز بني 4 سم. https://dofesh.ps/?app=product.show.69
+- دوفش#68 ↔ صنف#2172: no_options؛ شمع ببلز ازرق 4 سم. https://dofesh.ps/?app=product.show.68
+- دوفش#67 ↔ صنف#2173: no_options؛ ع ببلز زهري 4 سم. https://dofesh.ps/?app=product.show.67
+- دوفش#66 ↔ صنف#2174: no_options؛ شمع ببلز صغير ابيض 4 سم. https://dofesh.ps/?app=product.show.66
+- دوفش#65 ↔ صنف#2175: no_options؛ مراية جلد زهري (9*6.5سم). https://dofesh.ps/?app=product.show.65
+- دوفش#64 ↔ صنف#2176: no_options؛ مراي جلد ابيض (9*6.5 سم). https://dofesh.ps/?app=product.show.64
+- دوفش#63 ↔ صنف#2177: no_options؛ مراية جلد زهري قياس 10*7. https://dofesh.ps/?app=product.show.63
+- دوفش#62 ↔ صنف#1225: no_options؛ مراية جلد قلاب ابيض 10*7سم. https://dofesh.ps/?app=product.show.62
+- دوفش#60 ↔ صنف#2178: synced؛ باللفة=3₪؛ 12 لفة=20₪. https://dofesh.ps/?app=product.show.60
+- دوفش#59 ↔ صنف#2179: synced؛ دزينة=12₪. https://dofesh.ps/?app=product.show.59
+- دوفش#58 ↔ صنف#2180: no_options؛ مراي 14 سم ذهبي خلفية وردة. https://dofesh.ps/?app=product.show.58
+- دوفش#57 ↔ صنف#2181: no_options؛ مراي بيضاوي برونزي (25سم). https://dofesh.ps/?app=product.show.57
+- دوفش#56 ↔ صنف#2182: no_options؛ مراي مدورة حجم كبير قياس (25سم)ذهبي. https://dofesh.ps/?app=product.show.56
+- دوفش#55 ↔ صنف#2183: no_options؛ مراية ذهبي ايد فراشة (15 سم). https://dofesh.ps/?app=product.show.55
+- دوفش#54 ↔ صنف#2184: unsupported_source_price؛ simple_price_not_verified. https://dofesh.ps/?app=product.show.54
+- دوفش#53 ↔ صنف#2185: synced؛ بالحبة=5₪؛ 10 حبة=40₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.53
+- دوفش#52 ↔ صنف#2186: synced؛ ازرق=3₪؛ زهر=3₪؛ ابيض=3₪. https://dofesh.ps/?app=product.show.52
+- دوفش#51 ↔ صنف#2187: synced؛ ازرق=3₪؛ زهري=3₪. https://dofesh.ps/?app=product.show.51
+- دوفش#50 ↔ صنف#2188: no_options؛ ضمة ورد جوري ابيض مخمل 7 فروع. https://dofesh.ps/?app=product.show.50
+- دوفش#49 ↔ صنف#2189: no_options؛ رد اضاليا 7 فروع. https://dofesh.ps/?app=product.show.49
+- دوفش#48 ↔ صنف#2190: synced؛ ذهبي=10₪؛ ابيض=8₪. https://dofesh.ps/?app=product.show.48
+- دوفش#47 ↔ صنف#2191: synced؛ ابيض=6₪؛ ازرق=6₪؛ زهري=6₪. https://dofesh.ps/?app=product.show.47
+- دوفش#46 ↔ صنف#2192: synced؛ ابيض=10₪؛ احمر=10₪. https://dofesh.ps/?app=product.show.46
+- دوفش#45 ↔ صنف#2193: no_options؛ عرق ورد مخمل. https://dofesh.ps/?app=product.show.45
+- دوفش#44 ↔ صنف#2194: synced؛ ابيض=15₪؛ ازرق=15₪؛ زهري=15₪. https://dofesh.ps/?app=product.show.44
+- دوفش#43 ↔ صنف#2195: synced؛ ابيض / بالحبة=1₪؛ ابيض / 10 حبة=7₪؛ ابيض / 50 حبة=25₪؛ بيج / بالحبة=1₪؛ بيج / 10 حبة=7₪؛ بيج / 50 حبة=25₪؛ خمري / بالحبة=1₪؛ خمري / 10 حبة=7₪؛ خمري / 50 حبة=25₪؛ ازرق / بالحبة=1₪؛ ازرق / 10 حبة=7₪؛ ازرق / 50 حبة=25₪؛ زهري / بالحبة=1₪؛ زهري / 10 حبة=7₪؛ زهري / 50 حبة=25₪؛ اسود / بالحبة=1₪؛ اسود / 10 حبة=7₪؛ اسود / 50 حبة=25₪؛ كحلي / بالحبة=1₪؛ كحلي / 10 حبة=7₪؛ كحلي / 50 حبة=25₪؛ بني / بالحبة=1₪؛ بني / 10 حبة=7₪؛ بني / 50 حبة=25₪. https://dofesh.ps/?app=product.show.43
+- دوفش#42 ↔ صنف#2196: unsupported_customization_or_minimum؛ ورد قماش 50 حبة بالكيس. https://dofesh.ps/?app=product.show.42
+- دوفش#38 ↔ صنف#2197: no_options؛ علبة اكريلك مع كرتونة 6*6*6. https://dofesh.ps/?app=product.show.38
+- دوفش#37 ↔ صنف#2198: no_options؛ علبة اكريلك مع كرتون لون ذهبي6*6*6. https://dofesh.ps/?app=product.show.37
+- دوفش#36 ↔ صنف#2199: synced؛ عرض 1 سم=15₪؛ عرض 1.5 سم=15₪؛ عرض 2 سم=15₪. https://dofesh.ps/?app=product.show.36
+- دوفش#33 ↔ صنف#2200: synced؛ بالحبة=0.5₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.33
+- دوفش#30 ↔ صنف#2201: no_options؛ فراولة عظم للشوكولاتة. https://dofesh.ps/?app=product.show.30
+- دوفش#29 ↔ صنف#2202: no_options؛ فراولة عظم اكسسوار. https://dofesh.ps/?app=product.show.29
+- دوفش#28 ↔ صنف#2203: no_options؛ مصاصة عظم لتزيين الشوكولاتة. https://dofesh.ps/?app=product.show.28
+- دوفش#26 ↔ صنف#2204: no_options؛ فراش لولو. https://dofesh.ps/?app=product.show.26

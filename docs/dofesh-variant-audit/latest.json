@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T08:45:14.073023+03:00",
+  "updated_at": "2026-10-20T08:53:29.693533+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 50,
@@ -8899,6 +8899,406 @@
       "status": "synced",
       "detail": "{\"item_number\": 2156, \"name\": \"علبة اكريلك شنتة 12*10\", \"before_price\": 400, \"before_variants\": [], \"source\": {\"title\": \"علبة اكريلك شنتة 12*10\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"12 حبة\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1156\", \"source_url\": \"https://dofesh.ps/?app=product.show.96\"}",
       "updated_at": 1792475112655
+    },
+    {
+      "source_id": 95,
+      "mode": "apply",
+      "product_id": 1157,
+      "status": "synced",
+      "detail": "{\"item_number\": 2157, \"name\": \"مصحف ميني صغير\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"مصحف ميني صغير\", \"variants\": [{\"name\": \"ابيض / 6.5x4.5\", \"price\": 200, \"active\": true}, {\"name\": \"اسود / 6.5x4.5\", \"price\": 200, \"active\": true}, {\"name\": \"ازرق / 6.5x4.5\", \"price\": 200, \"active\": true}, {\"name\": \"خمري / 6.5x4.5\", \"price\": 200, \"active\": true}, {\"name\": \"زهري / 6.5x4.5\", \"price\": 200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1157\", \"source_url\": \"https://dofesh.ps/?app=product.show.95\"}",
+      "updated_at": 1792475119348
+    },
+    {
+      "source_id": 94,
+      "mode": "apply",
+      "product_id": 1158,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2158, \"source\": {\"title\": \"علبة اكريلك شفاف مقاس 5*5\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792475129192
+    },
+    {
+      "source_id": 93,
+      "mode": "apply",
+      "product_id": 1159,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2159, \"source\": {\"title\": \"تعليقة بيبي للباب مقاس 35 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475139274
+    },
+    {
+      "source_id": 92,
+      "mode": "apply",
+      "product_id": 1160,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2160, \"source\": {\"title\": \"تعليقة بيبي للباب مقاس 35 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475149190
+    },
+    {
+      "source_id": 85,
+      "mode": "apply",
+      "product_id": 1161,
+      "status": "synced",
+      "detail": "{\"item_number\": 2161, \"name\": \"سورة البقرة بيج\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"سورة البقرة بيج\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": true}, {\"name\": \"12 حبة\", \"price\": 2400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1161\", \"source_url\": \"https://dofesh.ps/?app=product.show.85\"}",
+      "updated_at": 1792475159460
+    },
+    {
+      "source_id": 84,
+      "mode": "apply",
+      "product_id": 1162,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2162, \"source\": {\"title\": \"سورة البقرة ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475169282
+    },
+    {
+      "source_id": 83,
+      "mode": "apply",
+      "product_id": 1163,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2163, \"source\": {\"title\": \"مصحف البقرة زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475179242
+    },
+    {
+      "source_id": 80,
+      "mode": "apply",
+      "product_id": 1164,
+      "status": "synced",
+      "detail": "{\"item_number\": 2164, \"name\": \"سلة قش لتوزيعات العطور\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"سلة قش لتوزيعات العطور\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 300, \"active\": false}, {\"name\": \"50 حبة\", \"price\": 10000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1164\", \"source_url\": \"https://dofesh.ps/?app=product.show.80\"}",
+      "updated_at": 1792475189347
+    },
+    {
+      "source_id": 79,
+      "mode": "apply",
+      "product_id": 1165,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2165, \"source\": {\"title\": \"مكرمية قوس قزح 3 اقواس 6*8 زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475199168
+    },
+    {
+      "source_id": 76,
+      "mode": "apply",
+      "product_id": 1166,
+      "status": "synced",
+      "detail": "{\"item_number\": 2166, \"name\": \"شمع اصابع ابيض سادى 25 سم\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شمع اصابع ابيض سادى 25 سم\", \"variants\": [{\"name\": \"بالدزينة\", \"price\": 1500, \"active\": true}, {\"name\": \"34 دزينة\", \"price\": 40800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1166\", \"source_url\": \"https://dofesh.ps/?app=product.show.76\"}",
+      "updated_at": 1792475209278
+    },
+    {
+      "source_id": 75,
+      "mode": "apply",
+      "product_id": 1167,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2167, \"source\": {\"title\": \"ببلز كبير 6*6*6 زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475219197
+    },
+    {
+      "source_id": 74,
+      "mode": "apply",
+      "product_id": 1168,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2168, \"source\": {\"title\": \"شمع ببلز حجم كبير 6*6*6 ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475229250
+    },
+    {
+      "source_id": 73,
+      "mode": "apply",
+      "product_id": 224,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1224, \"source\": {\"title\": \"شمع ببلز حجم كبير 6*6*6 لون ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475239292
+    },
+    {
+      "source_id": 71,
+      "mode": "apply",
+      "product_id": 1169,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2169, \"source\": {\"title\": \"ع اقحوان زهر 5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475249053
+    },
+    {
+      "source_id": 70,
+      "mode": "apply",
+      "product_id": 1170,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2170, \"source\": {\"title\": \"شع ورد الاقحوان ابيض مع الاصفر 5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475258959
+    },
+    {
+      "source_id": 69,
+      "mode": "apply",
+      "product_id": 1171,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2171, \"source\": {\"title\": \"شمع ببلز بني 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792475269214
+    },
+    {
+      "source_id": 68,
+      "mode": "apply",
+      "product_id": 1172,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2172, \"source\": {\"title\": \"شمع ببلز ازرق 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792475279312
+    },
+    {
+      "source_id": 67,
+      "mode": "apply",
+      "product_id": 1173,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2173, \"source\": {\"title\": \"ع ببلز زهري 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792475289051
+    },
+    {
+      "source_id": 66,
+      "mode": "apply",
+      "product_id": 1174,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2174, \"source\": {\"title\": \"شمع ببلز صغير ابيض 4 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}}",
+      "updated_at": 1792475299059
+    },
+    {
+      "source_id": 65,
+      "mode": "apply",
+      "product_id": 1175,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2175, \"source\": {\"title\": \"مراية جلد زهري (9*6.5سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475309186
+    },
+    {
+      "source_id": 64,
+      "mode": "apply",
+      "product_id": 1176,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2176, \"source\": {\"title\": \"مراي جلد ابيض (9*6.5 سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475318955
+    },
+    {
+      "source_id": 63,
+      "mode": "apply",
+      "product_id": 1177,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2177, \"source\": {\"title\": \"مراية جلد زهري قياس 10*7\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475329198
+    },
+    {
+      "source_id": 62,
+      "mode": "apply",
+      "product_id": 225,
+      "status": "no_options",
+      "detail": "{\"item_number\": 1225, \"source\": {\"title\": \"مراية جلد قلاب ابيض 10*7سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475338958
+    },
+    {
+      "source_id": 60,
+      "mode": "apply",
+      "product_id": 1178,
+      "status": "synced",
+      "detail": "{\"item_number\": 2178, \"name\": \"شبر ليف خيش 25 متر باللفة\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شبر ليف خيش 25 متر باللفة\", \"variants\": [{\"name\": \"باللفة\", \"price\": 300, \"active\": true}, {\"name\": \"12 لفة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1178\", \"source_url\": \"https://dofesh.ps/?app=product.show.60\"}",
+      "updated_at": 1792475349135
+    },
+    {
+      "source_id": 59,
+      "mode": "apply",
+      "product_id": 1179,
+      "status": "synced",
+      "detail": "{\"item_number\": 2179, \"name\": \"مراي بلاستيك (10.5سم)\", \"before_price\": 1200, \"before_variants\": [], \"source\": {\"title\": \"مراي بلاستيك (10.5سم)\", \"variants\": [{\"name\": \"دزينة\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1179\", \"source_url\": \"https://dofesh.ps/?app=product.show.59\"}",
+      "updated_at": 1792475359324
+    },
+    {
+      "source_id": 58,
+      "mode": "apply",
+      "product_id": 1180,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2180, \"source\": {\"title\": \"مراي 14 سم ذهبي خلفية وردة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}}",
+      "updated_at": 1792475369282
+    },
+    {
+      "source_id": 57,
+      "mode": "apply",
+      "product_id": 1181,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2181, \"source\": {\"title\": \"مراي بيضاوي برونزي (25سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792475379271
+    },
+    {
+      "source_id": 56,
+      "mode": "apply",
+      "product_id": 1182,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2182, \"source\": {\"title\": \"مراي مدورة حجم كبير قياس (25سم)ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}}",
+      "updated_at": 1792475389283
+    },
+    {
+      "source_id": 55,
+      "mode": "apply",
+      "product_id": 1183,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2183, \"source\": {\"title\": \"مراية ذهبي ايد فراشة (15 سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475399173
+    },
+    {
+      "source_id": 54,
+      "mode": "apply",
+      "product_id": 1184,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2184}",
+      "updated_at": 1792475409071
+    },
+    {
+      "source_id": 53,
+      "mode": "apply",
+      "product_id": 1185,
+      "status": "synced",
+      "detail": "{\"item_number\": 2185, \"name\": \"شمع سكرية أكريلاك مقوى مقاس 7سم عرض *9سم ارتفاع\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"شمع سكرية اكريلاك مقوى مقاس 7سم عرض *9سم ارتفاع\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 500, \"active\": true}, {\"name\": \"10 حبة\", \"price\": 4000, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1185\", \"source_url\": \"https://dofesh.ps/?app=product.show.53\"}",
+      "updated_at": 1792475419425
+    },
+    {
+      "source_id": 52,
+      "mode": "apply",
+      "product_id": 1186,
+      "status": "synced",
+      "detail": "{\"item_number\": 2186, \"name\": \"شمع كاسة معطر مقاس 5.5 سم الارتفاع\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شمع كاسة معطر مقاس 5.5 سم الارتفاع\", \"variants\": [{\"name\": \"ازرق\", \"price\": 300, \"active\": true}, {\"name\": \"زهر\", \"price\": 300, \"active\": true}, {\"name\": \"ابيض\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1186\", \"source_url\": \"https://dofesh.ps/?app=product.show.52\"}",
+      "updated_at": 1792475429425
+    },
+    {
+      "source_id": 51,
+      "mode": "apply",
+      "product_id": 1187,
+      "status": "synced",
+      "detail": "{\"item_number\": 2187, \"name\": \"شمع دب مقاس 5 سم كل حبة مغلفة ببكيت بلاستيكي مميز\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"شمع دب مقاس 5 سم كل حبة مغلفة ببكيت بلاستيكي مميز\", \"variants\": [{\"name\": \"ازرق\", \"price\": 300, \"active\": false}, {\"name\": \"زهري\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1187\", \"source_url\": \"https://dofesh.ps/?app=product.show.51\"}",
+      "updated_at": 1792475439227
+    },
+    {
+      "source_id": 50,
+      "mode": "apply",
+      "product_id": 1188,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2188, \"source\": {\"title\": \"ضمة ورد جوري ابيض مخمل 7 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792475448973
+    },
+    {
+      "source_id": 49,
+      "mode": "apply",
+      "product_id": 1189,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2189, \"source\": {\"title\": \"رد اضاليا 7 فروع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}}",
+      "updated_at": 1792475459228
+    },
+    {
+      "source_id": 48,
+      "mode": "apply",
+      "product_id": 1190,
+      "status": "synced",
+      "detail": "{\"item_number\": 2190, \"name\": \"عرق اوركيد\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"عرق اوركيد\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1190\", \"source_url\": \"https://dofesh.ps/?app=product.show.48\"}",
+      "updated_at": 1792475469220
+    },
+    {
+      "source_id": 47,
+      "mode": "apply",
+      "product_id": 1191,
+      "status": "synced",
+      "detail": "{\"item_number\": 2191, \"name\": \"ورد عرق اللوز صغير\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"ورد عرق اللوز صغير\", \"variants\": [{\"name\": \"ابيض\", \"price\": 600, \"active\": true}, {\"name\": \"ازرق\", \"price\": 600, \"active\": true}, {\"name\": \"زهري\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1191\", \"source_url\": \"https://dofesh.ps/?app=product.show.47\"}",
+      "updated_at": 1792475479251
+    },
+    {
+      "source_id": 46,
+      "mode": "apply",
+      "product_id": 1192,
+      "status": "synced",
+      "detail": "{\"item_number\": 2192, \"name\": \"ضمة ورد مخمل 7 فروع\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ضمة ورد مخمل 7 فروع\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"احمر\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1192\", \"source_url\": \"https://dofesh.ps/?app=product.show.46\"}",
+      "updated_at": 1792475489364
+    },
+    {
+      "source_id": 45,
+      "mode": "apply",
+      "product_id": 1193,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2193, \"source\": {\"title\": \"عرق ورد مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}}",
+      "updated_at": 1792475499259
+    },
+    {
+      "source_id": 44,
+      "mode": "apply",
+      "product_id": 1194,
+      "status": "synced",
+      "detail": "{\"item_number\": 2194, \"name\": \"ورد جوري 9 عروق\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"ورد جوري 9 عروق\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1500, \"active\": true}, {\"name\": \"ازرق\", \"price\": 1500, \"active\": true}, {\"name\": \"زهري\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1194\", \"source_url\": \"https://dofesh.ps/?app=product.show.44\"}",
+      "updated_at": 1792475509123
+    },
+    {
+      "source_id": 43,
+      "mode": "apply",
+      "product_id": 1195,
+      "status": "synced",
+      "detail": "{\"item_number\": 2195, \"name\": \"ورد قرنفل مخمل 5سم\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد قرنفل مخمل 5سم\", \"variants\": [{\"name\": \"ابيض / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"ابيض / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"ابيض / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"بيج / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"بيج / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"بيج / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"خمري / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"خمري / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"خمري / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"ازرق / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"ازرق / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"ازرق / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"زهري / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"زهري / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"زهري / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"اسود / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"اسود / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"اسود / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"كحلي / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"كحلي / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"كحلي / 50 حبة\", \"price\": 2500, \"active\": true}, {\"name\": \"بني / بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"بني / 10 حبة\", \"price\": 700, \"active\": true}, {\"name\": \"بني / 50 حبة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1195\", \"source_url\": \"https://dofesh.ps/?app=product.show.43\"}",
+      "updated_at": 1792475519181
+    },
+    {
+      "source_id": 42,
+      "mode": "apply",
+      "product_id": 1196,
+      "status": "unsupported_customization_or_minimum",
+      "detail": "{\"item_number\": 2196, \"source\": {\"title\": \"ورد قماش 50 حبة بالكيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 50, \"simple_price\": 1000}}",
+      "updated_at": 1792475529194
+    },
+    {
+      "source_id": 38,
+      "mode": "apply",
+      "product_id": 1197,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2197, \"source\": {\"title\": \"علبة اكريلك مع كرتونة 6*6*6\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475538959
+    },
+    {
+      "source_id": 37,
+      "mode": "apply",
+      "product_id": 1198,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2198, \"source\": {\"title\": \"علبة اكريلك مع كرتون لون ذهبي6*6*6\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475549150
+    },
+    {
+      "source_id": 36,
+      "mode": "apply",
+      "product_id": 1199,
+      "status": "synced",
+      "detail": "{\"item_number\": 2199, \"name\": \"شبر خيش 2سم/1.5سم\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"شبر خيش 2سم/1.5سم\", \"variants\": [{\"name\": \"عرض 1 سم\", \"price\": 1500, \"active\": true}, {\"name\": \"عرض 1.5 سم\", \"price\": 1500, \"active\": true}, {\"name\": \"عرض 2 سم\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1199\", \"source_url\": \"https://dofesh.ps/?app=product.show.36\"}",
+      "updated_at": 1792475559125
+    },
+    {
+      "source_id": 33,
+      "mode": "apply",
+      "product_id": 1200,
+      "status": "synced",
+      "detail": "{\"item_number\": 2200, \"name\": \"دب عظم زهر\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"دب عظم زهر\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 50, \"active\": false}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1200\", \"source_url\": \"https://dofesh.ps/?app=product.show.33\"}",
+      "updated_at": 1792475569342
+    },
+    {
+      "source_id": 30,
+      "mode": "apply",
+      "product_id": 1201,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2201, \"source\": {\"title\": \"فراولة عظم للشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792475578959
+    },
+    {
+      "source_id": 29,
+      "mode": "apply",
+      "product_id": 1202,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2202, \"source\": {\"title\": \"فراولة عظم اكسسوار\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 30}}",
+      "updated_at": 1792475589154
+    },
+    {
+      "source_id": 28,
+      "mode": "apply",
+      "product_id": 1203,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2203, \"source\": {\"title\": \"مصاصة عظم لتزيين الشوكولاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 50}}",
+      "updated_at": 1792475599137
+    },
+    {
+      "source_id": 26,
+      "mode": "apply",
+      "product_id": 1204,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2204, \"source\": {\"title\": \"فراش لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475609090
     }
   ]
 }
