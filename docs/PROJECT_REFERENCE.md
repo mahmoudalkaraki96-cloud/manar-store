@@ -353,3 +353,7 @@
 
 ### 2026-10-20 — اعتماد دفعة صور ونشر منتجاتها
 - tools/approve_dofesh_batch.py وworkflow approve-dofesh-batch.yml لموافقةبشريةصريحةعلىBatchوأرقامأصنافمحددة. يعتمدproduct_mediaوصورةaiويغيرproducts.activeإلى1فقط؛ الأسعاروالمخزونمحفوظان. معاملةD1واحدةللمجموعةوحواجزتغيرالصورة/المنتجوتسجيلaudit_logs،ثمJSONوprogress.4اختباراتناجحة؛ لاOpenAIAPIولاكلفةمعالجةجديدة.
+
+
+### 2026-10-20 — كمية اختيارية عند اعتماد دفعة دوفش
+- approve-dofesh-batch.yml يدعمstockاختيارية(0..1000000)،تمررPUBLISH_STOCK؛ عدمالتحديديحفظالمخزون. القيمةالمحددةتُكتبproducts.stock_quantityوproduct_variants.stock_quantityفقطضمننفسالمعاملة،معالحفاظعلىالأسعاروحالةactiveلكلمتغير.6اختباراتناجحةبمافيهاضبط10000والحفاظعلىتعطيلالخياراتغيرالمتاحة.

@@ -8,6 +8,10 @@ on:
       item_numbers:
         description: Exact visible product numbers to approve and publish
         required: true
+      stock:
+        description: Optional exact stock for products and their variants; blank preserves it
+        required: false
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -31,6 +35,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           BATCH_ID: ${{ inputs.batch_id }}
+          PUBLISH_STOCK: ${{ inputs.stock }}
           ITEM_NUMBERS: ${{ inputs.item_numbers }}
         run: python tools/approve_dofesh_batch.py --batch-id "$BATCH_ID" --items "$ITEM_NUMBERS"
       - name: Save publication report and shared progress

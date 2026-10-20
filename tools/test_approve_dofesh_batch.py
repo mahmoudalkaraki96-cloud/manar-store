@@ -5,6 +5,7 @@ class DB:
  def __init__(self):
   self.c=sqlite3.connect(':memory:');self.c.row_factory=sqlite3.Row
   self.c.executescript("""CREATE TABLE products(id,item_number,name,active,price_agorot,stock_quantity,updated_at,deleted_at,specifications);
+  CREATE TABLE product_variants(id,product_id,stock_quantity,active,updated_at);
   CREATE TABLE product_media(id,product_id,url,updated_at);
   CREATE TABLE image_ai_items(batch_id,media_id,product_id,item_number,generated_url,original_url,status,updated_at);
   CREATE TABLE audit_logs(entity_type,entity_id,action TEXT NOT NULL,details_json,created_at);
@@ -23,6 +24,15 @@ class Tests(unittest.TestCase):
   self.assertEqual(db.query('SELECT status FROM image_ai_items')[0]['status'],'published')
   self.assertEqual(len(db.query('SELECT * FROM audit_logs')),1)
   self.assertIsNone(db.query('SELECT specifications FROM products')[0]['specifications'])
+ def test_requested_stock_updates_product_and_variants(self):
+  db=DB();db.c.executescript('INSERT INTO product_variants VALUES(1,1,0,1,10); INSERT INTO product_variants VALUES(2,1,0,0,10);')
+  rows=a.publish(db,'batch_test',[4785],10000)
+  self.assertEqual(rows[0]['stock_quantity'],10000)
+  variants=db.query('SELECT stock_quantity,active FROM product_variants ORDER BY id')
+  self.assertEqual([v['stock_quantity'] for v in variants],[10000,10000])
+  self.assertEqual([v['active'] for v in variants],[1,0])
+ def test_invalid_stock_is_rejected(self):
+  with self.assertRaises(ValueError):a.publish(DB(),'batch_test',[4785],-1)
  def test_unselected_product_not_modified(self):
   db=DB();db.c.execute("INSERT INTO products VALUES(9,4799,'other',0,1,9,1,NULL,NULL)");db.c.commit()
   a.publish(db,'batch_test',[4785])

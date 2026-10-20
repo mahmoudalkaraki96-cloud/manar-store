@@ -1,11 +1,12 @@
 """Approve a reviewed image batch and publish only explicitly selected products. No AI calls."""
-import argparse,json,time,uuid,re
+import argparse,json,time,uuid,re,os
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from dofesh_variant_audit import D1
 
-def publish(db,batch_id,numbers):
+def publish(db,batch_id,numbers,stock=None):
+    if stock is not None and not 0 <= stock <= 1000000:raise ValueError('invalid_stock')
     if not re.fullmatch(r'batch_[a-zA-Z0-9]+',batch_id) or not numbers or len(numbers)>100:
         raise ValueError('invalid_selection')
     marks=','.join('?' for _ in numbers)
@@ -28,7 +29,7 @@ def publish(db,batch_id,numbers):
     for r in rows:
         detail=json.dumps({'operation':token,'batch_id':batch_id,'item_number':r['item_number'],'before_active':r['active'],
                            'before_image':r['url'],'after_image':r['generated_url'],'price_preserved':r['price_agorot'],
-                           'stock_preserved':r['stock_quantity']})
+                           'before_stock':r['stock_quantity'],'target_stock':stock})
         # CHECK constraint table existing in D1? Use audit INSERT plus guarded mutations and verify changes inside batch.
         # A deliberate NOT NULL violation in audit_logs aborts the whole batch if any snapshot guard fails.
         guard="""INSERT INTO audit_logs(entity_type,entity_id,action,details_json,created_at)
@@ -46,21 +47,27 @@ def publish(db,batch_id,numbers):
         statements.append(("UPDATE image_ai_items SET status='published',updated_at=? WHERE batch_id=? AND media_id=?",
                            [now,batch_id,r['media_id']]))
         statements.append(("UPDATE products SET active=1,updated_at=?,specifications=CASE WHEN json_valid(specifications) THEN CASE WHEN json_extract(specifications,'$.draft_import_token') IS NOT NULL THEN CASE WHEN json_extract(specifications,'$.source_minimum')>1 THEN 'الحد الأدنى للطلب: ' || json_extract(specifications,'$.source_minimum') ELSE NULL END ELSE specifications END ELSE specifications END WHERE id=?",[now,r['product_id']]))
+        if stock is not None:
+            statements.append(('UPDATE products SET stock_quantity=? WHERE id=?',[stock,r['product_id']]))
+            statements.append(('UPDATE product_variants SET stock_quantity=?,updated_at=? WHERE product_id=?',[stock,now,r['product_id']]))
     db.batch(statements)
     after=db.query(f'SELECT id,item_number,name,active,price_agorot,stock_quantity FROM products WHERE item_number IN ({marks}) ORDER BY item_number',numbers)
     if len(after)!=len(rows) or any(r['active']!=1 for r in after):raise RuntimeError('publish_verification_failed')
+    if stock is not None:
+        variants=db.query('SELECT stock_quantity FROM product_variants WHERE product_id IN ('+','.join('?' for _ in rows)+')',[r['product_id'] for r in rows])
+        if any(r['stock_quantity']!=stock for r in after+variants):raise RuntimeError('stock_verification_failed')
     return after
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--batch-id',required=True);ap.add_argument('--items',required=True);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--batch-id',required=True);ap.add_argument('--items',required=True);ap.add_argument('--stock',type=int,default=int(os.environ['PUBLISH_STOCK']) if os.environ.get('PUBLISH_STOCK') else None);args=ap.parse_args()
     numbers=sorted(set(int(n) for n in args.items.split(',')))
-    rows=publish(D1(),args.batch_id,numbers)
+    rows=publish(D1(),args.batch_id,numbers,args.stock)
     folder=Path('docs/dofesh-draft-import');folder.mkdir(exist_ok=True,parents=True)
-    result={'time':datetime.now(ZoneInfo('Asia/Hebron')).isoformat(),'batch_id':args.batch_id,'products':rows,'prices_and_stock_preserved':True}
+    result={'time':datetime.now(ZoneInfo('Asia/Hebron')).isoformat(),'batch_id':args.batch_id,'products':rows,'prices_preserved':True,'stock_set_to':args.stock}
     (folder/'published-products.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     with Path('STORE-PROGRESS.md').open('a',encoding='utf-8') as f:
         f.write('\n\n### '+result['time']+' — DOFESH-IMAGE-APPROVE-PUBLISH\n')
-        f.write('- أذن المستخدم باعتماد الصور ونشر منتجات الدفعة؛ اعتمدت الصور ونشرت المنتجات التالية بدون تغيير الأسعار أو المخزون:\n')
+        f.write('- الأسعار محفوظة؛ كمية المخزون المطلوبة: '+str(args.stock)+'؛ تشمل المنتج ومتغيراته عند تحديدها.\n')
         for r in rows:f.write('- '+json.dumps(r,ensure_ascii=False)+'\n')
     print(json.dumps(result,ensure_ascii=False),flush=True)
 
