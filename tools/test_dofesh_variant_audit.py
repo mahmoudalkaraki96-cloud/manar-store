@@ -85,6 +85,13 @@ class Tests(unittest.TestCase):
     def test_unknown_structure(self):
         with self.assertRaises(ValueError):a.parse_product(page(radio('unexpected','x','1')),1298)
 
+    def test_blank_supplier_labels_skip_without_inventing_options(self):
+        with self.assertRaisesRegex(ValueError, 'invalid_choice_label'):
+            a.parse_product(page(radio('c0','','35',True)+radio('c1','','35',True)),1298)
+        self.assertEqual(a.source_problem_status('invalid_choice_label'),'unsupported_source_options')
+        self.assertEqual(a.source_problem_status('invalid_price'),'unsupported_source_price')
+        self.assertIsNone(a.source_problem_status('source_identity_not_verified'))
+
     def test_missing_price(self):
         with self.assertRaises(ValueError):a.parse_product(page(radio('s0','x')),1298)
 

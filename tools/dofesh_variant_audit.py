@@ -372,6 +372,14 @@ def report(db, folder, mode, status, current_token=None, progress_file=Path('STO
             f.write(text)
 
 
+def source_problem_status(reason):
+    if reason in ('invalid_price', 'unsupported_price', 'simple_price_not_verified'):
+        return 'unsupported_source_price'
+    if reason == 'invalid_choice_label':
+        return 'unsupported_source_options'
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--mode', choices=['preview','apply'], default='preview')
@@ -418,10 +426,11 @@ def main():
                 try:
                     source = parse_product(fetch_product(sid),sid)
                 except ValueError as e:
-                    if str(e) not in ('invalid_price', 'unsupported_price', 'simple_price_not_verified'):
+                    problem_status = source_problem_status(str(e))
+                    if problem_status is None:
                         raise
-                    save_result(db,sid,args.mode,p,'unsupported_source_price',{'reason':str(e)},token)
-                    print(f"source={sid} item={p['item_number']} status=unsupported_source_price",flush=True)
+                    save_result(db,sid,args.mode,p,problem_status,{'reason':str(e)},token)
+                    print(f"source={sid} item={p['item_number']} status={problem_status}",flush=True)
                     continue
                 decision = decide(p,source)
                 if decision == 'ready' and args.mode == 'apply':
