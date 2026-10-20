@@ -12,7 +12,9 @@ import {trackPageView} from "../analytics";
 function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
  const [selected,setSelected]=useState<number|null>(null);
  const variants=p.variants||[],variant=selected===null?undefined:variants[selected];
- const available=variants.length?variants.some(v=>v.stock>0):p.inStock;\n const availableVariants=variants.filter(v=>v.stock>0);\n const prices=availableVariants.map(v=>v.price??p.price),min=prices.length?Math.min(...prices):p.price,max=prices.length?Math.max(...prices):p.price;
+ const available=variants.length?variants.some(v=>v.stock>0):p.inStock;
+ const availableVariants=variants.filter(v=>v.stock>0);
+ const prices=availableVariants.map(v=>v.price??p.price),min=prices.length?Math.min(...prices):p.price,max=prices.length?Math.max(...prices):p.price;
  const priceLabel=variant?`${variant.price??p.price} ₪`:min===max?`${min} ₪`:`${min} – ${max} ₪`;
  return <div className="searchProductResult">
   <Link className="searchResultLink" href={`/product/${p.id}`} onClick={onOpen}>
