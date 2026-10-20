@@ -339,3 +339,8 @@
 ### 2026-10-20 — مقارنة كتالوج دوفش للقراءة فقط
 - tools/dofesh_missing_products.py وworkflow dofesh-missing-products.yml يمسحان كتالوج دوفش العام بالمزيدnext، ويقارنان مع المنشور والمسودات عبر sourcekeywords/slug/supplier9101. لايستوردان ولاينشران ولايعدلان منتجات؛ ReadOnlyD1 يرفض كلSQLعداSELECT.
 - مقارنة الاسم المنظم تنتج possible_name_match منفصلة عنmissing. تُقرأ تفاصيل توفر المرشحين مع التحقق من رقم المصدر. تقارير docs/dofesh-missing-products تشملحالةالاكتمال،عددالصفحات،الموجودوالناقصوالمحتملوالتوفرغيرالمحسوم؛ state.jsonلاستكمالالفحص.8اختباراتنجحت معHTMLحقيقي،ويُحفظالتقدمبعدكلchunk.
+
+
+### 2026-10-20 — استيراد مرشحي دوفش الناقصين كمسودات
+- tools/dofesh_missing_draft_import.py يستقبل المقارنة المكتملة فقط ويرشحmissing/availableدون possible_name_match، ويعيدالتحقق منربطالمصدر/الاسم. لاUPDATEلمنتجاتموجودة؛ الإنشاءذريمعالموردوالكلمةوالمتغيراتوالصوروالتخصيصوaudit_logs. حاجزslug/keyword/supplierوختمoperationtokenيحميانمنالتكرار/التعديلالمتزامن.
+- active0ومخزونالمنتجوالمتغيرات0دائمًا؛ صورروابطالمصدرHTTPSuploadفقط، وحقولتخصيصنصيةمتحققةالتسمية. الحدالأدنىللكمية محفوظspecificationsللمراجعةقبلنشرالمسودة.7اختباراتناجحة. تقارير docs/dofesh-draft-import/latest.json وimported-drafts.csv وSTORE-PROGRESS. workflow dofesh-missing-draft-import.yml يدويوpreviewافتراضي.
