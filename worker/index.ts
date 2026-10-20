@@ -1,3 +1,4 @@
+import {changeProductCategory,ProductCategoryError} from "./product-category";
 import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {createManualOrder,ManualOrderError} from "./manual-order";
 import {runSupplierImports,readSupplierImports} from "./supplier-import";
@@ -1533,6 +1534,8 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (categoryMatch && request.method === "PUT") return saveCategory(request, env, Number(categoryMatch[1]));
   if (categoryMatch && request.method === "DELETE") { await env.DB.prepare("DELETE FROM categories WHERE id=?").bind(Number(categoryMatch[1])).run(); return json({ ok: true }); }
   if (request.method === "POST" && url.pathname === "/api/admin/products") return saveProduct(request, env);
+  const productCategoryMatch=url.pathname.match(/^\/api\/admin\/products\/(\d+)\/category$/);
+  if(productCategoryMatch&&request.method==="PATCH"){try{return json(await changeProductCategory(env.DB,Number(productCategoryMatch[1]),await parseJson(request)))}catch(error){if(error instanceof ProductCategoryError)return json({error:error.message},{status:error.status});throw error}}
   const featuredMatch=url.pathname.match(/^\/api\/admin\/products\/(\d+)\/featured$/);
   if(featuredMatch&&request.method==="PATCH"){
     const body=await parseJson(request);
@@ -1731,5 +1734,3 @@ const worker = {
 };
 
 export default worker;
-
-
