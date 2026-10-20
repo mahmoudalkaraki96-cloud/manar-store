@@ -4074,3 +4074,14 @@
 - دوفش#6 ↔ صنف#2220: synced؛ عطر جادور(30مل). https://dofesh.ps/?app=product.show.6
 - دوفش#5 ↔ صنف#2221: synced؛ ذهبي=5₪. https://dofesh.ps/?app=product.show.5
 - دوفش#2 ↔ صنف#2222: no_options؛ مراية قلاب مدور حديد. https://dofesh.ps/?app=product.show.2
+
+
+### 2026-10-20T08:56:28.411707+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-20T08:56:28.411707+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 373, "no_options": 748, "missing_source": 5, "unsupported_customization_or_minimum": 17, "matched": 24, "unsupported_source_price": 5, "unsupported_supplier_removed_options": 2, "unsupported_source_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
