@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T09:54:49.388172+03:00",
+  "updated_at": "2026-10-20T10:05:16.560283+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 125,
@@ -17051,6 +17051,1006 @@
       "status": "no_options",
       "detail": "{\"item_number\": 4532, \"source\": {\"title\": \"ايطان بوليستر 4 ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792479288284
+    },
+    {
+      "source_id": 1144,
+      "mode": "apply",
+      "product_id": 3533,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4533}",
+      "updated_at": 1792479295308
+    },
+    {
+      "source_id": 1143,
+      "mode": "apply",
+      "product_id": 3534,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4534}",
+      "updated_at": 1792479300307
+    },
+    {
+      "source_id": 1138,
+      "mode": "apply",
+      "product_id": 3535,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4535, \"source\": {\"title\": \"خيط سمك شفاف 0.60mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479305323
+    },
+    {
+      "source_id": 1137,
+      "mode": "apply",
+      "product_id": 3536,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4536, \"source\": {\"title\": \"خيط سمك شفاف 0.50mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479310314
+    },
+    {
+      "source_id": 1136,
+      "mode": "apply",
+      "product_id": 3537,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4537, \"source\": {\"title\": \"خيط السمك الشفاف 0.45mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479315306
+    },
+    {
+      "source_id": 1135,
+      "mode": "apply",
+      "product_id": 3538,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4538, \"source\": {\"title\": \"خيط السمك شفاف 0.4mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479320478
+    },
+    {
+      "source_id": 1134,
+      "mode": "apply",
+      "product_id": 3539,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4539, \"source\": {\"title\": \"خيط السمك الشفاف 0.35mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479325306
+    },
+    {
+      "source_id": 1130,
+      "mode": "apply",
+      "product_id": 3540,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4540, \"source\": {\"title\": \"سلك وير ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479330294
+    },
+    {
+      "source_id": 1102,
+      "mode": "apply",
+      "product_id": 3541,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4541, \"source\": {\"title\": \"شبر محزز 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479335300
+    },
+    {
+      "source_id": 1095,
+      "mode": "apply",
+      "product_id": 3542,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4542, \"source\": {\"title\": \"شبر خيش معجق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479340332
+    },
+    {
+      "source_id": 1094,
+      "mode": "apply",
+      "product_id": 3543,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4543, \"source\": {\"title\": \"شبر خيش 1 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479345306
+    },
+    {
+      "source_id": 1093,
+      "mode": "apply",
+      "product_id": 3544,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4544, \"source\": {\"title\": \"شبر خيش 0.5cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479350488
+    },
+    {
+      "source_id": 1091,
+      "mode": "apply",
+      "product_id": 3545,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4545, \"source\": {\"title\": \"خيط مكرمية 3mm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479355306
+    },
+    {
+      "source_id": 1090,
+      "mode": "apply",
+      "product_id": 3546,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4546}",
+      "updated_at": 1792479360303
+    },
+    {
+      "source_id": 1089,
+      "mode": "apply",
+      "product_id": 3547,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4547}",
+      "updated_at": 1792479365324
+    },
+    {
+      "source_id": 1088,
+      "mode": "apply",
+      "product_id": 3548,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4548}",
+      "updated_at": 1792479370316
+    },
+    {
+      "source_id": 1073,
+      "mode": "apply",
+      "product_id": 3549,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4549, \"source\": {\"title\": \"اكياس سلفان لاصق 40*60 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479375481
+    },
+    {
+      "source_id": 1070,
+      "mode": "apply",
+      "product_id": 3550,
+      "status": "synced",
+      "detail": "{\"item_number\": 4550, \"name\": \"تغليف pvc 10*10*16 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 10*10*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 10*10*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": false}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3550\", \"source_url\": \"https://jabaristore.com/?app=product.show.1070\"}",
+      "updated_at": 1792479380734
+    },
+    {
+      "source_id": 1069,
+      "mode": "apply",
+      "product_id": 3551,
+      "status": "synced",
+      "detail": "{\"item_number\": 4551, \"name\": \"تغليف pvc 10*10*14 ( 10 قطع )\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 10*10*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": false, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 10*10*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": false, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3551\", \"source_url\": \"https://jabaristore.com/?app=product.show.1069\"}",
+      "updated_at": 1792479385577
+    },
+    {
+      "source_id": 1068,
+      "mode": "apply",
+      "product_id": 3552,
+      "status": "synced",
+      "detail": "{\"item_number\": 4552, \"name\": \"تغليف pvc 10*10*12 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 10*10*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 10*10*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3552\", \"source_url\": \"https://jabaristore.com/?app=product.show.1068\"}",
+      "updated_at": 1792479390743
+    },
+    {
+      "source_id": 1067,
+      "mode": "apply",
+      "product_id": 3553,
+      "status": "synced",
+      "detail": "{\"item_number\": 4553, \"name\": \"تغليف pvc 10*10*10 ( 10 قطع )\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 10*10*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15500, \"active\": false, \"supplier_price\": 14500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 10*10*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 14500, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15500, \"active\": false, \"supplier_price\": 14500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3553\", \"source_url\": \"https://jabaristore.com/?app=product.show.1067\"}",
+      "updated_at": 1792479395558
+    },
+    {
+      "source_id": 1066,
+      "mode": "apply",
+      "product_id": 3554,
+      "status": "synced",
+      "detail": "{\"item_number\": 4554, \"name\": \"تغليف pvc 9*9*20 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 9*9*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 9*9*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3554\", \"source_url\": \"https://jabaristore.com/?app=product.show.1066\"}",
+      "updated_at": 1792479400557
+    },
+    {
+      "source_id": 1065,
+      "mode": "apply",
+      "product_id": 3555,
+      "status": "synced",
+      "detail": "{\"item_number\": 4555, \"name\": \"تغليف pvc 9*9*15 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 9*9*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 9*9*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3555\", \"source_url\": \"https://jabaristore.com/?app=product.show.1065\"}",
+      "updated_at": 1792479405777
+    },
+    {
+      "source_id": 1064,
+      "mode": "apply",
+      "product_id": 3556,
+      "status": "synced",
+      "detail": "{\"item_number\": 4556, \"name\": \"تغليف pvc 9*9*12 ( 10 قطع )\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 9*9*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15500, \"active\": false, \"supplier_price\": 14500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 9*9*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 14500, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1750, \"active\": false, \"supplier_price\": 1600}, {\"name\": \"بني / 100 قطعة\", \"price\": 15500, \"active\": false, \"supplier_price\": 14500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15500, \"active\": true, \"supplier_price\": 14500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3556\", \"source_url\": \"https://jabaristore.com/?app=product.show.1064\"}",
+      "updated_at": 1792479410766
+    },
+    {
+      "source_id": 1063,
+      "mode": "apply",
+      "product_id": 3557,
+      "status": "synced",
+      "detail": "{\"item_number\": 4557, \"name\": \"تغليف pvc 9*9*10 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 9*9*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": false, \"supplier_price\": 14000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 9*9*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": false, \"supplier_price\": 14000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true, \"supplier_price\": 14000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3557\", \"source_url\": \"https://jabaristore.com/?app=product.show.1063\"}",
+      "updated_at": 1792479415760
+    },
+    {
+      "source_id": 1062,
+      "mode": "apply",
+      "product_id": 3558,
+      "status": "synced",
+      "detail": "{\"item_number\": 4558, \"name\": \"تغليف pvc 8*8*20 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 8*8*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 8*8*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3558\", \"source_url\": \"https://jabaristore.com/?app=product.show.1062\"}",
+      "updated_at": 1792479420694
+    },
+    {
+      "source_id": 1061,
+      "mode": "apply",
+      "product_id": 3559,
+      "status": "synced",
+      "detail": "{\"item_number\": 4559, \"name\": \"تغليف pvc 8*8*16 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 8*8*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 8*8*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13500, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"بني / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14500, \"active\": true, \"supplier_price\": 13500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3559\", \"source_url\": \"https://jabaristore.com/?app=product.show.1061\"}",
+      "updated_at": 1792479425605
+    },
+    {
+      "source_id": 1060,
+      "mode": "apply",
+      "product_id": 3560,
+      "status": "synced",
+      "detail": "{\"item_number\": 4560, \"name\": \"تغليف pvc 8*8*12 ( 10 قطع )\", \"before_price\": 1600, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 8*8*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true, \"supplier_price\": 1450}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": false, \"supplier_price\": 1450}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true, \"supplier_price\": 1450}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 8*8*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1600, \"active\": true, \"supplier_price\": 1450}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1600, \"active\": false, \"supplier_price\": 1450}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": false, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1600, \"active\": true, \"supplier_price\": 1450}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3560\", \"source_url\": \"https://jabaristore.com/?app=product.show.1060\"}",
+      "updated_at": 1792479430750
+    },
+    {
+      "source_id": 1059,
+      "mode": "apply",
+      "product_id": 3561,
+      "status": "synced",
+      "detail": "{\"item_number\": 4561, \"name\": \"تغليف pvc 8*8*10 ( 10 قطع )\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 8*8*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12500, \"active\": false, \"supplier_price\": 11500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 8*8*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1300, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 11500, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12500, \"active\": false, \"supplier_price\": 11500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3561\", \"source_url\": \"https://jabaristore.com/?app=product.show.1059\"}",
+      "updated_at": 1792479435774
+    },
+    {
+      "source_id": 1058,
+      "mode": "apply",
+      "product_id": 3562,
+      "status": "synced",
+      "detail": "{\"item_number\": 4562, \"name\": \"تغليف pvc 8*8*8 ( 10 قطع )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 8*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": false, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 8*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1200, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 11000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": false, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3562\", \"source_url\": \"https://jabaristore.com/?app=product.show.1058\"}",
+      "updated_at": 1792479440560
+    },
+    {
+      "source_id": 1057,
+      "mode": "apply",
+      "product_id": 3563,
+      "status": "synced",
+      "detail": "{\"item_number\": 4563, \"name\": \"تغليف pvc 7*7*15 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 7*7*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 7*7*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1400, \"active\": true}, {\"name\": \"بني\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3563\", \"source_url\": \"https://jabaristore.com/?app=product.show.1057\"}",
+      "updated_at": 1792479445558
+    },
+    {
+      "source_id": 1056,
+      "mode": "apply",
+      "product_id": 3564,
+      "status": "synced",
+      "detail": "{\"item_number\": 4564, \"name\": \"تغليف pvc 7*7*12 ( 10 قطع )\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 7*7*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 7*7*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1300, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": false, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3564\", \"source_url\": \"https://jabaristore.com/?app=product.show.1056\"}",
+      "updated_at": 1792479450793
+    },
+    {
+      "source_id": 1055,
+      "mode": "apply",
+      "product_id": 3565,
+      "status": "synced",
+      "detail": "{\"item_number\": 4565, \"name\": \"تغليف pvc 7*7*10 ( 10 قطع )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 7*7*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 7*7*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": false}, {\"name\": \"بني / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3565\", \"source_url\": \"https://jabaristore.com/?app=product.show.1055\"}",
+      "updated_at": 1792479455585
+    },
+    {
+      "source_id": 1054,
+      "mode": "apply",
+      "product_id": 3566,
+      "status": "synced",
+      "detail": "{\"item_number\": 4566, \"name\": \"تغلف pvc 7*7*8 ( 10 قطع )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"تغلف pvc 7*7*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 11500, \"active\": false, \"supplier_price\": 10500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغلف pvc 7*7*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1200, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 11500, \"active\": false, \"supplier_price\": 10500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11500, \"active\": true, \"supplier_price\": 10500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3566\", \"source_url\": \"https://jabaristore.com/?app=product.show.1054\"}",
+      "updated_at": 1792479460584
+    },
+    {
+      "source_id": 1053,
+      "mode": "apply",
+      "product_id": 3567,
+      "status": "synced",
+      "detail": "{\"item_number\": 4567, \"name\": \"تغليف pvc 6*6*20 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3567\", \"source_url\": \"https://jabaristore.com/?app=product.show.1053\"}",
+      "updated_at": 1792479465724
+    },
+    {
+      "source_id": 1052,
+      "mode": "apply",
+      "product_id": 3568,
+      "status": "synced",
+      "detail": "{\"item_number\": 4568, \"name\": \"تغليف pvc 6*6*16 ( 10 قطع )\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 14000, \"active\": true, \"supplier_price\": 13000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3568\", \"source_url\": \"https://jabaristore.com/?app=product.show.1052\"}",
+      "updated_at": 1792479470552
+    },
+    {
+      "source_id": 1050,
+      "mode": "apply",
+      "product_id": 3569,
+      "status": "synced",
+      "detail": "{\"item_number\": 4569, \"name\": \"تغليف pvc 6*6*12 ( 10 قطع )\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 11500, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12500, \"active\": true, \"supplier_price\": 11500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3569\", \"source_url\": \"https://jabaristore.com/?app=product.show.1050\"}",
+      "updated_at": 1792479475563
+    },
+    {
+      "source_id": 1049,
+      "mode": "apply",
+      "product_id": 3570,
+      "status": "synced",
+      "detail": "{\"item_number\": 4570, \"name\": \"تغليف pvc 6*6*10 ( 10 قطع )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3570\", \"source_url\": \"https://jabaristore.com/?app=product.show.1049\"}",
+      "updated_at": 1792479480747
+    },
+    {
+      "source_id": 1048,
+      "mode": "apply",
+      "product_id": 3571,
+      "status": "synced",
+      "detail": "{\"item_number\": 4571, \"name\": \"تغليف pvc 6*6*8 ( 10 قطع )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3571\", \"source_url\": \"https://jabaristore.com/?app=product.show.1048\"}",
+      "updated_at": 1792479485710
+    },
+    {
+      "source_id": 1046,
+      "mode": "apply",
+      "product_id": 3572,
+      "status": "synced",
+      "detail": "{\"item_number\": 4572, \"name\": \"تغليف pvc 5*5*20 ( 10 قطع )\", \"before_price\": 1450, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 11000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3572\", \"source_url\": \"https://jabaristore.com/?app=product.show.1046\"}",
+      "updated_at": 1792479490577
+    },
+    {
+      "source_id": 1045,
+      "mode": "apply",
+      "product_id": 3573,
+      "status": "synced",
+      "detail": "{\"item_number\": 4573, \"name\": \"تغليف pvc 5*5*14 ( 10 قطع )\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3573\", \"source_url\": \"https://jabaristore.com/?app=product.show.1045\"}",
+      "updated_at": 1792479495527
+    },
+    {
+      "source_id": 1044,
+      "mode": "apply",
+      "product_id": 3574,
+      "status": "synced",
+      "detail": "{\"item_number\": 4574, \"name\": \"تغليف pvc 5*5*16 ( 10 قطع )\", \"before_price\": 1400, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*16 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1250, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 11000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1250, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 11000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1250, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 11000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true, \"supplier_price\": 1250}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true, \"supplier_price\": 11000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3574\", \"source_url\": \"https://jabaristore.com/?app=product.show.1044\"}",
+      "updated_at": 1792479500539
+    },
+    {
+      "source_id": 1043,
+      "mode": "apply",
+      "product_id": 3575,
+      "status": "synced",
+      "detail": "{\"item_number\": 4575, \"name\": \"تغليف pvc 5*5*12 ( 10 قطع )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3575\", \"source_url\": \"https://jabaristore.com/?app=product.show.1043\"}",
+      "updated_at": 1792479505563
+    },
+    {
+      "source_id": 1042,
+      "mode": "apply",
+      "product_id": 3576,
+      "status": "synced",
+      "detail": "{\"item_number\": 4576, \"name\": \"تغليف pvc 5*5*10 ( 10 قطع )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": false, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*10 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 900, \"active\": false}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": false, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3576\", \"source_url\": \"https://jabaristore.com/?app=product.show.1042\"}",
+      "updated_at": 1792479510517
+    },
+    {
+      "source_id": 1041,
+      "mode": "apply",
+      "product_id": 3577,
+      "status": "synced",
+      "detail": "{\"item_number\": 4577, \"name\": \"تغليف pvc 5*5*8 ( 10 قطع )\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"بني / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 7000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 7000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"بني / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3577\", \"source_url\": \"https://jabaristore.com/?app=product.show.1041\"}",
+      "updated_at": 1792479515670
+    },
+    {
+      "source_id": 1040,
+      "mode": "apply",
+      "product_id": 3578,
+      "status": "synced",
+      "detail": "{\"item_number\": 4578, \"name\": \"تغليف pvc 5*5*6 ( 10 قطع )\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 5*5*6 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"بني / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"بني / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 5*5*6 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 700, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 6000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 700, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 6000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 700, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"بني / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"بني / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3578\", \"source_url\": \"https://jabaristore.com/?app=product.show.1040\"}",
+      "updated_at": 1792479520628
+    },
+    {
+      "source_id": 1036,
+      "mode": "apply",
+      "product_id": 3579,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4579}",
+      "updated_at": 1792479525327
+    },
+    {
+      "source_id": 1035,
+      "mode": "apply",
+      "product_id": 3580,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4580}",
+      "updated_at": 1792479530330
+    },
+    {
+      "source_id": 1024,
+      "mode": "apply",
+      "product_id": 3581,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4581, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479535308
+    },
+    {
+      "source_id": 1023,
+      "mode": "apply",
+      "product_id": 3582,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4582, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479540503
+    },
+    {
+      "source_id": 1022,
+      "mode": "apply",
+      "product_id": 3583,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4583, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479545466
+    },
+    {
+      "source_id": 1021,
+      "mode": "apply",
+      "product_id": 3584,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4584, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479550321
+    },
+    {
+      "source_id": 1020,
+      "mode": "apply",
+      "product_id": 3585,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4585, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479555308
+    },
+    {
+      "source_id": 1019,
+      "mode": "apply",
+      "product_id": 3586,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4586, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479560297
+    },
+    {
+      "source_id": 1018,
+      "mode": "apply",
+      "product_id": 3587,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4587, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479565308
+    },
+    {
+      "source_id": 1017,
+      "mode": "apply",
+      "product_id": 3588,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4588, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479570318
+    },
+    {
+      "source_id": 1016,
+      "mode": "apply",
+      "product_id": 3589,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4589, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479575549
+    },
+    {
+      "source_id": 1015,
+      "mode": "apply",
+      "product_id": 3590,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4590, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479580321
+    },
+    {
+      "source_id": 1014,
+      "mode": "apply",
+      "product_id": 3591,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4591, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479585323
+    },
+    {
+      "source_id": 1013,
+      "mode": "apply",
+      "product_id": 3592,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4592, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479590322
+    },
+    {
+      "source_id": 1012,
+      "mode": "apply",
+      "product_id": 3593,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4593, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479595312
+    },
+    {
+      "source_id": 1011,
+      "mode": "apply",
+      "product_id": 3594,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4594, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479600311
+    },
+    {
+      "source_id": 1010,
+      "mode": "apply",
+      "product_id": 3595,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4595, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479605328
+    },
+    {
+      "source_id": 1009,
+      "mode": "apply",
+      "product_id": 3596,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4596, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479610295
+    },
+    {
+      "source_id": 1008,
+      "mode": "apply",
+      "product_id": 3597,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4597, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479615312
+    },
+    {
+      "source_id": 1007,
+      "mode": "apply",
+      "product_id": 3598,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4598, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479620538
+    },
+    {
+      "source_id": 1006,
+      "mode": "apply",
+      "product_id": 3599,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4599, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479625523
+    },
+    {
+      "source_id": 1005,
+      "mode": "apply",
+      "product_id": 3600,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4600, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479630348
+    },
+    {
+      "source_id": 1004,
+      "mode": "apply",
+      "product_id": 3601,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4601, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479635552
+    },
+    {
+      "source_id": 1003,
+      "mode": "apply",
+      "product_id": 3602,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4602, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479640541
+    },
+    {
+      "source_id": 1002,
+      "mode": "apply",
+      "product_id": 3603,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4603, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479645509
+    },
+    {
+      "source_id": 1001,
+      "mode": "apply",
+      "product_id": 3604,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4604, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479650408
+    },
+    {
+      "source_id": 1000,
+      "mode": "apply",
+      "product_id": 3605,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4605, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479655313
+    },
+    {
+      "source_id": 999,
+      "mode": "apply",
+      "product_id": 3606,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4606, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479660465
+    },
+    {
+      "source_id": 998,
+      "mode": "apply",
+      "product_id": 3607,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4607, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479665522
+    },
+    {
+      "source_id": 997,
+      "mode": "apply",
+      "product_id": 3608,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4608, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479670465
+    },
+    {
+      "source_id": 996,
+      "mode": "apply",
+      "product_id": 3609,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4609, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479675525
+    },
+    {
+      "source_id": 995,
+      "mode": "apply",
+      "product_id": 3610,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4610, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479680297
+    },
+    {
+      "source_id": 994,
+      "mode": "apply",
+      "product_id": 3611,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4611, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479685518
+    },
+    {
+      "source_id": 993,
+      "mode": "apply",
+      "product_id": 3612,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4612, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479690583
+    },
+    {
+      "source_id": 992,
+      "mode": "apply",
+      "product_id": 3613,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4613, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479695503
+    },
+    {
+      "source_id": 991,
+      "mode": "apply",
+      "product_id": 3614,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4614, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479700298
+    },
+    {
+      "source_id": 990,
+      "mode": "apply",
+      "product_id": 3615,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4615, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479705541
+    },
+    {
+      "source_id": 989,
+      "mode": "apply",
+      "product_id": 3616,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4616, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479710350
+    },
+    {
+      "source_id": 988,
+      "mode": "apply",
+      "product_id": 3617,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4617, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479715352
+    },
+    {
+      "source_id": 987,
+      "mode": "apply",
+      "product_id": 3618,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4618, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479720314
+    },
+    {
+      "source_id": 986,
+      "mode": "apply",
+      "product_id": 3619,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4619, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479725487
+    },
+    {
+      "source_id": 985,
+      "mode": "apply",
+      "product_id": 3620,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4620, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479730314
+    },
+    {
+      "source_id": 984,
+      "mode": "apply",
+      "product_id": 3621,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4621, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479735493
+    },
+    {
+      "source_id": 983,
+      "mode": "apply",
+      "product_id": 3622,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4622, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479740333
+    },
+    {
+      "source_id": 982,
+      "mode": "apply",
+      "product_id": 3623,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4623, \"source\": {\"title\": \"خرز طبش مط 2ملم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479745325
+    },
+    {
+      "source_id": 981,
+      "mode": "apply",
+      "product_id": 3624,
+      "status": "synced",
+      "detail": "{\"item_number\": 4624, \"name\": \"كلف خيش سادة\", \"before_price\": 250, \"before_variants\": [], \"source\": {\"title\": \"كلف خيش سادة\", \"variants\": [{\"name\": \"1.5cm\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"2cm\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"2.5cm\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"4cm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"كلف خيش سادة\", \"variants\": [{\"name\": \"1.5cm\", \"price\": 200, \"active\": true}, {\"name\": \"2cm\", \"price\": 300, \"active\": true}, {\"name\": \"2.5cm\", \"price\": 400, \"active\": true}, {\"name\": \"4cm\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1.5cm\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"2cm\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"2.5cm\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"4cm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3624\", \"source_url\": \"https://jabaristore.com/?app=product.show.981\"}",
+      "updated_at": 1792479750819
+    },
+    {
+      "source_id": 979,
+      "mode": "apply",
+      "product_id": 1458,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2458, \"source\": {\"title\": \"كلف خيش ثقيله مع تنتنه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479755527
+    },
+    {
+      "source_id": 973,
+      "mode": "apply",
+      "product_id": 3625,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4625, \"source\": {\"title\": \"قماش خيش\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479760525
+    },
+    {
+      "source_id": 972,
+      "mode": "apply",
+      "product_id": 3626,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4626, \"source\": {\"title\": \"كلف خيش\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479765303
+    },
+    {
+      "source_id": 971,
+      "mode": "apply",
+      "product_id": 3627,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4627, \"source\": {\"title\": \"قفل شنط مغناطيس خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479770352
+    },
+    {
+      "source_id": 969,
+      "mode": "apply",
+      "product_id": 3628,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4628, \"source\": {\"title\": \"قفل شنط مغناطيس خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479775302
+    },
+    {
+      "source_id": 968,
+      "mode": "apply",
+      "product_id": 3629,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4629, \"source\": {\"title\": \"كرت خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479780315
+    },
+    {
+      "source_id": 967,
+      "mode": "apply",
+      "product_id": 3630,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4630, \"source\": {\"title\": \"كرت ازرار\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479785318
+    },
+    {
+      "source_id": 966,
+      "mode": "apply",
+      "product_id": 3631,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4631, \"source\": {\"title\": \"دبابيس شنغل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479790317
+    },
+    {
+      "source_id": 965,
+      "mode": "apply",
+      "product_id": 3632,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4632, \"source\": {\"title\": \"كرت خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479795301
+    },
+    {
+      "source_id": 964,
+      "mode": "apply",
+      "product_id": 3633,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4633, \"source\": {\"title\": \"كرت خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479800340
+    },
+    {
+      "source_id": 963,
+      "mode": "apply",
+      "product_id": 3634,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4634, \"source\": {\"title\": \"ازرار و ابر مشكلة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479805319
+    },
+    {
+      "source_id": 962,
+      "mode": "apply",
+      "product_id": 3635,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4635, \"source\": {\"title\": \"دبابيس مع خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479810336
+    },
+    {
+      "source_id": 961,
+      "mode": "apply",
+      "product_id": 3636,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4636, \"source\": {\"title\": \"دبوس شغنل فضي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479815322
+    },
+    {
+      "source_id": 960,
+      "mode": "apply",
+      "product_id": 3637,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4637, \"source\": {\"title\": \"دبابيس و ملاقط\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479820485
+    },
+    {
+      "source_id": 959,
+      "mode": "apply",
+      "product_id": 3638,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4638, \"source\": {\"title\": \"علبة خياطة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479825324
+    },
+    {
+      "source_id": 958,
+      "mode": "apply",
+      "product_id": 3639,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4639, \"source\": {\"title\": \"دبوس مع خرزه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479830335
+    },
+    {
+      "source_id": 957,
+      "mode": "apply",
+      "product_id": 3640,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4640, \"source\": {\"title\": \"دبوس شنغل ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479835354
+    },
+    {
+      "source_id": 956,
+      "mode": "apply",
+      "product_id": 3641,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4641, \"source\": {\"title\": \"دبوس مع خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479840321
+    },
+    {
+      "source_id": 955,
+      "mode": "apply",
+      "product_id": 3642,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4642, \"source\": {\"title\": \"دبوس مع خرزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479845280
+    },
+    {
+      "source_id": 947,
+      "mode": "apply",
+      "product_id": 3643,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4643}",
+      "updated_at": 1792479850345
+    },
+    {
+      "source_id": 935,
+      "mode": "apply",
+      "product_id": 3644,
+      "status": "synced",
+      "detail": "{\"item_number\": 4644, \"name\": \"صندوق كرتون مقوى وجه شفاف\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون مقوى وجه شفاف\", \"variants\": [{\"name\": \"رقم 35\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"رقم 36\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق كرتون مقوى وجه شفاف\", \"variants\": [{\"name\": \"رقم 35\", \"price\": 1800, \"active\": true}, {\"name\": \"رقم 36\", \"price\": 2400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"رقم 35\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"رقم 36\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3644\", \"source_url\": \"https://jabaristore.com/?app=product.show.935\"}",
+      "updated_at": 1792479855475
+    },
+    {
+      "source_id": 934,
+      "mode": "apply",
+      "product_id": 3645,
+      "status": "synced",
+      "detail": "{\"item_number\": 4645, \"name\": \"صندوق كرتون وجه شفاف مع شبره\", \"before_price\": 1500, \"before_variants\": [], \"source\": {\"title\": \"صندوق كرتون وجه شفاف مع شبره\", \"variants\": [{\"name\": \"ابيض / رقم 38\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"ابيض / رقم 39\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}, {\"name\": \"بني / رقم 38\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني / رقم 39\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق كرتون وجه شفاف مع شبره\", \"variants\": [{\"name\": \"ابيض / رقم 38\", \"price\": 1800, \"active\": false}, {\"name\": \"ابيض / رقم 39\", \"price\": 2100, \"active\": false}, {\"name\": \"بني / رقم 38\", \"price\": 1800, \"active\": true}, {\"name\": \"بني / رقم 39\", \"price\": 2100, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / رقم 38\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"ابيض / رقم 39\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}, {\"name\": \"بني / رقم 38\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"بني / رقم 39\", \"price\": 2250, \"active\": false, \"supplier_price\": 2100}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3645\", \"source_url\": \"https://jabaristore.com/?app=product.show.934\"}",
+      "updated_at": 1792479860583
+    },
+    {
+      "source_id": 924,
+      "mode": "apply",
+      "product_id": 1459,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2459}",
+      "updated_at": 1792479865471
+    },
+    {
+      "source_id": 918,
+      "mode": "apply",
+      "product_id": 3646,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4646}",
+      "updated_at": 1792479870317
+    },
+    {
+      "source_id": 902,
+      "mode": "apply",
+      "product_id": 1460,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2460, \"source\": {\"title\": \"قطع شمعية للاختام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479875514
+    },
+    {
+      "source_id": 901,
+      "mode": "apply",
+      "product_id": 1461,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2461, \"source\": {\"title\": \"راس معدني لاختام الشمع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479880487
+    },
+    {
+      "source_id": 900,
+      "mode": "apply",
+      "product_id": 1462,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2462, \"source\": {\"title\": \"راس معدني لاختام الشمع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479885484
+    },
+    {
+      "source_id": 898,
+      "mode": "apply",
+      "product_id": 3647,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4647, \"source\": {\"title\": \"حرير صيني احمر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479890506
+    },
+    {
+      "source_id": 897,
+      "mode": "apply",
+      "product_id": 3648,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4648, \"source\": {\"title\": \"حرير صيني خمري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479895492
+    },
+    {
+      "source_id": 896,
+      "mode": "apply",
+      "product_id": 3649,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4649, \"source\": {\"title\": \"حرير صيني اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479900362
+    },
+    {
+      "source_id": 895,
+      "mode": "apply",
+      "product_id": 3650,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4650, \"source\": {\"title\": \"حرير صيني ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479905500
+    },
+    {
+      "source_id": 894,
+      "mode": "apply",
+      "product_id": 1463,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2463, \"source\": {\"title\": \"حرير صيني ملون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 900}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792479910320
+    },
+    {
+      "source_id": 893,
+      "mode": "apply",
+      "product_id": 1464,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2464}",
+      "updated_at": 1792479915462
     }
   ]
 }
