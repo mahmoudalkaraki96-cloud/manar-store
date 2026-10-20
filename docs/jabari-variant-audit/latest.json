@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:15:11.475298+03:00",
+  "updated_at": "2026-10-20T14:31:53.323084+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 200,
@@ -11256,9 +11256,9 @@
       "source_id": 2516,
       "mode": "apply",
       "product_id": 2832,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3832}",
-      "updated_at": 1792475653193
+      "status": "no_options",
+      "detail": "{\"item_number\": 3832, \"source\": {\"title\": \"قطع تزين شوكولاتة معدن (50 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494917445
     },
     {
       "source_id": 2515,
@@ -11272,33 +11272,33 @@
       "source_id": 2514,
       "mode": "apply",
       "product_id": 2834,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3834}",
-      "updated_at": 1792475663297
+      "status": "no_options",
+      "detail": "{\"item_number\": 3834, \"source\": {\"title\": \"قطع تزين معدن لشوكولاتة (50 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494922377
     },
     {
       "source_id": 2513,
       "mode": "apply",
       "product_id": 2835,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3835}",
-      "updated_at": 1792475668434
+      "status": "no_options",
+      "detail": "{\"item_number\": 3835, \"source\": {\"title\": \"قطع تزين شوكولاتة معدن (50قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494927420
     },
     {
       "source_id": 2512,
       "mode": "apply",
       "product_id": 2836,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3836}",
-      "updated_at": 1792475673192
+      "status": "no_options",
+      "detail": "{\"item_number\": 3836, \"source\": {\"title\": \"قطع تزين شوكولاتة معدن (50قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494932509
     },
     {
       "source_id": 2510,
       "mode": "apply",
       "product_id": 2837,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3837}",
-      "updated_at": 1792475678230
+      "status": "no_options",
+      "detail": "{\"item_number\": 3837, \"source\": {\"title\": \"قطع تزين صغيرة معدن (50قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494937370
     },
     {
       "source_id": 2507,
@@ -11344,57 +11344,57 @@
       "source_id": 2502,
       "mode": "apply",
       "product_id": 2843,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3843}",
-      "updated_at": 1792475708414
+      "status": "no_options",
+      "detail": "{\"item_number\": 3843, \"source\": {\"title\": \"علب زجاج غطاء بلاستيك ( 6*6.5 سم )(فارغة بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494942423
     },
     {
       "source_id": 2494,
       "mode": "apply",
       "product_id": 2844,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3844}",
-      "updated_at": 1792475713411
+      "status": "no_options",
+      "detail": "{\"item_number\": 3844, \"source\": {\"title\": \"وعاء زجاجي شكل بيضة ( 6*8 سم )(فارغ بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494947491
     },
     {
       "source_id": 2493,
       "mode": "apply",
       "product_id": 2845,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3845}",
-      "updated_at": 1792475718423
+      "status": "no_options",
+      "detail": "{\"item_number\": 3845, \"source\": {\"title\": \"علب زجاج غطاء بلاستيك ( 4*6.5 سم )(فارغة بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 650}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494952582
     },
     {
       "source_id": 2492,
       "mode": "apply",
       "product_id": 2846,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3846}",
-      "updated_at": 1792475723189
+      "status": "no_options",
+      "detail": "{\"item_number\": 3846, \"source\": {\"title\": \"علب زجاج غطاء خشب ( 4*6.5 سم )(فارغ بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494957500
     },
     {
       "source_id": 2491,
       "mode": "apply",
       "product_id": 2847,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3847}",
-      "updated_at": 1792475728403
+      "status": "no_options",
+      "detail": "{\"item_number\": 3847, \"source\": {\"title\": \"اوني زجاج صحن محزز(فارغ بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494962580
     },
     {
       "source_id": 2490,
       "mode": "apply",
       "product_id": 2848,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3848}",
-      "updated_at": 1792475733418
+      "status": "no_options",
+      "detail": "{\"item_number\": 3848, \"source\": {\"title\": \"اوني زجاج صحن مبزر(فارغ بدون صحن)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494967504
     },
     {
       "source_id": 2483,
       "mode": "apply",
       "product_id": 2849,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3849}",
-      "updated_at": 1792475738395
+      "status": "no_options",
+      "detail": "{\"item_number\": 3849, \"source\": {\"title\": \"حامل شمع زجاج(فارغ بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494972563
     },
     {
       "source_id": 2481,
@@ -11416,25 +11416,25 @@
       "source_id": 2467,
       "mode": "apply",
       "product_id": 2852,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3852}",
-      "updated_at": 1792475753418
+      "status": "no_options",
+      "detail": "{\"item_number\": 3852, \"source\": {\"title\": \"صواني / صينية اكريلك يد اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494977380
     },
     {
       "source_id": 2466,
       "mode": "apply",
       "product_id": 2853,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3853}",
-      "updated_at": 1792475758394
+      "status": "no_options",
+      "detail": "{\"item_number\": 3853, \"source\": {\"title\": \"رول تغليف مخمل خمري - 6 يرد -\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494982422
     },
     {
       "source_id": 2465,
       "mode": "apply",
       "product_id": 2854,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3854}",
-      "updated_at": 1792475763233
+      "status": "no_options",
+      "detail": "{\"item_number\": 3854, \"source\": {\"title\": \"رول تغليف مخمل اسود - 6 يرد -\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494987514
     },
     {
       "source_id": 2464,
@@ -11448,49 +11448,49 @@
       "source_id": 2460,
       "mode": "apply",
       "product_id": 1434,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2434}",
-      "updated_at": 1792475773251
+      "status": "no_options",
+      "detail": "{\"item_number\": 2434, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494992573
     },
     {
       "source_id": 2459,
       "mode": "apply",
       "product_id": 2856,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3856}",
-      "updated_at": 1792475778467
+      "status": "no_options",
+      "detail": "{\"item_number\": 3856, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792494997511
     },
     {
       "source_id": 2458,
       "mode": "apply",
       "product_id": 2857,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3857}",
-      "updated_at": 1792475783426
+      "status": "no_options",
+      "detail": "{\"item_number\": 3857, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495002571
     },
     {
       "source_id": 2457,
       "mode": "apply",
       "product_id": 2858,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3858}",
-      "updated_at": 1792475788194
+      "status": "no_options",
+      "detail": "{\"item_number\": 3858, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495007497
     },
     {
       "source_id": 2456,
       "mode": "apply",
       "product_id": 2859,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3859}",
-      "updated_at": 1792475793233
+      "status": "no_options",
+      "detail": "{\"item_number\": 3859, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495012578
     },
     {
       "source_id": 2455,
       "mode": "apply",
       "product_id": 2860,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3860}",
-      "updated_at": 1792475798295
+      "status": "no_options",
+      "detail": "{\"item_number\": 3860, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495017512
     },
     {
       "source_id": 2454,
@@ -11504,57 +11504,57 @@
       "source_id": 2453,
       "mode": "apply",
       "product_id": 2862,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3862}",
-      "updated_at": 1792475808203
+      "status": "no_options",
+      "detail": "{\"item_number\": 3862, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495022542
     },
     {
       "source_id": 2452,
       "mode": "apply",
       "product_id": 2863,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3863}",
-      "updated_at": 1792475813229
+      "status": "no_options",
+      "detail": "{\"item_number\": 3863, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495027378
     },
     {
       "source_id": 2451,
       "mode": "apply",
       "product_id": 2864,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3864}",
-      "updated_at": 1792475818404
+      "status": "no_options",
+      "detail": "{\"item_number\": 3864, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495032574
     },
     {
       "source_id": 2450,
       "mode": "apply",
       "product_id": 2865,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3865}",
-      "updated_at": 1792475823403
+      "status": "no_options",
+      "detail": "{\"item_number\": 3865, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495037528
     },
     {
       "source_id": 2449,
       "mode": "apply",
       "product_id": 2866,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3866}",
-      "updated_at": 1792475828187
+      "status": "no_options",
+      "detail": "{\"item_number\": 3866, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495042572
     },
     {
       "source_id": 2448,
       "mode": "apply",
       "product_id": 2867,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3867}",
-      "updated_at": 1792475833235
+      "status": "no_options",
+      "detail": "{\"item_number\": 3867, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495047518
     },
     {
       "source_id": 2447,
       "mode": "apply",
       "product_id": 2868,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3868}",
-      "updated_at": 1792475838174
+      "status": "no_options",
+      "detail": "{\"item_number\": 3868, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495052541
     },
     {
       "source_id": 2445,
@@ -11824,9 +11824,9 @@
       "source_id": 2408,
       "mode": "apply",
       "product_id": 2902,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3902}",
-      "updated_at": 1792476008193
+      "status": "no_options",
+      "detail": "{\"item_number\": 3902, \"source\": {\"title\": \"صواني / صينية اكريلك & مبخرة قاعدة رخام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495057493
     },
     {
       "source_id": 2407,
@@ -11864,33 +11864,33 @@
       "source_id": 2364,
       "mode": "apply",
       "product_id": 2907,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3907}",
-      "updated_at": 1792476033186
+      "status": "no_options",
+      "detail": "{\"item_number\": 3907, \"source\": {\"title\": \"طاقية تخرج بلاستيك مع صندوق ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495062526
     },
     {
       "source_id": 2362,
       "mode": "apply",
       "product_id": 2908,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3908}",
-      "updated_at": 1792476038236
+      "status": "no_options",
+      "detail": "{\"item_number\": 3908, \"source\": {\"title\": \"طاقية تخرج من اللباد ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495067371
     },
     {
       "source_id": 2361,
       "mode": "apply",
       "product_id": 2909,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3909}",
-      "updated_at": 1792476043390
+      "status": "no_options",
+      "detail": "{\"item_number\": 3909, \"source\": {\"title\": \"فراشة ذهبي ( 10*6 سم ) ( 12 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495072558
     },
     {
       "source_id": 2360,
       "mode": "apply",
       "product_id": 2910,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3910}",
-      "updated_at": 1792476048265
+      "status": "no_options",
+      "detail": "{\"item_number\": 3910, \"source\": {\"title\": \"فراشة ذهبي ( 8*5 سم ) ( 12 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495077387
     },
     {
       "source_id": 2359,
@@ -11944,25 +11944,25 @@
       "source_id": 2348,
       "mode": "apply",
       "product_id": 2917,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3917}",
-      "updated_at": 1792476083294
+      "status": "no_options",
+      "detail": "{\"item_number\": 3917, \"source\": {\"title\": \"دبدوب صغير ( 6 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495082385
     },
     {
       "source_id": 2309,
       "mode": "apply",
       "product_id": 2918,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3918}",
-      "updated_at": 1792476088365
+      "status": "no_options",
+      "detail": "{\"item_number\": 3918, \"source\": {\"title\": \"سهاره مضيئه صغيره - زهري - ( 24 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495087394
     },
     {
       "source_id": 2307,
       "mode": "apply",
       "product_id": 2919,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3919}",
-      "updated_at": 1792476093196
+      "status": "no_options",
+      "detail": "{\"item_number\": 3919, \"source\": {\"title\": \"سهاره مضيئه كبيرة - زهري - ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495092428
     },
     {
       "source_id": 2294,
@@ -11976,9 +11976,9 @@
       "source_id": 2293,
       "mode": "apply",
       "product_id": 2921,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3921}",
-      "updated_at": 1792476103201
+      "status": "no_options",
+      "detail": "{\"item_number\": 3921, \"source\": {\"title\": \"علب كرتون وجه شفاف (7*9*9) 10 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495097512
     },
     {
       "source_id": 2290,
@@ -12144,17 +12144,17 @@
       "source_id": 2245,
       "mode": "apply",
       "product_id": 2942,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3942}",
-      "updated_at": 1792476210551
+      "status": "no_options",
+      "detail": "{\"item_number\": 3942, \"source\": {\"title\": \"حوض سمك اكريلك ( داير اسود )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495102426
     },
     {
       "source_id": 2244,
       "mode": "apply",
       "product_id": 2943,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3943}",
-      "updated_at": 1792476215554
+      "status": "no_options",
+      "detail": "{\"item_number\": 3943, \"source\": {\"title\": \"حوض سمك اكريلك ( داير شفاف )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495107377
     },
     {
       "source_id": 2243,
@@ -12200,17 +12200,17 @@
       "source_id": 2234,
       "mode": "apply",
       "product_id": 2949,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3949}",
-      "updated_at": 1792476245334
+      "status": "no_options",
+      "detail": "{\"item_number\": 3949, \"source\": {\"title\": \"علبة اكريلك غطاء قلاب ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495112593
     },
     {
       "source_id": 2233,
       "mode": "apply",
       "product_id": 2950,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3950}",
-      "updated_at": 1792476250552
+      "status": "no_options",
+      "detail": "{\"item_number\": 3950, \"source\": {\"title\": \"علبة اكريلك مع راس كرستال ( 12 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495117371
     },
     {
       "source_id": 2232,
@@ -12424,9 +12424,9 @@
       "source_id": 2198,
       "mode": "apply",
       "product_id": 2975,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3975}",
-      "updated_at": 1792476385357
+      "status": "no_options",
+      "detail": "{\"item_number\": 3975, \"source\": {\"title\": \"صندوق بلاستيك ذهبي ( 12 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495122454
     },
     {
       "source_id": 2196,
@@ -12504,41 +12504,41 @@
       "source_id": 2171,
       "mode": "apply",
       "product_id": 2985,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3985}",
-      "updated_at": 1792476435547
+      "status": "no_options",
+      "detail": "{\"item_number\": 3985, \"source\": {\"title\": \"قطعة سيراميك سادة مع مغناطيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495127380
     },
     {
       "source_id": 2170,
       "mode": "apply",
       "product_id": 2986,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3986}",
-      "updated_at": 1792476440379
+      "status": "no_options",
+      "detail": "{\"item_number\": 3986, \"source\": {\"title\": \"سورة الفلق سيراميك ( زهري )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495132430
     },
     {
       "source_id": 2169,
       "mode": "apply",
       "product_id": 2987,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3987}",
-      "updated_at": 1792476445541
+      "status": "no_options",
+      "detail": "{\"item_number\": 3987, \"source\": {\"title\": \"سورة الفلق سيراميك ( ازرق )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495137526
     },
     {
       "source_id": 2168,
       "mode": "apply",
       "product_id": 2988,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3988}",
-      "updated_at": 1792476450582
+      "status": "no_options",
+      "detail": "{\"item_number\": 3988, \"source\": {\"title\": \"ايه الكرسي سيراميك ( زهري )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495142427
     },
     {
       "source_id": 2167,
       "mode": "apply",
       "product_id": 2989,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3989}",
-      "updated_at": 1792476455451
+      "status": "no_options",
+      "detail": "{\"item_number\": 3989, \"source\": {\"title\": \"اية الكرسي سيراميك ( ازرق )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495147392
     },
     {
       "source_id": 2166,
@@ -12952,17 +12952,17 @@
       "source_id": 2082,
       "mode": "apply",
       "product_id": 3041,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4041}",
-      "updated_at": 1792476715394
+      "status": "no_options",
+      "detail": "{\"item_number\": 4041, \"source\": {\"title\": \"سلة خيزران ( قش )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495152442
     },
     {
       "source_id": 2076,
       "mode": "apply",
       "product_id": 3042,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4042}",
-      "updated_at": 1792476720537
+      "status": "no_options",
+      "detail": "{\"item_number\": 4042, \"source\": {\"title\": \"دبدوب ازرق ( 8 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495157380
     },
     {
       "source_id": 2072,
@@ -13072,73 +13072,73 @@
       "source_id": 2056,
       "mode": "apply",
       "product_id": 3056,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4056}",
-      "updated_at": 1792476794647
+      "status": "no_options",
+      "detail": "{\"item_number\": 4056, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 18 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495162432
     },
     {
       "source_id": 2055,
       "mode": "apply",
       "product_id": 3057,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4057}",
-      "updated_at": 1792476799651
+      "status": "no_options",
+      "detail": "{\"item_number\": 4057, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 16 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495167372
     },
     {
       "source_id": 2054,
       "mode": "apply",
       "product_id": 3058,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4058}",
-      "updated_at": 1792476804866
+      "status": "no_options",
+      "detail": "{\"item_number\": 4058, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 14 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495172428
     },
     {
       "source_id": 2053,
       "mode": "apply",
       "product_id": 3059,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4059}",
-      "updated_at": 1792476809631
+      "status": "no_options",
+      "detail": "{\"item_number\": 4059, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 12 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495177375
     },
     {
       "source_id": 2052,
       "mode": "apply",
       "product_id": 3060,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4060}",
-      "updated_at": 1792476814664
+      "status": "no_options",
+      "detail": "{\"item_number\": 4060, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 10 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495182432
     },
     {
       "source_id": 2051,
       "mode": "apply",
       "product_id": 3061,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4061}",
-      "updated_at": 1792476819663
+      "status": "no_options",
+      "detail": "{\"item_number\": 4061, \"source\": {\"title\": \"فتيل مشمع مع قاعدة 8 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495187386
     },
     {
       "source_id": 2049,
       "mode": "apply",
       "product_id": 3062,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4062}",
-      "updated_at": 1792476824669
+      "status": "no_options",
+      "detail": "{\"item_number\": 4062, \"source\": {\"title\": \"صدف بلاستيك فضي كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495192587
     },
     {
       "source_id": 2048,
       "mode": "apply",
       "product_id": 3063,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4063}",
-      "updated_at": 1792476829671
+      "status": "no_options",
+      "detail": "{\"item_number\": 4063, \"source\": {\"title\": \"صدف بلاستيك ازرق موج كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495197381
     },
     {
       "source_id": 2047,
       "mode": "apply",
       "product_id": 3064,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4064}",
-      "updated_at": 1792476834663
+      "status": "no_options",
+      "detail": "{\"item_number\": 4064, \"source\": {\"title\": \"صدف بلاستيك ذهبي كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495202516
     },
     {
       "source_id": 2046,
@@ -13152,33 +13152,33 @@
       "source_id": 2045,
       "mode": "apply",
       "product_id": 3066,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4066}",
-      "updated_at": 1792476844884
+      "status": "no_options",
+      "detail": "{\"item_number\": 4066, \"source\": {\"title\": \"صدف بلاستيك زهر موج كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495207559
     },
     {
       "source_id": 2044,
       "mode": "apply",
       "product_id": 3067,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4067}",
-      "updated_at": 1792476849652
+      "status": "no_options",
+      "detail": "{\"item_number\": 4067, \"source\": {\"title\": \"عبوة ماء زمزم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495212531
     },
     {
       "source_id": 2043,
       "mode": "apply",
       "product_id": 3068,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4068}",
-      "updated_at": 1792476854665
+      "status": "no_options",
+      "detail": "{\"item_number\": 4068, \"source\": {\"title\": \"عبوة ماء زمزم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495217552
     },
     {
       "source_id": 2042,
       "mode": "apply",
       "product_id": 3069,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4069}",
-      "updated_at": 1792476859658
+      "status": "no_options",
+      "detail": "{\"item_number\": 4069, \"source\": {\"title\": \"عبوة ماء زمزم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495222514
     },
     {
       "source_id": 2031,
@@ -13336,17 +13336,17 @@
       "source_id": 1999,
       "mode": "apply",
       "product_id": 3089,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4089}",
-      "updated_at": 1792476959612
+      "status": "no_options",
+      "detail": "{\"item_number\": 4089, \"source\": {\"title\": \"دائرة خشب مع قماش\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495227592
     },
     {
       "source_id": 1998,
       "mode": "apply",
       "product_id": 3090,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4090}",
-      "updated_at": 1792476964679
+      "status": "no_options",
+      "detail": "{\"item_number\": 4090, \"source\": {\"title\": \"صواني / صينية حجر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495232502
     },
     {
       "source_id": 1994,
@@ -13368,33 +13368,33 @@
       "source_id": 1991,
       "mode": "apply",
       "product_id": 3093,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4093}",
-      "updated_at": 1792476979883
+      "status": "no_options",
+      "detail": "{\"item_number\": 4093, \"source\": {\"title\": \"سلة خيزران (بدون يد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495237589
     },
     {
       "source_id": 1990,
       "mode": "apply",
       "product_id": 3094,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4094}",
-      "updated_at": 1792476984835
+      "status": "no_options",
+      "detail": "{\"item_number\": 4094, \"source\": {\"title\": \"ستاند معدن مع معلقة اكريلك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495242509
     },
     {
       "source_id": 1969,
       "mode": "apply",
       "product_id": 3095,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4095}",
-      "updated_at": 1792476989828
+      "status": "no_options",
+      "detail": "{\"item_number\": 4095, \"source\": {\"title\": \"مراية بلاستيك فضي - 15cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495247538
     },
     {
       "source_id": 1968,
       "mode": "apply",
       "product_id": 3096,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4096}",
-      "updated_at": 1792476994876
+      "status": "no_options",
+      "detail": "{\"item_number\": 4096, \"source\": {\"title\": \"مراية بلاستيك ذهبي - 15cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495252586
     },
     {
       "source_id": 1966,
@@ -13760,57 +13760,57 @@
       "source_id": 1908,
       "mode": "apply",
       "product_id": 3142,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4142}",
-      "updated_at": 1792477224874
+      "status": "no_options",
+      "detail": "{\"item_number\": 4142, \"source\": {\"title\": \"حوض سمك اكريلك (يد جلد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495257375
     },
     {
       "source_id": 1907,
       "mode": "apply",
       "product_id": 3143,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4143}",
-      "updated_at": 1792477229884
+      "status": "no_options",
+      "detail": "{\"item_number\": 4143, \"source\": {\"title\": \"حوض سمك اكريلك (قاعدة حجر)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495262430
     },
     {
       "source_id": 1906,
       "mode": "apply",
       "product_id": 3144,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4144}",
-      "updated_at": 1792477234816
+      "status": "no_options",
+      "detail": "{\"item_number\": 4144, \"source\": {\"title\": \"حوض سمك اكريلك (يد جلد)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495267517
     },
     {
       "source_id": 1905,
       "mode": "apply",
       "product_id": 3145,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4145}",
-      "updated_at": 1792477239672
+      "status": "no_options",
+      "detail": "{\"item_number\": 4145, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495272816
     },
     {
       "source_id": 1904,
       "mode": "apply",
       "product_id": 3146,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4146}",
-      "updated_at": 1792477244799
+      "status": "no_options",
+      "detail": "{\"item_number\": 4146, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495277642
     },
     {
       "source_id": 1902,
       "mode": "apply",
       "product_id": 3147,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4147}",
-      "updated_at": 1792477249934
+      "status": "no_options",
+      "detail": "{\"item_number\": 4147, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495282431
     },
     {
       "source_id": 1901,
       "mode": "apply",
       "product_id": 3148,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4148}",
-      "updated_at": 1792477254630
+      "status": "no_options",
+      "detail": "{\"item_number\": 4148, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495287577
     },
     {
       "source_id": 1900,
@@ -13824,17 +13824,17 @@
       "source_id": 1897,
       "mode": "apply",
       "product_id": 3150,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4150}",
-      "updated_at": 1792477264840
+      "status": "no_options",
+      "detail": "{\"item_number\": 4150, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495292437
     },
     {
       "source_id": 1896,
       "mode": "apply",
       "product_id": 3151,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4151}",
-      "updated_at": 1792477269677
+      "status": "no_options",
+      "detail": "{\"item_number\": 4151, \"source\": {\"title\": \"شوكلاته ريماس ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495297378
     },
     {
       "source_id": 1890,
@@ -13912,9 +13912,9 @@
       "source_id": 1879,
       "mode": "apply",
       "product_id": 3161,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4161}",
-      "updated_at": 1792477319705
+      "status": "no_options",
+      "detail": "{\"item_number\": 4161, \"source\": {\"title\": \"ورد ( ديل الارنب ) طبيعي مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495302510
     },
     {
       "source_id": 1878,
@@ -14208,89 +14208,89 @@
       "source_id": 1818,
       "mode": "apply",
       "product_id": 3197,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4197}",
-      "updated_at": 1792477508284
+      "status": "no_options",
+      "detail": "{\"item_number\": 4197, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495307386
     },
     {
       "source_id": 1817,
       "mode": "apply",
       "product_id": 3198,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4198}",
-      "updated_at": 1792477513312
+      "status": "no_options",
+      "detail": "{\"item_number\": 4198, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495312361
     },
     {
       "source_id": 1816,
       "mode": "apply",
       "product_id": 3199,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4199}",
-      "updated_at": 1792477518183
+      "status": "no_options",
+      "detail": "{\"item_number\": 4199, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495317433
     },
     {
       "source_id": 1815,
       "mode": "apply",
       "product_id": 3200,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4200}",
-      "updated_at": 1792477523180
+      "status": "no_options",
+      "detail": "{\"item_number\": 4200, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495322382
     },
     {
       "source_id": 1814,
       "mode": "apply",
       "product_id": 3201,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4201}",
-      "updated_at": 1792477528196
+      "status": "no_options",
+      "detail": "{\"item_number\": 4201, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495327634
     },
     {
       "source_id": 1813,
       "mode": "apply",
       "product_id": 3202,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4202}",
-      "updated_at": 1792477533213
+      "status": "no_options",
+      "detail": "{\"item_number\": 4202, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495332385
     },
     {
       "source_id": 1812,
       "mode": "apply",
       "product_id": 3203,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4203}",
-      "updated_at": 1792477538413
+      "status": "no_options",
+      "detail": "{\"item_number\": 4203, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495337459
     },
     {
       "source_id": 1811,
       "mode": "apply",
       "product_id": 3204,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4204}",
-      "updated_at": 1792477543200
+      "status": "no_options",
+      "detail": "{\"item_number\": 4204, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495342517
     },
     {
       "source_id": 1810,
       "mode": "apply",
       "product_id": 3205,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4205}",
-      "updated_at": 1792477548285
+      "status": "no_options",
+      "detail": "{\"item_number\": 4205, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495347423
     },
     {
       "source_id": 1808,
       "mode": "apply",
       "product_id": 3206,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4206}",
-      "updated_at": 1792477553179
+      "status": "no_options",
+      "detail": "{\"item_number\": 4206, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495352363
     },
     {
       "source_id": 1807,
       "mode": "apply",
       "product_id": 3207,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4207}",
-      "updated_at": 1792477558186
+      "status": "no_options",
+      "detail": "{\"item_number\": 4207, \"source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 150}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495357429
     },
     {
       "source_id": 1806,
@@ -14336,17 +14336,17 @@
       "source_id": 1801,
       "mode": "apply",
       "product_id": 3213,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4213}",
-      "updated_at": 1792477588169
+      "status": "no_options",
+      "detail": "{\"item_number\": 4213, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495362384
     },
     {
       "source_id": 1800,
       "mode": "apply",
       "product_id": 3214,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4214}",
-      "updated_at": 1792477593205
+      "status": "no_options",
+      "detail": "{\"item_number\": 4214, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495367435
     },
     {
       "source_id": 1799,
@@ -14360,65 +14360,65 @@
       "source_id": 1797,
       "mode": "apply",
       "product_id": 3216,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4216}",
-      "updated_at": 1792477603157
+      "status": "no_options",
+      "detail": "{\"item_number\": 4216, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495372548
     },
     {
       "source_id": 1795,
       "mode": "apply",
       "product_id": 3217,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4217}",
-      "updated_at": 1792477608306
+      "status": "no_options",
+      "detail": "{\"item_number\": 4217, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495377555
     },
     {
       "source_id": 1793,
       "mode": "apply",
       "product_id": 3218,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4218}",
-      "updated_at": 1792477613186
+      "status": "no_options",
+      "detail": "{\"item_number\": 4218, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495382388
     },
     {
       "source_id": 1792,
       "mode": "apply",
       "product_id": 3219,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4219}",
-      "updated_at": 1792477618182
+      "status": "no_options",
+      "detail": "{\"item_number\": 4219, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495387432
     },
     {
       "source_id": 1791,
       "mode": "apply",
       "product_id": 3220,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4220}",
-      "updated_at": 1792477623196
+      "status": "no_options",
+      "detail": "{\"item_number\": 4220, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495392373
     },
     {
       "source_id": 1790,
       "mode": "apply",
       "product_id": 3221,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4221}",
-      "updated_at": 1792477628184
+      "status": "no_options",
+      "detail": "{\"item_number\": 4221, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495397451
     },
     {
       "source_id": 1789,
       "mode": "apply",
       "product_id": 1438,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2438}",
-      "updated_at": 1792477633203
+      "status": "no_options",
+      "detail": "{\"item_number\": 2438, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495402382
     },
     {
       "source_id": 1788,
       "mode": "apply",
       "product_id": 3222,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4222}",
-      "updated_at": 1792477638418
+      "status": "no_options",
+      "detail": "{\"item_number\": 4222, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495407557
     },
     {
       "source_id": 1786,
@@ -14432,25 +14432,25 @@
       "source_id": 1785,
       "mode": "apply",
       "product_id": 3224,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4224}",
-      "updated_at": 1792477648204
+      "status": "no_options",
+      "detail": "{\"item_number\": 4224, \"source\": {\"title\": \"مباخر زيتية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495412382
     },
     {
       "source_id": 1782,
       "mode": "apply",
       "product_id": 3225,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4225}",
-      "updated_at": 1792477653207
+      "status": "no_options",
+      "detail": "{\"item_number\": 4225, \"source\": {\"title\": \"مباخر الكوب مزخرفة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495417436
     },
     {
       "source_id": 1781,
       "mode": "apply",
       "product_id": 3226,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4226}",
-      "updated_at": 1792477658200
+      "status": "no_options",
+      "detail": "{\"item_number\": 4226, \"source\": {\"title\": \"اعواد للتوزيعات مع علبة كرتون 4*4\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495422530
     },
     {
       "source_id": 1780,
@@ -14512,17 +14512,17 @@
       "source_id": 1760,
       "mode": "apply",
       "product_id": 3234,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4234}",
-      "updated_at": 1792477698206
+      "status": "no_options",
+      "detail": "{\"item_number\": 4234, \"source\": {\"title\": \"صحن جوز الهند\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495427558
     },
     {
       "source_id": 1750,
       "mode": "apply",
       "product_id": 3235,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4235}",
-      "updated_at": 1792477703321
+      "status": "no_options",
+      "detail": "{\"item_number\": 4235, \"source\": {\"title\": \"صندوق لهدايا الورد و الكتب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495432502
     },
     {
       "source_id": 1749,
@@ -14536,9 +14536,9 @@
       "source_id": 1748,
       "mode": "apply",
       "product_id": 3237,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4237}",
-      "updated_at": 1792477713314
+      "status": "no_options",
+      "detail": "{\"item_number\": 4237, \"source\": {\"title\": \"صندوق سداسي للدبل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495437434
     },
     {
       "source_id": 1745,
@@ -14552,9 +14552,9 @@
       "source_id": 1744,
       "mode": "apply",
       "product_id": 3239,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4239}",
-      "updated_at": 1792477723173
+      "status": "no_options",
+      "detail": "{\"item_number\": 4239, \"source\": {\"title\": \"سلة الخيزران\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495442382
     },
     {
       "source_id": 1743,
@@ -14592,41 +14592,41 @@
       "source_id": 1734,
       "mode": "apply",
       "product_id": 3244,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4244}",
-      "updated_at": 1792477748201
+      "status": "no_options",
+      "detail": "{\"item_number\": 4244, \"source\": {\"title\": \"مضيفة كرستال\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495447561
     },
     {
       "source_id": 1733,
       "mode": "apply",
       "product_id": 3245,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4245}",
-      "updated_at": 1792477753326
+      "status": "no_options",
+      "detail": "{\"item_number\": 4245, \"source\": {\"title\": \"مباخر كرستال مع علبة حلو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495452514
     },
     {
       "source_id": 1732,
       "mode": "apply",
       "product_id": 3246,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4246}",
-      "updated_at": 1792477758188
+      "status": "no_options",
+      "detail": "{\"item_number\": 4246, \"source\": {\"title\": \"مباخر كرستال مع جوهرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495457393
     },
     {
       "source_id": 1724,
       "mode": "apply",
       "product_id": 3247,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4247}",
-      "updated_at": 1792477763186
+      "status": "no_options",
+      "detail": "{\"item_number\": 4247, \"source\": {\"title\": \"مباخر زيتية ( قبة مسجد )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495462587
     },
     {
       "source_id": 1717,
       "mode": "apply",
       "product_id": 3248,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4248}",
-      "updated_at": 1792477768295
+      "status": "no_options",
+      "detail": "{\"item_number\": 4248, \"source\": {\"title\": \"مباخر كرستال\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495467384
     },
     {
       "source_id": 1716,
@@ -14640,65 +14640,65 @@
       "source_id": 1713,
       "mode": "apply",
       "product_id": 3250,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4250}",
-      "updated_at": 1792477778222
+      "status": "no_options",
+      "detail": "{\"item_number\": 4250, \"source\": {\"title\": \"مباخر مميزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495472565
     },
     {
       "source_id": 1709,
       "mode": "apply",
       "product_id": 3251,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4251}",
-      "updated_at": 1792477783151
+      "status": "no_options",
+      "detail": "{\"item_number\": 4251, \"source\": {\"title\": \"مباخر مميزة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495477529
     },
     {
       "source_id": 1696,
       "mode": "apply",
       "product_id": 1439,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2439}",
-      "updated_at": 1792477788319
+      "status": "no_options",
+      "detail": "{\"item_number\": 2439, \"source\": {\"title\": \"مباخر قطعتين حجر وجلد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495482543
     },
     {
       "source_id": 1692,
       "mode": "apply",
       "product_id": 3252,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4252}",
-      "updated_at": 1792477793253
+      "status": "no_options",
+      "detail": "{\"item_number\": 4252, \"source\": {\"title\": \"مباخر زيتية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495487484
     },
     {
       "source_id": 1691,
       "mode": "apply",
       "product_id": 3253,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4253}",
-      "updated_at": 1792477798205
+      "status": "no_options",
+      "detail": "{\"item_number\": 4253, \"source\": {\"title\": \"مباخر زيتية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495492586
     },
     {
       "source_id": 1690,
       "mode": "apply",
       "product_id": 1440,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2440}",
-      "updated_at": 1792477803147
+      "status": "no_options",
+      "detail": "{\"item_number\": 2440, \"source\": {\"title\": \"شوكلاتة (ذهبي) مستطيلة Lily\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495497398
     },
     {
       "source_id": 1689,
       "mode": "apply",
       "product_id": 1441,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2441}",
-      "updated_at": 1792477808378
+      "status": "no_options",
+      "detail": "{\"item_number\": 2441, \"source\": {\"title\": \"شوكلاتة (ذهبي) محشية مربع Lily\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495502565
     },
     {
       "source_id": 1672,
       "mode": "apply",
       "product_id": 1442,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2442}",
-      "updated_at": 1792477813252
+      "status": "no_options",
+      "detail": "{\"item_number\": 2442, \"source\": {\"title\": \"شوكلاتة (ذهبي) اسطوانة Lily\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495507519
     },
     {
       "source_id": 1671,
@@ -14712,9 +14712,9 @@
       "source_id": 1669,
       "mode": "apply",
       "product_id": 1444,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2444}",
-      "updated_at": 1792477823142
+      "status": "no_options",
+      "detail": "{\"item_number\": 2444, \"source\": {\"title\": \"مباخر الحجر الجرانيت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495512386
     },
     {
       "source_id": 1667,
@@ -15584,57 +15584,57 @@
       "source_id": 1543,
       "mode": "apply",
       "product_id": 3353,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4353}",
-      "updated_at": 1792478370524
+      "status": "no_options",
+      "detail": "{\"item_number\": 4353, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 50*35 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495517562
     },
     {
       "source_id": 1542,
       "mode": "apply",
       "product_id": 3354,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4354}",
-      "updated_at": 1792478375523
+      "status": "no_options",
+      "detail": "{\"item_number\": 4354, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 70*50 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 7500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495522414
     },
     {
       "source_id": 1541,
       "mode": "apply",
       "product_id": 3355,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4355}",
-      "updated_at": 1792478380527
+      "status": "no_options",
+      "detail": "{\"item_number\": 4355, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 50*43 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 6500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495527564
     },
     {
       "source_id": 1540,
       "mode": "apply",
       "product_id": 3356,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4356}",
-      "updated_at": 1792478385536
+      "status": "no_options",
+      "detail": "{\"item_number\": 4356, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 75*60 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 8500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495532364
     },
     {
       "source_id": 1539,
       "mode": "apply",
       "product_id": 3357,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4357}",
-      "updated_at": 1792478390554
+      "status": "no_options",
+      "detail": "{\"item_number\": 4357, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 100*70 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 9000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495537437
     },
     {
       "source_id": 1538,
       "mode": "apply",
       "product_id": 3358,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4358}",
-      "updated_at": 1792478395539
+      "status": "no_options",
+      "detail": "{\"item_number\": 4358, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 120*80 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 10000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495542496
     },
     {
       "source_id": 1537,
       "mode": "apply",
       "product_id": 3359,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4359}",
-      "updated_at": 1792478400750
+      "status": "no_options",
+      "detail": "{\"item_number\": 4359, \"source\": {\"title\": \"اكياس سلفان شفاف مع قلوب 90*150 cm\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 12000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495547558
     },
     {
       "source_id": 1536,
@@ -16040,17 +16040,17 @@
       "source_id": 1448,
       "mode": "apply",
       "product_id": 1455,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2455}",
-      "updated_at": 1792478655718
+      "status": "no_options",
+      "detail": "{\"item_number\": 2455, \"source\": {\"title\": \"ستاند دبل ( 30, 30 )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 5000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495552442
     },
     {
       "source_id": 1447,
       "mode": "apply",
       "product_id": 3409,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4409}",
-      "updated_at": 1792478660734
+      "status": "no_options",
+      "detail": "{\"item_number\": 4409, \"source\": {\"title\": \"مرايا رخام طبيعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495557365
     },
     {
       "source_id": 1446,
@@ -16128,25 +16128,25 @@
       "source_id": 1423,
       "mode": "apply",
       "product_id": 3419,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4419}",
-      "updated_at": 1792478713527
+      "status": "no_options",
+      "detail": "{\"item_number\": 4419, \"source\": {\"title\": \"صواني / صينية حجر للشوكلاتة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495562580
     },
     {
       "source_id": 1420,
       "mode": "apply",
       "product_id": 3420,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4420}",
-      "updated_at": 1792478718300
+      "status": "no_options",
+      "detail": "{\"item_number\": 4420, \"source\": {\"title\": \"صندوق خشبي للدبل و المهر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 13500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495567400
     },
     {
       "source_id": 1419,
       "mode": "apply",
       "product_id": 3421,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4421}",
-      "updated_at": 1792478723474
+      "status": "no_options",
+      "detail": "{\"item_number\": 4421, \"source\": {\"title\": \"صندوق اكريلك حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 19000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495572436
     },
     {
       "source_id": 1417,
@@ -16168,25 +16168,25 @@
       "source_id": 1413,
       "mode": "apply",
       "product_id": 3424,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4424}",
-      "updated_at": 1792478738285
+      "status": "no_options",
+      "detail": "{\"item_number\": 4424, \"source\": {\"title\": \"وساده مكرميه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495577548
     },
     {
       "source_id": 1412,
       "mode": "apply",
       "product_id": 3425,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4425}",
-      "updated_at": 1792478743458
+      "status": "no_options",
+      "detail": "{\"item_number\": 4425, \"source\": {\"title\": \"وساده مكرميه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495582554
     },
     {
       "source_id": 1405,
       "mode": "apply",
       "product_id": 3426,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4426}",
-      "updated_at": 1792478748320
+      "status": "no_options",
+      "detail": "{\"item_number\": 4426, \"source\": {\"title\": \"مباخر رخام طبيعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495587569
     },
     {
       "source_id": 1401,
@@ -16200,9 +16200,9 @@
       "source_id": 1398,
       "mode": "apply",
       "product_id": 3428,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4428}",
-      "updated_at": 1792478758477
+      "status": "no_options",
+      "detail": "{\"item_number\": 4428, \"source\": {\"title\": \"قفص عصافير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 20000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495592444
     },
     {
       "source_id": 1397,
@@ -16376,9 +16376,9 @@
       "source_id": 1318,
       "mode": "apply",
       "product_id": 3450,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4450}",
-      "updated_at": 1792478868308
+      "status": "no_options",
+      "detail": "{\"item_number\": 4450, \"source\": {\"title\": \"مباخر سهارة model 2 سيراميك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495597578
     },
     {
       "source_id": 1314,
@@ -16392,17 +16392,17 @@
       "source_id": 1303,
       "mode": "apply",
       "product_id": 3452,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4452}",
-      "updated_at": 1792478878291
+      "status": "no_options",
+      "detail": "{\"item_number\": 4452, \"source\": {\"title\": \"مباخر نحاسية - الحجم الصغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495602390
     },
     {
       "source_id": 1301,
       "mode": "apply",
       "product_id": 3453,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4453}",
-      "updated_at": 1792478883274
+      "status": "no_options",
+      "detail": "{\"item_number\": 4453, \"source\": {\"title\": \"مباخر نحاسية - الحجم الصغير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495607591
     },
     {
       "source_id": 1296,
@@ -16464,33 +16464,33 @@
       "source_id": 1280,
       "mode": "apply",
       "product_id": 3461,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4461}",
-      "updated_at": 1792478923553
+      "status": "no_options",
+      "detail": "{\"item_number\": 4461, \"source\": {\"title\": \"علب كبريت . كرتون شوكلاته ازرق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495612386
     },
     {
       "source_id": 1279,
       "mode": "apply",
       "product_id": 3462,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4462}",
-      "updated_at": 1792478928288
+      "status": "no_options",
+      "detail": "{\"item_number\": 4462, \"source\": {\"title\": \"علب كبريت . كرتون شوكلاته ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495617598
     },
     {
       "source_id": 1278,
       "mode": "apply",
       "product_id": 3463,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4463}",
-      "updated_at": 1792478933508
+      "status": "no_options",
+      "detail": "{\"item_number\": 4463, \"source\": {\"title\": \"علب كبريت . كرتون شوكلاته زهري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495622388
     },
     {
       "source_id": 1277,
       "mode": "apply",
       "product_id": 3464,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4464}",
-      "updated_at": 1792478938452
+      "status": "no_options",
+      "detail": "{\"item_number\": 4464, \"source\": {\"title\": \"علب كبريت . كرتون شوكلاته ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495627385
     },
     {
       "source_id": 1269,
@@ -16720,9 +16720,9 @@
       "source_id": 1202,
       "mode": "apply",
       "product_id": 3491,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4491}",
-      "updated_at": 1792479083296
+      "status": "no_options",
+      "detail": "{\"item_number\": 4491, \"source\": {\"title\": \"بكج اختام شمعية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495632615
     },
     {
       "source_id": 1201,
@@ -16784,9 +16784,9 @@
       "source_id": 1191,
       "mode": "apply",
       "product_id": 3499,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4499}",
-      "updated_at": 1792479123299
+      "status": "no_options",
+      "detail": "{\"item_number\": 4499, \"source\": {\"title\": \"كوخ معدني\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495637392
     },
     {
       "source_id": 1181,
@@ -16808,17 +16808,17 @@
       "source_id": 1179,
       "mode": "apply",
       "product_id": 3502,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4502}",
-      "updated_at": 1792479138489
+      "status": "no_options",
+      "detail": "{\"item_number\": 4502, \"source\": {\"title\": \"لوح اكريلك < وجه ذهبي & وجه فضي>\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 450}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495642387
     },
     {
       "source_id": 1178,
       "mode": "apply",
       "product_id": 3503,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4503}",
-      "updated_at": 1792479143515
+      "status": "no_options",
+      "detail": "{\"item_number\": 4503, \"source\": {\"title\": \"لوح اكريلك < وجه ذهبي & وجه فضي>\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495647554
     },
     {
       "source_id": 1177,
@@ -16968,57 +16968,57 @@
       "source_id": 1156,
       "mode": "apply",
       "product_id": 3522,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4522}",
-      "updated_at": 1792479238282
+      "status": "no_options",
+      "detail": "{\"item_number\": 4522, \"source\": {\"title\": \"كاسة خشب حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495652385
     },
     {
       "source_id": 1155,
       "mode": "apply",
       "product_id": 3523,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4523}",
-      "updated_at": 1792479243488
+      "status": "no_options",
+      "detail": "{\"item_number\": 4523, \"source\": {\"title\": \"كاسة خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495657614
     },
     {
       "source_id": 1154,
       "mode": "apply",
       "product_id": 3524,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4524}",
-      "updated_at": 1792479248300
+      "status": "no_options",
+      "detail": "{\"item_number\": 4524, \"source\": {\"title\": \"وعاء خشبي 14 * 9 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495662394
     },
     {
       "source_id": 1153,
       "mode": "apply",
       "product_id": 3525,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4525}",
-      "updated_at": 1792479253509
+      "status": "no_options",
+      "detail": "{\"item_number\": 4525, \"source\": {\"title\": \"وعاء خشبي 12.5 *9 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495667556
     },
     {
       "source_id": 1152,
       "mode": "apply",
       "product_id": 3526,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4526}",
-      "updated_at": 1792479258502
+      "status": "no_options",
+      "detail": "{\"item_number\": 4526, \"source\": {\"title\": \"وعاء خشبي 11.5 * 8 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495672390
     },
     {
       "source_id": 1151,
       "mode": "apply",
       "product_id": 3527,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4527}",
-      "updated_at": 1792479263296
+      "status": "no_options",
+      "detail": "{\"item_number\": 4527, \"source\": {\"title\": \"وعاء خشبي 12.5 * 8.5 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495677440
     },
     {
       "source_id": 1150,
       "mode": "apply",
       "product_id": 3528,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4528}",
-      "updated_at": 1792479268307
+      "status": "no_options",
+      "detail": "{\"item_number\": 4528, \"source\": {\"title\": \"وعاء خشبي 7*9 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495682387
     },
     {
       "source_id": 1148,
@@ -17056,17 +17056,17 @@
       "source_id": 1144,
       "mode": "apply",
       "product_id": 3533,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4533}",
-      "updated_at": 1792479295308
+      "status": "no_options",
+      "detail": "{\"item_number\": 4533, \"source\": {\"title\": \"ملعقة love - توزيعات\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495687432
     },
     {
       "source_id": 1143,
       "mode": "apply",
       "product_id": 3534,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4534}",
-      "updated_at": 1792479300307
+      "status": "no_options",
+      "detail": "{\"item_number\": 4534, \"source\": {\"title\": \"قاعدة دبل مخمل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495692582
     },
     {
       "source_id": 1138,
@@ -17160,25 +17160,25 @@
       "source_id": 1090,
       "mode": "apply",
       "product_id": 3546,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4546}",
-      "updated_at": 1792479360303
+      "status": "no_options",
+      "detail": "{\"item_number\": 4546, \"source\": {\"title\": \"توزيعات كرتون مع شبرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495697372
     },
     {
       "source_id": 1089,
       "mode": "apply",
       "product_id": 3547,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4547}",
-      "updated_at": 1792479365324
+      "status": "no_options",
+      "detail": "{\"item_number\": 4547, \"source\": {\"title\": \"توزيعات كرتون مع شبرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495702578
     },
     {
       "source_id": 1088,
       "mode": "apply",
       "product_id": 3548,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4548}",
-      "updated_at": 1792479370316
+      "status": "no_options",
+      "detail": "{\"item_number\": 4548, \"source\": {\"title\": \"توزيعات كرتون مع شبرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495707547
     },
     {
       "source_id": 1073,
@@ -17424,17 +17424,17 @@
       "source_id": 1036,
       "mode": "apply",
       "product_id": 3579,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4579}",
-      "updated_at": 1792479525327
+      "status": "no_options",
+      "detail": "{\"item_number\": 4579, \"source\": {\"title\": \"قاعدة خشبية محفورة لصب الشمع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495712595
     },
     {
       "source_id": 1035,
       "mode": "apply",
       "product_id": 3580,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4580}",
-      "updated_at": 1792479530330
+      "status": "no_options",
+      "detail": "{\"item_number\": 4580, \"source\": {\"title\": \"مباخر زيتيه كبيره\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495717500
     },
     {
       "source_id": 1024,
@@ -17944,9 +17944,9 @@
       "source_id": 947,
       "mode": "apply",
       "product_id": 3643,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4643}",
-      "updated_at": 1792479850345
+      "status": "no_options",
+      "detail": "{\"item_number\": 4643, \"source\": {\"title\": \"اكياس كرتون مقوى وجه شفاف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495722558
     },
     {
       "source_id": 935,
@@ -17968,17 +17968,17 @@
       "source_id": 924,
       "mode": "apply",
       "product_id": 1459,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2459}",
-      "updated_at": 1792479865471
+      "status": "no_options",
+      "detail": "{\"item_number\": 2459, \"source\": {\"title\": \"صواني / صينية حجر (34*28 سم ) ، ارتفاع 21 سم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495727596
     },
     {
       "source_id": 918,
       "mode": "apply",
       "product_id": 3646,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4646}",
-      "updated_at": 1792479870317
+      "status": "no_options",
+      "detail": "{\"item_number\": 4646, \"source\": {\"title\": \"مطربان عسل زجاجي غطاء فلين حجم 50 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495732374
     },
     {
       "source_id": 902,
@@ -18048,17 +18048,17 @@
       "source_id": 893,
       "mode": "apply",
       "product_id": 1464,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2464}",
-      "updated_at": 1792479915462
+      "status": "no_options",
+      "detail": "{\"item_number\": 2464, \"source\": {\"title\": \"مكرمية قلب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495737506
     },
     {
       "source_id": 886,
       "mode": "apply",
       "product_id": 1465,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2465}",
-      "updated_at": 1792479922599
+      "status": "no_options",
+      "detail": "{\"item_number\": 2465, \"source\": {\"title\": \"كوخ زجاجي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495742593
     },
     {
       "source_id": 884,
@@ -18080,25 +18080,25 @@
       "source_id": 876,
       "mode": "apply",
       "product_id": 3651,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4651}",
-      "updated_at": 1792479937580
+      "status": "no_options",
+      "detail": "{\"item_number\": 4651, \"source\": {\"title\": \"بكج ختم شمعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495747392
     },
     {
       "source_id": 875,
       "mode": "apply",
       "product_id": 1468,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2468}",
-      "updated_at": 1792479942626
+      "status": "no_options",
+      "detail": "{\"item_number\": 2468, \"source\": {\"title\": \"بكج ختم شمعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495752530
     },
     {
       "source_id": 874,
       "mode": "apply",
       "product_id": 1469,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2469}",
-      "updated_at": 1792479947578
+      "status": "no_options",
+      "detail": "{\"item_number\": 2469, \"source\": {\"title\": \"بكج ختم شمعي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495757494
     },
     {
       "source_id": 873,
@@ -18112,65 +18112,65 @@
       "source_id": 871,
       "mode": "apply",
       "product_id": 3653,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4653}",
-      "updated_at": 1792479957360
+      "status": "no_options",
+      "detail": "{\"item_number\": 4653, \"source\": {\"title\": \"طقم صحون خشب القلب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495762440
     },
     {
       "source_id": 857,
       "mode": "apply",
       "product_id": 1470,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2470}",
-      "updated_at": 1792479962390
+      "status": "no_options",
+      "detail": "{\"item_number\": 2470, \"source\": {\"title\": \"بكج ختم الشموع\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495767389
     },
     {
       "source_id": 856,
       "mode": "apply",
       "product_id": 3654,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4654}",
-      "updated_at": 1792479967459
+      "status": "no_options",
+      "detail": "{\"item_number\": 4654, \"source\": {\"title\": \"صواني / صينية اكريلك اسود لف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495772655
     },
     {
       "source_id": 855,
       "mode": "apply",
       "product_id": 3655,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4655}",
-      "updated_at": 1792479972359
+      "status": "no_options",
+      "detail": "{\"item_number\": 4655, \"source\": {\"title\": \"صواني / صينية اكريلك شفاف لف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495777464
     },
     {
       "source_id": 851,
       "mode": "apply",
       "product_id": 3656,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4656}",
-      "updated_at": 1792479977451
+      "status": "no_options",
+      "detail": "{\"item_number\": 4656, \"source\": {\"title\": \"مباخر زيتيه ذهبيه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495782578
     },
     {
       "source_id": 848,
       "mode": "apply",
       "product_id": 3657,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4657}",
-      "updated_at": 1792479982576
+      "status": "no_options",
+      "detail": "{\"item_number\": 4657, \"source\": {\"title\": \"شمعة العروس معطره\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495787374
     },
     {
       "source_id": 846,
       "mode": "apply",
       "product_id": 3658,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4658}",
-      "updated_at": 1792479987433
+      "status": "no_options",
+      "detail": "{\"item_number\": 4658, \"source\": {\"title\": \"شمعة العروس معطره\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495792642
     },
     {
       "source_id": 828,
       "mode": "apply",
       "product_id": 3659,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4659}",
-      "updated_at": 1792479992565
+      "status": "no_options",
+      "detail": "{\"item_number\": 4659, \"source\": {\"title\": \"تاج فضي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 100}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495797570
     },
     {
       "source_id": 827,
@@ -18280,9 +18280,9 @@
       "source_id": 751,
       "mode": "apply",
       "product_id": 3673,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4673}",
-      "updated_at": 1792480062396
+      "status": "no_options",
+      "detail": "{\"item_number\": 4673, \"source\": {\"title\": \"مباخر مستطيله صغير خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495802596
     },
     {
       "source_id": 744,
@@ -18528,9 +18528,9 @@
       "source_id": 661,
       "mode": "apply",
       "product_id": 1485,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2485}",
-      "updated_at": 1792480217444
+      "status": "no_options",
+      "detail": "{\"item_number\": 2485, \"source\": {\"title\": \"قاعدة ذهبية للالوان الشمعية\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495807391
     },
     {
       "source_id": 660,
@@ -18832,9 +18832,9 @@
       "source_id": 592,
       "mode": "apply",
       "product_id": 1491,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2491}",
-      "updated_at": 1792480407432
+      "status": "no_options",
+      "detail": "{\"item_number\": 2491, \"source\": {\"title\": \"علبة خشبية للاقلام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495812457
     },
     {
       "source_id": 591,
@@ -18984,25 +18984,25 @@
       "source_id": 564,
       "mode": "apply",
       "product_id": 1496,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2496}",
-      "updated_at": 1792480502402
+      "status": "no_options",
+      "detail": "{\"item_number\": 2496, \"source\": {\"title\": \"شمع 50 قطعة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495817585
     },
     {
       "source_id": 556,
       "mode": "apply",
       "product_id": 1497,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2497}",
-      "updated_at": 1792480507472
+      "status": "no_options",
+      "detail": "{\"item_number\": 2497, \"source\": {\"title\": \"تحف زجاج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495822582
     },
     {
       "source_id": 555,
       "mode": "apply",
       "product_id": 1498,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2498}",
-      "updated_at": 1792480512426
+      "status": "no_options",
+      "detail": "{\"item_number\": 2498, \"source\": {\"title\": \"تحف زجاج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495827509
     },
     {
       "source_id": 554,
@@ -19016,17 +19016,17 @@
       "source_id": 553,
       "mode": "apply",
       "product_id": 1500,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2500}",
-      "updated_at": 1792480522421
+      "status": "no_options",
+      "detail": "{\"item_number\": 2500, \"source\": {\"title\": \"صندوق زجاجي اسود\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495832447
     },
     {
       "source_id": 552,
       "mode": "apply",
       "product_id": 1501,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2501}",
-      "updated_at": 1792480527489
+      "status": "no_options",
+      "detail": "{\"item_number\": 2501, \"source\": {\"title\": \"علاقة خشبية مميزه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495837416
     },
     {
       "source_id": 504,
@@ -19192,9 +19192,9 @@
       "source_id": 461,
       "mode": "apply",
       "product_id": 1506,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2506}",
-      "updated_at": 1792480634955
+      "status": "no_options",
+      "detail": "{\"item_number\": 2506, \"source\": {\"title\": \"تعليقة باب كرتون للعرسان\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495842592
     },
     {
       "source_id": 457,
@@ -19360,9 +19360,9 @@
       "source_id": 411,
       "mode": "apply",
       "product_id": 1519,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2519}",
-      "updated_at": 1792480739730
+      "status": "no_options",
+      "detail": "{\"item_number\": 2519, \"source\": {\"title\": \"تحف زجاج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495847377
     },
     {
       "source_id": 410,
@@ -19448,9 +19448,9 @@
       "source_id": 342,
       "mode": "apply",
       "product_id": 3769,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4769}",
-      "updated_at": 1792480795006
+      "status": "no_options",
+      "detail": "{\"item_number\": 4769, \"source\": {\"title\": \"ورد ديل الارنب مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495852451
     },
     {
       "source_id": 298,
@@ -19480,9 +19480,9 @@
       "source_id": 280,
       "mode": "apply",
       "product_id": 1524,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2524}",
-      "updated_at": 1792480814732
+      "status": "no_options",
+      "detail": "{\"item_number\": 2524, \"source\": {\"title\": \"رقبة صغيرة\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495857399
     },
     {
       "source_id": 275,
@@ -19560,49 +19560,49 @@
       "source_id": 168,
       "mode": "apply",
       "product_id": 1531,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2531}",
-      "updated_at": 1792480864953
+      "status": "no_options",
+      "detail": "{\"item_number\": 2531, \"source\": {\"title\": \"كوستر دبل زجاج . 2 قطعةه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495862444
     },
     {
       "source_id": 162,
       "mode": "apply",
       "product_id": 3773,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4773}",
-      "updated_at": 1792480869917
+      "status": "no_options",
+      "detail": "{\"item_number\": 4773, \"source\": {\"title\": \"شوكه خشبيه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 40}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495867517
     },
     {
       "source_id": 161,
       "mode": "apply",
       "product_id": 3774,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4774}",
-      "updated_at": 1792480874974
+      "status": "no_options",
+      "detail": "{\"item_number\": 4774, \"source\": {\"title\": \"سكين خشبيه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 40}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495872560
     },
     {
       "source_id": 157,
       "mode": "apply",
       "product_id": 1532,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2532}",
-      "updated_at": 1792480879983
+      "status": "no_options",
+      "detail": "{\"item_number\": 2532, \"source\": {\"title\": \"شمعه الجمجمه\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495877506
     },
     {
       "source_id": 156,
       "mode": "apply",
       "product_id": 1533,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2533}",
-      "updated_at": 1792480884904
+      "status": "no_options",
+      "detail": "{\"item_number\": 2533, \"source\": {\"title\": \"شمعدان كرسي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495882429
     },
     {
       "source_id": 140,
       "mode": "apply",
       "product_id": 1534,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2534}",
-      "updated_at": 1792480889971
+      "status": "no_options",
+      "detail": "{\"item_number\": 2534, \"source\": {\"title\": \"سهاره الصبره المضيئه ( 24 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 4800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495887378
     },
     {
       "source_id": 135,
@@ -19664,9 +19664,9 @@
       "source_id": 91,
       "mode": "apply",
       "product_id": 1539,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2539}",
-      "updated_at": 1792480929961
+      "status": "no_options",
+      "detail": "{\"item_number\": 2539, \"source\": {\"title\": \"صحون عضم\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495892394
     },
     {
       "source_id": 82,
@@ -19680,17 +19680,17 @@
       "source_id": 80,
       "mode": "apply",
       "product_id": 3778,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4778}",
-      "updated_at": 1792480939693
+      "status": "no_options",
+      "detail": "{\"item_number\": 4778, \"source\": {\"title\": \"مراي رخام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495897482
     },
     {
       "source_id": 79,
       "mode": "apply",
       "product_id": 1541,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2541}",
-      "updated_at": 1792480944756
+      "status": "no_options",
+      "detail": "{\"item_number\": 2541, \"source\": {\"title\": \"مباخر رخام\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495902397
     },
     {
       "source_id": 76,
@@ -19704,17 +19704,17 @@
       "source_id": 60,
       "mode": "apply",
       "product_id": 1543,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2543}",
-      "updated_at": 1792480954935
+      "status": "no_options",
+      "detail": "{\"item_number\": 2543, \"source\": {\"title\": \"مراي يد ( جولد روز )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 250}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495907588
     },
     {
       "source_id": 54,
       "mode": "apply",
       "product_id": 1544,
-      "status": "unsupported_source_price",
-      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2544}",
-      "updated_at": 1792480959942
+      "status": "no_options",
+      "detail": "{\"item_number\": 2544, \"source\": {\"title\": \"شنط اكسسوار مخمل ( اسود )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792495912399
     },
     {
       "source_id": 45,
