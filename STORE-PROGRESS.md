@@ -3816,3 +3816,12 @@
 - Next listing page: 21
 - No product/database writes.
 - التقرير: docs/dofesh-missing-products/missing-products.html وmissing-products.csv؛ لم تُضف أو تُنشر أو تُعدّل منتجات.
+
+
+### 2026-10-20T08:50:40.963961+03:00 — DOFESH-MISSING-CATALOG
+## DOFESH-MISSING-CATALOG
+- Time: 2026-10-20T08:50:40.963961+03:00
+- الحالة: partial؛ صفحات مفحوصة: 22؛ أصناف دوفش: 1279؛ موجودة عندك: 1264؛ غير مرتبطة: 14؛ اسم مطابق يحتاج تحقق: 1؛ توفر لم يفحص: 12.
+- Next listing page: None
+- No product/database writes.
+- التقرير: docs/dofesh-missing-products/missing-products.html وmissing-products.csv؛ لم تُضف أو تُنشر أو تُعدّل منتجات.
