@@ -17,7 +17,7 @@ function fixture(){
  INSERT INTO product_option_values VALUES(8,'أحمر');
  INSERT INTO variant_option_values VALUES(22,8);
  INSERT INTO product_custom_fields VALUES(1,'الاسم',30,1,0,1);`);
- return {sql,db:{prepare(query){let values=[];return{bind(...args){values=args;return this},async first(){return sql.prepare(query).get(...values)||null},async all(){return{results:sql.prepare(query).all(...values)}},async run(){const r=sql.prepare(query).run(...values);this.query=query;this.values=values;return{meta:{last_row_id:Number(r.lastInsertRowid)}}}}},async batch(items){sql.exec("BEGIN IMMEDIATE");try{for(const item of items)sql.prepare(item.query).run(...item.values);sql.exec("COMMIT")}catch(e){sql.exec("ROLLBACK");throw e}}}};
+ return {sql,db:{prepare(query){let values=[];return{bind(...args){values=args;return this},async first(){return sql.prepare(query).get(...values)||null},async all(){return{results:sql.prepare(query).all(...values)}},async run(){const r=sql.prepare(query).run(...values);return{meta:{last_row_id:Number(r.lastInsertRowid)}}}}},async batch(items){sql.exec("BEGIN IMMEDIATE");try{for(const item of items)sql.prepare(item.query).run(...item.values);sql.exec("COMMIT")}catch(e){sql.exec("ROLLBACK");throw e}}}};
 }
 const body={customerName:"زبون",phone:"0591234567",city:"رام الله",address:"وسط البلد",channel:"whatsapp",shipping:20,discount:2,items:[{productId:1,quantity:2,unitPrice:5,customizations:{"الاسم":"ليان"}}]};
 test("creates order with manual source, channel and correct totals",async()=>{
