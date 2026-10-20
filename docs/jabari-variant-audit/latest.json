@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T09:23:27.253830+03:00",
+  "updated_at": "2026-10-20T09:33:54.308663+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 125,
@@ -14051,6 +14051,1006 @@
       "status": "synced",
       "detail": "{\"item_number\": 4177, \"name\": \"ببيونه ستان ازرق عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ازرق عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ازرق عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3177\", \"source_url\": \"https://jabaristore.com/?app=product.show.1856\"}",
       "updated_at": 1792477404896
+    },
+    {
+      "source_id": 1855,
+      "mode": "apply",
+      "product_id": 3178,
+      "status": "synced",
+      "detail": "{\"item_number\": 4178, \"name\": \"ببيونه ستان ليلكي عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ليلكي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ليلكي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3178\", \"source_url\": \"https://jabaristore.com/?app=product.show.1855\"}",
+      "updated_at": 1792477413393
+    },
+    {
+      "source_id": 1853,
+      "mode": "apply",
+      "product_id": 3179,
+      "status": "synced",
+      "detail": "{\"item_number\": 4179, \"name\": \"ببيونه ستان فضي عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان فضي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان فضي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3179\", \"source_url\": \"https://jabaristore.com/?app=product.show.1853\"}",
+      "updated_at": 1792477418459
+    },
+    {
+      "source_id": 1852,
+      "mode": "apply",
+      "product_id": 3180,
+      "status": "synced",
+      "detail": "{\"item_number\": 4180, \"name\": \"ببيونه ستان بصلي عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان بصلي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان بصلي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3180\", \"source_url\": \"https://jabaristore.com/?app=product.show.1852\"}",
+      "updated_at": 1792477423541
+    },
+    {
+      "source_id": 1851,
+      "mode": "apply",
+      "product_id": 3181,
+      "status": "synced",
+      "detail": "{\"item_number\": 4181, \"name\": \"ببيونه ستان زيتي عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان زيتي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان زيتي عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3181\", \"source_url\": \"https://jabaristore.com/?app=product.show.1851\"}",
+      "updated_at": 1792477428409
+    },
+    {
+      "source_id": 1850,
+      "mode": "apply",
+      "product_id": 3182,
+      "status": "synced",
+      "detail": "{\"item_number\": 4182, \"name\": \"ببيونه ستان نود عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان نود عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان نود عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3182\", \"source_url\": \"https://jabaristore.com/?app=product.show.1850\"}",
+      "updated_at": 1792477433563
+    },
+    {
+      "source_id": 1848,
+      "mode": "apply",
+      "product_id": 3183,
+      "status": "synced",
+      "detail": "{\"item_number\": 4183, \"name\": \"ببيونه ستان اسود عرض 1.5 سم\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان اسود عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان اسود عرض 1.5 سم\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"200 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3183\", \"source_url\": \"https://jabaristore.com/?app=product.show.1848\"}",
+      "updated_at": 1792477438645
+    },
+    {
+      "source_id": 1847,
+      "mode": "apply",
+      "product_id": 3184,
+      "status": "synced",
+      "detail": "{\"item_number\": 4184, \"name\": \"ببيونه ستان فستقي عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان فستقي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان فستقي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3184\", \"source_url\": \"https://jabaristore.com/?app=product.show.1847\"}",
+      "updated_at": 1792477443528
+    },
+    {
+      "source_id": 1842,
+      "mode": "apply",
+      "product_id": 3185,
+      "status": "synced",
+      "detail": "{\"item_number\": 4185, \"name\": \"ببيونه ستان ازرق عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ازرق عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ازرق عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3185\", \"source_url\": \"https://jabaristore.com/?app=product.show.1842\"}",
+      "updated_at": 1792477448665
+    },
+    {
+      "source_id": 1841,
+      "mode": "apply",
+      "product_id": 3186,
+      "status": "synced",
+      "detail": "{\"item_number\": 4186, \"name\": \"ببيونه ستان ليلكي عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان ليلكي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان ليلكي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3186\", \"source_url\": \"https://jabaristore.com/?app=product.show.1841\"}",
+      "updated_at": 1792477453543
+    },
+    {
+      "source_id": 1839,
+      "mode": "apply",
+      "product_id": 3187,
+      "status": "synced",
+      "detail": "{\"item_number\": 4187, \"name\": \"ببيونه ستان فضي عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان فضي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان فضي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3187\", \"source_url\": \"https://jabaristore.com/?app=product.show.1839\"}",
+      "updated_at": 1792477458574
+    },
+    {
+      "source_id": 1838,
+      "mode": "apply",
+      "product_id": 3188,
+      "status": "synced",
+      "detail": "{\"item_number\": 4188, \"name\": \"ببيونه ستان بصلي عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان بصلي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان بصلي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3188\", \"source_url\": \"https://jabaristore.com/?app=product.show.1838\"}",
+      "updated_at": 1792477463441
+    },
+    {
+      "source_id": 1837,
+      "mode": "apply",
+      "product_id": 3189,
+      "status": "synced",
+      "detail": "{\"item_number\": 4189, \"name\": \"ببيونه ستان زيتي عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان زيتي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان زيتي عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3189\", \"source_url\": \"https://jabaristore.com/?app=product.show.1837\"}",
+      "updated_at": 1792477468531
+    },
+    {
+      "source_id": 1836,
+      "mode": "apply",
+      "product_id": 3190,
+      "status": "synced",
+      "detail": "{\"item_number\": 4190, \"name\": \"ببيونه ستان عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3190\", \"source_url\": \"https://jabaristore.com/?app=product.show.1836\"}",
+      "updated_at": 1792477473563
+    },
+    {
+      "source_id": 1835,
+      "mode": "apply",
+      "product_id": 3191,
+      "status": "synced",
+      "detail": "{\"item_number\": 4191, \"name\": \"ببيونه ستان اسود عرض 1 سم\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"ببيونه ستان اسود عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونه ستان اسود عرض 1 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"500 قطعة\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"500 قطعة\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3191\", \"source_url\": \"https://jabaristore.com/?app=product.show.1835\"}",
+      "updated_at": 1792477478606
+    },
+    {
+      "source_id": 1832,
+      "mode": "apply",
+      "product_id": 3192,
+      "status": "synced",
+      "detail": "{\"item_number\": 4192, \"name\": \"ببيونة ستان زهر عرض 0.5 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببيونة ستان زهر عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونة ستان زهر عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"1000 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3192\", \"source_url\": \"https://jabaristore.com/?app=product.show.1832\"}",
+      "updated_at": 1792477483504
+    },
+    {
+      "source_id": 1828,
+      "mode": "apply",
+      "product_id": 3193,
+      "status": "synced",
+      "detail": "{\"item_number\": 4193, \"name\": \"ببيونة ستان ازرق عرض 0.5 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببيونة ستان ازرق عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونة ستان ازرق عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"1000 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3193\", \"source_url\": \"https://jabaristore.com/?app=product.show.1828\"}",
+      "updated_at": 1792477488589
+    },
+    {
+      "source_id": 1827,
+      "mode": "apply",
+      "product_id": 3194,
+      "status": "synced",
+      "detail": "{\"item_number\": 4194, \"name\": \"ببيونة ستان ليلكي عرض 0.5 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببيونة ستان ليلكي عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونة ستان ليلكي عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"1000 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3194\", \"source_url\": \"https://jabaristore.com/?app=product.show.1827\"}",
+      "updated_at": 1792477493413
+    },
+    {
+      "source_id": 1825,
+      "mode": "apply",
+      "product_id": 3195,
+      "status": "synced",
+      "detail": "{\"item_number\": 4195, \"name\": \"ببيونة ستان فضي عرض 0.5 سم\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"ببيونة ستان فضي عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ببيونة ستان فضي عرض 0.5 سم\", \"variants\": [{\"name\": \"100 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"1000 قطعة\", \"price\": 7000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"1000 قطعة\", \"price\": 7200, \"active\": true, \"supplier_price\": 7000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3195\", \"source_url\": \"https://jabaristore.com/?app=product.show.1825\"}",
+      "updated_at": 1792477498698
+    },
+    {
+      "source_id": 1819,
+      "mode": "apply",
+      "product_id": 3196,
+      "status": "synced",
+      "detail": "{\"item_number\": 4196, \"name\": \"أعواد للعطور 22 سم\", \"before_price\": 850, \"before_variants\": [], \"source\": {\"title\": \"اعواد للعطور 22 سم\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اسود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اعواد للعطور 22 سم\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"اسود\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اسود\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3196\", \"source_url\": \"https://jabaristore.com/?app=product.show.1819\"}",
+      "updated_at": 1792477503621
+    },
+    {
+      "source_id": 1818,
+      "mode": "apply",
+      "product_id": 3197,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4197}",
+      "updated_at": 1792477508284
+    },
+    {
+      "source_id": 1817,
+      "mode": "apply",
+      "product_id": 3198,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4198}",
+      "updated_at": 1792477513312
+    },
+    {
+      "source_id": 1816,
+      "mode": "apply",
+      "product_id": 3199,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4199}",
+      "updated_at": 1792477518183
+    },
+    {
+      "source_id": 1815,
+      "mode": "apply",
+      "product_id": 3200,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4200}",
+      "updated_at": 1792477523180
+    },
+    {
+      "source_id": 1814,
+      "mode": "apply",
+      "product_id": 3201,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4201}",
+      "updated_at": 1792477528196
+    },
+    {
+      "source_id": 1813,
+      "mode": "apply",
+      "product_id": 3202,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4202}",
+      "updated_at": 1792477533213
+    },
+    {
+      "source_id": 1812,
+      "mode": "apply",
+      "product_id": 3203,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4203}",
+      "updated_at": 1792477538413
+    },
+    {
+      "source_id": 1811,
+      "mode": "apply",
+      "product_id": 3204,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4204}",
+      "updated_at": 1792477543200
+    },
+    {
+      "source_id": 1810,
+      "mode": "apply",
+      "product_id": 3205,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4205}",
+      "updated_at": 1792477548285
+    },
+    {
+      "source_id": 1808,
+      "mode": "apply",
+      "product_id": 3206,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4206}",
+      "updated_at": 1792477553179
+    },
+    {
+      "source_id": 1807,
+      "mode": "apply",
+      "product_id": 3207,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4207}",
+      "updated_at": 1792477558186
+    },
+    {
+      "source_id": 1806,
+      "mode": "apply",
+      "product_id": 3208,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4208, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477563198
+    },
+    {
+      "source_id": 1805,
+      "mode": "apply",
+      "product_id": 3209,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4209, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477568191
+    },
+    {
+      "source_id": 1804,
+      "mode": "apply",
+      "product_id": 3210,
+      "status": "synced",
+      "detail": "{\"item_number\": 4210, \"name\": \"قطع تزين للشوكلاته\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3210\", \"source_url\": \"https://jabaristore.com/?app=product.show.1804\"}",
+      "updated_at": 1792477573423
+    },
+    {
+      "source_id": 1803,
+      "mode": "apply",
+      "product_id": 3211,
+      "status": "synced",
+      "detail": "{\"item_number\": 4211, \"name\": \"قطع تزين للشوكلاته\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3211\", \"source_url\": \"https://jabaristore.com/?app=product.show.1803\"}",
+      "updated_at": 1792477578531
+    },
+    {
+      "source_id": 1802,
+      "mode": "apply",
+      "product_id": 3212,
+      "status": "synced",
+      "detail": "{\"item_number\": 4212, \"name\": \"قطع تزين للشوكلاته\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع تزين للشوكلاته\", \"variants\": [{\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3500, \"active\": true}, {\"name\": \"200 قطعة\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"200 قطعة\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3212\", \"source_url\": \"https://jabaristore.com/?app=product.show.1802\"}",
+      "updated_at": 1792477583616
+    },
+    {
+      "source_id": 1801,
+      "mode": "apply",
+      "product_id": 3213,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4213}",
+      "updated_at": 1792477588169
+    },
+    {
+      "source_id": 1800,
+      "mode": "apply",
+      "product_id": 3214,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4214}",
+      "updated_at": 1792477593205
+    },
+    {
+      "source_id": 1799,
+      "mode": "apply",
+      "product_id": 3215,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4215, \"source\": {\"title\": \"قطع تزين للشوكلاته ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477598171
+    },
+    {
+      "source_id": 1797,
+      "mode": "apply",
+      "product_id": 3216,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4216}",
+      "updated_at": 1792477603157
+    },
+    {
+      "source_id": 1795,
+      "mode": "apply",
+      "product_id": 3217,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4217}",
+      "updated_at": 1792477608306
+    },
+    {
+      "source_id": 1793,
+      "mode": "apply",
+      "product_id": 3218,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4218}",
+      "updated_at": 1792477613186
+    },
+    {
+      "source_id": 1792,
+      "mode": "apply",
+      "product_id": 3219,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4219}",
+      "updated_at": 1792477618182
+    },
+    {
+      "source_id": 1791,
+      "mode": "apply",
+      "product_id": 3220,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4220}",
+      "updated_at": 1792477623196
+    },
+    {
+      "source_id": 1790,
+      "mode": "apply",
+      "product_id": 3221,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4221}",
+      "updated_at": 1792477628184
+    },
+    {
+      "source_id": 1789,
+      "mode": "apply",
+      "product_id": 1438,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2438}",
+      "updated_at": 1792477633203
+    },
+    {
+      "source_id": 1788,
+      "mode": "apply",
+      "product_id": 3222,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4222}",
+      "updated_at": 1792477638418
+    },
+    {
+      "source_id": 1786,
+      "mode": "apply",
+      "product_id": 3223,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4223, \"source\": {\"title\": \"مرايه معدن ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477643201
+    },
+    {
+      "source_id": 1785,
+      "mode": "apply",
+      "product_id": 3224,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4224}",
+      "updated_at": 1792477648204
+    },
+    {
+      "source_id": 1782,
+      "mode": "apply",
+      "product_id": 3225,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4225}",
+      "updated_at": 1792477653207
+    },
+    {
+      "source_id": 1781,
+      "mode": "apply",
+      "product_id": 3226,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4226}",
+      "updated_at": 1792477658200
+    },
+    {
+      "source_id": 1780,
+      "mode": "apply",
+      "product_id": 3227,
+      "status": "synced",
+      "detail": "{\"item_number\": 4227, \"name\": \"تاج كرستال معدن للزينة\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"50 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 200, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true, \"supplier_price\": 200}, {\"name\": \"50 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3227\", \"source_url\": \"https://jabaristore.com/?app=product.show.1780\"}",
+      "updated_at": 1792477663417
+    },
+    {
+      "source_id": 1778,
+      "mode": "apply",
+      "product_id": 3228,
+      "status": "synced",
+      "detail": "{\"item_number\": 4228, \"name\": \"تاج كرستال معدن للزينة\", \"before_price\": 238, \"before_variants\": [], \"source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3228\", \"source_url\": \"https://jabaristore.com/?app=product.show.1778\"}",
+      "updated_at": 1792477668525
+    },
+    {
+      "source_id": 1777,
+      "mode": "apply",
+      "product_id": 3229,
+      "status": "synced",
+      "detail": "{\"item_number\": 4229, \"name\": \"تاج كرستال معدن للزينة\", \"before_price\": 238, \"before_variants\": [], \"source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تاج كرستال معدن للزينة\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3229\", \"source_url\": \"https://jabaristore.com/?app=product.show.1777\"}",
+      "updated_at": 1792477673537
+    },
+    {
+      "source_id": 1776,
+      "mode": "apply",
+      "product_id": 3230,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4230, \"source\": {\"title\": \"سلك ربط ( 1000 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477678286
+    },
+    {
+      "source_id": 1774,
+      "mode": "apply",
+      "product_id": 3231,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4231, \"source\": {\"title\": \"حوض سمك اكريلك (حافة زاوية)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477683304
+    },
+    {
+      "source_id": 1766,
+      "mode": "apply",
+      "product_id": 3232,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4232, \"source\": {\"title\": \"صندوق خشب وجه زجاج\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477688410
+    },
+    {
+      "source_id": 1761,
+      "mode": "apply",
+      "product_id": 3233,
+      "status": "synced",
+      "detail": "{\"item_number\": 4233, \"name\": \"عش العصفور\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"عش العصفور\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"50 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"عش العصفور\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"50 قطعة\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3233\", \"source_url\": \"https://jabaristore.com/?app=product.show.1761\"}",
+      "updated_at": 1792477693419
+    },
+    {
+      "source_id": 1760,
+      "mode": "apply",
+      "product_id": 3234,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4234}",
+      "updated_at": 1792477698206
+    },
+    {
+      "source_id": 1750,
+      "mode": "apply",
+      "product_id": 3235,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4235}",
+      "updated_at": 1792477703321
+    },
+    {
+      "source_id": 1749,
+      "mode": "apply",
+      "product_id": 3236,
+      "status": "synced",
+      "detail": "{\"item_number\": 4236, \"name\": \"مغناطيس دائري\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"مغناطيس دائري\", \"variants\": [{\"name\": \"5mm / 50 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"5mm / 100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5mm / 1000 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"10mm / 50 قطعة\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"10mm / 100 قطعة\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"10mm / 1000 قطعة\", \"price\": 15000, \"active\": false, \"supplier_price\": 14000}, {\"name\": \"15mm / 50 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"15mm / 100 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"15mm / 1000 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"20mm / 50 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"20mm / 100 قطعة\", \"price\": 2350, \"active\": false, \"supplier_price\": 2200}, {\"name\": \"20mm / 1000 قطعة\", \"price\": 19000, \"active\": false, \"supplier_price\": 18000}, {\"name\": \"30mm / 50 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"30mm / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"30mm / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مغناطيس دائري\", \"variants\": [{\"name\": \"5mm / 50 قطعة\", \"price\": 800, \"active\": true}, {\"name\": \"5mm / 100 قطعة\", \"price\": 1500, \"active\": true}, {\"name\": \"5mm / 1000 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"10mm / 50 قطعة\", \"price\": 1000, \"active\": false}, {\"name\": \"10mm / 100 قطعة\", \"price\": 1800, \"active\": false}, {\"name\": \"10mm / 1000 قطعة\", \"price\": 14000, \"active\": false}, {\"name\": \"15mm / 50 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"15mm / 100 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"15mm / 1000 قطعة\", \"price\": 16000, \"active\": true}, {\"name\": \"20mm / 50 قطعة\", \"price\": 1300, \"active\": false}, {\"name\": \"20mm / 100 قطعة\", \"price\": 2200, \"active\": false}, {\"name\": \"20mm / 1000 قطعة\", \"price\": 18000, \"active\": false}, {\"name\": \"30mm / 50 قطعة\", \"price\": 1500, \"active\": false}, {\"name\": \"30mm / 100 قطعة\", \"price\": 2500, \"active\": false}, {\"name\": \"30mm / 1000 قطعة\", \"price\": 20000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"5mm / 50 قطعة\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"5mm / 100 قطعة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5mm / 1000 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"10mm / 50 قطعة\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"10mm / 100 قطعة\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"10mm / 1000 قطعة\", \"price\": 15000, \"active\": false, \"supplier_price\": 14000}, {\"name\": \"15mm / 50 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"15mm / 100 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"15mm / 1000 قطعة\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}, {\"name\": \"20mm / 50 قطعة\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"20mm / 100 قطعة\", \"price\": 2350, \"active\": false, \"supplier_price\": 2200}, {\"name\": \"20mm / 1000 قطعة\", \"price\": 19000, \"active\": false, \"supplier_price\": 18000}, {\"name\": \"30mm / 50 قطعة\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"30mm / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"30mm / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3236\", \"source_url\": \"https://jabaristore.com/?app=product.show.1749\"}",
+      "updated_at": 1792477708528
+    },
+    {
+      "source_id": 1748,
+      "mode": "apply",
+      "product_id": 3237,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4237}",
+      "updated_at": 1792477713314
+    },
+    {
+      "source_id": 1745,
+      "mode": "apply",
+      "product_id": 3238,
+      "status": "synced",
+      "detail": "{\"item_number\": 4238, \"name\": \"مقصات زينة\", \"before_price\": 1850, \"before_variants\": [], \"source\": {\"title\": \"مقصات زينة\", \"variants\": [{\"name\": \"فضي\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"ذهبي\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"جولد روز\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"فضي غامق\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مقصات زينة\", \"variants\": [{\"name\": \"فضي\", \"price\": 1700, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 1700, \"active\": true}, {\"name\": \"جولد روز\", \"price\": 1700, \"active\": false}, {\"name\": \"فضي غامق\", \"price\": 1700, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"فضي\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"ذهبي\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"جولد روز\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"فضي غامق\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3238\", \"source_url\": \"https://jabaristore.com/?app=product.show.1745\"}",
+      "updated_at": 1792477718379
+    },
+    {
+      "source_id": 1744,
+      "mode": "apply",
+      "product_id": 3239,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4239}",
+      "updated_at": 1792477723173
+    },
+    {
+      "source_id": 1743,
+      "mode": "apply",
+      "product_id": 3240,
+      "status": "synced",
+      "detail": "{\"item_number\": 4240, \"name\": \"قطع تزين الشوكولاته\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"قطع تزين الشوكولاته\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع تزين الشوكولاته\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3240\", \"source_url\": \"https://jabaristore.com/?app=product.show.1743\"}",
+      "updated_at": 1792477728468
+    },
+    {
+      "source_id": 1742,
+      "mode": "apply",
+      "product_id": 3241,
+      "status": "synced",
+      "detail": "{\"item_number\": 4241, \"name\": \"قطع تزين الشوكلاته\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"قطع تزين الشوكلاته\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قطع تزين الشوكلاته\", \"variants\": [{\"name\": \"10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 2000, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"50 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"100 قطعة\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3241\", \"source_url\": \"https://jabaristore.com/?app=product.show.1742\"}",
+      "updated_at": 1792477733434
+    },
+    {
+      "source_id": 1738,
+      "mode": "apply",
+      "product_id": 3242,
+      "status": "synced",
+      "detail": "{\"item_number\": 4242, \"name\": \"مصفاية مباخر 5 سم\", \"before_price\": 130, \"before_variants\": [], \"source\": {\"title\": \"مصفاية مباخر 5 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"100 قطعة\", \"price\": 9500, \"active\": false, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مصفاية مباخر 5 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 9000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"100 قطعة\", \"price\": 9500, \"active\": false, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3242\", \"source_url\": \"https://jabaristore.com/?app=product.show.1738\"}",
+      "updated_at": 1792477738415
+    },
+    {
+      "source_id": 1735,
+      "mode": "apply",
+      "product_id": 3243,
+      "status": "synced",
+      "detail": "{\"item_number\": 4243, \"name\": \"مصفاية مباخر 7 سم\", \"before_price\": 170, \"before_variants\": [], \"source\": {\"title\": \"مصفاية مباخر 7 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 200, \"active\": true, \"supplier_price\": 150}, {\"name\": \"100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مصفاية مباخر 7 سم\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 200, \"active\": true, \"supplier_price\": 150}, {\"name\": \"100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3243\", \"source_url\": \"https://jabaristore.com/?app=product.show.1735\"}",
+      "updated_at": 1792477743450
+    },
+    {
+      "source_id": 1734,
+      "mode": "apply",
+      "product_id": 3244,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4244}",
+      "updated_at": 1792477748201
+    },
+    {
+      "source_id": 1733,
+      "mode": "apply",
+      "product_id": 3245,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4245}",
+      "updated_at": 1792477753326
+    },
+    {
+      "source_id": 1732,
+      "mode": "apply",
+      "product_id": 3246,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4246}",
+      "updated_at": 1792477758188
+    },
+    {
+      "source_id": 1724,
+      "mode": "apply",
+      "product_id": 3247,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4247}",
+      "updated_at": 1792477763186
+    },
+    {
+      "source_id": 1717,
+      "mode": "apply",
+      "product_id": 3248,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4248}",
+      "updated_at": 1792477768295
+    },
+    {
+      "source_id": 1716,
+      "mode": "apply",
+      "product_id": 3249,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4249, \"source\": {\"title\": \"مباخر سيراميك ابيض ( 10*7 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477773293
+    },
+    {
+      "source_id": 1713,
+      "mode": "apply",
+      "product_id": 3250,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4250}",
+      "updated_at": 1792477778222
+    },
+    {
+      "source_id": 1709,
+      "mode": "apply",
+      "product_id": 3251,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4251}",
+      "updated_at": 1792477783151
+    },
+    {
+      "source_id": 1696,
+      "mode": "apply",
+      "product_id": 1439,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2439}",
+      "updated_at": 1792477788319
+    },
+    {
+      "source_id": 1692,
+      "mode": "apply",
+      "product_id": 3252,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4252}",
+      "updated_at": 1792477793253
+    },
+    {
+      "source_id": 1691,
+      "mode": "apply",
+      "product_id": 3253,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4253}",
+      "updated_at": 1792477798205
+    },
+    {
+      "source_id": 1690,
+      "mode": "apply",
+      "product_id": 1440,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2440}",
+      "updated_at": 1792477803147
+    },
+    {
+      "source_id": 1689,
+      "mode": "apply",
+      "product_id": 1441,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2441}",
+      "updated_at": 1792477808378
+    },
+    {
+      "source_id": 1672,
+      "mode": "apply",
+      "product_id": 1442,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2442}",
+      "updated_at": 1792477813252
+    },
+    {
+      "source_id": 1671,
+      "mode": "apply",
+      "product_id": 1443,
+      "status": "synced",
+      "detail": "{\"item_number\": 2443, \"name\": \"صواني / صينيه إكريلك\", \"before_price\": 3700, \"before_variants\": [], \"source\": {\"title\": \"صواني / صينيه اكريلك\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ذهبي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"فضي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صواني / صينيه اكريلك\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 4000, \"active\": true}, {\"name\": \"فضي\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ذهبي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"فضي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1443\", \"source_url\": \"https://jabaristore.com/?app=product.show.1671\"}",
+      "updated_at": 1792477818414
+    },
+    {
+      "source_id": 1669,
+      "mode": "apply",
+      "product_id": 1444,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2444}",
+      "updated_at": 1792477823142
+    },
+    {
+      "source_id": 1667,
+      "mode": "apply",
+      "product_id": 3254,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4254, \"source\": {\"title\": \"ملاقط بيبي حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477828231
+    },
+    {
+      "source_id": 1666,
+      "mode": "apply",
+      "product_id": 3255,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4255, \"source\": {\"title\": \"معلقات فرو ( ملون ) 14ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477833161
+    },
+    {
+      "source_id": 1665,
+      "mode": "apply",
+      "product_id": 3256,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4256, \"source\": {\"title\": \"دعسوقة (ملون ) مع لاصق\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477838214
+    },
+    {
+      "source_id": 1664,
+      "mode": "apply",
+      "product_id": 3257,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4257, \"source\": {\"title\": \"فواصل جمجمة بلاستيك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477843286
+    },
+    {
+      "source_id": 1662,
+      "mode": "apply",
+      "product_id": 3258,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4258, \"source\": {\"title\": \"معلقات قلوب بلاستيك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477848187
+    },
+    {
+      "source_id": 1661,
+      "mode": "apply",
+      "product_id": 3259,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4259, \"source\": {\"title\": \"فاصل علاقة ( للاساور ) بلاستيك\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477853129
+    },
+    {
+      "source_id": 1660,
+      "mode": "apply",
+      "product_id": 3260,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4260, \"source\": {\"title\": \"خرز بلاستيك احرف (2 خرم) 8*2 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477858307
+    },
+    {
+      "source_id": 1659,
+      "mode": "apply",
+      "product_id": 3261,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4261, \"source\": {\"title\": \"خرز بلاستيك احرف (2 خرم) 8*2 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477863281
+    },
+    {
+      "source_id": 1658,
+      "mode": "apply",
+      "product_id": 3262,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4262, \"source\": {\"title\": \"خرز بلاستيك احرف (2 خرم) 8*2 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477868212
+    },
+    {
+      "source_id": 1657,
+      "mode": "apply",
+      "product_id": 3263,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4263, \"source\": {\"title\": \"خرز خشب احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477873153
+    },
+    {
+      "source_id": 1656,
+      "mode": "apply",
+      "product_id": 3264,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4264, \"source\": {\"title\": \"خرز بلاستيك احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477878324
+    },
+    {
+      "source_id": 1655,
+      "mode": "apply",
+      "product_id": 3265,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4265, \"source\": {\"title\": \"خرز بلاستيك احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477883129
+    },
+    {
+      "source_id": 1654,
+      "mode": "apply",
+      "product_id": 3266,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4266, \"source\": {\"title\": \"خرز بلاستيك احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477888203
+    },
+    {
+      "source_id": 1653,
+      "mode": "apply",
+      "product_id": 3267,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4267, \"source\": {\"title\": \"خرز بلاستيك احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477893270
+    },
+    {
+      "source_id": 1652,
+      "mode": "apply",
+      "product_id": 3268,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4268, \"source\": {\"title\": \"خرز بلاستيك احرف 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477898210
+    },
+    {
+      "source_id": 1651,
+      "mode": "apply",
+      "product_id": 3269,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4269, \"source\": {\"title\": \"خرز بلاستيك احرف قلب 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477903155
+    },
+    {
+      "source_id": 1650,
+      "mode": "apply",
+      "product_id": 3270,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4270, \"source\": {\"title\": \"خرز بلاستيك احرف 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477908191
+    },
+    {
+      "source_id": 1649,
+      "mode": "apply",
+      "product_id": 3271,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4271, \"source\": {\"title\": \"خرز بلاستيك احرف 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477913328
+    },
+    {
+      "source_id": 1648,
+      "mode": "apply",
+      "product_id": 3272,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4272, \"source\": {\"title\": \"خرز بلاستيك احرف 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477918457
+    },
+    {
+      "source_id": 1647,
+      "mode": "apply",
+      "product_id": 3273,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4273, \"source\": {\"title\": \"خرز بلاستيك احرف 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477923378
+    },
+    {
+      "source_id": 1646,
+      "mode": "apply",
+      "product_id": 3274,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4274, \"source\": {\"title\": \"خرز بلاستيك احرف 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477928379
+    },
+    {
+      "source_id": 1645,
+      "mode": "apply",
+      "product_id": 3275,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4275, \"source\": {\"title\": \"فواصل خشب ازرق 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477933376
+    },
+    {
+      "source_id": 1644,
+      "mode": "apply",
+      "product_id": 3276,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4276, \"source\": {\"title\": \"خرز بلاستيك قلوب 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477938381
+    },
+    {
+      "source_id": 1643,
+      "mode": "apply",
+      "product_id": 3277,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4277, \"source\": {\"title\": \"خرز بلاستيك ارقام 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477943371
+    },
+    {
+      "source_id": 1642,
+      "mode": "apply",
+      "product_id": 3278,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4278, \"source\": {\"title\": \"خرز بلاستيك قلوب 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477948391
+    },
+    {
+      "source_id": 1641,
+      "mode": "apply",
+      "product_id": 3279,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4279, \"source\": {\"title\": \"خرز بلاستيك قلوب 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477953332
+    },
+    {
+      "source_id": 1640,
+      "mode": "apply",
+      "product_id": 3280,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4280, \"source\": {\"title\": \"خرز بلاستيك قلوب 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477958401
+    },
+    {
+      "source_id": 1639,
+      "mode": "apply",
+      "product_id": 3281,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4281, \"source\": {\"title\": \"خرز بلاستيك ارقام 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477963356
+    },
+    {
+      "source_id": 1638,
+      "mode": "apply",
+      "product_id": 3282,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4282, \"source\": {\"title\": \"خرز بلاستيك ارقام 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477968442
+    },
+    {
+      "source_id": 1637,
+      "mode": "apply",
+      "product_id": 3283,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4283, \"source\": {\"title\": \"خرز بلاستيك ارقام 6ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477973150
+    },
+    {
+      "source_id": 1636,
+      "mode": "apply",
+      "product_id": 3284,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4284, \"source\": {\"title\": \"خرز خشب زهري 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477978397
+    },
+    {
+      "source_id": 1635,
+      "mode": "apply",
+      "product_id": 3285,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4285, \"source\": {\"title\": \"خرز خشب اصفر 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477983162
+    },
+    {
+      "source_id": 1634,
+      "mode": "apply",
+      "product_id": 3286,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4286, \"source\": {\"title\": \"خرز خشب ازرق غامق 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477988208
+    },
+    {
+      "source_id": 1633,
+      "mode": "apply",
+      "product_id": 3287,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4287, \"source\": {\"title\": \"خرز خشبي ملون 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477993148
+    },
+    {
+      "source_id": 1632,
+      "mode": "apply",
+      "product_id": 3288,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4288, \"source\": {\"title\": \"خرز خشب ابيض 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792477998190
+    },
+    {
+      "source_id": 1631,
+      "mode": "apply",
+      "product_id": 3289,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4289, \"source\": {\"title\": \"خرز خشب لون طبيعي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478003151
+    },
+    {
+      "source_id": 1630,
+      "mode": "apply",
+      "product_id": 3290,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4290, \"source\": {\"title\": \"خرز خشب احمر 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478008378
+    },
+    {
+      "source_id": 1629,
+      "mode": "apply",
+      "product_id": 3291,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4291, \"source\": {\"title\": \"خرز خشب اخضر حشيشي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478013384
+    },
+    {
+      "source_id": 1628,
+      "mode": "apply",
+      "product_id": 3292,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4292, \"source\": {\"title\": \"خرز مات ازرق 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478018231
+    },
+    {
+      "source_id": 1627,
+      "mode": "apply",
+      "product_id": 3293,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4293, \"source\": {\"title\": \"خرز مات اخضر 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478023178
+    },
+    {
+      "source_id": 1626,
+      "mode": "apply",
+      "product_id": 3294,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4294, \"source\": {\"title\": \"خرز مات برتقالي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478028392
+    },
+    {
+      "source_id": 1625,
+      "mode": "apply",
+      "product_id": 3295,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4295, \"source\": {\"title\": \"خرز مات ابيض 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478033207
     }
   ]
 }

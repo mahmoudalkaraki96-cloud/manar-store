@@ -4528,3 +4528,137 @@
 - Mode: submit; items: 4797, 4796, 4795, 4794, 4793, 4792, 4791, 4790, 4788, 4787, 4786, 4785
 - Submission: {"status": "not_submitted"}
 - تجهيز الصور وإرسالها منفصلان عن اكتمال المعالجة واعتماد الصور ونشر المنتجات.
+### 2026-10-20T09:33:54.308663+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T09:33:54.308663+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 885, "synced": 676, "unsupported_source_price": 320}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#1855 ↔ صنف#4178: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1855
+- الجعبري#1853 ↔ صنف#4179: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1853
+- الجعبري#1852 ↔ صنف#4180: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1852
+- الجعبري#1851 ↔ صنف#4181: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1851
+- الجعبري#1850 ↔ صنف#4182: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1850
+- الجعبري#1848 ↔ صنف#4183: synced؛ 50 قطعة=10₪؛ 100 قطعة=16.5₪؛ 200 قطعة=26.5₪. https://jabaristore.com/?app=product.show.1848
+- الجعبري#1847 ↔ صنف#4184: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1847
+- الجعبري#1842 ↔ صنف#4185: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1842
+- الجعبري#1841 ↔ صنف#4186: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1841
+- الجعبري#1839 ↔ صنف#4187: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1839
+- الجعبري#1838 ↔ صنف#4188: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1838
+- الجعبري#1837 ↔ صنف#4189: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1837
+- الجعبري#1836 ↔ صنف#4190: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1836
+- الجعبري#1835 ↔ صنف#4191: synced؛ 100 قطعة=13.5₪؛ 500 قطعة=42₪. https://jabaristore.com/?app=product.show.1835
+- الجعبري#1832 ↔ صنف#4192: synced؛ 100 قطعة=11₪؛ 1000 قطعة=72₪. https://jabaristore.com/?app=product.show.1832
+- الجعبري#1828 ↔ صنف#4193: synced؛ 100 قطعة=11₪؛ 1000 قطعة=72₪. https://jabaristore.com/?app=product.show.1828
+- الجعبري#1827 ↔ صنف#4194: synced؛ 100 قطعة=11₪؛ 1000 قطعة=72₪. https://jabaristore.com/?app=product.show.1827
+- الجعبري#1825 ↔ صنف#4195: synced؛ 100 قطعة=11₪؛ 1000 قطعة=72₪. https://jabaristore.com/?app=product.show.1825
+- الجعبري#1819 ↔ صنف#4196: synced؛ ابيض=11₪؛ اسود=11₪. https://jabaristore.com/?app=product.show.1819
+- الجعبري#1818 ↔ صنف#4197: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1818
+- الجعبري#1817 ↔ صنف#4198: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1817
+- الجعبري#1816 ↔ صنف#4199: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1816
+- الجعبري#1815 ↔ صنف#4200: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1815
+- الجعبري#1814 ↔ صنف#4201: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1814
+- الجعبري#1813 ↔ صنف#4202: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1813
+- الجعبري#1812 ↔ صنف#4203: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1812
+- الجعبري#1811 ↔ صنف#4204: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1811
+- الجعبري#1810 ↔ صنف#4205: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1810
+- الجعبري#1808 ↔ صنف#4206: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1808
+- الجعبري#1807 ↔ صنف#4207: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1807
+- الجعبري#1806 ↔ صنف#4208: no_options؛ قطع تزين للشوكلاته ( 50 قطعة ). https://jabaristore.com/?app=product.show.1806
+- الجعبري#1805 ↔ صنف#4209: no_options؛ قطع تزين للشوكلاته ( 50 قطعة ). https://jabaristore.com/?app=product.show.1805
+- الجعبري#1804 ↔ صنف#4210: synced؛ 50 قطعة=21.5₪؛ 100 قطعة=37₪؛ 200 قطعة=62₪. https://jabaristore.com/?app=product.show.1804
+- الجعبري#1803 ↔ صنف#4211: synced؛ 50 قطعة=21.5₪؛ 100 قطعة=37₪؛ 200 قطعة=62₪. https://jabaristore.com/?app=product.show.1803
+- الجعبري#1802 ↔ صنف#4212: synced؛ 50 قطعة=21.5₪؛ 100 قطعة=37₪؛ 200 قطعة=62₪. https://jabaristore.com/?app=product.show.1802
+- الجعبري#1801 ↔ صنف#4213: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1801
+- الجعبري#1800 ↔ صنف#4214: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1800
+- الجعبري#1799 ↔ صنف#4215: no_options؛ قطع تزين للشوكلاته ( 50 قطعة ). https://jabaristore.com/?app=product.show.1799
+- الجعبري#1797 ↔ صنف#4216: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1797
+- الجعبري#1795 ↔ صنف#4217: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1795
+- الجعبري#1793 ↔ صنف#4218: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1793
+- الجعبري#1792 ↔ صنف#4219: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1792
+- الجعبري#1791 ↔ صنف#4220: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1791
+- الجعبري#1790 ↔ صنف#4221: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1790
+- الجعبري#1789 ↔ صنف#2438: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1789
+- الجعبري#1788 ↔ صنف#4222: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1788
+- الجعبري#1786 ↔ صنف#4223: no_options؛ مرايه معدن ذهبي. https://jabaristore.com/?app=product.show.1786
+- الجعبري#1785 ↔ صنف#4224: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1785
+- الجعبري#1782 ↔ صنف#4225: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1782
+- الجعبري#1781 ↔ صنف#4226: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1781
+- الجعبري#1780 ↔ صنف#4227: synced؛ بالقطعة=2.5₪؛ 50 قطعة=95₪. https://jabaristore.com/?app=product.show.1780
+- الجعبري#1778 ↔ صنف#4228: synced؛ بالقطعة=3₪؛ 50 قطعة=105₪. https://jabaristore.com/?app=product.show.1778
+- الجعبري#1777 ↔ صنف#4229: synced؛ بالقطعة=3₪؛ 50 قطعة=105₪. https://jabaristore.com/?app=product.show.1777
+- الجعبري#1776 ↔ صنف#4230: no_options؛ سلك ربط ( 1000 قطعة ). https://jabaristore.com/?app=product.show.1776
+- الجعبري#1774 ↔ صنف#4231: no_options؛ حوض سمك اكريلك (حافة زاوية). https://jabaristore.com/?app=product.show.1774
+- الجعبري#1766 ↔ صنف#4232: no_options؛ صندوق خشب وجه زجاج. https://jabaristore.com/?app=product.show.1766
+- الجعبري#1761 ↔ صنف#4233: synced؛ بالقطعة=1.5₪؛ 50 قطعة=37₪. https://jabaristore.com/?app=product.show.1761
+- الجعبري#1760 ↔ صنف#4234: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1760
+- الجعبري#1750 ↔ صنف#4235: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1750
+- الجعبري#1749 ↔ صنف#4236: synced؛ 5mm / 50 قطعة=9₪؛ 5mm / 100 قطعة=16.5₪؛ 5mm / 1000 قطعة=130₪؛ 10mm / 50 قطعة=11₪؛ 10mm / 100 قطعة=19.5₪؛ 10mm / 1000 قطعة=150₪؛ 15mm / 50 قطعة=13.5₪؛ 15mm / 100 قطعة=21.5₪؛ 15mm / 1000 قطعة=170₪؛ 20mm / 50 قطعة=14.5₪؛ 20mm / 100 قطعة=23.5₪؛ 20mm / 1000 قطعة=190₪؛ 30mm / 50 قطعة=16.5₪؛ 30mm / 100 قطعة=26.5₪؛ 30mm / 1000 قطعة=210₪. https://jabaristore.com/?app=product.show.1749
+- الجعبري#1748 ↔ صنف#4237: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1748
+- الجعبري#1745 ↔ صنف#4238: synced؛ فضي=18.5₪؛ ذهبي=18.5₪؛ جولد روز=18.5₪؛ فضي غامق=18.5₪. https://jabaristore.com/?app=product.show.1745
+- الجعبري#1744 ↔ صنف#4239: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1744
+- الجعبري#1743 ↔ صنف#4240: synced؛ 10 قطعة=11₪؛ 50 قطعة=21.5₪؛ 100 قطعة=31.5₪. https://jabaristore.com/?app=product.show.1743
+- الجعبري#1742 ↔ صنف#4241: synced؛ 10 قطعة=11₪؛ 50 قطعة=21.5₪؛ 100 قطعة=31.5₪. https://jabaristore.com/?app=product.show.1742
+- الجعبري#1738 ↔ صنف#4242: synced؛ بالقطعة=1.5₪؛ 100 قطعة=95₪. https://jabaristore.com/?app=product.show.1738
+- الجعبري#1735 ↔ صنف#4243: synced؛ بالقطعة=2₪؛ 100 قطعة=130₪. https://jabaristore.com/?app=product.show.1735
+- الجعبري#1734 ↔ صنف#4244: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1734
+- الجعبري#1733 ↔ صنف#4245: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1733
+- الجعبري#1732 ↔ صنف#4246: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1732
+- الجعبري#1724 ↔ صنف#4247: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1724
+- الجعبري#1717 ↔ صنف#4248: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1717
+- الجعبري#1716 ↔ صنف#4249: no_options؛ مباخر سيراميك ابيض ( 10*7 سم ). https://jabaristore.com/?app=product.show.1716
+- الجعبري#1713 ↔ صنف#4250: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1713
+- الجعبري#1709 ↔ صنف#4251: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1709
+- الجعبري#1696 ↔ صنف#2439: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1696
+- الجعبري#1692 ↔ صنف#4252: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1692
+- الجعبري#1691 ↔ صنف#4253: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1691
+- الجعبري#1690 ↔ صنف#2440: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1690
+- الجعبري#1689 ↔ صنف#2441: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1689
+- الجعبري#1672 ↔ صنف#2442: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1672
+- الجعبري#1671 ↔ صنف#2443: synced؛ ابيض=42₪؛ ذهبي=42₪؛ فضي=42₪. https://jabaristore.com/?app=product.show.1671
+- الجعبري#1669 ↔ صنف#2444: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1669
+- الجعبري#1667 ↔ صنف#4254: no_options؛ ملاقط بيبي حجم كبير. https://jabaristore.com/?app=product.show.1667
+- الجعبري#1666 ↔ صنف#4255: no_options؛ معلقات فرو ( ملون ) 14ml. https://jabaristore.com/?app=product.show.1666
+- الجعبري#1665 ↔ صنف#4256: no_options؛ دعسوقة (ملون ) مع لاصق. https://jabaristore.com/?app=product.show.1665
+- الجعبري#1664 ↔ صنف#4257: no_options؛ فواصل جمجمة بلاستيك. https://jabaristore.com/?app=product.show.1664
+- الجعبري#1662 ↔ صنف#4258: no_options؛ معلقات قلوب بلاستيك. https://jabaristore.com/?app=product.show.1662
+- الجعبري#1661 ↔ صنف#4259: no_options؛ فاصل علاقة ( للاساور ) بلاستيك. https://jabaristore.com/?app=product.show.1661
+- الجعبري#1660 ↔ صنف#4260: no_options؛ خرز بلاستيك احرف (2 خرم) 8*2 ml. https://jabaristore.com/?app=product.show.1660
+- الجعبري#1659 ↔ صنف#4261: no_options؛ خرز بلاستيك احرف (2 خرم) 8*2 ml. https://jabaristore.com/?app=product.show.1659
+- الجعبري#1658 ↔ صنف#4262: no_options؛ خرز بلاستيك احرف (2 خرم) 8*2 ml. https://jabaristore.com/?app=product.show.1658
+- الجعبري#1657 ↔ صنف#4263: no_options؛ خرز خشب احرف 8ml. https://jabaristore.com/?app=product.show.1657
+- الجعبري#1656 ↔ صنف#4264: no_options؛ خرز بلاستيك احرف 8ml. https://jabaristore.com/?app=product.show.1656
+- الجعبري#1655 ↔ صنف#4265: no_options؛ خرز بلاستيك احرف 8ml. https://jabaristore.com/?app=product.show.1655
+- الجعبري#1654 ↔ صنف#4266: no_options؛ خرز بلاستيك احرف 8ml. https://jabaristore.com/?app=product.show.1654
+- الجعبري#1653 ↔ صنف#4267: no_options؛ خرز بلاستيك احرف 8ml. https://jabaristore.com/?app=product.show.1653
+- الجعبري#1652 ↔ صنف#4268: no_options؛ خرز بلاستيك احرف 8ml. https://jabaristore.com/?app=product.show.1652
+- الجعبري#1651 ↔ صنف#4269: no_options؛ خرز بلاستيك احرف قلب 6ml. https://jabaristore.com/?app=product.show.1651
+- الجعبري#1650 ↔ صنف#4270: no_options؛ خرز بلاستيك احرف 6ml. https://jabaristore.com/?app=product.show.1650
+- الجعبري#1649 ↔ صنف#4271: no_options؛ خرز بلاستيك احرف 6ml. https://jabaristore.com/?app=product.show.1649
+- الجعبري#1648 ↔ صنف#4272: no_options؛ خرز بلاستيك احرف 6ml. https://jabaristore.com/?app=product.show.1648
+- الجعبري#1647 ↔ صنف#4273: no_options؛ خرز بلاستيك احرف 6ml. https://jabaristore.com/?app=product.show.1647
+- الجعبري#1646 ↔ صنف#4274: no_options؛ خرز بلاستيك احرف 6ml. https://jabaristore.com/?app=product.show.1646
+- الجعبري#1645 ↔ صنف#4275: no_options؛ فواصل خشب ازرق 10ml. https://jabaristore.com/?app=product.show.1645
+- الجعبري#1644 ↔ صنف#4276: no_options؛ خرز بلاستيك قلوب 6ml. https://jabaristore.com/?app=product.show.1644
+- الجعبري#1643 ↔ صنف#4277: no_options؛ خرز بلاستيك ارقام 6ml. https://jabaristore.com/?app=product.show.1643
+- الجعبري#1642 ↔ صنف#4278: no_options؛ خرز بلاستيك قلوب 6ml. https://jabaristore.com/?app=product.show.1642
+- الجعبري#1641 ↔ صنف#4279: no_options؛ خرز بلاستيك قلوب 6ml. https://jabaristore.com/?app=product.show.1641
+- الجعبري#1640 ↔ صنف#4280: no_options؛ خرز بلاستيك قلوب 6ml. https://jabaristore.com/?app=product.show.1640
+- الجعبري#1639 ↔ صنف#4281: no_options؛ خرز بلاستيك ارقام 6ml. https://jabaristore.com/?app=product.show.1639
+- الجعبري#1638 ↔ صنف#4282: no_options؛ خرز بلاستيك ارقام 6ml. https://jabaristore.com/?app=product.show.1638
+- الجعبري#1637 ↔ صنف#4283: no_options؛ خرز بلاستيك ارقام 6ml. https://jabaristore.com/?app=product.show.1637
+- الجعبري#1636 ↔ صنف#4284: no_options؛ خرز خشب زهري 10ml. https://jabaristore.com/?app=product.show.1636
+- الجعبري#1635 ↔ صنف#4285: no_options؛ خرز خشب اصفر 10ml. https://jabaristore.com/?app=product.show.1635
+- الجعبري#1634 ↔ صنف#4286: no_options؛ خرز خشب ازرق غامق 10ml. https://jabaristore.com/?app=product.show.1634
+- الجعبري#1633 ↔ صنف#4287: no_options؛ خرز خشبي ملون 10ml. https://jabaristore.com/?app=product.show.1633
+- الجعبري#1632 ↔ صنف#4288: no_options؛ خرز خشب ابيض 10ml. https://jabaristore.com/?app=product.show.1632
+- الجعبري#1631 ↔ صنف#4289: no_options؛ خرز خشب لون طبيعي 10ml. https://jabaristore.com/?app=product.show.1631
+- الجعبري#1630 ↔ صنف#4290: no_options؛ خرز خشب احمر 10ml. https://jabaristore.com/?app=product.show.1630
+- الجعبري#1629 ↔ صنف#4291: no_options؛ خرز خشب اخضر حشيشي 10ml. https://jabaristore.com/?app=product.show.1629
+- الجعبري#1628 ↔ صنف#4292: no_options؛ خرز مات ازرق 10ml. https://jabaristore.com/?app=product.show.1628
+- الجعبري#1627 ↔ صنف#4293: no_options؛ خرز مات اخضر 10ml. https://jabaristore.com/?app=product.show.1627
+- الجعبري#1626 ↔ صنف#4294: no_options؛ خرز مات برتقالي 10ml. https://jabaristore.com/?app=product.show.1626
+- الجعبري#1625 ↔ صنف#4295: no_options؛ خرز مات ابيض 10ml. https://jabaristore.com/?app=product.show.1625
