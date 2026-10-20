@@ -1,0 +1,75 @@
+name: Compare Dofesh catalog without importing
+on:
+  workflow_dispatch:
+    inputs:
+      batches:
+        description: Resume chunks until catalog and availability checks complete (1-50)
+        default: '50'
+        required: true
+      requests:
+        description: Maximum supplier requests per checkpoint (1-100)
+        default: '25'
+        required: true
+      delay:
+        description: Seconds between public supplier requests (minimum 5)
+        default: '10'
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: manar-dofesh-missing-catalog
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preserve shared progress
+        run: |
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/missing-progress-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/missing-progress-attributes"
+          git config user.name 'Manar catalog comparison'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Test read-only catalog comparison
+        run: python tools/test_dofesh_missing_products.py
+      - name: Compare and checkpoint catalog
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          COMPARE_BATCHES: ${{ inputs.batches }}
+          COMPARE_REQUESTS: ${{ inputs.requests }}
+          COMPARE_DELAY: ${{ inputs.delay }}
+        run: |
+          python -c 'import os; assert 1 <= int(os.environ["COMPARE_BATCHES"]) <= 50'
+          for batch in $(seq 1 "$COMPARE_BATCHES"); do
+            python tools/dofesh_missing_products.py --requests "$COMPARE_REQUESTS" --delay "$COMPARE_DELAY"
+            git add docs/dofesh-missing-products STORE-PROGRESS.md
+            if ! git diff --cached --quiet; then
+              git commit -m "docs: Dofesh missing catalog checkpoint $batch [skip ci]"
+              for attempt in 1 2 3; do
+                git pull --rebase origin main
+                if git push origin HEAD:main; then break; fi
+                if [ "$attempt" = 3 ]; then exit 1; fi
+              done
+            fi
+            state=$(python -c 'import json; print(json.load(open("docs/dofesh-missing-products/state.json"))["status"])')
+            if [ "$state" != partial ]; then break; fi
+          done
+      - name: Save partial report after failure
+        if: always()
+        run: |
+          if [ ! -f docs/dofesh-missing-products/state.json ]; then exit 0; fi
+          git add docs/dofesh-missing-products STORE-PROGRESS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: Dofesh missing catalog partial report [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
