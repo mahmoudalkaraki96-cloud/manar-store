@@ -5070,3 +5070,139 @@
 - الجعبري#895 ↔ صنف#4650: no_options؛ حرير صيني ابيض. https://jabaristore.com/?app=product.show.895
 - الجعبري#894 ↔ صنف#2463: no_options؛ حرير صيني ملون. https://jabaristore.com/?app=product.show.894
 - الجعبري#893 ↔ صنف#2464: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.893
+
+
+### 2026-10-20T10:15:43.652161+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T10:15:43.652161+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 1176, "synced": 820, "unsupported_source_price": 385}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#886 ↔ صنف#2465: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.886
+- الجعبري#884 ↔ صنف#2466: synced؛ كبير=37₪؛ صغير=31.5₪. https://jabaristore.com/?app=product.show.884
+- الجعبري#883 ↔ صنف#2467: synced؛ ابيض=21.5₪؛ اسود=21.5₪؛ ذهبي=21.5₪. https://jabaristore.com/?app=product.show.883
+- الجعبري#876 ↔ صنف#4651: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.876
+- الجعبري#875 ↔ صنف#2468: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.875
+- الجعبري#874 ↔ صنف#2469: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.874
+- الجعبري#873 ↔ صنف#4652: no_options؛ ورده خشب للزينه حجم صغير. https://jabaristore.com/?app=product.show.873
+- الجعبري#871 ↔ صنف#4653: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.871
+- الجعبري#857 ↔ صنف#2470: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.857
+- الجعبري#856 ↔ صنف#4654: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.856
+- الجعبري#855 ↔ صنف#4655: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.855
+- الجعبري#851 ↔ صنف#4656: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.851
+- الجعبري#848 ↔ صنف#4657: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.848
+- الجعبري#846 ↔ صنف#4658: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.846
+- الجعبري#828 ↔ صنف#4659: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.828
+- الجعبري#827 ↔ صنف#4660: no_options؛ شبر ذهبي مع سلك. https://jabaristore.com/?app=product.show.827
+- الجعبري#826 ↔ صنف#4661: no_options؛ كلف خيش. https://jabaristore.com/?app=product.show.826
+- الجعبري#825 ↔ صنف#4662: no_options؛ ابر خياطه. https://jabaristore.com/?app=product.show.825
+- الجعبري#824 ↔ صنف#4663: no_options؛ ميابر خياطة كبيره. https://jabaristore.com/?app=product.show.824
+- الجعبري#823 ↔ صنف#4664: no_options؛ ميبرة خياطه كبيره. https://jabaristore.com/?app=product.show.823
+- الجعبري#822 ↔ صنف#4665: no_options؛ ميابر خياطة لف. https://jabaristore.com/?app=product.show.822
+- الجعبري#766 ↔ صنف#4666: no_options؛ كلف شريط كرستال 2 سم. https://jabaristore.com/?app=product.show.766
+- الجعبري#765 ↔ صنف#4667: no_options؛ كلف شريط كرستال 3 سم. https://jabaristore.com/?app=product.show.765
+- الجعبري#762 ↔ صنف#4668: no_options؛ علبة خرز حجم كبير. https://jabaristore.com/?app=product.show.762
+- الجعبري#761 ↔ صنف#4669: synced؛ قطعة واحدة=21.5₪؛ قطعتين=37₪. https://jabaristore.com/?app=product.show.761
+- الجعبري#760 ↔ صنف#4670: synced؛ اسود=16.5₪؛ ابيض=16.5₪. https://jabaristore.com/?app=product.show.760
+- الجعبري#758 ↔ صنف#4671: synced؛ فضي=21.5₪؛ ذهبي=21.5₪. https://jabaristore.com/?app=product.show.758
+- الجعبري#755 ↔ صنف#4672: no_options؛ طقم زراديات (3 قطعة) حجم صغير. https://jabaristore.com/?app=product.show.755
+- الجعبري#751 ↔ صنف#4673: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.751
+- الجعبري#744 ↔ صنف#4674: synced؛ عسلي=5.5₪؛ بني=5.5₪. https://jabaristore.com/?app=product.show.744
+- الجعبري#739 ↔ صنف#4675: no_options؛ مضيفه من الزجاج الثقيل. https://jabaristore.com/?app=product.show.739
+- الجعبري#705 ↔ صنف#4676: no_options؛ لاصق شفاف all purpose. https://jabaristore.com/?app=product.show.705
+- الجعبري#702 ↔ صنف#4677: no_options؛ مكوك خيط للماكنات. https://jabaristore.com/?app=product.show.702
+- الجعبري#698 ↔ صنف#4678: no_options؛ معيار سنانير للصوف. https://jabaristore.com/?app=product.show.698
+- الجعبري#697 ↔ صنف#2471: no_options؛ خيط درزة DMC. https://jabaristore.com/?app=product.show.697
+- الجعبري#696 ↔ صنف#2472: no_options؛ خيط درزة Dmc. https://jabaristore.com/?app=product.show.696
+- الجعبري#695 ↔ صنف#4679: synced؛ No.1=3.5₪؛ No.2=3.5₪؛ No.3=3.5₪؛ No.4=3.5₪؛ No.5=3.5₪؛ No.6=3.5₪؛ No.7=3.5₪؛ No.8=3.5₪؛ No.9=3.5₪؛ No.10=3.5₪؛ No.11=3.5₪؛ No.12=3.5₪؛ No.13=3.5₪؛ No.14=3.5₪؛ No.15=3.5₪؛ No.16=3.5₪. https://jabaristore.com/?app=product.show.695
+- الجعبري#692 ↔ صنف#4680: no_options؛ قطع خشبية للشوكولاته. https://jabaristore.com/?app=product.show.692
+- الجعبري#691 ↔ صنف#2473: no_options؛ وردة خشب للشوكولاته. https://jabaristore.com/?app=product.show.691
+- الجعبري#687 ↔ صنف#4681: synced؛ كبير=3.5₪؛ صغير=2.5₪. https://jabaristore.com/?app=product.show.687
+- الجعبري#685 ↔ صنف#2474: synced؛ فضي / باكيت 100 قطعة=31.5₪؛ فضي / قطعة واحدة=1.5₪؛ ذهبي / باكيت 100 قطعة=31.5₪؛ ذهبي / قطعة واحدة=1.5₪؛ برونز / باكيت 100 قطعة=31.5₪؛ برونز / قطعة واحدة=1.5₪. https://jabaristore.com/?app=product.show.685
+- الجعبري#684 ↔ صنف#4682: no_options؛ مفتاح عراوي كبير. https://jabaristore.com/?app=product.show.684
+- الجعبري#683 ↔ صنف#4683: synced؛ نمرة 2=3.5₪؛ نمرة 2.5=3.5₪؛ نمرة 3=3.5₪؛ نمرة 3.5=3.5₪؛ نمرة 4=4₪؛ نمرة 4.5=4₪؛ نمرة 5=4₪؛ نمرة 5.5=4₪؛ نمرة 6=4.5₪؛ نمرة 7=4.5₪؛ نمرة 8=4.5₪؛ نمرة 9=5.5₪؛ نمرة 10=5.5₪. https://jabaristore.com/?app=product.show.683
+- الجعبري#682 ↔ صنف#2475: synced؛ نمرة 2=4.5₪؛ نمرة 2.5=4.5₪؛ نمرة 3=4.5₪؛ نمرة 3.5=4.5₪؛ نمرة 4=4.5₪؛ نمرة 4.5=4.5₪؛ نمرة 5=4.5₪؛ نمرة 5.5=4.5₪؛ نمرة 6=4.5₪. https://jabaristore.com/?app=product.show.682
+- الجعبري#679 ↔ صنف#2476: synced؛ اسود=21.5₪؛ ابيض=21.5₪. https://jabaristore.com/?app=product.show.679
+- الجعبري#678 ↔ صنف#2477: synced؛ كبير=11₪؛ صغير=9₪. https://jabaristore.com/?app=product.show.678
+- الجعبري#677 ↔ صنف#4684: no_options؛ علبط ادوات خياطة. https://jabaristore.com/?app=product.show.677
+- الجعبري#676 ↔ صنف#2478: no_options؛ صندوق خياطة مميز. https://jabaristore.com/?app=product.show.676
+- الجعبري#675 ↔ صنف#2479: no_options؛ شنطة ادوات خياطة. https://jabaristore.com/?app=product.show.675
+- الجعبري#674 ↔ صنف#4685: no_options؛ علب خياطة. https://jabaristore.com/?app=product.show.674
+- الجعبري#672 ↔ صنف#2480: synced؛ 9cm=4.5₪؛ 11cm=5.5₪؛ 13cm=6.5₪؛ 15cm=7₪؛ 17cm=7.5₪؛ 20cm=8₪؛ 23cm=9₪؛ 26cm=10₪؛ 30cm=11₪؛ 33cm=12.5₪؛ 36cm=13.5₪؛ 40cm=14.5₪. https://jabaristore.com/?app=product.show.672
+- الجعبري#671 ↔ صنف#4686: no_options؛ لضامة خيط. https://jabaristore.com/?app=product.show.671
+- الجعبري#670 ↔ صنف#2481: no_options؛ ابر نتش للتطريز. https://jabaristore.com/?app=product.show.670
+- الجعبري#668 ↔ صنف#2482: no_options؛ علب خياطة. https://jabaristore.com/?app=product.show.668
+- الجعبري#667 ↔ صنف#4687: no_options؛ ماركة علام ابيض. https://jabaristore.com/?app=product.show.667
+- الجعبري#666 ↔ صنف#2483: no_options؛ ماركة علام ملون. https://jabaristore.com/?app=product.show.666
+- الجعبري#664 ↔ صنف#4688: no_options؛ مغيط ملابس ابيض 1cm. https://jabaristore.com/?app=product.show.664
+- الجعبري#663 ↔ صنف#4689: no_options؛ مغيط ملابس ابيض 0.8cm. https://jabaristore.com/?app=product.show.663
+- الجعبري#662 ↔ صنف#2484: no_options؛ كلفة شرابيش 20 cm. https://jabaristore.com/?app=product.show.662
+- الجعبري#661 ↔ صنف#2485: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.661
+- الجعبري#660 ↔ صنف#2486: synced؛ ازرق=5.5₪؛ زهري=5.5₪؛ بنفسجي=5.5₪. https://jabaristore.com/?app=product.show.660
+- الجعبري#657 ↔ صنف#4690: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.657
+- الجعبري#653 ↔ صنف#4691: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.653
+- الجعبري#645 ↔ صنف#4692: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.645
+- الجعبري#642 ↔ صنف#4693: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.642
+- الجعبري#632 ↔ صنف#2487: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.632
+- الجعبري#630 ↔ صنف#4694: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.630
+- الجعبري#628 ↔ صنف#4695: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.628
+- الجعبري#627 ↔ صنف#4696: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.627
+- الجعبري#626 ↔ صنف#4697: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.626
+- الجعبري#625 ↔ صنف#4698: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.625
+- الجعبري#624 ↔ صنف#4699: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.624
+- الجعبري#623 ↔ صنف#4700: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.623
+- الجعبري#622 ↔ صنف#4701: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.622
+- الجعبري#621 ↔ صنف#4702: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.621
+- الجعبري#620 ↔ صنف#4703: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.620
+- الجعبري#619 ↔ صنف#4704: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.619
+- الجعبري#618 ↔ صنف#4705: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.618
+- الجعبري#617 ↔ صنف#4706: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.617
+- الجعبري#616 ↔ صنف#4707: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.616
+- الجعبري#615 ↔ صنف#4708: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.615
+- الجعبري#614 ↔ صنف#4709: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.614
+- الجعبري#613 ↔ صنف#4710: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.613
+- الجعبري#612 ↔ صنف#4711: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.612
+- الجعبري#611 ↔ صنف#4712: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.611
+- الجعبري#610 ↔ صنف#4713: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.610
+- الجعبري#609 ↔ صنف#4714: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.609
+- الجعبري#608 ↔ صنف#4715: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.608
+- الجعبري#607 ↔ صنف#4716: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.607
+- الجعبري#606 ↔ صنف#4717: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.606
+- الجعبري#605 ↔ صنف#4718: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.605
+- الجعبري#604 ↔ صنف#4719: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.604
+- الجعبري#603 ↔ صنف#4720: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.603
+- الجعبري#602 ↔ صنف#4721: no_options؛ خيط ستان عريض. https://jabaristore.com/?app=product.show.602
+- الجعبري#599 ↔ صنف#2488: synced؛ 2 cm=9₪؛ 2.5 cm=11₪. https://jabaristore.com/?app=product.show.599
+- الجعبري#598 ↔ صنف#2489: synced؛ باكيت 50 شلة=31.5₪؛ باكيت 100 شلة=52₪. https://jabaristore.com/?app=product.show.598
+- الجعبري#593 ↔ صنف#2490: no_options؛ فرد ليبل اصلي. https://jabaristore.com/?app=product.show.593
+- الجعبري#592 ↔ صنف#2491: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.592
+- الجعبري#591 ↔ صنف#4722: synced؛ ذهبي باهت=16.5₪؛ ذهبي صارخ=16.5₪؛ فضي=16.5₪. https://jabaristore.com/?app=product.show.591
+- الجعبري#590 ↔ صنف#2492: synced؛ ذهبي باهت=16.5₪؛ ذهبي صارخ=16.5₪؛ فضي=16.5₪. https://jabaristore.com/?app=product.show.590
+- الجعبري#589 ↔ صنف#2493: synced؛ ملون / 100 غرام=11₪؛ ملون / 500 غرام=37₪؛ ملون / 1 كيلو=62₪؛ ابيض / 100 غرام=11₪؛ ابيض / 500 غرام=37₪؛ ابيض / 1 كيلو=62₪؛ احمر / 100 غرام=11₪؛ احمر / 500 غرام=37₪؛ احمر / 1 كيلو=62₪؛ اصفر / 100 غرام=11₪؛ اصفر / 500 غرام=37₪؛ اصفر / 1 كيلو=62₪؛ اخضر / 100 غرام=11₪؛ اخضر / 500 غرام=37₪؛ اخضر / 1 كيلو=62₪؛ ازرق / 100 غرام=11₪؛ ازرق / 500 غرام=37₪؛ ازرق / 1 كيلو=62₪؛ نيلي / 100 غرام=11₪؛ نيلي / 500 غرام=37₪؛ نيلي / 1 كيلو=62₪؛ زهري / 100 غرام=11₪؛ زهري / 500 غرام=37₪؛ زهري / 1 كيلو=62₪؛ بني / 100 غرام=11₪؛ بني / 500 غرام=37₪؛ بني / 1 كيلو=62₪؛ بيج / 100 غرام=11₪؛ بيج / 500 غرام=37₪؛ بيج / 1 كيلو=62₪. https://jabaristore.com/?app=product.show.589
+- الجعبري#588 ↔ صنف#4723: no_options؛ دبوس شنغل ثقيل. https://jabaristore.com/?app=product.show.588
+- الجعبري#587 ↔ صنف#4724: synced؛ فضي=2₪؛ ذهبي=2₪. https://jabaristore.com/?app=product.show.587
+- الجعبري#586 ↔ صنف#4725: no_options؛ ابر كروشية هوك للظفائر. https://jabaristore.com/?app=product.show.586
+- الجعبري#584 ↔ صنف#4726: no_options؛ ابر خياطة يدوي. https://jabaristore.com/?app=product.show.584
+- الجعبري#583 ↔ صنف#4727: no_options؛ مفتاح عراوي كبير. https://jabaristore.com/?app=product.show.583
+- الجعبري#582 ↔ صنف#4728: no_options؛ ازرار مريول شفاف. https://jabaristore.com/?app=product.show.582
+- الجعبري#581 ↔ صنف#4729: no_options؛ دبوس قصير. https://jabaristore.com/?app=product.show.581
+- الجعبري#580 ↔ صنف#4730: synced؛ اسود=5.5₪؛ ابيض=5.5₪. https://jabaristore.com/?app=product.show.580
+- الجعبري#579 ↔ صنف#4731: no_options؛ دبوس ملابس طويل. https://jabaristore.com/?app=product.show.579
+- الجعبري#578 ↔ صنف#4732: no_options؛ مكوك خيط معدن. https://jabaristore.com/?app=product.show.578
+- الجعبري#577 ↔ صنف#2494: synced؛ #11=5.5₪؛ #12=5.5₪؛ #14=5.5₪؛ #16=5.5₪؛ #18=5.5₪. https://jabaristore.com/?app=product.show.577
+- الجعبري#576 ↔ صنف#4733: synced؛ #10=5.5₪؛ #11=5.5₪؛ #14=5.5₪؛ #16=5.5₪؛ #18=5.5₪. https://jabaristore.com/?app=product.show.576
+- الجعبري#575 ↔ صنف#4734: synced؛ فضي / حجم رقم 0=3.5₪؛ فضي / حجم رقم 1=4.5₪؛ فضي / حجم رقم 2=7₪؛ فضي / حجم رقم 3=9₪؛ فضي / حجم رقم 4=11₪؛ اسود / حجم رقم 0=3.5₪؛ اسود / حجم رقم 1=4.5₪؛ اسود / حجم رقم 2=7₪؛ اسود / حجم رقم 3=9₪؛ اسود / حجم رقم 4=11₪. https://jabaristore.com/?app=product.show.575
+- الجعبري#574 ↔ صنف#2495: no_options؛ مفتاح عراوي صغير. https://jabaristore.com/?app=product.show.574
+- الجعبري#573 ↔ صنف#4735: synced؛ فضي / رقم 0=5.5₪؛ فضي / رقم 2=7₪؛ فضي / رقم 3=9₪؛ فضي / رقم 4=11₪؛ فضي / رقم 10=13.5₪؛ اسود / رقم 0=5.5₪؛ اسود / رقم 2=7₪؛ اسود / رقم 3=9₪؛ اسود / رقم 4=11₪؛ اسود / رقم 10=13.5₪؛ ذهبي / رقم 0=7₪؛ ذهبي / رقم 2=8₪؛ ذهبي / رقم 3=10₪؛ ذهبي / رقم 4=12.5₪؛ ذهبي / رقم 10=14.5₪. https://jabaristore.com/?app=product.show.573
+- الجعبري#564 ↔ صنف#2496: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.564
+- الجعبري#556 ↔ صنف#2497: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.556
+- الجعبري#555 ↔ صنف#2498: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.555
+- الجعبري#554 ↔ صنف#2499: synced؛ كبير=29.5₪؛ صغير=25.5₪. https://jabaristore.com/?app=product.show.554
+- الجعبري#553 ↔ صنف#2500: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.553
+- الجعبري#552 ↔ صنف#2501: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.552
+- الجعبري#504 ↔ صنف#4736: no_options؛ زيت عاطفة العطري 100ml. https://jabaristore.com/?app=product.show.504
+- الجعبري#502 ↔ صنف#4737: no_options؛ زيت حورية 100ml. https://jabaristore.com/?app=product.show.502
+- الجعبري#501 ↔ صنف#4738: no_options؛ زيت فهرنهايت العطري 100ml. https://jabaristore.com/?app=product.show.501
