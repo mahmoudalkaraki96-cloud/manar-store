@@ -3834,3 +3834,137 @@
 - Next listing page: None
 - No product/database writes.
 - التقرير: docs/dofesh-missing-products/missing-products.html وmissing-products.csv؛ لم تُضف أو تُنشر أو تُعدّل منتجات.
+### 2026-10-20T08:52:02.144559+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T08:52:02.144559+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 671, "synced": 520, "unsupported_source_price": 190}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#2702 ↔ صنف#3683: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2702
+- الجعبري#2701 ↔ صنف#3684: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2701
+- الجعبري#2699 ↔ صنف#3685: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2699
+- الجعبري#2698 ↔ صنف#3686: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2698
+- الجعبري#2697 ↔ صنف#3687: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2697
+- الجعبري#2696 ↔ صنف#3688: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2696
+- الجعبري#2695 ↔ صنف#3689: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2695
+- الجعبري#2693 ↔ صنف#3690: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2693
+- الجعبري#2692 ↔ صنف#3691: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2692
+- الجعبري#2691 ↔ صنف#3692: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2691
+- الجعبري#2690 ↔ صنف#3693: synced؛ لفة=5.5₪؛ ربطة - 5 لفات=21.5₪. https://jabaristore.com/?app=product.show.2690
+- الجعبري#2689 ↔ صنف#3694: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2689
+- الجعبري#2688 ↔ صنف#3695: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2688
+- الجعبري#2687 ↔ صنف#3696: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2687
+- الجعبري#2686 ↔ صنف#3697: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2686
+- الجعبري#2685 ↔ صنف#3698: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2685
+- الجعبري#2684 ↔ صنف#3699: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2684
+- الجعبري#2683 ↔ صنف#3700: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2683
+- الجعبري#2682 ↔ صنف#3701: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2682
+- الجعبري#2681 ↔ صنف#3702: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2681
+- الجعبري#2680 ↔ صنف#3703: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2680
+- الجعبري#2679 ↔ صنف#3704: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2679
+- الجعبري#2678 ↔ صنف#3705: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2678
+- الجعبري#2677 ↔ صنف#3706: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2677
+- الجعبري#2676 ↔ صنف#3707: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2676
+- الجعبري#2675 ↔ صنف#3708: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2675
+- الجعبري#2674 ↔ صنف#3709: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2674
+- الجعبري#2673 ↔ صنف#3710: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2673
+- الجعبري#2672 ↔ صنف#3711: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2672
+- الجعبري#2671 ↔ صنف#3712: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2671
+- الجعبري#2670 ↔ صنف#3713: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2670
+- الجعبري#2669 ↔ صنف#3714: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2669
+- الجعبري#2668 ↔ صنف#3715: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2668
+- الجعبري#2667 ↔ صنف#3716: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2667
+- الجعبري#2666 ↔ صنف#3717: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2666
+- الجعبري#2665 ↔ صنف#3718: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2665
+- الجعبري#2664 ↔ صنف#3719: synced؛ لفة=7₪؛ ربطة - 5 لفات=28.5₪. https://jabaristore.com/?app=product.show.2664
+- الجعبري#2663 ↔ صنف#3720: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2663
+- الجعبري#2662 ↔ صنف#3721: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2662
+- الجعبري#2661 ↔ صنف#3722: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2661
+- الجعبري#2660 ↔ صنف#3723: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2660
+- الجعبري#2659 ↔ صنف#3724: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2659
+- الجعبري#2657 ↔ صنف#3725: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2657
+- الجعبري#2656 ↔ صنف#3726: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2656
+- الجعبري#2655 ↔ صنف#3727: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2655
+- الجعبري#2654 ↔ صنف#3728: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2654
+- الجعبري#2653 ↔ صنف#3729: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2653
+- الجعبري#2652 ↔ صنف#3730: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2652
+- الجعبري#2651 ↔ صنف#3731: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2651
+- الجعبري#2650 ↔ صنف#3732: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2650
+- الجعبري#2648 ↔ صنف#3733: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2648
+- الجعبري#2647 ↔ صنف#3734: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2647
+- الجعبري#2646 ↔ صنف#3735: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2646
+- الجعبري#2645 ↔ صنف#3736: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2645
+- الجعبري#2644 ↔ صنف#3737: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2644
+- الجعبري#2643 ↔ صنف#3738: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2643
+- الجعبري#2642 ↔ صنف#3739: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2642
+- الجعبري#2641 ↔ صنف#3740: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2641
+- الجعبري#2640 ↔ صنف#3741: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2640
+- الجعبري#2639 ↔ صنف#3742: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2639
+- الجعبري#2638 ↔ صنف#3743: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2638
+- الجعبري#2637 ↔ صنف#3744: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2637
+- الجعبري#2636 ↔ صنف#3745: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2636
+- الجعبري#2635 ↔ صنف#3746: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2635
+- الجعبري#2634 ↔ صنف#3747: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2634
+- الجعبري#2633 ↔ صنف#3748: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2633
+- الجعبري#2632 ↔ صنف#3749: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2632
+- الجعبري#2631 ↔ صنف#3750: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2631
+- الجعبري#2630 ↔ صنف#3751: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2630
+- الجعبري#2629 ↔ صنف#3752: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2629
+- الجعبري#2628 ↔ صنف#3753: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2628
+- الجعبري#2627 ↔ صنف#3754: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2627
+- الجعبري#2626 ↔ صنف#3755: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2626
+- الجعبري#2625 ↔ صنف#3756: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2625
+- الجعبري#2624 ↔ صنف#3757: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2624
+- الجعبري#2623 ↔ صنف#3758: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2623
+- الجعبري#2622 ↔ صنف#3759: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2622
+- الجعبري#2621 ↔ صنف#3760: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2621
+- الجعبري#2620 ↔ صنف#3761: synced؛ لفة=3.5₪؛ ربطة - 10 لفات=21.5₪. https://jabaristore.com/?app=product.show.2620
+- الجعبري#2619 ↔ صنف#3762: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2619
+- الجعبري#2617 ↔ صنف#3763: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2617
+- الجعبري#2614 ↔ صنف#3764: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2614
+- الجعبري#2613 ↔ صنف#3765: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2613
+- الجعبري#2612 ↔ صنف#3766: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2612
+- الجعبري#2611 ↔ صنف#3767: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2611
+- الجعبري#2609 ↔ صنف#3768: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2609
+- الجعبري#2608 ↔ صنف#3769: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2608
+- الجعبري#2607 ↔ صنف#3770: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2607
+- الجعبري#2606 ↔ صنف#3771: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2606
+- الجعبري#2605 ↔ صنف#3772: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2605
+- الجعبري#2603 ↔ صنف#3773: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2603
+- الجعبري#2601 ↔ صنف#3774: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2601
+- الجعبري#2600 ↔ صنف#3775: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2600
+- الجعبري#2599 ↔ صنف#3776: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2599
+- الجعبري#2598 ↔ صنف#3777: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2598
+- الجعبري#2597 ↔ صنف#3778: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2597
+- الجعبري#2596 ↔ صنف#3779: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2596
+- الجعبري#2595 ↔ صنف#3780: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2595
+- الجعبري#2594 ↔ صنف#3781: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2594
+- الجعبري#2592 ↔ صنف#3782: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2592
+- الجعبري#2590 ↔ صنف#3783: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2590
+- الجعبري#2589 ↔ صنف#3784: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2589
+- الجعبري#2588 ↔ صنف#3785: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2588
+- الجعبري#2587 ↔ صنف#3786: synced؛ لفة=3₪؛ ربطة - 10 لفات=19.5₪. https://jabaristore.com/?app=product.show.2587
+- الجعبري#2586 ↔ صنف#3787: synced؛ ابيض (كود 25) / دزينة ( 12 قطعة )=41₪؛ ابيض (كود 25) / 5 دزينة ( 60 قطعة )=185₪؛ بني (كود 26) / دزينة ( 12 قطعة )=41₪؛ بني (كود 26) / 5 دزينة ( 60 قطعة )=185₪. https://jabaristore.com/?app=product.show.2586
+- الجعبري#2585 ↔ صنف#3788: synced؛ ابيض (كود 23) / دزينة ( 12 قطعة )=35₪؛ ابيض (كود 23) / 5 دزينة ( 60 قطعة )=160₪؛ بني (كود 24) / دزينة ( 12 قطعة )=35₪؛ بني (كود 24) / 5 دزينة ( 60 قطعة )=160₪. https://jabaristore.com/?app=product.show.2585
+- الجعبري#2581 ↔ صنف#3789: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2581
+- الجعبري#2578 ↔ صنف#3790: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2578
+- الجعبري#2577 ↔ صنف#3791: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2577
+- الجعبري#2576 ↔ صنف#3792: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2576
+- الجعبري#2575 ↔ صنف#3793: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2575
+- الجعبري#2574 ↔ صنف#3794: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2574
+- الجعبري#2573 ↔ صنف#3795: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2573
+- الجعبري#2572 ↔ صنف#3796: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2572
+- الجعبري#2567 ↔ صنف#3797: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2567
+- الجعبري#2564 ↔ صنف#3798: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2564
+- الجعبري#2560 ↔ صنف#3799: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2560
+- الجعبري#2559 ↔ صنف#3800: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2559
+- الجعبري#2558 ↔ صنف#3801: no_options؛ حامل شموع شكل وردة(فارغة بدون شمع). https://jabaristore.com/?app=product.show.2558
+- الجعبري#2556 ↔ صنف#3802: synced؛ عمق 9 سم / عرض 16سم / ارتفاع 18 سم=31.5₪؛ عمق 10 سم / عرض 18 سم / ارتفاع 20 سم=42₪؛ عمق 12 سم / عرض 22 سم / ارتفاع 25 سم=52₪؛ عمق 14 سم / عرض 25 سم / ارتفاع 27 سم=62₪. https://jabaristore.com/?app=product.show.2556
+- الجعبري#2555 ↔ صنف#3803: synced؛ عمق 9 سم / عرض 16سم / ارتفاع 18 سم=31.5₪؛ عمق 10 سم / عرض 18 سم / ارتفاع 20 سم=42₪؛ عمق 12 سم / عرض 22 سم / ارتفاع 25 سم=52₪؛ عمق 14 سم / عرض 25 سم / ارتفاع 27 سم=62₪. https://jabaristore.com/?app=product.show.2555
+- الجعبري#2554 ↔ صنف#3804: synced؛ عمق 9 سم / عرض 16سم / ارتفاع 18 سم=31.5₪؛ عمق 10 سم / عرض 18 سم / ارتفاع 20 سم=42₪؛ عمق 12 سم / عرض 22 سم / ارتفاع 25 سم=52₪؛ عمق 14 سم / عرض 25 سم / ارتفاع 27 سم=62₪. https://jabaristore.com/?app=product.show.2554
+- الجعبري#2553 ↔ صنف#3805: synced؛ عمق 9 سم / عرض 16سم / ارتفاع 18 سم=31.5₪؛ عمق 10 سم / عرض 18 سم / ارتفاع 20 سم=42₪؛ عمق 12 سم / عرض 22 سم / ارتفاع 25 سم=52₪؛ عمق 14 سم / عرض 25 سم / ارتفاع 27 سم=62₪. https://jabaristore.com/?app=product.show.2553
+- الجعبري#2550 ↔ صنف#3806: synced؛ ابيض (كود 56)=44₪؛ بني (كود 62)=44₪. https://jabaristore.com/?app=product.show.2550
+- الجعبري#2549 ↔ صنف#3807: synced؛ ابيض (كود 55)=41₪؛ بني (كود 61)=41₪. https://jabaristore.com/?app=product.show.2549
