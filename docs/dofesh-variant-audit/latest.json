@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-20T08:53:29.693533+03:00",
+  "updated_at": "2026-10-20T08:56:25.269132+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 50,
+  "run_processed": 18,
   "results": [
     {
       "source_id": 1298,
@@ -9299,6 +9299,150 @@
       "status": "no_options",
       "detail": "{\"item_number\": 2204, \"source\": {\"title\": \"فراش لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
       "updated_at": 1792475609090
+    },
+    {
+      "source_id": 25,
+      "mode": "apply",
+      "product_id": 1205,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2205, \"source\": {\"title\": \"فراش لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475614538
+    },
+    {
+      "source_id": 24,
+      "mode": "apply",
+      "product_id": 1206,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2206, \"source\": {\"title\": \"ورد لولي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475624522
+    },
+    {
+      "source_id": 23,
+      "mode": "apply",
+      "product_id": 1207,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2207, \"source\": {\"title\": \"ورد لولو محجر بيضاوي 50 حبة بالكيس\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475634423
+    },
+    {
+      "source_id": 22,
+      "mode": "apply",
+      "product_id": 1208,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2208, \"source\": {\"title\": \"ورد لولو\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}}",
+      "updated_at": 1792475644618
+    },
+    {
+      "source_id": 21,
+      "mode": "apply",
+      "product_id": 1209,
+      "status": "synced",
+      "detail": "{\"item_number\": 2209, \"name\": \"ورد لولو سداسي محجر\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"ورد لولو سداسي محجر\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 100, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1209\", \"source_url\": \"https://dofesh.ps/?app=product.show.21\"}",
+      "updated_at": 1792475654694
+    },
+    {
+      "source_id": 18,
+      "mode": "apply",
+      "product_id": 1210,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2210, \"source\": {\"title\": \"مروحة خشب مع ورق ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475664522
+    },
+    {
+      "source_id": 17,
+      "mode": "apply",
+      "product_id": 1211,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2211, \"source\": {\"title\": \"مروحة بلاستيك مع تول\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 400}}",
+      "updated_at": 1792475674519
+    },
+    {
+      "source_id": 16,
+      "mode": "apply",
+      "product_id": 1212,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2212, \"source\": {\"title\": \"مروحة خشب\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}}",
+      "updated_at": 1792475684514
+    },
+    {
+      "source_id": 15,
+      "mode": "apply",
+      "product_id": 1213,
+      "status": "synced",
+      "detail": "{\"item_number\": 2213, \"name\": \"مبخرة ماربل مربعة\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"مبخرة ماربل مربعة\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 400, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 15000, \"active\": true}, {\"name\": \"100 حبة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1213\", \"source_url\": \"https://dofesh.ps/?app=product.show.15\"}",
+      "updated_at": 1792475694847
+    },
+    {
+      "source_id": 14,
+      "mode": "apply",
+      "product_id": 1214,
+      "status": "synced",
+      "detail": "{\"item_number\": 2214, \"name\": \"مبخرة وردة سيراميك (9سم)\", \"before_price\": 600, \"before_variants\": [], \"source\": {\"title\": \"مبخرة وردة سيراميك (9سم)\", \"variants\": [{\"name\": \"بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"50 حبة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1214\", \"source_url\": \"https://dofesh.ps/?app=product.show.14\"}",
+      "updated_at": 1792475704848
+    },
+    {
+      "source_id": 13,
+      "mode": "apply",
+      "product_id": 1215,
+      "status": "synced",
+      "detail": "{\"item_number\": 2215, \"name\": \"مبخرة سيراميك مدورة\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"مبخرة سيراميك مدورة\", \"variants\": [{\"name\": \"ازرق / بالحبة\", \"price\": 600, \"active\": false}, {\"name\": \"ازرق / 50 حبة\", \"price\": 25000, \"active\": false}, {\"name\": \"زهري / بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"زهري / 50 حبة\", \"price\": 25000, \"active\": true}, {\"name\": \"ابيض / بالحبة\", \"price\": 600, \"active\": true}, {\"name\": \"ابيض / 50 حبة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1215\", \"source_url\": \"https://dofesh.ps/?app=product.show.13\"}",
+      "updated_at": 1792475714732
+    },
+    {
+      "source_id": 11,
+      "mode": "apply",
+      "product_id": 1216,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2216}",
+      "updated_at": 1792475724645
+    },
+    {
+      "source_id": 10,
+      "mode": "apply",
+      "product_id": 1217,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2217, \"source\": {\"title\": \"معطر جو سحاب حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}}",
+      "updated_at": 1792475734624
+    },
+    {
+      "source_id": 9,
+      "mode": "apply",
+      "product_id": 1218,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2218, \"source\": {\"title\": \"معطر جو سحاب (home fregrans)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792475744448
+    },
+    {
+      "source_id": 8,
+      "mode": "apply",
+      "product_id": 1219,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2219, \"source\": {\"title\": \"عطر مس ديور (30مل)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}}",
+      "updated_at": 1792475754532
+    },
+    {
+      "source_id": 6,
+      "mode": "apply",
+      "product_id": 1220,
+      "status": "synced",
+      "detail": "{\"item_number\": 2220, \"name\": \"عطر جادور(30مل)\", \"before_price\": 750, \"before_variants\": [], \"source\": {\"title\": \"عطر جادور(30مل)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 600}, \"store_url\": \"https://manarstore.ps/product/1220\", \"source_url\": \"https://dofesh.ps/?app=product.show.6\"}",
+      "updated_at": 1792475764610
+    },
+    {
+      "source_id": 5,
+      "mode": "apply",
+      "product_id": 1221,
+      "status": "synced",
+      "detail": "{\"item_number\": 2221, \"name\": \"عطر شانيل (30مل)\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"عطر شانيل (30مل)\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"store_url\": \"https://manarstore.ps/product/1221\", \"source_url\": \"https://dofesh.ps/?app=product.show.5\"}",
+      "updated_at": 1792475774588
+    },
+    {
+      "source_id": 2,
+      "mode": "apply",
+      "product_id": 1222,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2222, \"source\": {\"title\": \"مراية قلاب مدور حديد\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}}",
+      "updated_at": 1792475784651
     }
   ]
 }

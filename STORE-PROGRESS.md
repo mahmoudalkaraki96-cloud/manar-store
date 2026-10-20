@@ -4045,3 +4045,32 @@
 - دوفش#29 ↔ صنف#2202: no_options؛ فراولة عظم اكسسوار. https://dofesh.ps/?app=product.show.29
 - دوفش#28 ↔ صنف#2203: no_options؛ مصاصة عظم لتزيين الشوكولاتة. https://dofesh.ps/?app=product.show.28
 - دوفش#26 ↔ صنف#2204: no_options؛ فراش لولو. https://dofesh.ps/?app=product.show.26
+
+
+### 2026-10-20T08:56:25.269132+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-20T08:56:25.269132+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 373, "no_options": 748, "missing_source": 5, "unsupported_customization_or_minimum": 17, "matched": 24, "unsupported_source_price": 5, "unsupported_supplier_removed_options": 2, "unsupported_source_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#25 ↔ صنف#2205: no_options؛ فراش لولو. https://dofesh.ps/?app=product.show.25
+- دوفش#24 ↔ صنف#2206: no_options؛ ورد لولي. https://dofesh.ps/?app=product.show.24
+- دوفش#23 ↔ صنف#2207: no_options؛ ورد لولو محجر بيضاوي 50 حبة بالكيس. https://dofesh.ps/?app=product.show.23
+- دوفش#22 ↔ صنف#2208: no_options؛ ورد لولو. https://dofesh.ps/?app=product.show.22
+- دوفش#21 ↔ صنف#2209: synced؛ بالحبة=1₪؛ 50 حبة=20₪. https://dofesh.ps/?app=product.show.21
+- دوفش#18 ↔ صنف#2210: no_options؛ مروحة خشب مع ورق ابيض. https://dofesh.ps/?app=product.show.18
+- دوفش#17 ↔ صنف#2211: no_options؛ مروحة بلاستيك مع تول. https://dofesh.ps/?app=product.show.17
+- دوفش#16 ↔ صنف#2212: no_options؛ مروحة خشب. https://dofesh.ps/?app=product.show.16
+- دوفش#15 ↔ صنف#2213: synced؛ بالحبة=4₪؛ 50 حبة=150₪؛ 100 حبة=250₪. https://dofesh.ps/?app=product.show.15
+- دوفش#14 ↔ صنف#2214: synced؛ بالحبة=6₪؛ 50 حبة=200₪. https://dofesh.ps/?app=product.show.14
+- دوفش#13 ↔ صنف#2215: synced؛ ازرق / بالحبة=6₪؛ ازرق / 50 حبة=250₪؛ زهري / بالحبة=6₪؛ زهري / 50 حبة=250₪؛ ابيض / بالحبة=6₪؛ ابيض / 50 حبة=250₪. https://dofesh.ps/?app=product.show.13
+- دوفش#11 ↔ صنف#2216: unsupported_source_price؛ simple_price_not_verified. https://dofesh.ps/?app=product.show.11
+- دوفش#10 ↔ صنف#2217: no_options؛ معطر جو سحاب حجم كبير. https://dofesh.ps/?app=product.show.10
+- دوفش#9 ↔ صنف#2218: no_options؛ معطر جو سحاب (home fregrans). https://dofesh.ps/?app=product.show.9
+- دوفش#8 ↔ صنف#2219: no_options؛ عطر مس ديور (30مل). https://dofesh.ps/?app=product.show.8
+- دوفش#6 ↔ صنف#2220: synced؛ عطر جادور(30مل). https://dofesh.ps/?app=product.show.6
+- دوفش#5 ↔ صنف#2221: synced؛ ذهبي=5₪. https://dofesh.ps/?app=product.show.5
+- دوفش#2 ↔ صنف#2222: no_options؛ مراية قلاب مدور حديد. https://dofesh.ps/?app=product.show.2
