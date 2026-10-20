@@ -7201,3 +7201,8 @@
 - حُصرت خيارات المتغيرات الطويلة داخل بطاقة المنتج بتمرير رأسي داخلي وحد ارتفاع 64px للشبكة و52px للقائمة؛ يمنع ذلك تمدد الصفحة. التمرير محصور داخل البطاقة.
 - اجتاز GitHub Actions build في التشغيل 39461110092، ودُمج PR #58 إلى main بالالتزام `6ac2e42cae2d8595cc01bc4ab085270ee944ad7e`. PRs #56 و#57 أُغلقت لأنها نسخ متعارضة أُعيد تأسيسها من آخر main.
 - حالة Cloudflare production: بانتظار التحقق من workflow الخاص بالنشر. الخطوة التالية فحص إتمام النشر ثم التأكد من CSS الحي.
+
+### 2026-10-20 19:53 (Asia/Hebron) — SEARCH-VARIANT-SCROLL / نشر وتحقق حي
+- اكتمل نشر Cloudflare production في Deploy store and admin to Cloudflare #117 بنجاح (commit `6ac2e42`). رابط التشغيل: https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/workflows/deploy-cloudflare.yml
+- تحقق حي على https://manarstore.ps: البحث عن «أكريلك شكل خاتم» يعرض المنتج #2282 ذا 10 متغيرات. في الشبكة والقائمة تظهر الخيارات داخل البطاقة مع شريط تمرير داخلي؛ لا تتمدد الصفحة بسببها.
+- الحالة: منشور ومتحقق حيًا.
