@@ -3712,3 +3712,64 @@
 - أكد الفحص الحي لدوفش174/صنف2119 أن المنتج غير متوفر بالمصدر وفيه خيارا لون معطلان بقيم أسماء فارغة وسعر35₪. أذن المستخدم بتركه دون تعديل واستكمال البقية.
 - القارئ يحتفظ بالرفض invalid_choice_label، لكن الجولة تسجله unsupported_source_options وتكمل دون تخمين الاسم أو تعديل المنتج. فشل الهوية/الحظر والأخطاء الأخرى مازالت توقف الجولة.
 - نجحت21اختبارًا ومنها حالتا الاسم الفارغ المعطل وعدم تجاوز فشل الهوية. التالي تشغيل apply من1298 مع تخطي1057عملية مكتملة وإعادة174لتسجيل حالته ثم استكمال الأقل منه. التقرير الأخير1058حالة و328صنفًا معدّلًا قبل هذا الاستكمال.
+
+
+### 2026-10-20T08:45:14.073023+03:00 — DOFESH-VARIANT-BATCH
+## Dofesh variant audit
+- Time: 2026-10-20T08:45:14.073023+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"synced": 351, "no_options": 705, "missing_source": 5, "unsupported_customization_or_minimum": 16, "matched": 24, "unsupported_source_price": 3, "unsupported_supplier_removed_options": 2, "unsupported_source_options": 1}
+- Per-product results: docs/dofesh-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- دوفش#174 ↔ صنف#2119: unsupported_source_options؛ invalid_choice_label. https://dofesh.ps/?app=product.show.174
+- دوفش#171 ↔ صنف#1055: matched؛ ابيض=3₪. https://dofesh.ps/?app=product.show.171
+- دوفش#170 ↔ صنف#1056: synced؛ ابيض / بالحبة=7₪؛ ابيض / 10 حبة=60₪؛ ابيض / 50 حبة=250₪؛ ازرق / بالحبة=7₪؛ ازرق / 10 حبة=60₪؛ ازرق / 50 حبة=250₪؛ زهري / بالحبة=7₪؛ زهري / 10 حبة=60₪؛ زهري / 50 حبة=250₪. https://dofesh.ps/?app=product.show.170
+- دوفش#169 ↔ صنف#1057: unsupported_supplier_removed_options؛ سكرية كونريت فارغة. https://dofesh.ps/?app=product.show.169
+- دوفش#168 ↔ صنف#1058: matched؛ ابيض=2.5₪. https://dofesh.ps/?app=product.show.168
+- دوفش#167 ↔ صنف#1059: matched؛ بالحبة=6₪؛ 10 حبة=50₪؛ 50 حبة=250₪. https://dofesh.ps/?app=product.show.167
+- دوفش#166 ↔ صنف#1060: matched؛ ابيض=2.5₪. https://dofesh.ps/?app=product.show.166
+- دوفش#165 ↔ صنف#1061: matched؛ ابيض=3₪. https://dofesh.ps/?app=product.show.165
+- دوفش#164 ↔ صنف#1062: synced؛ ابيض=5₪. https://dofesh.ps/?app=product.show.164
+- دوفش#163 ↔ صنف#1063: no_options؛ صحن كونكريت بيضاوي (17.5*9*1.3). https://dofesh.ps/?app=product.show.163
+- دوفش#162 ↔ صنف#1064: matched؛ ابيض=2.5₪. https://dofesh.ps/?app=product.show.162
+- دوفش#161 ↔ صنف#1065: matched؛ ابيض=4₪. https://dofesh.ps/?app=product.show.161
+- دوفش#156 ↔ صنف#2120: no_options؛ زجاج كرستال 8*2 cm. https://dofesh.ps/?app=product.show.156
+- دوفش#154 ↔ صنف#2121: no_options؛ ببيونة ستان 0.5سم ابيض. https://dofesh.ps/?app=product.show.154
+- دوفش#153 ↔ صنف#2122: no_options؛ ببيونة ستان 1سم سكني. https://dofesh.ps/?app=product.show.153
+- دوفش#152 ↔ صنف#2123: no_options؛ ببيونة ستان 1سم كحلي محزز ذهبي. https://dofesh.ps/?app=product.show.152
+- دوفش#151 ↔ صنف#2124: no_options؛ ببيونة ستان 1سم تركواز. https://dofesh.ps/?app=product.show.151
+- دوفش#150 ↔ صنف#2125: no_options؛ ببيونة ستان 1سم ازرق محزز ذهبي. https://dofesh.ps/?app=product.show.150
+- دوفش#149 ↔ صنف#2126: no_options؛ ببيونة ستان 1سم زيتي محزز ذهبي. https://dofesh.ps/?app=product.show.149
+- دوفش#148 ↔ صنف#2127: no_options؛ ببيونة ستان 1سم اسود. https://dofesh.ps/?app=product.show.148
+- دوفش#147 ↔ صنف#2128: no_options؛ ببيونة ستان 1سم نهدي. https://dofesh.ps/?app=product.show.147
+- دوفش#146 ↔ صنف#2129: no_options؛ بيونة ستان 1سم برتقالي. https://dofesh.ps/?app=product.show.146
+- دوفش#145 ↔ صنف#2130: no_options؛ ببيونة ستان 1سم ازرق غامق مع حز ذهبي. https://dofesh.ps/?app=product.show.145
+- دوفش#144 ↔ صنف#2131: no_options؛ ببيونة ستان 1سم بيج. https://dofesh.ps/?app=product.show.144
+- دوفش#143 ↔ صنف#2132: no_options؛ بيونة ستان ازرق سماوي. https://dofesh.ps/?app=product.show.143
+- دوفش#142 ↔ صنف#2133: no_options؛ شبر كوفية 4سم(50متر باللفة). https://dofesh.ps/?app=product.show.142
+- دوفش#141 ↔ صنف#2134: synced؛ ازرق / 2سم=10₪؛ زهري / 2سم=10₪؛ ابيض / 2سم=10₪؛ بيج / 2سم=10₪. https://dofesh.ps/?app=product.show.141
+- دوفش#140 ↔ صنف#2135: synced؛ ازرق=1₪. https://dofesh.ps/?app=product.show.140
+- دوفش#139 ↔ صنف#2136: synced؛ ابيض=1.5₪. https://dofesh.ps/?app=product.show.139
+- دوفش#138 ↔ صنف#2137: synced؛ ازرق=1.5₪. https://dofesh.ps/?app=product.show.138
+- دوفش#137 ↔ صنف#2138: synced؛ زهري=1.5₪. https://dofesh.ps/?app=product.show.137
+- دوفش#136 ↔ صنف#2139: synced؛ ابيض / 1=1₪؛ ازرق / 1=1₪؛ زهري / 1=1₪؛ بيج / 1=1₪. https://dofesh.ps/?app=product.show.136
+- دوفش#118 ↔ صنف#2140: synced؛ ابيض / بالحبة=7₪؛ ابيض / 5 حبة=30₪؛ ازرق / بالحبة=7₪؛ ازرق / 5 حبة=30₪؛ زهري / بالحبة=7₪؛ زهري / 5 حبة=30₪؛ بيج / بالحبة=7₪؛ بيج / 5 حبة=30₪؛ خمري / بالحبة=7₪؛ خمري / 5 حبة=30₪؛ كحلي / بالحبة=7₪؛ كحلي / 5 حبة=30₪؛ احمر / بالحبة=7₪؛ احمر / 5 حبة=30₪؛ فضي / بالحبة=7₪؛ فضي / 5 حبة=30₪؛ اسود / بالحبة=7₪؛ اسود / 5 حبة=30₪؛ فوشي / بالحبة=7₪؛ فوشي / 5 حبة=30₪؛ اخضر فاتح / بالحبة=7₪؛ اخضر فاتح / 5 حبة=30₪؛ ذهبي / بالحبة=7₪؛ ذهبي / 5 حبة=30₪. https://dofesh.ps/?app=product.show.118
+- دوفش#117 ↔ صنف#2141: synced؛ احمر بداوي / 50متر=50₪. https://dofesh.ps/?app=product.show.117
+- دوفش#112 ↔ صنف#2142: missing_source؛ supplier_404. https://dofesh.ps/?app=product.show.112
+- دوفش#111 ↔ صنف#2143: synced؛ 10 حبة / (14.5*16*7) كبير=20₪؛ 10 حبة / (10*12*6) وسط=15₪؛ 10 حبة / (7*11*5)صغير=10₪؛ 50 حبة / (14.5*16*7) كبير=75₪؛ 50 حبة / (10*12*6) وسط=65₪؛ 50 حبة / (7*11*5)صغير=45₪. https://dofesh.ps/?app=product.show.111
+- دوفش#110 ↔ صنف#2144: synced؛ بالحبة=5₪؛ بالدزينة=30₪. https://dofesh.ps/?app=product.show.110
+- دوفش#109 ↔ صنف#2145: synced؛ بالحبة=4₪؛ 10 حبة=30₪. https://dofesh.ps/?app=product.show.109
+- دوفش#108 ↔ صنف#2146: synced؛ ابيض=3₪. https://dofesh.ps/?app=product.show.108
+- دوفش#107 ↔ صنف#2147: no_options؛ كيس كرتون مقاس (عرض 16/ ارتفاع 14 / عمق 7). https://dofesh.ps/?app=product.show.107
+- دوفش#106 ↔ صنف#2148: synced؛ بالحبة=3₪؛ 50 حبة=100₪. https://dofesh.ps/?app=product.show.106
+- دوفش#105 ↔ صنف#2149: synced؛ بني ولد / 13سم=5₪؛ بني بنت / 13سم=5₪. https://dofesh.ps/?app=product.show.105
+- دوفش#104 ↔ صنف#2150: no_options؛ شمع معدن ابيض (7*7*3.5). https://dofesh.ps/?app=product.show.104
+- دوفش#103 ↔ صنف#2151: synced؛ بالحبة=3.5₪؛ بالدزينة=36₪. https://dofesh.ps/?app=product.show.103
+- دوفش#102 ↔ صنف#2152: synced؛ بالحبة=3.5₪؛ بالدزينة=36₪. https://dofesh.ps/?app=product.show.102
+- دوفش#101 ↔ صنف#2153: synced؛ 37*25=40₪. https://dofesh.ps/?app=product.show.101
+- دوفش#100 ↔ صنف#1223: synced؛ شفاف / 6*7*3.5=2₪. https://dofesh.ps/?app=product.show.100
+- دوفش#98 ↔ صنف#2154: synced؛ ابيض / 6.5*6.5*4=2.5₪. https://dofesh.ps/?app=product.show.98
+- دوفش#97 ↔ صنف#2155: synced؛ ابيض / 6.5*6.5=3₪؛ بيج / 6.5*6.5=3₪. https://dofesh.ps/?app=product.show.97
+- دوفش#96 ↔ صنف#2156: synced؛ بالحبة=4₪؛ 12 حبة=36₪. https://dofesh.ps/?app=product.show.96
