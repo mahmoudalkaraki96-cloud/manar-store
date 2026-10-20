@@ -10,7 +10,8 @@ type Order={id:number;orderNumber:number;status:string;customerName:string;phone
 const labels:Record<string,string>={new:"جديد",confirmed:"مؤكد",preparing:"قيد التجهيز",shipped:"تم الشحن",delivered:"تم التسليم",cancelled:"ملغي"};
 export default function OrdersPanel({initialStatus="all",products=[]}:{initialStatus?:string;products?:Product[]}){
  const [orders,setOrders]=useState<Order[]>([]),[loading,setLoading]=useState(true),[message,setMessage]=useState(""),[selected,setSelected]=useState<Order|null>(null);
- const [editingItems,setEditingItems]=useState(false),[saving,setSaving]=useState(false),[creating,setCreating]=useState(false);\n const [draft,setDraft]=useState({customerName:"",phone:"",city:"",address:"",shipping:0,discount:0,notes:"",channel:"whatsapp"}),[draftItems,setDraftItems]=useState<Item[]>([]);
+ const [editingItems,setEditingItems]=useState(false),[saving,setSaving]=useState(false),[creating,setCreating]=useState(false);
+ const [draft,setDraft]=useState({customerName:"",phone:"",city:"",address:"",shipping:0,discount:0,notes:"",channel:"whatsapp"}),[draftItems,setDraftItems]=useState<Item[]>([]);
  const [statusFilter,setStatusFilter]=useState(initialStatus),[query,setQuery]=useState("");
  useEffect(()=>{setStatusFilter(initialStatus)},[initialStatus]);
  const filteredOrders=orders.filter(order=>(statusFilter==="all"||statusFilter==="preparing"&&["confirmed","preparing"].includes(order.status)||order.status===statusFilter)&&(!query.trim()||`${order.orderNumber} ${order.customerName} ${order.phone} ${order.city}`.toLowerCase().includes(query.trim().toLowerCase())));
