@@ -358,7 +358,7 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 .searchVariantChoices button[aria-pressed="true"]{border-color:var(--green);color:var(--green);background:#faf4f7;box-shadow:inset 0 0 0 1px var(--green)}
 .searchVariantChoices button:disabled{opacity:.45;cursor:default}
 .searchVariantChoices button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.searchResultPrice{display:block;text-align:right;margin-top:auto}
+.searchResultPrice{display:block;text-align:right;margin-top:auto}.searchSoldOutBadge{justify-self:start;background:#4d4650;color:#fff;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700}
 @media(max-width:600px){.searchResultLink{display:flex;flex-direction:column;align-items:stretch}.searchProductGrid .searchResultLink img{width:100%;height:78px}.searchProductGrid .searchResultLink b{height:auto;min-height:25px}.searchVariantChoices button{font-size:9px;padding:3px 5px}}
 
 /* Search view controls and an unobtrusive item number over the image. */
