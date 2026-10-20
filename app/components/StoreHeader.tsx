@@ -12,7 +12,7 @@ import {trackPageView} from "../analytics";
 function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
  const [selected,setSelected]=useState<number|null>(null);
  const variants=p.variants||[],variant=selected===null?undefined:variants[selected];
- const prices=variants.map(v=>v.price??p.price),min=prices.length?Math.min(...prices):p.price,max=prices.length?Math.max(...prices):p.price;
+ const available=variants.length?variants.some(v=>v.stock>0):p.inStock;\n const availableVariants=variants.filter(v=>v.stock>0);\n const prices=availableVariants.map(v=>v.price??p.price),min=prices.length?Math.min(...prices):p.price,max=prices.length?Math.max(...prices):p.price;
  const priceLabel=variant?`${variant.price??p.price} ₪`:min===max?`${min} ₪`:`${min} – ${max} ₪`;
  return <div className="searchProductResult">
   <Link className="searchResultLink" href={`/product/${p.id}`} onClick={onOpen}>
@@ -20,8 +20,8 @@ function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
    <b>{p.name}</b>
    {!available&&<small className="searchSoldOutBadge">منتهي</small>}
   </Link>
-  {variants.length>0&&<div className="searchVariantChoices" aria-label={`خيارات ${p.name} #${p.itemNumber}`}>{variants.map((v,index)=><button type="button" key={v.id??index} aria-pressed={selected===index} disabled={v.stock<=0} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} onClick={()=>setSelected(selected===index?null:index)}>{v.name}</button>)}</div>}
-  <strong className="searchResultPrice" aria-live="polite" dir="ltr">{priceLabel}</strong>
+  {variants.length>0&&available&&<div className="searchVariantChoices" aria-label={`خيارات ${p.name} #${p.itemNumber}`}>{variants.map((v,index)=><button type="button" key={v.id??index} aria-pressed={selected===index} disabled={v.stock<=0} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} onClick={()=>setSelected(selected===index?null:index)}>{v.name}</button>)}</div>}
+  <strong className="searchResultPrice" aria-live="polite" dir="ltr">{available?priceLabel:"غير متوفر"}</strong>
  </div>;
 }
 
