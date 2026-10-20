@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T08:52:02.144559+03:00",
+  "updated_at": "2026-10-20T09:02:29.315963+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 125,
@@ -11051,6 +11051,1006 @@
       "status": "synced",
       "detail": "{\"item_number\": 3807, \"name\": \"علب كرتون كامل 7*22*31 (12قطعة)\", \"before_price\": 3500, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 7*22*31 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 55)\", \"price\": 4100, \"active\": false, \"supplier_price\": 3900}, {\"name\": \"بني (كود 61)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 7*22*31 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 55)\", \"price\": 3900, \"active\": false}, {\"name\": \"بني (كود 61)\", \"price\": 3900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 55)\", \"price\": 4100, \"active\": false, \"supplier_price\": 3900}, {\"name\": \"بني (كود 61)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2807\", \"source_url\": \"https://jabaristore.com/?app=product.show.2549\"}",
       "updated_at": 1792475520018
+    },
+    {
+      "source_id": 2548,
+      "mode": "apply",
+      "product_id": 2808,
+      "status": "synced",
+      "detail": "{\"item_number\": 3808, \"name\": \"علب كرتون كامل 5*19.5*27 (12قطعة)\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 5*19.5*27 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 54)\", \"price\": 3500, \"active\": false, \"supplier_price\": 3300}, {\"name\": \"بني (كود 60)\", \"price\": 3500, \"active\": true, \"supplier_price\": 3300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 5*19.5*27 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 54)\", \"price\": 3300, \"active\": false}, {\"name\": \"بني (كود 60)\", \"price\": 3300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 54)\", \"price\": 3500, \"active\": false, \"supplier_price\": 3300}, {\"name\": \"بني (كود 60)\", \"price\": 3500, \"active\": true, \"supplier_price\": 3300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2808\", \"source_url\": \"https://jabaristore.com/?app=product.show.2548\"}",
+      "updated_at": 1792475528623
+    },
+    {
+      "source_id": 2547,
+      "mode": "apply",
+      "product_id": 2809,
+      "status": "synced",
+      "detail": "{\"item_number\": 3809, \"name\": \"علب كرتون كامل 4.5*16*20 (12قطعة)\", \"before_price\": 2250, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 4.5*16*20 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 53)\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"بني (كود 59)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 4.5*16*20 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 53)\", \"price\": 2400, \"active\": false}, {\"name\": \"بني (كود 59)\", \"price\": 2400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 53)\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"بني (كود 59)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2809\", \"source_url\": \"https://jabaristore.com/?app=product.show.2547\"}",
+      "updated_at": 1792475533436
+    },
+    {
+      "source_id": 2544,
+      "mode": "apply",
+      "product_id": 2810,
+      "status": "synced",
+      "detail": "{\"item_number\": 3810, \"name\": \"علب كرتون كامل 8*20*26 (12قطعة)\", \"before_price\": 3150, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 8*20*26 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 43)\", \"price\": 3800, \"active\": false, \"supplier_price\": 3600}, {\"name\": \"بني (كود 50)\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 8*20*26 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 43)\", \"price\": 3600, \"active\": false}, {\"name\": \"بني (كود 50)\", \"price\": 3600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 43)\", \"price\": 3800, \"active\": false, \"supplier_price\": 3600}, {\"name\": \"بني (كود 50)\", \"price\": 3800, \"active\": true, \"supplier_price\": 3600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2810\", \"source_url\": \"https://jabaristore.com/?app=product.show.2544\"}",
+      "updated_at": 1792475539038
+    },
+    {
+      "source_id": 2543,
+      "mode": "apply",
+      "product_id": 2811,
+      "status": "synced",
+      "detail": "{\"item_number\": 3811, \"name\": \"علب كرتون كامل 7.5*17*22 (12قطعة)\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 7.5*17*22 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 42)\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"بني (كود 49)\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 7.5*17*22 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 42)\", \"price\": 3000, \"active\": false}, {\"name\": \"بني (كود 49)\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 42)\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"بني (كود 49)\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2811\", \"source_url\": \"https://jabaristore.com/?app=product.show.2543\"}",
+      "updated_at": 1792475543413
+    },
+    {
+      "source_id": 2542,
+      "mode": "apply",
+      "product_id": 2812,
+      "status": "synced",
+      "detail": "{\"item_number\": 3812, \"name\": \"علب كرتون كامل 6.5*14*18 (12 قطعة)\", \"before_price\": 2250, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 6.5*14*18 (12 قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 41)\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"بني (كود 48)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 6.5*14*18 (12 قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 41)\", \"price\": 2400, \"active\": false}, {\"name\": \"بني (كود 48)\", \"price\": 2400, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 41)\", \"price\": 2550, \"active\": false, \"supplier_price\": 2400}, {\"name\": \"بني (كود 48)\", \"price\": 2550, \"active\": true, \"supplier_price\": 2400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2812\", \"source_url\": \"https://jabaristore.com/?app=product.show.2542\"}",
+      "updated_at": 1792475548689
+    },
+    {
+      "source_id": 2541,
+      "mode": "apply",
+      "product_id": 2813,
+      "status": "synced",
+      "detail": "{\"item_number\": 3813, \"name\": \"علب كرتون كامل 6*13*13 (12قطعة)\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 6*13*13 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 40)\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"بني (كود 47)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 6*13*13 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 40)\", \"price\": 1800, \"active\": false}, {\"name\": \"بني (كود 47)\", \"price\": 1800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 40)\", \"price\": 1950, \"active\": false, \"supplier_price\": 1800}, {\"name\": \"بني (كود 47)\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2813\", \"source_url\": \"https://jabaristore.com/?app=product.show.2541\"}",
+      "updated_at": 1792475553445
+    },
+    {
+      "source_id": 2540,
+      "mode": "apply",
+      "product_id": 2814,
+      "status": "synced",
+      "detail": "{\"item_number\": 3814, \"name\": \"علب كرتون كامل 5*8.5*8.5 (12قطعة)\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون كامل 5*8.5*8.5 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 39)\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني (كود 46)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون كامل 5*8.5*8.5 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 39)\", \"price\": 1500, \"active\": false}, {\"name\": \"بني (كود 46)\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 39)\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}, {\"name\": \"بني (كود 46)\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2814\", \"source_url\": \"https://jabaristore.com/?app=product.show.2540\"}",
+      "updated_at": 1792475558508
+    },
+    {
+      "source_id": 2539,
+      "mode": "apply",
+      "product_id": 2815,
+      "status": "synced",
+      "detail": "{\"item_number\": 3815, \"name\": \"علب كرتون غطاء بلور 30*30*7 (12قطعة)\", \"before_price\": 3700, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون غطاء بلور 30*30*7 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 9)\", \"price\": 4400, \"active\": true, \"supplier_price\": 4200}, {\"name\": \"بني (كود 12)\", \"price\": 4400, \"active\": false, \"supplier_price\": 4200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون غطاء بلور 30*30*7 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 9)\", \"price\": 4200, \"active\": true}, {\"name\": \"بني (كود 12)\", \"price\": 4200, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 9)\", \"price\": 4400, \"active\": true, \"supplier_price\": 4200}, {\"name\": \"بني (كود 12)\", \"price\": 4400, \"active\": false, \"supplier_price\": 4200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2815\", \"source_url\": \"https://jabaristore.com/?app=product.show.2539\"}",
+      "updated_at": 1792475563410
+    },
+    {
+      "source_id": 2538,
+      "mode": "apply",
+      "product_id": 1433,
+      "status": "synced",
+      "detail": "{\"item_number\": 2433, \"name\": \"علب كرتون غطاء بلور 25*25*7 (12قطعة)\", \"before_price\": 3500, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون غطاء بلور 25*25*7 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 8)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}, {\"name\": \"بني (كود 11)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون غطاء بلور 25*25*7 (12قطعة)\", \"variants\": [{\"name\": \"ابيض (كود 8)\", \"price\": 3900, \"active\": true}, {\"name\": \"بني (كود 11)\", \"price\": 3900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض (كود 8)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}, {\"name\": \"بني (كود 11)\", \"price\": 4100, \"active\": true, \"supplier_price\": 3900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1433\", \"source_url\": \"https://jabaristore.com/?app=product.show.2538\"}",
+      "updated_at": 1792475568685
+    },
+    {
+      "source_id": 2536,
+      "mode": "apply",
+      "product_id": 2816,
+      "status": "synced",
+      "detail": "{\"item_number\": 3816, \"name\": \"صندوق شفاف مع يد شكل كيس (10 قطعة)\", \"before_price\": 3150, \"before_variants\": [], \"source\": {\"title\": \"صندوق شفاف مع يد شكل كيس (10 قطعة)\", \"variants\": [{\"name\": \"عمق 10 / عرض 15 / ارتفاع 15\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"عمق 10 / عرض 12.5 / ارتفاع 20\", \"price\": 4700, \"active\": false, \"supplier_price\": 4500}, {\"name\": \"عمق 12 / عرض 22 / ارتفاع 25.5\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق شفاف مع يد شكل كيس (10 قطعة)\", \"variants\": [{\"name\": \"عمق 10 / عرض 15 / ارتفاع 15\", \"price\": 3500, \"active\": false}, {\"name\": \"عمق 10 / عرض 12.5 / ارتفاع 20\", \"price\": 4500, \"active\": false}, {\"name\": \"عمق 12 / عرض 22 / ارتفاع 25.5\", \"price\": 5500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"عمق 10 / عرض 15 / ارتفاع 15\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"عمق 10 / عرض 12.5 / ارتفاع 20\", \"price\": 4700, \"active\": false, \"supplier_price\": 4500}, {\"name\": \"عمق 12 / عرض 22 / ارتفاع 25.5\", \"price\": 5700, \"active\": true, \"supplier_price\": 5500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2816\", \"source_url\": \"https://jabaristore.com/?app=product.show.2536\"}",
+      "updated_at": 1792475573617
+    },
+    {
+      "source_id": 2532,
+      "mode": "apply",
+      "product_id": 2817,
+      "status": "synced",
+      "detail": "{\"item_number\": 3817, \"name\": \"علب تغليف كرتون مع غطاء شفاف 8.5*12*12 ( 10 قطع )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 8.5*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 8.5*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1400, \"active\": false}, {\"name\": \"بني\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1400, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"بني\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2817\", \"source_url\": \"https://jabaristore.com/?app=product.show.2532\"}",
+      "updated_at": 1792475578741
+    },
+    {
+      "source_id": 2531,
+      "mode": "apply",
+      "product_id": 2818,
+      "status": "synced",
+      "detail": "{\"item_number\": 3818, \"name\": \"علب تغليف كرتون مع غطاء شفاف 6*12*12 ( 10 قطع )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 6*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 6*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1300, \"active\": false}, {\"name\": \"بني\", \"price\": 1300, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1300, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}, {\"name\": \"بني\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"ذهبي\", \"price\": 1450, \"active\": false, \"supplier_price\": 1300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2818\", \"source_url\": \"https://jabaristore.com/?app=product.show.2531\"}",
+      "updated_at": 1792475583446
+    },
+    {
+      "source_id": 2530,
+      "mode": "apply",
+      "product_id": 2819,
+      "status": "synced",
+      "detail": "{\"item_number\": 3819, \"name\": \"علب تغليف كرتون مع غطاء شفاف 4*12*12 ( 10 قطع )\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 4*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 4*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1200, \"active\": true}, {\"name\": \"بني\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2819\", \"source_url\": \"https://jabaristore.com/?app=product.show.2530\"}",
+      "updated_at": 1792475588537
+    },
+    {
+      "source_id": 2529,
+      "mode": "apply",
+      "product_id": 2820,
+      "status": "synced",
+      "detail": "{\"item_number\": 3820, \"name\": \"مضيفة زجاج شكل تفاحة ( 7*7 سم )(فارغة بدون شمع)\", \"before_price\": 380, \"before_variants\": [], \"source\": {\"title\": \"مضيفة زجاج شكل تفاحة ( 7*7 سم )(فارغة بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مضيفة زجاج شكل تفاحة ( 7*7 سم )(فارغة بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2820\", \"source_url\": \"https://jabaristore.com/?app=product.show.2529\"}",
+      "updated_at": 1792475593595
+    },
+    {
+      "source_id": 2528,
+      "mode": "apply",
+      "product_id": 2821,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3821}",
+      "updated_at": 1792475598413
+    },
+    {
+      "source_id": 2527,
+      "mode": "apply",
+      "product_id": 2822,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3822}",
+      "updated_at": 1792475603187
+    },
+    {
+      "source_id": 2526,
+      "mode": "apply",
+      "product_id": 2823,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3823}",
+      "updated_at": 1792475608233
+    },
+    {
+      "source_id": 2525,
+      "mode": "apply",
+      "product_id": 2824,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3824}",
+      "updated_at": 1792475613186
+    },
+    {
+      "source_id": 2524,
+      "mode": "apply",
+      "product_id": 2825,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3825}",
+      "updated_at": 1792475618234
+    },
+    {
+      "source_id": 2523,
+      "mode": "apply",
+      "product_id": 2826,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3826}",
+      "updated_at": 1792475623198
+    },
+    {
+      "source_id": 2522,
+      "mode": "apply",
+      "product_id": 2827,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3827}",
+      "updated_at": 1792475628231
+    },
+    {
+      "source_id": 2521,
+      "mode": "apply",
+      "product_id": 2828,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3828}",
+      "updated_at": 1792475633206
+    },
+    {
+      "source_id": 2520,
+      "mode": "apply",
+      "product_id": 2829,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3829}",
+      "updated_at": 1792475638234
+    },
+    {
+      "source_id": 2519,
+      "mode": "apply",
+      "product_id": 2830,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3830}",
+      "updated_at": 1792475643188
+    },
+    {
+      "source_id": 2518,
+      "mode": "apply",
+      "product_id": 2831,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3831, \"source\": {\"title\": \"يد مخمل للاساور قاعدة ذهبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475648267
+    },
+    {
+      "source_id": 2516,
+      "mode": "apply",
+      "product_id": 2832,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3832}",
+      "updated_at": 1792475653193
+    },
+    {
+      "source_id": 2515,
+      "mode": "apply",
+      "product_id": 2833,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3833, \"source\": {\"title\": \"قطع تزين شوكولاتة معدن (50 قطعة)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475658229
+    },
+    {
+      "source_id": 2514,
+      "mode": "apply",
+      "product_id": 2834,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3834}",
+      "updated_at": 1792475663297
+    },
+    {
+      "source_id": 2513,
+      "mode": "apply",
+      "product_id": 2835,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3835}",
+      "updated_at": 1792475668434
+    },
+    {
+      "source_id": 2512,
+      "mode": "apply",
+      "product_id": 2836,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3836}",
+      "updated_at": 1792475673192
+    },
+    {
+      "source_id": 2510,
+      "mode": "apply",
+      "product_id": 2837,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3837}",
+      "updated_at": 1792475678230
+    },
+    {
+      "source_id": 2507,
+      "mode": "apply",
+      "product_id": 2838,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3838, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2.5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1800}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475683176
+    },
+    {
+      "source_id": 2506,
+      "mode": "apply",
+      "product_id": 2839,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3839, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة ) ( 3*3 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475688486
+    },
+    {
+      "source_id": 2505,
+      "mode": "apply",
+      "product_id": 2840,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3840, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة )( 3.5*3.5 سم )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475693180
+    },
+    {
+      "source_id": 2504,
+      "mode": "apply",
+      "product_id": 2841,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3841, \"source\": {\"title\": \"قطع تزين شوكولاتة ( 50 قطعة )(3.5*4 سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475698258
+    },
+    {
+      "source_id": 2503,
+      "mode": "apply",
+      "product_id": 2842,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3842, \"source\": {\"title\": \"قطع تزين شوكولاته ( 50 قطعة ) (1.8*1.8 سم)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475703421
+    },
+    {
+      "source_id": 2502,
+      "mode": "apply",
+      "product_id": 2843,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3843}",
+      "updated_at": 1792475708414
+    },
+    {
+      "source_id": 2494,
+      "mode": "apply",
+      "product_id": 2844,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3844}",
+      "updated_at": 1792475713411
+    },
+    {
+      "source_id": 2493,
+      "mode": "apply",
+      "product_id": 2845,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3845}",
+      "updated_at": 1792475718423
+    },
+    {
+      "source_id": 2492,
+      "mode": "apply",
+      "product_id": 2846,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3846}",
+      "updated_at": 1792475723189
+    },
+    {
+      "source_id": 2491,
+      "mode": "apply",
+      "product_id": 2847,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3847}",
+      "updated_at": 1792475728403
+    },
+    {
+      "source_id": 2490,
+      "mode": "apply",
+      "product_id": 2848,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3848}",
+      "updated_at": 1792475733418
+    },
+    {
+      "source_id": 2483,
+      "mode": "apply",
+      "product_id": 2849,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3849}",
+      "updated_at": 1792475738395
+    },
+    {
+      "source_id": 2481,
+      "mode": "apply",
+      "product_id": 2850,
+      "status": "synced",
+      "detail": "{\"item_number\": 3850, \"name\": \"مضيفة شكل عصفور (فارغ بدون شمع)\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"مضيفة شكل عصفور (فارغ بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مضيفة شكل عصفور (فارغ بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 500, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 25000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"50 قطعة\", \"price\": 26000, \"active\": true, \"supplier_price\": 25000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2850\", \"source_url\": \"https://jabaristore.com/?app=product.show.2481\"}",
+      "updated_at": 1792475743430
+    },
+    {
+      "source_id": 2479,
+      "mode": "apply",
+      "product_id": 2851,
+      "status": "synced",
+      "detail": "{\"item_number\": 3851, \"name\": \"مضيفة زجاج شكل تفاحة ( 10*10 سم )(فارغة بدون شمع)\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"مضيفة زجاج شكل تفاحة ( 10*10 سم )(فارغة بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"50 قطعة\", \"price\": 36000, \"active\": true, \"supplier_price\": 35000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مضيفة زجاج شكل تفاحة ( 10*10 سم )(فارغة بدون شمع)\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 700, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 35000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"50 قطعة\", \"price\": 36000, \"active\": true, \"supplier_price\": 35000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2851\", \"source_url\": \"https://jabaristore.com/?app=product.show.2479\"}",
+      "updated_at": 1792475748667
+    },
+    {
+      "source_id": 2467,
+      "mode": "apply",
+      "product_id": 2852,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3852}",
+      "updated_at": 1792475753418
+    },
+    {
+      "source_id": 2466,
+      "mode": "apply",
+      "product_id": 2853,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3853}",
+      "updated_at": 1792475758394
+    },
+    {
+      "source_id": 2465,
+      "mode": "apply",
+      "product_id": 2854,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3854}",
+      "updated_at": 1792475763233
+    },
+    {
+      "source_id": 2464,
+      "mode": "apply",
+      "product_id": 2855,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3855, \"source\": {\"title\": \"رول تغليف فضي - 9 متر -\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475768188
+    },
+    {
+      "source_id": 2460,
+      "mode": "apply",
+      "product_id": 1434,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2434}",
+      "updated_at": 1792475773251
+    },
+    {
+      "source_id": 2459,
+      "mode": "apply",
+      "product_id": 2856,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3856}",
+      "updated_at": 1792475778467
+    },
+    {
+      "source_id": 2458,
+      "mode": "apply",
+      "product_id": 2857,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3857}",
+      "updated_at": 1792475783426
+    },
+    {
+      "source_id": 2457,
+      "mode": "apply",
+      "product_id": 2858,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3858}",
+      "updated_at": 1792475788194
+    },
+    {
+      "source_id": 2456,
+      "mode": "apply",
+      "product_id": 2859,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3859}",
+      "updated_at": 1792475793233
+    },
+    {
+      "source_id": 2455,
+      "mode": "apply",
+      "product_id": 2860,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3860}",
+      "updated_at": 1792475798295
+    },
+    {
+      "source_id": 2454,
+      "mode": "apply",
+      "product_id": 2861,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3861, \"source\": {\"title\": \"قطع تزين صغير معدن ( 50 قطعة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475803464
+    },
+    {
+      "source_id": 2453,
+      "mode": "apply",
+      "product_id": 2862,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3862}",
+      "updated_at": 1792475808203
+    },
+    {
+      "source_id": 2452,
+      "mode": "apply",
+      "product_id": 2863,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3863}",
+      "updated_at": 1792475813229
+    },
+    {
+      "source_id": 2451,
+      "mode": "apply",
+      "product_id": 2864,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3864}",
+      "updated_at": 1792475818404
+    },
+    {
+      "source_id": 2450,
+      "mode": "apply",
+      "product_id": 2865,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3865}",
+      "updated_at": 1792475823403
+    },
+    {
+      "source_id": 2449,
+      "mode": "apply",
+      "product_id": 2866,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3866}",
+      "updated_at": 1792475828187
+    },
+    {
+      "source_id": 2448,
+      "mode": "apply",
+      "product_id": 2867,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3867}",
+      "updated_at": 1792475833235
+    },
+    {
+      "source_id": 2447,
+      "mode": "apply",
+      "product_id": 2868,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3868}",
+      "updated_at": 1792475838174
+    },
+    {
+      "source_id": 2445,
+      "mode": "apply",
+      "product_id": 2869,
+      "status": "synced",
+      "detail": "{\"item_number\": 3869, \"name\": \"مضيفة محززة زجاج\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"مضيفة محززة زجاج\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مضيفة محززة زجاج\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"50 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"50 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2869\", \"source_url\": \"https://jabaristore.com/?app=product.show.2445\"}",
+      "updated_at": 1792475843660
+    },
+    {
+      "source_id": 2444,
+      "mode": "apply",
+      "product_id": 2870,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3870, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475848189
+    },
+    {
+      "source_id": 2443,
+      "mode": "apply",
+      "product_id": 2871,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3871, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475853234
+    },
+    {
+      "source_id": 2442,
+      "mode": "apply",
+      "product_id": 2872,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3872, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475858187
+    },
+    {
+      "source_id": 2441,
+      "mode": "apply",
+      "product_id": 2873,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3873, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475863249
+    },
+    {
+      "source_id": 2440,
+      "mode": "apply",
+      "product_id": 2874,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3874, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475868197
+    },
+    {
+      "source_id": 2439,
+      "mode": "apply",
+      "product_id": 2875,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3875, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475873232
+    },
+    {
+      "source_id": 2438,
+      "mode": "apply",
+      "product_id": 2876,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3876, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475878285
+    },
+    {
+      "source_id": 2437,
+      "mode": "apply",
+      "product_id": 2877,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3877, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475883281
+    },
+    {
+      "source_id": 2436,
+      "mode": "apply",
+      "product_id": 2878,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3878, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475888173
+    },
+    {
+      "source_id": 2435,
+      "mode": "apply",
+      "product_id": 2879,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3879, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475893443
+    },
+    {
+      "source_id": 2434,
+      "mode": "apply",
+      "product_id": 2880,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3880, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475898206
+    },
+    {
+      "source_id": 2433,
+      "mode": "apply",
+      "product_id": 2881,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3881, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475903432
+    },
+    {
+      "source_id": 2432,
+      "mode": "apply",
+      "product_id": 2882,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3882, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475908194
+    },
+    {
+      "source_id": 2431,
+      "mode": "apply",
+      "product_id": 2883,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3883, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475913234
+    },
+    {
+      "source_id": 2430,
+      "mode": "apply",
+      "product_id": 2884,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3884, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475918361
+    },
+    {
+      "source_id": 2429,
+      "mode": "apply",
+      "product_id": 2885,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3885, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475923417
+    },
+    {
+      "source_id": 2428,
+      "mode": "apply",
+      "product_id": 2886,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3886, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475928192
+    },
+    {
+      "source_id": 2427,
+      "mode": "apply",
+      "product_id": 2887,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3887, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475933233
+    },
+    {
+      "source_id": 2426,
+      "mode": "apply",
+      "product_id": 2888,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3888, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475938342
+    },
+    {
+      "source_id": 2425,
+      "mode": "apply",
+      "product_id": 2889,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3889, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475943256
+    },
+    {
+      "source_id": 2424,
+      "mode": "apply",
+      "product_id": 2890,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3890, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475948211
+    },
+    {
+      "source_id": 2423,
+      "mode": "apply",
+      "product_id": 2891,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3891, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475953481
+    },
+    {
+      "source_id": 2422,
+      "mode": "apply",
+      "product_id": 2892,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3892, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475958296
+    },
+    {
+      "source_id": 2421,
+      "mode": "apply",
+      "product_id": 2893,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3893, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475963236
+    },
+    {
+      "source_id": 2420,
+      "mode": "apply",
+      "product_id": 2894,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3894, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475968325
+    },
+    {
+      "source_id": 2419,
+      "mode": "apply",
+      "product_id": 2895,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3895, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475973370
+    },
+    {
+      "source_id": 2418,
+      "mode": "apply",
+      "product_id": 2896,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3896, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475978295
+    },
+    {
+      "source_id": 2417,
+      "mode": "apply",
+      "product_id": 2897,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3897, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475983262
+    },
+    {
+      "source_id": 2416,
+      "mode": "apply",
+      "product_id": 2898,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3898, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475988193
+    },
+    {
+      "source_id": 2415,
+      "mode": "apply",
+      "product_id": 2899,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3899, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475993367
+    },
+    {
+      "source_id": 2413,
+      "mode": "apply",
+      "product_id": 2900,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3900, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792475998174
+    },
+    {
+      "source_id": 2412,
+      "mode": "apply",
+      "product_id": 2901,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3901, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476003366
+    },
+    {
+      "source_id": 2408,
+      "mode": "apply",
+      "product_id": 2902,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3902}",
+      "updated_at": 1792476008193
+    },
+    {
+      "source_id": 2407,
+      "mode": "apply",
+      "product_id": 2903,
+      "status": "synced",
+      "detail": "{\"item_number\": 3903, \"name\": \"مسابح الكترونية / خواتم تسبيح ( زهر باهت )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( زهر باهت )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( زهر باهت )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 78000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2903\", \"source_url\": \"https://jabaristore.com/?app=product.show.2407\"}",
+      "updated_at": 1792476013434
+    },
+    {
+      "source_id": 2406,
+      "mode": "apply",
+      "product_id": 2904,
+      "status": "synced",
+      "detail": "{\"item_number\": 3904, \"name\": \"مسابح الكترونية / خواتم تسبيح ( اسود )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( اسود )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( اسود )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 78000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2904\", \"source_url\": \"https://jabaristore.com/?app=product.show.2406\"}",
+      "updated_at": 1792476018400
+    },
+    {
+      "source_id": 2405,
+      "mode": "apply",
+      "product_id": 2905,
+      "status": "synced",
+      "detail": "{\"item_number\": 3905, \"name\": \"مسابح الكترونية / خواتم تسبيح ( ابيض )\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ابيض )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مسابح الكترونية / خواتم تسبيح ( ابيض )\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 100, \"active\": true}, {\"name\": \"باكيت 100 قطعة\", \"price\": 8500, \"active\": true}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 78000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 100 قطعة\", \"price\": 9000, \"active\": true, \"supplier_price\": 8500}, {\"name\": \"كرتونة 1000 قطعة\", \"price\": 79000, \"active\": true, \"supplier_price\": 78000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2905\", \"source_url\": \"https://jabaristore.com/?app=product.show.2405\"}",
+      "updated_at": 1792476023657
+    },
+    {
+      "source_id": 2370,
+      "mode": "apply",
+      "product_id": 2906,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3906, \"source\": {\"title\": \"ماسك ( مصحف )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476028342
+    },
+    {
+      "source_id": 2364,
+      "mode": "apply",
+      "product_id": 2907,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3907}",
+      "updated_at": 1792476033186
+    },
+    {
+      "source_id": 2362,
+      "mode": "apply",
+      "product_id": 2908,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3908}",
+      "updated_at": 1792476038236
+    },
+    {
+      "source_id": 2361,
+      "mode": "apply",
+      "product_id": 2909,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3909}",
+      "updated_at": 1792476043390
+    },
+    {
+      "source_id": 2360,
+      "mode": "apply",
+      "product_id": 2910,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3910}",
+      "updated_at": 1792476048265
+    },
+    {
+      "source_id": 2359,
+      "mode": "apply",
+      "product_id": 2911,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3911, \"source\": {\"title\": \"مسابح - سبح لولو 99 حبة ( زهري )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476053388
+    },
+    {
+      "source_id": 2358,
+      "mode": "apply",
+      "product_id": 2912,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3912, \"source\": {\"title\": \"مسابح - سبح لولو 99 حبة ( اسود )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476058238
+    },
+    {
+      "source_id": 2357,
+      "mode": "apply",
+      "product_id": 2913,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3913, \"source\": {\"title\": \"مسابح - سبح لولو 99 حبة ( ازرق )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476063196
+    },
+    {
+      "source_id": 2356,
+      "mode": "apply",
+      "product_id": 2914,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3914, \"source\": {\"title\": \"مسابح - سبح لولو 99 حبة ( سكري )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476068370
+    },
+    {
+      "source_id": 2354,
+      "mode": "apply",
+      "product_id": 2915,
+      "status": "synced",
+      "detail": "{\"item_number\": 3915, \"name\": \"شمع ببلز ( باكيت 25 قطعة )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"شمع ببلز ( باكيت 25 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ايفري\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ازرق\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ازرق باهت ( فستقي )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ليلكي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"زهري\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع ببلز ( باكيت 25 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2500, \"active\": false}, {\"name\": \"ايفري\", \"price\": 2500, \"active\": false}, {\"name\": \"ازرق\", \"price\": 2500, \"active\": true}, {\"name\": \"ازرق باهت ( فستقي )\", \"price\": 2500, \"active\": true}, {\"name\": \"ليلكي\", \"price\": 2500, \"active\": true}, {\"name\": \"زهري\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ايفري\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ازرق\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ازرق باهت ( فستقي )\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ليلكي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"زهري\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2915\", \"source_url\": \"https://jabaristore.com/?app=product.show.2354\"}",
+      "updated_at": 1792476073487
+    },
+    {
+      "source_id": 2352,
+      "mode": "apply",
+      "product_id": 2916,
+      "status": "synced",
+      "detail": "{\"item_number\": 3916, \"name\": \"مروحة / مراوح خشب\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"مروحة / مراوح خشب\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مروحة / مراوح خشب\", \"variants\": [{\"name\": \"بالقطعة\", \"price\": 250, \"active\": true}, {\"name\": \"100 قطعة\", \"price\": 20000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالقطعة\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"100 قطعة\", \"price\": 21000, \"active\": true, \"supplier_price\": 20000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2916\", \"source_url\": \"https://jabaristore.com/?app=product.show.2352\"}",
+      "updated_at": 1792476078605
+    },
+    {
+      "source_id": 2348,
+      "mode": "apply",
+      "product_id": 2917,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3917}",
+      "updated_at": 1792476083294
+    },
+    {
+      "source_id": 2309,
+      "mode": "apply",
+      "product_id": 2918,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3918}",
+      "updated_at": 1792476088365
+    },
+    {
+      "source_id": 2307,
+      "mode": "apply",
+      "product_id": 2919,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3919}",
+      "updated_at": 1792476093196
+    },
+    {
+      "source_id": 2294,
+      "mode": "apply",
+      "product_id": 2920,
+      "status": "synced",
+      "detail": "{\"item_number\": 3920, \"name\": \"علب كرتون وجه شفاف (3*10*10) 10 قطع\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون وجه شفاف (3*10*10) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون وجه شفاف (3*10*10) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"بني\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2920\", \"source_url\": \"https://jabaristore.com/?app=product.show.2294\"}",
+      "updated_at": 1792476098480
+    },
+    {
+      "source_id": 2293,
+      "mode": "apply",
+      "product_id": 2921,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 3921}",
+      "updated_at": 1792476103201
+    },
+    {
+      "source_id": 2290,
+      "mode": "apply",
+      "product_id": 2922,
+      "status": "synced",
+      "detail": "{\"item_number\": 3922, \"name\": \"علب تغليف كرتون وجه شفاف 8*8*8 ( 10 قطع )\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون وجه شفاف 8*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون وجه شفاف 8*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"بني\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2922\", \"source_url\": \"https://jabaristore.com/?app=product.show.2290\"}",
+      "updated_at": 1792476108467
+    },
+    {
+      "source_id": 2289,
+      "mode": "apply",
+      "product_id": 2923,
+      "status": "synced",
+      "detail": "{\"item_number\": 3923, \"name\": \"علب كرتون ابيض وجه شفاف (3*8*8) 10 قطع\", \"before_price\": 800, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون ابيض وجه شفاف (3*8*8) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ذهبي\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني\", \"price\": 900, \"active\": false, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون ابيض وجه شفاف (3*8*8) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 800, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 800, \"active\": true}, {\"name\": \"بني\", \"price\": 800, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ذهبي\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بني\", \"price\": 900, \"active\": false, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2923\", \"source_url\": \"https://jabaristore.com/?app=product.show.2289\"}",
+      "updated_at": 1792476113438
+    },
+    {
+      "source_id": 2287,
+      "mode": "apply",
+      "product_id": 2924,
+      "status": "synced",
+      "detail": "{\"item_number\": 3924, \"name\": \"علب تغليف كرتون وجه شفاف 5*7*7 ( 10 قطع )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون وجه شفاف 5*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون وجه شفاف 5*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true}, {\"name\": \"بني\", \"price\": 900, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2924\", \"source_url\": \"https://jabaristore.com/?app=product.show.2287\"}",
+      "updated_at": 1792476118626
+    },
+    {
+      "source_id": 2286,
+      "mode": "apply",
+      "product_id": 2925,
+      "status": "synced",
+      "detail": "{\"item_number\": 3925, \"name\": \"علب تغليف كرتون وجه شفاف 2*7*7 ( 10 قطع )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون وجه شفاف 2*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 800, \"active\": false, \"supplier_price\": 700}, {\"name\": \"بني\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ذهبي\", \"price\": 800, \"active\": false, \"supplier_price\": 700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون وجه شفاف 2*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": false}, {\"name\": \"بني\", \"price\": 700, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 700, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 800, \"active\": false, \"supplier_price\": 700}, {\"name\": \"بني\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"ذهبي\", \"price\": 800, \"active\": false, \"supplier_price\": 700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2925\", \"source_url\": \"https://jabaristore.com/?app=product.show.2286\"}",
+      "updated_at": 1792476123661
+    },
+    {
+      "source_id": 2285,
+      "mode": "apply",
+      "product_id": 2926,
+      "status": "synced",
+      "detail": "{\"item_number\": 3926, \"name\": \"علب تغليف كرتون وجه شفاف 3*7*7 ( 10 قطع )\", \"before_price\": 650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون وجه شفاف 3*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"بني\", \"price\": 850, \"active\": false, \"supplier_price\": 750}, {\"name\": \"ذهبي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون وجه شفاف 3*7*7 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 750, \"active\": true}, {\"name\": \"بني\", \"price\": 750, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 750, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 850, \"active\": true, \"supplier_price\": 750}, {\"name\": \"بني\", \"price\": 850, \"active\": false, \"supplier_price\": 750}, {\"name\": \"ذهبي\", \"price\": 850, \"active\": true, \"supplier_price\": 750}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/2926\", \"source_url\": \"https://jabaristore.com/?app=product.show.2285\"}",
+      "updated_at": 1792476128484
+    },
+    {
+      "source_id": 2283,
+      "mode": "apply",
+      "product_id": 2927,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3927, \"source\": {\"title\": \"ورق تغليف جريدة ( كتابة احمر )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476133194
+    },
+    {
+      "source_id": 2282,
+      "mode": "apply",
+      "product_id": 2928,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3928, \"source\": {\"title\": \"ورق تغليف جريدة ( كتابة بنفسجي )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476138243
+    },
+    {
+      "source_id": 2279,
+      "mode": "apply",
+      "product_id": 2929,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3929, \"source\": {\"title\": \"ورق تغليف جريدة ( كتابة بني )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476143196
+    },
+    {
+      "source_id": 2278,
+      "mode": "apply",
+      "product_id": 2930,
+      "status": "no_options",
+      "detail": "{\"item_number\": 3930, \"source\": {\"title\": \"ورق تغليف ( 20 ورقة )\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792476148258
     }
   ]
 }

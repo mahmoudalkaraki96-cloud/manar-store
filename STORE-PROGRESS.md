@@ -4085,3 +4085,137 @@
 - Per-product results: docs/dofesh-variant-audit/latest.json
 - تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
 - تقرير كل الأصناف المعدلة: docs/dofesh-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+### 2026-10-20T09:02:29.315963+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T09:02:29.315963+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 721, "synced": 548, "unsupported_source_price": 237}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#2548 ↔ صنف#3808: synced؛ ابيض (كود 54)=35₪؛ بني (كود 60)=35₪. https://jabaristore.com/?app=product.show.2548
+- الجعبري#2547 ↔ صنف#3809: synced؛ ابيض (كود 53)=25.5₪؛ بني (كود 59)=25.5₪. https://jabaristore.com/?app=product.show.2547
+- الجعبري#2544 ↔ صنف#3810: synced؛ ابيض (كود 43)=38₪؛ بني (كود 50)=38₪. https://jabaristore.com/?app=product.show.2544
+- الجعبري#2543 ↔ صنف#3811: synced؛ ابيض (كود 42)=31.5₪؛ بني (كود 49)=31.5₪. https://jabaristore.com/?app=product.show.2543
+- الجعبري#2542 ↔ صنف#3812: synced؛ ابيض (كود 41)=25.5₪؛ بني (كود 48)=25.5₪. https://jabaristore.com/?app=product.show.2542
+- الجعبري#2541 ↔ صنف#3813: synced؛ ابيض (كود 40)=19.5₪؛ بني (كود 47)=19.5₪. https://jabaristore.com/?app=product.show.2541
+- الجعبري#2540 ↔ صنف#3814: synced؛ ابيض (كود 39)=16.5₪؛ بني (كود 46)=16.5₪. https://jabaristore.com/?app=product.show.2540
+- الجعبري#2539 ↔ صنف#3815: synced؛ ابيض (كود 9)=44₪؛ بني (كود 12)=44₪. https://jabaristore.com/?app=product.show.2539
+- الجعبري#2538 ↔ صنف#2433: synced؛ ابيض (كود 8)=41₪؛ بني (كود 11)=41₪. https://jabaristore.com/?app=product.show.2538
+- الجعبري#2536 ↔ صنف#3816: synced؛ عمق 10 / عرض 15 / ارتفاع 15=37₪؛ عمق 10 / عرض 12.5 / ارتفاع 20=47₪؛ عمق 12 / عرض 22 / ارتفاع 25.5=57₪. https://jabaristore.com/?app=product.show.2536
+- الجعبري#2532 ↔ صنف#3817: synced؛ ابيض=15.5₪؛ بني=15.5₪؛ ذهبي=15.5₪. https://jabaristore.com/?app=product.show.2532
+- الجعبري#2531 ↔ صنف#3818: synced؛ ابيض=14.5₪؛ بني=14.5₪؛ ذهبي=14.5₪. https://jabaristore.com/?app=product.show.2531
+- الجعبري#2530 ↔ صنف#3819: synced؛ ابيض=13.5₪؛ بني=13.5₪؛ ذهبي=13.5₪. https://jabaristore.com/?app=product.show.2530
+- الجعبري#2529 ↔ صنف#3820: synced؛ بالقطعة=5.5₪؛ 50 قطعة=260₪. https://jabaristore.com/?app=product.show.2529
+- الجعبري#2528 ↔ صنف#3821: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2528
+- الجعبري#2527 ↔ صنف#3822: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2527
+- الجعبري#2526 ↔ صنف#3823: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2526
+- الجعبري#2525 ↔ صنف#3824: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2525
+- الجعبري#2524 ↔ صنف#3825: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2524
+- الجعبري#2523 ↔ صنف#3826: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2523
+- الجعبري#2522 ↔ صنف#3827: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2522
+- الجعبري#2521 ↔ صنف#3828: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2521
+- الجعبري#2520 ↔ صنف#3829: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2520
+- الجعبري#2519 ↔ صنف#3830: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2519
+- الجعبري#2518 ↔ صنف#3831: no_options؛ يد مخمل للاساور قاعدة ذهبي. https://jabaristore.com/?app=product.show.2518
+- الجعبري#2516 ↔ صنف#3832: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2516
+- الجعبري#2515 ↔ صنف#3833: no_options؛ قطع تزين شوكولاتة معدن (50 قطعة). https://jabaristore.com/?app=product.show.2515
+- الجعبري#2514 ↔ صنف#3834: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2514
+- الجعبري#2513 ↔ صنف#3835: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2513
+- الجعبري#2512 ↔ صنف#3836: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2512
+- الجعبري#2510 ↔ صنف#3837: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2510
+- الجعبري#2507 ↔ صنف#3838: no_options؛ قطع تزين شوكولاتة ( 50 قطعة ) ( 2.5*2.5 سم ). https://jabaristore.com/?app=product.show.2507
+- الجعبري#2506 ↔ صنف#3839: no_options؛ قطع تزين شوكولاتة ( 50 قطعة ) ( 3*3 سم ). https://jabaristore.com/?app=product.show.2506
+- الجعبري#2505 ↔ صنف#3840: no_options؛ قطع تزين شوكولاتة ( 50 قطعة )( 3.5*3.5 سم ). https://jabaristore.com/?app=product.show.2505
+- الجعبري#2504 ↔ صنف#3841: no_options؛ قطع تزين شوكولاتة ( 50 قطعة )(3.5*4 سم). https://jabaristore.com/?app=product.show.2504
+- الجعبري#2503 ↔ صنف#3842: no_options؛ قطع تزين شوكولاته ( 50 قطعة ) (1.8*1.8 سم). https://jabaristore.com/?app=product.show.2503
+- الجعبري#2502 ↔ صنف#3843: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2502
+- الجعبري#2494 ↔ صنف#3844: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2494
+- الجعبري#2493 ↔ صنف#3845: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2493
+- الجعبري#2492 ↔ صنف#3846: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2492
+- الجعبري#2491 ↔ صنف#3847: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2491
+- الجعبري#2490 ↔ صنف#3848: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2490
+- الجعبري#2483 ↔ صنف#3849: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2483
+- الجعبري#2481 ↔ صنف#3850: synced؛ بالقطعة=5.5₪؛ 50 قطعة=260₪. https://jabaristore.com/?app=product.show.2481
+- الجعبري#2479 ↔ صنف#3851: synced؛ بالقطعة=8₪؛ 50 قطعة=360₪. https://jabaristore.com/?app=product.show.2479
+- الجعبري#2467 ↔ صنف#3852: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2467
+- الجعبري#2466 ↔ صنف#3853: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2466
+- الجعبري#2465 ↔ صنف#3854: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2465
+- الجعبري#2464 ↔ صنف#3855: no_options؛ رول تغليف فضي - 9 متر -. https://jabaristore.com/?app=product.show.2464
+- الجعبري#2460 ↔ صنف#2434: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2460
+- الجعبري#2459 ↔ صنف#3856: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2459
+- الجعبري#2458 ↔ صنف#3857: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2458
+- الجعبري#2457 ↔ صنف#3858: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2457
+- الجعبري#2456 ↔ صنف#3859: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2456
+- الجعبري#2455 ↔ صنف#3860: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2455
+- الجعبري#2454 ↔ صنف#3861: no_options؛ قطع تزين صغير معدن ( 50 قطعة ). https://jabaristore.com/?app=product.show.2454
+- الجعبري#2453 ↔ صنف#3862: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2453
+- الجعبري#2452 ↔ صنف#3863: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2452
+- الجعبري#2451 ↔ صنف#3864: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2451
+- الجعبري#2450 ↔ صنف#3865: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2450
+- الجعبري#2449 ↔ صنف#3866: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2449
+- الجعبري#2448 ↔ صنف#3867: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2448
+- الجعبري#2447 ↔ صنف#3868: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2447
+- الجعبري#2445 ↔ صنف#3869: synced؛ بالقطعة=3₪؛ 50 قطعة=105₪. https://jabaristore.com/?app=product.show.2445
+- الجعبري#2444 ↔ صنف#3870: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2444
+- الجعبري#2443 ↔ صنف#3871: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2443
+- الجعبري#2442 ↔ صنف#3872: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2442
+- الجعبري#2441 ↔ صنف#3873: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2441
+- الجعبري#2440 ↔ صنف#3874: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2440
+- الجعبري#2439 ↔ صنف#3875: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2439
+- الجعبري#2438 ↔ صنف#3876: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2438
+- الجعبري#2437 ↔ صنف#3877: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2437
+- الجعبري#2436 ↔ صنف#3878: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2436
+- الجعبري#2435 ↔ صنف#3879: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2435
+- الجعبري#2434 ↔ صنف#3880: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2434
+- الجعبري#2433 ↔ صنف#3881: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2433
+- الجعبري#2432 ↔ صنف#3882: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2432
+- الجعبري#2431 ↔ صنف#3883: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2431
+- الجعبري#2430 ↔ صنف#3884: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2430
+- الجعبري#2429 ↔ صنف#3885: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2429
+- الجعبري#2428 ↔ صنف#3886: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2428
+- الجعبري#2427 ↔ صنف#3887: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2427
+- الجعبري#2426 ↔ صنف#3888: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2426
+- الجعبري#2425 ↔ صنف#3889: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2425
+- الجعبري#2424 ↔ صنف#3890: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2424
+- الجعبري#2423 ↔ صنف#3891: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2423
+- الجعبري#2422 ↔ صنف#3892: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2422
+- الجعبري#2421 ↔ صنف#3893: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2421
+- الجعبري#2420 ↔ صنف#3894: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2420
+- الجعبري#2419 ↔ صنف#3895: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2419
+- الجعبري#2418 ↔ صنف#3896: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2418
+- الجعبري#2417 ↔ صنف#3897: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2417
+- الجعبري#2416 ↔ صنف#3898: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2416
+- الجعبري#2415 ↔ صنف#3899: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2415
+- الجعبري#2413 ↔ صنف#3900: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2413
+- الجعبري#2412 ↔ صنف#3901: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2412
+- الجعبري#2408 ↔ صنف#3902: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2408
+- الجعبري#2407 ↔ صنف#3903: synced؛ بالقطعة=1.5₪؛ باكيت 100 قطعة=90₪؛ كرتونة 1000 قطعة=790₪. https://jabaristore.com/?app=product.show.2407
+- الجعبري#2406 ↔ صنف#3904: synced؛ بالقطعة=1.5₪؛ باكيت 100 قطعة=90₪؛ كرتونة 1000 قطعة=790₪. https://jabaristore.com/?app=product.show.2406
+- الجعبري#2405 ↔ صنف#3905: synced؛ بالقطعة=1.5₪؛ باكيت 100 قطعة=90₪؛ كرتونة 1000 قطعة=790₪. https://jabaristore.com/?app=product.show.2405
+- الجعبري#2370 ↔ صنف#3906: no_options؛ ماسك ( مصحف ). https://jabaristore.com/?app=product.show.2370
+- الجعبري#2364 ↔ صنف#3907: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2364
+- الجعبري#2362 ↔ صنف#3908: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2362
+- الجعبري#2361 ↔ صنف#3909: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2361
+- الجعبري#2360 ↔ صنف#3910: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2360
+- الجعبري#2359 ↔ صنف#3911: no_options؛ مسابح - سبح لولو 99 حبة ( زهري ). https://jabaristore.com/?app=product.show.2359
+- الجعبري#2358 ↔ صنف#3912: no_options؛ مسابح - سبح لولو 99 حبة ( اسود ). https://jabaristore.com/?app=product.show.2358
+- الجعبري#2357 ↔ صنف#3913: no_options؛ مسابح - سبح لولو 99 حبة ( ازرق ). https://jabaristore.com/?app=product.show.2357
+- الجعبري#2356 ↔ صنف#3914: no_options؛ مسابح - سبح لولو 99 حبة ( سكري ). https://jabaristore.com/?app=product.show.2356
+- الجعبري#2354 ↔ صنف#3915: synced؛ ابيض=26.5₪؛ ايفري=26.5₪؛ ازرق=26.5₪؛ ازرق باهت ( فستقي )=26.5₪؛ ليلكي=26.5₪؛ زهري=26.5₪. https://jabaristore.com/?app=product.show.2354
+- الجعبري#2352 ↔ صنف#3916: synced؛ بالقطعة=3₪؛ 100 قطعة=210₪. https://jabaristore.com/?app=product.show.2352
+- الجعبري#2348 ↔ صنف#3917: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2348
+- الجعبري#2309 ↔ صنف#3918: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2309
+- الجعبري#2307 ↔ صنف#3919: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2307
+- الجعبري#2294 ↔ صنف#3920: synced؛ ابيض=11₪؛ بني=11₪؛ ذهبي=11₪. https://jabaristore.com/?app=product.show.2294
+- الجعبري#2293 ↔ صنف#3921: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.2293
+- الجعبري#2290 ↔ صنف#3922: synced؛ ابيض=11₪؛ بني=11₪؛ ذهبي=11₪. https://jabaristore.com/?app=product.show.2290
+- الجعبري#2289 ↔ صنف#3923: synced؛ ابيض=9₪؛ ذهبي=9₪؛ بني=9₪. https://jabaristore.com/?app=product.show.2289
+- الجعبري#2287 ↔ صنف#3924: synced؛ ابيض=10₪؛ بني=10₪؛ ذهبي=10₪. https://jabaristore.com/?app=product.show.2287
+- الجعبري#2286 ↔ صنف#3925: synced؛ ابيض=8₪؛ بني=8₪؛ ذهبي=8₪. https://jabaristore.com/?app=product.show.2286
+- الجعبري#2285 ↔ صنف#3926: synced؛ ابيض=8.5₪؛ بني=8.5₪؛ ذهبي=8.5₪. https://jabaristore.com/?app=product.show.2285
+- الجعبري#2283 ↔ صنف#3927: no_options؛ ورق تغليف جريدة ( كتابة احمر ). https://jabaristore.com/?app=product.show.2283
+- الجعبري#2282 ↔ صنف#3928: no_options؛ ورق تغليف جريدة ( كتابة بنفسجي ). https://jabaristore.com/?app=product.show.2282
+- الجعبري#2279 ↔ صنف#3929: no_options؛ ورق تغليف جريدة ( كتابة بني ). https://jabaristore.com/?app=product.show.2279
+- الجعبري#2278 ↔ صنف#3930: no_options؛ ورق تغليف ( 20 ورقة ). https://jabaristore.com/?app=product.show.2278
