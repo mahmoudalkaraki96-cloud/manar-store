@@ -104,6 +104,32 @@ class SupplierMissing(RuntimeError):
     pass
 
 
+def original_simple_price(root):
+    prices = [n for n in root.all() if 'price' in n.a.get('class', '').split()]
+    if len(prices) != 1:
+        raise ValueError('simple_price_not_verified')
+    node = prices[0]
+    originals = [n for n in node.all() if n.tag in ('del', 's')]
+    def amount(text):
+        text = text.replace('₪', '').strip()
+        if not re.fullmatch(r'\d+(?:\.\d{1,2})?', text):
+            raise ValueError('simple_price_not_verified')
+        return money(text)
+    if not originals:
+        return amount(node.text())
+    if len(originals) != 1:
+        raise ValueError('simple_price_not_verified')
+    original = amount(originals[0].text())
+    def current(n):
+        if n.tag in ('del', 's'):
+            return ''
+        return norm(' '.join(n.texts + [current(c) for c in n.children]))
+    discounted = amount(current(node))
+    if discounted >= original:
+        raise ValueError('simple_price_not_verified')
+    return original
+
+
 def parse_product(data, source_id):
     if 'الصفحة المطلوبة غير متوفرة' in data:
         raise SupplierMissing('supplier_404')
@@ -125,10 +151,7 @@ def parse_product(data, source_id):
     radios = [n for n in inputs if n.a.get('type') == 'radio']
     result = {'title': titles[0], 'variants': [], 'custom_fields': bool(custom), 'minimum': minimum}
     if not radios:
-        prices = [n.text() for n in root.all() if 'price' in n.a.get('class', '').split()]
-        if len(prices) != 1 or not re.fullmatch(r'\s*\d+(?:\.\d{1,2})?\s*₪?\s*', prices[0]):
-            raise ValueError('simple_price_not_verified')
-        result['simple_price'] = money(prices[0].replace('₪', '').strip())
+        result['simple_price'] = original_simple_price(root)
         return result
     ids = {n.a.get('id'): n for n in radios}
     if len(ids) != len(radios) or None in ids:
@@ -413,7 +436,7 @@ def main():
             sid = row['source_id']
             if 1 <= sid <= args.start:
                 groups.setdefault(sid, []).append(row['id'])
-        done = {r['source_id'] for r in db.query('SELECT source_id FROM jabari_variant_audit WHERE mode=? AND status NOT IN (\'blocked\',\'error\')', [args.mode])}
+        done = {r['source_id'] for r in db.query('SELECT source_id FROM jabari_variant_audit WHERE mode=? AND status NOT IN (\'blocked\',\'error\',\'unsupported_source_price\')', [args.mode])}
         selected = [sid for sid in groups if sid not in done][:args.limit]
         for sid in selected:
             processed+=1
@@ -441,7 +464,7 @@ def main():
                 decision = decide(p,source)
                 if decision == 'ready' and args.mode == 'apply':
                     # Remove only a previous failure record, never a completed record.
-                    db.query("DELETE FROM jabari_variant_audit WHERE source_id=? AND mode='apply' AND status IN ('blocked','error')", [sid])
+                    db.query("DELETE FROM jabari_variant_audit WHERE source_id=? AND mode='apply' AND status IN ('blocked','error','unsupported_source_price')", [sid])
                     apply_variants(db,sid,p,source,token,args.stock)
                     decision = 'synced'
                 else:

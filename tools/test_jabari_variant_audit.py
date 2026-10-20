@@ -46,6 +46,21 @@ def source():
         'custom_fields':False,'minimum':1}
 
 class Tests(unittest.TestCase):
+    def test_original_before_discount_real_4347_markup(self):
+        data='<span>رقم المنتج 4347</span><div id="this-is-product"><h1>دبدوب صغير (6 سم)</h1><span class="price" id="price"> <del>2<sup class="notranslate">₪</sup></del> 1.5<sup class="notranslate">₪</sup></span></div>'
+        self.assertEqual(a.parse_product(data,4347)['simple_price'],200)
+
+    def test_original_25_not_discount_20(self):
+        root=a.HTML('<span class="price"><del>25 ₪</del>20 ₪</span>').root
+        self.assertEqual(a.original_simple_price(root),2500)
+
+    def test_discount_ambiguity_refused(self):
+        for body in ['<del>2</del><del>3</del>1.5', '<del>2</del>3', '<del>2</del>1.5 1', '<del>2</del>']:
+            with self.assertRaises(ValueError):a.original_simple_price(a.HTML('<span class="price">'+body+'</span>').root)
+
+    def test_plain_price_unchanged(self):
+        self.assertEqual(a.original_simple_price(a.HTML('<span class="price">15 ₪</span>').root),1500)
+
     def test_real_supplier_html(self):
         s=a.parse_product(Path(__file__).with_name('fixture-jabari-3780.html').read_text(encoding='utf-8'),3780)
         self.assertEqual([v['price'] for v in s['variants']],[1500,2500,4500])
