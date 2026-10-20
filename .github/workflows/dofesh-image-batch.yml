@@ -8,6 +8,11 @@ on:
         required: true
         default: '100'
         type: string
+      product_ids:
+        description: Optional exact internal product IDs separated by commas
+        required: false
+        default: ''
+        type: string
       mode:
         description: معاينة القائمة بدون تكلفة أو إرسال الصور للمعالجة
         required: true
@@ -18,7 +23,7 @@ on:
           - submit
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: manar-store-image-batch-submit
@@ -42,6 +47,7 @@ jobs:
       - run: pip install --disable-pip-version-check 'openai>=2.15.0,<3' 'Pillow>=11,<13'
       - name: تجهيز ومعالجة صور مسودات دوفش بنفس الستايل السابق
         env:
+          PRODUCT_IDS: ${{ inputs.product_ids }}
           IMAGE_COUNT: ${{ inputs.image_count }}
           BATCH_MODE: ${{ inputs.mode }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -69,3 +75,35 @@ jobs:
           else:
               summary.write_text('## دوفش باتش امج\nلم يتم إنشاء خطة المعالجة؛ راجع سجل الخطوة السابقة.\n', encoding='utf-8')
           PY
+
+      - name: حفظ نتائج باتش الصور في progress
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          plan=Path('dofesh-batch-plan.json')
+          if plan.exists():
+              data=json.loads(plan.read_text())
+              submission=Path('batch-catalog-submission.json')
+              result=json.loads(submission.read_text()) if submission.exists() else {'status':'not_submitted'}
+              with Path('STORE-PROGRESS.md').open('a',encoding='utf-8') as f:
+                  f.write('\n\n### '+datetime.now(ZoneInfo('Asia/Hebron')).isoformat()+' — DOFESH-IMAGE-BATCH\n')
+                  f.write('- Mode: '+data['mode']+'; items: '+', '.join(str(p['item_number']) for p in data['products'])+'\n')
+                  f.write('- Submission: '+json.dumps(result,ensure_ascii=False)+'\n')
+                  f.write('- تجهيز الصور وإرسالها منفصلان عن اكتمال المعالجة واعتماد الصور ونشر المنتجات.\n')
+          PY
+          git config user.name 'Manar image batch'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/image-progress-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/image-progress-attributes"
+          git add STORE-PROGRESS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: Dofesh image batch submission [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done

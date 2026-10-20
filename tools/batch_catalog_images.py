@@ -1,3 +1,4 @@
+from catalog_batch_scope import product_scope
 """Submit resumable catalog image edits to OpenAI Batch without publishing yet."""
 
 import json
@@ -100,6 +101,7 @@ def main():
     count = int(os.environ.get("IMAGE_COUNT", "100"))
     if not 1 <= count <= 500:
         raise ValueError("IMAGE_COUNT must be between 1 and 500")
+    scope = product_scope()
     ensure_tables()
     source_filter = ""
     if os.environ.get("DOFESH_DRAFT_ONLY") == "1":
@@ -109,7 +111,7 @@ def main():
         "FROM product_media m JOIN products p ON p.id=m.product_id "
         "LEFT JOIN image_ai_items ai ON ai.media_id=m.id "
         "WHERE m.is_primary=1 AND m.variant_id IS NULL AND m.url LIKE '/media/imports/%' "
-        "AND p.deleted_at IS NULL AND ai.media_id IS NULL " + source_filter +
+        "AND p.deleted_at IS NULL AND ai.media_id IS NULL " + source_filter + scope +
         f"ORDER BY p.id DESC LIMIT {count}"
     )["results"]
     if not rows:
@@ -151,6 +153,10 @@ def main():
             f"{q(local_id)},{row['media_id']},{row['product_id']},{row['item_number']},{q(row['name'])},{q(row['url'])},'submitted',{now},{now});"
         )
     execute_file("\n".join(statements))
+    Path("batch-catalog-submission.json").write_text(json.dumps({
+        "batch_id":batch.id,"status":batch.status,"requested_count":len(rows),
+        "product_ids":[r["product_id"] for r in rows],
+        "item_numbers":[r["item_number"] for r in rows]},ensure_ascii=False,indent=2),encoding="utf-8")
     print(f"Submitted {len(rows)} images as Batch {batch.id}", flush=True)
     print("The automatic collector will check and publish completed results", flush=True)
 

@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from PIL import Image
 import batch_catalog_images as batch
+from catalog_batch_scope import product_scope
 
 SELECT = """SELECT p.id AS product_id,p.item_number,p.name,m.id AS media_id,m.url
 FROM product_media m JOIN products p ON p.id=m.product_id
@@ -23,8 +24,9 @@ def main():
     mode=os.environ.get('BATCH_MODE','preview')
     if not 1<=count<=100 or mode not in ('preview','submit'):
         raise ValueError('Use 1-100 images and preview or submit mode')
+    scope=product_scope()
     batch.ensure_tables()
-    rows=batch.query(SELECT+str(count))['results']
+    rows=batch.query(SELECT.replace('ORDER BY',scope+'ORDER BY')+str(count))['results']
     Path('dofesh-batch-plan.json').write_text(json.dumps({'name':'دوفش باتش امج','mode':mode,'image_count':len(rows),'products':rows},ensure_ascii=False,indent=2),encoding='utf-8')
     print(f'Dofesh draft images selected: {len(rows)}; mode: {mode}',flush=True)
     if mode=='preview' or not rows:

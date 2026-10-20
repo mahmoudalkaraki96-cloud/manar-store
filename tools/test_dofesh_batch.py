@@ -3,6 +3,16 @@ ROOT=pathlib.Path(__file__).parent
 TREE=ast.parse((ROOT/'dofesh_batch_images.py').read_text(encoding='utf-8'))
 SELECT=next(ast.literal_eval(n.value) for n in TREE.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='SELECT' for t in n.targets))
 class Tests(unittest.TestCase):
+ def test_exact_product_scope_and_invalid_values(self):
+  from catalog_batch_scope import product_scope
+  from unittest.mock import patch
+  with patch.dict(os.environ,{'PRODUCT_IDS':'3785,3797,3785'}):
+   self.assertEqual(product_scope(),' AND p.id IN (3785,3797) ')
+   sql=SELECT.replace('ORDER BY',product_scope()+'ORDER BY')+'100'
+   self.assertIn('p.id IN (3785,3797)',sql)
+  with patch.dict(os.environ,{'PRODUCT_IDS':'1); DROP TABLE products;--'}):
+   with self.assertRaises(ValueError):product_scope()
+
  def test_only_dofesh_drafts_original_primary_unsubmitted(self):
   db=sqlite3.connect(':memory:')
   db.executescript('CREATE TABLE products(id, item_number,name,active,deleted_at);CREATE TABLE product_media(id,product_id,url,is_primary,variant_id);CREATE TABLE product_keywords(product_id,keyword);CREATE TABLE image_ai_items(media_id);')
@@ -22,7 +32,8 @@ class Tests(unittest.TestCase):
   module.urllib.request.build_opener=lambda *_:self.fail('Supplier download in preview')
   old=os.getcwd();prior=os.environ.pop('BATCH_MODE',None)
   try:
-   with tempfile.TemporaryDirectory() as folder:
+   with __import__('contextlib').nullcontext(str((ROOT/'test-preview-output').resolve())) as folder:
+    pathlib.Path(folder).mkdir(exist_ok=True)
     os.chdir(folder)
     try:
      module.main();self.assertTrue(pathlib.Path('dofesh-batch-plan.json').exists())

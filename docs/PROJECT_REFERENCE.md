@@ -344,3 +344,8 @@
 ### 2026-10-20 — استيراد مرشحي دوفش الناقصين كمسودات
 - tools/dofesh_missing_draft_import.py يستقبل المقارنة المكتملة فقط ويرشحmissing/availableدون possible_name_match، ويعيدالتحقق منربطالمصدر/الاسم. لاUPDATEلمنتجاتموجودة؛ الإنشاءذريمعالموردوالكلمةوالمتغيراتوالصوروالتخصيصوaudit_logs. حاجزslug/keyword/supplierوختمoperationtokenيحميانمنالتكرار/التعديلالمتزامن.
 - active0ومخزونالمنتجوالمتغيرات0دائمًا؛ صورروابطالمصدرHTTPSuploadفقط، وحقولتخصيصنصيةمتحققةالتسمية. الحدالأدنىللكمية محفوظspecificationsللمراجعةقبلنشرالمسودة.7اختباراتناجحة. تقارير docs/dofesh-draft-import/latest.json وimported-drafts.csv وSTORE-PROGRESS. workflow dofesh-missing-draft-import.yml يدويوpreviewافتراضي.
+
+
+### 2026-10-20 — تقييد باتش الصور لمنتجات محددة
+- catalog_batch_scope.product_scopeيتحقق منPRODUCT_IDSويطبّقهفيtools/dofesh_batch_images.py وbatch_catalog_images.py؛ inputproduct_idsاختياريفيdofesh-image-batch.yml. بدونهالسلوكالقديممحفوظ.4اختباراتنجحتبمافيهاSQLالنطاقورفضالحقنوpreview.
+- batch_catalog_images.pyيكتبbatch-catalog-submission.jsonبمعرفBatchوعددالصوروالمنتجاتبعدحفظD1، وتلحقworkflowملخصالخطوةبـSTORE-PROGRESSمعدمجunion. لاArtifactsجديدةولانشرللمنتجاتمنهذاworkflow.
