@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T09:33:54.308663+03:00",
+  "updated_at": "2026-10-20T09:44:21.830713+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
   "run_processed": 125,
@@ -15051,6 +15051,1006 @@
       "status": "no_options",
       "detail": "{\"item_number\": 4295, \"source\": {\"title\": \"خرز مات ابيض 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792478033207
+    },
+    {
+      "source_id": 1624,
+      "mode": "apply",
+      "product_id": 3296,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4296, \"source\": {\"title\": \"خرز مات اخضر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478040515
+    },
+    {
+      "source_id": 1623,
+      "mode": "apply",
+      "product_id": 3297,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4297, \"source\": {\"title\": \"خرز مات احمر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478045503
+    },
+    {
+      "source_id": 1622,
+      "mode": "apply",
+      "product_id": 3298,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4298, \"source\": {\"title\": \"خرز مات اصفر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478050547
+    },
+    {
+      "source_id": 1621,
+      "mode": "apply",
+      "product_id": 3299,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4299, \"source\": {\"title\": \"خرز مخمل ابيض 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478055721
+    },
+    {
+      "source_id": 1620,
+      "mode": "apply",
+      "product_id": 3300,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4300, \"source\": {\"title\": \"خرز خشب اصفر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478060514
+    },
+    {
+      "source_id": 1619,
+      "mode": "apply",
+      "product_id": 3301,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4301, \"source\": {\"title\": \"خرز خشب احمر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478065716
+    },
+    {
+      "source_id": 1618,
+      "mode": "apply",
+      "product_id": 3302,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4302, \"source\": {\"title\": \"خرز بلاستيك احمر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478070546
+    },
+    {
+      "source_id": 1617,
+      "mode": "apply",
+      "product_id": 3303,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4303, \"source\": {\"title\": \"خرز بلاستيك اخضر 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478075697
+    },
+    {
+      "source_id": 1616,
+      "mode": "apply",
+      "product_id": 3304,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4304, \"source\": {\"title\": \"خرز بلاستيك سكري 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478080749
+    },
+    {
+      "source_id": 1615,
+      "mode": "apply",
+      "product_id": 3305,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4305, \"source\": {\"title\": \"خرز خشب تركواز 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478085527
+    },
+    {
+      "source_id": 1614,
+      "mode": "apply",
+      "product_id": 3306,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4306, \"source\": {\"title\": \"فواصل خشب ازرق سماوي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478090544
+    },
+    {
+      "source_id": 1613,
+      "mode": "apply",
+      "product_id": 3307,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4307, \"source\": {\"title\": \"فواصل خشب فستقي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478095501
+    },
+    {
+      "source_id": 1612,
+      "mode": "apply",
+      "product_id": 3308,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4308, \"source\": {\"title\": \"فواصل خشب ليلكي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478100547
+    },
+    {
+      "source_id": 1611,
+      "mode": "apply",
+      "product_id": 3309,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4309, \"source\": {\"title\": \"فواصل خشب لون طبيعي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478105516
+    },
+    {
+      "source_id": 1610,
+      "mode": "apply",
+      "product_id": 3310,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4310, \"source\": {\"title\": \"فواصل خشب احمر 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478110532
+    },
+    {
+      "source_id": 1609,
+      "mode": "apply",
+      "product_id": 3311,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4311, \"source\": {\"title\": \"فواصل خشب ابيض 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478115502
+    },
+    {
+      "source_id": 1608,
+      "mode": "apply",
+      "product_id": 3312,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4312, \"source\": {\"title\": \"فواصل خشب فضي 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478120515
+    },
+    {
+      "source_id": 1607,
+      "mode": "apply",
+      "product_id": 3313,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4313, \"source\": {\"title\": \"فواصل خشب فوشي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478125527
+    },
+    {
+      "source_id": 1606,
+      "mode": "apply",
+      "product_id": 3314,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4314, \"source\": {\"title\": \"فواصل خشب اصفر 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478130515
+    },
+    {
+      "source_id": 1605,
+      "mode": "apply",
+      "product_id": 3315,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4315, \"source\": {\"title\": \"فواصل خشب ازرق 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478135520
+    },
+    {
+      "source_id": 1604,
+      "mode": "apply",
+      "product_id": 3316,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4316, \"source\": {\"title\": \"فواصل خشب فضي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478140528
+    },
+    {
+      "source_id": 1603,
+      "mode": "apply",
+      "product_id": 3317,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4317, \"source\": {\"title\": \"فواصل خشب ذهبي 10ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478145519
+    },
+    {
+      "source_id": 1602,
+      "mode": "apply",
+      "product_id": 3318,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4318, \"source\": {\"title\": \"فواصل خشب زهري 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478150551
+    },
+    {
+      "source_id": 1601,
+      "mode": "apply",
+      "product_id": 3319,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4319, \"source\": {\"title\": \"فواصل خشب ملون 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478155732
+    },
+    {
+      "source_id": 1600,
+      "mode": "apply",
+      "product_id": 3320,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4320, \"source\": {\"title\": \"فواصل بلاستيك تركواز 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478160747
+    },
+    {
+      "source_id": 1599,
+      "mode": "apply",
+      "product_id": 3321,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4321, \"source\": {\"title\": \"فواصل خشب ملون 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478165477
+    },
+    {
+      "source_id": 1598,
+      "mode": "apply",
+      "product_id": 3322,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4322, \"source\": {\"title\": \"فواصل خشب فوشي 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478170693
+    },
+    {
+      "source_id": 1597,
+      "mode": "apply",
+      "product_id": 3323,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4323, \"source\": {\"title\": \"خرز خشب ملون 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478175759
+    },
+    {
+      "source_id": 1596,
+      "mode": "apply",
+      "product_id": 3324,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4324, \"source\": {\"title\": \"خرز خشب منقط 12ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478180522
+    },
+    {
+      "source_id": 1595,
+      "mode": "apply",
+      "product_id": 3325,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4325, \"source\": {\"title\": \"فواصل خشب ابيض 8ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478185528
+    },
+    {
+      "source_id": 1589,
+      "mode": "apply",
+      "product_id": 1445,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2445, \"source\": {\"title\": \"لون بودرة ( مايكه ) برونز\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478190742
+    },
+    {
+      "source_id": 1587,
+      "mode": "apply",
+      "product_id": 1446,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2446, \"source\": {\"title\": \"لون بودره ( مايكه ) اخضر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478195696
+    },
+    {
+      "source_id": 1586,
+      "mode": "apply",
+      "product_id": 1447,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2447, \"source\": {\"title\": \"لون بودره ( مايكه ) فضي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478200792
+    },
+    {
+      "source_id": 1583,
+      "mode": "apply",
+      "product_id": 1448,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2448, \"source\": {\"title\": \"لون بودرة ( مايكه ) ابيض\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478205697
+    },
+    {
+      "source_id": 1581,
+      "mode": "apply",
+      "product_id": 3326,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4326, \"source\": {\"title\": \"تل ابيض كريستال عرض 3متر\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478210765
+    },
+    {
+      "source_id": 1579,
+      "mode": "apply",
+      "product_id": 1449,
+      "status": "synced",
+      "detail": "{\"item_number\": 2449, \"name\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1500, \"active\": true}, {\"name\": \"5 ضمم\", \"price\": 6000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": true, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1449\", \"source_url\": \"https://jabaristore.com/?app=product.show.1579\"}",
+      "updated_at": 1792478215742
+    },
+    {
+      "source_id": 1576,
+      "mode": "apply",
+      "product_id": 3327,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4327, \"source\": {\"title\": \"زيت حلم العطري 100 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478220739
+    },
+    {
+      "source_id": 1575,
+      "mode": "apply",
+      "product_id": 3328,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4328, \"source\": {\"title\": \"زيت ياسمين العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478225505
+    },
+    {
+      "source_id": 1574,
+      "mode": "apply",
+      "product_id": 3329,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4329, \"source\": {\"title\": \"زيت مانجا العطري 100Ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478230776
+    },
+    {
+      "source_id": 1573,
+      "mode": "apply",
+      "product_id": 1450,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2450, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478235502
+    },
+    {
+      "source_id": 1572,
+      "mode": "apply",
+      "product_id": 1451,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2451, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478240518
+    },
+    {
+      "source_id": 1571,
+      "mode": "apply",
+      "product_id": 1452,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2452, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478245736
+    },
+    {
+      "source_id": 1570,
+      "mode": "apply",
+      "product_id": 1453,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2453, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478250700
+    },
+    {
+      "source_id": 1569,
+      "mode": "apply",
+      "product_id": 3330,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4330, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478255513
+    },
+    {
+      "source_id": 1568,
+      "mode": "apply",
+      "product_id": 3331,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4331, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478260519
+    },
+    {
+      "source_id": 1567,
+      "mode": "apply",
+      "product_id": 3332,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4332, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478265505
+    },
+    {
+      "source_id": 1566,
+      "mode": "apply",
+      "product_id": 3333,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4333, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478270538
+    },
+    {
+      "source_id": 1565,
+      "mode": "apply",
+      "product_id": 3334,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4334, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478275722
+    },
+    {
+      "source_id": 1564,
+      "mode": "apply",
+      "product_id": 3335,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4335, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478280715
+    },
+    {
+      "source_id": 1563,
+      "mode": "apply",
+      "product_id": 3336,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4336, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478285505
+    },
+    {
+      "source_id": 1562,
+      "mode": "apply",
+      "product_id": 3337,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4337, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478290726
+    },
+    {
+      "source_id": 1561,
+      "mode": "apply",
+      "product_id": 3338,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4338, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478295521
+    },
+    {
+      "source_id": 1560,
+      "mode": "apply",
+      "product_id": 3339,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4339, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478300749
+    },
+    {
+      "source_id": 1559,
+      "mode": "apply",
+      "product_id": 3340,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4340, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478305528
+    },
+    {
+      "source_id": 1558,
+      "mode": "apply",
+      "product_id": 3341,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4341, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478310560
+    },
+    {
+      "source_id": 1557,
+      "mode": "apply",
+      "product_id": 3342,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4342, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478315541
+    },
+    {
+      "source_id": 1556,
+      "mode": "apply",
+      "product_id": 3343,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4343, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478320538
+    },
+    {
+      "source_id": 1555,
+      "mode": "apply",
+      "product_id": 3344,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4344, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478325540
+    },
+    {
+      "source_id": 1554,
+      "mode": "apply",
+      "product_id": 3345,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4345, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478330708
+    },
+    {
+      "source_id": 1553,
+      "mode": "apply",
+      "product_id": 3346,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4346, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478335562
+    },
+    {
+      "source_id": 1552,
+      "mode": "apply",
+      "product_id": 3347,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4347, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478340717
+    },
+    {
+      "source_id": 1551,
+      "mode": "apply",
+      "product_id": 3348,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4348, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478345723
+    },
+    {
+      "source_id": 1550,
+      "mode": "apply",
+      "product_id": 3349,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4349, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478350506
+    },
+    {
+      "source_id": 1549,
+      "mode": "apply",
+      "product_id": 3350,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4350, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478355540
+    },
+    {
+      "source_id": 1548,
+      "mode": "apply",
+      "product_id": 3351,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4351, \"source\": {\"title\": \"Super Perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478360536
+    },
+    {
+      "source_id": 1547,
+      "mode": "apply",
+      "product_id": 3352,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4352, \"source\": {\"title\": \"Super perlee\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 700}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478365539
+    },
+    {
+      "source_id": 1543,
+      "mode": "apply",
+      "product_id": 3353,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4353}",
+      "updated_at": 1792478370524
+    },
+    {
+      "source_id": 1542,
+      "mode": "apply",
+      "product_id": 3354,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4354}",
+      "updated_at": 1792478375523
+    },
+    {
+      "source_id": 1541,
+      "mode": "apply",
+      "product_id": 3355,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4355}",
+      "updated_at": 1792478380527
+    },
+    {
+      "source_id": 1540,
+      "mode": "apply",
+      "product_id": 3356,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4356}",
+      "updated_at": 1792478385536
+    },
+    {
+      "source_id": 1539,
+      "mode": "apply",
+      "product_id": 3357,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4357}",
+      "updated_at": 1792478390554
+    },
+    {
+      "source_id": 1538,
+      "mode": "apply",
+      "product_id": 3358,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4358}",
+      "updated_at": 1792478395539
+    },
+    {
+      "source_id": 1537,
+      "mode": "apply",
+      "product_id": 3359,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4359}",
+      "updated_at": 1792478400750
+    },
+    {
+      "source_id": 1536,
+      "mode": "apply",
+      "product_id": 3360,
+      "status": "synced",
+      "detail": "{\"item_number\": 4360, \"name\": \"أكياس سلفان مع قلوب 40*28 cm\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان مع قلوب 40*28 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"احمر\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"زهري\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"فوشي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ازرق\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"اصفر\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ليلكي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان مع قلوب 40*28 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 2500, \"active\": false}, {\"name\": \"احمر\", \"price\": 2500, \"active\": true}, {\"name\": \"زهري\", \"price\": 2500, \"active\": true}, {\"name\": \"فوشي\", \"price\": 2500, \"active\": true}, {\"name\": \"ازرق\", \"price\": 2500, \"active\": false}, {\"name\": \"اصفر\", \"price\": 2500, \"active\": true}, {\"name\": \"ليلكي\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"شفاف\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"احمر\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"زهري\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"فوشي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ازرق\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"اصفر\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ليلكي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3360\", \"source_url\": \"https://jabaristore.com/?app=product.show.1536\"}",
+      "updated_at": 1792478405991
+    },
+    {
+      "source_id": 1535,
+      "mode": "apply",
+      "product_id": 3361,
+      "status": "synced",
+      "detail": "{\"item_number\": 4361, \"name\": \"أكياس سلفان مع قلوب 30*20 cm\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان مع قلوب 30*20 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"احمر\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"زهري\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"فوشي\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"ازرق\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"اصفر\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان مع قلوب 30*20 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 2000, \"active\": true}, {\"name\": \"احمر\", \"price\": 2000, \"active\": true}, {\"name\": \"زهري\", \"price\": 2000, \"active\": true}, {\"name\": \"فوشي\", \"price\": 2000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 2000, \"active\": true}, {\"name\": \"اصفر\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"شفاف\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"احمر\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"زهري\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"فوشي\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"ازرق\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"اصفر\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3361\", \"source_url\": \"https://jabaristore.com/?app=product.show.1535\"}",
+      "updated_at": 1792478410981
+    },
+    {
+      "source_id": 1534,
+      "mode": "apply",
+      "product_id": 3362,
+      "status": "synced",
+      "detail": "{\"item_number\": 4362, \"name\": \"أكياس سلفان مع قلوب 25*18 cm\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان مع قلوب 25*18 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ليلكي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"احمر\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهري\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"فوشي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان مع قلوب 25*18 cm\", \"variants\": [{\"name\": \"شفاف\", \"price\": 1500, \"active\": true}, {\"name\": \"ازرق\", \"price\": 1500, \"active\": true}, {\"name\": \"ليلكي\", \"price\": 1500, \"active\": true}, {\"name\": \"احمر\", \"price\": 1500, \"active\": true}, {\"name\": \"زهري\", \"price\": 1500, \"active\": true}, {\"name\": \"فوشي\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"شفاف\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ليلكي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"احمر\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهري\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"فوشي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3362\", \"source_url\": \"https://jabaristore.com/?app=product.show.1534\"}",
+      "updated_at": 1792478416017
+    },
+    {
+      "source_id": 1515,
+      "mode": "apply",
+      "product_id": 3363,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4363, \"source\": {\"title\": \"طقم زرادية (3 قطعة) حجم كبير\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478420693
+    },
+    {
+      "source_id": 1510,
+      "mode": "apply",
+      "product_id": 3364,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4364, \"source\": {\"title\": \"زيت اكسيرجوڤ العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478425777
+    },
+    {
+      "source_id": 1509,
+      "mode": "apply",
+      "product_id": 3365,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4365, \"source\": {\"title\": \"زيت انفكتس العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478430535
+    },
+    {
+      "source_id": 1508,
+      "mode": "apply",
+      "product_id": 3366,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4366, \"source\": {\"title\": \"زيت ليبارتور العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478435542
+    },
+    {
+      "source_id": 1507,
+      "mode": "apply",
+      "product_id": 3367,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4367, \"source\": {\"title\": \"زيت بويزون العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478440660
+    },
+    {
+      "source_id": 1506,
+      "mode": "apply",
+      "product_id": 3368,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4368, \"source\": {\"title\": \"زيت مون باريس العطري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478445703
+    },
+    {
+      "source_id": 1505,
+      "mode": "apply",
+      "product_id": 3369,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4369, \"source\": {\"title\": \"زيت يارا العطري 100mlزيوت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478450692
+    },
+    {
+      "source_id": 1504,
+      "mode": "apply",
+      "product_id": 3370,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4370, \"source\": {\"title\": \"زيت توباكو فانيل العطري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478455703
+    },
+    {
+      "source_id": 1503,
+      "mode": "apply",
+      "product_id": 3371,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4371, \"source\": {\"title\": \"زيت فانتازيا العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478460544
+    },
+    {
+      "source_id": 1502,
+      "mode": "apply",
+      "product_id": 3372,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4372, \"source\": {\"title\": \"زيت غبار الذهب العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478465774
+    },
+    {
+      "source_id": 1501,
+      "mode": "apply",
+      "product_id": 3373,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4373, \"source\": {\"title\": \"زيت سي ارماني العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478470715
+    },
+    {
+      "source_id": 1500,
+      "mode": "apply",
+      "product_id": 3374,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4374, \"source\": {\"title\": \"زيت ون مليون العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478475524
+    },
+    {
+      "source_id": 1499,
+      "mode": "apply",
+      "product_id": 3375,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4375, \"source\": {\"title\": \"زيت ايڤوريا الطري 100mlزيوت\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478480533
+    },
+    {
+      "source_id": 1498,
+      "mode": "apply",
+      "product_id": 3376,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4376, \"source\": {\"title\": \"زيت سوفاج العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478485540
+    },
+    {
+      "source_id": 1497,
+      "mode": "apply",
+      "product_id": 3377,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4377, \"source\": {\"title\": \"زيت اناناس العطري 100 ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478490734
+    },
+    {
+      "source_id": 1496,
+      "mode": "apply",
+      "product_id": 3378,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4378, \"source\": {\"title\": \"زيت سيدر وود العطري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478495522
+    },
+    {
+      "source_id": 1495,
+      "mode": "apply",
+      "product_id": 3379,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4379, \"source\": {\"title\": \"زيت جونسون العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478500648
+    },
+    {
+      "source_id": 1494,
+      "mode": "apply",
+      "product_id": 3380,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4380, \"source\": {\"title\": \"زيت عود شغف العطري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478505754
+    },
+    {
+      "source_id": 1493,
+      "mode": "apply",
+      "product_id": 3381,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4381, \"source\": {\"title\": \"زيت خوخ العطري\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478510797
+    },
+    {
+      "source_id": 1489,
+      "mode": "apply",
+      "product_id": 3382,
+      "status": "synced",
+      "detail": "{\"item_number\": 4382, \"name\": \"علب تغليف 5*25*15 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 5*25*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"بني\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"فضي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 5*25*15 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2500, \"active\": true}, {\"name\": \"بني\", \"price\": 2500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 2500, \"active\": true}, {\"name\": \"فضي\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"بني\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"فضي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3382\", \"source_url\": \"https://jabaristore.com/?app=product.show.1489\"}",
+      "updated_at": 1792478515797
+    },
+    {
+      "source_id": 1488,
+      "mode": "apply",
+      "product_id": 3383,
+      "status": "synced",
+      "detail": "{\"item_number\": 4383, \"name\": \"علب تغليف 3*20*20 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 3*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"بني\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 3*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2500, \"active\": true}, {\"name\": \"بني\", \"price\": 2500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 2500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"بني\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3383\", \"source_url\": \"https://jabaristore.com/?app=product.show.1488\"}",
+      "updated_at": 1792478520950
+    },
+    {
+      "source_id": 1486,
+      "mode": "apply",
+      "product_id": 3384,
+      "status": "synced",
+      "detail": "{\"item_number\": 4384, \"name\": \"علب تغليف 20*10*10\", \"before_price\": 1800, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 20*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1800, \"active\": true, \"supplier_price\": 1650}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1800, \"active\": false, \"supplier_price\": 1650}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": false, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1800, \"active\": true, \"supplier_price\": 1650}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 20*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1650, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1650, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 15000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1650, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1800, \"active\": true, \"supplier_price\": 1650}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1800, \"active\": false, \"supplier_price\": 1650}, {\"name\": \"بني / 100 قطعة\", \"price\": 16000, \"active\": false, \"supplier_price\": 15000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1800, \"active\": true, \"supplier_price\": 1650}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3384\", \"source_url\": \"https://jabaristore.com/?app=product.show.1486\"}",
+      "updated_at": 1792478525805
+    },
+    {
+      "source_id": 1485,
+      "mode": "apply",
+      "product_id": 3385,
+      "status": "synced",
+      "detail": "{\"item_number\": 4385, \"name\": \"علب تغليف 7*10*10\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 7*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 7*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1200, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3385\", \"source_url\": \"https://jabaristore.com/?app=product.show.1485\"}",
+      "updated_at": 1792478530957
+    },
+    {
+      "source_id": 1483,
+      "mode": "apply",
+      "product_id": 3386,
+      "status": "synced",
+      "detail": "{\"item_number\": 4386, \"name\": \"علب تغليف 5*10*10\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 5*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 5*10*10\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3386\", \"source_url\": \"https://jabaristore.com/?app=product.show.1483\"}",
+      "updated_at": 1792478535800
+    },
+    {
+      "source_id": 1482,
+      "mode": "apply",
+      "product_id": 3387,
+      "status": "synced",
+      "detail": "{\"item_number\": 4387, \"name\": \"تغليف pvc 6*6*14 ( 10 قطع )\", \"before_price\": 1550, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 6*6*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 6*6*14 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 12000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1400, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 12000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"بني / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1550, \"active\": true, \"supplier_price\": 1400}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 13000, \"active\": true, \"supplier_price\": 12000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3387\", \"source_url\": \"https://jabaristore.com/?app=product.show.1482\"}",
+      "updated_at": 1792478540973
+    },
+    {
+      "source_id": 1480,
+      "mode": "apply",
+      "product_id": 3388,
+      "status": "synced",
+      "detail": "{\"item_number\": 4388, \"name\": \"علب تغليف 5*7*7\", \"before_price\": 1000, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 5*7*7\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 5*7*7\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 900, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3388\", \"source_url\": \"https://jabaristore.com/?app=product.show.1480\"}",
+      "updated_at": 1792478545934
+    },
+    {
+      "source_id": 1479,
+      "mode": "apply",
+      "product_id": 3389,
+      "status": "synced",
+      "detail": "{\"item_number\": 4389, \"name\": \"علب تغليف pvc 4*8*8\", \"before_price\": 1050, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف pvc 4*8*8\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف pvc 4*8*8\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"بني / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3389\", \"source_url\": \"https://jabaristore.com/?app=product.show.1479\"}",
+      "updated_at": 1792478550943
+    },
+    {
+      "source_id": 1477,
+      "mode": "apply",
+      "product_id": 3390,
+      "status": "synced",
+      "detail": "{\"item_number\": 4390, \"name\": \"علب تغليف 7*9*9\", \"before_price\": 1250, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 7*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1250, \"active\": false, \"supplier_price\": 1100}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1250, \"active\": false, \"supplier_price\": 1100}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 7*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": false}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": false}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1250, \"active\": false, \"supplier_price\": 1100}, {\"name\": \"بني / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1250, \"active\": false, \"supplier_price\": 1100}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10500, \"active\": false, \"supplier_price\": 10000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3390\", \"source_url\": \"https://jabaristore.com/?app=product.show.1477\"}",
+      "updated_at": 1792478555778
+    },
+    {
+      "source_id": 1476,
+      "mode": "apply",
+      "product_id": 3391,
+      "status": "synced",
+      "detail": "{\"item_number\": 4391, \"name\": \"علب تغليف 5*9*9\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 5*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 5*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3391\", \"source_url\": \"https://jabaristore.com/?app=product.show.1476\"}",
+      "updated_at": 1792478560763
+    },
+    {
+      "source_id": 1475,
+      "mode": "apply",
+      "product_id": 3392,
+      "status": "synced",
+      "detail": "{\"item_number\": 4392, \"name\": \"علب تغليف 4*9*9\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 4*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 4*9*9\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"بني / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true, \"supplier_price\": 9000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3392\", \"source_url\": \"https://jabaristore.com/?app=product.show.1475\"}",
+      "updated_at": 1792478565757
+    },
+    {
+      "source_id": 1474,
+      "mode": "apply",
+      "product_id": 3393,
+      "status": "synced",
+      "detail": "{\"item_number\": 4393, \"name\": \"علب تغليف 5*8*8 pvc\", \"before_price\": 1050, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف 5*8*8 pvc\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف 5*8*8 pvc\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 9500, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 950, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 9500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"بني / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"بني / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1050, \"active\": true, \"supplier_price\": 950}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 10000, \"active\": true, \"supplier_price\": 9500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3393\", \"source_url\": \"https://jabaristore.com/?app=product.show.1474\"}",
+      "updated_at": 1792478570767
+    },
+    {
+      "source_id": 1471,
+      "mode": "apply",
+      "product_id": 3394,
+      "status": "synced",
+      "detail": "{\"item_number\": 4394, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*5*2 ( 10 قطع )\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*5*2 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ذهبي\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*5*2 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 600, \"active\": true}, {\"name\": \"بني\", \"price\": 600, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 600, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"ذهبي\", \"price\": 700, \"active\": true, \"supplier_price\": 600}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3394\", \"source_url\": \"https://jabaristore.com/?app=product.show.1471\"}",
+      "updated_at": 1792478575806
+    },
+    {
+      "source_id": 1470,
+      "mode": "apply",
+      "product_id": 3395,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4395, \"source\": {\"title\": \"زبدة جوز الهند\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478580528
+    },
+    {
+      "source_id": 1468,
+      "mode": "apply",
+      "product_id": 1454,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2454, \"source\": {\"title\": \"لاصق مع منشف 500ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792478585543
+    },
+    {
+      "source_id": 1467,
+      "mode": "apply",
+      "product_id": 3396,
+      "status": "synced",
+      "detail": "{\"item_number\": 4396, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*20*20 ( 10 قطع )\", \"before_price\": 2350, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*20*20 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3000, \"active\": true}, {\"name\": \"بني\", \"price\": 3000, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 3000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": false, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3396\", \"source_url\": \"https://jabaristore.com/?app=product.show.1467\"}",
+      "updated_at": 1792478590766
+    },
+    {
+      "source_id": 1465,
+      "mode": "apply",
+      "product_id": 3397,
+      "status": "synced",
+      "detail": "{\"item_number\": 4397, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*33*26 ( 10 قطع )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*33*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*33*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 3500, \"active\": false}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3397\", \"source_url\": \"https://jabaristore.com/?app=product.show.1465\"}",
+      "updated_at": 1792478595809
+    },
+    {
+      "source_id": 1463,
+      "mode": "apply",
+      "product_id": 3398,
+      "status": "synced",
+      "detail": "{\"item_number\": 4398, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم (10*25*20) ( 10 قطع )\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم (10*25*20) ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم (10*25*20) ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": false}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3398\", \"source_url\": \"https://jabaristore.com/?app=product.show.1463\"}",
+      "updated_at": 1792478600793
+    },
+    {
+      "source_id": 1462,
+      "mode": "apply",
+      "product_id": 3399,
+      "status": "synced",
+      "detail": "{\"item_number\": 4399, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*35*35 ( 10 قطع )\", \"before_price\": 2450, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*35*35 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*35*35 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3500, \"active\": true}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3399\", \"source_url\": \"https://jabaristore.com/?app=product.show.1462\"}",
+      "updated_at": 1792478605755
+    },
+    {
+      "source_id": 1461,
+      "mode": "apply",
+      "product_id": 3400,
+      "status": "synced",
+      "detail": "{\"item_number\": 4400, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*40 ( 10 قطع )\", \"before_price\": 3150, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*40 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}, {\"name\": \"ذهبي\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}, {\"name\": \"بني\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*40 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 5000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 5000, \"active\": true}, {\"name\": \"بني\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}, {\"name\": \"ذهبي\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}, {\"name\": \"بني\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3400\", \"source_url\": \"https://jabaristore.com/?app=product.show.1461\"}",
+      "updated_at": 1792478610770
+    },
+    {
+      "source_id": 1460,
+      "mode": "apply",
+      "product_id": 3401,
+      "status": "synced",
+      "detail": "{\"item_number\": 4401, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*35*35 ( 10 قطع )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*35*35 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4700, \"active\": false, \"supplier_price\": 4500}, {\"name\": \"بني\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"ذهبي\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*35*35 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4500, \"active\": false}, {\"name\": \"بني\", \"price\": 4500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 4700, \"active\": false, \"supplier_price\": 4500}, {\"name\": \"بني\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"ذهبي\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3401\", \"source_url\": \"https://jabaristore.com/?app=product.show.1460\"}",
+      "updated_at": 1792478615981
+    },
+    {
+      "source_id": 1459,
+      "mode": "apply",
+      "product_id": 3402,
+      "status": "synced",
+      "detail": "{\"item_number\": 4402, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 40*40*5 ( 10 قطع )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 40*40*5 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"بني\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"ذهبي\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 40*40*5 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4500, \"active\": true}, {\"name\": \"بني\", \"price\": 4500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 4500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"بني\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}, {\"name\": \"ذهبي\", \"price\": 4700, \"active\": true, \"supplier_price\": 4500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3402\", \"source_url\": \"https://jabaristore.com/?app=product.show.1459\"}",
+      "updated_at": 1792478620790
+    },
+    {
+      "source_id": 1458,
+      "mode": "apply",
+      "product_id": 3403,
+      "status": "synced",
+      "detail": "{\"item_number\": 4403, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*30*25 ( 10 قطع )\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*30*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*30*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": true}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3403\", \"source_url\": \"https://jabaristore.com/?app=product.show.1458\"}",
+      "updated_at": 1792478625743
+    },
+    {
+      "source_id": 1457,
+      "mode": "apply",
+      "product_id": 3404,
+      "status": "synced",
+      "detail": "{\"item_number\": 4404, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*30*25 ( 10 قطع )\", \"before_price\": 2350, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*30*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}, {\"name\": \"بني\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}, {\"name\": \"ذهبي\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*30*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3800, \"active\": true}, {\"name\": \"بني\", \"price\": 3800, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}, {\"name\": \"بني\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}, {\"name\": \"ذهبي\", \"price\": 4000, \"active\": true, \"supplier_price\": 3800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3404\", \"source_url\": \"https://jabaristore.com/?app=product.show.1457\"}",
+      "updated_at": 1792478630760
+    },
+    {
+      "source_id": 1456,
+      "mode": "apply",
+      "product_id": 3405,
+      "status": "synced",
+      "detail": "{\"item_number\": 4405, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*26 ( 10 قطع )\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"بني\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ذهبي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 10*40*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 4000, \"active\": true}, {\"name\": \"بني\", \"price\": 4000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"بني\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ذهبي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3405\", \"source_url\": \"https://jabaristore.com/?app=product.show.1456\"}",
+      "updated_at": 1792478635762
+    },
+    {
+      "source_id": 1455,
+      "mode": "apply",
+      "product_id": 3406,
+      "status": "synced",
+      "detail": "{\"item_number\": 4406, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*40*26 ( 10 قطع )\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*40*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*40*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3500, \"active\": true}, {\"name\": \"بني\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"ذهبي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"بني\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3406\", \"source_url\": \"https://jabaristore.com/?app=product.show.1455\"}",
+      "updated_at": 1792478640771
+    },
+    {
+      "source_id": 1454,
+      "mode": "apply",
+      "product_id": 3407,
+      "status": "synced",
+      "detail": "{\"item_number\": 4407, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*33*26 ( 10 قطع )\", \"before_price\": 2450, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*33*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}, {\"name\": \"ذهبي\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}, {\"name\": \"بني\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*33*26 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3200, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3200, \"active\": true}, {\"name\": \"بني\", \"price\": 3200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}, {\"name\": \"ذهبي\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}, {\"name\": \"بني\", \"price\": 3400, \"active\": true, \"supplier_price\": 3200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3407\", \"source_url\": \"https://jabaristore.com/?app=product.show.1454\"}",
+      "updated_at": 1792478646210
+    },
+    {
+      "source_id": 1453,
+      "mode": "apply",
+      "product_id": 3408,
+      "status": "synced",
+      "detail": "{\"item_number\": 4408, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*18 ( 10 قطع )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*18 ( 10 قطعة )\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*18 ( 10 قطعة )\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 3000, \"active\": true}, {\"name\": \"بني\", \"price\": 3000, \"active\": true}, {\"name\": \"ابيض\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3408\", \"source_url\": \"https://jabaristore.com/?app=product.show.1453\"}",
+      "updated_at": 1792478650802
+    },
+    {
+      "source_id": 1448,
+      "mode": "apply",
+      "product_id": 1455,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2455}",
+      "updated_at": 1792478655718
+    },
+    {
+      "source_id": 1447,
+      "mode": "apply",
+      "product_id": 3409,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4409}",
+      "updated_at": 1792478660734
     }
   ]
 }

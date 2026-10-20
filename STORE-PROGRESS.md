@@ -4662,3 +4662,139 @@
 - الجعبري#1627 ↔ صنف#4293: no_options؛ خرز مات اخضر 10ml. https://jabaristore.com/?app=product.show.1627
 - الجعبري#1626 ↔ صنف#4294: no_options؛ خرز مات برتقالي 10ml. https://jabaristore.com/?app=product.show.1626
 - الجعبري#1625 ↔ صنف#4295: no_options؛ خرز مات ابيض 10ml. https://jabaristore.com/?app=product.show.1625
+
+
+### 2026-10-20T09:44:21.830713+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T09:44:21.830713+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 971, "synced": 706, "unsupported_source_price": 329}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#1624 ↔ صنف#4296: no_options؛ خرز مات اخضر 8ml. https://jabaristore.com/?app=product.show.1624
+- الجعبري#1623 ↔ صنف#4297: no_options؛ خرز مات احمر 8ml. https://jabaristore.com/?app=product.show.1623
+- الجعبري#1622 ↔ صنف#4298: no_options؛ خرز مات اصفر 8ml. https://jabaristore.com/?app=product.show.1622
+- الجعبري#1621 ↔ صنف#4299: no_options؛ خرز مخمل ابيض 10ml. https://jabaristore.com/?app=product.show.1621
+- الجعبري#1620 ↔ صنف#4300: no_options؛ خرز خشب اصفر 8ml. https://jabaristore.com/?app=product.show.1620
+- الجعبري#1619 ↔ صنف#4301: no_options؛ خرز خشب احمر 8ml. https://jabaristore.com/?app=product.show.1619
+- الجعبري#1618 ↔ صنف#4302: no_options؛ خرز بلاستيك احمر 8ml. https://jabaristore.com/?app=product.show.1618
+- الجعبري#1617 ↔ صنف#4303: no_options؛ خرز بلاستيك اخضر 8ml. https://jabaristore.com/?app=product.show.1617
+- الجعبري#1616 ↔ صنف#4304: no_options؛ خرز بلاستيك سكري 8ml. https://jabaristore.com/?app=product.show.1616
+- الجعبري#1615 ↔ صنف#4305: no_options؛ خرز خشب تركواز 8ml. https://jabaristore.com/?app=product.show.1615
+- الجعبري#1614 ↔ صنف#4306: no_options؛ فواصل خشب ازرق سماوي 10ml. https://jabaristore.com/?app=product.show.1614
+- الجعبري#1613 ↔ صنف#4307: no_options؛ فواصل خشب فستقي 10ml. https://jabaristore.com/?app=product.show.1613
+- الجعبري#1612 ↔ صنف#4308: no_options؛ فواصل خشب ليلكي 10ml. https://jabaristore.com/?app=product.show.1612
+- الجعبري#1611 ↔ صنف#4309: no_options؛ فواصل خشب لون طبيعي 10ml. https://jabaristore.com/?app=product.show.1611
+- الجعبري#1610 ↔ صنف#4310: no_options؛ فواصل خشب احمر 10ml. https://jabaristore.com/?app=product.show.1610
+- الجعبري#1609 ↔ صنف#4311: no_options؛ فواصل خشب ابيض 10ml. https://jabaristore.com/?app=product.show.1609
+- الجعبري#1608 ↔ صنف#4312: no_options؛ فواصل خشب فضي 8ml. https://jabaristore.com/?app=product.show.1608
+- الجعبري#1607 ↔ صنف#4313: no_options؛ فواصل خشب فوشي 10ml. https://jabaristore.com/?app=product.show.1607
+- الجعبري#1606 ↔ صنف#4314: no_options؛ فواصل خشب اصفر 10ml. https://jabaristore.com/?app=product.show.1606
+- الجعبري#1605 ↔ صنف#4315: no_options؛ فواصل خشب ازرق 10ml. https://jabaristore.com/?app=product.show.1605
+- الجعبري#1604 ↔ صنف#4316: no_options؛ فواصل خشب فضي 10ml. https://jabaristore.com/?app=product.show.1604
+- الجعبري#1603 ↔ صنف#4317: no_options؛ فواصل خشب ذهبي 10ml. https://jabaristore.com/?app=product.show.1603
+- الجعبري#1602 ↔ صنف#4318: no_options؛ فواصل خشب زهري 8ml. https://jabaristore.com/?app=product.show.1602
+- الجعبري#1601 ↔ صنف#4319: no_options؛ فواصل خشب ملون 8ml. https://jabaristore.com/?app=product.show.1601
+- الجعبري#1600 ↔ صنف#4320: no_options؛ فواصل بلاستيك تركواز 8ml. https://jabaristore.com/?app=product.show.1600
+- الجعبري#1599 ↔ صنف#4321: no_options؛ فواصل خشب ملون 8ml. https://jabaristore.com/?app=product.show.1599
+- الجعبري#1598 ↔ صنف#4322: no_options؛ فواصل خشب فوشي 8ml. https://jabaristore.com/?app=product.show.1598
+- الجعبري#1597 ↔ صنف#4323: no_options؛ خرز خشب ملون 8ml. https://jabaristore.com/?app=product.show.1597
+- الجعبري#1596 ↔ صنف#4324: no_options؛ خرز خشب منقط 12ml. https://jabaristore.com/?app=product.show.1596
+- الجعبري#1595 ↔ صنف#4325: no_options؛ فواصل خشب ابيض 8ml. https://jabaristore.com/?app=product.show.1595
+- الجعبري#1589 ↔ صنف#2445: no_options؛ لون بودرة ( مايكه ) برونز. https://jabaristore.com/?app=product.show.1589
+- الجعبري#1587 ↔ صنف#2446: no_options؛ لون بودره ( مايكه ) اخضر. https://jabaristore.com/?app=product.show.1587
+- الجعبري#1586 ↔ صنف#2447: no_options؛ لون بودره ( مايكه ) فضي. https://jabaristore.com/?app=product.show.1586
+- الجعبري#1583 ↔ صنف#2448: no_options؛ لون بودرة ( مايكه ) ابيض. https://jabaristore.com/?app=product.show.1583
+- الجعبري#1581 ↔ صنف#4326: no_options؛ تل ابيض كريستال عرض 3متر. https://jabaristore.com/?app=product.show.1581
+- الجعبري#1579 ↔ صنف#2449: synced؛ بالضمة=16.5₪؛ 5 ضمم=62₪. https://jabaristore.com/?app=product.show.1579
+- الجعبري#1576 ↔ صنف#4327: no_options؛ زيت حلم العطري 100 ml. https://jabaristore.com/?app=product.show.1576
+- الجعبري#1575 ↔ صنف#4328: no_options؛ زيت ياسمين العطري 100ml. https://jabaristore.com/?app=product.show.1575
+- الجعبري#1574 ↔ صنف#4329: no_options؛ زيت مانجا العطري 100Ml. https://jabaristore.com/?app=product.show.1574
+- الجعبري#1573 ↔ صنف#2450: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1573
+- الجعبري#1572 ↔ صنف#2451: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1572
+- الجعبري#1571 ↔ صنف#2452: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1571
+- الجعبري#1570 ↔ صنف#2453: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1570
+- الجعبري#1569 ↔ صنف#4330: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1569
+- الجعبري#1568 ↔ صنف#4331: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1568
+- الجعبري#1567 ↔ صنف#4332: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1567
+- الجعبري#1566 ↔ صنف#4333: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1566
+- الجعبري#1565 ↔ صنف#4334: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1565
+- الجعبري#1564 ↔ صنف#4335: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1564
+- الجعبري#1563 ↔ صنف#4336: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1563
+- الجعبري#1562 ↔ صنف#4337: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1562
+- الجعبري#1561 ↔ صنف#4338: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1561
+- الجعبري#1560 ↔ صنف#4339: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1560
+- الجعبري#1559 ↔ صنف#4340: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1559
+- الجعبري#1558 ↔ صنف#4341: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1558
+- الجعبري#1557 ↔ صنف#4342: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1557
+- الجعبري#1556 ↔ صنف#4343: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1556
+- الجعبري#1555 ↔ صنف#4344: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1555
+- الجعبري#1554 ↔ صنف#4345: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1554
+- الجعبري#1553 ↔ صنف#4346: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1553
+- الجعبري#1552 ↔ صنف#4347: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1552
+- الجعبري#1551 ↔ صنف#4348: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1551
+- الجعبري#1550 ↔ صنف#4349: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1550
+- الجعبري#1549 ↔ صنف#4350: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1549
+- الجعبري#1548 ↔ صنف#4351: no_options؛ Super Perlee. https://jabaristore.com/?app=product.show.1548
+- الجعبري#1547 ↔ صنف#4352: no_options؛ Super perlee. https://jabaristore.com/?app=product.show.1547
+- الجعبري#1543 ↔ صنف#4353: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1543
+- الجعبري#1542 ↔ صنف#4354: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1542
+- الجعبري#1541 ↔ صنف#4355: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1541
+- الجعبري#1540 ↔ صنف#4356: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1540
+- الجعبري#1539 ↔ صنف#4357: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1539
+- الجعبري#1538 ↔ صنف#4358: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1538
+- الجعبري#1537 ↔ صنف#4359: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1537
+- الجعبري#1536 ↔ صنف#4360: synced؛ شفاف=26.5₪؛ احمر=26.5₪؛ زهري=26.5₪؛ فوشي=26.5₪؛ ازرق=26.5₪؛ اصفر=26.5₪؛ ليلكي=26.5₪. https://jabaristore.com/?app=product.show.1536
+- الجعبري#1535 ↔ صنف#4361: synced؛ شفاف=21.5₪؛ احمر=21.5₪؛ زهري=21.5₪؛ فوشي=21.5₪؛ ازرق=21.5₪؛ اصفر=21.5₪. https://jabaristore.com/?app=product.show.1535
+- الجعبري#1534 ↔ صنف#4362: synced؛ شفاف=16.5₪؛ ازرق=16.5₪؛ ليلكي=16.5₪؛ احمر=16.5₪؛ زهري=16.5₪؛ فوشي=16.5₪. https://jabaristore.com/?app=product.show.1534
+- الجعبري#1515 ↔ صنف#4363: no_options؛ طقم زرادية (3 قطعة) حجم كبير. https://jabaristore.com/?app=product.show.1515
+- الجعبري#1510 ↔ صنف#4364: no_options؛ زيت اكسيرجوڤ العطري 100ml. https://jabaristore.com/?app=product.show.1510
+- الجعبري#1509 ↔ صنف#4365: no_options؛ زيت انفكتس العطري 100ml. https://jabaristore.com/?app=product.show.1509
+- الجعبري#1508 ↔ صنف#4366: no_options؛ زيت ليبارتور العطري 100ml. https://jabaristore.com/?app=product.show.1508
+- الجعبري#1507 ↔ صنف#4367: no_options؛ زيت بويزون العطري 100ml. https://jabaristore.com/?app=product.show.1507
+- الجعبري#1506 ↔ صنف#4368: no_options؛ زيت مون باريس العطري. https://jabaristore.com/?app=product.show.1506
+- الجعبري#1505 ↔ صنف#4369: no_options؛ زيت يارا العطري 100mlزيوت. https://jabaristore.com/?app=product.show.1505
+- الجعبري#1504 ↔ صنف#4370: no_options؛ زيت توباكو فانيل العطري. https://jabaristore.com/?app=product.show.1504
+- الجعبري#1503 ↔ صنف#4371: no_options؛ زيت فانتازيا العطري 100ml. https://jabaristore.com/?app=product.show.1503
+- الجعبري#1502 ↔ صنف#4372: no_options؛ زيت غبار الذهب العطري 100ml. https://jabaristore.com/?app=product.show.1502
+- الجعبري#1501 ↔ صنف#4373: no_options؛ زيت سي ارماني العطري 100ml. https://jabaristore.com/?app=product.show.1501
+- الجعبري#1500 ↔ صنف#4374: no_options؛ زيت ون مليون العطري 100ml. https://jabaristore.com/?app=product.show.1500
+- الجعبري#1499 ↔ صنف#4375: no_options؛ زيت ايڤوريا الطري 100mlزيوت. https://jabaristore.com/?app=product.show.1499
+- الجعبري#1498 ↔ صنف#4376: no_options؛ زيت سوفاج العطري 100ml. https://jabaristore.com/?app=product.show.1498
+- الجعبري#1497 ↔ صنف#4377: no_options؛ زيت اناناس العطري 100 ml. https://jabaristore.com/?app=product.show.1497
+- الجعبري#1496 ↔ صنف#4378: no_options؛ زيت سيدر وود العطري. https://jabaristore.com/?app=product.show.1496
+- الجعبري#1495 ↔ صنف#4379: no_options؛ زيت جونسون العطري 100ml. https://jabaristore.com/?app=product.show.1495
+- الجعبري#1494 ↔ صنف#4380: no_options؛ زيت عود شغف العطري. https://jabaristore.com/?app=product.show.1494
+- الجعبري#1493 ↔ صنف#4381: no_options؛ زيت خوخ العطري. https://jabaristore.com/?app=product.show.1493
+- الجعبري#1489 ↔ صنف#4382: synced؛ ابيض=26.5₪؛ بني=26.5₪؛ ذهبي=26.5₪؛ فضي=26.5₪. https://jabaristore.com/?app=product.show.1489
+- الجعبري#1488 ↔ صنف#4383: synced؛ ابيض=26.5₪؛ بني=26.5₪؛ ذهبي=26.5₪. https://jabaristore.com/?app=product.show.1488
+- الجعبري#1486 ↔ صنف#4384: synced؛ ابيض / 10 قطعة=18₪؛ ابيض / 100 قطعة=160₪؛ بني / 10 قطعة=18₪؛ بني / 100 قطعة=160₪؛ ذهبي / 10 قطعة=18₪؛ ذهبي / 100 قطعة=160₪. https://jabaristore.com/?app=product.show.1486
+- الجعبري#1485 ↔ صنف#4385: synced؛ ابيض / 10 قطعة=13.5₪؛ ابيض / 100 قطعة=105₪؛ بني / 10 قطعة=13.5₪؛ بني / 100 قطعة=105₪؛ ذهبي / 10 قطعة=13.5₪؛ ذهبي / 100 قطعة=105₪. https://jabaristore.com/?app=product.show.1485
+- الجعبري#1483 ↔ صنف#4386: synced؛ ابيض / 10 قطعة=11₪؛ ابيض / 100 قطعة=105₪؛ بني / 10 قطعة=11₪؛ بني / 100 قطعة=105₪؛ ذهبي / 10 قطعة=11₪؛ ذهبي / 100 قطعة=105₪. https://jabaristore.com/?app=product.show.1483
+- الجعبري#1482 ↔ صنف#4387: synced؛ ابيض / 10 قطعة=15.5₪؛ ابيض / 100 قطعة=130₪؛ بني / 10 قطعة=15.5₪؛ بني / 100 قطعة=130₪؛ ذهبي / 10 قطعة=15.5₪؛ ذهبي / 100 قطعة=130₪. https://jabaristore.com/?app=product.show.1482
+- الجعبري#1480 ↔ صنف#4388: synced؛ ابيض / 10 قطعة=10₪؛ ابيض / 100 قطعة=85₪؛ بني / 10 قطعة=10₪؛ بني / 100 قطعة=85₪؛ ذهبي / 10 قطعة=10₪؛ ذهبي / 100 قطعة=85₪. https://jabaristore.com/?app=product.show.1480
+- الجعبري#1479 ↔ صنف#4389: synced؛ ابيض / 10 قطعة=10.5₪؛ ابيض / 100 قطعة=85₪؛ بني / 10 قطعة=10.5₪؛ بني / 100 قطعة=85₪؛ ذهبي / 10 قطعة=10.5₪؛ ذهبي / 100 قطعة=85₪. https://jabaristore.com/?app=product.show.1479
+- الجعبري#1477 ↔ صنف#4390: synced؛ ابيض / 10 قطعة=12.5₪؛ ابيض / 100 قطعة=105₪؛ بني / 10 قطعة=12.5₪؛ بني / 100 قطعة=105₪؛ ذهبي / 10 قطعة=12.5₪؛ ذهبي / 100 قطعة=105₪. https://jabaristore.com/?app=product.show.1477
+- الجعبري#1476 ↔ صنف#4391: synced؛ ابيض / 10 قطعة=11₪؛ ابيض / 100 قطعة=100₪؛ بني / 10 قطعة=11₪؛ بني / 100 قطعة=100₪؛ ذهبي / 10 قطعة=11₪؛ ذهبي / 100 قطعة=100₪. https://jabaristore.com/?app=product.show.1476
+- الجعبري#1475 ↔ صنف#4392: synced؛ ابيض / 10 قطعة=11₪؛ ابيض / 100 قطعة=95₪؛ بني / 10 قطعة=11₪؛ بني / 100 قطعة=95₪؛ ذهبي / 10 قطعة=11₪؛ ذهبي / 100 قطعة=95₪. https://jabaristore.com/?app=product.show.1475
+- الجعبري#1474 ↔ صنف#4393: synced؛ ابيض / 10 قطعة=10.5₪؛ ابيض / 100 قطعة=100₪؛ بني / 10 قطعة=10.5₪؛ بني / 100 قطعة=100₪؛ ذهبي / 10 قطعة=10.5₪؛ ذهبي / 100 قطعة=100₪. https://jabaristore.com/?app=product.show.1474
+- الجعبري#1471 ↔ صنف#4394: synced؛ ابيض=7₪؛ بني=7₪؛ ذهبي=7₪. https://jabaristore.com/?app=product.show.1471
+- الجعبري#1470 ↔ صنف#4395: no_options؛ زبدة جوز الهند. https://jabaristore.com/?app=product.show.1470
+- الجعبري#1468 ↔ صنف#2454: no_options؛ لاصق مع منشف 500ml. https://jabaristore.com/?app=product.show.1468
+- الجعبري#1467 ↔ صنف#4396: synced؛ ابيض=31.5₪؛ بني=31.5₪؛ ذهبي=31.5₪. https://jabaristore.com/?app=product.show.1467
+- الجعبري#1465 ↔ صنف#4397: synced؛ ابيض=37₪؛ ذهبي=37₪؛ بني=37₪. https://jabaristore.com/?app=product.show.1465
+- الجعبري#1463 ↔ صنف#4398: synced؛ ابيض=37₪؛ بني=37₪؛ ذهبي=37₪. https://jabaristore.com/?app=product.show.1463
+- الجعبري#1462 ↔ صنف#4399: synced؛ ابيض=37₪؛ ذهبي=37₪؛ بني=37₪. https://jabaristore.com/?app=product.show.1462
+- الجعبري#1461 ↔ صنف#4400: synced؛ ابيض=52₪؛ ذهبي=52₪؛ بني=52₪. https://jabaristore.com/?app=product.show.1461
+- الجعبري#1460 ↔ صنف#4401: synced؛ ابيض=47₪؛ بني=47₪؛ ذهبي=47₪. https://jabaristore.com/?app=product.show.1460
+- الجعبري#1459 ↔ صنف#4402: synced؛ ابيض=47₪؛ بني=47₪؛ ذهبي=47₪. https://jabaristore.com/?app=product.show.1459
+- الجعبري#1458 ↔ صنف#4403: synced؛ ابيض=37₪؛ بني=37₪؛ ذهبي=37₪. https://jabaristore.com/?app=product.show.1458
+- الجعبري#1457 ↔ صنف#4404: synced؛ ابيض=40₪؛ بني=40₪؛ ذهبي=40₪. https://jabaristore.com/?app=product.show.1457
+- الجعبري#1456 ↔ صنف#4405: synced؛ ابيض=42₪؛ بني=42₪؛ ذهبي=42₪. https://jabaristore.com/?app=product.show.1456
+- الجعبري#1455 ↔ صنف#4406: synced؛ ابيض=37₪؛ ذهبي=37₪؛ بني=37₪. https://jabaristore.com/?app=product.show.1455
+- الجعبري#1454 ↔ صنف#4407: synced؛ ابيض=34₪؛ ذهبي=34₪؛ بني=34₪. https://jabaristore.com/?app=product.show.1454
+- الجعبري#1453 ↔ صنف#4408: synced؛ ذهبي=31.5₪؛ بني=31.5₪؛ ابيض=31.5₪. https://jabaristore.com/?app=product.show.1453
+- الجعبري#1448 ↔ صنف#2455: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1448
+- الجعبري#1447 ↔ صنف#4409: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.1447
