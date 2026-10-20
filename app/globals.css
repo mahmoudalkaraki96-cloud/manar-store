@@ -353,7 +353,7 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 .searchResultLink{display:flex;flex-direction:column;align-items:stretch;gap:5px;min-width:0;color:inherit;text-decoration:none}
 .searchProductGrid .searchResultLink img{width:100%;height:100px;max-width:100%;object-fit:contain}
 .searchProductGrid .searchResultLink b{overflow-wrap:break-word;min-width:0;height:auto;line-height:1.45}
-.searchVariantChoices{display:flex;flex-wrap:wrap;gap:4px}
+.searchVariantChoices{display:flex;flex-wrap:wrap;align-content:flex-start;gap:4px;max-height:64px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c8a8b3 transparent;padding:2px}
 .searchVariantChoices button{font:inherit;font-size:10px;line-height:1.4;padding:3px 7px;border:1px solid #e5dbe0;border-radius:5px;background:#fff;color:#67535d;cursor:pointer;max-width:100%;overflow-wrap:anywhere}
 .searchVariantChoices button[aria-pressed="true"]{border-color:var(--green);color:var(--green);background:#faf4f7;box-shadow:inset 0 0 0 1px var(--green)}
 .searchVariantChoices button:disabled{opacity:.45;cursor:default}
@@ -415,12 +415,17 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 .searchProductGrid.searchProductList .searchVariantChoices{
  grid-column:2;
  grid-row:2;
- flex-wrap:nowrap;
+ flex-wrap:wrap;
+ align-content:flex-start;
  max-width:100%;
- overflow-x:auto;
- scrollbar-width:none;
+ max-height:52px;
+ overflow-x:hidden;
+ overflow-y:auto;
+ overscroll-behavior:contain;
+ scrollbar-width:thin;
 }
-.searchProductGrid.searchProductList .searchVariantChoices::-webkit-scrollbar{display:none}
+.searchProductGrid.searchProductList .searchVariantChoices::-webkit-scrollbar{width:4px}
+.searchProductGrid.searchProductList .searchVariantChoices::-webkit-scrollbar-thumb{background:#c8a8b3;border-radius:8px}
 .searchProductGrid.searchProductList .searchResultPrice{grid-column:2;grid-row:3;align-self:start;margin:0;font-size:12px}
 @media(max-width:768px){
  .searchProductGrid.searchProductList>.searchProductResult{grid-template-columns:56px minmax(0,1fr);gap:2px 8px;padding:5px 7px}
