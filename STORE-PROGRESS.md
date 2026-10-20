@@ -5386,3 +5386,19 @@
 - أذن المستخدم صراحة «اعتمده وانشرهم». النطاق12منتجًا فيBatch6ad72226:4785–4788و4790–4797؛ المنتج4789غيرداخلتقريرالدفعةولايشملهالتنفيذ.
 - سكربتapprove_dofesh_batch.py يحفظ الصورالثمانيةالمعلقةويفعّلactive1للمنتجات12معالحفاظعلىالأسعاروالمخزون،auditذريلكلمنتجوحواجزsnapshotلكاملدفعةSQL. نجحت4اختباراتSQLite:الاعتمادوالنشر،استثناءغيرالمحدد،رفضتغيرالصورةوالتراجعالكاملعندتعارضمتزامن.
 - المخزونالمستورد0؛ النشريغيرالظهورفقطولايفترضمخزونًاوهميًا. التالي تشغيلworkflowوالتحققمنactive1والصورةعلىالمتجر.
+
+
+### 2026-10-20T11:38:05.661851+03:00 — DOFESH-IMAGE-APPROVE-PUBLISH
+- أذن المستخدم باعتماد الصور ونشر منتجات الدفعة؛ اعتمدت الصور ونشرت المنتجات التالية بدون تغيير الأسعار أو المخزون:
+- {"id": 3785, "item_number": 4785, "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حصان بيبي ازرق", "active": 1, "price_agorot": 7500, "stock_quantity": 0}
+- {"id": 3786, "item_number": 4786, "name": "ظهرية ستاند مدمج لصواني التوزيعات - ثيم حورية البحر", "active": 1, "price_agorot": 7500, "stock_quantity": 0}
+- {"id": 3787, "item_number": 4787, "name": "ستاند اكرليك مزخرف اسماء العروسين للخطوبة", "active": 1, "price_agorot": 9000, "stock_quantity": 0}
+- {"id": 3788, "item_number": 4788, "name": "صندوق زجاج مع اطار نحاس ذهبي", "active": 1, "price_agorot": 6000, "stock_quantity": 0}
+- {"id": 3790, "item_number": 4790, "name": "شنتة شفاف bvc", "active": 1, "price_agorot": 2500, "stock_quantity": 0}
+- {"id": 3791, "item_number": 4791, "name": "قطع اكريلك لتزيين الشوكولاتة شكل طاقية", "active": 1, "price_agorot": 1000, "stock_quantity": 0}
+- {"id": 3792, "item_number": 4792, "name": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي", "active": 1, "price_agorot": 1000, "stock_quantity": 0}
+- {"id": 3793, "item_number": 4793, "name": "قطع اكريلك لتزيين الشوكولاتة", "active": 1, "price_agorot": 800, "stock_quantity": 0}
+- {"id": 3794, "item_number": 4794, "name": "قطع اكريلك لتزيين الشوكولاتة شكل كعبة", "active": 1, "price_agorot": 1000, "stock_quantity": 0}
+- {"id": 3795, "item_number": 4795, "name": "كيس شفاف bvc محزز ابيض مع خيط", "active": 1, "price_agorot": 2500, "stock_quantity": 0}
+- {"id": 3796, "item_number": 4796, "name": "علبة شفاف bvc طبقتين كرتون", "active": 1, "price_agorot": 3500, "stock_quantity": 0}
+- {"id": 3797, "item_number": 4797, "name": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )", "active": 1, "price_agorot": 3500, "stock_quantity": 0}
