@@ -349,3 +349,7 @@
 ### 2026-10-20 — تقييد باتش الصور لمنتجات محددة
 - catalog_batch_scope.product_scopeيتحقق منPRODUCT_IDSويطبّقهفيtools/dofesh_batch_images.py وbatch_catalog_images.py؛ inputproduct_idsاختياريفيdofesh-image-batch.yml. بدونهالسلوكالقديممحفوظ.4اختباراتنجحتبمافيهاSQLالنطاقورفضالحقنوpreview.
 - batch_catalog_images.pyيكتبbatch-catalog-submission.jsonبمعرفBatchوعددالصوروالمنتجاتبعدحفظD1، وتلحقworkflowملخصالخطوةبـSTORE-PROGRESSمعدمجunion. لاArtifactsجديدةولانشرللمنتجاتمنهذاworkflow.
+
+
+### 2026-10-20 — اعتماد دفعة صور ونشر منتجاتها
+- tools/approve_dofesh_batch.py وworkflow approve-dofesh-batch.yml لموافقةبشريةصريحةعلىBatchوأرقامأصنافمحددة. يعتمدproduct_mediaوصورةaiويغيرproducts.activeإلى1فقط؛ الأسعاروالمخزونمحفوظان. معاملةD1واحدةللمجموعةوحواجزتغيرالصورة/المنتجوتسجيلaudit_logs،ثمJSONوprogress.4اختباراتناجحة؛ لاOpenAIAPIولاكلفةمعالجةجديدة.

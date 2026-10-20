@@ -1,0 +1,51 @@
+name: Approve Dofesh batch images and publish products
+on:
+  workflow_dispatch:
+    inputs:
+      batch_id:
+        description: Exact reviewed image batch ID
+        required: true
+      item_numbers:
+        description: Exact visible product numbers to approve and publish
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: manar-approve-dofesh-image-batch
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test atomic approval and publication
+        run: python tools/test_approve_dofesh_batch.py
+      - name: Approve selected generated images and publish products
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          BATCH_ID: ${{ inputs.batch_id }}
+          ITEM_NUMBERS: ${{ inputs.item_numbers }}
+        run: python tools/approve_dofesh_batch.py --batch-id "$BATCH_ID" --items "$ITEM_NUMBERS"
+      - name: Save publication report and shared progress
+        if: always()
+        run: |
+          if [ ! -f docs/dofesh-draft-import/published-products.json ]; then exit 0; fi
+          git config user.name 'Manar approved publication'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/publish-progress-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/publish-progress-attributes"
+          git add docs/dofesh-draft-import/published-products.json STORE-PROGRESS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: Approved Dofesh product publication results [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
