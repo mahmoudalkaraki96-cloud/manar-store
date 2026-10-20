@@ -45,7 +45,7 @@ def publish(db,batch_id,numbers):
                            [r['generated_url'],now,r['media_id'],r['product_id']]))
         statements.append(("UPDATE image_ai_items SET status='published',updated_at=? WHERE batch_id=? AND media_id=?",
                            [now,batch_id,r['media_id']]))
-        statements.append(('UPDATE products SET active=1,updated_at=? WHERE id=?',[now,r['product_id']]))
+        statements.append(("UPDATE products SET active=1,updated_at=?,specifications=CASE WHEN json_valid(specifications) THEN CASE WHEN json_extract(specifications,'$.draft_import_token') IS NOT NULL THEN CASE WHEN json_extract(specifications,'$.source_minimum')>1 THEN 'الحد الأدنى للطلب: ' || json_extract(specifications,'$.source_minimum') ELSE NULL END ELSE specifications END ELSE specifications END WHERE id=?",[now,r['product_id']]))
     db.batch(statements)
     after=db.query(f'SELECT id,item_number,name,active,price_agorot,stock_quantity FROM products WHERE item_number IN ({marks}) ORDER BY item_number',numbers)
     if len(after)!=len(rows) or any(r['active']!=1 for r in after):raise RuntimeError('publish_verification_failed')
