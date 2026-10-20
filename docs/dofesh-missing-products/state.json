@@ -7715,6 +7715,31 @@
       "availability": "available",
       "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل سداسي",
       "verified_at": "2026-10-20T08:51:26.498469+03:00"
+    },
+    "1411": {
+      "availability": "available",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة",
+      "verified_at": "2026-10-20T08:51:36.696153+03:00"
+    },
+    "1410": {
+      "availability": "available",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل كعبة",
+      "verified_at": "2026-10-20T08:51:46.702524+03:00"
+    },
+    "1409": {
+      "availability": "available",
+      "verified_title": "كيس شفاف bvc محزز ابيض مع خيط",
+      "verified_at": "2026-10-20T08:51:56.695488+03:00"
+    },
+    "1408": {
+      "availability": "available",
+      "verified_title": "علبة شفاف bvc طبقتين كرتون",
+      "verified_at": "2026-10-20T08:52:07.005473+03:00"
+    },
+    "1407": {
+      "availability": "available",
+      "verified_title": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )",
+      "verified_at": "2026-10-20T08:52:17.015626+03:00"
     }
   },
   "pages": [
@@ -7744,11 +7769,11 @@
   "next_page": null,
   "catalog_complete": true,
   "status": "partial",
-  "updated_at": "2026-10-20T08:51:31.665922+03:00",
+  "updated_at": "2026-10-20T08:52:20.071736+03:00",
   "counts": {
     "present": 1264,
     "missing": 14,
     "possible_name_match": 1
   },
-  "detail_pending": 7
+  "detail_pending": 2
 }

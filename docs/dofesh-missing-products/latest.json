@@ -26,13 +26,13 @@
   "next_page": null,
   "catalog_complete": true,
   "status": "partial",
-  "updated_at": "2026-10-20T08:51:31.665922+03:00",
+  "updated_at": "2026-10-20T08:52:20.071736+03:00",
   "counts": {
     "present": 1264,
     "missing": 14,
     "possible_name_match": 1
   },
-  "detail_pending": 7,
+  "detail_pending": 2,
   "results": [
     {
       "source_id": 1421,
@@ -144,10 +144,12 @@
       "price": "8 - 40 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1411",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة",
+      "verified_at": "2026-10-20T08:51:36.696153+03:00"
     },
     {
       "source_id": 1410,
@@ -155,10 +157,12 @@
       "price": "10 - 40 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1410",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "قطع اكريلك لتزيين الشوكولاتة شكل كعبة",
+      "verified_at": "2026-10-20T08:51:46.702524+03:00"
     },
     {
       "source_id": 1409,
@@ -166,10 +170,12 @@
       "price": "25 - 200 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1409",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "كيس شفاف bvc محزز ابيض مع خيط",
+      "verified_at": "2026-10-20T08:51:56.695488+03:00"
     },
     {
       "source_id": 1408,
@@ -177,10 +183,12 @@
       "price": "35 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1408",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "علبة شفاف bvc طبقتين كرتون",
+      "verified_at": "2026-10-20T08:52:07.005473+03:00"
     },
     {
       "source_id": 1407,
@@ -188,10 +196,12 @@
       "price": "35 ₪",
       "source_url": "https://dofesh.ps/?app=product.show.1407",
       "status": "missing",
-      "availability": "not_checked",
+      "availability": "available",
       "local_items": "",
       "local_urls": "",
-      "local_publication": ""
+      "local_publication": "",
+      "verified_title": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )",
+      "verified_at": "2026-10-20T08:52:17.015626+03:00"
     },
     {
       "source_id": 1406,

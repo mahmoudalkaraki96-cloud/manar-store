@@ -3968,3 +3968,12 @@
 - الجعبري#2553 ↔ صنف#3805: synced؛ عمق 9 سم / عرض 16سم / ارتفاع 18 سم=31.5₪؛ عمق 10 سم / عرض 18 سم / ارتفاع 20 سم=42₪؛ عمق 12 سم / عرض 22 سم / ارتفاع 25 سم=52₪؛ عمق 14 سم / عرض 25 سم / ارتفاع 27 سم=62₪. https://jabaristore.com/?app=product.show.2553
 - الجعبري#2550 ↔ صنف#3806: synced؛ ابيض (كود 56)=44₪؛ بني (كود 62)=44₪. https://jabaristore.com/?app=product.show.2550
 - الجعبري#2549 ↔ صنف#3807: synced؛ ابيض (كود 55)=41₪؛ بني (كود 61)=41₪. https://jabaristore.com/?app=product.show.2549
+
+
+### 2026-10-20T08:52:20.071736+03:00 — DOFESH-MISSING-CATALOG
+## DOFESH-MISSING-CATALOG
+- Time: 2026-10-20T08:52:20.071736+03:00
+- الحالة: partial؛ صفحات مفحوصة: 22؛ أصناف دوفش: 1279؛ موجودة عندك: 1264؛ غير مرتبطة: 14؛ اسم مطابق يحتاج تحقق: 1؛ توفر لم يفحص: 2.
+- Next listing page: None
+- No product/database writes.
+- التقرير: docs/dofesh-missing-products/missing-products.html وmissing-products.csv؛ لم تُضف أو تُنشر أو تُعدّل منتجات.
