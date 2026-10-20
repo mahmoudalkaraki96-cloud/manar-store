@@ -7740,6 +7740,16 @@
       "availability": "available",
       "verified_title": "شنتة شفاف بفك ثقيل مقاس ( عرض 16 ارتفاع 20 عمق 11 )",
       "verified_at": "2026-10-20T08:52:17.015626+03:00"
+    },
+    "1396": {
+      "availability": "available",
+      "verified_title": "سيارة حديد شكل ميرسيدس",
+      "verified_at": "2026-10-20T08:52:26.065728+03:00"
+    },
+    "1395": {
+      "availability": "available",
+      "verified_title": "سيارة حديد ميني كوبر",
+      "verified_at": "2026-10-20T08:52:35.767557+03:00"
     }
   },
   "pages": [
@@ -7768,12 +7778,12 @@
   ],
   "next_page": null,
   "catalog_complete": true,
-  "status": "partial",
-  "updated_at": "2026-10-20T08:52:20.071736+03:00",
+  "status": "completed",
+  "updated_at": "2026-10-20T08:52:39.029199+03:00",
   "counts": {
     "present": 1264,
     "missing": 14,
     "possible_name_match": 1
   },
-  "detail_pending": 2
+  "detail_pending": 0
 }
