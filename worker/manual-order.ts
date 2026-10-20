@@ -7,7 +7,7 @@ function amount(value:unknown,label:string){if((typeof value!=="number"&&typeof 
 function quantity(value:unknown){const n=Number(value);if(!Number.isInteger(n)||n<1||n>9999)throw new ManualOrderError("الكمية يجب أن تكون عدداً صحيحاً من 1 إلى 9999");return n}
 export async function createManualOrder(db:ManualOrderDb,body:Row){
  const name=clean(body.customerName),phone=clean(body.phone),city=clean(body.city),address=clean(body.address),notes=clean(body.notes).slice(0,1000);
- if(!name||name.length>200)throw new ManualOrderError("اسم الزبون مطلوب وبحد أقصى 200 حرف");if(phone.replace(/\\D/g,"").length<7||phone.length>40)throw new ManualOrderError("رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل");if(!city||city.length>120)throw new ManualOrderError("المدينة مطلوبة وبحد أقصى 120 حرفاً");if(!address||address.length>500)throw new ManualOrderError("العنوان مطلوب وبحد أقصى 500 حرف");
+ if(!name||name.length>200)throw new ManualOrderError("اسم الزبون مطلوب وبحد أقصى 200 حرف");if(phone.replace(/\D/g,"").length<7||phone.length>40)throw new ManualOrderError("رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل");if(!city||city.length>120)throw new ManualOrderError("المدينة مطلوبة وبحد أقصى 120 حرفاً");if(!address||address.length>500)throw new ManualOrderError("العنوان مطلوب وبحد أقصى 500 حرف");
  const channels=["whatsapp","message","phone","other"];const channel=clean(body.channel);if(!channels.includes(channel))throw new ManualOrderError("مصدر التواصل غير صحيح");
  if(!Array.isArray(body.items)||body.items.length<1||body.items.length>100)throw new ManualOrderError("الطلب يجب أن يحتوي من 1 إلى 100 صنف");
  const lines:Row[]=[];
