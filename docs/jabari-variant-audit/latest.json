@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-20T10:15:43.652161+03:00",
+  "updated_at": "2026-10-20T10:23:17.418014+03:00",
   "run_mode": "apply",
   "run_status": "completed_batch",
-  "run_processed": 125,
+  "run_processed": 90,
   "results": [
     {
       "source_id": 4499,
@@ -19051,6 +19051,726 @@
       "status": "no_options",
       "detail": "{\"item_number\": 4738, \"source\": {\"title\": \"زيت فهرنهايت العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
       "updated_at": 1792480542443
+    },
+    {
+      "source_id": 499,
+      "mode": "apply",
+      "product_id": 3739,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4739, \"source\": {\"title\": \"زيت ورد العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480549890
+    },
+    {
+      "source_id": 498,
+      "mode": "apply",
+      "product_id": 3740,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4740, \"source\": {\"title\": \"زيت سكاندل العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480554710
+    },
+    {
+      "source_id": 496,
+      "mode": "apply",
+      "product_id": 3741,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4741, \"source\": {\"title\": \"زيت رد اوشن 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480559729
+    },
+    {
+      "source_id": 493,
+      "mode": "apply",
+      "product_id": 3742,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4742, \"source\": {\"title\": \"زيت حلم العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480564728
+    },
+    {
+      "source_id": 492,
+      "mode": "apply",
+      "product_id": 3743,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4743, \"source\": {\"title\": \"زيت سفانا 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480569745
+    },
+    {
+      "source_id": 491,
+      "mode": "apply",
+      "product_id": 3744,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4744, \"source\": {\"title\": \"زيت نعنع 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480575004
+    },
+    {
+      "source_id": 490,
+      "mode": "apply",
+      "product_id": 3745,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4745, \"source\": {\"title\": \"زيت جوتشي العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480579732
+    },
+    {
+      "source_id": 489,
+      "mode": "apply",
+      "product_id": 3746,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4746, \"source\": {\"title\": \"زيت الليمون 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480584731
+    },
+    {
+      "source_id": 486,
+      "mode": "apply",
+      "product_id": 3747,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4747, \"source\": {\"title\": \"زيت الثلج العطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480589999
+    },
+    {
+      "source_id": 485,
+      "mode": "apply",
+      "product_id": 3748,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4748, \"source\": {\"title\": \"زيت تفاح عطري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480594923
+    },
+    {
+      "source_id": 484,
+      "mode": "apply",
+      "product_id": 3749,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4749, \"source\": {\"title\": \"زيت ورد الجوري 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480600001
+    },
+    {
+      "source_id": 482,
+      "mode": "apply",
+      "product_id": 3750,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4750, \"source\": {\"title\": \"زيت بامبو 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480604901
+    },
+    {
+      "source_id": 476,
+      "mode": "apply",
+      "product_id": 3751,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4751, \"source\": {\"title\": \"زيت كاندي توتي فروتي 100ml\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 2000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480609924
+    },
+    {
+      "source_id": 474,
+      "mode": "apply",
+      "product_id": 1502,
+      "status": "synced",
+      "detail": "{\"item_number\": 2502, \"name\": \"زيت اللفندر  100ml\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"زيت اللفندر 100ml\", \"variants\": [{\"name\": \"100 غم\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"كيلو\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زيت اللفندر 100ml\", \"variants\": [{\"name\": \"100 غم\", \"price\": 2000, \"active\": true}, {\"name\": \"كيلو\", \"price\": 16000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"100 غم\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"كيلو\", \"price\": 17000, \"active\": true, \"supplier_price\": 16000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1502\", \"source_url\": \"https://jabaristore.com/?app=product.show.474\"}",
+      "updated_at": 1792480615134
+    },
+    {
+      "source_id": 467,
+      "mode": "apply",
+      "product_id": 1503,
+      "status": "synced",
+      "detail": "{\"item_number\": 2503, \"name\": \"يد مضيفه 3 طبقات\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"يد مضيفه 3 طبقات\", \"variants\": [{\"name\": \"ذهبي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"فضي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"يد مضيفه 3 طبقات\", \"variants\": [{\"name\": \"ذهبي / بالقطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"فضي / بالقطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"فضي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1503\", \"source_url\": \"https://jabaristore.com/?app=product.show.467\"}",
+      "updated_at": 1792480620166
+    },
+    {
+      "source_id": 466,
+      "mode": "apply",
+      "product_id": 1504,
+      "status": "synced",
+      "detail": "{\"item_number\": 2504, \"name\": \"يد مضيفه 3 طبقات\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"يد مضيفه 3 طبقات\", \"variants\": [{\"name\": \"فضي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"يد مضيفه 3 طبقات\", \"variants\": [{\"name\": \"فضي / بالقطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8000, \"active\": true}, {\"name\": \"ذهبي / بالقطعة\", \"price\": 1000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"فضي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}, {\"name\": \"ذهبي / بالقطعة\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 8500, \"active\": true, \"supplier_price\": 8000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1504\", \"source_url\": \"https://jabaristore.com/?app=product.show.466\"}",
+      "updated_at": 1792480624975
+    },
+    {
+      "source_id": 465,
+      "mode": "apply",
+      "product_id": 1505,
+      "status": "synced",
+      "detail": "{\"item_number\": 2505, \"name\": \"تعليقة باب كرتون للمواليد\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"تعليقة باب كرتون للمواليد\", \"variants\": [{\"name\": \"زهري\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ازرق\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تعليقة باب كرتون للمواليد\", \"variants\": [{\"name\": \"زهري\", \"price\": 800, \"active\": true}, {\"name\": \"ازرق\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"زهري\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ازرق\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1505\", \"source_url\": \"https://jabaristore.com/?app=product.show.465\"}",
+      "updated_at": 1792480630140
+    },
+    {
+      "source_id": 461,
+      "mode": "apply",
+      "product_id": 1506,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2506}",
+      "updated_at": 1792480634955
+    },
+    {
+      "source_id": 457,
+      "mode": "apply",
+      "product_id": 1507,
+      "status": "synced",
+      "detail": "{\"item_number\": 2507, \"name\": \"طاره جلد مستطيل\", \"before_price\": 1250, \"before_variants\": [], \"source\": {\"title\": \"طاره جلد مستطيل\", \"variants\": [{\"name\": \"كبير\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"وسط\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"صغير\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"طاره جلد مستطيل\", \"variants\": [{\"name\": \"كبير\", \"price\": 1500, \"active\": true}, {\"name\": \"وسط\", \"price\": 1300, \"active\": true}, {\"name\": \"صغير\", \"price\": 1100, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كبير\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"وسط\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"صغير\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1507\", \"source_url\": \"https://jabaristore.com/?app=product.show.457\"}",
+      "updated_at": 1792480640147
+    },
+    {
+      "source_id": 456,
+      "mode": "apply",
+      "product_id": 1508,
+      "status": "synced",
+      "detail": "{\"item_number\": 2508, \"name\": \"طاره جلد بيضاوي\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"طاره جلد بيضاوي\", \"variants\": [{\"name\": \"Cm 9*11\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"11*14 Cm\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"14*18 Cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"18*23 Cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"20*25 Cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"طاره جلد بيضاوي\", \"variants\": [{\"name\": \"Cm 9*11\", \"price\": 800, \"active\": true}, {\"name\": \"11*14 Cm\", \"price\": 900, \"active\": true}, {\"name\": \"14*18 Cm\", \"price\": 1000, \"active\": true}, {\"name\": \"18*23 Cm\", \"price\": 1200, \"active\": true}, {\"name\": \"20*25 Cm\", \"price\": 1300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"Cm 9*11\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"11*14 Cm\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"14*18 Cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"18*23 Cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"20*25 Cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1508\", \"source_url\": \"https://jabaristore.com/?app=product.show.456\"}",
+      "updated_at": 1792480645156
+    },
+    {
+      "source_id": 455,
+      "mode": "apply",
+      "product_id": 1509,
+      "status": "synced",
+      "detail": "{\"item_number\": 2509, \"name\": \"طارة جلد مدور\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"طارة جلد مدور\", \"variants\": [{\"name\": \"10cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"12cm\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"16cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"21cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"25cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"طارة جلد مدور\", \"variants\": [{\"name\": \"10cm\", \"price\": 800, \"active\": false}, {\"name\": \"12cm\", \"price\": 900, \"active\": true}, {\"name\": \"16cm\", \"price\": 1000, \"active\": true}, {\"name\": \"21cm\", \"price\": 1200, \"active\": true}, {\"name\": \"25cm\", \"price\": 1300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"10cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"12cm\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"16cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"21cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"25cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1509\", \"source_url\": \"https://jabaristore.com/?app=product.show.455\"}",
+      "updated_at": 1792480650194
+    },
+    {
+      "source_id": 454,
+      "mode": "apply",
+      "product_id": 3752,
+      "status": "synced",
+      "detail": "{\"item_number\": 4752, \"name\": \"دولاب كب كيك\", \"before_price\": 3150, \"before_variants\": [], \"source\": {\"title\": \"دولاب كب كيك\", \"variants\": [{\"name\": \"فضي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"اسود\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ازرق\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"زهري\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"دولاب كب كيك\", \"variants\": [{\"name\": \"فضي\", \"price\": 4000, \"active\": true}, {\"name\": \"اسود\", \"price\": 4000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 4000, \"active\": true}, {\"name\": \"زهري\", \"price\": 4000, \"active\": true}, {\"name\": \"ابيض\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"فضي\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"اسود\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ازرق\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"زهري\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}, {\"name\": \"ابيض\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3752\", \"source_url\": \"https://jabaristore.com/?app=product.show.454\"}",
+      "updated_at": 1792480654964
+    },
+    {
+      "source_id": 453,
+      "mode": "apply",
+      "product_id": 1510,
+      "status": "synced",
+      "detail": "{\"item_number\": 2510, \"name\": \"إطار قش\", \"before_price\": 50, \"before_variants\": [], \"source\": {\"title\": \"اطار قش\", \"variants\": [{\"name\": \"بني / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بيج / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بيج / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ابيض / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"زهر / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"زهر / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ازرق / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ازرق / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اطار قش\", \"variants\": [{\"name\": \"بني / 30 سم\", \"price\": 1000, \"active\": false}, {\"name\": \"بني / 25 سم\", \"price\": 800, \"active\": true}, {\"name\": \"بيج / 30 سم\", \"price\": 1000, \"active\": false}, {\"name\": \"بيج / 25 سم\", \"price\": 800, \"active\": true}, {\"name\": \"ابيض / 30 سم\", \"price\": 1000, \"active\": false}, {\"name\": \"ابيض / 25 سم\", \"price\": 800, \"active\": true}, {\"name\": \"زهر / 30 سم\", \"price\": 1000, \"active\": false}, {\"name\": \"زهر / 25 سم\", \"price\": 800, \"active\": true}, {\"name\": \"ازرق / 30 سم\", \"price\": 1000, \"active\": false}, {\"name\": \"ازرق / 25 سم\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بني / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بني / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"بيج / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"بيج / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ابيض / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"زهر / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"زهر / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ازرق / 30 سم\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"ازرق / 25 سم\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1510\", \"source_url\": \"https://jabaristore.com/?app=product.show.453\"}",
+      "updated_at": 1792480659971
+    },
+    {
+      "source_id": 443,
+      "mode": "apply",
+      "product_id": 1511,
+      "status": "synced",
+      "detail": "{\"item_number\": 2511, \"name\": \"تلّ توزيعات مع خيط\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"تل توزيعات مع خيط\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"ايفري\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"ذهبي\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"ازرق\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"زهري\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تل توزيعات مع خيط\", \"variants\": [{\"name\": \"ابيض\", \"price\": 2000, \"active\": false}, {\"name\": \"ايفري\", \"price\": 2000, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 2000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 2000, \"active\": true}, {\"name\": \"زهري\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"ايفري\", \"price\": 2150, \"active\": false, \"supplier_price\": 2000}, {\"name\": \"ذهبي\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"ازرق\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"زهري\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1511\", \"source_url\": \"https://jabaristore.com/?app=product.show.443\"}",
+      "updated_at": 1792480665179
+    },
+    {
+      "source_id": 439,
+      "mode": "apply",
+      "product_id": 3753,
+      "status": "synced",
+      "detail": "{\"item_number\": 4753, \"name\": \"سلك نحاسي فضي\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"سلك نحاسي فضي\", \"variants\": [{\"name\": \"0.3mm\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"1.00mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"سلك نحاسي فضي\", \"variants\": [{\"name\": \"0.3mm\", \"price\": 500, \"active\": false}, {\"name\": \"0.4mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.5mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.6mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.8mm\", \"price\": 500, \"active\": true}, {\"name\": \"1.00mm\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"0.3mm\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"1.00mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3753\", \"source_url\": \"https://jabaristore.com/?app=product.show.439\"}",
+      "updated_at": 1792480670179
+    },
+    {
+      "source_id": 438,
+      "mode": "apply",
+      "product_id": 3754,
+      "status": "synced",
+      "detail": "{\"item_number\": 4754, \"name\": \"سلك نحاسي ذهبي\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"سلك نحاسي ذهبي\", \"variants\": [{\"name\": \"0.3mm\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"1mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"سلك نحاسي ذهبي\", \"variants\": [{\"name\": \"0.3mm\", \"price\": 500, \"active\": false}, {\"name\": \"0.4mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.5mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.6mm\", \"price\": 500, \"active\": true}, {\"name\": \"0.8mm\", \"price\": 500, \"active\": true}, {\"name\": \"1mm\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"0.3mm\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"0.4mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.5mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.6mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"0.8mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"1mm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3754\", \"source_url\": \"https://jabaristore.com/?app=product.show.438\"}",
+      "updated_at": 1792480675090
+    },
+    {
+      "source_id": 435,
+      "mode": "apply",
+      "product_id": 3755,
+      "status": "synced",
+      "detail": "{\"item_number\": 4755, \"name\": \"خيط ستان رفيع\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"خيط ستان رفيع\", \"variants\": [{\"name\": \"اسود\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"نيلي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق غامق\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق سماوي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق تركواز\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"فوشي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهر وسط\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهر فاتح\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"سكني فاتح\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"خيط ستان رفيع\", \"variants\": [{\"name\": \"اسود\", \"price\": 1500, \"active\": true}, {\"name\": \"ابيض\", \"price\": 1500, \"active\": true}, {\"name\": \"نيلي\", \"price\": 1500, \"active\": true}, {\"name\": \"ازرق غامق\", \"price\": 1500, \"active\": true}, {\"name\": \"ازرق سماوي\", \"price\": 1500, \"active\": true}, {\"name\": \"ازرق تركواز\", \"price\": 1500, \"active\": true}, {\"name\": \"فوشي\", \"price\": 1500, \"active\": true}, {\"name\": \"زهر وسط\", \"price\": 1500, \"active\": true}, {\"name\": \"زهر فاتح\", \"price\": 1500, \"active\": true}, {\"name\": \"سكني فاتح\", \"price\": 1500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اسود\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ابيض\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"نيلي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق غامق\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق سماوي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ازرق تركواز\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"فوشي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهر وسط\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"زهر فاتح\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"سكني فاتح\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3755\", \"source_url\": \"https://jabaristore.com/?app=product.show.435\"}",
+      "updated_at": 1792480679975
+    },
+    {
+      "source_id": 433,
+      "mode": "apply",
+      "product_id": 3756,
+      "status": "synced",
+      "detail": "{\"item_number\": 4756, \"name\": \"دبوس شنغل\", \"before_price\": 100, \"before_variants\": [], \"source\": {\"title\": \"دبوس شنغل\", \"variants\": [{\"name\": \"صغير\", \"price\": 100, \"active\": true, \"supplier_price\": 50}, {\"name\": \"وسط\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كبير\", \"price\": 250, \"active\": true, \"supplier_price\": 200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"دبوس شنغل\", \"variants\": [{\"name\": \"صغير\", \"price\": 50, \"active\": true}, {\"name\": \"وسط\", \"price\": 100, \"active\": true}, {\"name\": \"كبير\", \"price\": 200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"صغير\", \"price\": 100, \"active\": true, \"supplier_price\": 50}, {\"name\": \"وسط\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"كبير\", \"price\": 250, \"active\": true, \"supplier_price\": 200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3756\", \"source_url\": \"https://jabaristore.com/?app=product.show.433\"}",
+      "updated_at": 1792480684996
+    },
+    {
+      "source_id": 431,
+      "mode": "apply",
+      "product_id": 1512,
+      "status": "synced",
+      "detail": "{\"item_number\": 2512, \"name\": \"أعواد للعطور 15 سم ( 50 قطعة )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"اعواد للعطور 15 سم ( 50 قطعة )\", \"variants\": [{\"name\": \"اسود\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اعواد للعطور 15 سم ( 50 قطعة )\", \"variants\": [{\"name\": \"اسود\", \"price\": 800, \"active\": true}, {\"name\": \"ابيض\", \"price\": 800, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اسود\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ابيض\", \"price\": 900, \"active\": true, \"supplier_price\": 800}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1512\", \"source_url\": \"https://jabaristore.com/?app=product.show.431\"}",
+      "updated_at": 1792480690187
+    },
+    {
+      "source_id": 430,
+      "mode": "apply",
+      "product_id": 3757,
+      "status": "synced",
+      "detail": "{\"item_number\": 4757, \"name\": \"دبوس بطاقة\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"دبوس بطاقة\", \"variants\": [{\"name\": \"فضي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"دبوس بطاقة\", \"variants\": [{\"name\": \"فضي\", \"price\": 1500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"فضي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"ذهبي\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3757\", \"source_url\": \"https://jabaristore.com/?app=product.show.430\"}",
+      "updated_at": 1792480694944
+    },
+    {
+      "source_id": 428,
+      "mode": "apply",
+      "product_id": 1513,
+      "status": "synced",
+      "detail": "{\"item_number\": 2513, \"name\": \"مدالية مع سلسلة ثقيل\", \"before_price\": 2650, \"before_variants\": [], \"source\": {\"title\": \"مدالية مع سلسلة ثقيل\", \"variants\": [{\"name\": \"ذهبي ساطع / 100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي ساطع / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"ذهبي باهت / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ذهبي باهت / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"فضي / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"فضي / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"برونز / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"برونز / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مدالية مع سلسلة ثقيل\", \"variants\": [{\"name\": \"ذهبي ساطع / 100 قطعة\", \"price\": 2500, \"active\": true}, {\"name\": \"ذهبي ساطع / 1000 قطعة\", \"price\": 20000, \"active\": false}, {\"name\": \"ذهبي باهت / 100 قطعة\", \"price\": 2500, \"active\": false}, {\"name\": \"ذهبي باهت / 1000 قطعة\", \"price\": 20000, \"active\": false}, {\"name\": \"فضي / 100 قطعة\", \"price\": 2500, \"active\": false}, {\"name\": \"فضي / 1000 قطعة\", \"price\": 20000, \"active\": false}, {\"name\": \"برونز / 100 قطعة\", \"price\": 2500, \"active\": false}, {\"name\": \"برونز / 1000 قطعة\", \"price\": 20000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي ساطع / 100 قطعة\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"ذهبي ساطع / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"ذهبي باهت / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"ذهبي باهت / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"فضي / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"فضي / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}, {\"name\": \"برونز / 100 قطعة\", \"price\": 2650, \"active\": false, \"supplier_price\": 2500}, {\"name\": \"برونز / 1000 قطعة\", \"price\": 21000, \"active\": false, \"supplier_price\": 20000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1513\", \"source_url\": \"https://jabaristore.com/?app=product.show.428\"}",
+      "updated_at": 1792480700191
+    },
+    {
+      "source_id": 425,
+      "mode": "apply",
+      "product_id": 1514,
+      "status": "synced",
+      "detail": "{\"item_number\": 2514, \"name\": \"أكياس حلو\", \"before_price\": 3700, \"before_variants\": [], \"source\": {\"title\": \"اكياس حلو\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"فضي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس حلو\", \"variants\": [{\"name\": \"ذهبي\", \"price\": 3500, \"active\": false}, {\"name\": \"فضي\", \"price\": 3500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ذهبي\", \"price\": 3700, \"active\": false, \"supplier_price\": 3500}, {\"name\": \"فضي\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1514\", \"source_url\": \"https://jabaristore.com/?app=product.show.425\"}",
+      "updated_at": 1792480704980
+    },
+    {
+      "source_id": 422,
+      "mode": "apply",
+      "product_id": 1515,
+      "status": "synced",
+      "detail": "{\"item_number\": 2515, \"name\": \"مصلب / مبيض الشمع\", \"before_price\": 1950, \"before_variants\": [], \"source\": {\"title\": \"مصلب / مبيض الشمع\", \"variants\": [{\"name\": \"1kg\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"شوال 25 كيلو\", \"price\": 38500, \"active\": true, \"supplier_price\": 37500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مصلب / مبيض الشمع\", \"variants\": [{\"name\": \"1kg\", \"price\": 1800, \"active\": true}, {\"name\": \"شوال 25 كيلو\", \"price\": 37500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1kg\", \"price\": 1950, \"active\": true, \"supplier_price\": 1800}, {\"name\": \"شوال 25 كيلو\", \"price\": 38500, \"active\": true, \"supplier_price\": 37500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1515\", \"source_url\": \"https://jabaristore.com/?app=product.show.422\"}",
+      "updated_at": 1792480709979
+    },
+    {
+      "source_id": 420,
+      "mode": "apply",
+      "product_id": 1516,
+      "status": "synced",
+      "detail": "{\"item_number\": 2516, \"name\": \"شمع نحل طبيعي\", \"before_price\": 3700, \"before_variants\": [], \"source\": {\"title\": \"شمع نحل طبيعي\", \"variants\": [{\"name\": \"1kg\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"شوال 20 كيلو\", \"price\": 67000, \"active\": true, \"supplier_price\": 66000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع نحل طبيعي\", \"variants\": [{\"name\": \"1kg\", \"price\": 3500, \"active\": true}, {\"name\": \"شوال 20 كيلو\", \"price\": 66000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1kg\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"شوال 20 كيلو\", \"price\": 67000, \"active\": true, \"supplier_price\": 66000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1516\", \"source_url\": \"https://jabaristore.com/?app=product.show.420\"}",
+      "updated_at": 1792480715142
+    },
+    {
+      "source_id": 419,
+      "mode": "apply",
+      "product_id": 3758,
+      "status": "synced",
+      "detail": "{\"item_number\": 4758, \"name\": \"شمع صويا طبعي c3\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"شمع صويا طبعي c3\", \"variants\": [{\"name\": \"1 كيلو\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"4 كيلو\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"شوال 25 كيلو\", \"price\": 58500, \"active\": true, \"supplier_price\": 57500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع صويا طبعي c3\", \"variants\": [{\"name\": \"1 كيلو\", \"price\": 2700, \"active\": true}, {\"name\": \"4 كيلو\", \"price\": 10000, \"active\": true}, {\"name\": \"شوال 25 كيلو\", \"price\": 57500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1 كيلو\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"4 كيلو\", \"price\": 10500, \"active\": true, \"supplier_price\": 10000}, {\"name\": \"شوال 25 كيلو\", \"price\": 58500, \"active\": true, \"supplier_price\": 57500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3758\", \"source_url\": \"https://jabaristore.com/?app=product.show.419\"}",
+      "updated_at": 1792480719975
+    },
+    {
+      "source_id": 418,
+      "mode": "apply",
+      "product_id": 1517,
+      "status": "synced",
+      "detail": "{\"item_number\": 2517, \"name\": \"شمع جل شفاف\", \"before_price\": 2850, \"before_variants\": [], \"source\": {\"title\": \"شمع جل شفاف\", \"variants\": [{\"name\": \"1 kg\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"كرتونه 20 كيلو\", \"price\": 51000, \"active\": true, \"supplier_price\": 50000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع جل شفاف\", \"variants\": [{\"name\": \"1 kg\", \"price\": 2700, \"active\": true}, {\"name\": \"كرتونه 20 كيلو\", \"price\": 50000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1 kg\", \"price\": 2850, \"active\": true, \"supplier_price\": 2700}, {\"name\": \"كرتونه 20 كيلو\", \"price\": 51000, \"active\": true, \"supplier_price\": 50000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1517\", \"source_url\": \"https://jabaristore.com/?app=product.show.418\"}",
+      "updated_at": 1792480725012
+    },
+    {
+      "source_id": 415,
+      "mode": "apply",
+      "product_id": 3759,
+      "status": "synced",
+      "detail": "{\"item_number\": 4759, \"name\": \"شمع برفين حبيبات صيني\", \"before_price\": 1750, \"before_variants\": [], \"source\": {\"title\": \"شمع برفين حبيبات صيني\", \"variants\": [{\"name\": \"1kg\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"شوال 25 كيلو\", \"price\": 36000, \"active\": true, \"supplier_price\": 35000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع برفين حبيبات صيني\", \"variants\": [{\"name\": \"1kg\", \"price\": 1600, \"active\": true}, {\"name\": \"شوال 25 كيلو\", \"price\": 35000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1kg\", \"price\": 1750, \"active\": true, \"supplier_price\": 1600}, {\"name\": \"شوال 25 كيلو\", \"price\": 36000, \"active\": true, \"supplier_price\": 35000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3759\", \"source_url\": \"https://jabaristore.com/?app=product.show.415\"}",
+      "updated_at": 1792480729985
+    },
+    {
+      "source_id": 414,
+      "mode": "apply",
+      "product_id": 1518,
+      "status": "synced",
+      "detail": "{\"item_number\": 2518, \"name\": \"شمع برفين حبيبات الماني\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"شمع برفين حبيبات الماني\", \"variants\": [{\"name\": \"1kg\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"شوال 20 كيلو\", \"price\": 37000, \"active\": true, \"supplier_price\": 36000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شمع برفين حبيبات الماني\", \"variants\": [{\"name\": \"1kg\", \"price\": 2000, \"active\": true}, {\"name\": \"شوال 20 كيلو\", \"price\": 36000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"1kg\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}, {\"name\": \"شوال 20 كيلو\", \"price\": 37000, \"active\": true, \"supplier_price\": 36000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1518\", \"source_url\": \"https://jabaristore.com/?app=product.show.414\"}",
+      "updated_at": 1792480735027
+    },
+    {
+      "source_id": 411,
+      "mode": "apply",
+      "product_id": 1519,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2519}",
+      "updated_at": 1792480739730
+    },
+    {
+      "source_id": 410,
+      "mode": "apply",
+      "product_id": 1520,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2520, \"source\": {\"title\": \"مادة ايبوكسي ريزون\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 9000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480744894
+    },
+    {
+      "source_id": 402,
+      "mode": "apply",
+      "product_id": 3760,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4760, \"source\": {\"title\": \"زجاجة شكل ورده(فارغة بدون شمع)\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 350}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480749756
+    },
+    {
+      "source_id": 394,
+      "mode": "apply",
+      "product_id": 3761,
+      "status": "synced",
+      "detail": "{\"item_number\": 4761, \"name\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"before_price\": 1650, \"before_variants\": [], \"source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": false, \"supplier_price\": 6000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد جبسو طبيعي مجفف ( 120 غرام )\", \"variants\": [{\"name\": \"بالضمة\", \"price\": 1500, \"active\": true}, {\"name\": \"5 ضمم\", \"price\": 6000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"بالضمة\", \"price\": 1650, \"active\": true, \"supplier_price\": 1500}, {\"name\": \"5 ضمم\", \"price\": 6200, \"active\": false, \"supplier_price\": 6000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3761\", \"source_url\": \"https://jabaristore.com/?app=product.show.394\"}",
+      "updated_at": 1792480754926
+    },
+    {
+      "source_id": 372,
+      "mode": "apply",
+      "product_id": 3762,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4762, \"source\": {\"title\": \"ورد جبسوفيلا مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480759697
+    },
+    {
+      "source_id": 371,
+      "mode": "apply",
+      "product_id": 3763,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4763, \"source\": {\"title\": \"ورد جبسوفيلا مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480764757
+    },
+    {
+      "source_id": 370,
+      "mode": "apply",
+      "product_id": 3764,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4764, \"source\": {\"title\": \"ورد جبسوفيلا مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480769719
+    },
+    {
+      "source_id": 367,
+      "mode": "apply",
+      "product_id": 3765,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4765, \"source\": {\"title\": \"ورد جبسوفيلا مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1500}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480774757
+    },
+    {
+      "source_id": 346,
+      "mode": "apply",
+      "product_id": 3766,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4766, \"source\": {\"title\": \"ورد بذور مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480779922
+    },
+    {
+      "source_id": 345,
+      "mode": "apply",
+      "product_id": 3767,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4767, \"source\": {\"title\": \"ورد بذور مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480784749
+    },
+    {
+      "source_id": 344,
+      "mode": "apply",
+      "product_id": 3768,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4768, \"source\": {\"title\": \"ورد بذور مجفف\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 1300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480789741
+    },
+    {
+      "source_id": 342,
+      "mode": "apply",
+      "product_id": 3769,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4769}",
+      "updated_at": 1792480795006
+    },
+    {
+      "source_id": 298,
+      "mode": "apply",
+      "product_id": 1521,
+      "status": "synced",
+      "detail": "{\"item_number\": 2521, \"name\": \"شبر  خيش\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"شبر خيش\", \"variants\": [{\"name\": \"قطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 24 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"شبر خيش\", \"variants\": [{\"name\": \"قطعة\", \"price\": 100, \"active\": true}, {\"name\": \"باكيت 24 قطعة\", \"price\": 2000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"قطعة\", \"price\": 150, \"active\": true, \"supplier_price\": 100}, {\"name\": \"باكيت 24 قطعة\", \"price\": 2150, \"active\": true, \"supplier_price\": 2000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1521\", \"source_url\": \"https://jabaristore.com/?app=product.show.298\"}",
+      "updated_at": 1792480799948
+    },
+    {
+      "source_id": 297,
+      "mode": "apply",
+      "product_id": 1522,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2522, \"source\": {\"title\": \"شبر خيش ثقيل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 3000}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480804751
+    },
+    {
+      "source_id": 287,
+      "mode": "apply",
+      "product_id": 1523,
+      "status": "synced",
+      "detail": "{\"item_number\": 2523, \"name\": \"ورد الخيش ( 12 قطعة )\", \"before_price\": 450, \"before_variants\": [], \"source\": {\"title\": \"ورد الخيش ( 12 قطعة )\", \"variants\": [{\"name\": \"ورده البتلات\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"ورده ساده\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ورده الازرار\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ورده اللولو\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"الورقه\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ورد الخيش ( 12 قطعة )\", \"variants\": [{\"name\": \"ورده البتلات\", \"price\": 800, \"active\": false}, {\"name\": \"ورده ساده\", \"price\": 500, \"active\": true}, {\"name\": \"ورده الازرار\", \"price\": 800, \"active\": true}, {\"name\": \"ورده اللولو\", \"price\": 800, \"active\": false}, {\"name\": \"الورقه\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ورده البتلات\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"ورده ساده\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ورده الازرار\", \"price\": 900, \"active\": true, \"supplier_price\": 800}, {\"name\": \"ورده اللولو\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"الورقه\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1523\", \"source_url\": \"https://jabaristore.com/?app=product.show.287\"}",
+      "updated_at": 1792480809988
+    },
+    {
+      "source_id": 280,
+      "mode": "apply",
+      "product_id": 1524,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2524}",
+      "updated_at": 1792480814732
+    },
+    {
+      "source_id": 275,
+      "mode": "apply",
+      "product_id": 1525,
+      "status": "synced",
+      "detail": "{\"item_number\": 2525, \"name\": \"باكيت ورد سولو ( 144 فلة )\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"باكيت ورد سولو ( 144 فلة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بصلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"برتقالي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"اصفر\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اخضر\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"سكري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"فوشي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"باكيت ورد سولو ( 144 فلة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true}, {\"name\": \"بصلي\", \"price\": 1000, \"active\": false}, {\"name\": \"برتقالي\", \"price\": 1000, \"active\": false}, {\"name\": \"اصفر\", \"price\": 1000, \"active\": true}, {\"name\": \"اخضر\", \"price\": 1000, \"active\": false}, {\"name\": \"زهري\", \"price\": 1000, \"active\": true}, {\"name\": \"ازرق\", \"price\": 1000, \"active\": true}, {\"name\": \"احمر\", \"price\": 1000, \"active\": false}, {\"name\": \"سكري\", \"price\": 1000, \"active\": true}, {\"name\": \"نيلي\", \"price\": 1000, \"active\": false}, {\"name\": \"فوشي\", \"price\": 1000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"بصلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"برتقالي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"اصفر\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"اخضر\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"احمر\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"سكري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"نيلي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"فوشي\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1525\", \"source_url\": \"https://jabaristore.com/?app=product.show.275\"}",
+      "updated_at": 1792480819986
+    },
+    {
+      "source_id": 270,
+      "mode": "apply",
+      "product_id": 3770,
+      "status": "synced",
+      "detail": "{\"item_number\": 4770, \"name\": \"حافظ الدواء\", \"before_price\": 238, \"before_variants\": [], \"source\": {\"title\": \"حافظ الدواء\", \"variants\": [{\"name\": \"اخضر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"برتقالي\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"زهر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"حافظ الدواء\", \"variants\": [{\"name\": \"اخضر\", \"price\": 250, \"active\": true}, {\"name\": \"برتقالي\", \"price\": 250, \"active\": true}, {\"name\": \"زهر\", \"price\": 250, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اخضر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"برتقالي\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"زهر\", \"price\": 300, \"active\": true, \"supplier_price\": 250}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3770\", \"source_url\": \"https://jabaristore.com/?app=product.show.270\"}",
+      "updated_at": 1792480824955
+    },
+    {
+      "source_id": 209,
+      "mode": "apply",
+      "product_id": 1526,
+      "status": "synced",
+      "detail": "{\"item_number\": 2526, \"name\": \"طفايه فتيل الشموع\", \"before_price\": 1850, \"before_variants\": [], \"source\": {\"title\": \"طفايه فتيل الشموع\", \"variants\": [{\"name\": \"اسود\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"فضي\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ذهبي\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"جولدن رزو\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"طفايه فتيل الشموع\", \"variants\": [{\"name\": \"اسود\", \"price\": 1700, \"active\": false}, {\"name\": \"فضي\", \"price\": 1700, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 1700, \"active\": false}, {\"name\": \"جولدن رزو\", \"price\": 1700, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اسود\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"فضي\", \"price\": 1850, \"active\": true, \"supplier_price\": 1700}, {\"name\": \"ذهبي\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}, {\"name\": \"جولدن رزو\", \"price\": 1850, \"active\": false, \"supplier_price\": 1700}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1526\", \"source_url\": \"https://jabaristore.com/?app=product.show.209\"}",
+      "updated_at": 1792480829982
+    },
+    {
+      "source_id": 207,
+      "mode": "apply",
+      "product_id": 1527,
+      "status": "synced",
+      "detail": "{\"item_number\": 2527, \"name\": \"ملقط لتحريك الفتيل\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"ملقط لتحريك الفتيل\", \"variants\": [{\"name\": \"اسود\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فضي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ذهبي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"جولدن روز\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ملقط لتحريك الفتيل\", \"variants\": [{\"name\": \"اسود\", \"price\": 500, \"active\": true}, {\"name\": \"فضي\", \"price\": 500, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 500, \"active\": true}, {\"name\": \"جولدن روز\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اسود\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"فضي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"ذهبي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"جولدن روز\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1527\", \"source_url\": \"https://jabaristore.com/?app=product.show.207\"}",
+      "updated_at": 1792480835163
+    },
+    {
+      "source_id": 204,
+      "mode": "apply",
+      "product_id": 1528,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2528, \"source\": {\"title\": \"مخرز خشبي\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 300}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480840006
+    },
+    {
+      "source_id": 199,
+      "mode": "apply",
+      "product_id": 1529,
+      "status": "no_options",
+      "detail": "{\"item_number\": 2529, \"source\": {\"title\": \"ماسكة فتيل\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480844759
+    },
+    {
+      "source_id": 184,
+      "mode": "apply",
+      "product_id": 3771,
+      "status": "synced",
+      "detail": "{\"item_number\": 4771, \"name\": \"حاملة مفاتيح\", \"before_price\": 300, \"before_variants\": [], \"source\": {\"title\": \"حاملة مفاتيح\", \"variants\": [{\"name\": \"كموني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"كحلي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"خمري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"سكري\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"بيج\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"زيتي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"حاملة مفاتيح\", \"variants\": [{\"name\": \"كموني\", \"price\": 500, \"active\": true}, {\"name\": \"كحلي\", \"price\": 500, \"active\": true}, {\"name\": \"خمري\", \"price\": 500, \"active\": true}, {\"name\": \"سكري\", \"price\": 500, \"active\": false}, {\"name\": \"بيج\", \"price\": 500, \"active\": true}, {\"name\": \"زيتي\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"كموني\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"كحلي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"خمري\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"سكري\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"بيج\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"زيتي\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3771\", \"source_url\": \"https://jabaristore.com/?app=product.show.184\"}",
+      "updated_at": 1792480850233
+    },
+    {
+      "source_id": 178,
+      "mode": "apply",
+      "product_id": 1530,
+      "status": "synced",
+      "detail": "{\"item_number\": 2530, \"name\": \"ستاند أكريليك\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"ستاند اكريليك\", \"variants\": [{\"name\": \"حجم 0\", \"price\": 200, \"active\": true, \"supplier_price\": 150}, {\"name\": \"حجم 1\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"حجم 2\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"حجم 3\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"حجم 4\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"ستاند اكريليك\", \"variants\": [{\"name\": \"حجم 0\", \"price\": 150, \"active\": true}, {\"name\": \"حجم 1\", \"price\": 250, \"active\": true}, {\"name\": \"حجم 2\", \"price\": 350, \"active\": true}, {\"name\": \"حجم 3\", \"price\": 400, \"active\": true}, {\"name\": \"حجم 4\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"حجم 0\", \"price\": 200, \"active\": true, \"supplier_price\": 150}, {\"name\": \"حجم 1\", \"price\": 300, \"active\": true, \"supplier_price\": 250}, {\"name\": \"حجم 2\", \"price\": 400, \"active\": true, \"supplier_price\": 350}, {\"name\": \"حجم 3\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"حجم 4\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1530\", \"source_url\": \"https://jabaristore.com/?app=product.show.178\"}",
+      "updated_at": 1792480855183
+    },
+    {
+      "source_id": 172,
+      "mode": "apply",
+      "product_id": 3772,
+      "status": "synced",
+      "detail": "{\"item_number\": 4772, \"name\": \"رنغ ذهبي مفرد\", \"before_price\": 150, \"before_variants\": [], \"source\": {\"title\": \"رنغ ذهبي مفرد\", \"variants\": [{\"name\": \"30 سم\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"25 سم\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"20 سم\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"15 سم\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"10 سم\", \"price\": 250, \"active\": true, \"supplier_price\": 200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"رنغ ذهبي مفرد\", \"variants\": [{\"name\": \"30 سم\", \"price\": 700, \"active\": true}, {\"name\": \"25 سم\", \"price\": 600, \"active\": true}, {\"name\": \"20 سم\", \"price\": 500, \"active\": true}, {\"name\": \"15 سم\", \"price\": 400, \"active\": true}, {\"name\": \"10 سم\", \"price\": 200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"30 سم\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"25 سم\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"20 سم\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"15 سم\", \"price\": 450, \"active\": true, \"supplier_price\": 400}, {\"name\": \"10 سم\", \"price\": 250, \"active\": true, \"supplier_price\": 200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3772\", \"source_url\": \"https://jabaristore.com/?app=product.show.172\"}",
+      "updated_at": 1792480860144
+    },
+    {
+      "source_id": 168,
+      "mode": "apply",
+      "product_id": 1531,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2531}",
+      "updated_at": 1792480864953
+    },
+    {
+      "source_id": 162,
+      "mode": "apply",
+      "product_id": 3773,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4773}",
+      "updated_at": 1792480869917
+    },
+    {
+      "source_id": 161,
+      "mode": "apply",
+      "product_id": 3774,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4774}",
+      "updated_at": 1792480874974
+    },
+    {
+      "source_id": 157,
+      "mode": "apply",
+      "product_id": 1532,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2532}",
+      "updated_at": 1792480879983
+    },
+    {
+      "source_id": 156,
+      "mode": "apply",
+      "product_id": 1533,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2533}",
+      "updated_at": 1792480884904
+    },
+    {
+      "source_id": 140,
+      "mode": "apply",
+      "product_id": 1534,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2534}",
+      "updated_at": 1792480889971
+    },
+    {
+      "source_id": 135,
+      "mode": "apply",
+      "product_id": 3775,
+      "status": "synced",
+      "detail": "{\"item_number\": 4775, \"name\": \"دباديب 🧸 هدايا و التوزيعات\", \"before_price\": 200, \"before_variants\": [], \"source\": {\"title\": \"دباديب 🧸 هدايا و التوزيعات\", \"variants\": [{\"name\": \"اسد\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"نمر\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"دباديب 🧸 هدايا و التوزيعات\", \"variants\": [{\"name\": \"اسد\", \"price\": 300, \"active\": true}, {\"name\": \"نمر\", \"price\": 300, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"اسد\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"نمر\", \"price\": 350, \"active\": true, \"supplier_price\": 300}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3775\", \"source_url\": \"https://jabaristore.com/?app=product.show.135\"}",
+      "updated_at": 1792480895194
+    },
+    {
+      "source_id": 119,
+      "mode": "apply",
+      "product_id": 1535,
+      "status": "synced",
+      "detail": "{\"item_number\": 2535, \"name\": \"زجاج غطاء نحاسي ( 12 قطعة )\", \"before_price\": 500, \"before_variants\": [], \"source\": {\"title\": \"زجاج غطاء نحاسي ( 12 قطعة )\", \"variants\": [{\"name\": \"3 cm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"4 cm\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"5 cm\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"6 cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"7 cm\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"8 cm\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"9 cm\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"10 cm\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زجاج غطاء نحاسي ( 12 قطعة )\", \"variants\": [{\"name\": \"3 cm\", \"price\": 500, \"active\": true}, {\"name\": \"4 cm\", \"price\": 600, \"active\": false}, {\"name\": \"5 cm\", \"price\": 700, \"active\": true}, {\"name\": \"6 cm\", \"price\": 800, \"active\": false}, {\"name\": \"7 cm\", \"price\": 900, \"active\": false}, {\"name\": \"8 cm\", \"price\": 1000, \"active\": false}, {\"name\": \"9 cm\", \"price\": 1100, \"active\": true}, {\"name\": \"10 cm\", \"price\": 1200, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"3 cm\", \"price\": 550, \"active\": true, \"supplier_price\": 500}, {\"name\": \"4 cm\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"5 cm\", \"price\": 800, \"active\": true, \"supplier_price\": 700}, {\"name\": \"6 cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"7 cm\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"8 cm\", \"price\": 1100, \"active\": false, \"supplier_price\": 1000}, {\"name\": \"9 cm\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"10 cm\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1535\", \"source_url\": \"https://jabaristore.com/?app=product.show.119\"}",
+      "updated_at": 1792480899975
+    },
+    {
+      "source_id": 118,
+      "mode": "apply",
+      "product_id": 1536,
+      "status": "synced",
+      "detail": "{\"item_number\": 2536, \"name\": \"زجاج غطا فلين للحنة ( 12 قطعة )\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"زجاج غطا فلين للحنة ( 12 قطعة )\", \"variants\": [{\"name\": \"3cm\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"4cm\", \"price\": 800, \"active\": false, \"supplier_price\": 700}, {\"name\": \"5cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"6cm\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"7cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"8cm\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"9cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"10cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"11cm\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"12cm\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"زجاج غطا فلين للحنة ( 12 قطعة )\", \"variants\": [{\"name\": \"3cm\", \"price\": 600, \"active\": false}, {\"name\": \"4cm\", \"price\": 700, \"active\": false}, {\"name\": \"5cm\", \"price\": 800, \"active\": false}, {\"name\": \"6cm\", \"price\": 900, \"active\": false}, {\"name\": \"7cm\", \"price\": 1000, \"active\": true}, {\"name\": \"8cm\", \"price\": 1100, \"active\": true}, {\"name\": \"9cm\", \"price\": 1200, \"active\": true}, {\"name\": \"10cm\", \"price\": 1300, \"active\": true}, {\"name\": \"11cm\", \"price\": 1400, \"active\": false}, {\"name\": \"12cm\", \"price\": 1500, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"3cm\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"4cm\", \"price\": 800, \"active\": false, \"supplier_price\": 700}, {\"name\": \"5cm\", \"price\": 900, \"active\": false, \"supplier_price\": 800}, {\"name\": \"6cm\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"7cm\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"8cm\", \"price\": 1250, \"active\": true, \"supplier_price\": 1100}, {\"name\": \"9cm\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"10cm\", \"price\": 1450, \"active\": true, \"supplier_price\": 1300}, {\"name\": \"11cm\", \"price\": 1550, \"active\": false, \"supplier_price\": 1400}, {\"name\": \"12cm\", \"price\": 1650, \"active\": false, \"supplier_price\": 1500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1536\", \"source_url\": \"https://jabaristore.com/?app=product.show.118\"}",
+      "updated_at": 1792480904975
+    },
+    {
+      "source_id": 115,
+      "mode": "apply",
+      "product_id": 3776,
+      "status": "no_options",
+      "detail": "{\"item_number\": 4776, \"source\": {\"title\": \"زجاج غطاء فلين\", \"variants\": [], \"custom_fields\": false, \"minimum\": 1, \"simple_price\": 200}, \"missing_variants\": [], \"prices_preserved\": true}",
+      "updated_at": 1792480909903
+    },
+    {
+      "source_id": 101,
+      "mode": "apply",
+      "product_id": 3777,
+      "status": "synced",
+      "detail": "{\"item_number\": 4777, \"name\": \"اكياس سلفان لاصق 3+15*10\", \"before_price\": 1350, \"before_variants\": [], \"source\": {\"title\": \"اكياس سلفان لاصق 3+15*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"1000 كيس\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"اكياس سلفان لاصق 3+15*10\", \"variants\": [{\"name\": \"200 كيس\", \"price\": 1200, \"active\": true}, {\"name\": \"1000 كيس\", \"price\": 4000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"200 كيس\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"1000 كيس\", \"price\": 4200, \"active\": true, \"supplier_price\": 4000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3777\", \"source_url\": \"https://jabaristore.com/?app=product.show.101\"}",
+      "updated_at": 1792480915149
+    },
+    {
+      "source_id": 98,
+      "mode": "apply",
+      "product_id": 1537,
+      "status": "synced",
+      "detail": "{\"item_number\": 2537, \"name\": \"صندوق سداسي\", \"before_price\": 1100, \"before_variants\": [], \"source\": {\"title\": \"صندوق سداسي\", \"variants\": [{\"name\": \"حجم 1\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"حجم 2\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"حجم 3\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"حجم 4\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"حجم 5\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"صندوق سداسي\", \"variants\": [{\"name\": \"حجم 1\", \"price\": 1200, \"active\": true}, {\"name\": \"حجم 2\", \"price\": 2500, \"active\": true}, {\"name\": \"حجم 3\", \"price\": 3000, \"active\": true}, {\"name\": \"حجم 4\", \"price\": 3500, \"active\": true}, {\"name\": \"حجم 5\", \"price\": 5000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"حجم 1\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"حجم 2\", \"price\": 2650, \"active\": true, \"supplier_price\": 2500}, {\"name\": \"حجم 3\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"حجم 4\", \"price\": 3700, \"active\": true, \"supplier_price\": 3500}, {\"name\": \"حجم 5\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1537\", \"source_url\": \"https://jabaristore.com/?app=product.show.98\"}",
+      "updated_at": 1792480920179
+    },
+    {
+      "source_id": 96,
+      "mode": "apply",
+      "product_id": 1538,
+      "status": "synced",
+      "detail": "{\"item_number\": 2538, \"name\": \"قاروره ماء الورد\", \"before_price\": 425, \"before_variants\": [], \"source\": {\"title\": \"قاروره ماء الورد\", \"variants\": [{\"name\": \"الموديل الاول / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الاول / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"الموديل الثاني / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الثاني / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"الموديل الثالث / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الثالث / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"قاروره ماء الورد\", \"variants\": [{\"name\": \"الموديل الاول / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"الموديل الاول / 50 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"الموديل الثاني / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"الموديل الثاني / 50 قطعة\", \"price\": 15000, \"active\": true}, {\"name\": \"الموديل الثالث / بالقطعة\", \"price\": 300, \"active\": true}, {\"name\": \"الموديل الثالث / 50 قطعة\", \"price\": 15000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"الموديل الاول / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الاول / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"الموديل الثاني / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الثاني / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}, {\"name\": \"الموديل الثالث / بالقطعة\", \"price\": 350, \"active\": true, \"supplier_price\": 300}, {\"name\": \"الموديل الثالث / 50 قطعة\", \"price\": 16000, \"active\": true, \"supplier_price\": 15000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1538\", \"source_url\": \"https://jabaristore.com/?app=product.show.96\"}",
+      "updated_at": 1792480924965
+    },
+    {
+      "source_id": 91,
+      "mode": "apply",
+      "product_id": 1539,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2539}",
+      "updated_at": 1792480929961
+    },
+    {
+      "source_id": 82,
+      "mode": "apply",
+      "product_id": 1540,
+      "status": "synced",
+      "detail": "{\"item_number\": 2540, \"name\": \"الساعه الرمليه\", \"before_price\": 550, \"before_variants\": [], \"source\": {\"title\": \"الساعه الرمليه\", \"variants\": [{\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فستقي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"الساعه الرمليه\", \"variants\": [{\"name\": \"ازرق\", \"price\": 1000, \"active\": true}, {\"name\": \"ليلكي\", \"price\": 1000, \"active\": true}, {\"name\": \"زهري\", \"price\": 1000, \"active\": true}, {\"name\": \"فستقي\", \"price\": 1000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ازرق\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"ليلكي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"زهري\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}, {\"name\": \"فستقي\", \"price\": 1100, \"active\": true, \"supplier_price\": 1000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1540\", \"source_url\": \"https://jabaristore.com/?app=product.show.82\"}",
+      "updated_at": 1792480934996
+    },
+    {
+      "source_id": 80,
+      "mode": "apply",
+      "product_id": 3778,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4778}",
+      "updated_at": 1792480939693
+    },
+    {
+      "source_id": 79,
+      "mode": "apply",
+      "product_id": 1541,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2541}",
+      "updated_at": 1792480944756
+    },
+    {
+      "source_id": 76,
+      "mode": "apply",
+      "product_id": 1542,
+      "status": "synced",
+      "detail": "{\"item_number\": 2542, \"name\": \"مباخر القلب الزيتيه\", \"before_price\": 350, \"before_variants\": [], \"source\": {\"title\": \"مباخر القلب الزيتيه\", \"variants\": [{\"name\": \"زهري\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"مباخر القلب الزيتيه\", \"variants\": [{\"name\": \"زهري\", \"price\": 500, \"active\": false}, {\"name\": \"ازرق\", \"price\": 500, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"زهري\", \"price\": 550, \"active\": false, \"supplier_price\": 500}, {\"name\": \"ازرق\", \"price\": 550, \"active\": true, \"supplier_price\": 500}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1542\", \"source_url\": \"https://jabaristore.com/?app=product.show.76\"}",
+      "updated_at": 1792480950066
+    },
+    {
+      "source_id": 60,
+      "mode": "apply",
+      "product_id": 1543,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2543}",
+      "updated_at": 1792480954935
+    },
+    {
+      "source_id": 54,
+      "mode": "apply",
+      "product_id": 1544,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 2544}",
+      "updated_at": 1792480959942
+    },
+    {
+      "source_id": 45,
+      "mode": "apply",
+      "product_id": 3779,
+      "status": "synced",
+      "detail": "{\"item_number\": 4779, \"name\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*25 ( 10 قطع )\", \"before_price\": 2150, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"اسود\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف حجم 5*25*25 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 3000, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 3000, \"active\": true}, {\"name\": \"بني\", \"price\": 3000, \"active\": true}, {\"name\": \"اسود\", \"price\": 3000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"ذهبي\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"بني\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}, {\"name\": \"اسود\", \"price\": 3150, \"active\": true, \"supplier_price\": 3000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3779\", \"source_url\": \"https://jabaristore.com/?app=product.show.45\"}",
+      "updated_at": 1792480965036
+    },
+    {
+      "source_id": 39,
+      "mode": "apply",
+      "product_id": 3780,
+      "status": "unsupported_source_price",
+      "detail": "{\"reason\": \"simple_price_not_verified\", \"item_number\": 4780}",
+      "updated_at": 1792480969895
+    },
+    {
+      "source_id": 35,
+      "mode": "apply",
+      "product_id": 3781,
+      "status": "synced",
+      "detail": "{\"item_number\": 4781, \"name\": \"علب تغليف كرتون مع غطاء شفاف 3*12*12 ( 10 قطع )\", \"before_price\": 900, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 3*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"فضي\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"ذهبي\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون مع غطاء شفاف 3*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1200, \"active\": true}, {\"name\": \"بني\", \"price\": 1200, \"active\": true}, {\"name\": \"فضي\", \"price\": 1200, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 1200, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"بني\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}, {\"name\": \"فضي\", \"price\": 1350, \"active\": false, \"supplier_price\": 1200}, {\"name\": \"ذهبي\", \"price\": 1350, \"active\": true, \"supplier_price\": 1200}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3781\", \"source_url\": \"https://jabaristore.com/?app=product.show.35\"}",
+      "updated_at": 1792480975011
+    },
+    {
+      "source_id": 33,
+      "mode": "apply",
+      "product_id": 3782,
+      "status": "synced",
+      "detail": "{\"item_number\": 4782, \"name\": \"علب كرتون مع غطاء شفاف (3*9*9) 10 قطع\", \"before_price\": 750, \"before_variants\": [], \"source\": {\"title\": \"علب كرتون مع غطاء شفاف (3*9*9) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب كرتون مع غطاء شفاف (3*9*9) 10 قطعة\", \"variants\": [{\"name\": \"ابيض\", \"price\": 900, \"active\": true}, {\"name\": \"بني\", \"price\": 900, \"active\": false}, {\"name\": \"ذهبي\", \"price\": 900, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}, {\"name\": \"بني\", \"price\": 1000, \"active\": false, \"supplier_price\": 900}, {\"name\": \"ذهبي\", \"price\": 1000, \"active\": true, \"supplier_price\": 900}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3782\", \"source_url\": \"https://jabaristore.com/?app=product.show.33\"}",
+      "updated_at": 1792480980009
+    },
+    {
+      "source_id": 32,
+      "mode": "apply",
+      "product_id": 3783,
+      "status": "synced",
+      "detail": "{\"item_number\": 4783, \"name\": \"علب تغليف كرتون 2*8*8 ( 10 قطع )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف كرتون 2*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 950, \"active\": true, \"supplier_price\": 850}, {\"name\": \"بني\", \"price\": 950, \"active\": true, \"supplier_price\": 850}, {\"name\": \"ذهبي\", \"price\": 950, \"active\": true, \"supplier_price\": 850}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف كرتون 2*8*8 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض\", \"price\": 850, \"active\": true}, {\"name\": \"بني\", \"price\": 850, \"active\": true}, {\"name\": \"ذهبي\", \"price\": 850, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض\", \"price\": 950, \"active\": true, \"supplier_price\": 850}, {\"name\": \"بني\", \"price\": 950, \"active\": true, \"supplier_price\": 850}, {\"name\": \"ذهبي\", \"price\": 950, \"active\": true, \"supplier_price\": 850}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3783\", \"source_url\": \"https://jabaristore.com/?app=product.show.32\"}",
+      "updated_at": 1792480984983
+    },
+    {
+      "source_id": 27,
+      "mode": "apply",
+      "product_id": 1545,
+      "status": "synced",
+      "detail": "{\"item_number\": 2545, \"name\": \"تغليف pvc 12*12*12 ( 10 قطع )\", \"before_price\": 2050, \"before_variants\": [], \"source\": {\"title\": \"تغليف pvc 12*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"بني / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"بني / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 2050, \"active\": false, \"supplier_price\": 1900}, {\"name\": \"فضي / 100 قطعة\", \"price\": 18000, \"active\": false, \"supplier_price\": 17000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"تغليف pvc 12*12*12 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 1900, \"active\": true}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 17000, \"active\": true}, {\"name\": \"بني / 10 قطعة\", \"price\": 1900, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 17000, \"active\": true}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 1900, \"active\": true}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 17000, \"active\": true}, {\"name\": \"فضي / 10 قطعة\", \"price\": 1900, \"active\": false}, {\"name\": \"فضي / 100 قطعة\", \"price\": 17000, \"active\": false}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"بني / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"بني / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 2050, \"active\": true, \"supplier_price\": 1900}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 18000, \"active\": true, \"supplier_price\": 17000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 2050, \"active\": false, \"supplier_price\": 1900}, {\"name\": \"فضي / 100 قطعة\", \"price\": 18000, \"active\": false, \"supplier_price\": 17000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/1545\", \"source_url\": \"https://jabaristore.com/?app=product.show.27\"}",
+      "updated_at": 1792480989957
+    },
+    {
+      "source_id": 20,
+      "mode": "apply",
+      "product_id": 3784,
+      "status": "synced",
+      "detail": "{\"item_number\": 4784, \"name\": \"علب تغليف PVC حجم 4*4*4 ( 10 قطع )\", \"before_price\": 700, \"before_variants\": [], \"source\": {\"title\": \"علب تغليف PVC حجم 4*4*4 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"فضي / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"بني / 10 قطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني / 100 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"custom_fields\": false, \"minimum\": 1}, \"supplier_source\": {\"title\": \"علب تغليف PVC حجم 4*4*4 ( 10 قطعة )\", \"variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 600, \"active\": false}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 5000, \"active\": false}, {\"name\": \"فضي / 10 قطعة\", \"price\": 600, \"active\": false}, {\"name\": \"فضي / 100 قطعة\", \"price\": 5000, \"active\": false}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 600, \"active\": false}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 5000, \"active\": false}, {\"name\": \"بني / 10 قطعة\", \"price\": 600, \"active\": true}, {\"name\": \"بني / 100 قطعة\", \"price\": 5000, \"active\": true}], \"custom_fields\": false, \"minimum\": 1}, \"added_variants\": [{\"name\": \"ابيض / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"ابيض / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"فضي / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"فضي / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"ذهبي / 10 قطعة\", \"price\": 700, \"active\": false, \"supplier_price\": 600}, {\"name\": \"ذهبي / 100 قطعة\", \"price\": 5200, \"active\": false, \"supplier_price\": 5000}, {\"name\": \"بني / 10 قطعة\", \"price\": 700, \"active\": true, \"supplier_price\": 600}, {\"name\": \"بني / 100 قطعة\", \"price\": 5200, \"active\": true, \"supplier_price\": 5000}], \"prices_preserved\": true, \"store_url\": \"https://manarstore.ps/product/3784\", \"source_url\": \"https://jabaristore.com/?app=product.show.20\"}",
+      "updated_at": 1792480994993
     }
   ]
 }

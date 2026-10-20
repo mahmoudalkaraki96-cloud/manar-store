@@ -5206,3 +5206,104 @@
 - الجعبري#504 ↔ صنف#4736: no_options؛ زيت عاطفة العطري 100ml. https://jabaristore.com/?app=product.show.504
 - الجعبري#502 ↔ صنف#4737: no_options؛ زيت حورية 100ml. https://jabaristore.com/?app=product.show.502
 - الجعبري#501 ↔ صنف#4738: no_options؛ زيت فهرنهايت العطري 100ml. https://jabaristore.com/?app=product.show.501
+
+
+### 2026-10-20T10:23:17.418014+03:00 — JABARI-VARIANT-BATCH
+## Jabari variant audit
+- Time: 2026-10-20T10:23:17.418014+03:00
+- Mode: apply
+- Status: completed_batch
+- Counts: {"no_options": 1202, "synced": 868, "unsupported_source_price": 401}
+- Per-product results: docs/jabari-variant-audit/latest.json
+- تفاصيل كل عملية محفوظة في D1 فور تنفيذها؛ التقرير يشمل قبل/بعد وروابط المصدر والمتجر.
+- تقرير كل الأصناف المعدلة: docs/jabari-variant-audit/changed-products.csv وchanged-products.html، ويشمل التعديلات اليدوية المسجلة.
+- الجعبري#499 ↔ صنف#4739: no_options؛ زيت ورد العطري 100ml. https://jabaristore.com/?app=product.show.499
+- الجعبري#498 ↔ صنف#4740: no_options؛ زيت سكاندل العطري 100ml. https://jabaristore.com/?app=product.show.498
+- الجعبري#496 ↔ صنف#4741: no_options؛ زيت رد اوشن 100ml. https://jabaristore.com/?app=product.show.496
+- الجعبري#493 ↔ صنف#4742: no_options؛ زيت حلم العطري 100ml. https://jabaristore.com/?app=product.show.493
+- الجعبري#492 ↔ صنف#4743: no_options؛ زيت سفانا 100ml. https://jabaristore.com/?app=product.show.492
+- الجعبري#491 ↔ صنف#4744: no_options؛ زيت نعنع 100ml. https://jabaristore.com/?app=product.show.491
+- الجعبري#490 ↔ صنف#4745: no_options؛ زيت جوتشي العطري 100ml. https://jabaristore.com/?app=product.show.490
+- الجعبري#489 ↔ صنف#4746: no_options؛ زيت الليمون 100ml. https://jabaristore.com/?app=product.show.489
+- الجعبري#486 ↔ صنف#4747: no_options؛ زيت الثلج العطري 100ml. https://jabaristore.com/?app=product.show.486
+- الجعبري#485 ↔ صنف#4748: no_options؛ زيت تفاح عطري 100ml. https://jabaristore.com/?app=product.show.485
+- الجعبري#484 ↔ صنف#4749: no_options؛ زيت ورد الجوري 100ml. https://jabaristore.com/?app=product.show.484
+- الجعبري#482 ↔ صنف#4750: no_options؛ زيت بامبو 100ml. https://jabaristore.com/?app=product.show.482
+- الجعبري#476 ↔ صنف#4751: no_options؛ زيت كاندي توتي فروتي 100ml. https://jabaristore.com/?app=product.show.476
+- الجعبري#474 ↔ صنف#2502: synced؛ 100 غم=21.5₪؛ كيلو=170₪. https://jabaristore.com/?app=product.show.474
+- الجعبري#467 ↔ صنف#2503: synced؛ ذهبي / بالقطعة=11₪؛ ذهبي / 10 قطعة=85₪؛ فضي / بالقطعة=11₪؛ فضي / 10 قطعة=85₪. https://jabaristore.com/?app=product.show.467
+- الجعبري#466 ↔ صنف#2504: synced؛ فضي / بالقطعة=11₪؛ فضي / 10 قطعة=85₪؛ ذهبي / بالقطعة=11₪؛ ذهبي / 10 قطعة=85₪. https://jabaristore.com/?app=product.show.466
+- الجعبري#465 ↔ صنف#2505: synced؛ زهري=9₪؛ ازرق=9₪. https://jabaristore.com/?app=product.show.465
+- الجعبري#461 ↔ صنف#2506: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.461
+- الجعبري#457 ↔ صنف#2507: synced؛ كبير=16.5₪؛ وسط=14.5₪؛ صغير=12.5₪. https://jabaristore.com/?app=product.show.457
+- الجعبري#456 ↔ صنف#2508: synced؛ Cm 9*11=9₪؛ 11*14 Cm=10₪؛ 14*18 Cm=11₪؛ 18*23 Cm=13.5₪؛ 20*25 Cm=14.5₪. https://jabaristore.com/?app=product.show.456
+- الجعبري#455 ↔ صنف#2509: synced؛ 10cm=9₪؛ 12cm=10₪؛ 16cm=11₪؛ 21cm=13.5₪؛ 25cm=14.5₪. https://jabaristore.com/?app=product.show.455
+- الجعبري#454 ↔ صنف#4752: synced؛ فضي=42₪؛ اسود=42₪؛ ازرق=42₪؛ زهري=42₪؛ ابيض=42₪. https://jabaristore.com/?app=product.show.454
+- الجعبري#453 ↔ صنف#2510: synced؛ بني / 30 سم=11₪؛ بني / 25 سم=9₪؛ بيج / 30 سم=11₪؛ بيج / 25 سم=9₪؛ ابيض / 30 سم=11₪؛ ابيض / 25 سم=9₪؛ زهر / 30 سم=11₪؛ زهر / 25 سم=9₪؛ ازرق / 30 سم=11₪؛ ازرق / 25 سم=9₪. https://jabaristore.com/?app=product.show.453
+- الجعبري#443 ↔ صنف#2511: synced؛ ابيض=21.5₪؛ ايفري=21.5₪؛ ذهبي=21.5₪؛ ازرق=21.5₪؛ زهري=21.5₪. https://jabaristore.com/?app=product.show.443
+- الجعبري#439 ↔ صنف#4753: synced؛ 0.3mm=5.5₪؛ 0.4mm=5.5₪؛ 0.5mm=5.5₪؛ 0.6mm=5.5₪؛ 0.8mm=5.5₪؛ 1.00mm=5.5₪. https://jabaristore.com/?app=product.show.439
+- الجعبري#438 ↔ صنف#4754: synced؛ 0.3mm=5.5₪؛ 0.4mm=5.5₪؛ 0.5mm=5.5₪؛ 0.6mm=5.5₪؛ 0.8mm=5.5₪؛ 1mm=5.5₪. https://jabaristore.com/?app=product.show.438
+- الجعبري#435 ↔ صنف#4755: synced؛ اسود=16.5₪؛ ابيض=16.5₪؛ نيلي=16.5₪؛ ازرق غامق=16.5₪؛ ازرق سماوي=16.5₪؛ ازرق تركواز=16.5₪؛ فوشي=16.5₪؛ زهر وسط=16.5₪؛ زهر فاتح=16.5₪؛ سكني فاتح=16.5₪. https://jabaristore.com/?app=product.show.435
+- الجعبري#433 ↔ صنف#4756: synced؛ صغير=1₪؛ وسط=1.5₪؛ كبير=2.5₪. https://jabaristore.com/?app=product.show.433
+- الجعبري#431 ↔ صنف#2512: synced؛ اسود=9₪؛ ابيض=9₪. https://jabaristore.com/?app=product.show.431
+- الجعبري#430 ↔ صنف#4757: synced؛ فضي=16.5₪؛ ذهبي=16.5₪. https://jabaristore.com/?app=product.show.430
+- الجعبري#428 ↔ صنف#2513: synced؛ ذهبي ساطع / 100 قطعة=26.5₪؛ ذهبي ساطع / 1000 قطعة=210₪؛ ذهبي باهت / 100 قطعة=26.5₪؛ ذهبي باهت / 1000 قطعة=210₪؛ فضي / 100 قطعة=26.5₪؛ فضي / 1000 قطعة=210₪؛ برونز / 100 قطعة=26.5₪؛ برونز / 1000 قطعة=210₪. https://jabaristore.com/?app=product.show.428
+- الجعبري#425 ↔ صنف#2514: synced؛ ذهبي=37₪؛ فضي=37₪. https://jabaristore.com/?app=product.show.425
+- الجعبري#422 ↔ صنف#2515: synced؛ 1kg=19.5₪؛ شوال 25 كيلو=385₪. https://jabaristore.com/?app=product.show.422
+- الجعبري#420 ↔ صنف#2516: synced؛ 1kg=37₪؛ شوال 20 كيلو=670₪. https://jabaristore.com/?app=product.show.420
+- الجعبري#419 ↔ صنف#4758: synced؛ 1 كيلو=28.5₪؛ 4 كيلو=105₪؛ شوال 25 كيلو=585₪. https://jabaristore.com/?app=product.show.419
+- الجعبري#418 ↔ صنف#2517: synced؛ 1 kg=28.5₪؛ كرتونه 20 كيلو=510₪. https://jabaristore.com/?app=product.show.418
+- الجعبري#415 ↔ صنف#4759: synced؛ 1kg=17.5₪؛ شوال 25 كيلو=360₪. https://jabaristore.com/?app=product.show.415
+- الجعبري#414 ↔ صنف#2518: synced؛ 1kg=21.5₪؛ شوال 20 كيلو=370₪. https://jabaristore.com/?app=product.show.414
+- الجعبري#411 ↔ صنف#2519: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.411
+- الجعبري#410 ↔ صنف#2520: no_options؛ مادة ايبوكسي ريزون. https://jabaristore.com/?app=product.show.410
+- الجعبري#402 ↔ صنف#4760: no_options؛ زجاجة شكل ورده(فارغة بدون شمع). https://jabaristore.com/?app=product.show.402
+- الجعبري#394 ↔ صنف#4761: synced؛ بالضمة=16.5₪؛ 5 ضمم=62₪. https://jabaristore.com/?app=product.show.394
+- الجعبري#372 ↔ صنف#4762: no_options؛ ورد جبسوفيلا مجفف. https://jabaristore.com/?app=product.show.372
+- الجعبري#371 ↔ صنف#4763: no_options؛ ورد جبسوفيلا مجفف. https://jabaristore.com/?app=product.show.371
+- الجعبري#370 ↔ صنف#4764: no_options؛ ورد جبسوفيلا مجفف. https://jabaristore.com/?app=product.show.370
+- الجعبري#367 ↔ صنف#4765: no_options؛ ورد جبسوفيلا مجفف. https://jabaristore.com/?app=product.show.367
+- الجعبري#346 ↔ صنف#4766: no_options؛ ورد بذور مجفف. https://jabaristore.com/?app=product.show.346
+- الجعبري#345 ↔ صنف#4767: no_options؛ ورد بذور مجفف. https://jabaristore.com/?app=product.show.345
+- الجعبري#344 ↔ صنف#4768: no_options؛ ورد بذور مجفف. https://jabaristore.com/?app=product.show.344
+- الجعبري#342 ↔ صنف#4769: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.342
+- الجعبري#298 ↔ صنف#2521: synced؛ قطعة=1.5₪؛ باكيت 24 قطعة=21.5₪. https://jabaristore.com/?app=product.show.298
+- الجعبري#297 ↔ صنف#2522: no_options؛ شبر خيش ثقيل. https://jabaristore.com/?app=product.show.297
+- الجعبري#287 ↔ صنف#2523: synced؛ ورده البتلات=9₪؛ ورده ساده=5.5₪؛ ورده الازرار=9₪؛ ورده اللولو=9₪؛ الورقه=5.5₪. https://jabaristore.com/?app=product.show.287
+- الجعبري#280 ↔ صنف#2524: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.280
+- الجعبري#275 ↔ صنف#2525: synced؛ ابيض=11₪؛ بصلي=11₪؛ برتقالي=11₪؛ اصفر=11₪؛ اخضر=11₪؛ زهري=11₪؛ ازرق=11₪؛ احمر=11₪؛ سكري=11₪؛ نيلي=11₪؛ فوشي=11₪. https://jabaristore.com/?app=product.show.275
+- الجعبري#270 ↔ صنف#4770: synced؛ اخضر=3₪؛ برتقالي=3₪؛ زهر=3₪. https://jabaristore.com/?app=product.show.270
+- الجعبري#209 ↔ صنف#2526: synced؛ اسود=18.5₪؛ فضي=18.5₪؛ ذهبي=18.5₪؛ جولدن رزو=18.5₪. https://jabaristore.com/?app=product.show.209
+- الجعبري#207 ↔ صنف#2527: synced؛ اسود=5.5₪؛ فضي=5.5₪؛ ذهبي=5.5₪؛ جولدن روز=5.5₪. https://jabaristore.com/?app=product.show.207
+- الجعبري#204 ↔ صنف#2528: no_options؛ مخرز خشبي. https://jabaristore.com/?app=product.show.204
+- الجعبري#199 ↔ صنف#2529: no_options؛ ماسكة فتيل. https://jabaristore.com/?app=product.show.199
+- الجعبري#184 ↔ صنف#4771: synced؛ كموني=5.5₪؛ كحلي=5.5₪؛ خمري=5.5₪؛ سكري=5.5₪؛ بيج=5.5₪؛ زيتي=5.5₪. https://jabaristore.com/?app=product.show.184
+- الجعبري#178 ↔ صنف#2530: synced؛ حجم 0=2₪؛ حجم 1=3₪؛ حجم 2=4₪؛ حجم 3=4.5₪؛ حجم 4=5.5₪. https://jabaristore.com/?app=product.show.178
+- الجعبري#172 ↔ صنف#4772: synced؛ 30 سم=8₪؛ 25 سم=7₪؛ 20 سم=5.5₪؛ 15 سم=4.5₪؛ 10 سم=2.5₪. https://jabaristore.com/?app=product.show.172
+- الجعبري#168 ↔ صنف#2531: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.168
+- الجعبري#162 ↔ صنف#4773: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.162
+- الجعبري#161 ↔ صنف#4774: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.161
+- الجعبري#157 ↔ صنف#2532: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.157
+- الجعبري#156 ↔ صنف#2533: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.156
+- الجعبري#140 ↔ صنف#2534: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.140
+- الجعبري#135 ↔ صنف#4775: synced؛ اسد=3.5₪؛ نمر=3.5₪. https://jabaristore.com/?app=product.show.135
+- الجعبري#119 ↔ صنف#2535: synced؛ 3 cm=5.5₪؛ 4 cm=7₪؛ 5 cm=8₪؛ 6 cm=9₪؛ 7 cm=10₪؛ 8 cm=11₪؛ 9 cm=12.5₪؛ 10 cm=13.5₪. https://jabaristore.com/?app=product.show.119
+- الجعبري#118 ↔ صنف#2536: synced؛ 3cm=7₪؛ 4cm=8₪؛ 5cm=9₪؛ 6cm=10₪؛ 7cm=11₪؛ 8cm=12.5₪؛ 9cm=13.5₪؛ 10cm=14.5₪؛ 11cm=15.5₪؛ 12cm=16.5₪. https://jabaristore.com/?app=product.show.118
+- الجعبري#115 ↔ صنف#4776: no_options؛ زجاج غطاء فلين. https://jabaristore.com/?app=product.show.115
+- الجعبري#101 ↔ صنف#4777: synced؛ 200 كيس=13.5₪؛ 1000 كيس=42₪. https://jabaristore.com/?app=product.show.101
+- الجعبري#98 ↔ صنف#2537: synced؛ حجم 1=13.5₪؛ حجم 2=26.5₪؛ حجم 3=31.5₪؛ حجم 4=37₪؛ حجم 5=52₪. https://jabaristore.com/?app=product.show.98
+- الجعبري#96 ↔ صنف#2538: synced؛ الموديل الاول / بالقطعة=3.5₪؛ الموديل الاول / 50 قطعة=160₪؛ الموديل الثاني / بالقطعة=3.5₪؛ الموديل الثاني / 50 قطعة=160₪؛ الموديل الثالث / بالقطعة=3.5₪؛ الموديل الثالث / 50 قطعة=160₪. https://jabaristore.com/?app=product.show.96
+- الجعبري#91 ↔ صنف#2539: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.91
+- الجعبري#82 ↔ صنف#2540: synced؛ ازرق=11₪؛ ليلكي=11₪؛ زهري=11₪؛ فستقي=11₪. https://jabaristore.com/?app=product.show.82
+- الجعبري#80 ↔ صنف#4778: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.80
+- الجعبري#79 ↔ صنف#2541: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.79
+- الجعبري#76 ↔ صنف#2542: synced؛ زهري=5.5₪؛ ازرق=5.5₪. https://jabaristore.com/?app=product.show.76
+- الجعبري#60 ↔ صنف#2543: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.60
+- الجعبري#54 ↔ صنف#2544: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.54
+- الجعبري#45 ↔ صنف#4779: synced؛ ابيض=31.5₪؛ ذهبي=31.5₪؛ بني=31.5₪؛ اسود=31.5₪. https://jabaristore.com/?app=product.show.45
+- الجعبري#39 ↔ صنف#4780: unsupported_source_price؛ simple_price_not_verified. https://jabaristore.com/?app=product.show.39
+- الجعبري#35 ↔ صنف#4781: synced؛ ابيض=13.5₪؛ بني=13.5₪؛ فضي=13.5₪؛ ذهبي=13.5₪. https://jabaristore.com/?app=product.show.35
+- الجعبري#33 ↔ صنف#4782: synced؛ ابيض=10₪؛ بني=10₪؛ ذهبي=10₪. https://jabaristore.com/?app=product.show.33
+- الجعبري#32 ↔ صنف#4783: synced؛ ابيض=9.5₪؛ بني=9.5₪؛ ذهبي=9.5₪. https://jabaristore.com/?app=product.show.32
+- الجعبري#27 ↔ صنف#2545: synced؛ ابيض / 10 قطعة=20.5₪؛ ابيض / 100 قطعة=180₪؛ بني / 10 قطعة=20.5₪؛ بني / 100 قطعة=180₪؛ ذهبي / 10 قطعة=20.5₪؛ ذهبي / 100 قطعة=180₪؛ فضي / 10 قطعة=20.5₪؛ فضي / 100 قطعة=180₪. https://jabaristore.com/?app=product.show.27
+- الجعبري#20 ↔ صنف#4784: synced؛ ابيض / 10 قطعة=7₪؛ ابيض / 100 قطعة=52₪؛ فضي / 10 قطعة=7₪؛ فضي / 100 قطعة=52₪؛ ذهبي / 10 قطعة=7₪؛ ذهبي / 100 قطعة=52₪؛ بني / 10 قطعة=7₪؛ بني / 100 قطعة=52₪. https://jabaristore.com/?app=product.show.20
