@@ -7195,3 +7195,9 @@
 - {"source_id": 6, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 5, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 2, "status": "skipped_error", "reason": "ValueError"}
+
+
+### 2026-10-20 16:53 (Asia/Hebron) — SEARCH-VARIANT-SCROLL / دمج التغيير
+- حُصرت خيارات المتغيرات الطويلة داخل بطاقة المنتج بتمرير رأسي داخلي وحد ارتفاع 64px للشبكة و52px للقائمة؛ يمنع ذلك تمدد الصفحة. التمرير محصور داخل البطاقة.
+- اجتاز GitHub Actions build في التشغيل 39461110092، ودُمج PR #58 إلى main بالالتزام `6ac2e42cae2d8595cc01bc4ab085270ee944ad7e`. PRs #56 و#57 أُغلقت لأنها نسخ متعارضة أُعيد تأسيسها من آخر main.
+- حالة Cloudflare production: بانتظار التحقق من workflow الخاص بالنشر. الخطوة التالية فحص إتمام النشر ثم التأكد من CSS الحي.
