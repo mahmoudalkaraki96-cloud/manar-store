@@ -7249,3 +7249,8 @@
 - أذن المستخدم بتحليل20صورةواستخدامOPENAI_API_KEYالموجودفيGitHub،وطلبإعطاءأمرالبدءفقطوعدمالاستمراربالمراقبة؛المراجعةعندمايقول«افحص».
 - tools/vision_category_trial.pyوworkflowcategory-vision-trial.yml:20منتجًامحددًامتنوعًامنخطةالورد،gpt-5.4-mini-2026-03-17،صورةواحدة640pxووصفلكلصنف،ردتصنيفJSONقصير،لاكتابةبقاعدةالبياناتولا نشر. الاستهلاكusageمحفوظبعدكلطلبمعالتكلفةالمحسوبةبسعرStandard($0.75input/$0.075cached/$4.50outputلكلمليونتوكن)،وليسكشففاتورةالحساب. guardعند$0.09قبلطلبإضافي؛لاتكرارآليوطلبواحدلكلصورة،والتجربةالمحفوظةلاتُعادبصمت.
 - نجحتفحوصبنيةPythonوحسابالتكلفةوالرابطمحليًا. تقريرالنتائجdocs/category-reorganization/vision-trial/latest.jsonوreport.htmlوprogressبعدالتشغيل. التاليإرسالworkflow_dispatch،ثمالتوقفدونpollingحسبطلبالمستخدم؛لايُدعىاكتمالالتحليلأوتكلفتهقبلقراءةالتقريرلاحقًا.
+
+
+### 2026-10-21T13:01:47.084734+03:00 — CATEGORY-VISION-20
+- Status: completed; responses: 20; measured API cost USD: 0.0314085
+- Report: docs/category-reorganization/vision-trial/latest.json; no product/category writes.
