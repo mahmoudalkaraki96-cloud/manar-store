@@ -1,0 +1,45 @@
+name: Analyze 20 product photos and record cost
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: manar-category-vision-20
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Analyze exactly twenty photos without catalog changes
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python tools/vision_category_trial.py
+      - name: Save measured usage and classification report
+        if: always()
+        run: |
+          if [ ! -f docs/category-reorganization/vision-trial/latest.json ]; then exit 0; fi
+          git config user.name 'Manar vision trial'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          printf '%s\n' 'STORE-PROGRESS.md merge=union' > "$RUNNER_TEMP/vision-progress-attributes"
+          git config core.attributesFile "$RUNNER_TEMP/vision-progress-attributes"
+          git add docs/category-reorganization/vision-trial STORE-PROGRESS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: measured twenty-photo classification trial [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: twenty-photo-analysis-and-cost
+          path: docs/category-reorganization/vision-trial
