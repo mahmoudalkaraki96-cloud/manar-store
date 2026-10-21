@@ -10,6 +10,15 @@ test('filters combine supplier, parent category, variants and a single option pr
  assert.equal(filterProducts([p],categories,{...f,min:'',max:'',status:'soldout'}).length,0);
  assert.equal(filterProducts([p],categories,{...f,min:'',max:'',status:'low'}).length,1);
 });
+test('name column searches product names only, supports partial Arabic and flower plurals across all rows',()=>{
+ const base={categoryId:null,category:'ورود',price:10,stock:4,active:true,views:6,createdAt:1};
+ const products=Array.from({length:120},(_,i)=>({...base,id:i,itemNumber:1000+i,name:i===119?'ورد بلاستيك':'كيس تغليف'}));
+ const f={...emptyProductFilters,name:'ورود'};
+ assert.deepEqual(filterProducts(products,[],f).map(p=>p.itemNumber),[1119]);
+ assert.equal(filterProducts(products,[],{...f,name:'ورد بلاست'}).length,1);
+ assert.equal(filterProducts(products,[],{...f,number:'111',stockMin:'5'}).length,0);
+ assert.equal(filterProducts(products,[],{...f,number:'111',viewsMin:'6',stockMax:'4'}).length,1);
+});
 function db(){const c=new DatabaseSync(':memory:');c.exec(`CREATE TABLE categories(id INTEGER PRIMARY KEY);INSERT INTO categories VALUES(1),(2);CREATE TABLE products(id INTEGER PRIMARY KEY,category_id INTEGER,updated_at INTEGER,deleted_at INTEGER,price_agorot INTEGER,stock_quantity INTEGER,active INTEGER);INSERT INTO products VALUES(5,1,0,NULL,1500,100,1);CREATE TABLE audit_logs(entity_type TEXT,entity_id TEXT,action TEXT NOT NULL,details_json TEXT,created_at INTEGER);`);const adapter={prepare(sql){return {values:[],bind(...values){this.values=values;return this},async first(){return c.prepare(sql).get(...this.values)||null},sql}},async batch(ss){c.exec('BEGIN');try{let out=ss.map(s=>({meta:{changes:Number(c.prepare(s.sql).run(...s.values).changes)}}));c.exec('COMMIT');return out}catch(e){c.exec('ROLLBACK');throw e}}};return {c,adapter}}
 test('direct category save preserves prices stock publication and records before/after',async()=>{const {c,adapter}=db();try{await changeProductCategory(adapter,5,{categoryId:2,expectedCategoryId:1});assert.deepEqual({...c.prepare('SELECT category_id,price_agorot,stock_quantity,active FROM products').get()},{category_id:2,price_agorot:1500,stock_quantity:100,active:1});assert.deepEqual(JSON.parse(c.prepare('SELECT details_json FROM audit_logs').get().details_json),{before:1,after:2});await changeProductCategory(adapter,5,{categoryId:null,expectedCategoryId:2});assert.equal(c.prepare('SELECT category_id FROM products').get().category_id,null)}finally{c.close()}});
 test('invalid, missing and stale categories are rejected without mutation',async()=>{const {c,adapter}=db();try{for(const body of [{categoryId:99,expectedCategoryId:1},{categoryId:'2',expectedCategoryId:1},{categoryId:2,expectedCategoryId:null}])await assert.rejects(()=>changeProductCategory(adapter,5,body));assert.equal(c.prepare('SELECT category_id FROM products').get().category_id,1);assert.equal(c.prepare('SELECT count(*) n FROM audit_logs').get().n,0)}finally{c.close()}});
