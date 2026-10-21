@@ -1,6 +1,6 @@
-import {matches,type Product,type Category} from '../catalog-types';
-export type ProductFilters={search:string;status:string;category:string;supplier:string;variants:string;image:string;min:string;max:string;sort:string};
-export const emptyProductFilters:ProductFilters={search:'',status:'all',category:'all',supplier:'all',variants:'all',image:'all',min:'',max:'',sort:'newest'};
+import {matches,norm,type Product,type Category} from '../catalog-types';
+export type ProductFilters={search:string;status:string;category:string;supplier:string;variants:string;image:string;min:string;max:string;sort:string;name:string;number:string;categoryText:string;featured:string;stockMin:string;stockMax:string;viewsMin:string};
+export const emptyProductFilters:ProductFilters={search:'',status:'all',category:'all',supplier:'all',variants:'all',image:'all',min:'',max:'',sort:'newest',name:'',number:'',categoryText:'',featured:'all',stockMin:'',stockMax:'',viewsMin:''};
 export function categoryLabel(id:number,categories:Category[]):string {
  const names:string[]=[],seen=new Set<number>();let current=categories.find(c=>c.id===id);
  while(current&&!seen.has(current.id)){seen.add(current.id);names.unshift(current.name);current=categories.find(c=>c.id===current!.parentId)}
@@ -15,6 +15,12 @@ export function filterProducts(products:Product[],categories:Category[],f:Produc
  const rows=products.filter(p=>{
   if(f.search.trim()&&!matches(p,f.search))return false;
   const stock=p.variants?.length?p.variants.reduce((sum,v)=>sum+Math.max(0,v.stock),0):p.stock;
+  const flowerText=(text:string)=>norm(text).replace(/ورود/g,'ورد');
+  if(f.name.trim()&&!flowerText(f.name).split(/\s+/).every(term=>flowerText(p.name).includes(term)))return false;
+  if(f.number.trim()&&!String(p.itemNumber).includes(f.number.trim().replace(/^#/,'')))return false;
+  if(f.categoryText.trim()&&!norm(categoryLabel(p.categoryId!,categories)).includes(norm(f.categoryText.trim())))return false;
+  if(f.featured==='yes'&&!p.featured||f.featured==='no'&&p.featured)return false;
+  if(f.stockMin!==''&&stock<Number(f.stockMin)||f.stockMax!==''&&stock>Number(f.stockMax)||f.viewsMin!==''&&(p.views||0)<Number(f.viewsMin))return false;
   if(f.status==='active'&&!p.active||f.status==='draft'&&p.active||f.status==='soldout'&&(!p.active||stock>0)||f.status==='low'&&(!p.active||stock<=0||stock>5)||f.status==='available'&&(!p.active||stock<=0)||f.status==='featured'&&!p.featured)return false;
   if(f.category==='none'&&p.categoryId!=null||f.category!=='all'&&f.category!=='none'&&!categoryIds.has(p.categoryId!))return false;
   const suppliers=p.suppliers||[];
