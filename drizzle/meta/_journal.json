@@ -15,6 +15,13 @@
       "when": 1792454400000,
       "tag": "0001_manual_order_source",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792662306872,
+      "tag": "0028_internal_marketing_analytics",
+      "breakpoints": true
     }
   ]
 }

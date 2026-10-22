@@ -1,0 +1,51 @@
+export type MarketingEventName="page_view"|"view_item"|"add_to_cart"|"begin_checkout"|"purchase"|"purchase_item"|"search";
+interface Statement{bind(...values:unknown[]):Statement;first<T>():Promise<T|null>;all<T>():Promise<{results:T[]}>;run():Promise<unknown>}
+interface Database{prepare(sql:string):Statement;batch?(statements:Statement[]):Promise<unknown>}
+type EventRow={event_name:string;occurred_at:number;local_day:string;local_hour:number;weekday:number;visitor_hash:string;product_id:number|null;order_number:string|null;category:string|null;route:string|null;referrer_host:string|null;source:string|null;medium:string|null;campaign:string|null;search_term:string|null;value_agorot:number;quantity:number};
+const timezone="Asia/Hebron";
+const allowed=new Set<MarketingEventName>(["page_view","view_item","add_to_cart","begin_checkout","purchase","purchase_item","search"]);
+let lastCleanup=0;
+const clean=(v:unknown,max=100)=>typeof v==="string"?v.trim().replace(/[\u0000-\u001f\u007f]/g,"").slice(0,max):"";
+const safeRoute=(v:unknown)=>{const s=clean(v,180);return s.startsWith("/")&&!s.startsWith("//")?s.split(/[?#]/,1)[0]:"/"};
+function localParts(now:number){const date=new Date(now),parts=new Intl.DateTimeFormat("en-US",{timeZone:timezone,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",weekday:"short",hourCycle:"h23"}).formatToParts(date),p=Object.fromEntries(parts.map(x=>[x.type,x.value])),week=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday);return{day:p.year+"-"+p.month+"-"+p.day,hour:Number(p.hour),weekday:week<0?0:week};}
+const toAgorot=(v:unknown)=>Number.isFinite(Number(v))?Math.max(0,Math.min(100000000,Math.round(Number(v)*100))):0;
+const productId=(v:unknown)=>{const n=Number(v);return Number.isSafeInteger(n)&&n>0?n:null};
+async function hash(value:string){const digest=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,"0")).join("");}
+async function purgeOld(db:Database,now:number){if(now-lastCleanup<6*60*60*1000)return;lastCleanup=now;await db.prepare("DELETE FROM marketing_events WHERE occurred_at < ?").bind(now-180*86400000).run();}
+export async function recordMarketingEvent(request:Request,db:Database){
+ const origin=request.headers.get("origin");if(origin&&origin!==new URL(request.url).origin)return Response.json({error:"مصدر الطلب غير مسموح"},{status:403});
+ let body:Record<string,unknown>;try{const text=await request.text();if(text.length>24000)return Response.json({error:"حجم الحدث كبير"},{status:413});body=JSON.parse(text)}catch{return Response.json({error:"بيانات الحدث غير صالحة"},{status:400})}
+ const session=clean(body.visitorId,80),event=clean(body.event,32) as MarketingEventName;
+ if(!/^[A-Za-z0-9-]{16,80}$/.test(session)||!allowed.has(event))return Response.json({error:"الحدث غير صالح"},{status:400});
+ const now=Date.now(),time=localParts(now),visitorHash=await hash(session),route=safeRoute(body.route),source=clean(body.source,100)||"direct",medium=clean(body.medium,100),campaign=clean(body.campaign,140),referrer=clean(body.referrerHost,120),orderNumber=clean(body.transactionId,64)||null,term=clean(body.term,120);
+ const containsContact=term.includes("@")||/[0-9\s()+.-]{8,}/.test(term);const searchTerm=event==="search"&&!containsContact?term.toLowerCase().slice(0,120):null;
+ const itemValues=Array.isArray(body.items)?body.items.slice(0,30) as Record<string,unknown>[]:[];
+ const base={occurred_at:now,local_day:time.day,local_hour:time.hour,weekday:time.weekday,visitor_hash:visitorHash,category:clean(body.category,100)||null,route,referrer_host:referrer||null,source,medium:medium||null,campaign:campaign||null,search_term:searchTerm,value_agorot:toAgorot(body.value),quantity:Math.min(10000,Math.max(0,Math.trunc(Number(body.quantity)||0)))};
+ const inserts:EventRow[]=[];
+ const add=(eventName:MarketingEventName,item?:Record<string,unknown>,amount?:number)=>inserts.push({...base,event_name:eventName,product_id:productId(item?.item_id),order_number:orderNumber,category:clean(item?.item_category,100)||base.category,value_agorot:amount===undefined?base.value_agorot:toAgorot(amount),quantity:Math.min(10000,Math.max(0,Math.trunc(Number(item?.quantity)||base.quantity)))});
+ if(event==="purchase"){add("purchase");for(const item of itemValues)add("purchase_item",item,(Number(item.price)||0)*(Number(item.quantity)||1));}
+ else if(event==="view_item"||event==="add_to_cart"){if(itemValues.length)for(const item of itemValues)add(event,item,(Number(item.price)||0)*(Number(item.quantity)||1));else add(event);}
+ else add(event);
+ await purgeOld(db,now);
+ const sql="INSERT INTO marketing_events (event_name,occurred_at,local_day,local_hour,weekday,visitor_hash,product_id,order_number,category,route,referrer_host,source,medium,campaign,search_term,value_agorot,quantity) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+ const statements=inserts.map(row=>db.prepare(sql).bind(row.event_name,row.occurred_at,row.local_day,row.local_hour,row.weekday,row.visitor_hash,row.product_id,row.order_number,row.category,row.route,row.referrer_host,row.source,row.medium,row.campaign,row.search_term,row.value_agorot,row.quantity));
+ if(db.batch)await db.batch(statements);else for(const statement of statements)await statement.run();
+ return Response.json({ok:true});
+}
+export async function readMarketingAnalytics(db:Database,days:number,now=Date.now()){
+ const cutoff=now-Math.min(90,Math.max(7,days))*86400000;await purgeOld(db,now);
+ const [totals,hours,weekdays,daily,sources,products]=await Promise.all([
+  db.prepare("SELECT event_name,COUNT(*) AS count,COUNT(DISTINCT visitor_hash) AS visitors,COUNT(DISTINCT CASE WHEN event_name='purchase' THEN order_number END) AS orders,COALESCE(SUM(CASE WHEN event_name='purchase' THEN value_agorot ELSE 0 END),0) AS value_agorot FROM marketing_events WHERE occurred_at>=? GROUP BY event_name").bind(cutoff).all<{event_name:string;count:number;visitors:number;orders:number;value_agorot:number}>(),
+  db.prepare("SELECT local_hour AS hour,COUNT(*) AS count,COUNT(DISTINCT visitor_hash) AS visitors FROM marketing_events WHERE occurred_at>=? AND event_name IN('page_view','view_item','add_to_cart','begin_checkout','purchase') GROUP BY local_hour ORDER BY local_hour").bind(cutoff).all<{hour:number;count:number;visitors:number}>(),
+  db.prepare("SELECT weekday,COUNT(*) AS count,COUNT(DISTINCT visitor_hash) AS visitors FROM marketing_events WHERE occurred_at>=? AND event_name IN('page_view','view_item','add_to_cart','begin_checkout','purchase') GROUP BY weekday ORDER BY weekday").bind(cutoff).all<{weekday:number;count:number;visitors:number}>(),
+  db.prepare("SELECT local_day AS day,SUM(CASE WHEN event_name='page_view' THEN 1 ELSE 0 END) AS visits,COUNT(DISTINCT CASE WHEN event_name='page_view' THEN visitor_hash END) AS visitors,COUNT(CASE WHEN event_name='add_to_cart' THEN 1 END) AS add_to_cart,COUNT(CASE WHEN event_name='begin_checkout' THEN 1 END) AS checkout,COUNT(DISTINCT CASE WHEN event_name='purchase' THEN order_number END) AS orders,COALESCE(SUM(CASE WHEN event_name='purchase' THEN value_agorot ELSE 0 END),0) AS sales_agorot FROM marketing_events WHERE occurred_at>=? GROUP BY local_day ORDER BY local_day").bind(cutoff).all<{day:string;visits:number;visitors:number;add_to_cart:number;checkout:number;orders:number;sales_agorot:number}>(),
+  db.prepare("SELECT COALESCE(source,'direct') AS source,COALESCE(medium,'') AS medium,COALESCE(campaign,'') AS campaign,COUNT(DISTINCT visitor_hash) AS visitors,COUNT(DISTINCT CASE WHEN event_name='purchase' THEN order_number END) AS orders,COALESCE(SUM(CASE WHEN event_name='purchase' THEN value_agorot ELSE 0 END),0) AS sales_agorot FROM marketing_events WHERE occurred_at>=? GROUP BY source,medium,campaign ORDER BY visitors DESC LIMIT 12").bind(cutoff).all<{source:string;medium:string;campaign:string;visitors:number;orders:number;sales_agorot:number}>(),
+  db.prepare("SELECT p.item_number AS itemNumber,p.name,COUNT(CASE WHEN e.event_name='view_item' THEN 1 END) AS views,COUNT(CASE WHEN e.event_name='add_to_cart' THEN 1 END) AS adds,COALESCE(SUM(CASE WHEN e.event_name='purchase_item' THEN e.quantity ELSE 0 END),0) AS purchased FROM marketing_events e LEFT JOIN products p ON p.id=e.product_id WHERE e.occurred_at>=? AND e.product_id IS NOT NULL GROUP BY e.product_id ORDER BY adds DESC,views DESC LIMIT 10").bind(cutoff).all<{itemNumber:number;name:string;views:number;adds:number;purchased:number}>()
+ ]);
+ const tally=new Map(totals.results.map(row=>[row.event_name,row]));const count=(name:string)=>Number(tally.get(name)?.count||0);const unique=(name:string)=>Number(tally.get(name)?.visitors||0);
+ const hourMap=new Map(hours.results.map(x=>[Number(x.hour),x])),weekdayMap=new Map(weekdays.results.map(x=>[Number(x.weekday),x]));
+ const weekdayNames=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+ const hourRows=Array.from({length:24},(_,hour)=>({hour,count:Number(hourMap.get(hour)?.count||0),visitors:Number(hourMap.get(hour)?.visitors||0)}));
+ const weekdayRows=weekdayNames.map((name,weekday)=>({weekday,name,count:Number(weekdayMap.get(weekday)?.count||0),visitors:Number(weekdayMap.get(weekday)?.visitors||0)}));
+ return{asOf:now,days,timezone,summary:{visitors:unique("page_view"),pageViews:count("page_view"),productViews:count("view_item"),addToCart:count("add_to_cart"),checkout:count("begin_checkout"),orders:Number(tally.get("purchase")?.orders||0),sales:Number(tally.get("purchase")?.value_agorot||0)/100,searches:count("search")},hours:hourRows,weekdays:weekdayRows,daily:daily.results.map(row=>({...row,sales:Number(row.sales_agorot||0)/100})),sources:sources.results.map(row=>({...row,sales:Number(row.sales_agorot||0)/100})),products:products.results};
+}
