@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS marketing_events (
   source TEXT,
   medium TEXT,
   campaign TEXT,
-  search_term TEXT,
   value_agorot INTEGER NOT NULL DEFAULT 0,
   quantity INTEGER NOT NULL DEFAULT 0
 );

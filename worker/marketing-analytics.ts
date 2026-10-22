@@ -1,7 +1,7 @@
 export type MarketingEventName="page_view"|"view_item"|"add_to_cart"|"begin_checkout"|"purchase"|"purchase_item"|"search";
 interface Statement{bind(...values:unknown[]):Statement;first<T>():Promise<T|null>;all<T>():Promise<{results:T[]}>;run():Promise<unknown>}
 interface Database{prepare(sql:string):Statement;batch?(statements:Statement[]):Promise<unknown>}
-type EventRow={event_name:string;occurred_at:number;local_day:string;local_hour:number;weekday:number;visitor_hash:string;product_id:number|null;order_number:string|null;category:string|null;route:string|null;referrer_host:string|null;source:string|null;medium:string|null;campaign:string|null;search_term:string|null;value_agorot:number;quantity:number};
+type EventRow={event_name:string;occurred_at:number;local_day:string;local_hour:number;weekday:number;visitor_hash:string;product_id:number|null;order_number:string|null;category:string|null;route:string|null;referrer_host:string|null;source:string|null;medium:string|null;campaign:string|null;value_agorot:number;quantity:number};
 const timezone="Asia/Hebron";
 const allowed=new Set<MarketingEventName>(["page_view","view_item","add_to_cart","begin_checkout","purchase","purchase_item","search"]);
 let lastCleanup=0;
@@ -17,19 +17,18 @@ export async function recordMarketingEvent(request:Request,db:Database){
  let body:Record<string,unknown>;try{const text=await request.text();if(text.length>24000)return Response.json({error:"حجم الحدث كبير"},{status:413});const parsed=JSON.parse(text);if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))return Response.json({error:"بيانات الحدث غير صالحة"},{status:400});body=parsed as Record<string,unknown>}catch{return Response.json({error:"بيانات الحدث غير صالحة"},{status:400})}
  const session=clean(body.visitorId,80),event=clean(body.event,32) as MarketingEventName;
  if(!/^[A-Za-z0-9-]{16,80}$/.test(session)||!allowed.has(event))return Response.json({error:"الحدث غير صالح"},{status:400});
- const now=Date.now(),time=localParts(now),visitorHash=await hash(session),route=safeRoute(body.route),source=clean(body.source,100)||"direct",medium=clean(body.medium,100),campaign=clean(body.campaign,140),referrer=clean(body.referrerHost,120),orderNumber=clean(body.transactionId,64)||null,term=clean(body.term,120);
- const containsContact=term.includes("@")||/[0-9\s()+.-]{8,}/.test(term);const searchTerm=event==="search"&&!containsContact?term.toLowerCase().slice(0,120):null;
+ const now=Date.now(),time=localParts(now),visitorHash=await hash(session),route=safeRoute(body.route),source=clean(body.source,100)||"direct",medium=clean(body.medium,100),campaign=clean(body.campaign,140),referrer=clean(body.referrerHost,120),orderNumber=clean(body.transactionId,64)||null;
  const itemValues=Array.isArray(body.items)?body.items.slice(0,30) as Record<string,unknown>[]:[];
  if(event==="purchase"&&orderNumber){const existing=await db.prepare("SELECT id FROM marketing_events WHERE event_name='purchase' AND order_number=? LIMIT 1").bind(orderNumber).first<{id:number}>();if(existing)return Response.json({ok:true,duplicate:true})}
- const base={occurred_at:now,local_day:time.day,local_hour:time.hour,weekday:time.weekday,visitor_hash:visitorHash,category:clean(body.category,100)||null,route,referrer_host:referrer||null,source,medium:medium||null,campaign:campaign||null,search_term:searchTerm,value_agorot:toAgorot(body.value),quantity:Math.min(10000,Math.max(0,Math.trunc(Number(body.quantity)||0)))};
+ const base={occurred_at:now,local_day:time.day,local_hour:time.hour,weekday:time.weekday,visitor_hash:visitorHash,category:clean(body.category,100)||null,route,referrer_host:referrer||null,source,medium:medium||null,campaign:campaign||null,value_agorot:toAgorot(body.value),quantity:Math.min(10000,Math.max(0,Math.trunc(Number(body.quantity)||0)))};
  const inserts:EventRow[]=[];
  const add=(eventName:MarketingEventName,item?:Record<string,unknown>,amount?:number)=>inserts.push({...base,event_name:eventName,product_id:productId(item?.item_id),order_number:orderNumber,category:clean(item?.item_category,100)||base.category,value_agorot:amount===undefined?base.value_agorot:toAgorot(amount),quantity:Math.min(10000,Math.max(0,Math.trunc(Number(item?.quantity)||base.quantity)))});
  if(event==="purchase"){add("purchase");for(const item of itemValues)add("purchase_item",item,(Number(item.price)||0)*(Number(item.quantity)||1));}
  else if(event==="view_item"||event==="add_to_cart"){if(itemValues.length)for(const item of itemValues)add(event,item,(Number(item.price)||0)*(Number(item.quantity)||1));else add(event);}
  else add(event);
  await purgeOld(db,now);
- const sql="INSERT INTO marketing_events (event_name,occurred_at,local_day,local_hour,weekday,visitor_hash,product_id,order_number,category,route,referrer_host,source,medium,campaign,search_term,value_agorot,quantity) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
- const statements=inserts.map(row=>db.prepare(sql).bind(row.event_name,row.occurred_at,row.local_day,row.local_hour,row.weekday,row.visitor_hash,row.product_id,row.order_number,row.category,row.route,row.referrer_host,row.source,row.medium,row.campaign,row.search_term,row.value_agorot,row.quantity));
+ const sql="INSERT INTO marketing_events (event_name,occurred_at,local_day,local_hour,weekday,visitor_hash,product_id,order_number,category,route,referrer_host,source,medium,campaign,value_agorot,quantity) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+ const statements=inserts.map(row=>db.prepare(sql).bind(row.event_name,row.occurred_at,row.local_day,row.local_hour,row.weekday,row.visitor_hash,row.product_id,row.order_number,row.category,row.route,row.referrer_host,row.source,row.medium,row.campaign,row.value_agorot,row.quantity));
  if(db.batch)await db.batch(statements);else for(const statement of statements)await statement.run();
  return Response.json({ok:true});
 }
