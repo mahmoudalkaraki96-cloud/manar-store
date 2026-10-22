@@ -23,3 +23,4 @@ CREATE INDEX IF NOT EXISTS idx_marketing_events_day ON marketing_events(local_da
 CREATE INDEX IF NOT EXISTS idx_marketing_events_visitor ON marketing_events(visitor_hash,occurred_at);
 CREATE INDEX IF NOT EXISTS idx_marketing_events_product ON marketing_events(product_id,event_name,occurred_at);
 CREATE INDEX IF NOT EXISTS idx_marketing_events_campaign ON marketing_events(source,medium,campaign,occurred_at);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_marketing_purchase_order ON marketing_events(order_number) WHERE event_name='purchase' AND order_number IS NOT NULL;
