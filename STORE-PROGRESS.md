@@ -7293,6 +7293,7 @@
 ### 2026-10-24 13:24 (Asia/Hebron) — SEARCH-CATEGORY-RAIL
 - حسب المثال التوضيحي، نقل PR #66 شريط الأقسام الرئيسي الكامل إلى عمود رأسي يمين صفحة نتائج البحث على الدسكتوب، مع تخصيص مساحة أيقونة ثابتة لكل قسم. على الشاشات الأصغر يتحول الشريط إلى تمرير أفقي. يظهر اسم قسم المنتج فوق صورته في نتائج البحث.
 - اجتاز فحص البناء CI #40089625587، ودُمج إلى main في `c5c967e9772cbcb842272ed49f3215c738049f75`.
-- نشر Cloudflare run #40089625587؟ لا؛ تشغيل الإنتاج هو #129، ويجري التحقق منه.
-- الحالة: تحقق البناء والدمج ناجحان؛ النشر قيد التنفيذ. لا تعتبر الميزة منشورة حتى يكتمل run الإنتاج.
-- الدليل: [PR #66](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/66)، [CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089625587).
+- نشر Cloudflare production run #40089678789 (#129) اكتمل بنجاح خلال 44 ثانية، ونُشرت واجهة المتجر.
+- تحقق حي على https://manarstore.ps/search?q=علب: ظهر عمود الأقسام الرئيسي، وبطاقات المنتجات مع اسم القسم فوق الصورة.
+- الحالة: منشور ومتحقق حيًا.
+- الدليل: [PR #66](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/66)، [CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089625587)، [النشر](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089678789).
