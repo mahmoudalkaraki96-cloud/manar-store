@@ -36,7 +36,7 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
     {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
    </>}
   </section>
-  <style jsx global>{\`
+  <style jsx global>{`
    .searchResultsPage .searchCategoryResults{padding:18px;background:#fff8fb;border:1px solid #f1dce5;border-radius:16px}
    .searchResultsPage .searchCategoryResults .categorySectionHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
    .searchResultsPage .searchCategoryCardGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:10px}
@@ -54,6 +54,6 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
    .searchResultsPage .productGrid .productInfo>a{display:block;min-width:0;white-space:normal}
    .searchResultsPage .productGrid .productInfo h3{display:block;max-width:100%;height:auto;max-height:none;margin-block:6px 10px;overflow:visible;white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.5}
    @media(max-width:600px){.searchResultsPage .searchCategoryCardGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.searchResultsPage .searchCategoryCard{min-height:84px;padding:12px}.searchResultsPage .searchSort{align-items:stretch}.searchResultsPage .searchSort select{max-width:100%}}
-  \`}</style>
+  `}</style>
  </main>;
 }
