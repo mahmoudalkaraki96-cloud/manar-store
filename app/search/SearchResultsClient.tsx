@@ -30,31 +30,13 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
     <button className="cardAddButton" style={{width:"auto",flexShrink:0}} type="submit" disabled={!query.trim()}>ابحث</button>
    </form>
    <div className="resultsHead"><div><h1>نتائج البحث</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
-   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>اكتب كلمة للبحث</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<><div className="searchResultsLayout"><aside className="searchCategoryRail" aria-label="أقسام المتجر"><h2>الأقسام</h2><nav className="searchCategoryRailList">{data.categories.filter(category=>category.parentId==null).map(category=><Link className="searchCategoryRailLink" key={category.id} href={"/category/"+category.slug}>{category.iconUrl?<img className="searchCategoryRailIcon" src={category.iconUrl} alt="" loading="lazy"/>:<span className="searchCategoryRailIcon searchCategoryRailIconPlaceholder" aria-hidden="true"/>}<span>{category.name}</span></Link>)}</nav></aside><div className="searchResultsMain">
+   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>اكتب كلمة للبحث</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<>
     {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>الأقسام المطابقة</h2><span>{categories.length} قسم</span></div><div className="searchCategoryCardGrid">{categories.map(category=><Link className="searchCategoryCard" key={category.id} href={"/category/"+category.slug}><span className="searchCategoryCardName">{category.name}</span><small>تصفّح القسم <span aria-hidden="true">←</span></small></Link>)}</div></section>}
     <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>المنتجات</h2><span>{products.length} نتيجة</span></div><select aria-label="ترتيب نتائج البحث" value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">الأكثر ملاءمة</option><option value="newest">الأحدث</option><option value="priceAsc">السعر: الأقل أولًا</option><option value="priceDesc">السعر: الأعلى أولًا</option></select></div>
-    {products.length?<><div className="productGrid searchProductGrid">{products.slice(0,visible).map(product=><div className="searchProductResultCard" key={product.id}><div className="searchProductCategoryLabel">{product.subcategory||product.category}</div><ProductCard p={product} settings={settings}/></div>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
-   </div></div></>}
+    {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
+   </>}
   </section>
   <style jsx global>{`
-   .searchResultsPage .shopHeaderWrap .categoryBar{display:none}
-   .searchResultsPage .searchResultsLayout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start;direction:rtl}
-   .searchResultsPage .searchResultsMain{min-width:0}
-   .searchResultsPage .searchCategoryRail{position:sticky;top:16px;box-sizing:border-box;min-width:0;max-height:calc(100vh - 32px);overflow:auto;padding:14px;background:#f7f5f4;border:1px solid #e6dfdc;border-radius:16px;scrollbar-width:thin}
-   .searchResultsPage .searchCategoryRail h2{margin:2px 4px 12px;font-size:16px;line-height:1.5}
-   .searchResultsPage .searchCategoryRailList{display:flex;flex-direction:column;gap:8px}
-   .searchResultsPage .searchCategoryRailLink{box-sizing:border-box;display:flex;align-items:center;gap:12px;min-width:0;min-height:58px;padding:9px 12px;border:1px solid #ece7e4;border-radius:12px;background:#fff;color:inherit;text-decoration:none;font-weight:600;line-height:1.45;transition:border-color .18s,background .18s}
-   .searchResultsPage .searchCategoryRailLink:hover,.searchResultsPage .searchCategoryRailLink:focus-visible{border-color:var(--green);background:#f4fbf7}
-   .searchResultsPage .searchCategoryRailLink>span:last-child{min-width:0;overflow-wrap:anywhere}
-   .searchResultsPage .searchCategoryRailIcon{flex:0 0 36px;width:36px;height:36px;box-sizing:border-box;object-fit:contain;border-radius:9px}
-   .searchResultsPage .searchCategoryRailIconPlaceholder{border:1px dashed #cbbfba;background:#faf8f7}
-   .searchResultsPage .searchProductResultCard{display:flex;min-width:0;flex-direction:column;gap:6px}
-   .searchResultsPage .searchProductCategoryLabel{min-height:22px;padding-inline:4px;color:#806053;font-size:12px;font-weight:700;line-height:1.5;overflow-wrap:anywhere}
-   .searchResultsPage .searchProductResultCard .product{width:100%;min-width:0;flex:1}
-   .searchResultsPage .searchProductResultCard .productInfo>small{display:none}
-   .searchResultsPage .searchResultsMain .searchCategoryResults{margin-bottom:18px}
-   @media(max-width:900px){.searchResultsPage .searchResultsLayout{display:block}.searchResultsPage .searchCategoryRail{position:static;max-height:none;margin-bottom:16px}.searchResultsPage .searchCategoryRailList{flex-direction:row;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x proximity}.searchResultsPage .searchCategoryRailLink{flex:0 0 190px;scroll-snap-align:start}.searchResultsPage .searchCategoryRailIcon{flex-basis:32px;width:32px;height:32px}}
-   @media(max-width:600px){.searchResultsPage .searchCategoryRail{padding:10px}.searchResultsPage .searchCategoryRail h2{font-size:14px}.searchResultsPage .searchCategoryRailLink{flex-basis:165px;min-height:52px;padding:8px 10px;font-size:13px}}
    .searchResultsPage .searchCategoryResults{padding:18px;background:#fff8fb;border:1px solid #f1dce5;border-radius:16px}
    .searchResultsPage .searchCategoryResults .categorySectionHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
    .searchResultsPage .searchCategoryCardGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:10px}
