@@ -1,3 +1,4 @@
+import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
 import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {createManualOrder,ManualOrderError} from "./manual-order";
@@ -821,14 +822,8 @@ async function readShippingZones(env:Env,includeInactive=false):Promise<Shipping
 }
 async function saveShippingZones(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
-  const body=await parseJson(request),zones=Array.isArray(body.zones)?body.zones as Array<Record<string,unknown>>:[];
-  const allowed=new Set(["west_bank","jerusalem","inside"]);
-  if(zones.length!==3||zones.some(zone=>!allowed.has(asText(zone.code))))return json({error:"بيانات مناطق الشحن غير مكتملة"},{status:400});
-  for(const [index,zone] of zones.entries()){
-    const code=asText(zone.code),label=asText(zone.label).slice(0,60),price=Number(zone.price);
-    if(!label||!Number.isFinite(price)||price<0||price>1000)return json({error:"اسم المنطقة أو سعر الشحن غير صحيح"},{status:400});
-    await env.DB.prepare("UPDATE shipping_zones SET label=?,price_agorot=?,active=?,sort_order=?,updated_at=? WHERE code=?").bind(label,Math.round(price*100),asBoolean(zone.active)?1:0,index,Date.now(),code).run();
-  }
+  try{await persistShippingZones(env.DB,(await parseJson(request)).zones)}
+  catch(error){if(error instanceof ShippingZoneError)return json({error:error.message},{status:400});throw error}
   return json({ok:true,zones:await readShippingZones(env,true)});
 }
 async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
