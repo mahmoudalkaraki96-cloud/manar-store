@@ -441,4 +441,4 @@
 
 ### SEARCH-CATEGORY-RAIL (2026-10-24)
 - في صفحة نتائج البحث، شريط الأقسام الرئيسي عمودي على اليمين في الدسكتوب مع خانة محجوزة لأيقونة كل قسم؛ وعلى الشاشات الصغيرة يصبح أفقيًا قابلًا للتمرير. يظهر اسم قسم المنتج فوق صورته.
-- دُمج PR #66 بعد نجاح CI #40089625587؛ نشر Cloudflare #129 بدأ بعد الدمج. [PR](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/66) · [سجل CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089625587).
+- دُمج PR #66 بعد نجاح CI #40089625587، ونُشر بنجاح في Cloudflare run #40089678789 (#129). تحققنا حيًا من الصفحة وأسماء الأقسام فوق صور المنتجات. [PR](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/66) · [CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089625587) · [النشر](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40089678789).
