@@ -7282,3 +7282,10 @@
 - السلوك: القائمة المنسدلة السريعة باقية، وEnter يفتح `/search?q=...` بنتائج كاملة وإمكانية الترتيب وعرض المزيد. البحث يُسجل عند الإرسال.
 - الدليل: [PR #64](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/64)، [CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40079523053)، [النشر](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40079558954).
 - الحالة: منشور. الخطوة التالية: تجربة البحث من المتجر على الهاتف وسطح المكتب.
+
+### 2026-10-24 12:12 (Asia/Hebron) — SEARCH-RESULTS-MOBILE-LAYOUT
+- أصلح PR #65 عرض الأقسام المطابقة في صفحة البحث: بطاقات متجاوبة، أسماء تلتف وتظهر كاملة، وفصل عنوان المنتجات عن عدد النتائج. كما عولج التفاف أسماء المنتجات الطويلة داخل بطاقات البحث على الهاتف.
+- اجتاز فحص البناء CI #40080774082 بعد تصحيح صياغة CSS، ثم دُمج PR #65 في `21acdf176a294743c3d1484da9ff51ee2826bdaf`.
+- نشر Cloudflare run #40080820999 اكتمل بنجاح خلال 1m 6s.
+- الدليل: [PR #65](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/65)، [CI](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40080774082)، [النشر](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/40080820999).
+- الحالة: منشور إلى الإنتاج. الخطوة التالية: تأكيد الشكل على جهاز الهاتف بعد تحديث الصفحة.
