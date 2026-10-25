@@ -1,8 +1,64 @@
 {
-  "started_at": "2026-10-20T13:26:15.475601+03:00",
+  "started_at": "2026-10-25T10:04:26.551404+02:00",
   "mode": "apply",
   "status": "completed",
   "results": [
+    {
+      "id": 3798,
+      "item_number": 4798,
+      "name": "كيس LV بني",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 3000,
+      "source_id": 1425,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1425",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
+    {
+      "id": 3799,
+      "item_number": 4799,
+      "name": "كيس كرستيان ديور",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 3000,
+      "source_id": 1424,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1424",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
+    {
+      "id": 3800,
+      "item_number": 4800,
+      "name": "كيس غوتشي حز ذهبي مميز",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 3000,
+      "source_id": 1423,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1423",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
+    {
+      "id": 3801,
+      "item_number": 4801,
+      "name": "كيس غوتشي اخضر مميز",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 3000,
+      "source_id": 1422,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1422",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
     {
       "source_id": 1421,
       "status": "skipped_error",
@@ -6483,6 +6539,6 @@
     }
   ],
   "pages": 22,
-  "cards": 1279,
-  "updated_at": "2026-10-20T15:16:02.122235+03:00"
+  "cards": 1283,
+  "updated_at": "2026-10-25T11:54:33.096193+02:00"
 }
