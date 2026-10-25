@@ -21,6 +21,7 @@ import importedJabariProducts from "./import-jabari-products.generated.json";
 import importedJabariVariants from "./import-jabari-variants.generated.json";
 import importedDofeshVariants from "./import-dofesh-variants.generated.json";
 import { product2222ImageBase64 } from "./product-2222-image.generated";
+import { previewReadOnlyDatabase, previewReadOnlyResponse } from "./preview-guard";
 
 interface Env {
   ASSETS: Fetcher;
@@ -28,6 +29,7 @@ interface Env {
   MEDIA: R2Bucket;
   AI: { run(model: string, input: unknown): Promise<unknown> };
   APP_SURFACE?: "storefront" | "admin";
+  PREVIEW_MODE?: string;
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
@@ -1267,8 +1269,9 @@ function securityHeaders(headers:Headers){
 }
 async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|null>{
   if(env.APP_SURFACE!=="storefront"||request.method!=="GET")return null;
+  if(env.PREVIEW_MODE==="1"&&(url.pathname==="/sitemap.xml"||url.pathname==="/google-merchant-feed.xml"))return new Response("Not Found",{status:404});
   if(url.pathname==="/robots.txt"){
-    const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
+    const body=env.PREVIEW_MODE==="1"?"User-agent: *\nDisallow: /\n":"User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
     return new Response(body,{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
   }
   if(url.pathname==="/google-merchant-feed.xml"){
@@ -1375,7 +1378,7 @@ async function fetchImageSource(path:string,env:Env,request:Request):Promise<Res
       const candidate=await fetch(source,{headers:{accept:"image/*","user-agent":"ManarStore/1.0"}});
       if(candidate.ok&&candidate.headers.get("content-type")?.startsWith("image/")){
         const bytes=await candidate.arrayBuffer(),contentType=candidate.headers.get("content-type")?.split(";")[0]||"image/jpeg";
-        await env.MEDIA.put(key,bytes,{httpMetadata:{contentType}});
+        if(env.PREVIEW_MODE!=="1")await env.MEDIA.put(key,bytes,{httpMetadata:{contentType}});
         return new Response(bytes,{headers:{"content-type":contentType}});
       }
     }
@@ -1406,7 +1409,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if(!path.startsWith("/")||path.startsWith("//")||path.includes("\\\\")||path.length>500)return json({error:"Invalid path"},{status:400});
     const target=new URL(path,url.origin);
     if(target.origin!==url.origin)return json({error:"Invalid path"},{status:400});
-    return json({head:await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
+    return json({head:env.PREVIEW_MODE==="1"?'meta name="robots" content="noindex,nofollow,noarchive"':await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
   }
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
@@ -1444,7 +1447,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
       if (remote) {
         const bytes = await remote.arrayBuffer();
         const contentType = remote.headers.get("content-type")?.split(";")[0] || "image/jpeg";
-        await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
+        if(env.PREVIEW_MODE!=="1")await env.MEDIA.put(key, bytes, { httpMetadata: { contentType } });
         return new Response(bytes, { headers: { "content-type": contentType, "cache-control": "public, max-age=31536000, immutable" } });
       }
     }
@@ -1617,9 +1620,19 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
-  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){if(env.PREVIEW_MODE==="1")return;ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if(env.PREVIEW_MODE==="1")env={...env,DB:previewReadOnlyDatabase(env.DB)};
+    const readOnlyResponse=previewReadOnlyResponse(request.method,env.PREVIEW_MODE==="1");
+    if(readOnlyResponse)return readOnlyResponse;
+    if(env.PREVIEW_MODE==="1"&&url.pathname.startsWith("/api/")){
+      if(url.pathname==="/api/seo")return json({head:'<meta name="robots" content="noindex,nofollow,noarchive">'},{headers:{"cache-control":"no-store"}});
+      const publicReadApis=new Set(["/api/catalog","/api/storefront","/api/policies","/api/shipping-zones"]);
+      if(!publicReadApis.has(url.pathname))return new Response("Not Found",{status:404,headers:{"cache-control":"no-store"}});
+      const upstream=new URL(url.pathname+url.search,"https://manarstore.ps");
+      return fetch(new Request(upstream,{method:"GET",headers:{accept:request.headers.get("accept")||"application/json"}}));
+    }
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
       const target=new URL(url);target.protocol="https:";target.hostname="manarstore.ps";
       return Response.redirect(target.toString(),308);
@@ -1697,7 +1710,7 @@ const worker = {
         try{
           const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
           const thumbnailKey=`thumbnails/w${width}/${sourceKey.replace(/\.[^.]+$/,"")}.webp`;
-          ctx.waitUntil(env.MEDIA.put(thumbnailKey,bytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}}));
+          if(env.PREVIEW_MODE!=="1")ctx.waitUntil(env.MEDIA.put(thumbnailKey,bytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}}));
         }catch{}
       }
       ctx.waitUntil(cache.put(cacheKey,response.clone()));
@@ -1720,11 +1733,13 @@ const worker = {
     if(env.APP_SURFACE==="admin")headers.set("x-robots-tag","noindex, nofollow, noarchive");
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
-      const head=env.APP_SURFACE==="storefront"
-        ?(await storefrontSeo(env,url))+googleAnalyticsHead+(await readMetaPixelHead(env,url))
-        :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
+      const head=env.PREVIEW_MODE==="1"
+        ?'<meta name="robots" content="noindex,nofollow,noarchive">'
+        :env.APP_SURFACE==="storefront"
+          ?(await storefrontSeo(env,url))+googleAnalyticsHead+(await readMetaPixelHead(env,url))
+          :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
-      const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
+      const seoData=env.APP_SURFACE==="storefront"&&!env.PREVIEW_MODE?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
       return new Response(injectSeo(html,head+seoData),{status:appResponse.status,statusText:appResponse.statusText,headers});
     }
     return new Response(appResponse.body,{status:appResponse.status,statusText:appResponse.statusText,headers});
