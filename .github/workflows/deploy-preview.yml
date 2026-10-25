@@ -1,0 +1,54 @@
+name: Deploy private store preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      access_ready:
+        description: Confirm Cloudflare Access is active for preview.manarstore.ps and allows only the store owner
+        type: choice
+        options:
+          - "no"
+          - "yes"
+        default: "no"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-private-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy-preview:
+    if: inputs.access_ready == 'yes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Verify preview read-only guard
+        run: node --experimental-strip-types --test tests/preview-guard.test.mjs
+
+      - name: Build
+        run: npm run build
+
+      - name: Resolve Cloudflare account
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          ACCOUNT_ID="$(curl --fail --silent --show-error \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            https://api.cloudflare.com/client/v4/accounts \
+            | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const j=JSON.parse(d);if(!j.success||!j.result?.[0]?.id)process.exit(1);process.stdout.write(j.result[0].id)})")"
+          echo "CLOUDFLARE_ACCOUNT_ID=$ACCOUNT_ID" >> "$GITHUB_ENV"
+
+      - name: Deploy private preview
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx wrangler deploy --config wrangler.preview.jsonc
+
