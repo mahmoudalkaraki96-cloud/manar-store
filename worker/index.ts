@@ -21,7 +21,7 @@ import importedJabariProducts from "./import-jabari-products.generated.json";
 import importedJabariVariants from "./import-jabari-variants.generated.json";
 import importedDofeshVariants from "./import-dofesh-variants.generated.json";
 import { product2222ImageBase64 } from "./product-2222-image.generated";
-import { previewReadOnlyResponse } from "./preview-guard";
+import { previewReadOnlyDatabase, previewReadOnlyResponse } from "./preview-guard";
 
 interface Env {
   ASSETS: Fetcher;
@@ -1623,8 +1623,16 @@ const worker = {
   async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){if(env.PREVIEW_MODE==="1")return;ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if(env.PREVIEW_MODE==="1")env={...env,DB:previewReadOnlyDatabase(env.DB)};
     const readOnlyResponse=previewReadOnlyResponse(request.method,env.PREVIEW_MODE==="1");
     if(readOnlyResponse)return readOnlyResponse;
+    if(env.PREVIEW_MODE==="1"&&url.pathname.startsWith("/api/")){
+      if(url.pathname==="/api/seo")return json({head:'<meta name="robots" content="noindex,nofollow,noarchive">'},{headers:{"cache-control":"no-store"}});
+      const publicReadApis=new Set(["/api/catalog","/api/storefront","/api/policies","/api/shipping-zones"]);
+      if(!publicReadApis.has(url.pathname))return new Response("Not Found",{status:404,headers:{"cache-control":"no-store"}});
+      const upstream=new URL(url.pathname+url.search,"https://manarstore.ps");
+      return fetch(new Request(upstream,{method:"GET",headers:{accept:request.headers.get("accept")||"application/json"}}));
+    }
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
       const target=new URL(url);target.protocol="https:";target.hostname="manarstore.ps";
       return Response.redirect(target.toString(),308);
