@@ -89,4 +89,3 @@ export default function StoreTheme(){
  },[pathname]);
  return null;
 }
-
