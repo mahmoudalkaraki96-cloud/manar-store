@@ -461,3 +461,7 @@
 - StickyCartBar عام في layout، يعرض عدد القطع ومجموع المنتجات وزر checkout بنبضة دورية تحترم prefers-reduced-motion؛ يختفي عند النوافذ المفتوحة والسلة الفارغة، مع مساحة آمنة للهاتف.
 - CartCustomization يستخدم dialog أصليًا للتركيز وEscape؛ addCartItem يصدر manar:customize-cart ولا يحفظ أو يسجل إضافة قبل التأكيد. الحقول المطلوبة تُفحص قبل الحفظ والتخصيصات المختلفة تحفظ كسطور منفصلة.
 - Home يستقبل تغييرات السلة والأوامر manar:open-cart / manar:open-checkout؛ /?checkout=open يفتح الدفع بعد تحميل ومزامنة الكتالوج. حالة النشر والتحقق الحي في STORE-PROGRESS.md.
+
+
+### 2026-10-26 — إضافة للسلة من صفحة نتائج البحث
+- SearchResultsClient يمرر onAdd إلى ProductCard ويستعمل addCartItem المشترك؛ تظهر الإضافة في الصفحة الكاملة مع اختيار المتغيرات والتخصيص وتحديث ملخص السلة. لا تغيير للبحث المنسدل. حالة النشر في STORE-PROGRESS.md.
