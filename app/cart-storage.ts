@@ -27,8 +27,11 @@ export function saveCart(cart:Record<string,CartLine>){
  window.dispatchEvent(new CustomEvent("manar:cart",{detail:cart}));
  reportCart(cart);
 }
-export function addCartItem(product:Product,variant?:Variant,qty=1,customizations:Record<string,string>={},unique=false){
+export type CartCustomizationRequest={product:Product;variant?:Variant;qty:number;customizations:Record<string,string>;unique:boolean};
+export function addCartItem(product:Product,variant?:Variant,qty=1,customizations:Record<string,string>={},unique=false,customizationConfirmed=false){
  if(variant?variant.stock<=0:!product.inStock)return loadCart();
+ if(product.customFields?.length&&!customizationConfirmed){window.dispatchEvent(new CustomEvent<CartCustomizationRequest>("manar:customize-cart",{detail:{product,variant,qty,customizations,unique}}));return loadCart()}
+ if(product.customFields?.some(field=>field.required&&!customizations[field.label]?.trim()))return loadCart();
  const cart=loadCart(),base=`${product.id}:${variant?.id||"base"}`,key=unique?`${base}:custom:${crypto.randomUUID()}`:base,line=cart[key];
  cart[key]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations,notes:line?.notes||"",qty:(line?.qty||0)+qty,price:variant?.price??product.price,image:variant?.image||product.image};
  saveCart(cart);
@@ -49,3 +52,5 @@ export function syncCart(saved:Record<string,CartLine>,products:Product[]){
  }
  return next;
 }
+
+
