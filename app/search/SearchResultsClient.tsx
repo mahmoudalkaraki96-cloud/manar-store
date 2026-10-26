@@ -3,6 +3,7 @@ import {useEffect,useMemo,useState,type FormEvent} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import StoreHeader from "../components/StoreHeader";
+import CategoryCards from "../components/CategoryCards";
 import ProductCard from "../components/ProductCard";
 import {loadCatalog,matches,norm,type CatalogResponse} from "../catalog-types";
 import {defaultSettings,loadStorefront,type StoreSettings} from "../storefront-types";
@@ -32,7 +33,7 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
    </form>
    <div className="resultsHead"><div><h1>نتائج البحث</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
    {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>اكتب كلمة للبحث</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<>
-    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>الأقسام المطابقة</h2><span>{categories.length} قسم</span></div><div className="searchCategoryCardGrid">{categories.map(category=><Link className="searchCategoryCard" key={category.id} href={"/category/"+category.slug}><span className="searchCategoryCardName">{category.name}</span><small>تصفّح القسم <span aria-hidden="true">←</span></small></Link>)}</div></section>}
+    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>الأقسام المطابقة</h2><span>{categories.length} قسم</span></div><CategoryCards categories={categories}/></section>}
     <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>المنتجات</h2><span>{products.length} نتيجة</span></div><select aria-label="ترتيب نتائج البحث" value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">الأكثر ملاءمة</option><option value="newest">الأحدث</option><option value="priceAsc">السعر: الأقل أولًا</option><option value="priceDesc">السعر: الأعلى أولًا</option></select></div>
     {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings} onAdd={variant=>{addCartItem(product,variant)}}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
    </>}
@@ -58,3 +59,5 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
   `}</style>
  </main>;
 }
+
+

@@ -1,4 +1,5 @@
 import type {Metadata,Viewport} from "next";
+import StoreShell from "./components/StoreShell";
 import StoreSeo from "./components/StoreSeo";
 import StoreTheme from "./components/StoreTheme";
 import PwaRegister from "./components/PwaRegister";
@@ -9,6 +10,7 @@ import "./globals.css";
 import "./checkout.css";
 import "./watermark.css";
 import "./highlights.css";
+import "./store-layout.css";
 
 export const metadata:Metadata={
  title:{default:"منار بارتي ستور | Manar Party Store",template:"%s | Manar Store"},
@@ -31,7 +33,7 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/>{children}<StickyCartBar/><CartCustomization/></body></html>
+ return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><CartCustomization/></body></html>
 }
 
 
