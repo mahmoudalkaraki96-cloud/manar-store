@@ -2,6 +2,9 @@ import type {Metadata,Viewport} from "next";
 import StoreSeo from "./components/StoreSeo";
 import StoreTheme from "./components/StoreTheme";
 import PwaRegister from "./components/PwaRegister";
+import StickyCartBar from "./components/StickyCartBar";
+import CartCustomization from "./components/CartCustomization";
+import "./sticky-cart.css";
 import "./globals.css";
 import "./checkout.css";
 import "./watermark.css";
@@ -28,5 +31,7 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/>{children}</body></html>
+ return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/>{children}<StickyCartBar/><CartCustomization/></body></html>
 }
+
+
