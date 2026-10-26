@@ -1,6 +1,7 @@
 "use client";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
+import {storeThemeCss} from "../../shared/store-theme";
 import {trackPageView} from "../analytics";
 import {loadCatalog} from "../catalog-types";
 import {loadStorefront,type StoreSettings} from "../storefront-types";
@@ -34,7 +35,7 @@ function setPageSeo(title:string,description:string,url:string,image:string,type
  upsertMeta('meta[name="twitter:description"]',{name:"twitter:description",content:description});
  upsertMeta('meta[name="twitter:image"]',{name:"twitter:image",content:image});
 }
-function absoluteUrl(value:string){try{return new URL(value||"/og.png",location.origin).toString()}catch{return location.origin+"/og.png"}}
+function absoluteUrl(value:string|undefined){try{return new URL(value||"/og.png",location.origin).toString()}catch{return location.origin+"/og.png"}}
 async function applyPageSeo(settings:StoreSettings,pathname:string){
  const name=settings.siteNameAr||settings.storeName||"منار بارتي ستور",alternate=settings.siteNameEn||"";
  let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة",image=absoluteUrl(settings.logoUrl),type="website";
@@ -57,6 +58,11 @@ async function applyPageSeo(settings:StoreSettings,pathname:string){
  setPageSeo(title,description,location.href,image,type);
 }
 function applyStoreIdentity(settings:StoreSettings){
+ if(!location.pathname.startsWith("/admin")){
+  let style=document.getElementById("storefront-initial-theme");
+  if(!style){style=document.createElement("style");style.id="storefront-initial-theme";document.head.appendChild(style)}
+  style.textContent=storeThemeCss(settings);
+ }
  const root=document.documentElement;
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
@@ -83,3 +89,4 @@ export default function StoreTheme(){
  },[pathname]);
  return null;
 }
+
