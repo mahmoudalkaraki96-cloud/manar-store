@@ -24,3 +24,6 @@ export function updateFloatingPreference(id:FloatingId,next:FloatingPreference){
  try{localStorage.setItem(floatingKey,JSON.stringify(prefs))}catch{memoryOnly=true}
  window.dispatchEvent(new Event(floatingEvent));
 }
+
+// Ignore small tap jitter before treating pointer motion as a drag.
+export function floatingGestureMoved(startX:number,startY:number,x:number,y:number){return Math.hypot(x-startX,y-startY)>=8}
