@@ -11,6 +11,7 @@ import "./checkout.css";
 import "./watermark.css";
 import "./highlights.css";
 import "./store-layout.css";
+import "./floating-actions.css";
 
 export const metadata:Metadata={
  title:{default:"منار بارتي ستور | Manar Party Store",template:"%s | Manar Store"},

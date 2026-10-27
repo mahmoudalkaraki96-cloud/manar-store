@@ -493,3 +493,10 @@
 - StoreFooter في الرئيسية يعرض الهوية وخدمة العملاء والتواصل الموجود بإعدادات المتجر. CSS ضمن store-layout.css بتحديدات خاصة لا تغيّر footer لصفحات أخرى أو تنسيق السلة؛ أعمدة بالدسكتوب وصفوف مضغوطة وروابط خدمة العملاء بعمودين للهاتف.
 - shared/store-theme.ts يولد CSS آمنًا من hex؛ storefrontSeo يحقن style#storefront-initial-theme في head من إعدادات استعلامه القائم. StoreTheme يعيد مزامنته عند وصول الإعدادات؛ scoped colors تتجاوز القيم الافتراضية في main/header قبل hydration. الإدارة مستثناة.
 - لا تعديل لشريط السلة أو StoreHeader أو StoreShell؛ لا إعادة placeholders. VERSION=1.0.1؛ حالة النشر والفحص في سجل النسخ والتقدم.
+
+
+### 2026-10-27 (Asia/Hebron) — v1.0.2 أزرار الزائر العائمة
+- app/floating-actions.ts يحفظ ظهور وموضعinstall/notifications محليًا مستقلًا عنmanar_push_prefs، مع تطبيع JSON وحدود نسب0..1 وتخزين مؤقت عند حظرlocalStorage. حدثmanar:floating-actions يزامن المكونات وstorage يزامن التبويبات.
+- FloatingAction بمقبض pointer capture وtouch-action:none، أسهم للتحريك وHome للموقع الافتراضي. ResizeObserver وحدودviewport تمنع فقدان الوصول بعد الدوران. FloatingActionsMenu فيStoreHeader يعرضcheckbox مستقلًا وإعادة الموقع؛ dialog أصلي يدعمEscape والتركيز.
+- التخصيص لأزرار المتجر فقط؛ لا تغيير لمساراتAPI أو اشتراكاتPush أو تقاريرPWA. ظهور زر التثبيت يظل مشروطًا بدعم المتصفح. حالة نشرv1.0.2 فيVERSIONS وSTORE-PROGRESS.
+- v1.0.1 السابقة نُشرت بنجاح40362853843 وتم التحقق حيًا منfooter والألوان الأولية.
