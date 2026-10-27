@@ -1,5 +1,6 @@
 "use client";
 import Notifications from "./Notifications";
+import FloatingAction from "./FloatingAction";
 import {useEffect,useState} from "react";
 
 type InstallPromptEvent=Event&{
@@ -82,9 +83,11 @@ export default function PwaRegister(){
 
  return <>
   <Notifications/>
-  <button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
+  {admin?(<button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
    <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
-  </button>
+  </button>):<FloatingAction id="install" label="تثبيت التطبيق" bottom={24}><button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
+   <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
+  </button></FloatingAction>}
   {showIosHelp&&<div className="pwaInstallHelp" role="dialog" aria-modal="true" aria-label="طريقة تثبيت التطبيق">
    <button className="pwaInstallClose" type="button" onClick={()=>setShowIosHelp(false)} aria-label="إغلاق">×</button>
    <b>تثبيت {appName} على الآيفون</b>
