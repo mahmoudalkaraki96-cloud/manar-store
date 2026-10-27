@@ -522,3 +522,7 @@
 - desktopCategoryRail يبدأ عندvar(--store-header-height)+10px؛ لايستخدمstore-topbar-height. يبقىposition:fixed وسكرولداخلي. rail z-index100 وflyout120 تحتshopHeaderWrap500حتىلا تغطي نتائجالبحثالمنسدلة.
 - StoreShell يحسبminimumTop للفروعمنbottomالهيدر+10px؛ أزيلpaddingالمحجوزللقائمةداخلشريطالهايلايتس،فيظهرالهايلايتسبعرضالهيدر. لا تغييرلـbreakpoint1100أو تخطيطالهاتف.
 - VERSION1.0.4؛ تفاصيلالنشر والتحققفيالسجلات.
+
+
+### 2026-10-27 12:58 (Asia/Hebron) — تحقق v1.0.4
+- PR#78 وCI40492036549 ونشر40492207450 ناجحون عند5ea86254. تحققحي: railtop191 مقابلheaderbottom181، نتائجالبحثفوقالقائمة، وثباتالموضعأثناءscroll. الشاشةالقصيرةتسمحبسكرولداخلي253pxبدونتحريكصفحةالبحث.
