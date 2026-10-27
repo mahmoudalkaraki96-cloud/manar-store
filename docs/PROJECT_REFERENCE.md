@@ -511,3 +511,8 @@
 - HeaderSearchRow يظهر كصف بحث+مفضلة+سلة حتى720px، وبـdisplay:contents على الدسكتوب. أزرار shoppingActions مشتركة، تخفيCSSالنسخة غير المناسبة؛ ليست هناك معالجات مختلفة أو تغييرعدادات.
 - السحب من visitorFloatingPrimary نفسه؛ pointer capture على button يبقي click العادي على الزر ويحافظ على user activation للتثبيت. عتبة8px تفصل jitter عن السحب، وonClickCapture يمنع حدثclick الناتج عن سحب فقط. pointercancel يلغي الحركة، والتحريك بالأسهم وHome يعمل عند تركيز الزر الأصلي.
 - لم يعد هناك visitorFloatingMove. الإخفاء والمواضع والتخزين وإعادة الإظهار تبقى بنفس مفاتيحv1.0.2. حالة النشر فيSTORE-PROGRESS وVERSIONS.
+
+
+### 2026-10-27 09:14 (Asia/Hebron) — تحقق وتصحيح v1.0.3
+- app/highlights.css يحوي قواعد!important قديمة للموبايل علىglobalSearch/utilityBtn؛ floating-actions.css يحدد أبناءheaderSearchRow بgrid-row:1 وعمودي1/2 مع!important وتحديداتأعلى، ولا يغير قواعدالبحثالعامة أو الدسكتوب.
+- PR#77 وCI40465095495؛ نشرنهائي40465590557 عند8f02a978 ناجح. تحقق حي320/390: بحثوسلةومفضلةبسطرواحد دون تجاوز. فتحالمفضلةوالسلةوالبحث ناجح. السحبمنالزر لايفتحه، والنقر يفتحه والموضع محفوظ بعدreload.
