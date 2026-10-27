@@ -516,3 +516,9 @@
 ### 2026-10-27 09:14 (Asia/Hebron) — تحقق وتصحيح v1.0.3
 - app/highlights.css يحوي قواعد!important قديمة للموبايل علىglobalSearch/utilityBtn؛ floating-actions.css يحدد أبناءheaderSearchRow بgrid-row:1 وعمودي1/2 مع!important وتحديداتأعلى، ولا يغير قواعدالبحثالعامة أو الدسكتوب.
 - PR#77 وCI40465095495؛ نشرنهائي40465590557 عند8f02a978 ناجح. تحقق حي320/390: بحثوسلةومفضلةبسطرواحد دون تجاوز. فتحالمفضلةوالسلةوالبحث ناجح. السحبمنالزر لايفتحه، والنقر يفتحه والموضع محفوظ بعدreload.
+
+
+### 2026-10-27 12:53 (Asia/Hebron) — v1.0.4 موضع قائمة الدسكتوب
+- desktopCategoryRail يبدأ عندvar(--store-header-height)+10px؛ لايستخدمstore-topbar-height. يبقىposition:fixed وسكرولداخلي. rail z-index100 وflyout120 تحتshopHeaderWrap500حتىلا تغطي نتائجالبحثالمنسدلة.
+- StoreShell يحسبminimumTop للفروعمنbottomالهيدر+10px؛ أزيلpaddingالمحجوزللقائمةداخلشريطالهايلايتس،فيظهرالهايلايتسبعرضالهيدر. لا تغييرلـbreakpoint1100أو تخطيطالهاتف.
+- VERSION1.0.4؛ تفاصيلالنشر والتحققفيالسجلات.
