@@ -41,3 +41,14 @@ test("rejects over-discount and missing address without persisting",async()=>{
  await assert.rejects(createManualOrder(db,{...body,address:""}));
  assert.equal(sql.prepare("SELECT COUNT(*) AS n FROM orders").get().n,0);
 });
+test("customer order and link commit together and retries do not duplicate it",async()=>{
+ const {createManualOrder}=await modulePromise,{db,sql}=fixture();sql.exec("ALTER TABLE orders ADD COLUMN customer_account_id INTEGER; CREATE TABLE admin_customers(id INTEGER PRIMARY KEY,account_id INTEGER);CREATE TABLE admin_customer_orders(order_id INTEGER PRIMARY KEY,customer_id INTEGER,linked_at INTEGER,request_id TEXT UNIQUE,request_hash TEXT);INSERT INTO admin_customers VALUES(7,41)");
+ const request={...body,ledgerCustomerId:7,ledgerRequestId:'manual-order-request-11111111'},result=await createManualOrder(db,request),retry=await createManualOrder(db,request);
+ assert.equal(result.linkedCustomerId,7);assert.equal(retry.duplicate,true);assert.equal(retry.id,result.id);assert.equal(sql.prepare('SELECT COUNT(*) n FROM orders').get().n,1);assert.equal(sql.prepare('SELECT customer_account_id FROM orders').get().customer_account_id,41);assert.equal(sql.prepare('SELECT customer_id FROM admin_customer_orders').get().customer_id,7);await assert.rejects(()=>createManualOrder(db,{...request,shipping:30}),/معطيات مختلفة/);
+});
+test("failure while linking rolls back the order and its items",async()=>{
+ const {createManualOrder}=await modulePromise,{db,sql}=fixture();sql.exec("ALTER TABLE orders ADD COLUMN customer_account_id INTEGER; CREATE TABLE admin_customers(id INTEGER PRIMARY KEY,account_id INTEGER);CREATE TABLE admin_customer_orders(order_id INTEGER PRIMARY KEY,customer_id INTEGER,linked_at INTEGER,request_id TEXT UNIQUE,request_hash TEXT);INSERT INTO admin_customers VALUES(7,NULL);CREATE TRIGGER reject_link BEFORE INSERT ON admin_customer_orders BEGIN SELECT RAISE(ABORT,'link failed'); END");
+ await assert.rejects(()=>createManualOrder(db,{...body,ledgerCustomerId:7,ledgerRequestId:'manual-order-request-22222222'}),/link failed/);assert.equal(sql.prepare('SELECT COUNT(*) n FROM orders').get().n,0);assert.equal(sql.prepare('SELECT COUNT(*) n FROM order_items').get().n,0);
+});
+
+

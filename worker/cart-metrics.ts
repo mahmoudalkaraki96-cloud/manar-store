@@ -49,9 +49,9 @@ export async function recordCart(request:Request,db:Database){
  if(!existing)headers.set("set-cookie",cookieName+"="+id+"; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=31536000");
  return Response.json({ok:true},{headers});
 }
-export async function readCartMetrics(db:Pick<Database,"prepare">){
- const now=Date.now(),cutoff=now-CART_WINDOW_MS;
- await db.prepare("DELETE FROM store_cart_snapshots WHERE updated_at<?").bind(cutoff).run();
+export async function readCartMetrics(db:Pick<Database,"prepare">,since?:number){
+ const now=Date.now(),retention=now-CART_WINDOW_MS,cutoff=Math.max(retention,since??retention);
+ await db.prepare("DELETE FROM store_cart_snapshots WHERE updated_at<?").bind(retention).run();
  const row=await db.prepare("SELECT COUNT(*) AS carts,COALESCE(SUM(quantity),0) AS quantity FROM store_cart_snapshots WHERE updated_at>=? AND quantity>0").bind(cutoff).first<{carts:number;quantity:number}>();
  return {cartQuantity:Number(row?.quantity||0),nonemptyCarts:Number(row?.carts||0),windowDays:30,asOf:now};
 }

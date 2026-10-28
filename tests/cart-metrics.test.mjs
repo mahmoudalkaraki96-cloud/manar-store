@@ -47,6 +47,9 @@ test("expired carts are excluded and removed while recent carts stay",async()=>{
   assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS count FROM store_cart_snapshots").get().count,1);
  }finally{db.sqlite.close()}
 });
+test("filtering the dashboard period does not delete carts outside the selected period",async()=>{
+ const db=database();try{const now=Date.now();db.sqlite.prepare("INSERT INTO store_cart_snapshots VALUES (?,?,?,?)").run("yesterday",9,1,now-86400000);db.sqlite.prepare("INSERT INTO store_cart_snapshots VALUES (?,?,?,?)").run("today",2,1,now);const metrics=await readCartMetrics(db,now-3600000);assert.equal(metrics.nonemptyCarts,1);assert.equal(metrics.cartQuantity,2);assert.equal(db.sqlite.prepare("SELECT COUNT(*) AS count FROM store_cart_snapshots").get().count,2)}finally{db.sqlite.close()}
+});
 test("malformed carts and cross-origin writes do not change metrics",async()=>{
  const db=database();
  try{
@@ -94,3 +97,5 @@ test("invalid variants are rejected and cart identifiers are not exposed",async(
   assert.equal(JSON.stringify(details).includes("cart_id"),false);
  }finally{db.sqlite.close()}
 });
+
+

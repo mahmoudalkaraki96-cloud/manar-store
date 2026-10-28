@@ -526,3 +526,10 @@
 
 ### 2026-10-27 12:58 (Asia/Hebron) — تحقق v1.0.4
 - PR#78 وCI40492036549 ونشر40492207450 ناجحون عند5ea86254. تحققحي: railtop191 مقابلheaderbottom181، نتائجالبحثفوقالقائمة، وثباتالموضعأثناءscroll. الشاشةالقصيرةتسمحبسكرولداخلي253pxبدونتحريكصفحةالبحث.
+
+
+### 2026-10-28 09:05 (Asia/Hebron) — v1.0.5 الزبائن والدفعات والتحليلات والطباعة
+- 0030_customer_ledger.sql يضيفadmin_customers وadmin_customer_orders وadmin_customer_payments؛ UUID للعميل والدفعة idempotent، order_id فريد فيالربط، ومبلغالدفعةبالأغورة وINSERT مشروطذريًا بالرصيدوحالةالطلب. payment_status التاريخيةلاتُعادكتابتها، والسجلصريح؛ الدفعاتعلىملغيأوفائضمنتعديل تظهرللمراجعة.
+- واجهات/api/admin/customer-ledger تحت حمايةالإدارة القائمة، معمنعcross-site للكتابة؛ accounts يسترجعحقولالاتصال فقط، لا hashes/salts. ربطالطلباتالتاريخية صريح، يمكنإنشاءطلب يدويمنحسابالزبون ثمربطه؛ عندفشلالربط يُبلغبرقمالطلب لمنعإنشاءنسخةأخرى.
+- Dashboard يبدأباليوم، يعرضمخططاتورابطالتحليلات؛ MarketingAnalyticsPanel وCartMetricsPanel بصفحةالتحليلات ويبدآناليوم. marketingCutoff يستعملmidnight Asia/Hebron؛ cartMetrics منفصلعنretention. LiveActivity يبقى5دقائق فعليًا.
+- CSS طباعةالطلب ضمنadmin.css يستبعدالهيكلوالقائمةمنالتدفقالورقي ويظهرالطلب دونصفحةمقدمة فارغة. تفاصيلالتحققوالنشر فيSTORE-PROGRESS وVERSIONS.
