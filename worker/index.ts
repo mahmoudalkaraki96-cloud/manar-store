@@ -1435,7 +1435,12 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
   const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
   if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
-  if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env,ctx);
+  if (request.method === "POST" && url.pathname === "/api/orders") {
+    const result=await createOrder(request,env,ctx);
+    let details='{}';if(result.ok){const saved=await result.clone().json() as {orderNumber?:number};details=JSON.stringify({orderNumber:saved.orderNumber})}
+    await env.DB.prepare('INSERT INTO admin_audit_log(actor_label,action,target,status,details,created_at) VALUES(?,?,?,?,?,?)').bind('زبون المتجر','order.submit','/api/orders',result.status,details,Date.now()).run().catch(()=>console.error('order_audit_failed'));
+    return result;
+  }
   if(url.pathname.startsWith("/api/push/")&&env.APP_SURFACE==="storefront"){
     await ensureCustomerAuthSchema(env);
     if(request.method==="POST"&&!await customerRateLimit(env,"push:"+await sha256(request.headers.get("cf-connecting-ip")||"unknown"),100,3600000))return json({error:"انتظر قليلًا ثم أعد المحاولة"},{status:429});
