@@ -1506,7 +1506,8 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(postPurchaseMatch&&request.method==="POST")return postPurchase(env,Number(postPurchaseMatch[1]));
   if(request.method==="POST"&&url.pathname==="/api/admin/orders"){
   await ensureManualOrderSchema(env);
-  try{return json(await createManualOrder(env.DB,await parseJson(request)))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
+  const body=await parseJson(request);if(body.ledgerCustomerId!=null)await ensureCustomerAuthSchema(env);
+  try{return json(await createManualOrder(env.DB,body))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
  }
  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);

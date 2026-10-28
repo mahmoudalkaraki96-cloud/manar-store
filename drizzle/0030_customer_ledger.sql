@@ -13,7 +13,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS admin_customer_account_unique ON admin_custome
 CREATE TABLE IF NOT EXISTS admin_customer_orders (
   order_id INTEGER PRIMARY KEY REFERENCES orders(id),
   customer_id INTEGER NOT NULL REFERENCES admin_customers(id),
-  linked_at INTEGER NOT NULL
+  linked_at INTEGER NOT NULL,
+  request_id TEXT UNIQUE,
+  request_hash TEXT
 );
 CREATE INDEX IF NOT EXISTS admin_customer_orders_customer ON admin_customer_orders(customer_id);
 CREATE TABLE IF NOT EXISTS admin_customer_payments (
