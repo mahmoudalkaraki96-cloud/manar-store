@@ -56,7 +56,7 @@ export async function currentActor(request:Request,env:SecurityEnv):Promise<Admi
   return null;
  }
  if(token)return null;
- const assertion=request.headers.get('cf-access-jwt-assertion');
+ const assertion=request.headers.get('cf-access-jwt-assertion')||(request.headers.get('cookie')||'').split(';').map(value=>value.trim()).find(value=>value.startsWith('CF_Authorization='))?.slice('CF_Authorization='.length);
  if(!assertion||!env.ADMIN_CF_TEAM||!env.ADMIN_CF_AUD)return null;
  const email=await verifyAccessToken(assertion,env.ADMIN_CF_TEAM,env.ADMIN_CF_AUD);if(!email)return null;
  await bootstrapOwner(env);
@@ -194,7 +194,7 @@ export async function initDefaultGroups(env:SecurityEnv){
 }
 
 export async function cloudflareLogin(request:Request,env:SecurityEnv){
- const cleanHeaders=new Headers(request.headers);cleanHeaders.delete('cookie');const actor=await currentActor(new Request(request,{headers:cleanHeaders}),env);
+ const cleanHeaders=new Headers(request.headers);const remaining=(request.headers.get('cookie')||'').split(';').filter(value=>!value.trim().startsWith(COOKIE+'=')).join(';');if(remaining)cleanHeaders.set('cookie',remaining);else cleanHeaders.delete('cookie');const actor=await currentActor(new Request(request,{headers:cleanHeaders}),env);
  if(!actor||actor.method!=='cloudflare')return response({error:'لم يتم التحقق من حساب Cloudflare أو الحساب غير مخوّل'},403);
  await audit(env,actor,'auth.cloudflare','admin',200);return new Response(null,{status:302,headers:{location:'/admin','set-cookie':await session(env,actor),'cache-control':'no-store'}});
 }
