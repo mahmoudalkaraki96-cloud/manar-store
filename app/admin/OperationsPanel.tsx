@@ -23,7 +23,7 @@ const csvCell=(value:unknown)=>`"${String(value??"").replaceAll('"','""')}"`;
 
 export default function OperationsPanel({section,catalog,onCatalogChanged}:{section:"overview"|"inventory"|"purchases"|"customers"|"import";catalog:CatalogResponse;onCatalogChanged:()=>Promise<void>}){
  const [ops,setOps]=useState<Operations>(emptyOps),[loading,setLoading]=useState(true),[message,setMessage]=useState(""),[supplier,setSupplier]=useState<Supplier|null>(null),[purchase,setPurchase]=useState<Purchase|null>(null),[query,setQuery]=useState("");
- const refresh=async()=>{setLoading(true);try{setOps(await send("/api/admin/operations"))}catch(e){setMessage(e instanceof Error?e.message:"تعذر التحميل")}finally{setLoading(false)}};
+ const refresh=async()=>{if(section==="inventory"){setLoading(false);return}setLoading(true);try{setOps(await send("/api/admin/operations"))}catch(e){setMessage(e instanceof Error?e.message:"تعذر التحميل")}finally{setLoading(false)}};
  useEffect(()=>{void refresh()},[]);
  const products=useMemo(()=>query.trim()?catalog.products.filter(product=>matches(product,query)):catalog.products,[catalog.products,query]);
  const saveSupplier=async()=>{if(!supplier?.name.trim())return setMessage("اسم المورد مطلوب");try{await send(supplier.id?`/api/admin/suppliers/${supplier.id}`:"/api/admin/suppliers",supplier.id?"PUT":"POST",supplier);setSupplier(null);setMessage("تم حفظ المورد");await refresh()}catch(e){setMessage(e instanceof Error?e.message:"فشل الحفظ")}};

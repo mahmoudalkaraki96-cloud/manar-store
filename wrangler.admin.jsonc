@@ -3,12 +3,17 @@
   "name": "manar-store-admin",
   "main": "./dist/server/index.js",
   "compatibility_date": "2026-08-22",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "no_bundle": true,
   "rules": [
     {
       "type": "ESModule",
-      "globs": ["**/*.js", "**/*.mjs"]
+      "globs": [
+        "**/*.js",
+        "**/*.mjs"
+      ]
     }
   ],
   "assets": {
@@ -29,12 +34,18 @@
       "bucket_name": "manar-store-media"
     }
   ],
-  "images": { "binding": "IMAGES" },
+  "images": {
+    "binding": "IMAGES"
+  },
   "ai": {
     "binding": "AI"
   },
   "vars": {
-    "APP_SURFACE": "admin"
+    "APP_SURFACE": "admin",
+    "ADMIN_OWNER_EMAIL": "mahmoud-alfaqeh@hotmail.co.il",
+    "ADMIN_OWNER_CF_EMAIL": "mahmoud.alkaraki96@gmail.com",
+    "ADMIN_CF_TEAM": "rapid-truth-92f4",
+    "ADMIN_CF_AUD": "7aede5206a23b1c2032b7aed18527ca73add9e82e6bc0334a46323d22a08ae22"
   },
   "observability": {
     "enabled": true
