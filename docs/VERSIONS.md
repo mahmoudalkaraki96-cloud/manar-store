@@ -96,3 +96,13 @@
 - المرجع: https://developers.cloudflare.com/workers/runtime-apis/request/ . الاختبارأصبحتحققًاصريحًامنredirect:manual،و15اختبارًانجحت.
 - أضيفنطاقadmin.manarstore.ps/admin/cloudflareإلىتطبيقAccessالخاصبمنارفقطبنفسسياسةCloudflareaccountmembersوبقاءWorkersscopeإنتاجومعاينةكماهو؛لمتُزلبوابةالحماية. حُفظالتعديلوظهرApplication successfully configured؛ outputs/manar-access-protected-login.png.
 - التاليالنشروالتحققالحيقبلأيتغييريسمحبدخولالبريدخارجAccess.
+
+
+### 2026-10-28 11:17 (Asia/Hebron) — ADMIN-AUTH-RBAC / اكتمال النشر والتحقق v1.1.2
+- نشر40661492999نجحعندa76270f2c8b713333331678e04a325aaacf34e58،بعدنشرv1.1.0وتصحيحتوافقredirectفيv1.1.2. PR#81 والبناء40659308917ناجحان.
+- تحققحي: دخولCloudflareأنشأجلسةالمديرالرئيسي،واللوحةوالمستخدمونوالمجموعاتوسجلالحركاتظهرت؛ مجموعتاالمحررينوالمشرفينبصلاحياتهماالمحددةموجودتان. سُجلتpage.openوقراءةالبياناتوالدخولبنتائجناجحة.
+- وافقالمستخدمصراحةعلىحفظنطاقالحمايةالنهائي: Workersscopeلمعايناتmanar-store-adminفقط،ومسارا/admin/cloudflareعلىadmin.manarstore.psوmanar-store-admin.mahmoud-alkaraki96.workers.devبقيامحميينبنفسAccesspolicy. أُبلغبنجاحالحفظ،ولميُعدَّلأيإعدادلـrokon-store.
+- فحصHTTPمستقلدونكوكي: صفحة/admin/loginترد200،/adminتحولللوجين،طلباتorders/customer-ledger/security/users/groups/auditترد401،CloudflareentryيحولإلىفريقAccess. نفسحماية401ومسارCloudflare302علىرابطworkers.dev. بياناتدخولتجريبيةخاطئةترد401ومصدرخارجييرد403.
+- حسابالمديرالرئيسيhasPassword=trueوmustChangePassword=falseتمالتحققمنهماعبرواجهةmeدونقراءةكلمةالمرور. لمتُكتبأوتُعرضأيبياناتدخولحساسةبالتوثيق.
+- فحصحيغيرمغيِّرللبيانات: نموذجالمستخدمبالمجموعاتوالصلاحياتالمباشرة؛إنشاءالطلببزبونأوبدونربط؛قائمةالمحذوفات؛حقلإيميلالزبون؛زرضبطكلمةمرورالمستخدم. حفظوحذفواستعادةالطلبوحساباتالتجربةفُحصتعلىSQLiteمحليًا،لاطلبأودفعةتجريبيةفيالإنتاجولاتغييراتمخزونللفحص.
+- الصور: outputs/manar-dual-login-live.png،outputs/manar-admin-permissions-live.png،outputs/manar-dual-login-access-saved.png. 15اختبارحمايةو19اختبارطلباتودفعاتنجحتمحليًا؛البناءوالنشرناجحان. الحالة:مكتملومنشورومتحققحيًابالحدودالمذكورة.
