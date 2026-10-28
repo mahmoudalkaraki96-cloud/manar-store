@@ -23,20 +23,20 @@ function readCookie(request:Request){return (request.headers.get('cookie')||'').
 
 let keysCache:{team:string;keys:(JsonWebKey&{kid?:string})[];until:number}|null=null;
 const decode=(s:string)=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
-export async function verifyAccessToken(token:string,team:string,audience:string,fetcher:typeof fetch=fetch):Promise<string|null>{
+export async function verifyAccessToken(token:string,team:string,audience:string,fetcher:typeof fetch=fetch,diagnostic:(reason:string)=>void=()=>{}):Promise<string|null>{
  try{
   if(!/^[a-z0-9-]+$/.test(team)||!audience||token.length>12000)return null;
   const parts=token.split('.');if(parts.length!==3)return null;
   const head=JSON.parse(new TextDecoder().decode(decode(parts[0]))),claims=JSON.parse(new TextDecoder().decode(decode(parts[1]))),now=Date.now()/1000;
   if(head.alg!=='RS256'||typeof head.kid!=='string'||claims.iss!==`https://${team}.cloudflareaccess.com`||!Array.isArray(claims.aud)||!claims.aud.includes(audience)||typeof claims.exp!=='number'||claims.exp<=now||typeof claims.iat!=='number'||claims.iat>now+30||claims.nbf&&claims.nbf>now+30||typeof claims.email!=='string')return null;
   if(!keysCache||keysCache.team!==team||keysCache.until<Date.now()||!keysCache.keys.some(k=>k.kid===head.kid)){
-   const r=await fetcher(`https://${team}.cloudflareaccess.com/cdn-cgi/access/certs`,{redirect:'error'});if(!r.ok)return null;const data=await r.json() as {keys:(JsonWebKey&{kid?:string})[]};if(!Array.isArray(data.keys))return null;keysCache={team,keys:data.keys,until:Date.now()+300000};
+   const r=await fetcher(`https://${team}.cloudflareaccess.com/cdn-cgi/access/certs`,{redirect:'error'});if(!r.ok){diagnostic('key_fetch_'+r.status);return null}const data=await r.json() as {keys:(JsonWebKey&{kid?:string})[]};if(!Array.isArray(data.keys)){diagnostic('key_format');return null}keysCache={team,keys:data.keys,until:Date.now()+300000};
   }
-  const jwk=keysCache.keys.find(k=>k.kid===head.kid&&k.kty==='RSA');if(!jwk)return null;
+  const jwk=keysCache.keys.find(k=>k.kid===head.kid&&k.kty==='RSA');if(!jwk){diagnostic('key_missing');return null}
   const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
-  if(!await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,decode(parts[2]),new TextEncoder().encode(parts[0]+'.'+parts[1])))return null;
+  if(!await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,decode(parts[2]),new TextEncoder().encode(parts[0]+'.'+parts[1]))){diagnostic('signature');return null}
   return claims.email.toLowerCase();
- }catch{return null}
+ }catch(error){diagnostic('verification_'+(error instanceof Error?error.name:'error'));return null}
 }
 async function bootstrapOwner(env:SecurityEnv){
  if(!env.ADMIN_OWNER_EMAIL)return;
@@ -197,7 +197,8 @@ export async function cloudflareLogin(request:Request,env:SecurityEnv){
  const assertion=request.headers.get('cf-access-jwt-assertion')||(request.headers.get('cookie')||'').split(';').map(value=>value.trim()).find(value=>value.startsWith('CF_Authorization='))?.slice('CF_Authorization='.length);
  if(!env.ADMIN_CF_TEAM||!env.ADMIN_CF_AUD)return response({error:'إعداد Cloudflare غير مكتمل',code:'access_config'},503);
  if(!assertion)return response({error:'لم تصل جلسة Cloudflare إلى التطبيق؛ أعد تسجيل الدخول عبر Cloudflare',code:'access_token_missing'},403);
- let flags:Record<string,boolean>={};try{const parts=assertion.split('.'),head=JSON.parse(new TextDecoder().decode(decode(parts[0]))),claims=JSON.parse(new TextDecoder().decode(decode(parts[1])));flags={algorithm:head.alg==='RS256',issuer:claims.iss===`https://${env.ADMIN_CF_TEAM}.cloudflareaccess.com`,audience:Array.isArray(claims.aud)&&claims.aud.includes(env.ADMIN_CF_AUD),time:typeof claims.exp==='number'&&claims.exp>Date.now()/1000,identity:typeof claims.email==='string'}}catch{return response({error:'جلسة Cloudflare غير صالحة',code:'access_token_format'},403)}
+ let flags:Record<string,boolean>={};try{const parts=assertion.split('.'),head=JSON.parse(new TextDecoder().decode(decode(parts[0]))),claims=JSON.parse(new TextDecoder().decode(decode(parts[1])));flags={algorithm:head.alg==='RS256',issuer:claims.iss===`https://${env.ADMIN_CF_TEAM}.cloudflareaccess.com`,audience:Array.isArray(claims.aud)&&claims.aud.includes(env.ADMIN_CF_AUD),time:typeof claims.exp==='number'&&claims.exp>Date.now()/1000,identity:typeof claims.email==='string',issued:typeof claims.iat==='number'&&claims.iat<=Date.now()/1000+30,notBefore:!claims.nbf||claims.nbf<=Date.now()/1000+30}}catch{return response({error:'جلسة Cloudflare غير صالحة',code:'access_token_format'},403)}
+ let failure='claims';const verifiedEmail=await verifyAccessToken(assertion,env.ADMIN_CF_TEAM,env.ADMIN_CF_AUD,fetch,reason=>{failure=reason});if(!verifiedEmail)return response({error:'تعذر التحقق من جلسة Cloudflare',code:failure,checks:flags},403);
  const cleanHeaders=new Headers(request.headers);const remaining=(request.headers.get('cookie')||'').split(';').filter(value=>!value.trim().startsWith(COOKIE+'=')).join(';');if(remaining)cleanHeaders.set('cookie',remaining);else cleanHeaders.delete('cookie');const actor=await currentActor(new Request(request,{headers:cleanHeaders}),env);
  if(!actor||actor.method!=='cloudflare')return response({error:'لم يتم التحقق من حساب Cloudflare أو الحساب غير مخوّل',code:'access_verification',checks:flags},403);
  await audit(env,actor,'auth.cloudflare','admin',200);return new Response(null,{status:302,headers:{location:'/admin','set-cookie':await session(env,actor),'cache-control':'no-store'}});
