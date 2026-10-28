@@ -194,7 +194,11 @@ export async function initDefaultGroups(env:SecurityEnv){
 }
 
 export async function cloudflareLogin(request:Request,env:SecurityEnv){
+ const assertion=request.headers.get('cf-access-jwt-assertion')||(request.headers.get('cookie')||'').split(';').map(value=>value.trim()).find(value=>value.startsWith('CF_Authorization='))?.slice('CF_Authorization='.length);
+ if(!env.ADMIN_CF_TEAM||!env.ADMIN_CF_AUD)return response({error:'إعداد Cloudflare غير مكتمل',code:'access_config'},503);
+ if(!assertion)return response({error:'لم تصل جلسة Cloudflare إلى التطبيق؛ أعد تسجيل الدخول عبر Cloudflare',code:'access_token_missing'},403);
+ let flags:Record<string,boolean>={};try{const parts=assertion.split('.'),head=JSON.parse(new TextDecoder().decode(decode(parts[0]))),claims=JSON.parse(new TextDecoder().decode(decode(parts[1])));flags={algorithm:head.alg==='RS256',issuer:claims.iss===`https://${env.ADMIN_CF_TEAM}.cloudflareaccess.com`,audience:Array.isArray(claims.aud)&&claims.aud.includes(env.ADMIN_CF_AUD),time:typeof claims.exp==='number'&&claims.exp>Date.now()/1000,identity:typeof claims.email==='string'}}catch{return response({error:'جلسة Cloudflare غير صالحة',code:'access_token_format'},403)}
  const cleanHeaders=new Headers(request.headers);const remaining=(request.headers.get('cookie')||'').split(';').filter(value=>!value.trim().startsWith(COOKIE+'=')).join(';');if(remaining)cleanHeaders.set('cookie',remaining);else cleanHeaders.delete('cookie');const actor=await currentActor(new Request(request,{headers:cleanHeaders}),env);
- if(!actor||actor.method!=='cloudflare')return response({error:'لم يتم التحقق من حساب Cloudflare أو الحساب غير مخوّل'},403);
+ if(!actor||actor.method!=='cloudflare')return response({error:'لم يتم التحقق من حساب Cloudflare أو الحساب غير مخوّل',code:'access_verification',checks:flags},403);
  await audit(env,actor,'auth.cloudflare','admin',200);return new Response(null,{status:302,headers:{location:'/admin','set-cookie':await session(env,actor),'cache-control':'no-store'}});
 }
