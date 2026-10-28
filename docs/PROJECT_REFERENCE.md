@@ -562,3 +562,10 @@
 - نشرv1.1.0 نجح عبر40659529373 عند0ffd9f537d25e46f3f7798bcb962f3211da77aec. الفحصالحيرأىصفحةالدخوللكنزرCloudflareلميتحققمنالهوية.
 - أُضيفfallback إلىCF_Authorizationالموقّع عندغيابترويسةالتحقق؛ يبقىفحصالتوقيعوissuerوaudienceوالانتهاءكاملاً. المسارالصريح يحذفكوكياالتطبيقفقطويحتفظبكوكياAccess.
 - 15اختبارًانجحت بمافيهااختبارالكوكيومطابقةهويةCloudflareبحسابالمدير. التاليإعادةالنشروالتحققالحي. بوابةAccessمازالتكماهي.
+
+
+### 2026-10-28 11:04 (Asia/Hebron) — v1.1.2 / توافق تحقق Access مع Workers
+- التشخيصالحيأكدصحةخوارزميةJWTوissuerوaudienceوالوقتوالهوية، لكنظهرTypeErrorفيالتحقق. السببredirect:errorغيرمدعومفيWorkers؛ صُححإلىmanualورفضالردودغيرالناجحةدوناتباعتحويلات.
+- المرجع: https://developers.cloudflare.com/workers/runtime-apis/request/ . الاختبارأصبحتحققًاصريحًامنredirect:manual،و15اختبارًانجحت.
+- أضيفنطاقadmin.manarstore.ps/admin/cloudflareإلىتطبيقAccessالخاصبمنارفقطبنفسسياسةCloudflareaccountmembersوبقاءWorkersscopeإنتاجومعاينةكماهو؛لمتُزلبوابةالحماية. حُفظالتعديلوظهرApplication successfully configured؛ outputs/manar-access-protected-login.png.
+- التاليالنشروالتحققالحيقبلأيتغييريسمحبدخولالبريدخارجAccess.

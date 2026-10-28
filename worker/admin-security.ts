@@ -30,7 +30,7 @@ export async function verifyAccessToken(token:string,team:string,audience:string
   const head=JSON.parse(new TextDecoder().decode(decode(parts[0]))),claims=JSON.parse(new TextDecoder().decode(decode(parts[1]))),now=Date.now()/1000;
   if(head.alg!=='RS256'||typeof head.kid!=='string'||claims.iss!==`https://${team}.cloudflareaccess.com`||!Array.isArray(claims.aud)||!claims.aud.includes(audience)||typeof claims.exp!=='number'||claims.exp<=now||typeof claims.iat!=='number'||claims.iat>now+30||claims.nbf&&claims.nbf>now+30||typeof claims.email!=='string')return null;
   if(!keysCache||keysCache.team!==team||keysCache.until<Date.now()||!keysCache.keys.some(k=>k.kid===head.kid)){
-   const r=await fetcher(`https://${team}.cloudflareaccess.com/cdn-cgi/access/certs`,{redirect:'error'});if(!r.ok){diagnostic('key_fetch_'+r.status);return null}const data=await r.json() as {keys:(JsonWebKey&{kid?:string})[]};if(!Array.isArray(data.keys)){diagnostic('key_format');return null}keysCache={team,keys:data.keys,until:Date.now()+300000};
+   const r=await fetcher(`https://${team}.cloudflareaccess.com/cdn-cgi/access/certs`,{redirect:'manual'});if(!r.ok){diagnostic('key_fetch_'+r.status);return null}const data=await r.json() as {keys:(JsonWebKey&{kid?:string})[]};if(!Array.isArray(data.keys)){diagnostic('key_format');return null}keysCache={team,keys:data.keys,until:Date.now()+300000};
   }
   const jwk=keysCache.keys.find(k=>k.kid===head.kid&&k.kty==='RSA');if(!jwk){diagnostic('key_missing');return null}
   const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
