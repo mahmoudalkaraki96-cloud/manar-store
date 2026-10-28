@@ -6,14 +6,15 @@ const clean=(value:unknown,max:number)=>typeof value==='string'?value.trim().sli
 const id=(value:unknown)=>{const n=Number(value);if(!Number.isSafeInteger(n)||n<1)throw new LedgerError('الرقم غير صحيح');return n};
 export function paymentAmount(value:unknown){if((typeof value!=='string'&&typeof value!=='number')||String(value).trim()==='')throw new LedgerError('أدخل قيمة الدفعة');const n=Number(value),c=Math.round(n*100);if(!Number.isFinite(n)||n<=0||n>10000000||Math.abs(n*100-c)>0.00001)throw new LedgerError('قيمة الدفعة يجب أن تكون أكبر من صفر وبمنزلتين عشريتين');return c}
 export async function readCustomerLedger(db:Database){
- const [customers,orders,items,payments,accounts]=await Promise.all([
+ const [customers,orders,items,payments,accounts,addresses]=await Promise.all([
   db.prepare('SELECT id,name,phone,city,address,account_id,created_at FROM admin_customers ORDER BY name,id').all<Row>(),
   db.prepare("SELECT o.id,o.order_number,o.customer_name,o.phone,o.city,o.address,o.status,o.total_agorot,o.payment_status,o.customer_account_id,o.created_at,l.customer_id AS ledger_customer_id FROM orders o LEFT JOIN admin_customer_orders l ON l.order_id=o.id WHERE o.deleted_at IS NULL ORDER BY o.created_at DESC,o.id DESC").all<Row>(),
   db.prepare('SELECT oi.order_id,oi.product_name,oi.variant_label,oi.quantity,oi.line_total_agorot FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.deleted_at IS NULL ORDER BY oi.id').all<Row>(),
   db.prepare('SELECT id,customer_id,order_id,amount_agorot,note,created_at FROM admin_customer_payments ORDER BY created_at DESC,id DESC').all<Row>(),
-  db.prepare('SELECT id,name,email,phone,city,address,created_at FROM customer_accounts ORDER BY created_at DESC,id DESC').all<Row>()
+  db.prepare('SELECT id,name,email,phone,city,address,created_at FROM customer_accounts ORDER BY created_at DESC,id DESC').all<Row>(),
+  db.prepare('SELECT id,account_id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses ORDER BY is_default DESC,id').all<Row>()
  ]);
- return {customers:customers.results,orders:orders.results,items:items.results,payments:payments.results,accounts:accounts.results};
+ return {customers:customers.results,orders:orders.results,items:items.results,payments:payments.results,accounts:accounts.results,addresses:addresses.results};
 }
 export async function createLedgerCustomer(db:Database,body:Row){
  const name=clean(body.name,200),phone=clean(body.phone,40),city=clean(body.city,120),address=clean(body.address,500),accountId=body.accountId==null||body.accountId===''?null:id(body.accountId),requestId=clean(body.requestId,80);
