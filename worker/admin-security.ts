@@ -5,7 +5,7 @@ interface Statement {bind(...values:unknown[]):Statement;first<T=Record<string,u
 export interface SecurityDb {prepare(sql:string):Statement;batch(statements:Statement[]):Promise<unknown[]>}
 export interface SecurityEnv {DB:SecurityDb;ADMIN_OWNER_EMAIL?:string;ADMIN_OWNER_CF_EMAIL?:string;ADMIN_CF_TEAM?:string;ADMIN_CF_AUD?:string}
 type Row=Record<string,any>;
-export type AdminActor={id:number;email:string;name:string;owner:boolean;permissions:Permission[];mustChangePassword:boolean;method:string;version:number};
+export type AdminActor={id:number;email:string;name:string;owner:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword:boolean;method:string;version:number};
 export class SecurityError extends Error {constructor(message:string,public status=400){super(message)}}
 const COOKIE='__Host-manar_admin_session',MAX_AGE=8*60*60;
 const response=(body:unknown,status=200,headers:HeadersInit={})=>Response.json(body,{status,headers:{'cache-control':'no-store','x-content-type-options':'nosniff',...headers}});
@@ -45,7 +45,7 @@ async function bootstrapOwner(env:SecurityEnv){
 }
 async function actorFromUser(env:SecurityEnv,user:Row,method:string):Promise<AdminActor>{
  const direct=await env.DB.prepare('SELECT permission FROM admin_user_permissions WHERE user_id=? UNION SELECT gp.permission FROM admin_group_permissions gp JOIN admin_group_members gm ON gm.group_id=gp.group_id WHERE gm.user_id=?').bind(user.id,user.id).all<{permission:string}>();
- return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:!!user.must_change_password,method,version:Number(user.auth_version)};
+ return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:!!user.must_change_password&&(method!=='cloudflare'||!!user.password_hash),hasPassword:!!user.password_hash,method,version:Number(user.auth_version)};
 }
 export async function currentActor(request:Request,env:SecurityEnv):Promise<AdminActor|null>{
  const token=readCookie(request);
