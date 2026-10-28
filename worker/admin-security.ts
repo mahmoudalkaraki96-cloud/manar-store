@@ -1,4 +1,4 @@
-import {scrypt,randomBytes,timingSafeEqual} from 'node:crypto';
+import {scrypt,randomBytes,randomInt,timingSafeEqual} from 'node:crypto';
 import {permissions,defaultGroups,validPermissions,modulePermission,type Permission} from '../shared/admin-permissions';
 
 interface Statement {bind(...values:unknown[]):Statement;first<T=Record<string,unknown>>():Promise<T|null>;all<T=Record<string,unknown>>():Promise<{results:T[]}>;run():Promise<{meta:{changes?:number;last_row_id?:number|string}}>}
@@ -13,7 +13,8 @@ const hex=()=>randomBytes(32).toString('hex');
 export async function digest(text:string){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),b=>b.toString(16).padStart(2,'0')).join('')}
 export async function hashPassword(password:string,salt:string){return new Promise<string>((resolve,reject)=>scrypt(password,Buffer.from(salt,'hex'),32,{N:16384,r:8,p:1,maxmem:64*1024*1024},(error,key)=>error?reject(error):resolve('scrypt$'+key.toString('hex'))))}
 async function matches(password:string,salt:string,stored:string){const value=await hashPassword(password,salt);const a=Buffer.from(value),b=Buffer.from(stored);return a.length===b.length&&timingSafeEqual(a,b)}
-export function passwordInput(value:unknown){if(typeof value!=='string'||value.length<12||value.length>128)throw new SecurityError('كلمة المرور يجب أن تكون من 12 إلى 128 خانة');return value}
+export function passwordInput(value:unknown){if(typeof value!=='string'||value.length<6||value.length>128)throw new SecurityError('كلمة المرور يجب أن تكون من 6 إلى 128 خانة');return value}
+export function assignedPassword(value:unknown){return value==null||value===''?String(randomInt(10000000,100000000)):passwordInput(value)}
 const emailInput=(value:unknown)=>{const valueText=String(value||'').trim().toLowerCase();if(valueText.length>254||!/^\S+@\S+\.\S+$/.test(valueText))throw new SecurityError('البريد الإلكتروني غير صحيح');return valueText};
 const integer=(v:unknown)=>{const n=Number(v);if(!Number.isSafeInteger(n)||n<1)throw new SecurityError('المعرف غير صحيح');return n};
 export async function jsonBody(request:Request){if(Number(request.headers.get('content-length')||0)>32000)throw new SecurityError('البيانات كبيرة جدًا',413);const s=await request.text();if(s.length>32000)throw new SecurityError('البيانات كبيرة جدًا',413);try{const b=JSON.parse(s);if(!b||Array.isArray(b)||typeof b!=='object')throw Error();return b as Row}catch{throw new SecurityError('بيانات غير صحيحة')}}
@@ -45,7 +46,7 @@ async function bootstrapOwner(env:SecurityEnv){
 }
 async function actorFromUser(env:SecurityEnv,user:Row,method:string):Promise<AdminActor>{
  const direct=await env.DB.prepare('SELECT permission FROM admin_user_permissions WHERE user_id=? UNION SELECT gp.permission FROM admin_group_permissions gp JOIN admin_group_members gm ON gm.group_id=gp.group_id WHERE gm.user_id=?').bind(user.id,user.id).all<{permission:string}>();
- return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:!!user.must_change_password&&(method!=='cloudflare'||!!user.password_hash),hasPassword:!!user.password_hash,method,version:Number(user.auth_version)};
+ return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:false,hasPassword:!!user.password_hash,method,version:Number(user.auth_version)};
 }
 export async function currentActor(request:Request,env:SecurityEnv):Promise<AdminActor|null>{
  const token=readCookie(request);
@@ -90,7 +91,7 @@ export async function authApi(request:Request,env:SecurityEnv):Promise<Response>
    const body=await jsonBody(request),email=emailInput(body.email),password=typeof body.password==='string'?body.password:'';await limitLogin(request,env,email);
    const user=await env.DB.prepare('SELECT * FROM admin_users WHERE email=? AND active=1').bind(email).first<Row>();
    const okay=password.length<=128&&await matches(password,user?.password_salt||'00'.repeat(16),user?.password_hash||'scrypt$'+'00'.repeat(32));
-   if(!user||!okay||user.password_expires_at&&user.password_expires_at<Date.now()){await audit(env,null,'auth.login.failed','admin',401);throw new SecurityError('البريد أو كلمة المرور غير صحيحة أو انتهت صلاحية الكلمة المؤقتة',401)}
+   if(!user||!okay){await audit(env,null,'auth.login.failed','admin',401);throw new SecurityError('البريد أو كلمة المرور غير صحيحة',401)}
    const actor=await actorFromUser(env,user,'password');await audit(env,actor,'auth.login','admin',200);
    return response({actor},200,{'set-cookie':await session(env,actor)});
   }
@@ -166,13 +167,13 @@ export async function securityApi(request:Request,env:SecurityEnv,actor:AdminAct
   if(request.method==='POST'&&path==='/api/admin/security/users'){
    const b=await jsonBody(request),email=emailInput(b.email),name=String(b.name||'').trim().slice(0,100);if(!name)throw new SecurityError('الاسم مطلوب');
    const grants=validPermissions(b.permissions||[]),groups=Array.isArray(b.groupIds)?[...new Set(b.groupIds.map(integer))]:[];canGrant(actor,[...grants,...await groupPermissions(env,groups)]);
-   const salt=randomBytes(16).toString('hex'),temporary=hex().slice(0,20),hash=await hashPassword(temporary,salt),now=Date.now();
+   const salt=randomBytes(16).toString('hex'),temporary=assignedPassword(b.password),hash=await hashPassword(temporary,salt),now=Date.now();
    if(await env.DB.prepare('SELECT id FROM admin_users WHERE email=?').bind(email).first())throw new SecurityError('البريد مستخدم مسبقًا',409);
-   const statements=[env.DB.prepare('INSERT INTO admin_users(email,name,password_hash,password_salt,created_at,updated_at,password_expires_at) VALUES(?,?,?,?,?,?,?)').bind(email,name,hash,salt,now,now,now+86400000),...groups.map(groupId=>env.DB.prepare('INSERT INTO admin_group_members(user_id,group_id) SELECT id,? FROM admin_users WHERE email=?').bind(groupId,email)),...grants.map(p=>env.DB.prepare('INSERT INTO admin_user_permissions(user_id,permission) SELECT id,? FROM admin_users WHERE email=?').bind(p,email))];await env.DB.batch(statements);return response({ok:true,temporaryPassword:temporary});
+   const statements=[env.DB.prepare('INSERT INTO admin_users(email,name,password_hash,password_salt,created_at,updated_at,must_change_password,password_expires_at) VALUES(?,?,?,?,?,?,0,NULL)').bind(email,name,hash,salt,now,now),...groups.map(groupId=>env.DB.prepare('INSERT INTO admin_group_members(user_id,group_id) SELECT id,? FROM admin_users WHERE email=?').bind(groupId,email)),...grants.map(p=>env.DB.prepare('INSERT INTO admin_user_permissions(user_id,permission) SELECT id,? FROM admin_users WHERE email=?').bind(p,email))];await env.DB.batch(statements);return response({ok:true,temporaryPassword:temporary});
   }
   if(idMatch&&request.method==='PUT'){
    const id=integer(idMatch[1]);await editableUser(env,actor,id);const b=await jsonBody(request),now=Date.now();
-   if(idMatch[2]){const temporary=hex().slice(0,20),salt=randomBytes(16).toString('hex'),hash=await hashPassword(temporary,salt);await env.DB.batch([env.DB.prepare('UPDATE admin_users SET password_hash=?,password_salt=?,must_change_password=1,password_expires_at=?,auth_version=auth_version+1,updated_at=? WHERE id=?').bind(hash,salt,now+86400000,now,id),env.DB.prepare('UPDATE admin_sessions SET revoked_at=? WHERE user_id=?').bind(now,id)]);return response({ok:true,temporaryPassword:temporary})}
+   if(idMatch[2]){const temporary=assignedPassword(b.password),salt=randomBytes(16).toString('hex'),hash=await hashPassword(temporary,salt);await env.DB.batch([env.DB.prepare('UPDATE admin_users SET password_hash=?,password_salt=?,must_change_password=0,password_expires_at=NULL,auth_version=auth_version+1,updated_at=? WHERE id=?').bind(hash,salt,now,id),env.DB.prepare('UPDATE admin_sessions SET revoked_at=? WHERE user_id=?').bind(now,id)]);return response({ok:true,temporaryPassword:temporary})}
    const name=String(b.name||'').trim().slice(0,100);if(!name)throw new SecurityError('الاسم مطلوب');const grants=validPermissions(b.permissions||[]),groups=Array.isArray(b.groupIds)?[...new Set(b.groupIds.map(integer))]:[];canGrant(actor,[...grants,...await groupPermissions(env,groups)]);
    await env.DB.batch([env.DB.prepare('UPDATE admin_users SET name=?,active=?,auth_version=auth_version+1,updated_at=? WHERE id=?').bind(name,b.active===false?0:1,now,id),env.DB.prepare('DELETE FROM admin_group_members WHERE user_id=?').bind(id),env.DB.prepare('DELETE FROM admin_user_permissions WHERE user_id=?').bind(id),...groups.map(g=>env.DB.prepare('INSERT INTO admin_group_members(user_id,group_id) VALUES(?,?)').bind(id,g)),...grants.map(p=>env.DB.prepare('INSERT INTO admin_user_permissions(user_id,permission) VALUES(?,?)').bind(id,p))]);return response({ok:true});
   }

@@ -804,11 +804,11 @@ function requestCookie(request:Request){
   return /^[a-f0-9]{64}$/.test(token)?token:"";
 }
 type CustomerAccount={id:number;email:string;name:string;phone:string;city:string;address:string;mustChangePassword?:boolean};
-async function getCustomerAccount(request:Request,env:Env,allowTemporary=false):Promise<CustomerAccount|null>{
+async function getCustomerAccount(request:Request,env:Env):Promise<CustomerAccount|null>{
   if(env.APP_SURFACE==="admin")return null;
   const token=requestCookie(request);if(!token)return null;
   const account=await env.DB.prepare("SELECT a.id,a.email,a.name,a.phone,a.city,a.address FROM customer_sessions s JOIN customer_accounts a ON a.id=s.account_id WHERE s.token_hash=? AND s.revoked_at IS NULL").bind(await sha256(token)).first<CustomerAccount>();
-  if(account){const reset=await env.DB.prepare("SELECT expires_at FROM customer_password_resets WHERE account_id=?").bind(account.id).first<{expires_at:number}>();if(reset){if(!allowTemporary||reset.expires_at<Date.now())return null;account.mustChangePassword=true}}
+
   return account;
 }
 async function customerRateLimit(env:Env,key:string,limit:number,windowMs:number){
@@ -865,7 +865,7 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const account=await env.DB.prepare("SELECT id,password_hash,password_salt FROM customer_accounts WHERE email=?").bind(email).first<{id:number;password_hash:string;password_salt:string}>();
     const matches=await passwordMatches(password,account?.password_salt||"not-an-account",account?.password_hash||"scrypt$"+("0".repeat(64)));
     if(!account||!matches)return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
-    const reset=await env.DB.prepare("SELECT expires_at FROM customer_password_resets WHERE account_id=?").bind(account.id).first<{expires_at:number}>();if(reset&&reset.expires_at<Date.now())return json({error:"انتهت صلاحية كلمة المرور المؤقتة؛ تواصل مع المتجر"},{status:401});
+
     const token=await createCustomerSession(env,account.id);
     return json({ok:true},{headers:{"set-cookie":customerCookie(token)}});
   }
@@ -874,9 +874,9 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     if(token)await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE token_hash=?").bind(Date.now(),await sha256(token)).run();
     return json({ok:true},{headers:{"set-cookie":customerCookie("",0)}});
   }
-  const account=await getCustomerAccount(request,env,true);
+  const account=await getCustomerAccount(request,env);
   if(!account)return json({error:"سجّل دخولك أولًا"},{status:401});
-  if(account.mustChangePassword&&!(request.method==="GET"&&path==="/api/account/me")&&!(request.method==="PUT"&&path==="/api/account/password"))return json({error:"غيّر كلمة المرور المؤقتة أولًا"},{status:428});
+
   if(request.method==="GET"&&path==="/api/account/addresses"){
     let rows=await env.DB.prepare("SELECT id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses WHERE account_id=? ORDER BY is_default DESC,id").bind(account.id).all<{id:number;label:string;recipient_name:string;phone:string;city:string;address:string;shipping_zone:string;is_default:number}>();
     if(!rows.results.length&&account.address&&account.city){

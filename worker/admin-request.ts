@@ -8,7 +8,7 @@ export async function adminRequest(request:Request,env:SecurityEnv,handler:()=>P
   actor=await currentActor(request,env);
   if(!actor)throw new SecurityError('سجّل الدخول إلى لوحة الإدارة',401);
   if(request.method!=='GET'&&request.method!=='HEAD'&&!sameOrigin(request))throw new SecurityError('مصدر الطلب غير مسموح',403);
-  if(actor.mustChangePassword)throw new SecurityError('عيّن كلمة مرور جديدة أولًا',428);
+
   const required=routePermission(path,request.method);
   if(required===null||required.length&&!actor.owner&&!required.some(p=>actor!.permissions.includes(p)))throw new SecurityError('لا تملك صلاحية الوصول لهذه العملية',403);
   if(path==='/api/admin/navigation'){
