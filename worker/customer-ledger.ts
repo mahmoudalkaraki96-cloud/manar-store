@@ -8,8 +8,8 @@ export function paymentAmount(value:unknown){if((typeof value!=='string'&&typeof
 export async function readCustomerLedger(db:Database){
  const [customers,orders,items,payments,accounts,addresses]=await Promise.all([
   db.prepare('SELECT id,name,phone,city,address,account_id,created_at FROM admin_customers ORDER BY name,id').all<Row>(),
-  db.prepare("SELECT o.id,o.order_number,o.customer_name,o.phone,o.city,o.address,o.status,o.total_agorot,o.payment_status,o.customer_account_id,o.created_at,l.customer_id AS ledger_customer_id FROM orders o LEFT JOIN admin_customer_orders l ON l.order_id=o.id WHERE o.deleted_at IS NULL ORDER BY o.created_at DESC,o.id DESC").all<Row>(),
-  db.prepare('SELECT oi.order_id,oi.product_name,oi.variant_label,oi.quantity,oi.line_total_agorot FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.deleted_at IS NULL ORDER BY oi.id').all<Row>(),
+  db.prepare("SELECT o.id,o.order_number,o.customer_name,o.phone,o.city,o.address,o.status,o.total_agorot,o.payment_status,o.customer_account_id,o.created_at,o.deleted_at,l.customer_id AS ledger_customer_id FROM orders o LEFT JOIN admin_customer_orders l ON l.order_id=o.id WHERE o.deleted_at IS NULL OR l.customer_id IS NOT NULL ORDER BY o.created_at DESC,o.id DESC").all<Row>(),
+  db.prepare('SELECT oi.order_id,oi.product_name,oi.variant_label,oi.quantity,oi.line_total_agorot FROM order_items oi JOIN orders o ON o.id=oi.order_id WHERE o.deleted_at IS NULL OR EXISTS(SELECT 1 FROM admin_customer_orders l WHERE l.order_id=o.id) ORDER BY oi.id').all<Row>(),
   db.prepare('SELECT id,customer_id,order_id,amount_agorot,note,created_at FROM admin_customer_payments ORDER BY created_at DESC,id DESC').all<Row>(),
   db.prepare('SELECT id,name,email,phone,city,address,created_at FROM customer_accounts ORDER BY created_at DESC,id DESC').all<Row>(),
   db.prepare('SELECT id,account_id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses ORDER BY is_default DESC,id').all<Row>()
