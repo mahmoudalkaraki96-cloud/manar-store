@@ -89,3 +89,5 @@ test("confirmation resolves a recreated historical variant by its saved label",a
  assert.equal(items(db)[0].variant_id,10);assert.equal(stock(db,2),20);
  assert.equal(db.sql.prepare("SELECT stock_quantity FROM product_variants WHERE id=10").get().stock_quantity,8);
 });
+
+test("status-only changes retain all prices, fees, line details and reject a stale list version",async()=>{const {saveOrderEdit}=await modulePromise,db=fixture();db.sql.exec("UPDATE orders SET shipping_agorot=500,discount_agorot=100,total_agorot=3100;INSERT INTO order_extra_fees VALUES(1,'تغليف',200,1)");const before=items(db),fees=db.sql.prepare('SELECT * FROM order_extra_fees').all();await saveOrderEdit(db,1,{status:'confirmed',editVersion:0});assert.equal(row(db).status,'confirmed');assert.equal(row(db).shipping_agorot,500);assert.equal(row(db).discount_agorot,100);assert.equal(row(db).total_agorot,3100);assert.deepEqual(items(db),before);assert.deepEqual(db.sql.prepare('SELECT * FROM order_extra_fees').all(),fees);assert.equal(stock(db),8);await assert.rejects(()=>saveOrderEdit(db,1,{status:'shipped',editVersion:0}),/جهاز آخر/);assert.equal(row(db).status,'confirmed')});
