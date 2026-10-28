@@ -1,3 +1,4 @@
+import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
 import {storeThemeCss} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
@@ -1461,10 +1462,23 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(url.pathname.startsWith("/api/admin/customer-ledger")){
+    if(request.method!=="GET"&&((request.headers.get("origin")&&request.headers.get("origin")!==url.origin)||request.headers.get("sec-fetch-site")==="cross-site"))return json({error:"مصدر الطلب غير مسموح"},{status:403});
+    await ensureCustomerAuthSchema(env);
+    try{
+      if(request.method==="GET"&&url.pathname==="/api/admin/customer-ledger")return json(await readCustomerLedger(env.DB),{headers:{"cache-control":"no-store"}});
+      if(request.method==="POST"&&url.pathname==="/api/admin/customer-ledger/customers")return json(await createLedgerCustomer(env.DB,await parseJson(request)));
+      const customerOrderMatch=url.pathname.match(/^\/api\/admin\/customer-ledger\/customers\/(\d+)\/orders$/);
+      if(request.method==="POST"&&customerOrderMatch){const body=await parseJson(request);return json(await linkCustomerOrder(env.DB,customerOrderMatch[1],body.orderId));}
+      const customerPaymentMatch=url.pathname.match(/^\/api\/admin\/customer-ledger\/customers\/(\d+)\/payments$/);
+      if(request.method==="POST"&&customerPaymentMatch)return json(await recordCustomerPayment(env.DB,customerPaymentMatch[1],await parseJson(request)));
+      return json({error:"Not Found"},{status:404});
+    }catch(error){if(error instanceof LedgerError)return json({error:error.message},{status:error.status});throw error}
+  }
   if(request.method==="GET"&&url.pathname==="/api/admin/live-activity")return json(await readBrowserActivity(env.DB),{headers:{"cache-control":"no-store"}});
   if(request.method==="GET"&&url.pathname==="/api/admin/carts"){const days=Number(url.searchParams.get("days")||30),page=Number(url.searchParams.get("page")||1);if(![1,7,30].includes(days)||!Number.isSafeInteger(page)||page<1||page>100000)return json({error:"الفترة أو الصفحة غير صالحة"},{status:400});const cutoff=dayStart(calendarDays(Date.now(),days)[0]);return json(await readGroupedCarts(env.DB,cutoff,page),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
-  if(request.method==="GET"&&url.pathname==="/api/admin/marketing-analytics"){const days=Number(url.searchParams.get("days")||30);if(![7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readMarketingAnalytics(env.DB,days),{headers:{"cache-control":"no-store"}});}
+  if(request.method==="GET"&&url.pathname==="/api/admin/marketing-analytics"){const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readMarketingAnalytics(env.DB,days),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/supplier-import-response"){const source=url.searchParams.get("source");if(source!=="dofesh"&&source!=="jabari")return json({error:"Invalid source"},{status:400});const row=await env.DB.prepare("SELECT last_response FROM supplier_import_jobs WHERE source=?").bind(source).first<{last_response:string}>();return new Response(row?.last_response||"",{headers:{"content-type":"text/plain; charset=utf-8","cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/supplier-imports")return json(await readSupplierImports(env.DB),{headers:{"cache-control":"no-store"}});

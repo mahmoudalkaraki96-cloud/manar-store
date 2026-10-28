@@ -1,0 +1,4 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{stripTypeScriptTypes}=require('node:module');
+const modulePromise=import('data:text/javascript;base64,'+Buffer.from(stripTypeScriptTypes(fs.readFileSync('worker/marketing-analytics.ts','utf8'),{mode:'transform'})).toString('base64'));
+test('today starts at Palestine local midnight in both daylight and standard time',async()=>{const {marketingCutoff}=await modulePromise;assert.equal(new Date(marketingCutoff(1,Date.parse('2026-07-12T16:30:00Z'))).toISOString(),'2026-07-11T21:00:00.000Z');assert.equal(new Date(marketingCutoff(1,Date.parse('2026-12-12T16:30:00Z'))).toISOString(),'2026-12-11T22:00:00.000Z');assert.equal(marketingCutoff(7,Date.parse('2026-07-12T16:30:00Z')),Date.parse('2026-07-05T16:30:00Z'))});
+
