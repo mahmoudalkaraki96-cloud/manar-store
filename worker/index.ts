@@ -1,4 +1,8 @@
 import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
+import {adminRequest} from './admin-request';
+import {archiveOrder} from './admin-order-lifecycle';
+import {customerAccountAdmin} from './customer-admin-auth';
+import {currentActor,cloudflareLogin,hashPassword as adminHashPassword,jsonBody as adminJsonBody,SecurityError} from './admin-security';
 import {storeThemeCss} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
@@ -30,6 +34,10 @@ interface Env {
   MEDIA: R2Bucket;
   AI: { run(model: string, input: unknown): Promise<unknown> };
   APP_SURFACE?: "storefront" | "admin";
+  ADMIN_OWNER_EMAIL?: string;
+  ADMIN_OWNER_CF_EMAIL?: string;
+  ADMIN_CF_TEAM?: string;
+  ADMIN_CF_AUD?: string;
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
@@ -795,11 +803,13 @@ function requestCookie(request:Request){
   const token=raw.split(";").map(part=>part.trim()).find(part=>part.startsWith(SESSION_COOKIE+"="))?.slice(SESSION_COOKIE.length+1)||"";
   return /^[a-f0-9]{64}$/.test(token)?token:"";
 }
-type CustomerAccount={id:number;email:string;name:string;phone:string;city:string;address:string};
-async function getCustomerAccount(request:Request,env:Env):Promise<CustomerAccount|null>{
+type CustomerAccount={id:number;email:string;name:string;phone:string;city:string;address:string;mustChangePassword?:boolean};
+async function getCustomerAccount(request:Request,env:Env,allowTemporary=false):Promise<CustomerAccount|null>{
   if(env.APP_SURFACE==="admin")return null;
   const token=requestCookie(request);if(!token)return null;
-  return env.DB.prepare("SELECT a.id,a.email,a.name,a.phone,a.city,a.address FROM customer_sessions s JOIN customer_accounts a ON a.id=s.account_id WHERE s.token_hash=? AND s.revoked_at IS NULL").bind(await sha256(token)).first<CustomerAccount>();
+  const account=await env.DB.prepare("SELECT a.id,a.email,a.name,a.phone,a.city,a.address FROM customer_sessions s JOIN customer_accounts a ON a.id=s.account_id WHERE s.token_hash=? AND s.revoked_at IS NULL").bind(await sha256(token)).first<CustomerAccount>();
+  if(account){const reset=await env.DB.prepare("SELECT expires_at FROM customer_password_resets WHERE account_id=?").bind(account.id).first<{expires_at:number}>();if(reset){if(!allowTemporary||reset.expires_at<Date.now())return null;account.mustChangePassword=true}}
+  return account;
 }
 async function customerRateLimit(env:Env,key:string,limit:number,windowMs:number){
   const now=Date.now();
@@ -855,6 +865,7 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const account=await env.DB.prepare("SELECT id,password_hash,password_salt FROM customer_accounts WHERE email=?").bind(email).first<{id:number;password_hash:string;password_salt:string}>();
     const matches=await passwordMatches(password,account?.password_salt||"not-an-account",account?.password_hash||"scrypt$"+("0".repeat(64)));
     if(!account||!matches)return json({error:"البريد أو كلمة المرور غير صحيحة"},{status:401});
+    const reset=await env.DB.prepare("SELECT expires_at FROM customer_password_resets WHERE account_id=?").bind(account.id).first<{expires_at:number}>();if(reset&&reset.expires_at<Date.now())return json({error:"انتهت صلاحية كلمة المرور المؤقتة؛ تواصل مع المتجر"},{status:401});
     const token=await createCustomerSession(env,account.id);
     return json({ok:true},{headers:{"set-cookie":customerCookie(token)}});
   }
@@ -863,8 +874,9 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     if(token)await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE token_hash=?").bind(Date.now(),await sha256(token)).run();
     return json({ok:true},{headers:{"set-cookie":customerCookie("",0)}});
   }
-  const account=await getCustomerAccount(request,env);
+  const account=await getCustomerAccount(request,env,true);
   if(!account)return json({error:"سجّل دخولك أولًا"},{status:401});
+  if(account.mustChangePassword&&!(request.method==="GET"&&path==="/api/account/me")&&!(request.method==="PUT"&&path==="/api/account/password"))return json({error:"غيّر كلمة المرور المؤقتة أولًا"},{status:428});
   if(request.method==="GET"&&path==="/api/account/addresses"){
     let rows=await env.DB.prepare("SELECT id,label,recipient_name,phone,city,address,shipping_zone,is_default FROM customer_addresses WHERE account_id=? ORDER BY is_default DESC,id").bind(account.id).all<{id:number;label:string;recipient_name:string;phone:string;city:string;address:string;shipping_zone:string;is_default:number}>();
     if(!rows.results.length&&account.address&&account.city){
@@ -916,7 +928,7 @@ async function customerApi(request:Request,env:Env,url:URL):Promise<Response>{
     const row=await env.DB.prepare("SELECT password_hash,password_salt FROM customer_accounts WHERE id=?").bind(account.id).first<{password_hash:string;password_salt:string}>();
     if(!row||!await passwordMatches(current,row.password_salt,row.password_hash))return json({error:"كلمة المرور الحالية غير صحيحة"},{status:403});
     const salt=randomHex(16);
-    await env.DB.prepare("UPDATE customer_accounts SET password_hash=?,password_salt=?,updated_at=? WHERE id=?").bind(await passwordHash(next,salt),salt,Date.now(),account.id).run();
+    await env.DB.batch([env.DB.prepare("UPDATE customer_accounts SET password_hash=?,password_salt=?,updated_at=? WHERE id=?").bind(await passwordHash(next,salt),salt,Date.now(),account.id),env.DB.prepare("DELETE FROM customer_password_resets WHERE account_id=?").bind(account.id)]);
     await env.DB.prepare("UPDATE customer_sessions SET revoked_at=? WHERE account_id=? AND token_hash<>? AND revoked_at IS NULL").bind(Date.now(),account.id,await sha256(requestCookie(request))).run();
     return json({ok:true});
   }
@@ -1423,7 +1435,12 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
   const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
   if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
-  if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request,env,ctx);
+  if (request.method === "POST" && url.pathname === "/api/orders") {
+    const result=await createOrder(request,env,ctx);
+    let details='{}';if(result.ok){const saved=await result.clone().json() as {orderNumber?:number};details=JSON.stringify({orderNumber:saved.orderNumber})}
+    await env.DB.prepare('INSERT INTO admin_audit_log(actor_label,action,target,status,details,created_at) VALUES(?,?,?,?,?,?)').bind('زبون المتجر','order.submit','/api/orders',result.status,details,Date.now()).run().catch(()=>console.error('order_audit_failed'));
+    return result;
+  }
   if(url.pathname.startsWith("/api/push/")&&env.APP_SURFACE==="storefront"){
     await ensureCustomerAuthSchema(env);
     if(request.method==="POST"&&!await customerRateLimit(env,"push:"+await sha256(request.headers.get("cf-connecting-ip")||"unknown"),100,3600000))return json({error:"انتظر قليلًا ثم أعد المحاولة"},{status:429});
@@ -1431,7 +1448,11 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if(response?.ok&&url.pathname.endsWith("/test"))ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("push_failed")));
     return response;
   }
-  if (url.pathname.startsWith("/api/account/")) return customerApi(request,env,url);
+  if (url.pathname.startsWith("/api/account/")) {
+    const result=await customerApi(request,env,url);
+    if(request.method!=="GET")await env.DB.prepare('INSERT INTO admin_audit_log(actor_label,action,target,status,created_at) VALUES(?,?,?,?,?)').bind('زبون المتجر',request.method,url.pathname,result.status,Date.now()).run().catch(()=>console.error('customer_audit_failed'));
+    return result;
+  }
   if (request.method === "GET" && url.pathname === "/media") return json({ error: "Not Found" }, { status: 404 });
   if (request.method === "GET" && url.pathname.startsWith("/media/")) {
     const key = decodeURIComponent(url.pathname.slice(7));
@@ -1462,6 +1483,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   }
   if (!url.pathname.startsWith("/api/admin/")) return null;
   if (env.APP_SURFACE !== "admin") return json({ error: "Not Found" }, { status: 404 });
+  if(url.pathname.startsWith("/api/admin/customer-accounts")){await ensureCustomerAuthSchema(env);return customerAccountAdmin(request,env.DB);}
   if(url.pathname.startsWith("/api/admin/customer-ledger")){
     if(request.method!=="GET"&&((request.headers.get("origin")&&request.headers.get("origin")!==url.origin)||request.headers.get("sec-fetch-site")==="cross-site"))return json({error:"مصدر الطلب غير مسموح"},{status:403});
     await ensureCustomerAuthSchema(env);
@@ -1510,8 +1532,13 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   try{return json(await createManualOrder(env.DB,body))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
  }
  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
+  if(request.method==='GET'&&url.pathname==='/api/admin/orders/customers'){const customers=await env.DB.prepare('SELECT id,name,phone,city,address FROM admin_customers ORDER BY name,id').all();return json({customers:customers.results});}
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
   if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]),ctx);
+  if(orderMatch&&request.method==="DELETE")return json(await archiveOrder(env.DB,Number(orderMatch[1])));
+  if(request.method==="GET"&&url.pathname==="/api/admin/orders/trash"){const rows=await env.DB.prepare("SELECT id,order_number,customer_name,status,deleted_at FROM orders WHERE deleted_at IS NOT NULL ORDER BY deleted_at DESC LIMIT 200").all();return json({orders:rows.results});}
+  const restoreOrderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)\/restore$/);
+  if(restoreOrderMatch&&request.method==="POST")return json(await archiveOrder(env.DB,Number(restoreOrderMatch[1]),true));
   if (request.method === "GET" && url.pathname === "/api/admin/storefront") return json(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/admin/policies") return json({policies:await readPolicies(env)});
   if (request.method === "PUT" && url.pathname === "/api/admin/policies") return savePolicies(request,env);
@@ -1664,6 +1691,12 @@ const worker = {
     }
 
     try {
+      if(env.APP_SURFACE==='admin'&&url.pathname==='/admin/cloudflare')return await cloudflareLogin(request,env);
+      if(env.APP_SURFACE==='admin'&&isAdminPath&&url.pathname!=='/admin/login'){
+        const actor=await currentActor(request,env);
+        if(!actor)return Response.redirect(new URL('/admin/login',url.origin).toString(),302);
+      }
+      if(env.APP_SURFACE==='admin'&&url.pathname.startsWith('/api/admin/'))return await adminRequest(request,env,()=>api(request,env,url,ctx));
       const seoRouteResponse=await publicSeoRoute(request,env,url);
       if(seoRouteResponse)return seoRouteResponse;
       const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
@@ -1733,7 +1766,7 @@ const worker = {
 
     const appResponse=await handler.fetch(request, env, ctx);
     const headers=securityHeaders(new Headers(appResponse.headers));
-    if(env.APP_SURFACE==="admin")headers.set("x-robots-tag","noindex, nofollow, noarchive");
+    if(env.APP_SURFACE==="admin"){headers.set("x-robots-tag","noindex, nofollow, noarchive");headers.set("cache-control","no-store");}
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
