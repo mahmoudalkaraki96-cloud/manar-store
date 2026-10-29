@@ -45,10 +45,12 @@
         "admin": {
           "database": "rokon-store-db",
           "mediaBucket": "rokon-store-media",
-          "status": "matches-intended-config"
+          "status": "matches-intended-config",
+          "directCloudflareBuilds": "disabled-pending-reviewed-store-specific-release"
         },
         "directCloudflareBuilds": "disabled-pending-reviewed-store-specific-release",
-        "notes": "Owner explicitly required independent data per store. DB and MEDIA bindings deployed to Rokon resources; no data copied or modified. Rokon DB contains 17 products and legacy Manar branding stored in its own settings. Owner/auth/schema review still required before fleet releases."
+        "notes": "Owner explicitly required independent data per store. DB and MEDIA bindings deployed to Rokon resources; no data copied or modified. Rokon DB contains 17 products and legacy Manar branding stored in its own settings. Owner/auth/schema review still required before fleet releases.",
+        "liveWorkerVersionPrefix": "2f648006"
       }
     }
   ]
