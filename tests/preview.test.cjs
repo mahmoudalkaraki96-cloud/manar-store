@@ -27,7 +27,7 @@ test('public proxy pins production origin and drops arbitrary query selectors', 
 test('all responses suppress indexing, caching, cookies, remote tracking and service workers', () => {
   const headers = previewHeaders({ 'set-cookie':'session=private', 'cache-control':'public', 'content-encoding':'gzip' });
   assert.equal(headers.get('set-cookie'), null);
-  assert.equal(headers.get('content-encoding'), null);
+  assert.equal(headers.get('content-encoding'), 'gzip');
   assert.equal(headers.get('cache-control'), 'private, no-store');
   assert.match(headers.get('x-robots-tag'), /noindex/);
   assert.match(headers.get('content-security-policy'), /connect-src 'self'/);
@@ -64,4 +64,28 @@ test('preview has no database, storage, AI or cron and always authenticates asse
   for (const binding of ['d1_databases','r2_buckets','ai','triggers','services']) assert.equal(config[binding],undefined);
   assert.equal(config.assets.run_worker_first,true);
   assert.equal(config.preview_urls,false);
+});
+test('entry authenticates before asset serving and preserves compressed asset headers', async () => {
+  const source = ts.transpileModule(fs.readFileSync(path.join(__dirname,'../worker/preview.ts'),'utf8'), { compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022} }).outputText;
+  let authenticated=false, assetCalls=0, appCalls=0;
+  const module={exports:{}};
+  const mockedRequire=name=>{
+    if(name==='./preview-access')return {previewIdentity:async()=>authenticated?'owner@example.com':null};
+    if(name==='./preview-policy')return load('preview-policy');
+    if(name==='vinext/server/app-router-entry')return {default:{fetch:async()=>{appCalls++;return new Response('<html><body>Store</body></html>',{headers:{'content-type':'text/html','content-encoding':'gzip'}})}}};
+    throw Error(name);
+  };
+  new Function('module','exports','require',source)(module,module.exports,mockedRequire);
+  const entry=module.exports.default;
+  const env={ASSETS:{fetch:async()=>{assetCalls++;return new Response('compressed-js',{headers:{'content-type':'application/javascript','content-encoding':'gzip'}})}}};
+  assert.equal((await entry.fetch(req('/assets/index.js'),env,{})).status,401);
+  assert.equal(assetCalls,0);
+  authenticated=true;
+  const asset=await entry.fetch(req('/assets/index.js'),env,{});
+  assert.equal(assetCalls,1);assert.equal(appCalls,0);assert.equal(asset.headers.get('content-encoding'),'gzip');
+  const page=await entry.fetch(req('/'),env,{});
+  assert.equal(page.headers.get('content-encoding'),null);assert.match(await page.text(),/نسخة معاينة خاصة/);
+  assert.equal((await entry.fetch(req('/api/orders','POST'),env,{})).status,403);
+  assert.equal((await entry.fetch(req('/api/admin/orders'),env,{})).status,403);
+  assert.equal(appCalls,1);
 });

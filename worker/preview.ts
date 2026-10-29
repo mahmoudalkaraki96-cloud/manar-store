@@ -19,10 +19,13 @@ export default {
         return respond(response.body, response.status, response.headers);
       } catch { return respond('Preview data unavailable.', 502); }
     }
-    const response = await handler.fetch(request, env, ctx);
+    const pathname = new URL(request.url).pathname;
+    const staticAsset = pathname.startsWith('/assets/') || pathname.startsWith('/_next/static/') || /^\/(favicon|og|icon|apple-icon)[^/]*\.(png|ico|svg|webp)$/.test(pathname);
+    const response = staticAsset ? await env.ASSETS.fetch(request) : await handler.fetch(request, env, ctx);
     if (!response.headers.get('content-type')?.includes('text/html')) return respond(response.body, response.status, response.headers);
     const html = await response.text();
     const banner = '<div role="status" style="position:sticky;top:0;z-index:2147483647;background:#fff3cd;color:#513d00;padding:8px;text-align:center;font:14px sans-serif" dir="rtl">نسخة معاينة خاصة — الطلبات والإشعارات والتسجيل معطّلة</div>';
-    return respond(html.replace(/<body([^>]*)>/i, '<body$1>' + banner), response.status, response.headers);
+    const headers = new Headers(response.headers); headers.delete('content-encoding');
+    return respond(html.replace(/<body([^>]*)>/i, '<body$1>' + banner), response.status, headers);
   },
 };
