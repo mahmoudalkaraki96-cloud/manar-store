@@ -24,8 +24,10 @@ export default {
     const response = staticAsset ? await env.ASSETS.fetch(request) : await handler.fetch(request, env, ctx);
     if (!response.headers.get('content-type')?.includes('text/html')) return respond(response.body, response.status, response.headers);
     const html = await response.text();
-    const banner = '<div role="status" style="position:sticky;top:0;z-index:2147483647;background:#fff3cd;color:#513d00;padding:8px;text-align:center;font:14px sans-serif" dir="rtl">نسخة معاينة خاصة — الطلبات والإشعارات والتسجيل معطّلة</div>';
+    // A body node inserted outside React breaks hydration. A head stylesheet provides
+    // the notice without changing the application's React-owned DOM.
+    const banner = '<style id="private-preview-notice">body::before{content:"نسخة معاينة خاصة — الطلبات والإشعارات والتسجيل معطّلة";display:block;position:sticky;top:0;z-index:2147483647;background:#fff3cd;color:#513d00;padding:8px;text-align:center;font:14px sans-serif;direction:rtl}</style>';
     const headers = new Headers(response.headers); headers.delete('content-encoding');
-    return respond(html.replace(/<body([^>]*)>/i, '<body$1>' + banner), response.status, headers);
+    return respond(html.replace('</head>', banner + '</head>'), response.status, headers);
   },
 };

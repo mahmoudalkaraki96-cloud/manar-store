@@ -72,7 +72,7 @@ test('entry authenticates before asset serving and preserves compressed asset he
   const mockedRequire=name=>{
     if(name==='./preview-access')return {previewIdentity:async()=>authenticated?'owner@example.com':null};
     if(name==='./preview-policy')return load('preview-policy');
-    if(name==='vinext/server/app-router-entry')return {default:{fetch:async()=>{appCalls++;return new Response('<html><body>Store</body></html>',{headers:{'content-type':'text/html','content-encoding':'gzip'}})}}};
+    if(name==='vinext/server/app-router-entry')return {default:{fetch:async()=>{appCalls++;return new Response('<html><head></head><body>Store</body></html>',{headers:{'content-type':'text/html','content-encoding':'gzip'}})}}};
     throw Error(name);
   };
   new Function('module','exports','require',source)(module,module.exports,mockedRequire);
@@ -84,7 +84,7 @@ test('entry authenticates before asset serving and preserves compressed asset he
   const asset=await entry.fetch(req('/assets/index.js'),env,{});
   assert.equal(assetCalls,1);assert.equal(appCalls,0);assert.equal(asset.headers.get('content-encoding'),'gzip');
   const page=await entry.fetch(req('/'),env,{});
-  assert.equal(page.headers.get('content-encoding'),null);assert.match(await page.text(),/نسخة معاينة خاصة/);
+  assert.equal(page.headers.get('content-encoding'),null);const html=await page.text();assert.match(html,/نسخة معاينة خاصة/);assert.match(html,/<body>Store<\/body>/);assert.match(html,/private-preview-notice/);
   assert.equal((await entry.fetch(req('/api/orders','POST'),env,{})).status,403);
   assert.equal((await entry.fetch(req('/api/admin/orders'),env,{})).status,403);
   assert.equal(appCalls,1);
