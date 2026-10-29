@@ -3,12 +3,17 @@
   "name": "rokon-store-admin",
   "main": "./dist/server/index.js",
   "compatibility_date": "2026-08-22",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "no_bundle": true,
   "rules": [
     {
       "type": "ESModule",
-      "globs": ["**/*.js", "**/*.mjs"]
+      "globs": [
+        "**/*.js",
+        "**/*.mjs"
+      ]
     }
   ],
   "assets": {
@@ -38,5 +43,8 @@
   },
   "observability": {
     "enabled": true
+  },
+  "images": {
+    "binding": "IMAGES"
   }
 }

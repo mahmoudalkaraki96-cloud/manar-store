@@ -33,20 +33,22 @@
       "adminUrl": "https://rokon-store-admin.mahmoud-alkaraki96.workers.dev",
       "release": {
         "enabled": false,
-        "notes": "Existing production settings preserved. Verify admin identity, domain, secrets and preview before enabling releases."
+        "notes": "Resource isolation corrected and verified; direct Cloudflare builds paused to prevent generic-config drift. Verify owner identity, schema history and secrets before enabling centralized releases."
       },
       "runtimeAudit": {
-        "status": "mismatch",
+        "status": "matches-intended-config",
         "observedAt": "2026-10-29",
-        "source": "Cloudflare dashboard / rokon-store / production / settings",
-        "database": "manar-store-db",
-        "mediaBucket": "manar-store-media",
-        "notes": "Live storefront uses Manar DB/media; live Rokon admin uses Rokon DB/media. Do not rebind, migrate or enable fleet release before deciding which catalog is intended. Awaiting owner's choice; no production bindings changed.",
+        "configurationVersion": "rokon-config-0.1.0",
+        "source": "Cloudflare production bindings after explicit owner choice",
+        "database": "rokon-store-db",
+        "mediaBucket": "rokon-store-media",
         "admin": {
           "database": "rokon-store-db",
           "mediaBucket": "rokon-store-media",
           "status": "matches-intended-config"
-        }
+        },
+        "directCloudflareBuilds": "disabled-pending-reviewed-store-specific-release",
+        "notes": "Owner explicitly required independent data per store. DB and MEDIA bindings deployed to Rokon resources; no data copied or modified. Rokon DB contains 17 products and legacy Manar branding stored in its own settings. Owner/auth/schema review still required before fleet releases."
       }
     }
   ]
