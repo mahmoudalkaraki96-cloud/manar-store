@@ -20,6 +20,7 @@ test('plans are explicit and fail closed without exact private-preview attestati
   assert.equal(makePlan(registry, 'manar', revision, '1.1.4').stores[0].ready, false);
   assert.equal(makePlan(registry, 'manar', revision, '1.1.4', 'b'.repeat(40)).stores[0].ready, false);
   assert.equal(makePlan(registry, 'manar', revision, '1.1.4', revision).stores[0].ready, true);
+  registry.stores[1].runtimeAudit = { status: 'mismatch' }; // Simulate drift independently of the currently audited live state.
   const plan = makePlan(registry, 'all', revision, '1.1.4', revision);
   assert.equal(plan.stores[1].blockedReason, 'live_resource_mismatch');
   registry.stores[1].release.enabled = true;

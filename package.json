@@ -19,8 +19,8 @@
     "db:init:rokon:remote": "bash scripts/sites-env.sh -- wrangler d1 execute rokon-store-db --remote --config wrangler.rokon.jsonc --file db/rokon-init.sql",
     "deploy:cloudflare": "npm run db:migrate:remote && wrangler deploy",
     "deploy:admin": "npm run db:migrate:remote && wrangler deploy --config wrangler.admin.jsonc",
-    "deploy:rokon": "npm run db:migrate:rokon:remote && npm run db:init:rokon:remote && wrangler deploy --config wrangler.rokon.jsonc",
-    "deploy:rokon:admin": "npm run db:migrate:rokon:remote && npm run db:init:rokon:remote && wrangler deploy --config wrangler.rokon.admin.jsonc"
+    "deploy:rokon": "npm run db:migrate:rokon:remote && wrangler deploy --config wrangler.rokon.jsonc",
+    "deploy:rokon:admin": "npm run db:migrate:rokon:remote && wrangler deploy --config wrangler.rokon.admin.jsonc"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
