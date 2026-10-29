@@ -4,6 +4,14 @@ name: Deploy store and admin to Cloudflare
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'STORE-PROGRESS.md'
+      - 'platform/**'
+      - 'scripts/platform-release.mjs'
+      - 'tests/platform-release.test.mjs'
+      - '.github/workflows/platform-release.yml'
+      - '.gitignore'
   workflow_dispatch:
 
 concurrency:
