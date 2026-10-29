@@ -615,3 +615,7 @@
 - السجل platform/stores.json يتحقق من فصل D1/R2 وملفات تشغيل منار وركن. أمر scripts/platform-release.mjs يعرض خطة، والتنفيذ الصريح يتطلب commit ثابتًا وcheckout نظيفًا وإقرار فحص معاينته.
 - workflow يدوي platform-release.yml يحفظ تصدير D1 وقوائم إصدارات ونشرات Workers قبل migrations، ويسجل الفشل الجزئي ولا يعيد تهيئة ركن. النسخ في Actions مشفرة AES256 قبل رفعها؛ require CLOUDFLARE_ACCOUNT_ID وPLATFORM_BACKUP_PASSPHRASE. التفاصيل في [دليل التشغيل](PLATFORM_OPERATIONS.md)، والحالة في STORE-PROGRESS.md.
 - ركن معطل للنشر المركزي حتى مراجعة هوية الإدارة والدومينات والأسرار والمعاينة. لا تغيير للـconfigs أو Access أو بيانات العملاء؛ لا لوحة اشتراكات أو إنشاء متاجر آلي بعد. VERSION واجهة المتجر1.1.4باقية.
+
+
+### تحقق أدوات المنصة platform-0.1.0
+- PR#84 مدمج عند3f17c8b9؛ CI40837662396 و40837662267 ناجحان. لا نشر Runtime أو تعديل بيانات؛ راجع PLATFORM_OPERATIONS.md للمتطلبات وسجل STORE-PROGRESS.md للمرحلة التالية.
