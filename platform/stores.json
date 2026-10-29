@@ -41,7 +41,12 @@
         "source": "Cloudflare dashboard / rokon-store / production / settings",
         "database": "manar-store-db",
         "mediaBucket": "manar-store-media",
-        "notes": "These are LIVE storefront bindings, unlike intended resources above. Do not rebind, migrate or enable fleet release until a reviewed separation plan. Admin bindings not yet checked."
+        "notes": "Live storefront uses Manar DB/media; live Rokon admin uses Rokon DB/media. Do not rebind, migrate or enable fleet release before deciding which catalog is intended. Awaiting owner's choice; no production bindings changed.",
+        "admin": {
+          "database": "rokon-store-db",
+          "mediaBucket": "rokon-store-media",
+          "status": "matches-intended-config"
+        }
       }
     }
   ]

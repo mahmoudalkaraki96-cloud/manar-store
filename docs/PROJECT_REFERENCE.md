@@ -624,3 +624,9 @@
 ### 2026-10-29 — معاينة الواجهة وتدقيق الربط الحي
 - worker/preview.ts ومدخل STORE_PREVIEW_BUILD يبنيان واجهة معاينة دون bindings بيانات، مع JWT إلزامي حتى للأصول ومنع الكتابة والتتبع الخارجي. التفاصيل في PLATFORM_OPERATIONS.md؛ VERSION المتجر باقية1.1.4.
 - الفحص الحي وجد rokon-store مربوطًا بموارد منار خلاف ملفات Wrangler؛ لا تعد الملفات إثباتًا للحالة الحية. runtimeAudit mismatch يمنع نشره المركزي. لا تعديل للموارد أو هوية ركن أو Access الخاص به.
+
+
+### 2026-10-29 — تحقق المعاينة الخاصة platform-0.2.0
+- الرابط https://manar-store-preview.mahmoud-alkaraki96.workers.dev/ محمي بـAccess وبـJWT داخل Worker؛ assets.run_worker_first يحمي الملفات الثابتة أيضًا. المصدر6dd66a61، والنشر40840946006 ناجح. لا DB/R2/AI/cron؛ فقط Public GET proxy مع منع الكتابات والحسابات والإدارة وPush، وCSP وnoindex.
+- إشعار المعاينة CSS في head لتجنب خلل hydration. الأصول من ASSETS مع حفظ Content-Encoding عند تمريرها؛ مفاتيح R2 التي تحتوي %2F مسموحة ضمن media العام فقط. نجحت7 اختبارات معاينة وفحوص الصور والبحث والسلة والحماية الحية.
+- ركن: الواجهة تستخدم DB/R2 منار، واللوحة تستخدم DB/R2 ركن. يمنع runtimeAudit mismatch نشره حتى اختيار المالك البيانات المطلوبة؛ لا تبديل موارد أو نقل تلقائي. تفاصيل الحالة في STORE-PROGRESS.md.
