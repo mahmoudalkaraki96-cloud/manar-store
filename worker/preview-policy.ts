@@ -25,7 +25,7 @@ export function previewTarget(request: Request): URL {
 }
 export function previewHeaders(original?: HeadersInit): Headers {
   const headers = new Headers(original);
-  headers.delete('set-cookie'); headers.delete('content-length'); headers.delete('content-encoding');
+  headers.delete('set-cookie'); headers.delete('content-length');
   headers.set('cache-control', 'private, no-store'); headers.set('x-robots-tag', 'noindex, nofollow, noarchive');
   headers.set('x-content-type-options', 'nosniff'); headers.set('x-frame-options', 'DENY'); headers.set('referrer-policy', 'no-referrer');
   headers.set('x-store-preview', 'read-only');
