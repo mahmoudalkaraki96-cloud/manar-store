@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "platformVersion": "0.1.0",
+  "stores": [
+    {
+      "id": "manar",
+      "name": "منار بارتي",
+      "storefrontConfig": "wrangler.jsonc",
+      "adminConfig": "wrangler.admin.jsonc",
+      "database": {
+        "name": "manar-store-db",
+        "id": "4afe4c16-e513-43ac-a397-26fa4141e5c9"
+      },
+      "mediaBucket": "manar-store-media",
+      "storefrontUrl": "https://manarstore.ps",
+      "adminUrl": "https://admin.manarstore.ps",
+      "release": {
+        "enabled": true,
+        "notes": "Record the exact tested commit after private preview verification. No automatic fleet rollout."
+      }
+    },
+    {
+      "id": "rokon",
+      "name": "ركن هوم ستور",
+      "storefrontConfig": "wrangler.rokon.jsonc",
+      "adminConfig": "wrangler.rokon.admin.jsonc",
+      "database": {
+        "name": "rokon-store-db",
+        "id": "a5c50923-c7ec-4ede-95b3-d19b93914902"
+      },
+      "mediaBucket": "rokon-store-media",
+      "storefrontUrl": null,
+      "adminUrl": null,
+      "release": {
+        "enabled": false,
+        "notes": "Existing production settings preserved. Verify admin identity, domain, secrets and preview before enabling releases."
+      }
+    }
+  ]
+}

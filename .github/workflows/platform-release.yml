@@ -1,0 +1,117 @@
+name: Platform store releases
+
+on:
+  pull_request:
+    paths:
+      - 'platform/**'
+      - 'scripts/platform-release.mjs'
+      - 'tests/platform-release.test.mjs'
+      - 'wrangler*.jsonc'
+      - '.github/workflows/platform-release.yml'
+  workflow_dispatch:
+    inputs:
+      store:
+        description: Store selection
+        type: choice
+        options: [manar, rokon, all]
+        default: manar
+      revision:
+        description: Full 40-character commit SHA to inspect or deploy
+        required: true
+        type: string
+      execute:
+        description: Deploy after the exact revision passed private preview review
+        type: boolean
+        default: false
+      verified_revision:
+        description: Repeat the exact SHA only after actually testing its private preview
+        type: string
+        required: false
+
+# Share the production deployment lock with the existing Manar workflow.
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  registry-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/platform-release.test.mjs
+
+  release:
+    if: github.event_name == 'workflow_dispatch'
+    needs: registry-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Validate immutable revision
+        env:
+          REVISION: ${{ inputs.revision }}
+        run: '[[ "$REVISION" =~ ^[a-f0-9]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.revision }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Validate registry and show plan
+        env:
+          STORE: ${{ inputs.store }}
+          REVISION: ${{ inputs.revision }}
+        run: |
+          node --test tests/platform-release.test.mjs
+          node scripts/platform-release.mjs --store "$STORE" --revision "$REVISION" >> "$GITHUB_STEP_SUMMARY"
+      - name: Check release prerequisites
+        if: inputs.execute
+        env:
+          VERIFIED_REVISION: ${{ inputs.verified_revision }}
+          REVISION: ${{ inputs.revision }}
+          BACKUP_KEY: ${{ secrets.PLATFORM_BACKUP_PASSPHRASE }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test "$VERIFIED_REVISION" = "$REVISION"
+          test -n "$BACKUP_KEY"
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+      - name: Install, test and build
+        if: inputs.execute
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          node --test tests/*.test.cjs
+          npm run build
+      - name: Deploy selected stores with backups
+        if: inputs.execute
+        env:
+          STORE: ${{ inputs.store }}
+          REVISION: ${{ inputs.revision }}
+          VERIFIED_REVISION: ${{ inputs.verified_revision }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/platform-release.mjs --store "$STORE" --revision "$REVISION" --verified-revision "$VERIFIED_REVISION" --execute
+      - name: Encrypt backup bundle and expose non-sensitive release summary
+        if: always() && inputs.execute
+        env:
+          BACKUP_KEY: ${{ secrets.PLATFORM_BACKUP_PASSPHRASE }}
+        run: |
+          if test -d release-artifacts; then
+            find release-artifacts -name release.json -exec cat {} \; >> "$GITHUB_STEP_SUMMARY"
+            tar -czf "$RUNNER_TEMP/platform-release.tar.gz" release-artifacts
+            printf '%s' "$BACKUP_KEY" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --symmetric --cipher-algo AES256 --output "$RUNNER_TEMP/platform-release.tar.gz.gpg" "$RUNNER_TEMP/platform-release.tar.gz"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always() && inputs.execute
+        with:
+          name: encrypted-platform-release-${{ github.run_id }}
+          path: ${{ runner.temp }}/platform-release.tar.gz.gpg
+          if-no-files-found: ignore
+          retention-days: 30
