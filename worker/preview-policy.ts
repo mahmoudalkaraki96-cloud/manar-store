@@ -5,7 +5,7 @@ export function previewRoute(request: Request): 'blocked' | 'proxy' | 'app' | 's
   if (!['GET', 'HEAD'].includes(request.method)) return 'blocked';
   if (pathname === '/__preview/status') return 'status';
   if (pathname === '/robots.txt') return 'robots';
-  if (pathname.includes('\\') || /%2f|%5c|%00/i.test(pathname)) return 'blocked';
+  if (pathname.includes('\\') || /%5c|%00/i.test(pathname) || (/%2f/i.test(pathname) && !pathname.startsWith('/media/'))) return 'blocked';
   if (APIs.has(pathname) || pathname.startsWith('/media/') || pathname.startsWith('/product-images/') || pathname === '/_media/thumbnail') return 'proxy';
   if (pathname.startsWith('/api/') || /^\/(admin|account)(\/|$)/.test(pathname) || /(?:^|\/)(?:sw|service-worker)\.js$/.test(pathname) || /manifest/i.test(pathname)) return 'blocked';
   if (pathname === '/' || pathname === '/search' || /^\/(category|product|products|policies)\/[^/]+\/?$/.test(pathname) || pathname === '/privacy'

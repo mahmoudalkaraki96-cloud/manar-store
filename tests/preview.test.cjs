@@ -17,9 +17,11 @@ test('writes, personal/admin APIs, service workers and account screens are denie
   assert.equal(previewRoute(req('/api/catalog?includeInactive=true')), 'proxy');
   assert.equal(previewRoute(req('/search?q=boxes')), 'app');
   assert.equal(previewRoute(req('/category/boxes')), 'app');
+  assert.equal(previewRoute(req('/media/products%2F2026-10-28%2Fphoto.webp')), 'proxy');
 });
 test('public proxy pins production origin and drops arbitrary query selectors', () => {
   assert.equal(previewTarget(req('/api/catalog?admin=1&includeInactive=true')).href, 'https://manarstore.ps/api/catalog');
+  assert.equal(previewTarget(req('/media/products%2F2026-10-28%2Fphoto.webp')).pathname, '/media/products%2F2026-10-28%2Fphoto.webp');
   assert.equal(previewTarget(req('/_media/thumbnail?src=%2Fmedia%2Fp.webp&width=384')).origin, 'https://manarstore.ps');
   assert.throws(() => previewTarget(req('/_media/thumbnail?src=https://evil.example/img&width=384')));
   assert.throws(() => previewTarget(req('/_media/thumbnail?src=%2Fmedia%2Fp.webp&width=999')));
