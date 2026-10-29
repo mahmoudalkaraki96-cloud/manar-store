@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Private platform release backups and journals
 /release-artifacts/
+
+# Generated protected preview deployment config
+/.preview-release.jsonc

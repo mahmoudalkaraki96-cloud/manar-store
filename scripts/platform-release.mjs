@@ -46,8 +46,8 @@ export function makePlan(registry, selector, revision, version, verifiedRevision
   assert(/^\d+\.\d+\.\d+$/.test(version), 'Invalid application VERSION');
   return { platformVersion: registry.platformVersion, revision, version, stores: selectStores(registry, selector).map(store => ({
     id: store.id, name: store.name, database: store.database.name, workers: store.workers,
-    ready: store.release.enabled && verifiedRevision === revision,
-    blockedReason: !store.release.enabled ? 'release_disabled' : verifiedRevision !== revision ? 'private_preview_not_verified_for_revision' : null,
+    ready: store.release.enabled && store.runtimeAudit?.status !== 'mismatch' && verifiedRevision === revision,
+    blockedReason: store.runtimeAudit?.status === 'mismatch' ? 'live_resource_mismatch' : !store.release.enabled ? 'release_disabled' : verifiedRevision !== revision ? 'private_preview_not_verified_for_revision' : null,
     steps: ['database-export', 'capture-worker-versions', 'migrations', 'deploy-storefront', 'deploy-admin'],
   })) };
 }

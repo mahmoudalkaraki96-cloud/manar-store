@@ -1,0 +1,46 @@
+name: Private storefront preview
+on:
+  pull_request:
+    paths:
+      - 'worker/preview*.ts'
+      - 'wrangler.preview.jsonc'
+      - 'scripts/build-preview.sh'
+      - 'scripts/prepare-preview.mjs'
+      - 'tests/preview.test.cjs'
+      - 'vite.config.ts'
+      - '.github/workflows/store-preview.yml'
+  workflow_dispatch:
+    inputs:
+      deploy:
+        type: boolean
+        default: false
+        description: Publish only the protected read-only preview Worker
+concurrency:
+  group: private-storefront-preview
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: node --test tests/preview.test.cjs
+      - run: npx tsc --noEmit --strict --skipLibCheck --module esnext --moduleResolution bundler --target ES2022 worker/preview.ts
+      - run: bash scripts/build-preview.sh
+      - name: Publish private preview only
+        if: github.event_name == 'workflow_dispatch' && inputs.deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 008c61df8c322c27b8d1c1137922e328
+        run: npx wrangler deploy --config .preview-release.jsonc
+      - name: Report preview revision
+        run: |
+          echo "Read-only private preview build: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'No database bindings, migrations, account writes, real orders or push sending.' >> "$GITHUB_STEP_SUMMARY"

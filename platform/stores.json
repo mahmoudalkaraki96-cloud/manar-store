@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "platformVersion": "0.1.0",
+  "platformVersion": "0.2.0",
   "stores": [
     {
       "id": "manar",
@@ -29,11 +29,19 @@
         "id": "a5c50923-c7ec-4ede-95b3-d19b93914902"
       },
       "mediaBucket": "rokon-store-media",
-      "storefrontUrl": null,
-      "adminUrl": null,
+      "storefrontUrl": "https://rokon-store.mahmoud-alkaraki96.workers.dev",
+      "adminUrl": "https://rokon-store-admin.mahmoud-alkaraki96.workers.dev",
       "release": {
         "enabled": false,
         "notes": "Existing production settings preserved. Verify admin identity, domain, secrets and preview before enabling releases."
+      },
+      "runtimeAudit": {
+        "status": "mismatch",
+        "observedAt": "2026-10-29",
+        "source": "Cloudflare dashboard / rokon-store / production / settings",
+        "database": "manar-store-db",
+        "mediaBucket": "manar-store-media",
+        "notes": "These are LIVE storefront bindings, unlike intended resources above. Do not rebind, migrate or enable fleet release until a reviewed separation plan. Admin bindings not yet checked."
       }
     }
   ]

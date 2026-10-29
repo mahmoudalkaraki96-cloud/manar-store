@@ -12,7 +12,7 @@ const { d1, r2 } = hostingConfig;
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
 const localBindingConfig = {
-  main: "./worker/index.ts",
+  main: process.env.STORE_PREVIEW_BUILD === "1" ? "./worker/preview.ts" : "./worker/index.ts",
   d1_databases: d1
     ? [
         {

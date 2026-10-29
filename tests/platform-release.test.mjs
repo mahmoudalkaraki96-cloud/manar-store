@@ -21,7 +21,9 @@ test('plans are explicit and fail closed without exact private-preview attestati
   assert.equal(makePlan(registry, 'manar', revision, '1.1.4', 'b'.repeat(40)).stores[0].ready, false);
   assert.equal(makePlan(registry, 'manar', revision, '1.1.4', revision).stores[0].ready, true);
   const plan = makePlan(registry, 'all', revision, '1.1.4', revision);
-  assert.equal(plan.stores[1].blockedReason, 'release_disabled');
+  assert.equal(plan.stores[1].blockedReason, 'live_resource_mismatch');
+  registry.stores[1].release.enabled = true;
+  assert.equal(makePlan(registry, 'rokon', revision, '1.1.4', revision).stores[0].ready, false);
   let calls = 0;
   assert.throws(() => executePlan(plan, registry, { command: () => { calls++; } }), /Release blocked/);
   assert.equal(calls, 0);
@@ -33,7 +35,7 @@ function fixture(fn) {
     fs.mkdirSync(path.join(root, 'dist/server'), { recursive: true });
     fs.writeFileSync(path.join(root, 'node_modules/wrangler/bin/wrangler.js'), '');
     fs.writeFileSync(path.join(root, 'dist/server/index.js'), '');
-    const registry = readRegistry(); registry.stores.forEach(s => s.release.enabled = true);
+    const registry = readRegistry(); registry.stores.forEach(s => { s.release.enabled = true; delete s.runtimeAudit; });
     fn(root, registry);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 }

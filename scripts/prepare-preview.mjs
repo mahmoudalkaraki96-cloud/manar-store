@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const config = JSON.parse(fs.readFileSync('wrangler.preview.jsonc', 'utf8'));
+if (config.d1_databases || config.r2_buckets || config.ai || config.triggers || config.name !== 'manar-store-preview' || config.assets?.run_worker_first !== true) throw new Error('Unsafe preview bindings or routing');
+const source = fs.readFileSync('dist/server/index.js', 'utf8');
+if (!source.includes('Private preview:')) throw new Error('Refusing to deploy production build as preview');
+const revision = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+if (!/^[a-f0-9]{40}$/.test(revision)) throw new Error('Missing preview revision');
+config.vars.PREVIEW_REVISION = revision;
+fs.writeFileSync('.preview-release.jsonc', JSON.stringify(config, null, 2) + '\n');
+console.log('Prepared protected read-only preview for ' + revision);
