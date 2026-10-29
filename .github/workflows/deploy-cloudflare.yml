@@ -12,6 +12,12 @@ on:
       - 'tests/platform-release.test.mjs'
       - '.github/workflows/platform-release.yml'
       - '.gitignore'
+      - 'worker/preview*.ts'
+      - 'wrangler.preview.jsonc'
+      - 'scripts/build-preview.sh'
+      - 'scripts/prepare-preview.mjs'
+      - 'tests/preview.test.cjs'
+      - '.github/workflows/store-preview.yml'
   workflow_dispatch:
 
 concurrency:

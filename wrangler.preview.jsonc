@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "manar-store-preview",
+  "main": "./dist/server/index.js",
+  "compatibility_date": "2026-08-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [{"type":"ESModule","globs":["**/*.js","**/*.mjs"]}],
+  "assets": {"directory":"./dist/client","binding":"ASSETS","run_worker_first":true},
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "PREVIEW_ACCESS_TEAM": "rapid-truth-92f4",
+    "PREVIEW_ACCESS_AUD": "7aede5206a23b1c2032b7aed18527ca73add9e82e6bc0334a46323d22a08ae22",
+    "PREVIEW_ALLOWED_EMAILS": "mahmoud.alkaraki96@gmail.com,mahmoud-alfaqeh@hotmail.co.il",
+    "PREVIEW_REVISION": "unpublished"
+  },
+  "observability": {"enabled":true}
+}
