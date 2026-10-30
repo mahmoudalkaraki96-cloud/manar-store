@@ -35,10 +35,10 @@ function setPageSeo(title:string,description:string,url:string,image:string,type
  upsertMeta('meta[name="twitter:description"]',{name:"twitter:description",content:description});
  upsertMeta('meta[name="twitter:image"]',{name:"twitter:image",content:image});
 }
-function absoluteUrl(value:string|undefined){try{return new URL(value||"/og.png",location.origin).toString()}catch{return location.origin+"/og.png"}}
+function absoluteUrl(value:string|undefined){try{return new URL(value||"/store-icon.svg",location.origin).toString()}catch{return location.origin+"/store-icon.svg"}}
 async function applyPageSeo(settings:StoreSettings,pathname:string){
- const name=settings.siteNameAr||settings.storeName||"منار بارتي ستور",alternate=settings.siteNameEn||"";
- let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة",image=absoluteUrl(settings.logoUrl),type="website";
+ const name=settings.siteNameAr||settings.storeName||"المتجر",alternate=settings.siteNameEn||"";
+ let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||"تصفح منتجات المتجر.",image=absoluteUrl(settings.logoUrl),type="website";
  const catalog=await loadCatalog();
  const productMatch=pathname.match(/^\/product\/(\d+)\/?$/);
  if(productMatch){
@@ -67,11 +67,11 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
- const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"منار بارتي ستور";
- const favicon=absoluteUrl((location.hostname==="manarstore.ps"||location.hostname==="www.manarstore.ps")?"/favicon.png":settings.faviconUrl||settings.logoUrl);upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
+ const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"المتجر";
+ const favicon=absoluteUrl(settings.faviconUrl||settings.logoUrl||"/store-icon.svg");upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
  upsertMeta('meta[property="og:site_name"]',{property:"og:site_name",content:settings.siteNameAr||name});
  if(location.pathname.startsWith("/admin"))document.title=`${name} – لوحة التحكم`;
- const adminBrand=document.querySelector<HTMLElement>(".adminSide .brand b");
+ const adminBrand=document.querySelector<HTMLElement>(".adminSide .adminBrand b");
  if(adminBrand)adminBrand.textContent=name;
 }
 

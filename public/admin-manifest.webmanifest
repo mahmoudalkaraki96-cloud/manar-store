@@ -1,7 +1,7 @@
 {
-  "name": "Manar Store Admin",
-  "short_name": "Manar Admin",
-  "description": "لوحة تحكم Manar Store",
+  "name": "إدارة المتجر",
+  "short_name": "إدارة المتجر",
+  "description": "",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "/",
@@ -9,19 +9,13 @@
   "display": "standalone",
   "orientation": "any",
   "background_color": "#f8f3f5",
-  "theme_color": "#3d2931",
+  "theme_color": "#475569",
   "icons": [
     {
-      "src": "/admin-icon.svg",
+      "src": "/store-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
-    },
-    {
-      "src": "/admin-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
     }
   ]
 }

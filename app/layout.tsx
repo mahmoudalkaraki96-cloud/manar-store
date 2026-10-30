@@ -14,15 +14,15 @@ import "./store-layout.css";
 import "./floating-actions.css";
 
 export const metadata:Metadata={
- title:{default:"منار بارتي ستور | Manar Party Store",template:"%s | Manar Store"},
- description:"قطع وإكسسوارات التوزيعات بالجملة والتجزئة",
- applicationName:"منار بارتي ستور | Manar Party Store",
+ title:{default:"المتجر",template:"%s | المتجر"},
+ description:"",
+ applicationName:"المتجر",
  manifest:"/manifest.webmanifest",
  icons:{
-  icon:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}],
-  apple:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}]
+  icon:[{url:"/store-icon.svg",type:"image/svg+xml",sizes:"any"}],
+  apple:[{url:"/store-icon.svg",type:"image/svg+xml",sizes:"any"}]
  },
- appleWebApp:{capable:true,statusBarStyle:"default",title:"منار بارتي ستور | Manar Party Store"},
+ appleWebApp:{capable:true,statusBarStyle:"default",title:"المتجر"},
  formatDetection:{telephone:false}
 };
 
@@ -30,7 +30,7 @@ export const viewport:Viewport={
  width:"device-width",
  initialScale:1,
  viewportFit:"cover",
- themeColor:"#b85f7d"
+ themeColor:"#475569"
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
