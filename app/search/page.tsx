@@ -1,6 +1,6 @@
 import SearchResultsClient from "./SearchResultsClient";
 
-export const metadata={title:"نتائج البحث | منار بارتي ستور",robots:{index:false,follow:false}};
+export const metadata={title:"نتائج البحث",robots:{index:false,follow:false}};
 
 export default async function SearchPage({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}){
  const params=await searchParams;
