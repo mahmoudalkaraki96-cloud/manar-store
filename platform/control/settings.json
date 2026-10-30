@@ -1,11 +1,14 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.1",
   "accountId": "008c61df8c322c27b8d1c1137922e328",
   "workerName": "store-platform",
   "databaseName": "store-platform-db",
   "team": "rapid-truth-92f4",
   "audience": "7aede5206a23b1c2032b7aed18527ca73add9e82e6bc0334a46323d22a08ae22",
-  "allowedEmails": ["mahmoud.alkaraki96@gmail.com", "mahmoud-alfaqeh@hotmail.co.il"],
+  "allowedEmails": [
+    "mahmoud.alkaraki96@gmail.com",
+    "mahmoud-alfaqeh@hotmail.co.il"
+  ],
   "defaultOwnerEmail": "mahmoud-alfaqeh@hotmail.co.il",
   "cloudflareEmail": "mahmoud.alkaraki96@gmail.com"
 }

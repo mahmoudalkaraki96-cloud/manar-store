@@ -26,10 +26,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-      - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: node --test tests/platform-console.test.cjs
-      - run: npx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck platform/control/worker.ts
+      - name: Check pending jobs
+        id: plan
+        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'prepare'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-provision.mjs plan
+      - if: github.event_name == 'pull_request' || inputs.operation == 'bootstrap' || steps.plan.outputs.needed == 'true'
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - if: github.event_name == 'pull_request' || inputs.operation == 'bootstrap' || steps.plan.outputs.needed == 'true'
+        run: node --test tests/platform-console.test.cjs
+      - if: github.event_name == 'pull_request' || inputs.operation == 'bootstrap' || steps.plan.outputs.needed == 'true'
+        run: npx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck platform/control/worker.ts
       - name: Bootstrap control database
         if: github.event_name == 'workflow_dispatch' && inputs.operation == 'bootstrap'
         env:
@@ -49,12 +57,6 @@ jobs:
             platform/control/resources.json
             platform-control.generated.jsonc
           if-no-files-found: ignore
-      - name: Check pending jobs
-        id: plan
-        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'prepare'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-provision.mjs plan
       - name: Resolve reviewed runtime
         id: runtime
         if: steps.plan.outputs.needed == 'true'
