@@ -186,25 +186,8 @@ const jabariRetailAgorot = (sourcePrice: number) => {
   return Math.round(retail * 100);
 };
 
-async function ensureProduct2222EditedImage(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  const seedKey = "product-2222-edited-image-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const product = await env.DB.prepare("SELECT id FROM products WHERE item_number=2222 AND deleted_at IS NULL LIMIT 1").first<{id:number}>();
-  if (!product) return;
-  const now = Date.now();
-  await env.DB.prepare("UPDATE product_media SET url=?,alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'")
-    .bind("/product-images/product-2222-edited.webp", "مراية قلاب مدور حديد", now, product.id).run();
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
-}
-
 type StorePolicyRecord={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number};
-const defaultStorePolicies={
-  receiving:"يستقبل المتجر الطلبات إلكترونياً على مدار الساعة. تسجيل الطلب لا يعني تأكيده نهائياً؛ يعتمد الطلب بعد مراجعة البيانات وتوفر المنتجات. يحق للمتجر التواصل مع الزبون للتأكيد أو طلب معلومات إضافية، ويمكن تعليق الطلب أو إلغاؤه إذا تعذر التواصل أو كانت البيانات ناقصة. إذا نفد منتج بعد تسجيل الطلب، يتم التواصل لاختيار بديل أو حذف المنتج غير المتوفر.",
-  shipping:"تستغرق مدة التوصيل عادةً من يوم إلى يومين، وقد تستغرق وقتاً إضافياً حسب ضغط الطلبات أو المنطقة أو الظروف الجوية وشركة الشحن. أسعار التوصيل الأساسية: الضفة الغربية 20 شيكل، القدس 30 شيكل، والداخل 70 شيكل. قد تضاف رسوم موضحة مسبقاً للطلبات كبيرة الحجم أو التي تحتاج ترتيبات خاصة. الزبون مسؤول عن صحة رقم الهاتف والعنوان.",
-  cancellation:"يمكن إلغاء الطلب ما دام لم يخرج للتوصيل. بعد خروجه لا يمكن إلغاؤه أو رفض استلامه، وفي حال رفض الاستلام أو تعذر التسليم بسبب الزبون يبقى ملزماً بدفع رسوم التوصيل. الطلبات المخصصة أو المصنوعة حسب الطلب لا يمكن إلغاؤها بعد بدء تجهيزها.",
-  exchange:"يمكن طلب الاستبدال خلال يوم واحد من الاستلام بشرط أن يكون المنتج غير مستخدم وبحالته الأصلية مع كامل ملحقاته وتغليفه. لا يوجد استرجاع نقدي. المنتجات المخصصة أو المكتوب عليها أسماء أو عبارات لا تستبدل إلا إذا وصلت خاطئة أو متضررة. يتحمل الزبون تكلفة الاستبدال عند تغيير رأيه، ويتحمل المتجر التكلفة عند الخطأ أو الضرر. يجب فحص الطلب فور استلامه والإبلاغ عن الكسر أو التلف أو النقص خلال ساعتين مع صور واضحة؛ بعد ساعتين لا تقبل بلاغات الضرر الظاهر."
-};
+const defaultStorePolicies={receiving:'يرجى مراجعة المتجر بشأن استقبال الطلبات.',shipping:'تُحدد مناطق ورسوم التوصيل من إدارة المتجر.',cancellation:'يرجى التواصل مع المتجر لمعرفة شروط الإلغاء.',exchange:'يرجى التواصل مع المتجر لمعرفة شروط الاستبدال.'};
 let storePoliciesReady:Promise<void>|null=null;
 async function ensureStorePoliciesSchema(env:Env){
   if(!storePoliciesReady)storePoliciesReady=(async()=>{
@@ -317,8 +300,6 @@ async function initializeCustomerAuthSchema(env:Env){
     await env.DB.prepare("ALTER TABLE shipping_zones RENAME TO "+backupName).run();
   }
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS shipping_zones (code TEXT PRIMARY KEY,label TEXT NOT NULL,price_agorot INTEGER NOT NULL,active INTEGER NOT NULL DEFAULT 1,sort_order INTEGER NOT NULL DEFAULT 0,updated_at INTEGER NOT NULL)").run();
-  const zoneNow=Date.now();
-  await env.DB.prepare("INSERT OR IGNORE INTO shipping_zones (code,label,price_agorot,active,sort_order,updated_at) VALUES ('west_bank','الضفة الغربية',2000,1,0,?),('jerusalem','القدس',3000,1,1,?),('inside','الداخل',7000,1,2,?)").bind(zoneNow,zoneNow,zoneNow).run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_addresses (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,label TEXT NOT NULL,recipient_name TEXT NOT NULL,phone TEXT NOT NULL,city TEXT NOT NULL,address TEXT NOT NULL,shipping_zone TEXT NOT NULL,is_default INTEGER NOT NULL DEFAULT 0,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL,FOREIGN KEY(account_id) REFERENCES customer_accounts(id) ON DELETE CASCADE)").run();
   await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_addresses_account ON customer_addresses(account_id)").run();
   const columns=await env.DB.prepare("PRAGMA table_info(orders)").all<{name:string}>();
