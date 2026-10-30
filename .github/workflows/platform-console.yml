@@ -41,6 +41,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: npx wrangler deploy --config platform-control.generated.jsonc
       - uses: actions/upload-artifact@v4
+        continue-on-error: true
         if: always() && github.event_name == 'workflow_dispatch' && inputs.operation == 'bootstrap'
         with:
           name: platform-control-resources

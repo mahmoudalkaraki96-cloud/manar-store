@@ -1,0 +1,10 @@
+{
+  "version": "1.2.0",
+  "revision": "3bbd0e82f823dac827d4ecfa800bf1a1c4db73f5",
+  "reviewed": true,
+  "scope": "new-stores-only",
+  "validationRuns": [
+    41084824893,
+    41084823297
+  ]
+}
