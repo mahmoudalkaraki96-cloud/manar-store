@@ -1,4 +1,4 @@
-import fs from 'node:fs';import{execFileSync}from'node:child_process';import{cloudflareClient}from'./scripts/platform-cloudflare.mjs';
+import fs from 'node:fs';import{execFileSync}from'node:child_process';import{cloudflareClient}from'./platform-cloudflare.mjs';
 const account='008c61df8c322c27b8d1c1137922e328',name='manar-store-admin',database='4afe4c16-e513-43ac-a397-26fa4141e5c9',bucket='manar-store-media',cf=cloudflareClient(account,process.env.CLOUDFLARE_API_TOKEN);
 function verify(settings){const b=settings.bindings||[];if(b.find(b=>b.name==='DB')?.id!==database||b.find(b=>b.name==='MEDIA')?.bucket_name!==bucket||b.find(b=>b.name==='APP_SURFACE')?.text!=='admin')throw Error('Admin identity mismatch');for(const binding of b)if(!['plain_text','json','secret_text'].includes(binding.type)&&!['DB','MEDIA','AI','IMAGES','ASSETS'].includes(binding.name))throw Error('Unreviewed admin binding')}
 try{
