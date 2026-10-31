@@ -1,0 +1,6 @@
+interface AssetBucket{get(key:string):Promise<{body:ReadableStream;httpMetadata?:{contentType?:string}}|null>}
+const cache=new WeakMap<AssetBucket,{until:number;aliases:Map<string,string>}>();
+export async function storeAssetResponse(bucket:AssetBucket,pathname:string):Promise<Response|null>{
+ let cached=cache.get(bucket);if(!cached||cached.until<Date.now()){const object=await bucket.get('settings/asset-aliases.json'),value=object?await new Response(object.body).json():{};const aliases=new Map<string,string>();if(value&&typeof value==='object')for(const[key,target]of Object.entries(value))if(key.startsWith('/')&&/\.(?:webp|png|jpe?g|gif|svg)$/i.test(key)&&typeof target==='string'&&!target.split('/').includes('..'))aliases.set(key,target);cached={until:Date.now()+60000,aliases};cache.set(bucket,cached)}
+ const key=cached.aliases.get(pathname);if(!key)return null;const object=await bucket.get(key);if(!object)return null;const type=object.httpMetadata?.contentType||(/\.webp$/i.test(pathname)?'image/webp':/\.png$/i.test(pathname)?'image/png':'image/jpeg');return new Response(object.body,{headers:{'content-type':type,'cache-control':'public,max-age=3600','x-content-type-options':'nosniff'}});
+}

@@ -70,7 +70,7 @@ export default function PwaRegister(){
  if(installed)return <Notifications/>;
  const ios=typeof navigator!=="undefined"&&/iphone|ipad|ipod/i.test(navigator.userAgent);
  if(!prompt&&!ios)return <Notifications/>;
- const appName=admin?"Manar Store Admin":"Manar Store";
+ const appName=admin?"إدارة المتجر":"المتجر";
 
  async function install(){
   if(prompt){

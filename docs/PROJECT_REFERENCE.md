@@ -751,3 +751,19 @@
 - فحصالمتصفحالحيبعدreload:فتح«صنفجديد»وقائمة«قسمالصنففيالمحرر»،البحثعنالورودوالاختيارنجحا،ثمإعادةالفتحوEscapeأغلقهاوإعادةالفتحوالبحثنجحا.لماتُحفظبياناتصنفأومخزون؛النموذجتجريبيمؤقتأُغلق.الصورةoutputs/manar-category-picker-v1.1.6.png.
 - الحدالتجريبي:أحداثتغيّرحجمالكيبوردوالسكرولوالـvisualViewportفُحصتبرمجيًا،والفتح/البحث/الاختيارفُحصحيًافيالمتصفحالمتاح؛لاiPhoneفعليمتصلللاختبار.يُطلبمنالمالكالتجربةمنآيفونهبعدتحديثالصفحة.
 - الحالة:إصلاحالقائمةوحدهمكتملومنشوروموثق.تنظيمالإدارةوالمتغيراتوأزرارPDFمازالمؤجلًاحسبترتيبالمستخدم،ولمينفذضمن1.1.6.
+
+
+### 2026-10-31 (Asia/Hebron) — UNIFIED-RUNTIME-1.3.0 / بدء التنفيذ
+- طلب المالك كودًا وإصداراتموحدةلكلالمتاجربدلمساري1.1.xو1.2.x،واستكمالترتيبالإدارةوالأقساموالمنتجاتوالمتغيراتعلىالهاتفوأزرارحفظالطلبوالتجهيزبصيغةPDF.النطاقمعتمد؛إصلاحقائمةالآيفون1.1.6محفوظ.
+- فُتحفرعplatform/unified-runtime-1.3.0منmain6fff42d4،ودمج3wayتعديلاتRuntimeالعامb772775dمعmainبدلإعادةترقيمالمصدرالقديم.حُفظتمساراتالأيقونةالديناميكيةوإصلاحSearchableCategory،وأزيلتاختلافاترابطالأيقونةالتاريخيةإلى1.3.0.
+- أُعدترتيببطاقاتالأقساموبحثهاوتسلسلهاالمرئي،وبطاقاتالأصنافعلىالهاتفمعحفظفلاترالأعمدة،وقائمةيمينfixedوتمريرمستقلومنعتحركالخلفية،وعناوينمرئيةلحقولالمتغيراتضمنبطاقاتمنفصلة.لاإعادةتسميةأونقلأقسامأومنتجاتفيقاعدةالبيانات.
+- أزرارPDFتولّدملفًاوتنزّلهفيالمتصفح،باستخدامنسختيhtml2canvas1.4.1وjsPDF3.0.4المحليتينالمثبتتينبـSHA512منسجلالحزمالرسميورخصهما.لانقلبياناتطلبإلىخدمةخارجية.نسخةالتجهيزتستخدمOrderPreparationSheetمستقلةبدونعناصرمالية،والنسخةالكاملةتأخذعرضالطلبيةمعالأسعار.
+- TypeScriptصارملواجهةالإدارةوworkerنجحمحليًابعدحلدمجالملفات.التحققالبصريوالـPDFوالاختباراتوالبناءمازالقيدالتنفيذ.لاإصدار1.3.0منشورحتىالآن.
+- متطلبالتعميم:نقلإعداداتالتتبعوالرابطالرئيسيمنالكودالقديملقاعدةالمتجرالمعني،وحفظفهرسأصولمنارالتاريخيةفيR2الخاصبهقبلإزالةfallbackالمضمّن؛نسخةاحتياطيةخاصةقبلترقيةالمخطط.لايُنقلالكتالوجأوبياناتمتجرإلىمتجرآخر.توسيعPublisherليصدرحزمةواحدةللواجهةوالإدارةواستبدالسجلالإصداراتمتعددةالمسارات.
+- جاهزيةركنللدخولالجديدتحتاجقراءةإعداداتهالحيةوحفظنفسوصولالمالك؛لاافتراضهويةمالكجديدةولامنحصلاحياتغيرمصرحبها.التاليCIثمفحصUI/PDFوالترقيةالمدروسةوالتعميمبعدفحصالتوافق.
+
+
+### Shared runtime / publisher 0.5.0 (candidate 1.3.0)
+- One runtime artifact with `surfaces:["storefront","admin"]`; certifications bind both Worker names, D1 ID and R2 bucket. No merchant catalog crosses bindings. Per-surface deployed revision is retained, and a target succeeds only after both surfaces verify.
+- `platform-unified-upgrade.mjs audit|prepare`: private SQL backup and offline additive schema validation for every target precede live schema updates. Existing store_profile is preserved. Legacy tracking/media migration is operator data, outside shared runtime code.
+- Admin responsive overrides in admin-responsive.css; category ordering is display-only. PDF export uses pinned local html2canvas/jsPDF, renders Arabic in the browser, and has a price-free preparation root guard. Actual device-specific iOS download behavior still requires owner verification.

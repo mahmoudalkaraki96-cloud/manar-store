@@ -12,9 +12,9 @@ test('server theme preserves configured colors before client hydration',()=>{
  assert.match(css,/\.storeShell \.shopHeaderWrap,\.storeShellContent>main\{--green:#123abc!important/);
  assert.match(css,/background:#fafafa!important/);
 });
-test('missing or unsafe colors use branded defaults and cannot escape a style tag',()=>{
+test('missing or unsafe colors use neutral defaults and cannot escape a style tag',()=>{
  const css=storeThemeCss({primaryColor:'</style><script>alert(1)</script>',secondaryColor:'red;display:none',backgroundColor:null});
- assert.match(css,/--green:#b85f7d;--gold:#f8e8ef;--pageBg:#ffffff/);
+ assert.match(css,/--green:#475569;--gold:#94a3b8;--pageBg:#ffffff/);
  assert.ok(!css.includes('<'));assert.ok(!css.includes('display:none'));
  assert.equal(css,storeThemeCss({}));
 });

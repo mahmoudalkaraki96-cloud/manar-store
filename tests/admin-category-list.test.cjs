@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript'),Module=require('node:module');
+require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,file);
+const{orderedAdminCategories}=require('../app/admin/admin-category-list.ts');
+test('category display groups parents and children without changing data, and handles cycles',()=>{const input=[{id:2,parentId:1,name:'فرعي',sortOrder:0},{id:1,parentId:null,name:'رئيسي',sortOrder:1},{id:3,parentId:4,name:'دورة1',sortOrder:2},{id:4,parentId:3,name:'دورة2',sortOrder:3}],before=JSON.stringify(input);assert.deepEqual(orderedAdminCategories(input).map(c=>c.id),[1,2,3,4]);assert.equal(JSON.stringify(input),before)});
+test('category search matches the complete parent path',()=>{const input=[{id:1,parentId:null,name:'ورد',categoryNumber:5},{id:2,parentId:1,name:'صناعي',categoryNumber:6}];assert.deepEqual(orderedAdminCategories(input,'ورد').map(c=>c.id),[1,2]);assert.deepEqual(orderedAdminCategories(input,'6').map(c=>c.id),[2])});

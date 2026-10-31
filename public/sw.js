@@ -1,4 +1,4 @@
-const VERSION="manar-store-pwa-v2";
+const VERSION="store-pwa-v3";
 const OFFLINE_CACHE=VERSION+"-offline";
 const STATIC_CACHE=VERSION+"-static";
 const OFFLINE_URL="/offline.html";
@@ -52,7 +52,7 @@ self.addEventListener("fetch",event=>{
 
 self.addEventListener("push",event=>{
  let payload={};try{payload=event.data?event.data.json():{}}catch{}
- event.waitUntil(self.registration.showNotification(payload.title||"منار بارتي ستور",{body:payload.body||"لديك تحديث جديد",icon:"/favicon.png",badge:"/favicon.png",tag:payload.tag||"manar-update",data:{url:payload.url||"/"}}));
+ event.waitUntil(self.registration.showNotification(payload.title||"المتجر",{body:payload.body||"لديك تحديث جديد",icon:"/store-icon.svg",badge:"/store-icon.svg",tag:payload.tag||"store-update",data:{url:payload.url||"/"}}));
 });
 self.addEventListener("notificationclick",event=>{
  event.notification.close();let target=new URL(event.notification.data?.url||"/",self.location.origin);

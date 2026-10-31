@@ -1,4 +1,8 @@
+import {storeAssetResponse} from "./store-assets";
 import {storeIconResponse} from "./store-icon";
+import {mediaSources} from "./media-sources";
+import {readStoreProfile,saveStoreProfile} from "./store-profile";
+import {validateStoreProfile,trackingAllowed,googleAnalyticsHead as configuredGoogleHead} from "../shared/store-profile";
 import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
 import {adminRequest} from './admin-request';
 import {archiveOrder} from './admin-order-lifecycle';
@@ -22,12 +26,6 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import { scrypt as nodeScrypt, pbkdf2 as nodePbkdf2 } from "node:crypto";
 import {pushApi,drainPushQueue,notifyNewOrder,notifyOrderStatus,pushAdminSummary,queueCampaign} from "./push";
 import handler from "vinext/server/app-router-entry";
-import { importedDistributionProducts } from "./import-cat40.generated";
-import importedAllProducts from "./import-all-products.generated.json";
-import importedJabariProducts from "./import-jabari-products.generated.json";
-import importedJabariVariants from "./import-jabari-variants.generated.json";
-import importedDofeshVariants from "./import-dofesh-variants.generated.json";
-import { product2222ImageBase64 } from "./product-2222-image.generated";
 
 interface Env {
   ASSETS: Fetcher;
@@ -48,7 +46,7 @@ interface Env {
   };
 }
 
-interface D1Meta { last_row_id?: number | string; changes?: number }
+interface D1Meta { last_row_id?: number; changes?: number }
 interface D1Result<T = Record<string, unknown>> { results: T[]; meta: D1Meta }
 interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
@@ -60,8 +58,8 @@ interface D1Database {
   prepare(query: string): D1PreparedStatement;
   batch<T = Record<string, unknown>>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
 }
-interface R2ObjectBody { body: ReadableStream; httpEtag: string; writeHttpMetadata(headers: Headers): void }
-interface R2Bucket { get(key: string): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string } }): Promise<unknown> }
+interface R2ObjectBody { size:number; range?:{offset:number;length:number}; body: ReadableStream; httpEtag: string; writeHttpMetadata(headers: Headers): void }
+interface R2Bucket { get(key: string,options?:{range:Headers}): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string;cacheControl?:string } }): Promise<unknown> }
 interface Fetcher { fetch(request: Request): Promise<Response> }
 
 interface ExecutionContext {
@@ -76,13 +74,11 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
 
 const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
 const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
-const GOOGLE_ANALYTICS_ID = "G-PB5GHRZS5S";
-async function readMetaPixelHead(env:Env,url:URL){
-  if(url.hostname!=="manarstore.ps"&&url.hostname!=="www.manarstore.ps")return "";
-  const row=await env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string,unknown>>();
-  return buildMetaPixelHead(row?.meta_pixel_id==null?"1231904457865622":String(row.meta_pixel_id),Boolean(row?.meta_pixel_enabled??1));
+async function readTrackingHead(env:Env,url:URL){
+ const profile=await readStoreProfile(env.DB);
+ if(!trackingAllowed(profile,url))return "";
+ return configuredGoogleHead(profile,url)+buildMetaPixelHead(profile.metaPixelId,profile.metaPixelEnabled);
 }
-const googleAnalyticsHead = '<script async src="https://www.googletagmanager.com/gtag/js?id='+GOOGLE_ANALYTICS_ID+'"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","'+GOOGLE_ANALYTICS_ID+'");</script>';
 
 const amount = (agorot: number | null) => agorot == null ? undefined : agorot / 100;
 const agorot = (value: unknown) => Math.max(0, Math.round(Number(value || 0) * 100));
@@ -94,7 +90,7 @@ const slugify = (value: string) => value.trim().toLowerCase().replace(/[^\p{L}\p
 const validColor = (value: unknown, fallback: string) => /^#[0-9a-f]{6}$/i.test(asText(value)) ? asText(value) : fallback;
 const safeUrl = (value: unknown) => { const text = asText(value); if (!text) return null; try { const url = new URL(text); return ["http:", "https:"].includes(url.protocol) ? text : null; } catch { return null; } };
 const safeTarget = (value:unknown) => { const text=asText(value); return text.startsWith("/")&&!text.startsWith("//")?text:safeUrl(text); };
-async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"],["show_out_of_stock","integer DEFAULT 1 NOT NULL"],["show_offers","integer DEFAULT 1 NOT NULL"],["show_most_ordered","integer DEFAULT 0 NOT NULL"],["show_top_rated","integer DEFAULT 0 NOT NULL"],["show_newest","integer DEFAULT 1 NOT NULL"],["show_featured","integer DEFAULT 1 NOT NULL"],["home_products_limit","integer DEFAULT 6 NOT NULL"],["show_subcategory_products_in_parent","integer DEFAULT 1 NOT NULL"],["watermark_opacity","integer DEFAULT 25 NOT NULL"],["watermark_enabled","integer DEFAULT 1 NOT NULL"],["watermark_x","real DEFAULT 90 NOT NULL"],["watermark_y","real DEFAULT 90 NOT NULL"],["watermark_size","real DEFAULT 24 NOT NULL"],["site_name_ar","text DEFAULT 'منار بارتي ستور' NOT NULL"],["site_name_en","text DEFAULT 'Manar Party Store' NOT NULL"],["seo_description","text DEFAULT 'قطع وإكسسوارات التوزيعات بالجملة والتجزئة' NOT NULL"],["favicon_url","text DEFAULT '' NOT NULL"],["meta_pixel_id","text DEFAULT '1231904457865622' NOT NULL"],["meta_pixel_enabled","integer DEFAULT 1 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
+async function ensureStorefrontColumns(env:Env){const info=await env.DB.prepare("PRAGMA table_info(store_settings)").all<{name:string}>(),names=new Set(info.results.map(row=>row.name)),columns:Array<[string,string]>=[["background_color","text DEFAULT '#ffffff' NOT NULL"],["whatsapp_enabled","integer DEFAULT 1 NOT NULL"],["facebook_enabled","integer DEFAULT 1 NOT NULL"],["instagram_enabled","integer DEFAULT 1 NOT NULL"],["tiktok_enabled","integer DEFAULT 1 NOT NULL"],["slider_interval_ms","integer DEFAULT 5000 NOT NULL"],["show_out_of_stock","integer DEFAULT 1 NOT NULL"],["show_offers","integer DEFAULT 1 NOT NULL"],["show_most_ordered","integer DEFAULT 0 NOT NULL"],["show_top_rated","integer DEFAULT 0 NOT NULL"],["show_newest","integer DEFAULT 1 NOT NULL"],["show_featured","integer DEFAULT 1 NOT NULL"],["home_products_limit","integer DEFAULT 6 NOT NULL"],["show_subcategory_products_in_parent","integer DEFAULT 1 NOT NULL"],["watermark_opacity","integer DEFAULT 25 NOT NULL"],["watermark_enabled","integer DEFAULT 1 NOT NULL"],["watermark_x","real DEFAULT 90 NOT NULL"],["watermark_y","real DEFAULT 90 NOT NULL"],["watermark_size","real DEFAULT 24 NOT NULL"],["site_name_ar","text DEFAULT '' NOT NULL"],["site_name_en","text DEFAULT '' NOT NULL"],["seo_description","text DEFAULT '' NOT NULL"],["favicon_url","text DEFAULT '' NOT NULL"],["meta_pixel_id","text DEFAULT '' NOT NULL"],["meta_pixel_enabled","integer DEFAULT 0 NOT NULL"]];for(const [name,definition] of columns)if(!names.has(name))await env.DB.prepare(`ALTER TABLE store_settings ADD COLUMN ${name} ${definition}`).run()}
 async function ensureHighlightSchema(env:Env){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS store_highlights (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,cover_url TEXT NOT NULL,images_json TEXT NOT NULL,sort_order INTEGER NOT NULL DEFAULT 0,active INTEGER NOT NULL DEFAULT 1,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL)").run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS highlight_visibility (id INTEGER PRIMARY KEY CHECK(id=1),enabled INTEGER NOT NULL DEFAULT 1)").run();
@@ -165,98 +161,6 @@ async function saveHighlight(request:Request,env:Env,id?:number){
 
 async function ensureCustomizationSchema(env:Env){await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_custom_fields (id INTEGER PRIMARY KEY AUTOINCREMENT,product_id INTEGER NOT NULL,label TEXT NOT NULL,placeholder TEXT,max_length INTEGER DEFAULT 60 NOT NULL,required INTEGER DEFAULT 0 NOT NULL,sort_order INTEGER DEFAULT 0 NOT NULL,FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE)").run();const info=await env.DB.prepare("PRAGMA table_info(order_items)").all<{name:string}>();if(!info.results.some(row=>row.name==="customization_json"))await env.DB.prepare("ALTER TABLE order_items ADD COLUMN customization_json TEXT").run();const categoryInfo=await env.DB.prepare("PRAGMA table_info(categories)").all<{name:string}>();if(!categoryInfo.results.some(row=>row.name==="icon_url"))await env.DB.prepare("ALTER TABLE categories ADD COLUMN icon_url TEXT").run()}
 
-const importedPearlProducts = [
-  { sourceId: 598, name: "لولو نص حبة 8 مل", price: 30, image: "b8a71253-89e9-44f0-bab2-48c597ea4d3c", folder: "09-2025", extension: "jpeg" },
-  { sourceId: 301, name: "سترس محجر 9 متر اصلي", price: 20, image: "IMG_2446", folder: "04-2026", extension: "png" },
-  { sourceId: 300, name: "رول لولو نص حبة 60 متر لون لولي", price: 30, image: "bbeae8e9-8a91-48ad-9f06-8f6ddcc4c110", folder: "08-2025", extension: "jpeg" },
-  { sourceId: 299, name: "رول لولو نص حبة 60 متر أزرق", price: 30, image: "48227ac6-90dd-4278-9f63-088c32a8229e", folder: "08-2025", extension: "jpeg" },
-  { sourceId: 298, name: "رول لولو نص حبة 60 متر زهري", price: 30, image: "a6889f08-71cf-4bff-961a-a881e4f82e84", folder: "08-2025", extension: "jpeg" },
-  { sourceId: 297, name: "رول لولو 60 متر أبيض", price: 40, image: "e914d712-ad9d-4099-82b9-0b7201f85225", folder: "08-2025", extension: "jpeg" },
-  { sourceId: 296, name: "رول لولو 60متر ذهبي", price: 40, image: "c8727f4b-98d0-4a4b-84d9-12ffc7400ea4", folder: "08-2025", extension: "jpeg" },
-  { sourceId: 295, name: "رول لولو 60متر لون لولي", price: 40, image: "4fa0b281-313e-43e6-b02b-72cad1969cb4", folder: "08-2025", extension: "jpeg" },
-] as const;
-
-const importedResinProducts = [
-  { sourceId: 948, name: "ريزون علاقة زهري محجر", price: 3, image: "upload/02-2026/product/IMG_9524", extension: "jpeg" },
-  { sourceId: 936, name: "ريزون حجم كبير سادى مقاس ٢٨ سم مع قاعدة ذهبية", price: 40, image: "upload/02-2026/product/IMG_9240", extension: "jpeg" },
-  { sourceId: 935, name: "ريزون حجم كبير مع قاعدة ذهبية مقاس ٢٨ سم محجر من الاطراف", price: 40, image: "upload/02-2026/product/IMG_9237", extension: "jpeg" },
-  { sourceId: 674, name: "ريزون محجر مع علاقة", price: 3, image: "upload/11-2025/product/dbd774df-3949-420c-bcb7-8d1487b23b5d", extension: "jpeg" },
-  { sourceId: 233, name: "ريزون تعليقة أزرق محجر 6سم", price: 2, image: "upload/08-2025/product/e1e69485-936f-4445-9267-9beb8c360dd6", extension: "jpeg" },
-  { sourceId: 232, name: "ريزون مذهب سادى بدون حجر7سم", price: 2, image: "upload/11-2025/product/15f99f4d-22fe-4168-a35a-ae6c98deda71", extension: "jpeg" },
-  { sourceId: 231, name: "ريزون محجر مدور زهري 7سم", price: 2, image: "upload/11-2025/product/0d128ee4-63bb-4aaa-a58b-d40231069083", extension: "jpeg" },
-  { sourceId: 230, name: "ريزن مدور محجر فضي 7سم", price: 2, image: "upload/08-2025/product/9991e99e-e308-45c8-b333-24b4269a554e", extension: "jpeg" },
-  { sourceId: 229, name: "ريزون محجر مدور ذهبي", price: 2, image: "upload/08-2025/product/d826b23e-190a-4e34-a56c-6f6538d5ce01 (1)", extension: "jpeg" },
-  { sourceId: 228, name: "ريزون محجر ذهبي", price: 2, image: "upload/08-2025/product/1ae992a5-127d-43f1-be3c-a8060b90b96f", extension: "jpeg" },
-  { sourceId: 227, name: "ريزون محجر ذهبي", price: 2, image: "upload/11-2025/product/8f627bbf-7d94-4cf0-aa72-718d4e713ff0", extension: "jpeg" },
-  { sourceId: 226, name: "ريزون أزرق محجر", price: 3, image: "upload/08-2025/product/707f3fc0-e5ea-405a-8eb8-d2ec74e1dd1e", extension: "jpeg", variants: ["مدور", "مشرف"] },
-  { sourceId: 225, name: "ريزون محجر زهري 7سم", price: 2, image: "upload/08-2025/product/386a726e-2f5c-49b7-9663-9307be9d9f48", extension: "jpeg" },
-  { sourceId: 224, name: "ريزون زهري محجر 7 سم", price: 2, image: "upload/08-2025/product/e5dd22cf-0ec6-4a88-88ac-2ccfc23689b7", extension: "jpeg" },
-] as const;
-
-const importedMediaSources = new Map<string, readonly string[]>(importedPearlProducts.map((product) => {
-  const base = `https://dofesh.ps/upload/${product.folder}/product/${product.image}`;
-  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]] as const;
-}).concat(importedResinProducts.map((product) => {
-  const base = `https://dofesh.ps/${product.image}`;
-  return [`imports/dofesh-${product.sourceId}.${product.extension}`, [`${base}-IDX.${product.extension}`, `${base}-450px.${product.extension}`]] as const;
-})).concat(importedDistributionProducts.map((product) => {
-  const pathname = new URL(product.image).pathname;
-  const extension = pathname.split(".").pop()?.toLowerCase() || "jpeg";
-  return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-IDX.", "-450px.")]] as const;
-})).concat(importedAllProducts.map((product) => {
-  const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-  return [`imports/dofesh-${product.id}.${extension}`, [product.image, product.image.replace("-450px.", "-IDX.")]] as const;
-})).concat(importedJabariProducts.map((product) => {
-  const extension = new URL(product.imageUrl).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-  return [`imports/jabari-${product.sourceId}.${extension}`, [product.imageUrl]] as const;
-})).concat(([...importedJabariVariants.map(record => ({source:"jabari",record})),...importedDofeshVariants.map(record => ({source:"dofesh",record}))]).flatMap(({source,record}) => Object.values(record.groups || {}).flat().map((variant, index) => {
-  if (!variant.imageUrl) return null;
-  const absolute = new URL(variant.imageUrl, source === "jabari" ? "https://jabaristore.com/" : "https://dofesh.ps/").toString();
-  const extension = new URL(absolute).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-  return [`imports/${source}-${record.sourceId}-variant-${index}.${extension}`, [absolute]] as const;
-}).filter((item): item is readonly [string, readonly string[]] => Boolean(item)))));
-
-const organizedCategoryTree = [
-  ["توزيعات وهدايا المناسبات", ["توزيعات الأعراس والحناء", "توزيعات المواليد", "الحج والعمرة", "التخرج والنجاح", "هدايا وتوزيعات عامة"]],
-  ["التغليف والعلب", ["علب وصناديق", "أكياس وورق تغليف", "صواني وسلال"]],
-  ["الورد والشرائط والأقمشة", ["الورود", "الشرائط والببيونات", "الأقمشة والتول"]],
-  ["الشموع والعطور والمباخر", ["الشموع", "العطور والصابون", "المباخر"]],
-  ["الأكريليك والخشب والطباعة", ["الأكريليك", "الخشب وCNC", "الطباعة والكروت"]],
-  ["الزينة والإكسسوارات", ["زينة الشوكولاتة", "اللولو والسترس", "زينة وإكسسوارات عامة"]],
-  ["المرايا والستاندات", ["المرايا", "الستاندات", "المسكات واللوحات"]],
-  ["أدوات ومستلزمات العمل", ["أدوات العمل", "الخامات", "مستلزمات متنوعة"]],
-] as const;
-
-function organizedCategoryFor(name: string) {
-  const n = name.replace(/[إأآ]/g, "ا").replace(/ة/g, "ه").toLowerCase();
-  if (/عروس|اعراس|زفاف|حناء|خطوب|عرسان/.test(n)) return "توزيعات الأعراس والحناء";
-  if (/بيبي|مولود|مواليد|طفل/.test(n)) return "توزيعات المواليد";
-  if (/حج|عمره|زمزم|مصاحف|مصحف|ايه الكرسي|تسبيح|مسابح/.test(n)) return "الحج والعمرة";
-  if (/تخرج|نجاح|جامعه|مدرسه|طاقيه/.test(n)) return "التخرج والنجاح";
-  if (/شموع|شمع|فتيل/.test(n)) return "الشموع";
-  if (/مبخر|بخور/.test(n)) return "المباخر";
-  if (/عطر|معطر|صابون|مسك الطهاره|كريم/.test(n)) return "العطور والصابون";
-  if (/ورد|زهور|بوكيه|غصن|تيوليب/.test(n)) return "الورود";
-  if (/شبر|شريط|ببيون|فيونك|ربطه/.test(n)) return "الشرائط والببيونات";
-  if (/قماش|تول|خيش|لايكرا|كروشي|مكرميه|مكرمي/.test(n)) return "الأقمشة والتول";
-  if (/علب|علبه|صندوق|بوكس|مرطبان|قنينه|قاروره|فازه|سكريه/.test(n)) return "علب وصناديق";
-  if (/كيس|اكياس|تغليف|ورق|نايلون|سلفان/.test(n)) return "أكياس وورق تغليف";
-  if (/صينيه|صواني|سله|سلال|ضيافه/.test(n)) return "صواني وسلال";
-  if (/مرايا|مراه/.test(n)) return "المرايا";
-  if (/ستاند|حامل|تلبيس ذهب|تلابيس ذهب/.test(n)) return "الستاندات";
-  if (/مسكه|مسكه|لوحه استقبال|برواز استقبال/.test(n)) return "المسكات واللوحات";
-  if (/اكريلك|اكريليك|بلاستيك شفاف/.test(n)) return "الأكريليك";
-  if (/خشب|cnc|بامبو/.test(n)) return "الخشب وCNC";
-  if (/طباع|كرت |كرتون للتزيين|كروت|ملصق|ستيكر/.test(n)) return "الطباعة والكروت";
-  if (/شوكولات|ملبس|مطبقيه|سيجار/.test(n)) return "زينة الشوكولاتة";
-  if (/لولو|سترس|كرستال|كريستال|محجر/.test(n)) return "اللولو والسترس";
-  if (/مقص|سلكون|لزق|لزيق|ماكنه|ماكينه|مسدس|فرد |مغناطيس|حبر|اداه/.test(n)) return "أدوات العمل";
-  if (/كونكريت|جبص|ريزن|ريزون|فخار|قش|حديد|نحاس|ريش|بالون/.test(n)) return "الخامات";
-  if (/دب|زينة|زينه|اكسسوار|فراش|شرشوب|تعليقه|علاقه|ديكور/.test(n)) return "زينة وإكسسوارات عامة";
-  if (/هديه|هدايا|توزيع|مروحه|مراوح|تحف/.test(n)) return "هدايا وتوزيعات عامة";
-  return "مستلزمات متنوعة";
-}
-
 const distributionCategoryTree = [
   { sourceId: 40, name: "مستلزمات التوزيعات", parentSourceId: null },
   { sourceId: 41, name: "قسم الكونكريت(الجبصو)", parentSourceId: 40 },
@@ -273,262 +177,7 @@ const distributionCategoryTree = [
   { sourceId: 93, name: "قسم الريش", parentSourceId: 40 },
 ] as const;
 
-async function ensureImportedPearlProducts(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-pearl-rolls-2026-08-31";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind("اكسسوارات التزين").first<{id:number}>();
-  if (!category) return;
-  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  const now = Date.now();
-  for (const product of importedPearlProducts) {
-    const keyword = `dofesh-${product.sourceId}`;
-    const existing = await env.DB.prepare("SELECT p.id FROM products p LEFT JOIN product_keywords k ON k.product_id=p.id WHERE k.keyword=? OR (p.category_id=? AND p.name=?) LIMIT 1").bind(keyword, category.id, product.name).first<{id:number}>();
-    if (existing) continue;
-    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,1,1,0,NULL,0,0,0,0,?,?)")
-      .bind(nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), product.price * 100, now, now).run();
-    const productId = Number(result.meta.last_row_id);
-    const mediaUrl = `/media/imports/dofesh-${product.sourceId}.${product.extension}`;
-    await env.DB.batch([
-      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, mediaUrl, product.name, now, now),
-      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
-    ]);
-    nextItemNumber += 1;
-  }
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
-}
-
-async function ensureImportedResinProducts(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-resin-2026-08-31";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  let category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind("قسم الريزون").first<{id:number}>();
-  if (!category) {
-    const now = Date.now();
-    const categoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
-    const categoryResult = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,NULL,?,?,NULL,NULL,NULL,0,1,?,?)")
-      .bind(categoryNumber, "قسم الريزون", slugify("قسم الريزون"), now, now).run();
-    category = { id: Number(categoryResult.meta.last_row_id) };
-  }
-  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  const now = Date.now();
-  for (const product of importedResinProducts) {
-    const keyword = `dofesh-${product.sourceId}`;
-    const existing = await env.DB.prepare("SELECT p.id FROM products p JOIN product_keywords k ON k.product_id=p.id WHERE k.keyword=? LIMIT 1").bind(keyword).first<{id:number}>();
-    if (existing) continue;
-    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,?,NULL,NULL,100,1,0,NULL,0,0,0,0,?,?)")
-      .bind(nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), product.price * 100, now, now).run();
-    const productId = Number(result.meta.last_row_id);
-    const mediaUrl = `/media/imports/dofesh-${product.sourceId}.${product.extension}`;
-    await env.DB.batch([
-      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, mediaUrl, product.name, now, now),
-      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
-    ]);
-    if ("variants" in product && product.variants?.length) {
-      const optionResult = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,'الشكل','text',0)").bind(productId).run();
-      const optionId = Number(optionResult.meta.last_row_id);
-      for (let index = 0; index < product.variants.length; index += 1) {
-        const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(optionId, product.variants[index], index).run();
-        const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,100,1,?,?)").bind(productId, product.price * 100, now, now).run();
-        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(Number(variantResult.meta.last_row_id), Number(valueResult.meta.last_row_id)).run();
-      }
-    }
-    nextItemNumber += 1;
-  }
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
-}
-
-async function ensureImportedDistributionProducts(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-distribution-category-40-2026-08-31-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const categoryIds = new Map<number, number>();
-  for (const category of distributionCategoryTree) {
-    const parentId = category.parentSourceId == null ? null : categoryIds.get(category.parentSourceId) || null;
-    let existing = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(category.name).first<{id:number}>();
-    if (!existing) {
-      const now = Date.now();
-      const categoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
-      const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,NULL,0,1,?,?)")
-        .bind(categoryNumber, parentId, category.name, slugify(`${category.name}-${category.sourceId}`), now, now).run();
-      existing = { id: Number(created.meta.last_row_id) };
-    } else {
-      await env.DB.prepare("UPDATE categories SET parent_id=?,active=1,updated_at=? WHERE id=?").bind(parentId, Date.now(), existing.id).run();
-    }
-    categoryIds.set(category.sourceId, existing.id);
-  }
-
-  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
-  const startIndex = Math.max(0, Number(progress?.next_index || 0));
-  const endIndex = Math.min(importedDistributionProducts.length, startIndex + 4);
-  for (let productIndex = startIndex; productIndex < endIndex; productIndex += 1) {
-    const product = importedDistributionProducts[productIndex];
-    const categoryId = categoryIds.get(product.categoryId);
-    if (!categoryId) continue;
-    const keyword = `dofesh-${product.id}`;
-    const existing = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(keyword).first<{product_id:number}>();
-    const colorNote = product.colors.length ? `الألوان المتوفرة: ${product.colors.join("، ")}` : "";
-    const description = [product.description, colorNote].filter(Boolean).join("\n");
-    const now = Date.now();
-    if (existing) {
-      await env.DB.prepare("UPDATE products SET category_id=?,name=?,description=?,price_agorot=?,stock_quantity=100,active=1,updated_at=? WHERE id=?")
-        .bind(categoryId, product.name, description || null, Math.round(product.price * 100), now, existing.product_id).run();
-      await env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existing.product_id).run();
-      await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, productIndex + 1).run();
-      continue;
-    }
-    const created = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,?,NULL,NULL,100,1,0,NULL,0,0,0,0,?,?)")
-      .bind(nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), description || null, Math.round(product.price * 100), now, now).run();
-    const productId = Number(created.meta.last_row_id);
-    const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-    await env.DB.batch([
-      env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now),
-      env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword),
-    ]);
-    const choices = product.sizes.length ? product.sizes : product.colors.map(value => ({ name: "color", value, price: product.price }));
-    if (choices.length) {
-      const optionName = product.sizes.length ? "المقاس / الكمية" : "اللون";
-      const displayType = product.sizes.length ? "text" : "color";
-      const option = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,?,?,0)").bind(productId, optionName, displayType).run();
-      for (let index = 0; index < choices.length; index += 1) {
-        const choice = choices[index];
-        const value = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(Number(option.meta.last_row_id), choice.value, index).run();
-        const variantPrice = choice.price > 0 ? choice.price : product.price;
-        const variant = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,100,1,?,?)").bind(productId, Math.round(variantPrice * 100), now, now).run();
-        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(Number(variant.meta.last_row_id), Number(value.meta.last_row_id)).run();
-      }
-    }
-    nextItemNumber += 1;
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, productIndex + 1).run();
-  }
-  if (endIndex >= importedDistributionProducts.length) {
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
-    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
-  }
-}
-
-async function ensureCorrectedDistributionProductNames(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-distribution-correct-names-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const now = Date.now();
-  const statements: D1PreparedStatement[] = [];
-  for (const product of importedDistributionProducts) {
-    const keyword = `dofesh-${product.id}`;
-    statements.push(env.DB.prepare("UPDATE products SET name=?,updated_at=? WHERE id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1)").bind(product.name, now, keyword));
-    statements.push(env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1) AND media_type='image'").bind(product.name, now, keyword));
-  }
-  for (let index = 0; index < statements.length; index += 50) await env.DB.batch(statements.slice(index, index + 50));
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
-}
-
 const unavailableSourceIds = new Set([1249,1248,1199,1198,1190,1184,1180,1148,1083,1051,1050,1009,908,907,901,897,896,882,878,859,833,827,821,784,775,750,748,738,718,707,654,639,628,606,605,604,597,588,586,564,557,545,544,540,532,529,512,506,488,478,468,463,462,442,426,422,382,381,380,358]);
-
-async function ensureOrganizedFullCatalog(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-full-catalog-organized-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const now = Date.now();
-  let nextCategoryNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(category_number),1000)+1 AS next FROM categories").first<{next:number}>())?.next || 1001);
-  const categoryIds = new Map<string, number>();
-  const managedNames = organizedCategoryTree.flatMap(([mainName, children]) => [mainName, ...children]);
-  const managedRows = await env.DB.prepare(`SELECT id,name FROM categories WHERE name IN (${managedNames.map(()=>"?").join(",")})`).bind(...managedNames).all<{id:number;name:string}>();
-  for (const row of managedRows.results) categoryIds.set(row.name, Number(row.id));
-  let sortOrder = 10;
-  if (categoryIds.size < managedNames.length) for (const [mainName, children] of organizedCategoryTree) {
-    let main = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(mainName).first<{id:number}>();
-    if (!main) {
-      const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,NULL,?,?,NULL,NULL,NULL,1,1,?,?)")
-        .bind(nextCategoryNumber++, mainName, slugify(mainName), now, now).run();
-      main = { id: Number(created.meta.last_row_id) };
-    }
-    await env.DB.prepare("UPDATE categories SET parent_id=NULL,sort_order=?,active=1,updated_at=? WHERE id=?").bind(sortOrder, now, main.id).run();
-    categoryIds.set(mainName, main.id);
-    let childOrder = 1;
-    for (const childName of children) {
-      let child = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(childName).first<{id:number}>();
-      if (!child) {
-        const created = await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,NULL,NULL,NULL,?,1,?,?)")
-          .bind(nextCategoryNumber++, main.id, childName, slugify(childName), childOrder, now, now).run();
-        child = { id: Number(created.meta.last_row_id) };
-      }
-      await env.DB.prepare("UPDATE categories SET parent_id=?,sort_order=?,active=1,updated_at=? WHERE id=?").bind(main.id, childOrder++, now, child.id).run();
-      categoryIds.set(childName, child.id);
-    }
-    sortOrder += 10;
-  }
-
-  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
-  const startIndex = Math.max(0, Number(progress?.next_index || 0));
-  const endIndex = Math.min(importedAllProducts.length, startIndex + 60);
-  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  let nextProductId = Number((await env.DB.prepare("SELECT COALESCE(MAX(id),0)+1 AS next FROM products").first<{next:number}>())?.next || 1);
-  const batchProducts = importedAllProducts.slice(startIndex, endIndex);
-  const keywords = batchProducts.map(product => `dofesh-${product.id}`);
-  const existingRows = keywords.length ? await env.DB.prepare(`SELECT product_id,keyword FROM product_keywords WHERE keyword IN (${keywords.map(()=>"?").join(",")})`).bind(...keywords).all<{product_id:number;keyword:string}>() : { results: [] };
-  const existingByKeyword = new Map(existingRows.results.map(row => [row.keyword, Number(row.product_id)]));
-  const productStatements: D1PreparedStatement[] = [];
-  const relatedStatements: D1PreparedStatement[] = [];
-  for (let index = startIndex; index < endIndex; index += 1) {
-    const product = importedAllProducts[index];
-    const keyword = `dofesh-${product.id}`;
-    const categoryName = organizedCategoryFor(product.name);
-    const categoryId = categoryIds.get(categoryName) || categoryIds.get("مستلزمات متنوعة");
-    if (!categoryId) continue;
-    const stock = unavailableSourceIds.has(product.id) ? 0 : 100;
-    const existingProductId = existingByKeyword.get(keyword);
-    if (existingProductId) {
-      productStatements.push(env.DB.prepare("UPDATE products SET category_id=?,name=?,price_agorot=?,stock_quantity=?,active=1,updated_at=? WHERE id=?").bind(categoryId, product.name, Math.round(product.price * 100), stock, now, existingProductId));
-      relatedStatements.push(env.DB.prepare("UPDATE product_media SET alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'").bind(product.name, now, existingProductId));
-    } else {
-      const productId = nextProductId++;
-      productStatements.push(env.DB.prepare("INSERT INTO products (id,item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,NULL,?,NULL,NULL,?,1,0,NULL,0,0,0,0,?,?)")
-        .bind(productId, nextItemNumber, categoryId, product.name, slugify(`${product.name}-${nextItemNumber}`), Math.round(product.price * 100), stock, now, now));
-      const extension = new URL(product.image).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-      relatedStatements.push(env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/dofesh-${product.id}.${extension}`, product.name, now, now));
-      relatedStatements.push(env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
-      nextItemNumber += 1;
-    }
-  }
-  for (let index = 0; index < productStatements.length; index += 50) await env.DB.batch(productStatements.slice(index, index + 50));
-  for (let index = 0; index < relatedStatements.length; index += 50) await env.DB.batch(relatedStatements.slice(index, index + 50));
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
-  if (endIndex >= importedAllProducts.length) {
-    const managedIds = [...categoryIds.values()];
-    const legacy = await env.DB.prepare(`SELECT id,name FROM categories WHERE id NOT IN (${managedIds.map(()=>"?").join(",")})`).bind(...managedIds).all<{id:number;name:string}>();
-    for (const old of legacy.results) {
-      const targetName = organizedCategoryFor(old.name);
-      const targetId = categoryIds.get(targetName);
-      if (!targetId) continue;
-      await env.DB.prepare("UPDATE products SET category_id=?,updated_at=? WHERE category_id=?").bind(targetId, now, old.id).run();
-      await env.DB.prepare("UPDATE categories SET active=0,updated_at=? WHERE id=?").bind(now, old.id).run();
-    }
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
-    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
-  }
-}
-
-async function ensureCorrectedFullCatalogPrices(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_progress (seed_key TEXT PRIMARY KEY, next_index INTEGER NOT NULL)").run();
-  const seedKey = "dofesh-full-catalog-correct-prices-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
-  const startIndex = Math.max(0, Number(progress?.next_index || 0));
-  const endIndex = Math.min(importedAllProducts.length, startIndex + 200);
-  const now = Date.now();
-  const statements = importedAllProducts.slice(startIndex, endIndex).map(product => env.DB.prepare("UPDATE products SET price_agorot=?,updated_at=? WHERE id=(SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1)")
-    .bind(Math.round(product.price * 100), now, `dofesh-${product.id}`));
-  for (let index = 0; index < statements.length; index += 50) await env.DB.batch(statements.slice(index, index + 50));
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
-  if (endIndex >= importedAllProducts.length) {
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
-    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
-  }
-}
 
 const normalizedSupplierName = (value: string) => value
   .normalize("NFKC").toLowerCase().replace(/[إأآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي")
@@ -539,149 +188,8 @@ const jabariRetailAgorot = (sourcePrice: number) => {
   return Math.round(retail * 100);
 };
 
-async function ensureImportedSupplierCatalog(env: Env) {
-  const now = Date.now();
-  await env.DB.prepare("INSERT OR IGNORE INTO suppliers (supplier_number,name,phone,address,notes,active,created_at,updated_at) VALUES (9101,'متجر دوفش',NULL,NULL,'مورد المنتجات المستوردة من dofesh.ps',1,?,?)").bind(now, now).run();
-  await env.DB.prepare("INSERT OR IGNORE INTO suppliers (supplier_number,name,phone,address,notes,active,created_at,updated_at) VALUES (9102,'الجعبري للنثريات والإكسسوارات',NULL,NULL,'مورد المنتجات المستوردة من jabaristore.com',1,?,?)").bind(now, now).run();
-  const dofesh = await env.DB.prepare("SELECT id FROM suppliers WHERE supplier_number=9101 LIMIT 1").first<{id:number}>();
-  const jabari = await env.DB.prepare("SELECT id FROM suppliers WHERE supplier_number=9102 LIMIT 1").first<{id:number}>();
-  if (!dofesh || !jabari) return;
-
-  const dofeshSeed = "supplier-links-dofesh-2026-09-01-v1";
-  if (!(await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(dofeshSeed).first())) {
-    const rows = await env.DB.prepare("SELECT p.id,p.price_agorot,k.keyword FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND ps.id IS NULL ORDER BY p.id LIMIT 250").bind(dofesh.id).all<{id:number;price_agorot:number;keyword:string}>();
-    const missing = rows.results;
-    if (missing.length) {
-      await env.DB.batch(missing.map(row => env.DB.prepare("INSERT INTO product_suppliers (product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) VALUES (?,?,?,?,?,1,?,?) ON CONFLICT(product_id,supplier_id) DO UPDATE SET source_product_id=excluded.source_product_id,source_url=excluded.source_url,supplier_price_agorot=excluded.supplier_price_agorot,updated_at=excluded.updated_at")
-        .bind(Number(row.id), dofesh.id, String(row.keyword).slice(7), `https://dofesh.ps/?app=product.show.${String(row.keyword).slice(7)}`, Number(row.price_agorot), now, now)));
-    }
-    const remaining = await env.DB.prepare("SELECT COUNT(*) AS count FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND ps.id IS NULL").bind(dofesh.id).first<{count:number}>();
-    if (!Number(remaining?.count || 0)) await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(dofeshSeed, now).run();
-  }
-
-  const seedKey = "jabari-full-catalog-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
-  const startIndex = Math.max(0, Number(progress?.next_index || 0));
-  const endIndex = Math.min(importedJabariProducts.length, startIndex + 80);
-  const batch = importedJabariProducts.slice(startIndex, endIndex);
-  const sourceKeywords = batch.map(product => `jabari-${product.sourceId}`);
-  const existingSourceRows = sourceKeywords.length ? await env.DB.prepare(`SELECT product_id,keyword FROM product_keywords WHERE keyword IN (${sourceKeywords.map(()=>"?").join(",")})`).bind(...sourceKeywords).all<{product_id:number;keyword:string}>() : {results:[]};
-  const existingBySource = new Map(existingSourceRows.results.map(row => [row.keyword, Number(row.product_id)]));
-  const dofeshRows = await env.DB.prepare("SELECT p.id,p.name,p.price_agorot FROM products p JOIN product_keywords k ON k.product_id=p.id LEFT JOIN product_suppliers ps ON ps.product_id=p.id AND ps.supplier_id=? WHERE k.keyword LIKE 'dofesh-%' AND p.deleted_at IS NULL AND ps.id IS NULL").bind(jabari.id).all<{id:number;name:string;price_agorot:number}>();
-  const exactDofesh = new Map<string, number>();
-  for (const row of dofeshRows.results) exactDofesh.set(`${normalizedSupplierName(row.name)}|${Number(row.price_agorot)}`, Number(row.id));
-  let nextItemNumber = Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number),1000)+1 AS next FROM products").first<{next:number}>())?.next || 1001);
-  let nextProductId = Number((await env.DB.prepare("SELECT COALESCE(MAX(id),0)+1 AS next FROM products").first<{next:number}>())?.next || 1);
-  const productStatements: D1PreparedStatement[] = [];
-  const relatedStatements: D1PreparedStatement[] = [];
-  for (const product of batch) {
-    const keyword = `jabari-${product.sourceId}`;
-    const sourceAgorot = Math.round(Number(product.sourcePrice) * 100);
-    const retailAgorot = jabariRetailAgorot(Number(product.sourcePrice));
-    const duplicateKey = `${normalizedSupplierName(product.name)}|${sourceAgorot}`;
-    let productId = existingBySource.get(keyword) || exactDofesh.get(duplicateKey);
-    if (!existingBySource.has(keyword) && productId) exactDofesh.delete(duplicateKey);
-    if (productId) {
-      productStatements.push(env.DB.prepare("UPDATE products SET purchase_price_agorot=CASE WHEN purchase_price_agorot IS NULL OR purchase_price_agorot>? THEN ? ELSE purchase_price_agorot END,price_agorot=CASE WHEN price_agorot>? THEN ? ELSE price_agorot END,updated_at=? WHERE id=?").bind(sourceAgorot, sourceAgorot, retailAgorot, retailAgorot, now, productId));
-      relatedStatements.push(env.DB.prepare("INSERT OR IGNORE INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
-    } else {
-      const categoryName = organizedCategoryFor(product.name);
-      const category = await env.DB.prepare("SELECT id FROM categories WHERE name=? LIMIT 1").bind(categoryName).first<{id:number}>();
-      if (!category) continue;
-      productId = nextProductId++;
-      productStatements.push(env.DB.prepare("INSERT INTO products (id,item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,NULL,NULL,?,NULL,?,100,1,0,NULL,0,0,0,0,?,?)")
-        .bind(productId, nextItemNumber, category.id, product.name, slugify(`${product.name}-${nextItemNumber}`), retailAgorot, sourceAgorot, now, now));
-      const extension = new URL(product.imageUrl).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-      relatedStatements.push(env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,NULL,'image',?,?,0,1,?,?)").bind(productId, `/media/imports/jabari-${product.sourceId}.${extension}`, product.name, now, now));
-      relatedStatements.push(env.DB.prepare("INSERT INTO product_keywords (product_id,keyword) VALUES (?,?)").bind(productId, keyword));
-      nextItemNumber += 1;
-    }
-    relatedStatements.push(env.DB.prepare("INSERT INTO product_suppliers (product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) VALUES (?,?,?,?,?,1,?,?) ON CONFLICT(product_id,supplier_id) DO UPDATE SET source_product_id=excluded.source_product_id,source_url=excluded.source_url,supplier_price_agorot=excluded.supplier_price_agorot,updated_at=excluded.updated_at")
-      .bind(productId, jabari.id, String(product.sourceId), product.sourceUrl, sourceAgorot, now, now));
-  }
-  for (let index = 0; index < productStatements.length; index += 40) await env.DB.batch(productStatements.slice(index, index + 40));
-  for (let index = 0; index < relatedStatements.length; index += 40) await env.DB.batch(relatedStatements.slice(index, index + 40));
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
-  if (endIndex >= importedJabariProducts.length) {
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
-    await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
-  }
-}
-
-async function ensureImportedSourceVariants(env: Env) {
-  const sources = [
-    { name: "dofesh", rows: importedDofeshVariants, markup: false },
-    { name: "jabari", rows: importedJabariVariants, markup: true },
-  ] as const;
-  for (const source of sources) {
-    const rows = source.rows.filter(record => Object.values(record.groups || {}).some(group => group.length));
-    const seedKey = `${source.name}-product-variants-${rows.length}-v1`;
-    if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) continue;
-    const progress = await env.DB.prepare("SELECT next_index FROM product_import_progress WHERE seed_key=?").bind(seedKey).first<{next_index:number}>();
-    const startIndex = Math.max(0, Number(progress?.next_index || 0));
-    const endIndex = Math.min(rows.length, startIndex + 25);
-    const now = Date.now();
-    for (const record of rows.slice(startIndex, endIndex)) {
-      const product = await env.DB.prepare("SELECT product_id FROM product_keywords WHERE keyword=? LIMIT 1").bind(`${source.name}-${record.sourceId}`).first<{product_id:number}>();
-      if (!product) continue;
-      const groups = Object.entries(record.groups || {}).filter(([,values]) => values.length);
-      if (!groups.length) continue;
-      await env.DB.batch([
-        env.DB.prepare("DELETE FROM product_options WHERE product_id=?").bind(product.product_id),
-        env.DB.prepare("DELETE FROM product_variants WHERE product_id=?").bind(product.product_id),
-        env.DB.prepare("DELETE FROM product_media WHERE product_id=? AND variant_id IS NOT NULL").bind(product.product_id),
-      ]);
-      const optionLabel = groups[0][0] === "size" ? "القياس" : groups[0][0] === "color" ? "الخيار" : "الخيار";
-      const optionResult = await env.DB.prepare("INSERT INTO product_options (product_id,name,display_type,sort_order) VALUES (?,?,'text',0)").bind(product.product_id, optionLabel).run();
-      const optionId = Number(optionResult.meta.last_row_id);
-      const flattened = groups.flatMap(([groupName, values]) => values.filter(value => !value.disabled).map(value => ({...value, groupName})));
-      for (let index = 0; index < flattened.length; index += 1) {
-        const variant = flattened[index];
-        const displayName = groups.length > 1 ? `${variant.groupName}: ${variant.name}` : variant.name;
-        const sourcePrice = Number(variant.oldSourcePrice || variant.sourcePrice);
-        const retailPrice = source.markup ? jabariRetailAgorot(sourcePrice) : Math.round(sourcePrice * 100);
-        const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,NULL,?)").bind(optionId, displayName, index).run();
-        const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,NULL,?,NULL,?,100,1,?,?)").bind(product.product_id, retailPrice, Math.round(sourcePrice * 100), now, now).run();
-        const variantId = Number(variantResult.meta.last_row_id);
-        await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(variantId, Number(valueResult.meta.last_row_id)).run();
-        if (variant.imageUrl) {
-          const absolute = new URL(variant.imageUrl, source.name === "jabari" ? "https://jabaristore.com/" : "https://dofesh.ps/").toString();
-          const extension = new URL(absolute).pathname.split(".").pop()?.toLowerCase() || "jpeg";
-          const groupOffset = groups.slice(0, groups.findIndex(([name]) => name === variant.groupName)).reduce((sum,[,values]) => sum + values.length, 0);
-          const mediaIndex = groupOffset + groups.find(([,values]) => values.some(value => value.name === variant.name))![1].findIndex(value => value.name === variant.name);
-          await env.DB.prepare("INSERT INTO product_media (product_id,variant_id,media_type,url,alt_text,sort_order,is_primary,created_at,updated_at) VALUES (?,?,'image',?,?,0,1,?,?)").bind(product.product_id, variantId, `/media/imports/${source.name}-${record.sourceId}-variant-${mediaIndex}.${extension}`, displayName, now, now).run();
-        }
-      }
-      await env.DB.prepare("UPDATE products SET stock_quantity=0,price_agorot=?,purchase_price_agorot=?,updated_at=? WHERE id=?").bind(Math.min(...flattened.map(variant => source.markup ? jabariRetailAgorot(Number(variant.oldSourcePrice || variant.sourcePrice)) : Math.round(Number(variant.oldSourcePrice || variant.sourcePrice) * 100))), Math.min(...flattened.map(variant => Math.round(Number(variant.oldSourcePrice || variant.sourcePrice) * 100))), now, product.product_id).run();
-    }
-    await env.DB.prepare("INSERT OR REPLACE INTO product_import_progress (seed_key,next_index) VALUES (?,?)").bind(seedKey, endIndex).run();
-    if (endIndex >= rows.length) {
-      await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, Date.now()).run();
-      await env.DB.prepare("DELETE FROM product_import_progress WHERE seed_key=?").bind(seedKey).run();
-    }
-  }
-}
-
-async function ensureProduct2222EditedImage(env: Env) {
-  await env.DB.prepare("CREATE TABLE IF NOT EXISTS product_import_seeds (seed_key TEXT PRIMARY KEY, completed_at INTEGER NOT NULL)").run();
-  const seedKey = "product-2222-edited-image-2026-09-01-v1";
-  if (await env.DB.prepare("SELECT seed_key FROM product_import_seeds WHERE seed_key=?").bind(seedKey).first()) return;
-  const product = await env.DB.prepare("SELECT id FROM products WHERE item_number=2222 AND deleted_at IS NULL LIMIT 1").first<{id:number}>();
-  if (!product) return;
-  const now = Date.now();
-  await env.DB.prepare("UPDATE product_media SET url=?,alt_text=?,updated_at=? WHERE product_id=? AND media_type='image'")
-    .bind("/product-images/product-2222-edited.webp", "مراية قلاب مدور حديد", now, product.id).run();
-  await env.DB.prepare("INSERT OR REPLACE INTO product_import_seeds (seed_key,completed_at) VALUES (?,?)").bind(seedKey, now).run();
-}
-
 type StorePolicyRecord={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number};
-const defaultStorePolicies={
-  receiving:"يستقبل المتجر الطلبات إلكترونياً على مدار الساعة. تسجيل الطلب لا يعني تأكيده نهائياً؛ يعتمد الطلب بعد مراجعة البيانات وتوفر المنتجات. يحق للمتجر التواصل مع الزبون للتأكيد أو طلب معلومات إضافية، ويمكن تعليق الطلب أو إلغاؤه إذا تعذر التواصل أو كانت البيانات ناقصة. إذا نفد منتج بعد تسجيل الطلب، يتم التواصل لاختيار بديل أو حذف المنتج غير المتوفر.",
-  shipping:"تستغرق مدة التوصيل عادةً من يوم إلى يومين، وقد تستغرق وقتاً إضافياً حسب ضغط الطلبات أو المنطقة أو الظروف الجوية وشركة الشحن. أسعار التوصيل الأساسية: الضفة الغربية 20 شيكل، القدس 30 شيكل، والداخل 70 شيكل. قد تضاف رسوم موضحة مسبقاً للطلبات كبيرة الحجم أو التي تحتاج ترتيبات خاصة. الزبون مسؤول عن صحة رقم الهاتف والعنوان.",
-  cancellation:"يمكن إلغاء الطلب ما دام لم يخرج للتوصيل. بعد خروجه لا يمكن إلغاؤه أو رفض استلامه، وفي حال رفض الاستلام أو تعذر التسليم بسبب الزبون يبقى ملزماً بدفع رسوم التوصيل. الطلبات المخصصة أو المصنوعة حسب الطلب لا يمكن إلغاؤها بعد بدء تجهيزها.",
-  exchange:"يمكن طلب الاستبدال خلال يوم واحد من الاستلام بشرط أن يكون المنتج غير مستخدم وبحالته الأصلية مع كامل ملحقاته وتغليفه. لا يوجد استرجاع نقدي. المنتجات المخصصة أو المكتوب عليها أسماء أو عبارات لا تستبدل إلا إذا وصلت خاطئة أو متضررة. يتحمل الزبون تكلفة الاستبدال عند تغيير رأيه، ويتحمل المتجر التكلفة عند الخطأ أو الضرر. يجب فحص الطلب فور استلامه والإبلاغ عن الكسر أو التلف أو النقص خلال ساعتين مع صور واضحة؛ بعد ساعتين لا تقبل بلاغات الضرر الظاهر."
-};
+const defaultStorePolicies={receiving:'يرجى مراجعة المتجر بشأن استقبال الطلبات.',shipping:'تُحدد مناطق ورسوم التوصيل من إدارة المتجر.',cancellation:'يرجى التواصل مع المتجر لمعرفة شروط الإلغاء.',exchange:'يرجى التواصل مع المتجر لمعرفة شروط الاستبدال.'};
 let storePoliciesReady:Promise<void>|null=null;
 async function ensureStorePoliciesSchema(env:Env){
   if(!storePoliciesReady)storePoliciesReady=(async()=>{
@@ -723,13 +231,14 @@ async function savePolicies(request:Request,env:Env){
 }
 
 async function readStorefront(env: Env) {
+  const profile=await readStoreProfile(env.DB);
   const [row, slides, popup, highlightData] = await Promise.all([
     env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
     env.DB.prepare("SELECT id,title,image_url,product_id,category_id,external_url,sort_order,active FROM sliders ORDER BY sort_order,id").all(),
     env.DB.prepare("SELECT id,title,body,image_url,target_url,active FROM popups ORDER BY id DESC LIMIT 1").first<Record<string,unknown>>(),
     readHighlights(env),
   ]);
-  const settings = { metaPixelId:String(row?.meta_pixel_id??"1231904457865622"),metaPixelEnabled:Boolean(row?.meta_pixel_enabled??1),storeName:String(row?.store_name||"منار بارتي ستور | Manar Party Store"),siteNameAr:String(row?.site_name_ar||"منار بارتي ستور"),siteNameEn:String(row?.site_name_en||"Manar Party Store"),seoDescription:String(row?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة"),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
+  const settings = { ...profile,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
   return {settings,highlightsEnabled:highlightData.enabled,highlightsIntervalMs:highlightData.intervalMs,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
@@ -737,13 +246,15 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
-  await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"Manar Store",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
+  await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
   await env.DB.prepare("UPDATE store_settings SET watermark_enabled=?,watermark_x=?,watermark_y=?,watermark_size=? WHERE id=1").bind(asBoolean(body.watermarkEnabled)?1:0,Math.min(98,Math.max(2,Number(body.watermarkX)||90)),Math.min(98,Math.max(2,Number(body.watermarkY)||90)),Math.min(60,Math.max(2,Number(body.watermarkSize)||24))).run();
-  await env.DB.prepare("UPDATE store_settings SET site_name_ar=?,site_name_en=?,seo_description=?,favicon_url=? WHERE id=1").bind((asText(body.siteNameAr)||"منار بارتي ستور").slice(0,60),(asText(body.siteNameEn)||"Manar Party Store").slice(0,60),(asText(body.seoDescription)||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة").slice(0,170),asOptionalText(body.faviconUrl)).run();
+  await env.DB.prepare("UPDATE store_settings SET site_name_ar=?,site_name_en=?,seo_description=?,favicon_url=? WHERE id=1").bind((asText(body.siteNameAr)||"").slice(0,60),(asText(body.siteNameEn)||"").slice(0,60),(asText(body.seoDescription)||"").slice(0,170),asOptionalText(body.faviconUrl)).run();
   if(metaPixelId!==undefined)await env.DB.prepare("UPDATE store_settings SET meta_pixel_id=? WHERE id=1").bind(metaPixelId).run();
   if(body.metaPixelEnabled!==undefined)await env.DB.prepare("UPDATE store_settings SET meta_pixel_enabled=? WHERE id=1").bind(asBoolean(body.metaPixelEnabled)?1:0).run();
+  await saveStoreProfile(env.DB,profile);
   return json({ok:true});
 }
 
@@ -791,8 +302,6 @@ async function initializeCustomerAuthSchema(env:Env){
     await env.DB.prepare("ALTER TABLE shipping_zones RENAME TO "+backupName).run();
   }
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS shipping_zones (code TEXT PRIMARY KEY,label TEXT NOT NULL,price_agorot INTEGER NOT NULL,active INTEGER NOT NULL DEFAULT 1,sort_order INTEGER NOT NULL DEFAULT 0,updated_at INTEGER NOT NULL)").run();
-  const zoneNow=Date.now();
-  await env.DB.prepare("INSERT OR IGNORE INTO shipping_zones (code,label,price_agorot,active,sort_order,updated_at) VALUES ('west_bank','الضفة الغربية',2000,1,0,?),('jerusalem','القدس',3000,1,1,?),('inside','الداخل',7000,1,2,?)").bind(zoneNow,zoneNow,zoneNow).run();
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS customer_addresses (id INTEGER PRIMARY KEY AUTOINCREMENT,account_id INTEGER NOT NULL,label TEXT NOT NULL,recipient_name TEXT NOT NULL,phone TEXT NOT NULL,city TEXT NOT NULL,address TEXT NOT NULL,shipping_zone TEXT NOT NULL,is_default INTEGER NOT NULL DEFAULT 0,created_at INTEGER NOT NULL,updated_at INTEGER NOT NULL,FOREIGN KEY(account_id) REFERENCES customer_accounts(id) ON DELETE CASCADE)").run();
   await env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_customer_addresses_account ON customer_addresses(account_id)").run();
   const columns=await env.DB.prepare("PRAGMA table_info(orders)").all<{name:string}>();
@@ -1271,7 +780,7 @@ function cleanCatalogDescription(value: unknown): string {
 }
 function xmlEscape(value:string){return value.replace(/[<>&'"]/g,character=>({"<":"&lt;",">":"&gt;","&":"&amp;","'":"&apos;",'"':"&quot;"}[character]||character))}
 function htmlEscape(value:string){return value.replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]||character))}
-function absoluteStoreUrl(value:string,origin:string){if(!value)return origin+"/og.png";try{return new URL(value,origin).toString()}catch{return origin+"/og.png"}}
+function absoluteStoreUrl(value:string,origin:string){if(!value)return origin+"/store-icon.svg";try{return new URL(value,origin).toString()}catch{return origin+"/store-icon.svg"}}
 function securityHeaders(headers:Headers){
   headers.set("x-content-type-options","nosniff");
   headers.set("x-frame-options","DENY");
@@ -1288,6 +797,8 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
   }
   if(url.pathname==="/google-merchant-feed.xml"){
     const catalog=await readCatalog(env,false);
+    const merchant=await env.DB.prepare("SELECT store_name,site_name_ar,seo_description FROM store_settings WHERE id=1").first<Record<string,unknown>>();
+    const merchantName=String(merchant?.site_name_ar||merchant?.store_name||"المتجر");
     const products=catalog.products.filter(product=>product.active&&!isImportedErrorName(product.name)&&Number(product.price)>0&&Boolean(product.image));
     const clean=(value:unknown)=>String(value??"").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g," ").trim();
     const items=products.map(product=>{
@@ -1306,11 +817,11 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
         "      <g:availability>"+availability+"</g:availability>\n"+
         "      <g:price>"+Number(product.price).toFixed(2)+" ILS</g:price>\n"+
         "      <g:condition>new</g:condition>\n"+
-        "      <g:brand>Manar Store</g:brand>\n"+
+        "      <g:brand>"+xmlEscape(merchantName)+"</g:brand>\n"+
         "      <g:identifier_exists>false</g:identifier_exists>\n"+
         "    </item>";
     }).join("\n");
-    const body='<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Manar Store</title>\n    <link>'+xmlEscape(url.origin)+'</link>\n    <description>منتجات منار ستور</description>\n'+items+'\n  </channel>\n</rss>';
+    const body='<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>'+xmlEscape(merchantName)+'</title>\n    <link>'+xmlEscape(url.origin)+'</link>\n    <description>'+xmlEscape(String(merchant?.seo_description||""))+'</description>\n'+items+'\n  </channel>\n</rss>';
     return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=900, s-maxage=1800"}))});
   }
   if(url.pathname!=="/sitemap.xml")return null;
@@ -1329,15 +840,15 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
 async function storefrontSeo(env:Env,url:URL):Promise<string>{
   await ensureStorefrontColumns(env);
   const settings=await env.DB.prepare("SELECT store_name,site_name_ar,site_name_en,seo_description,logo_url,favicon_url,primary_color,secondary_color,background_color FROM store_settings WHERE id=1").first<{store_name:string;site_name_ar:string;site_name_en:string;seo_description:string;logo_url:string;favicon_url:string;primary_color:string;secondary_color:string;background_color:string}>();
-  const storeName=String(settings?.site_name_ar||settings?.store_name||"منار بارتي ستور");
-  const alternateName=String(settings?.site_name_en||"Manar Party Store");
+  const storeName=String(settings?.site_name_ar||settings?.store_name||"المتجر");
+  const alternateName=String(settings?.site_name_en||"");
   const homeTitle=storeName+" | "+alternateName;
-  const homeDescription=String(settings?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة");
-  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/_store/favicon?v=1.1.5"),url.origin);
+  const homeDescription=String(settings?.seo_description||"");
+  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/_store/favicon?v=1.3.0"),url.origin);
   const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
   let canonicalUrl=url.origin+cleanPath;
   let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
-  let title=homeTitle,description=homeDescription,image=absoluteStoreUrl(String(settings?.logo_url||"/og.png"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"WebSite",name:storeName,alternateName,url:url.origin+"/",description:homeDescription};
+  let title=homeTitle,description=homeDescription,image=absoluteStoreUrl(String(settings?.logo_url||"/store-icon.svg"),url.origin),type="website",jsonLd:Record<string,unknown>={"@context":"https://schema.org","@type":"WebSite",name:storeName,alternateName,url:url.origin+"/",description:homeDescription};
   const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
   if(productMatch){
     const value=Number(productMatch[1]);
@@ -1377,17 +888,15 @@ function injectSeo(html:string,head:string){
 async function fetchImageSource(path:string,env:Env,request:Request):Promise<Response>{
   const sourceUrl=new URL(path,request.url);
   if(sourceUrl.origin!==new URL(request.url).origin)return new Response("Invalid image source",{status:400});
-  if(sourceUrl.pathname==="/product-images/product-2222-edited.webp"){
-    const binary=atob(product2222ImageBase64),bytes=Uint8Array.from(binary,character=>character.charCodeAt(0));
-    return new Response(bytes,{headers:{"content-type":"image/webp"}});
-  }
-  if(!sourceUrl.pathname.startsWith("/media/"))return env.ASSETS.fetch(new Request(sourceUrl));
+  if(sourceUrl.pathname.startsWith("/product-images/")){const object=await env.MEDIA.get(sourceUrl.pathname.slice(1));if(!object)return new Response("Not Found",{status:404});const headers=new Headers();object.writeHttpMetadata(headers);return new Response(object.body,{headers});}
+  if(!sourceUrl.pathname.startsWith("/media/"))return (await storeAssetResponse(env.MEDIA,sourceUrl.pathname))||env.ASSETS.fetch(new Request(sourceUrl));
   let key:string;
   try{key=decodeURIComponent(sourceUrl.pathname.slice("/media/".length))}catch{return new Response("Invalid image path",{status:400})}
   const object=await env.MEDIA.get(key);
+  const importedMediaSources=object?new Map<string,string[]>():await mediaSources(env.MEDIA);
   if(!object&&importedMediaSources.has(key)){
     for(const source of importedMediaSources.get(key)||[]){
-      const candidate=await fetch(source,{headers:{accept:"image/*","user-agent":"ManarStore/1.0"}});
+      const candidate=await fetch(source,{headers:{accept:"image/*","user-agent":"StoreMedia/1.0"}});
       if(candidate.ok&&candidate.headers.get("content-type")?.startsWith("image/")){
         const bytes=await candidate.arrayBuffer(),contentType=candidate.headers.get("content-type")?.split(";")[0]||"image/jpeg";
         await env.MEDIA.put(key,bytes,{httpMetadata:{contentType}});
@@ -1411,11 +920,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     await env.DB.prepare("INSERT OR IGNORE INTO pwa_installations(installation_id,surface,source,installed_at) VALUES(?,?,?,?)").bind(installationId,env.APP_SURFACE,source,Date.now()).run();
     return json({ok:true});
   }
-  if (request.method === "GET" && url.pathname === "/product-images/product-2222-edited.webp") {
-    const binary = atob(product2222ImageBase64);
-    const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
-    return new Response(bytes, { headers: { "content-type": "image/webp", "cache-control": "public, max-age=31536000, immutable" } });
-  }
+  if(request.method==="GET"&&url.pathname.startsWith("/product-images/")){const object=await env.MEDIA.get(url.pathname.slice(1));if(!object)return new Response("Not Found",{status:404});const headers=new Headers();object.writeHttpMetadata(headers);return new Response(object.body,{headers});}
   if(request.method==="GET"&&url.pathname==="/api/seo"&&env.APP_SURFACE==="storefront"){
     const path=url.searchParams.get("path")||"/";
     if(!path.startsWith("/")||path.startsWith("//")||path.includes("\\\\")||path.length>500)return json({error:"Invalid path"},{status:400});
@@ -1459,10 +964,11 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     const key = decodeURIComponent(url.pathname.slice(7));
     const rangeHeader = request.headers.get("range");
     let object = await env.MEDIA.get(key, rangeHeader ? { range: request.headers } : undefined);
+    const importedMediaSources=object?new Map<string,string[]>():await mediaSources(env.MEDIA);
     if (!object && importedMediaSources.has(key)) {
       let remote: Response | null = null;
       for (const source of importedMediaSources.get(key) || []) {
-        const candidate = await fetch(source, { headers: { accept: "image/*", "user-agent": "ManarStore/1.0" } });
+        const candidate = await fetch(source, { headers: { accept: "image/*", "user-agent": "StoreMedia/1.0" } });
         if (candidate.ok && candidate.headers.get("content-type")?.startsWith("image/")) { remote = candidate; break; }
       }
       if (remote) {
@@ -1614,7 +1120,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if(blocked(target))return json({error:"يجب استخدام رابط صورة HTTPS عام"},{status:400});
     let remote:Response|null=null;
     for(let redirect=0;redirect<4;redirect++){
-      remote=await fetch(target.toString(),{headers:{accept:"image/*","user-agent":"ManarStore/1.0"},redirect:"manual"});
+      remote=await fetch(target.toString(),{headers:{accept:"image/*","user-agent":"StoreMedia/1.0"},redirect:"manual"});
       if(remote.status<300||remote.status>=400)break;
       const location=remote.headers.get("location");if(!location)return json({error:"تعذر متابعة رابط الصورة"},{status:400});
       target=new URL(location,target);if(blocked(target))return json({error:"تحويل رابط الصورة غير مسموح"},{status:400});
@@ -1665,10 +1171,7 @@ const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
-    if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
-      const target=new URL(url);target.protocol="https:";target.hostname="manarstore.ps";
-      return Response.redirect(target.toString(),308);
-    }
+    if(request.method==="GET"&&!url.pathname.startsWith("/media/")&&/\.(?:webp|png|jpe?g|gif|svg)$/i.test(url.pathname)){const asset=await storeAssetResponse(env.MEDIA,url.pathname);if(asset)return asset;}
     const isAdminPath = url.pathname === "/admin" || url.pathname.startsWith("/admin/");
 
     if (env.APP_SURFACE === "admin" && url.pathname === "/robots.txt") {
@@ -1693,6 +1196,15 @@ const worker = {
     }
 
     try {
+      if(env.APP_SURFACE==="storefront"){
+        const profile=await readStoreProfile(env.DB);
+        if(profile.publicOrigin&&url.origin!==profile.publicOrigin){const target=new URL(url.pathname+url.search,profile.publicOrigin);return Response.redirect(target.toString(),308)}
+      }
+      if(request.method==="GET"&&["/manifest.webmanifest","/admin-manifest.webmanifest"].includes(url.pathname)){
+        const row=await env.DB.prepare("SELECT store_name,site_name_ar,seo_description,logo_url,favicon_url,primary_color,background_color FROM store_settings WHERE id=1").first<Record<string,unknown>>();
+        const name=String(row?.site_name_ar||row?.store_name||"المتجر"),admin=env.APP_SURFACE==="admin",icon=String(row?.favicon_url||row?.logo_url||"/store-icon.svg");
+        return json({name:admin?name+" — الإدارة":name,short_name:name.slice(0,24),description:String(row?.seo_description||""),lang:"ar",dir:"rtl",start_url:admin?"/admin":"/",scope:"/",display:"standalone",background_color:String(row?.background_color||"#ffffff"),theme_color:String(row?.primary_color||"#475569"),icons:[{src:icon,sizes:"any",purpose:"any"}]},{headers:{"content-type":"application/manifest+json"}});
+      }
       if(env.APP_SURFACE==='admin'&&url.pathname==='/admin/cloudflare')return await cloudflareLogin(request,env);
       if(env.APP_SURFACE==='admin'&&isAdminPath&&url.pathname!=='/admin/login'){
         const actor=await currentActor(request,env);
@@ -1703,7 +1215,7 @@ const worker = {
       if(seoRouteResponse)return seoRouteResponse;
       const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
       if (cacheablePublicApi) {
-        const cache = caches.default;
+        const cache = (caches as CacheStorage & {default:Cache}).default;
         const cacheKey = new Request(url.toString(), { method: "GET" });
         const cached = await cache.match(cacheKey);
         if (cached) return cached;
@@ -1724,7 +1236,7 @@ const worker = {
       const source=url.searchParams.get("src")||"",width=Number(url.searchParams.get("width"));
       if(!source.startsWith("/media/")&&!source.startsWith("/product-images/"))return new Response("Invalid image source",{status:400});
       if(![256,384,640].includes(width))return new Response("Invalid image width",{status:400});
-      const cache=caches.default,cacheKey=new Request(url.toString(),{method:"GET"}),cached=await cache.match(cacheKey);
+      const cache=(caches as CacheStorage & {default:Cache}).default,cacheKey=new Request(url.toString(),{method:"GET"}),cached=await cache.match(cacheKey);
       if(cached)return cached;
       if(source.startsWith("/media/")){
         try{
@@ -1772,8 +1284,8 @@ const worker = {
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
       const head=env.APP_SURFACE==="storefront"
-        ?(await storefrontSeo(env,url))+googleAnalyticsHead+(await readMetaPixelHead(env,url))
-        :'<title>لوحة إدارة Manar Store</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
+        ?(await storefrontSeo(env,url))+(await readTrackingHead(env,url))
+        :'<title>لوحة إدارة المتجر</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
       return new Response(injectSeo(html,head+seoData),{status:appResponse.status,statusText:appResponse.statusText,headers});

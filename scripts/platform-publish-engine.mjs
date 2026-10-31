@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
-import {client,query,ROOT,PUBLISHING,ReleaseFailure,safeResources,verifyBindings,verifyArtifact,storefrontConfig,wrangler,command,safeError} from './platform-publish-common.mjs';
+import {client,query,ROOT,PUBLISHING,ReleaseFailure,safeResources,verifyBindings,verifyArtifact,surfaceConfig,wrangler,command,safeError} from './platform-publish-common.mjs';
 import {parseManifest} from '../platform/control/publishing-model.ts';
 
 export async function executeTargets(targets,adapter){
@@ -37,10 +37,10 @@ export async function run(){
     if(!cert||!v||cert.worker!==snapshot.worker||cert.databaseId!==snapshot.databaseId||cert.mediaBucket!==snapshot.mediaBucket||cert.track!==t.track||v.version!==t.version||v.revision!==t.revision)throw new ReleaseFailure('resource_identity_mismatch');
     const store=(await query(cf,'SELECT * FROM platform_stores WHERE id=?',[t.store_id]))[0],r=JSON.parse(store?.resources_json||'{}');
     if(store?.status!=='active'||r.storefrontWorker!==snapshot.worker||r.databaseId!==snapshot.databaseId||r.mediaBucket!==snapshot.mediaBucket||store.app_version!==snapshot.currentVersion||store.app_revision!==snapshot.currentRevision)throw new ReleaseFailure('store_changed_after_preview');
-    const settings=await cf.call('/workers/scripts/'+snapshot.worker+'/settings');verifyBindings(settings,snapshot);
-    const previous=await cf.call('/workers/scripts/'+snapshot.worker+'/deployments');
-    if(!previous.deployments?.length)throw new ReleaseFailure('missing_previous_deployment');
-    await query(cf,'UPDATE platform_release_targets SET previous_versions_json=? WHERE id=?',[JSON.stringify(previous.deployments[0].versions),t.id]);
+    const surfaces=v.surfaces,settings={},previous={};
+    if(surfaces.includes('admin')&&(!r.unifiedRuntimeReady||cert.adminWorker!==snapshot.adminWorker||r.adminWorker!==snapshot.adminWorker||r.adminVersion!==snapshot.currentAdminVersion||r.adminRevision!==snapshot.currentAdminRevision))throw new ReleaseFailure('store_changed_after_preview');
+    for(const surface of surfaces){const worker=surface==='admin'?snapshot.adminWorker:snapshot.worker;if(!/^[a-z0-9][a-z0-9-]{1,62}$/.test(worker||''))throw new ReleaseFailure('invalid_store_resources');settings[surface]=await cf.call('/workers/scripts/'+worker+'/settings');verifyBindings(settings[surface],snapshot,surface);if(surface==='admin'){const vars=settings[surface].bindings||[];if(!['ADMIN_OWNER_EMAIL','ADMIN_CF_TEAM','ADMIN_CF_AUD'].every(name=>vars.some(b=>b.name===name&&b.text)))throw new ReleaseFailure('admin_auth_requires_review');const origin=new URL(snapshot.adminUrl);if(origin.protocol!=='https:'||origin.username||origin.password||origin.pathname!=='/'||origin.search||origin.hash)throw new ReleaseFailure('invalid_store_origin');}const deployments=await cf.call('/workers/scripts/'+worker+'/deployments');if(!deployments.deployments?.length)throw new ReleaseFailure('missing_previous_deployment');previous[surface]=deployments.deployments[0].versions;}
+    await query(cf,'UPDATE platform_release_targets SET previous_versions_json=? WHERE id=?',[JSON.stringify(previous),t.id]);
     if(!artifacts.has(t.track)){
      const archive=path.join(temp,t.track+'.tar.gz'),dir=path.join(temp,t.track);fs.mkdirSync(dir);
      wrangler(['r2','object','get',PUBLISHING.artifactBucket+'/'+v.artifactKey,'--remote','--file',archive]);verifyArtifact(archive,v);
@@ -48,34 +48,37 @@ export async function run(){
      if(fs.readFileSync(path.join(dir,'VERSION'),'utf8').trim()!==v.version||!fs.existsSync(path.join(dir,'dist/server/index.js')))throw new ReleaseFailure('artifact_version_mismatch');
      artifacts.set(t.track,dir);
     }
-    return {snapshot,settings,dir:artifacts.get(t.track)};
+    return {snapshot,settings,surfaces,dir:artifacts.get(t.track)};
    },
    async activate(t,p){
-    await update(t,'running','upload');
-    const config=path.join(p.dir,t.store_id+'.jsonc');fs.writeFileSync(config,JSON.stringify(storefrontConfig(t.store_id,p.snapshot,p.settings)));
-    const tag='release-'+t.id,output=wrangler(['versions','upload','--config',config,'--keep-vars','--tag',tag,'--message',tag]);
-    const id=output.match(/Worker Version ID:\s*([a-f0-9-]{36})/i)?.[1];
-    if(!id)throw new ReleaseFailure('uploaded_version_unknown');
-    // Recheck current identities immediately before activation.
-    verifyBindings(await cf.call('/workers/scripts/'+p.snapshot.worker+'/settings'),p.snapshot);
-    await query(cf,'UPDATE platform_release_targets SET worker_version_id=?,stage=\'activate\' WHERE id=?',[id,t.id]);
-    await cf.call('/workers/scripts/'+p.snapshot.worker+'/deployments','POST',{strategy:'percentage',versions:[{version_id:id,percentage:100}]});
-    await update(t,'running','verify');
-    verifyBindings(await cf.call('/workers/scripts/'+p.snapshot.worker+'/settings'),p.snapshot);
-    let verified=false;
-    for(let attempt=0;attempt<6&&!verified;attempt++){
-     const deployments=await cf.call('/workers/scripts/'+p.snapshot.worker+'/deployments');
-     const active=deployments.deployments?.[0]?.versions?.some(v=>v.version_id===id&&v.percentage===100);
-     const response=await fetch(p.snapshot.storefrontUrl+'?release-check='+t.id,{redirect:'manual',signal:AbortSignal.timeout(20000)});
-     const catalog=await fetch(new URL('/api/catalog',p.snapshot.storefrontUrl),{redirect:'manual',signal:AbortSignal.timeout(20000)});
-     verified=Boolean(active&&response.ok&&catalog.ok);await response.body?.cancel();await catalog.body?.cancel();
-     if(!verified)await new Promise(resolve=>setTimeout(resolve,5000));
+    const workerVersions={};
+    for(const surface of p.surfaces){
+     const worker=surface==='admin'?p.snapshot.adminWorker:p.snapshot.worker;
+     await update(t,'running','upload_'+surface);
+     verifyBindings(await cf.call('/workers/scripts/'+worker+'/settings'),p.snapshot,surface);
+     const config=path.join(p.dir,t.store_id+'-'+surface+'.jsonc');fs.writeFileSync(config,JSON.stringify(surfaceConfig(t.store_id,p.snapshot,p.settings[surface],surface)));
+     const tag='release-'+t.id,output=wrangler(['versions','upload','--config',config,'--keep-vars','--tag',tag,'--message',tag]);
+     const id=output.match(/Worker Version ID:\s*([a-f0-9-]{36})/i)?.[1];if(!id)throw new ReleaseFailure('uploaded_version_unknown');
+     verifyBindings(await cf.call('/workers/scripts/'+worker+'/settings'),p.snapshot,surface);
+     if(surface==='storefront')await query(cf,'UPDATE platform_release_targets SET worker_version_id=? WHERE id=?',[id,t.id]);
+     await cf.call('/workers/scripts/'+worker+'/deployments','POST',{strategy:'percentage',versions:[{version_id:id,percentage:100}]});
+     await update(t,'running','verify_'+surface);verifyBindings(await cf.call('/workers/scripts/'+worker+'/settings'),p.snapshot,surface);
+     let verified=false;
+     for(let attempt=0;attempt<6&&!verified;attempt++){
+      const deployments=await cf.call('/workers/scripts/'+worker+'/deployments'),active=deployments.deployments?.[0]?.versions?.some(v=>v.version_id===id&&v.percentage===100);
+      const origin=surface==='admin'?p.snapshot.adminUrl:p.snapshot.storefrontUrl;
+      const response=await fetch(new URL(surface==='admin'?'/admin/login':'/?release-check='+t.id,origin),{redirect:'manual',signal:AbortSignal.timeout(20000)});
+      const api=await fetch(new URL(surface==='admin'?'/api/admin/orders':'/api/catalog',origin),{redirect:'manual',signal:AbortSignal.timeout(20000)});
+      const accessRedirect=r=>r.status===302&&new URL(r.headers.get('location')||'',origin).hostname.endsWith('.cloudflareaccess.com');
+      const healthy=surface==='admin'?(response.status===200||accessRedirect(response))&&(api.status===401||accessRedirect(api)):response.ok&&api.ok;
+      verified=Boolean(active&&healthy);await response.body?.cancel();await api.body?.cancel();if(!verified)await new Promise(resolve=>setTimeout(resolve,5000));
+     }
+     if(!verified)throw new ReleaseFailure('live_verification_failed');workerVersions[surface]=id;
+     const store=(await query(cf,'SELECT resources_json FROM platform_stores WHERE id=?',[t.store_id]))[0],resources=JSON.parse(store.resources_json);resources[surface+'Version']=t.version;resources[surface+'Revision']=t.revision;resources[surface+'WorkerVersionId']=id;
+     if(surface==='storefront')await query(cf,'UPDATE platform_stores SET app_version=?,app_revision=?,resources_json=?,updated_at=? WHERE id=?',[t.version,t.revision,JSON.stringify(resources),Date.now(),t.store_id]);else await query(cf,'UPDATE platform_stores SET resources_json=?,updated_at=? WHERE id=?',[JSON.stringify(resources),Date.now(),t.store_id]);
     }
-    if(!verified)throw new ReleaseFailure('live_verification_failed');
-    const store=(await query(cf,'SELECT resources_json FROM platform_stores WHERE id=?',[t.store_id]))[0],resources=JSON.parse(store.resources_json);resources.storefrontVersion=t.version;resources.storefrontRevision=t.revision;
-    await query(cf,'UPDATE platform_stores SET app_version=?,app_revision=?,resources_json=?,updated_at=? WHERE id=?',[t.version,t.revision,JSON.stringify(resources),Date.now(),t.store_id]);
-    await query(cf,"INSERT INTO platform_audit(id,actor,action,store_id,details_json,created_at) VALUES(?,?,'release.verified',?,?,?)",[crypto.randomUUID(),batch.actor,t.store_id,JSON.stringify({batchId:batch.id,version:t.version,revision:t.revision,workerVersion:id}),Date.now()]);
-    await query(cf,"UPDATE platform_release_targets SET status='succeeded',stage='complete',verified_at=?,updated_at=? WHERE id=?",[Date.now(),Date.now(),t.id]);return {workerVersion:id};
+    await query(cf,"INSERT INTO platform_audit(id,actor,action,store_id,details_json,created_at) VALUES(?,?,'release.verified',?,?,?)",[crypto.randomUUID(),batch.actor,t.store_id,JSON.stringify({batchId:batch.id,version:t.version,revision:t.revision,workerVersions}),Date.now()]);
+    await query(cf,"UPDATE platform_release_targets SET status='succeeded',stage='complete',verified_at=?,updated_at=? WHERE id=?",[Date.now(),Date.now(),t.id]);return {workerVersions};
    },
    async failed(t,error){await update(t,'failed','needs_review',safeError(error))}
   };
