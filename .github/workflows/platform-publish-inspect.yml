@@ -1,0 +1,29 @@
+name: Inspect platform publishing readiness
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check existing build integration without changing it
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          import {cloudflareClient} from './scripts/platform-cloudflare.mjs';
+          const cf=cloudflareClient('008c61df8c322c27b8d1c1137922e328',process.env.CLOUDFLARE_API_TOKEN);
+          const scripts=await cf.call('/workers/scripts');
+          const source=scripts.find(s=>s.id==='manar-store');
+          if(!source?.tag)throw Error('Missing known worker tag');
+          try{
+            const result=await cf.call('/builds/workers/'+source.tag+'/triggers');
+            const triggers=Array.isArray(result)?result:result.triggers||[];
+            console.log(JSON.stringify({workersCiAccessible:true,sourceWorker:source.id,triggers:triggers.map(t=>({triggerUuid:t.trigger_uuid,repoConnection:t.repo_connection_uuid||t.repo_connection?.repo_connection_uuid,buildTokenUuid:t.build_token_uuid,triggerName:t.trigger_name,rootDirectory:t.root_directory}))}));
+          }catch(e){console.log(JSON.stringify({workersCiAccessible:false,code:e.code||e.message,status:e.status||null}))}
+          NODE
