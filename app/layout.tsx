@@ -19,8 +19,8 @@ export const metadata:Metadata={
  applicationName:"المتجر",
  manifest:"/manifest.webmanifest",
  icons:{
-  icon:[{url:"/store-icon.svg",type:"image/svg+xml",sizes:"any"}],
-  apple:[{url:"/store-icon.svg",type:"image/svg+xml",sizes:"any"}]
+  icon:[{url:"/_store/favicon?v=1.2.2"}],
+  apple:[{url:"/_store/favicon?v=1.2.2"}]
  },
  appleWebApp:{capable:true,statusBarStyle:"default",title:"المتجر"},
  formatDetection:{telephone:false}

@@ -1,3 +1,4 @@
+import {storeIconResponse} from "./store-icon";
 import {mediaSources} from "./media-sources";
 import {readStoreProfile,saveStoreProfile} from "./store-profile";
 import {validateStoreProfile,trackingAllowed,googleAnalyticsHead as configuredGoogleHead} from "../shared/store-profile";
@@ -842,7 +843,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   const alternateName=String(settings?.site_name_en||"");
   const homeTitle=storeName+" | "+alternateName;
   const homeDescription=String(settings?.seo_description||"");
-  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/store-icon.svg"),url.origin);
+  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/_store/favicon?v=1.2.2"),url.origin);
   const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
   let canonicalUrl=url.origin+cleanPath;
   let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
@@ -1168,6 +1169,7 @@ const worker = {
   async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
     const isAdminPath = url.pathname === "/admin" || url.pathname.startsWith("/admin/");
 
     if (env.APP_SURFACE === "admin" && url.pathname === "/robots.txt") {
