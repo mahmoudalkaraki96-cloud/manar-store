@@ -37,7 +37,7 @@
       },
       "runtimeAudit": {
         "status": "matches-intended-config",
-        "observedAt": "2026-10-29",
+        "observedAt": "2026-10-31",
         "configurationVersion": "rokon-config-0.1.0",
         "source": "Cloudflare production bindings after explicit owner choice",
         "database": "rokon-store-db",
@@ -50,7 +50,13 @@
         },
         "directCloudflareBuilds": "disabled-pending-reviewed-store-specific-release",
         "notes": "Owner explicitly required independent data per store. DB and MEDIA bindings deployed to Rokon resources; no data copied or modified. Rokon DB contains 17 products and legacy Manar branding stored in its own settings. Owner/auth/schema review still required before fleet releases.",
-        "liveWorkerVersionPrefix": "2f648006"
+        "liveWorkerVersionPrefix": "731f38dd",
+        "appVersion": "1.1.5",
+        "appRevision": "070137743e4bc34a66239017d576589a500a79bb",
+        "faviconVerification": {
+          "status": "settings-icon-after-hydration-and-navigation",
+          "runId": 41178884710
+        }
       }
     }
   ]
