@@ -4,7 +4,7 @@ export function cloudflareClient(account,token,fetcher=fetch){
  async function call(route,method='GET',body){
   const response=await fetcher('https://api.cloudflare.com/client/v4/accounts/'+account+route,{method,headers:{authorization:'Bearer '+token,'content-type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(45000)});
   let data;try{data=await response.json()}catch{throw new CloudflareError('cloudflare_invalid_response',response.status)}
-  if(!response.ok||data.success===false)throw new CloudflareError(response.status===403?'cloudflare_permission_denied':'cloudflare_request_failed',response.status);
+  if(!response.ok||data.success===false){const error=new CloudflareError(response.status===403?'cloudflare_permission_denied':'cloudflare_request_failed',response.status);error.apiErrors=(data.errors||[]).map(e=>({code:e.code,message:String(e.message||'').slice(0,400)}));throw error}
   return data.result;
  }
  async function query(database,sql,params=[]){

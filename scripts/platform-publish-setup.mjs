@@ -28,4 +28,4 @@ async function setup(){
  setupStage='store_limited_hook_secret';await cf.call('/workers/scripts/'+SETTINGS.workerName+'/secrets','PUT',{name:PUBLISHING.hookSecretName,type:'secret_text',text:url});
  console.log(JSON.stringify({runner:PUBLISHING.runnerWorker,configured:true,hookSecretStored:true}));
 }
-(mode==='inspect'?inspect():mode==='setup'?setup():Promise.reject(new ReleaseFailure('unknown_setup_operation'))).catch(e=>{console.error(JSON.stringify({code:safeError(e),status:e.status||null,stage:setupStage}));process.exitCode=1});
+(mode==='inspect'?inspect():mode==='setup'?setup():Promise.reject(new ReleaseFailure('unknown_setup_operation'))).catch(e=>{console.error(JSON.stringify({code:safeError(e),status:e.status||null,stage:setupStage,...(setupStage==='connect_runner_build'?{apiErrors:e.apiErrors}:{} )}));process.exitCode=1});
