@@ -1,3 +1,4 @@
+import {groupProvisioningJobs} from "./job-history";
 import {previewIdentity} from '../../worker/preview-access';
 import {storeDraft,publicRecord,resourceNames} from './model';
 import {html} from './ui';
@@ -15,7 +16,7 @@ export default {async fetch(request:Request,env:Env):Promise<Response>{
  if(request.method==='GET'&&url.pathname==='/')return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'no-store','x-robots-tag':'noindex, nofollow','x-frame-options':'DENY','referrer-policy':'no-referrer','content-security-policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"}});
  if(request.method==='GET'&&url.pathname==='/api/state'){
   const [stores,jobs,events]=await Promise.all([env.PLATFORM_DB.prepare('SELECT * FROM platform_stores ORDER BY created_at DESC,id').all(),env.PLATFORM_DB.prepare('SELECT id,store_id,operation,status,stage,error_code,attempts,created_at,updated_at FROM platform_jobs ORDER BY created_at DESC LIMIT 40').all(),env.PLATFORM_DB.prepare('SELECT actor,action,store_id,details_json,created_at FROM platform_audit ORDER BY created_at DESC LIMIT 25').all()]);
-  return json({version:env.PLATFORM_VERSION||'0.3.0',actor,stores:stores.results.map(publicRecord),jobs:jobs.results,events:events.results});
+  return json({version:env.PLATFORM_VERSION||'0.3.0',actor,stores:stores.results.map(publicRecord),jobs:jobs.results,jobGroups:groupProvisioningJobs(jobs.results),events:events.results});
  }
  if(request.method==='POST'&&url.pathname==='/api/stores'){
   const draft=storeDraft(await body(request)),now=Date.now();
