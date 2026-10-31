@@ -761,3 +761,9 @@
 - TypeScriptصارملواجهةالإدارةوworkerنجحمحليًابعدحلدمجالملفات.التحققالبصريوالـPDFوالاختباراتوالبناءمازالقيدالتنفيذ.لاإصدار1.3.0منشورحتىالآن.
 - متطلبالتعميم:نقلإعداداتالتتبعوالرابطالرئيسيمنالكودالقديملقاعدةالمتجرالمعني،وحفظفهرسأصولمنارالتاريخيةفيR2الخاصبهقبلإزالةfallbackالمضمّن؛نسخةاحتياطيةخاصةقبلترقيةالمخطط.لايُنقلالكتالوجأوبياناتمتجرإلىمتجرآخر.توسيعPublisherليصدرحزمةواحدةللواجهةوالإدارةواستبدالسجلالإصداراتمتعددةالمسارات.
 - جاهزيةركنللدخولالجديدتحتاجقراءةإعداداتهالحيةوحفظنفسوصولالمالك؛لاافتراضهويةمالكجديدةولامنحصلاحياتغيرمصرحبها.التاليCIثمفحصUI/PDFوالترقيةالمدروسةوالتعميمبعدفحصالتوافق.
+
+
+### Shared runtime / publisher 0.5.0 (candidate 1.3.0)
+- One runtime artifact with `surfaces:["storefront","admin"]`; certifications bind both Worker names, D1 ID and R2 bucket. No merchant catalog crosses bindings. Per-surface deployed revision is retained, and a target succeeds only after both surfaces verify.
+- `platform-unified-upgrade.mjs audit|prepare`: private SQL backup and offline additive schema validation for every target precede live schema updates. Existing store_profile is preserved. Legacy tracking/media migration is operator data, outside shared runtime code.
+- Admin responsive overrides in admin-responsive.css; category ordering is display-only. PDF export uses pinned local html2canvas/jsPDF, renders Arabic in the browser, and has a price-free preparation root guard. Actual device-specific iOS download behavior still requires owner verification.
