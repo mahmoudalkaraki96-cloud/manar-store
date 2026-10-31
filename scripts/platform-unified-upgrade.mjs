@@ -1,15 +1,16 @@
-import fs from'node:fs';import path from'node:path';import os from'node:os';import{DatabaseSync}from'node:sqlite';import{client,query,ROOT,wrangler,command,sha256,ReleaseFailure,safeError}from'./platform-publish-common.mjs';import{splitSql}from'./platform-cloudflare.mjs';
+import fs from'node:fs';import path from'node:path';import os from'node:os';import{DatabaseSync}from'node:sqlite';import{client,query,ROOT,wrangler,command,sha256,ReleaseFailure,safeError}from'./platform-publish-common.mjs';import{schemaChanges}from'./platform-unified-schema.mjs';
 const cf=client(),mode=process.argv[2],backupBucket='store-platform-backups';
 const array=result=>Array.isArray(result)?result:result?.results||[];
 async function allStores(){return query(cf,"SELECT * FROM platform_stores WHERE status='active' ORDER BY id")}
 async function identity(store){const r=JSON.parse(store.resources_json||'{}'),registry=JSON.parse(fs.readFileSync(path.join(ROOT,'platform/stores.json'),'utf8')),entry=registry.stores.find(s=>s.id===store.id);if(entry){if(r.databaseId!==entry.database.id||r.mediaBucket!==entry.mediaBucket)throw new ReleaseFailure('resource_identity_mismatch');r.storefrontWorker=JSON.parse(fs.readFileSync(path.join(ROOT,entry.storefrontConfig))).name;r.adminWorker=JSON.parse(fs.readFileSync(path.join(ROOT,entry.adminConfig))).name;}if(!r.storefrontWorker||!r.adminWorker||!r.databaseId||!r.mediaBucket)throw new ReleaseFailure('invalid_store_resources');const surfaces={};for(const surface of ['storefront','admin']){const settings=await cf.call('/workers/scripts/'+r[surface+'Worker']+'/settings'),b=settings.bindings||[];if(b.find(b=>b.name==='DB')?.id!==r.databaseId||b.find(b=>b.name==='MEDIA')?.bucket_name!==r.mediaBucket)throw new ReleaseFailure('resource_identity_mismatch');surfaces[surface]=settings;}return{store,r,surfaces}}
 function ownerReady(settings){const b=settings.bindings||[];return['ADMIN_OWNER_EMAIL','ADMIN_CF_TEAM','ADMIN_CF_AUD'].every(name=>b.some(v=>v.name===name&&v.text))}
 async function audit(){const reports=[];for(const store of await allStores()){const {r,surfaces}=await identity(store);const counts=await cf.query(r.databaseId,"SELECT (SELECT COUNT(*) FROM products) products,(SELECT COUNT(*) FROM categories) categories,(SELECT COUNT(*) FROM orders) orders");reports.push({id:store.id,storefront:r.storefrontWorker,admin:r.adminWorker,isolated:true,adminAuthConfigured:ownerReady(surfaces.admin),counts:counts[0].results[0],profile:array((await cf.query(r.databaseId,"SELECT name FROM sqlite_master WHERE name='store_profile'"))[0]).length>0});}console.log(JSON.stringify({audit:reports}))}
-function schemaChanges(db,baseline){const memory=new DatabaseSync(':memory:');for(const sql of splitSql(baseline).filter(s=>/^CREATE TABLE/i.test(s)))memory.exec(sql);const changes=[];for(const table of memory.prepare("SELECT name,sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").all()){const exists=db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(table.name);if(!exists){changes.push(table.sql);continue}const old=new Set(db.prepare('PRAGMA table_info("'+table.name+'")').all().map(c=>c.name));for(const column of memory.prepare('PRAGMA table_info("'+table.name+'")').all())if(!old.has(column.name)){if(column.pk)throw new ReleaseFailure('schema_key_requires_review');let tail=column.type||'TEXT';if(column.notnull)tail+=' NOT NULL';if(column.dflt_value!=null)tail+=' DEFAULT '+column.dflt_value;else if(column.notnull)tail+=' DEFAULT '+(/INT|REAL|NUM|FLOAT|DOUBLE/i.test(column.type)?'0':"''");changes.push('ALTER TABLE "'+table.name+'" ADD COLUMN "'+column.name+'" '+tail)}}memory.close();return changes}
+
 async function prepare(){
  if(process.env.GITHUB_REF!=='refs/heads/main')throw new ReleaseFailure('reviewed_main_required');
  if(fs.readFileSync(path.join(ROOT,'VERSION'),'utf8').trim()!=='1.3.0')throw new ReleaseFailure('unexpected_upgrade_version');
  const stores=await allStores(),targets=[];for(const store of stores){const target=await identity(store);if(!ownerReady(target.surfaces.admin))throw new ReleaseFailure('admin_auth_requires_review');targets.push(target)}
+ for(const field of ['databaseId','mediaBucket','storefrontWorker','adminWorker'])if(new Set(targets.map(t=>t.r[field])).size!==targets.length)throw new ReleaseFailure('cross_store_resource_collision');
  const buckets=await cf.call('/r2/buckets');if(!(buckets.buckets||[]).some(b=>b.name===backupBucket))await cf.call('/r2/buckets','POST',{name:backupBucket});
  const bucket=await cf.call('/r2/buckets/'+backupBucket);if(bucket.name!==backupBucket)throw new ReleaseFailure('backup_bucket_identity_mismatch');const managed=await cf.call('/r2/buckets/'+backupBucket+'/domains/managed'),custom=await cf.call('/r2/buckets/'+backupBucket+'/domains/custom');if(managed.enabled||(custom.domains||[]).length)throw new ReleaseFailure('backup_bucket_must_be_private');
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'unified-upgrade-')),baseline=fs.readFileSync(path.join(ROOT,'db/store-baseline.sql'),'utf8');
@@ -22,4 +23,16 @@ async function prepare(){
   }
  }finally{fs.rmSync(temp,{recursive:true,force:true})}
 }
-if(mode==='audit')audit().catch(e=>{console.error(safeError(e));process.exitCode=1});else if(mode==='prepare')prepare().catch(e=>{console.error(safeError(e));process.exitCode=1});else throw new ReleaseFailure('unknown_upgrade_operation');
+async function configureRokonOwner(){
+ const store=(await allStores()).find(s=>s.id==='rokon');if(!store)throw new ReleaseFailure('store_missing');
+ const{r,surfaces}=await identity(store),settings=surfaces.admin;
+ const approved={ADMIN_OWNER_EMAIL:'mahmoud-alfaqeh@hotmail.co.il',ADMIN_OWNER_CF_EMAIL:'mahmoud.alkaraki96@gmail.com',ADMIN_CF_TEAM:'rapid-truth-92f4',ADMIN_CF_AUD:'18906855845a2d1b3007b35eaaad025a793ec063b311f607d949dad25b70fcb2'};
+ const next={...settings,bindings:[...settings.bindings.filter(b=>!Object.hasOwn(approved,b.name)),...Object.entries(approved).map(([name,text])=>({name,type:'plain_text',text}))]};
+ const form=new FormData();form.append('settings',JSON.stringify(next));
+ const response=await fetch('https://api.cloudflare.com/client/v4/accounts/'+JSON.parse(fs.readFileSync(path.join(ROOT,'platform/control/settings.json'))).accountId+'/workers/scripts/'+r.adminWorker+'/settings',{method:'PATCH',headers:{authorization:'Bearer '+(process.env.PLATFORM_DEPLOY_TOKEN||process.env.CLOUDFLARE_API_TOKEN)},body:form});
+ const result=await response.json();if(!response.ok||!result.success)throw new ReleaseFailure('owner_configuration_failed');
+ const verify=await cf.call('/workers/scripts/'+r.adminWorker+'/settings');if(!Object.entries(approved).every(([name,text])=>verify.bindings.some(b=>b.name===name&&b.text===text)))throw new ReleaseFailure('owner_configuration_failed');
+ console.log(JSON.stringify({store:'rokon',ownerConfigured:true,resourcesUnchanged:true}));
+}
+const operations={audit,prepare,'configure-rokon-owner':configureRokonOwner};
+if(operations[mode])operations[mode]().catch(e=>{console.error(safeError(e));process.exitCode=1});else throw new ReleaseFailure('unknown_upgrade_operation');
