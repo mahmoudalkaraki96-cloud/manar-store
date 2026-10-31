@@ -1,0 +1,60 @@
+name: Platform release publisher
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        type: choice
+        options: [prepare-release, inspect, setup]
+        default: inspect
+  pull_request:
+    paths: ['platform/control/**', 'platform/runner/**', 'scripts/platform-publish*', 'tests/platform-publish*', '.github/workflows/platform-publisher.yml']
+permissions:
+  contents: read
+concurrency:
+  group: platform-release-preparation
+  cancel-in-progress: false
+jobs:
+  publisher:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: node --test tests/platform-console.test.cjs tests/platform-publishing.test.cjs tests/platform-publish-engine.test.mjs
+      - run: npx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck platform/control/worker.ts
+      - uses: actions/checkout@v4
+        if: inputs.operation == 'prepare-release'
+        with:
+          ref: 070137743e4bc34a66239017d576589a500a79bb
+          path: release-legacy
+      - uses: actions/checkout@v4
+        if: inputs.operation == 'prepare-release'
+        with:
+          ref: b772775dd3289c7ff7825668269ce52eaa730aaa
+          path: release-generic
+      - name: Build approved release variants
+        if: inputs.operation == 'prepare-release'
+        run: |
+          for dir in release-legacy release-generic; do
+            (cd "$dir" && npm ci --ignore-scripts --no-audit --no-fund && npm run build)
+          done
+      - name: Store private artifacts and certify independent resources
+        if: inputs.operation == 'prepare-release'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-publish-prepare.mjs
+
+      - name: Inspect publishing access
+        if: inputs.operation == 'inspect'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-publish-setup.mjs inspect
+      - name: Configure authorized dedicated release runner
+        if: inputs.operation == 'setup'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-publish-setup.mjs setup
