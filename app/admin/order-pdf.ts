@@ -4,9 +4,11 @@ let libraries:Promise<void>|null=null;
 function script(src:string){return new Promise<void>((resolve,reject)=>{const tag=document.createElement('script');tag.src=src;tag.onload=()=>resolve();tag.onerror=()=>{tag.remove();reject(new Error('تعذر تحميل أداة PDF؛ أعد المحاولة.'))};document.head.append(tag)})}
 async function load(){if(!libraries)libraries=Promise.all([script('/vendor/html2canvas-1.4.1.min.js'),script('/vendor/jspdf-3.0.4.min.js')]).then(()=>{}).catch(error=>{libraries=null;throw error});await libraries}
 export async function downloadOrderPdf(source:HTMLElement,orderNumber:number,preparation:boolean){
+ const printable=preparation?(source.matches('[data-order-preparation]')?source:source.querySelector<HTMLElement>('[data-order-preparation]')):source;
+ if(!printable)throw new Error('نسخة التجهيز غير جاهزة؛ أعد فتح الطلب.');
  await load();await document.fonts?.ready;
  const win=window as PdfWindow;if(!win.html2canvas||!win.jspdf)throw new Error('أداة PDF غير جاهزة.');
- const holder=document.createElement('div'),clone=source.cloneNode(true) as HTMLElement;
+ const holder=document.createElement('div'),clone=printable.cloneNode(true) as HTMLElement;
  holder.className='adminRedesign themeLight orderPdfExport';holder.style.cssText='position:absolute;left:-10000px;top:0;width:794px;background:white;color:#182626;direction:rtl;z-index:-1';
  clone.querySelectorAll('.noPrint,.pdfPreparationSource,.orderEditFields,.orderEditorMessage,button,script').forEach(element=>element.remove());
  clone.classList.add('orderPdfDocument');clone.style.cssText='display:block;position:static;width:794px;min-width:0;max-width:none;height:auto;min-height:0;max-height:none;overflow:visible;transform:none;box-shadow:none;background:white;color:#182626;padding:24px;box-sizing:border-box';

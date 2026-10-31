@@ -1,3 +1,4 @@
+import {storeAssetResponse} from "./store-assets";
 import {storeIconResponse} from "./store-icon";
 import {mediaSources} from "./media-sources";
 import {readStoreProfile,saveStoreProfile} from "./store-profile";
@@ -888,7 +889,7 @@ async function fetchImageSource(path:string,env:Env,request:Request):Promise<Res
   const sourceUrl=new URL(path,request.url);
   if(sourceUrl.origin!==new URL(request.url).origin)return new Response("Invalid image source",{status:400});
   if(sourceUrl.pathname.startsWith("/product-images/")){const object=await env.MEDIA.get(sourceUrl.pathname.slice(1));if(!object)return new Response("Not Found",{status:404});const headers=new Headers();object.writeHttpMetadata(headers);return new Response(object.body,{headers});}
-  if(!sourceUrl.pathname.startsWith("/media/"))return env.ASSETS.fetch(new Request(sourceUrl));
+  if(!sourceUrl.pathname.startsWith("/media/"))return (await storeAssetResponse(env.MEDIA,sourceUrl.pathname))||env.ASSETS.fetch(new Request(sourceUrl));
   let key:string;
   try{key=decodeURIComponent(sourceUrl.pathname.slice("/media/".length))}catch{return new Response("Invalid image path",{status:400})}
   const object=await env.MEDIA.get(key);
@@ -1170,6 +1171,7 @@ const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
+    if(request.method==="GET"&&!url.pathname.startsWith("/media/")&&/\.(?:webp|png|jpe?g|gif|svg)$/i.test(url.pathname)){const asset=await storeAssetResponse(env.MEDIA,url.pathname);if(asset)return asset;}
     const isAdminPath = url.pathname === "/admin" || url.pathname.startsWith("/admin/");
 
     if (env.APP_SURFACE === "admin" && url.pathname === "/robots.txt") {

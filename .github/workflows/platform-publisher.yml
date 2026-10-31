@@ -4,7 +4,7 @@ on:
     inputs:
       operation:
         type: choice
-        options: [prepare-release, inspect, setup]
+        options: [prepare-release, inspect, setup, upgrade-audit, upgrade-prepare]
         default: inspect
   pull_request:
     paths: ['platform/control/**', 'platform/runner/**', 'scripts/platform-publish*', 'tests/platform-publish*', '.github/workflows/platform-publisher.yml']
@@ -58,3 +58,14 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node scripts/platform-publish-setup.mjs setup
+
+      - name: Inspect independent resources before unified upgrade
+        if: inputs.operation == 'upgrade-audit'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-unified-upgrade.mjs audit
+      - name: Back up and prepare existing stores for the unified runtime
+        if: inputs.operation == 'upgrade-prepare'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/platform-unified-upgrade.mjs prepare

@@ -45,7 +45,7 @@ export async function runSupplierImports(env:any){
   // Persist the cooldown BEFORE network work; errors and overlapping crons cannot accelerate requests.
   await db.prepare('UPDATE supplier_import_jobs SET next_attempt_at=?,updated_at=? WHERE source=?').bind(now+300000,now,source).run();
   try{
-   const response=await fetch(`https://${host}/?app=product.all..${job.next_page}`,{redirect:'manual',headers:{'Accept':'text/html','User-Agent':'ManarCatalogImport/1.0 (+https://manarstore.ps)'},signal:AbortSignal.timeout(30000)});
+   const response=await fetch(`https://${host}/?app=product.all..${job.next_page}`,{redirect:'manual',headers:{'Accept':'text/html','User-Agent':'StoreCatalogImport/1.0'},signal:AbortSignal.timeout(30000)});
    if(!response.ok){const blocked=[403,429].includes(response.status);await db.prepare('UPDATE supplier_import_jobs SET status=?,last_error=?,next_attempt_at=? WHERE source=?').bind(blocked?'paused_blocked':'running',`HTTP ${response.status}`,now+(blocked?86400000:1800000),source).run();return;}
    const html=await response.text();if(/cf-chl-|captcha|access denied|too many requests|temporarily blocked/i.test(html))throw new Error('supplier_block');
    await db.prepare('UPDATE supplier_import_jobs SET last_response=? WHERE source=?').bind(html.slice(0,750000),source).run();

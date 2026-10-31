@@ -1,13 +1,13 @@
 export type Row=Record<string,unknown>;
 export type Variant={version:string;revision:string;artifactKey:string;sha256:string;surfaces:string[]};
-export type Certification={track:string;worker:string;databaseId:string;mediaBucket:string};
+export type Certification={track:string;worker:string;adminWorker?:string;databaseId:string;mediaBucket:string};
 export type Manifest={schemaVersion:number;variants:Record<string,Variant>;certifications:Record<string,Certification>};
 export class PublishingError extends Error{status:number;constructor(message:string,status=400){super(message);this.status=status}}
 export function parseManifest(value:string):Manifest{
  let manifest:Manifest;try{manifest=JSON.parse(value)}catch{throw new PublishingError('بيانات الإصدار غير صالحة.',409)}
  if(!manifest||manifest.schemaVersion!==1||!manifest.variants||!manifest.certifications)throw new PublishingError('صيغة الإصدار غير مدعومة.',409);
  for(const [track,v]of Object.entries(manifest.variants)){
-  if(!v||!/^[a-z][a-z0-9-]{1,30}$/.test(track)||!/^\d+\.\d+\.\d+$/.test(v.version)||!/^[a-f0-9]{40}$/.test(v.revision)||!/^[a-f0-9]{64}$/.test(v.sha256)||!/^releases\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\.tar\.gz$/.test(v.artifactKey)||v.artifactKey.split('/').some(p=>p==='..'||p==='.')||JSON.stringify(v.surfaces)!=='["storefront"]')throw new PublishingError('الإصدار لم يُعتمد لهذا النوع من النشر.',409);
+  if(!v||!/^[a-z][a-z0-9-]{1,30}$/.test(track)||!/^\d+\.\d+\.\d+$/.test(v.version)||!/^[a-f0-9]{40}$/.test(v.revision)||!/^[a-f0-9]{64}$/.test(v.sha256)||!/^releases\/[a-zA-Z0-9._-]+\/[a-zA-Z0-9._-]+\.tar\.gz$/.test(v.artifactKey)||v.artifactKey.split('/').some(p=>p==='..'||p==='.')||!['["storefront"]','["storefront","admin"]'].includes(JSON.stringify(v.surfaces)))throw new PublishingError('الإصدار لم يُعتمد لهذا النوع من النشر.',409);
  }
  return manifest;
 }
@@ -30,8 +30,10 @@ export function buildReleasePlan(release:Row,stores:Row[],input:ReturnType<typeo
   const variant=cert?manifest.variants[cert.track]:undefined;
   if(cert&&(!variant||resources.storefrontWorker!==cert.worker||resources.databaseId!==cert.databaseId||resources.mediaBucket!==cert.mediaBucket))blockedReason='موارد المتجر تغيّرت بعد اعتماد الإصدار؛ يلزم إعادة الفحص.';
   if(variant&&/^\d+\.\d+\.\d+$/.test(String(store.app_version||''))){const currentParts=String(store.app_version).split('.').map(Number),nextParts=variant.version.split('.').map(Number);for(let i=0;i<3;i++){if(currentParts[i]===nextParts[i])continue;if(currentParts[i]>nextParts[i])blockedReason='نسخة المتجر الحالية أحدث من هذا الإصدار.';break}}
-  const current=Boolean(variant&&store.app_version===variant.version&&store.app_revision===variant.revision);
-  return {storeId:id,name:String(store.name_ar),currentVersion:String(store.app_version||'غير مسجل'),version:variant?.version||'',revision:variant?.revision||'',track:cert?.track||'',surfaces:['storefront'],blockedReason,alreadyCurrent:current,willDeploy:!blockedReason&&(!current||input.forceRedeploy),snapshot:{worker:String(resources.storefrontWorker||''),databaseId:String(resources.databaseId||''),databaseName:String(resources.databaseName||''),mediaBucket:String(resources.mediaBucket||''),storefrontUrl:String(resources.storefrontUrl||''),currentVersion:store.app_version,currentRevision:store.app_revision}};
+  const surfaces=variant?.surfaces||['storefront'],hasAdmin=surfaces.includes('admin');
+  if(hasAdmin&&(!cert?.adminWorker||resources.adminWorker!==cert.adminWorker||!resources.unifiedRuntimeReady))blockedReason='لوحة الإدارة أو ترقية إعدادات المتجر غير جاهزة للإصدار الموحّد.';
+  const current=Boolean(variant&&store.app_version===variant.version&&store.app_revision===variant.revision&&(!hasAdmin||resources.adminVersion===variant.version&&resources.adminRevision===variant.revision));
+  return {storeId:id,name:String(store.name_ar),currentVersion:String(store.app_version||'غير مسجل'),currentAdminVersion:String(resources.adminVersion||'غير مسجل'),version:variant?.version||'',revision:variant?.revision||'',track:cert?.track||'',surfaces,blockedReason,alreadyCurrent:current,willDeploy:!blockedReason&&(!current||input.forceRedeploy),snapshot:{worker:String(resources.storefrontWorker||''),adminWorker:String(resources.adminWorker||''),adminUrl:String(resources.adminUrl||''),surfaces,databaseId:String(resources.databaseId||''),databaseName:String(resources.databaseName||''),mediaBucket:String(resources.mediaBucket||''),storefrontUrl:String(resources.storefrontUrl||''),currentVersion:store.app_version,currentRevision:store.app_revision,currentAdminVersion:resources.adminVersion,currentAdminRevision:resources.adminRevision}};
  });
  return {releaseId:input.releaseId,title:String(release.title),selector:input.selector,forceRedeploy:input.forceRedeploy,targets,blocked:targets.some(t=>Boolean(t.blockedReason)),deployCount:targets.filter(t=>t.willDeploy).length};
 }
