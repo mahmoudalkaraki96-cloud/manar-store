@@ -14,11 +14,14 @@ async function setup(){
  setupStage='create_runner';let runner=scripts.find(s=>s.id===PUBLISHING.runnerWorker);
  if(!runner){wrangler(['deploy','--config','wrangler.platform-release-runner.jsonc']);runner=(await cf.call('/workers/scripts')).find(s=>s.id===PUBLISHING.runnerWorker)}
  if(!runner?.tag)throw new ReleaseFailure('runner_not_created');
- setupStage='connect_runner_build';await cf.call('/builds/workers','POST',{
-  script_tag:runner.tag,
-  git_repository:{provider_type:'github',provider_account_id:'319731827',provider_account_name:'mahmoudalkaraki96-cloud',repo_id:'1342530801',repo_name:'manar-store',branch:PUBLISHING.runnerBranch},
-  production_settings:{build_command:'npm ci --ignore-scripts --no-audit --no-fund',deploy_command:'node --experimental-strip-types scripts/platform-publish-engine.mjs && npx wrangler deploy --config wrangler.platform-release-runner.jsonc',build_token_uuid:production.build_token_uuid,environment_variables:{PLATFORM_DEPLOY_TOKEN:{is_secret:true,value:process.env.CLOUDFLARE_API_TOKEN},NODE_VERSION:{is_secret:false,value:'22'}}},previews_enabled:false
- });
+ setupStage='connect_runner_build';
+ const connection=await cf.call('/builds/repos/connections','PUT',{provider_type:'github',provider_account_id:'319731827',provider_account_name:'mahmoudalkaraki96-cloud',repo_id:'1342530801',repo_name:'manar-store'});
+ let triggerList;try{triggerList=await cf.call('/builds/workers/'+runner.tag+'/triggers')}catch(e){if(e.status!==404)throw e;triggerList=[]}
+ const runnerTriggers=Array.isArray(triggerList)?triggerList:triggerList.triggers||[];
+ let trigger=runnerTriggers.find(t=>t.trigger_name==='platform-owner-publish');
+ if(!trigger)trigger=await cf.call('/builds/triggers','POST',{external_script_id:runner.tag,repo_connection_uuid:connection.repo_connection_uuid,trigger_name:'platform-owner-publish',branch_includes:[PUBLISHING.runnerBranch],branch_excludes:[],path_includes:['*'],path_excludes:[],root_directory:'/',build_command:'npm ci --ignore-scripts --no-audit --no-fund',deploy_command:'node --experimental-strip-types scripts/platform-publish-engine.mjs && npx wrangler deploy --config wrangler.platform-release-runner.jsonc',build_token_uuid:production.build_token_uuid,build_caching_enabled:true});
+ setupStage='store_build_environment';
+ await cf.call('/builds/triggers/'+trigger.trigger_uuid+'/environment_variables','PATCH',{PLATFORM_DEPLOY_TOKEN:{is_secret:true,value:process.env.CLOUDFLARE_API_TOKEN},NODE_VERSION:{is_secret:false,value:'22'}});
  setupStage='create_deploy_hook';const hooks=await cf.call('/builds/workers/'+PUBLISHING.runnerWorker+'/deploy_hooks');
  const list=Array.isArray(hooks)?hooks:hooks.deploy_hooks||[];
  let hook=list.find(h=>h.deploy_hook_name==='platform-owner-publish'&&h.branch===PUBLISHING.runnerBranch);
