@@ -1,3 +1,4 @@
+import {readStoreProfile} from "./store-profile";
 // Web Push encryption (RFC 8291) and VAPID (RFC 8292), using Worker Web Crypto.
 type Result={results:Record<string,unknown>[];meta:{changes?:number}};
 type Statement={bind(...values:unknown[]):Statement;first<T=Record<string,unknown>>():Promise<T|null>;all<T=Record<string,unknown>>():Promise<{results:T[]}>;run():Promise<Result>};
@@ -7,7 +8,7 @@ export function bytes64(value:string){return Uint8Array.from(atob(value.replace(
 export function base64url(value:Uint8Array){return btoa(String.fromCharCode(...value)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
 const join=(...parts:Uint8Array[])=>{const out=new Uint8Array(parts.reduce((n,p)=>n+p.length,0));let offset=0;for(const p of parts){out.set(p,offset);offset+=p.length}return out};
 async function hash(value:string){return base64url(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(value))))}
-async function hkdf(input:Uint8Array,salt:Uint8Array,info:Uint8Array,length:number){const key=await crypto.subtle.importKey('raw',input,'HKDF',false,['deriveBits']);return new Uint8Array(await crypto.subtle.deriveBits({name:'HKDF',hash:'SHA-256',salt,info},key,length*8))}
+async function hkdf(input:Uint8Array<ArrayBuffer>,salt:Uint8Array<ArrayBuffer>,info:Uint8Array<ArrayBuffer>,length:number){const key=await crypto.subtle.importKey('raw',input,'HKDF',false,['deriveBits']);return new Uint8Array(await crypto.subtle.deriveBits({name:'HKDF',hash:'SHA-256',salt,info},key,length*8))}
 export async function encryptPush(subscription:{p256dh:string;auth:string},payload:string){
  const recipient=bytes64(subscription.p256dh),auth=bytes64(subscription.auth);
  const pair=await crypto.subtle.generateKey({name:'ECDH',namedCurve:'P-256'},true,['deriveBits']);
@@ -32,9 +33,9 @@ async function signingKeys(env:PushEnv){
  }if(!row)throw new Error('Push configuration unavailable');return row;
 }
 export async function getPushPublicKey(env:PushEnv){return (await signingKeys(env)).public_key}
-export async function vapidAuthorization(keys:{public_key:string;private_jwk:string},endpoint:string){
+export async function vapidAuthorization(keys:{public_key:string;private_jwk:string},endpoint:string,subject:string=new URL(endpoint).origin){
  const key=await crypto.subtle.importKey('jwk',JSON.parse(keys.private_jwk),{name:'ECDSA',namedCurve:'P-256'},false,['sign']);
- const header=base64url(enc.encode(JSON.stringify({typ:'JWT',alg:'ES256'}))),claims=base64url(enc.encode(JSON.stringify({aud:new URL(endpoint).origin,exp:Math.floor(Date.now()/1000)+43200,sub:'https://manarstore.ps'})));
+ const header=base64url(enc.encode(JSON.stringify({typ:'JWT',alg:'ES256'}))),claims=base64url(enc.encode(JSON.stringify({aud:new URL(endpoint).origin,exp:Math.floor(Date.now()/1000)+43200,sub:subject})));
  const unsigned=header+'.'+claims,signature=base64url(new Uint8Array(await crypto.subtle.sign({name:'ECDSA',hash:'SHA-256'},key,enc.encode(unsigned))));
  return 'vapid t='+unsigned+'.'+signature+', k='+keys.public_key;
 }
@@ -51,7 +52,8 @@ export async function drainPushQueue(env:PushEnv){
   const attempt=Number(row.attempts)+1;
   let stage='vapid_sign',responseStatus:number|null=null;
   try{
-   const authorization=await vapidAuthorization(keys,String(row.endpoint));
+   const profile=await readStoreProfile(env.DB);if(!profile.publicOrigin)throw new Error('store_origin_missing');
+   const authorization=await vapidAuthorization(keys,String(row.endpoint),profile.publicOrigin);
    stage='payload_encrypt';
    const body=await encryptPush({p256dh:String(row.p256dh),auth:String(row.auth)},String(row.payload));
    stage='provider_fetch';
@@ -87,7 +89,7 @@ export async function pushApi(request:Request,env:PushEnv,role:'customer'|'admin
  const current=await device(env,id,token,role);if(!current)return Response.json({error:'اشترك بالإشعارات أولًا'},{status:403});
  if(url.pathname===prefix+'/unsubscribe'){await env.DB.prepare('UPDATE push_subscriptions SET disabled=1 WHERE id=?').bind(id).run();return Response.json({ok:true})}
  if(url.pathname===prefix+'/status')return Response.json({ok:true,ordersEnabled:Boolean(current.orders_enabled),offersEnabled:Boolean(current.offers_enabled)});
- if(url.pathname===prefix+'/test'){await queue(env,id,{title:'إشعارات منار مفعّلة',body:'هذا إشعار تجريبي لجهازك فقط.',url:role==='admin'?'/admin':'/',tag:'manar-push-test'},'test:'+id+':'+crypto.randomUUID());return Response.json({ok:true})}
+ if(url.pathname===prefix+'/test'){await queue(env,id,{title:'إشعارات المتجر مفعّلة',body:'هذا إشعار تجريبي لجهازك فقط.',url:role==='admin'?'/admin':'/',tag:'manar-push-test'},'test:'+id+':'+crypto.randomUUID());return Response.json({ok:true})}
  return null;
 }
 export async function notifyNewOrder(env:PushEnv,orderId:number,orderNumber:number,origin:string,accountId:number|null,deviceId:unknown,deviceToken:unknown){
@@ -101,7 +103,7 @@ export async function notifyOrderStatus(env:PushEnv,orderId:number,status:string
  const order=await env.DB.prepare('SELECT order_number,customer_account_id FROM orders WHERE id=? AND deleted_at IS NULL').bind(orderId).first<{order_number:number;customer_account_id:number|null}>();if(!order)return;
  const labels:Record<string,string>={confirmed:'تم تأكيد طلبك',preparing:'طلبك قيد التجهيز',shipped:'طلبك في التوصيل',delivered:'تم تسليم طلبك',cancelled:'تم إلغاء طلبك',new:'تم استلام طلبك'};
  const rows=await env.DB.prepare("SELECT DISTINCT s.id FROM push_subscriptions s WHERE s.role='customer' AND s.orders_enabled=1 AND s.disabled=0 AND ((s.account_id IS NOT NULL AND s.account_id=?) OR s.id IN (SELECT subscription_id FROM push_order_links WHERE order_id=?))").bind(order.customer_account_id,orderId).all<{id:string}>();
- for(const sub of rows.results)await queue(env,sub.id,{title:labels[status]||'تحديث طلبك',body:'طلب منار رقم #'+order.order_number,url:'/account',tag:'order-'+order.order_number},'order-status:'+orderId+':'+status+':'+sub.id+':'+Date.now());
+ for(const sub of rows.results)await queue(env,sub.id,{title:labels[status]||'تحديث طلبك',body:'طلبك رقم #'+order.order_number,url:'/account',tag:'order-'+order.order_number},'order-status:'+orderId+':'+status+':'+sub.id+':'+Date.now());
  await drainPushQueue(env);
 }
 export async function pushAdminSummary(env:PushEnv){

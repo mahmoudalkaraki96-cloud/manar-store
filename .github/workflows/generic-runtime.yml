@@ -1,0 +1,19 @@
+name: Validate isolated generic runtime
+on:
+  pull_request:
+    paths: ['shared/store-profile.ts', 'worker/store-profile.ts', 'db/store-baseline.sql', 'tests/store-profile.test.cjs', '.github/workflows/generic-runtime.yml']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: node --test tests/store-icon.test.cjs tests/store-profile.test.cjs tests/store-theme.test.cjs tests/admin-security.test.cjs tests/web-push.test.cjs
+      - run: npx tsc --noEmit --strict --skipLibCheck --jsx react-jsx --module esnext --moduleResolution bundler --target ES2022 --esModuleInterop --types next worker/index.ts app/admin/page.tsx app/admin/OrdersPanel.tsx app/admin/SettingsPanel.tsx app/admin/login/page.tsx app/components/StoreTheme.tsx app/components/Notifications.tsx shared/store-profile.ts
+      - run: npm run build

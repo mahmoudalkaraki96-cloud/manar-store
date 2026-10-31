@@ -1,17 +1,18 @@
 import "./admin.css";
+import "./admin-responsive.css";
 import "./live-activity.css";
 import type {Metadata} from "next";
 
 export const metadata:Metadata={
- title:"Manar Store – لوحة التحكم",
- description:"لوحة تحكم Manar Store",
- applicationName:"Manar Store Admin",
+ title:"لوحة إدارة المتجر",
+ description:"لوحة إدارة المتجر",
+ applicationName:"إدارة المتجر",
  manifest:"/admin-manifest.webmanifest",
  icons:{
-  icon:[{url:"/_store/favicon?v=1.1.5"}],
-  apple:[{url:"/_store/favicon?v=1.1.5"}]
+  icon:[{url:"/_store/favicon?v=1.3.0"}],
+  apple:[{url:"/_store/favicon?v=1.3.0"}]
  },
- appleWebApp:{capable:true,statusBarStyle:"default",title:"Manar Store Admin"},
+ appleWebApp:{capable:true,statusBarStyle:"default",title:"إدارة المتجر"},
  robots:{index:false,follow:false}
 };
 
