@@ -12,9 +12,9 @@ function upsertMeta(selector:string,attributes:Record<string,string>){
  for(const [name,value] of Object.entries(attributes))element.setAttribute(name,value);
 }
 function upsertLink(rel:string,href:string){
- let element=document.head.querySelector<HTMLLinkElement>('link[rel="'+rel+'"]');
- if(!element){element=document.createElement("link");element.rel=rel;document.head.appendChild(element)}
- element.href=href;
+ const elements=Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="'+rel+'"]'));
+ if(!elements.length){const element=document.createElement("link");element.rel=rel;document.head.appendChild(element);elements.push(element)}
+ for(const element of elements){element.href=href;element.removeAttribute("type");element.removeAttribute("sizes")}
 }
 function upsertCanonical(href:string){
  let element=document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
@@ -68,7 +68,7 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
  const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"منار بارتي ستور";
- const favicon=absoluteUrl((location.hostname==="manarstore.ps"||location.hostname==="www.manarstore.ps")?"/favicon.png":settings.faviconUrl||settings.logoUrl);upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
+ const favicon=absoluteUrl(settings.faviconUrl||settings.logoUrl||"/_store/favicon?v=1.1.5");upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
  upsertMeta('meta[property="og:site_name"]',{property:"og:site_name",content:settings.siteNameAr||name});
  if(location.pathname.startsWith("/admin"))document.title=`${name} – لوحة التحكم`;
  const adminBrand=document.querySelector<HTMLElement>(".adminSide .brand b");

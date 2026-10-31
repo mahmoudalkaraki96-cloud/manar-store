@@ -19,8 +19,8 @@ export const metadata:Metadata={
  applicationName:"منار بارتي ستور | Manar Party Store",
  manifest:"/manifest.webmanifest",
  icons:{
-  icon:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}],
-  apple:[{url:"/favicon.png",type:"image/png",sizes:"192x192"}]
+  icon:[{url:"/_store/favicon?v=1.1.5"}],
+  apple:[{url:"/_store/favicon?v=1.1.5"}]
  },
  appleWebApp:{capable:true,statusBarStyle:"default",title:"منار بارتي ستور | Manar Party Store"},
  formatDetection:{telephone:false}

@@ -1,3 +1,4 @@
+import {storeIconResponse} from "./store-icon";
 import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
 import {adminRequest} from './admin-request';
 import {archiveOrder} from './admin-order-lifecycle';
@@ -1332,7 +1333,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   const alternateName=String(settings?.site_name_en||"Manar Party Store");
   const homeTitle=storeName+" | "+alternateName;
   const homeDescription=String(settings?.seo_description||"قطع وإكسسوارات التوزيعات بالجملة والتجزئة");
-  const favicon=absoluteStoreUrl((url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")?"/favicon.png":String(settings?.favicon_url||settings?.logo_url||"/og.png"),url.origin);
+  const favicon=absoluteStoreUrl(String(settings?.favicon_url||settings?.logo_url||"/_store/favicon?v=1.1.5"),url.origin);
   const cleanPath=url.pathname!=="/"&&url.pathname.endsWith("/")?url.pathname.slice(0,-1):url.pathname;
   let canonicalUrl=url.origin+cleanPath;
   let robots="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
@@ -1663,6 +1664,7 @@ const worker = {
   async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
     if(env.APP_SURFACE==="storefront"&&(url.hostname==="manarstore.ps"||url.hostname==="www.manarstore.ps")&&(url.protocol!=="https:"||url.hostname!=="manarstore.ps")){
       const target=new URL(url);target.protocol="https:";target.hostname="manarstore.ps";
       return Response.redirect(target.toString(),308);
