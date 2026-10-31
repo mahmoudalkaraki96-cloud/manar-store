@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath}from'node:url';
+import{execFileSync}from'node:child_process';
+import{createHash}from'node:crypto';
+import{cloudflareClient}from'./platform-cloudflare.mjs';
+export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+export const SETTINGS=JSON.parse(fs.readFileSync(path.join(ROOT,'platform/control/settings.json'),'utf8'));
+export const CONTROL=JSON.parse(fs.readFileSync(path.join(ROOT,'platform/control/resources.json'),'utf8')).databaseId;
+export const PUBLISHING=JSON.parse(fs.readFileSync(path.join(ROOT,'platform/control/publishing-resources.json'),'utf8'));
+export class ReleaseFailure extends Error{constructor(code){super(code);this.code=code}}
+export const rows=result=>result.flatMap(r=>r.results||[]);
+export const client=()=>cloudflareClient(SETTINGS.accountId,process.env.PLATFORM_DEPLOY_TOKEN||process.env.CLOUDFLARE_API_TOKEN);
+export const query=(cf,sql,params=[])=>cf.query(CONTROL,sql,params).then(rows);
+export function deployEnvironment(source=process.env){const env={...source,CLOUDFLARE_ACCOUNT_ID:SETTINGS.accountId,CLOUDFLARE_API_TOKEN:source.PLATFORM_DEPLOY_TOKEN||source.CLOUDFLARE_API_TOKEN};for(const name of Object.keys(env))if(name.startsWith('WRANGLER_CI_')||['CLOUDFLARE_ENV','WRANGLER_ENV'].includes(name))delete env[name];return env}
+export function command(binary,args,options={}){try{return execFileSync(binary,args,{cwd:ROOT,encoding:'utf8',stdio:['ignore','pipe','pipe'],timeout:180000,...options})}catch{throw new ReleaseFailure('command_failed')}}
+export function wrangler(args,options={}){return command(process.execPath,[path.join(ROOT,'node_modules/wrangler/bin/wrangler.js'),...args],{...options,env:deployEnvironment()})}
+export function safeResources(resources){if(!resources||!/^[a-z0-9][a-z0-9-]{1,62}$/.test(resources.worker||'')||!/^[a-f0-9-]{36}$/.test(resources.databaseId||'')||!/^[a-z0-9][a-z0-9_-]{1,62}$/.test(resources.databaseName||'')||!/^[a-z0-9][a-z0-9-]{1,62}$/.test(resources.mediaBucket||''))throw new ReleaseFailure('invalid_store_resources');const u=new URL(resources.storefrontUrl);if(u.protocol!=='https:'||u.username||u.password||u.pathname!=='/'||u.search||u.hash)throw new ReleaseFailure('invalid_store_origin');return resources}
+export function verifyBindings(settings,snapshot){const bindings=settings.bindings||[];if(bindings.find(b=>b.name==='DB')?.id!==snapshot.databaseId||bindings.find(b=>b.name==='MEDIA')?.bucket_name!==snapshot.mediaBucket)throw new ReleaseFailure('resource_identity_mismatch');const allowed=new Set(['DB','MEDIA','IMAGES','ASSETS']);for(const binding of bindings)if(!['plain_text','json','secret_text'].includes(binding.type)&&!allowed.has(binding.name))throw new ReleaseFailure('unreviewed_binding');const surface=bindings.find(b=>b.name==='APP_SURFACE');if(surface&&surface.text!=='storefront')throw new ReleaseFailure('unexpected_worker_surface')}
+export function storefrontConfig(storeId,snapshot,settings,crons=[]){safeResources(snapshot);verifyBindings(settings,snapshot);return {name:snapshot.worker,main:'./dist/server/index.js',compatibility_date:'2026-08-22',compatibility_flags:['nodejs_compat'],no_bundle:true,rules:[{type:'ESModule',globs:['**/*.js','**/*.mjs']}],assets:{directory:'./dist/client',binding:'ASSETS',run_worker_first:['/_store/favicon','/manifest.webmanifest','/admin-manifest.webmanifest']},workers_dev:true,preview_urls:false,d1_databases:[{binding:'DB',database_name:snapshot.databaseName,database_id:snapshot.databaseId}],r2_buckets:[{binding:'MEDIA',bucket_name:snapshot.mediaBucket}],...(settings.bindings?.some(b=>b.type==='images'&&b.name==='IMAGES')?{images:{binding:'IMAGES'}}:{}),vars:{APP_SURFACE:'storefront',STORE_KEY:storeId},triggers:{crons},observability:{enabled:true}}}
+export function sha256(file){return createHash('sha256').update(fs.readFileSync(file)).digest('hex')}
+export function assertArchivePaths(entries){for(const name of entries.split('\n').filter(Boolean)){if(name.startsWith('/')||name.includes('\\')||name.split('/').some(p=>p==='..')||!(/^(?:dist(?:\/|$)|VERSION$)/.test(name)))throw new ReleaseFailure('unsafe_release_archive')}}
+export function verifyArtifact(file,variant){if(sha256(file)!==variant.sha256)throw new ReleaseFailure('artifact_checksum_mismatch');assertArchivePaths(command('tar',['-tzf',file]));const listing=command('tar',['-tvzf',file]);if(listing.split('\n').some(line=>line.startsWith('l')||line.startsWith('h')))throw new ReleaseFailure('unsafe_release_archive')}
+export function safeError(error){if(error instanceof ReleaseFailure)return error.code;const allowed=new Set(['cloudflare_permission_denied','cloudflare_request_failed','database_query_failed','cloudflare_invalid_response']);return allowed.has(error?.code)?error.code:'release_operation_failed'}

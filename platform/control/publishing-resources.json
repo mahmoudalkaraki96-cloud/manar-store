@@ -1,0 +1,6 @@
+{
+  "artifactBucket": "store-platform-releases",
+  "runnerWorker": "store-platform-release-runner",
+  "runnerBranch": "platform/release-runner",
+  "hookSecretName": "PLATFORM_RELEASE_BUILD_HOOK"
+}

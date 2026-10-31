@@ -1,9 +1,10 @@
+import {publishingApi} from "./publishing-api";
 import {groupProvisioningJobs} from "./job-history";
 import {previewIdentity} from '../../worker/preview-access';
 import {storeDraft,publicRecord,resourceNames} from './model';
 import {html} from './ui';
 interface Statement{bind(...values:unknown[]):Statement;all<T=Record<string,unknown>>():Promise<{results:T[]}>;first<T=Record<string,unknown>>():Promise<T|null>;run():Promise<{meta:{changes?:number}}>}
-interface Env{PLATFORM_DB:{prepare(sql:string):Statement;batch(statements:Statement[]):Promise<unknown[]>};PREVIEW_ACCESS_TEAM?:string;PREVIEW_ACCESS_AUD?:string;PREVIEW_ALLOWED_EMAILS?:string;PLATFORM_VERSION?:string}
+interface Env{PLATFORM_DB:{prepare(sql:string):Statement;batch(statements:Statement[]):Promise<unknown[]>};PREVIEW_ACCESS_TEAM?:string;PREVIEW_ACCESS_AUD?:string;PREVIEW_ALLOWED_EMAILS?:string;PLATFORM_VERSION?:string;PLATFORM_RELEASE_BUILD_HOOK?:string}
 const json=(body:unknown,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store','x-content-type-options':'nosniff','x-robots-tag':'noindex, nofollow'}});
 async function body(request:Request){const raw=await request.text();if(raw.length>6000)throw Error('الطلب أكبر من المسموح.');const value=JSON.parse(raw);if(!value||Array.isArray(value)||typeof value!=='object')throw Error('بيانات غير صالحة.');return value as Record<string,unknown>}
 const audit=(env:Env,actor:string,action:string,id:string,details:unknown={})=>env.PLATFORM_DB.prepare('INSERT INTO platform_audit(id,actor,action,store_id,details_json,created_at) VALUES(?,?,?,?,?,?)').bind(crypto.randomUUID(),actor,action,id,JSON.stringify(details),Date.now());
@@ -14,6 +15,7 @@ export default {async fetch(request:Request,env:Env):Promise<Response>{
  try{
  if(!['GET','HEAD'].includes(request.method)&&(request.headers.get('origin')!==url.origin||request.headers.get('sec-fetch-site')==='cross-site'))return json({error:'مصدر الطلب غير مسموح.'},403);
  if(request.method==='GET'&&url.pathname==='/')return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'no-store','x-robots-tag':'noindex, nofollow','x-frame-options':'DENY','referrer-policy':'no-referrer','content-security-policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"}});
+ if(url.pathname.startsWith('/api/releases'))return publishingApi(request,env,actor);
  if(request.method==='GET'&&url.pathname==='/api/state'){
   const [stores,jobs,events]=await Promise.all([env.PLATFORM_DB.prepare('SELECT * FROM platform_stores ORDER BY created_at DESC,id').all(),env.PLATFORM_DB.prepare('SELECT id,store_id,operation,status,stage,error_code,attempts,created_at,updated_at FROM platform_jobs ORDER BY created_at DESC LIMIT 40').all(),env.PLATFORM_DB.prepare('SELECT actor,action,store_id,details_json,created_at FROM platform_audit ORDER BY created_at DESC LIMIT 25').all()]);
   return json({version:env.PLATFORM_VERSION||'0.3.0',actor,stores:stores.results.map(publicRecord),jobs:jobs.results,jobGroups:groupProvisioningJobs(jobs.results),events:events.results});
