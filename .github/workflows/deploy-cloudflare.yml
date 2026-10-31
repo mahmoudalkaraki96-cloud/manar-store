@@ -1,27 +1,7 @@
 name: Deploy store and admin to Cloudflare
-# Production deployment trigger: storefront and admin
+# Manual operator fallback. Routine storefront rollouts are selected in the platform.
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'docs/**'
-      - 'STORE-PROGRESS.md'
-      - 'platform/**'
-      - 'scripts/platform-release.mjs'
-      - 'scripts/platform-provision.mjs'
-      - 'scripts/platform-cloudflare.mjs'
-      - 'tests/platform-console.test.cjs'
-      - '.github/workflows/platform-console.yml'
-      - 'tests/platform-release.test.mjs'
-      - '.github/workflows/platform-release.yml'
-      - '.gitignore'
-      - 'worker/preview*.ts'
-      - 'wrangler.preview.jsonc'
-      - 'scripts/build-preview.sh'
-      - 'scripts/prepare-preview.mjs'
-      - 'tests/preview.test.cjs'
-      - '.github/workflows/store-preview.yml'
   workflow_dispatch:
 
 concurrency:
