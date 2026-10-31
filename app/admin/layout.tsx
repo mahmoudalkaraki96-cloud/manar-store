@@ -8,8 +8,8 @@ export const metadata:Metadata={
  applicationName:"Manar Store Admin",
  manifest:"/admin-manifest.webmanifest",
  icons:{
-  icon:[{url:"/admin-icon.svg",type:"image/svg+xml"}],
-  apple:[{url:"/admin-icon.svg",type:"image/svg+xml"}]
+  icon:[{url:"/_store/favicon?v=1.1.5"}],
+  apple:[{url:"/_store/favicon?v=1.1.5"}]
  },
  appleWebApp:{capable:true,statusBarStyle:"default",title:"Manar Store Admin"},
  robots:{index:false,follow:false}
