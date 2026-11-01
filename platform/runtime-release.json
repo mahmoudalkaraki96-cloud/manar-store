@@ -1,10 +1,9 @@
 {
-  "version": "1.2.1",
-  "revision": "7a730a8b89149a1f54856ffe9d6e36ddeb4221cd",
+  "version": "1.3.0",
+  "revision": "6dd9ecb03f372b973709184ac7054a89232faec1",
   "reviewed": true,
-  "scope": "new-stores-only",
+  "scope": "shared-runtime",
   "validationRuns": [
-    41085636691,
-    41085636695
+    41283948976
   ]
 }

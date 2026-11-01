@@ -767,3 +767,8 @@
 - One runtime artifact with `surfaces:["storefront","admin"]`; certifications bind both Worker names, D1 ID and R2 bucket. No merchant catalog crosses bindings. Per-surface deployed revision is retained, and a target succeeds only after both surfaces verify.
 - `platform-unified-upgrade.mjs audit|prepare`: private SQL backup and offline additive schema validation for every target precede live schema updates. Existing store_profile is preserved. Legacy tracking/media migration is operator data, outside shared runtime code.
 - Admin responsive overrides in admin-responsive.css; category ordering is display-only. PDF export uses pinned local html2canvas/jsPDF, renders Arabic in the browser, and has a price-free preparation root guard. Actual device-specific iOS download behavior still requires owner verification.
+
+
+### Unified release readiness — 2026-11-01
+- Runtime1.3.0 / source6dd9ecb03f372b973709184ac7054a89232faec1 is ready as a single shared storefront/admin artifact, certified for the three independent stores. New-store provisioning pins the same runtime. Merchant activation remains a separate user action.
+- shipping_zones code/label is the current runtime schema. Upgrade comparison explicitly accepts its complete code primary-key form rather than adding the obsolete baseline id/name columns. Tests preserve existing zone rows/prices and reject incomplete schemas.
