@@ -40,3 +40,51 @@
  .adminRedesign .orderDetailActions{display:flex;flex-wrap:wrap;gap:8px}.adminRedesign .orderDetailActions>button{flex:1 1 140px;min-height:42px;margin:0}.adminRedesign .orderDetailControls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.adminRedesign .orderDetailControls>label{min-width:0}.adminRedesign .orderDetailControls input,.adminRedesign .orderDetailControls select{width:100%;min-width:0;font-size:16px}.adminRedesign .orderEditRow,.adminRedesign .orderAddAmounts{grid-template-columns:1fr 1fr}.adminRedesign .orderEditName{grid-column:1/-1}.adminRedesign .orderAddAmounts>button{grid-column:1/-1}.adminRedesign .orderDetailBackdrop{padding:8px}.adminRedesign .orderDetail{width:100%;max-height:calc(100dvh - 16px);box-sizing:border-box}
 }
 @media print{.adminRedesign .adminSide,.adminRedesign .adminMenuButton,.adminRedesign .adminMenuBackdrop,.pdfPreparationSource{display:none!important}.adminRedesign .adminMain{padding:0!important}}
+
+/* Shared fixed account toolbar and bounded phone forms, runtime 1.3.1. */
+.adminAccountBar{position:sticky;top:0;z-index:300;display:flex;align-items:center;gap:10px;background:#fff;color:#173536;border-bottom:1px solid #dce6e6;padding:8px 18px;box-sizing:border-box}
+.adminAccountBar .securityAccount{color:inherit;position:static;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0;padding:0;border:0;background:transparent;min-width:0;flex:1;justify-content:flex-end}
+.adminMenuHost,.adminMenuFallback{display:none}
+body:has(.adminRedesign.themeDark) .adminAccountBar{background:#122626;color:#edf7f7;border-color:#294242}
+.adminRedesign .variantEditor{grid-template-columns:minmax(0,1fr);min-width:0;max-width:100%}
+.adminRedesign .variantRow{width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+.adminTableScroll{width:100%;min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+.adminRedesign .orderDetail,.adminRedesign .orderItemsEditor{min-width:0}
+@media(max-width:800px){
+ :root{--admin-toolbar-height:88px}
+ body:has(.adminShell),body:has(.securityLogin){margin:0;max-width:100%;overflow-x:clip}
+ .adminAccountBar{position:fixed;inset:0 0 auto;z-index:300;height:calc(var(--admin-toolbar-height) + env(safe-area-inset-top));padding:calc(8px + env(safe-area-inset-top)) 10px 8px;gap:8px}
+ .adminMenuHost{display:flex;flex:0 0 90px;min-width:0}
+ .adminAccountBar .adminMenuButton{position:static!important;inset:auto!important;width:90px!important;min-width:0!important;height:44px!important;margin:0;padding:5px!important;font-size:14px!important;box-shadow:none!important;justify-content:center}
+ .adminAccountBar .adminMenuButton b{font-size:11px}
+ .adminAccountBar .securityAccount{gap:4px;justify-content:flex-start;align-content:center;height:100%}
+ .adminAccountBar .securityAccount>span:not([role=alert]){display:none}
+ .adminAccountBar .securityAccount button{min-width:0;min-height:30px;padding:5px 7px;font-size:12px;white-space:nowrap}
+ .adminAccountBar [role=alert]{font-size:11px}
+ .adminRedesign .adminMain{padding-top:calc(var(--admin-toolbar-height) + env(safe-area-inset-top) + 12px)!important}
+ .adminRedesign .adminSide{z-index:420!important}.adminRedesign .adminMenuBackdrop{z-index:410!important}
+ .securityPasswordBox{position:fixed;inset:calc(var(--admin-toolbar-height) + env(safe-area-inset-top)) 0 0;z-index:430;overflow:auto;margin:0;padding:12px;box-sizing:border-box}
+ .adminShell,.adminShell *,.securityLogin,.securityLogin *,.securityPasswordBox *{box-sizing:border-box}
+ .adminShell input:not([type=checkbox]):not([type=radio]),.adminShell select,.adminShell textarea,.securityLogin input,.securityPasswordBox input,.securityCard input,.securityCard select,.securityCard textarea{font-size:16px!important;min-width:0;max-width:100%}
+ .adminShell .editModal,.adminShell .orderDetailBackdrop{inset:calc(var(--admin-toolbar-height) + env(safe-area-inset-top)) 0 0!important;width:100%;height:auto;max-width:100vw;z-index:350;overscroll-behavior:contain}
+ .adminShell .editBox,.adminShell .orderDetail{max-height:calc(100dvh - var(--admin-toolbar-height) - env(safe-area-inset-top) - 20px)!important;overflow-y:auto;overflow-x:hidden;min-width:0!important;max-width:100%!important;touch-action:pan-y pinch-zoom}
+ .adminShell .variantEditor,.adminShell .variantRow,.adminShell .customFieldEditor,.adminShell .mediaEditor,.adminShell .orderItemsEditor{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
+ .adminShell .variantRow{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .adminShell .variantMediaBox,.adminShell .variantMediaActions,.adminShell .variantMediaThumbs,.adminShell .variantMediaActions>*{min-width:0;max-width:100%}
+ .adminShell .variantImageUrl{width:100%}.adminShell .variantImageUrl input{width:0;flex:1 1 0}
+ .adminShell .variantMediaThumbs{overflow-x:auto}
+ .adminShell .orderEditRow,.adminShell .orderAddAmounts{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0;max-width:100%}
+ .adminShell .orderEditorSearch,.adminShell .orderEditRow>*,.adminShell .orderAddAmounts>*,.adminShell .manualOrderForm,.adminShell .orderDetailControls>*{min-width:0;max-width:100%}
+ .adminShell .orderEditorSearch input{width:100%}
+ .adminRedesign table{display:block;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ .adminRedesign .adminTableScroll table{display:table;max-width:none;overflow:visible}
+ .adminRedesign .dataPanel{overflow-x:clip}
+}
+@media print{.adminAccountBar{display:none!important}.adminTableScroll{overflow:visible;max-width:none}.orderPdfExport table{display:table!important;overflow:visible!important}}
+
+@media(max-width:800px){
+ .adminAccountBar .adminMenuButton{display:flex;background:#132b2c;color:white;border:0;border-radius:10px;align-items:center;gap:5px;cursor:pointer}
+ .adminRedesign table{min-width:0!important;width:100%;box-sizing:border-box}
+ .adminRedesign .adminTableScroll table{min-width:640px!important}
+}
+@media print{body:has(.orderDetailBackdrop){position:static!important;top:auto!important;width:auto!important}.adminMenuFallback,.adminMenuHost{display:none!important}}

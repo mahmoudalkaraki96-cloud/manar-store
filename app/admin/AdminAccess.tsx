@@ -1,10 +1,13 @@
 "use client";
 import {createContext,useContext,useEffect,useState,type ReactNode} from 'react';
+import {createPortal} from 'react-dom';
 import {modulePermission,type Permission} from '../../shared/admin-permissions';
 import './security.css';
 import {AdminNotificationControls} from '../components/AdminNotificationButton';
 export type Actor={id:number;email:string;name:string;owner:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword?:boolean;method:string};
 const Context=createContext<Actor|null>(null);
+const ToolbarHost=createContext<HTMLElement|null>(null);
+export function AdminMenuAction({children}:{children:ReactNode}){const host=useContext(ToolbarHost);return host?createPortal(children,host):<div className="adminMenuFallback">{children}</div>}
 export function useAdminAccess(){const actor=useContext(Context);const can=(permission:Permission)=>!!actor&&(actor.owner||actor.permissions.includes(permission));return {actor,can,canModule:(name:string)=>!!modulePermission[name]&&can(modulePermission[name])}}
 export async function securityFetch(path:string,method='GET',body?:unknown){const r=await fetch(path,{method,headers:{'content-type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)}),cache:'no-store'});if(!r.headers.get('content-type')?.includes('application/json'))throw new Error('أعد تسجيل الدخول إلى لوحة الإدارة');const data=await r.json();if(!r.ok)throw new Error(data.error||'تعذر تنفيذ العملية');return data}
 export function PasswordForm({actor,onChanged}:{actor:Actor;onChanged:(actor:Actor)=>void}){
@@ -12,9 +15,10 @@ export function PasswordForm({actor,onChanged}:{actor:Actor;onChanged:(actor:Act
  return <form className="securityCard" onSubmit={async e=>{e.preventDefault();if(password!==confirm){setError('كلمتا المرور غير متطابقتين');return}setBusy(true);setError('');try{const d=await securityFetch('/api/admin/auth/password','POST',{currentPassword:current,newPassword:password});setCurrent('');setPassword('');setConfirm('');onChanged(d.actor)}catch(e){setError(e instanceof Error?e.message:'تعذر الحفظ')}finally{setBusy(false)}}}><h2>{actor.mustChangePassword?'تعيين كلمة مرور حسابك':'تغيير كلمة المرور'}</h2><p>{actor.email}</p>{actor.method!=='cloudflare'&&<label>كلمة المرور الحالية<input type="password" autoComplete="current-password" required value={current} onChange={e=>setCurrent(e.target.value)}/></label>}<label>كلمة المرور الجديدة<input type="password" minLength={6} maxLength={128} autoComplete="new-password" required value={password} onChange={e=>setPassword(e.target.value)}/></label><label>تأكيد كلمة المرور<input type="password" minLength={6} maxLength={128} autoComplete="new-password" required value={confirm} onChange={e=>setConfirm(e.target.value)}/></label><small>6 خانات على الأقل، حروف أو أرقام. بعد الحفظ تُلغى جلسات الدخول السابقة.</small>{error&&<p role="alert">{error}</p>}<button disabled={busy}>{busy?'جاري الحفظ…':'حفظ كلمة المرور'}</button></form>
 }
 export default function AdminAccess({children}:{children:ReactNode}){
+ const [toolbarHost,setToolbarHost]=useState<HTMLDivElement|null>(null);
  const [actor,setActor]=useState<Actor|null>(null),[error,setError]=useState(''),[change,setChange]=useState(false);
  const load=()=>securityFetch('/api/admin/auth/me').then(d=>setActor(d.actor)).catch(()=>{window.location.assign('/admin/login')});useEffect(()=>{void load()},[]);
  if(!actor)return <div className="securityLoading" role="status">جاري التحقق من حسابك…</div>;
 
- return <Context.Provider value={actor}><div className="securityAccount noPrint"><span>{actor.name} · {actor.owner?'المدير الرئيسي':'حساب إدارة'}</span><button onClick={()=>setChange(!change)}>{actor.hasPassword?"كلمة المرور":"تعيين كلمة مرور للدخول بالبريد"}</button><AdminNotificationControls/><button onClick={async()=>{try{await securityFetch('/api/admin/auth/logout','POST',{});window.location.assign('/admin/login')}catch(e){setError(e instanceof Error?e.message:'تعذر الخروج')}}}>تسجيل الخروج</button>{error&&<span role="alert">{error}</span>}</div>{change&&<div className="securityPasswordBox"><PasswordForm actor={actor} onChanged={next=>{setActor(next);setChange(false)}}/></div>}{children}</Context.Provider>
+ return <Context.Provider value={actor}><ToolbarHost.Provider value={toolbarHost}><header className="adminAccountBar noPrint"><div className="adminMenuHost" ref={setToolbarHost}/><div className="securityAccount"><span>{actor.name} · {actor.owner?'المدير الرئيسي':'حساب إدارة'}</span><button onClick={()=>setChange(!change)}>كلمة المرور</button><AdminNotificationControls/><button onClick={async()=>{try{await securityFetch('/api/admin/auth/logout','POST',{});window.location.assign('/admin/login')}catch(e){setError(e instanceof Error?e.message:'تعذر الخروج')}}}>تسجيل الخروج</button>{error&&<span role="alert">{error}</span>}</div></header>{change&&<div className="securityPasswordBox"><PasswordForm actor={actor} onChanged={next=>{setActor(next);setChange(false)}}/></div>}{children}</ToolbarHost.Provider></Context.Provider>
 }

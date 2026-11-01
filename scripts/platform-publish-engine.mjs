@@ -1,3 +1,4 @@
+import {runAccountJobs} from './platform-account-engine.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -18,6 +19,7 @@ export async function executeTargets(targets,adapter){
 }
 export async function run(){
  const cf=client(),lease=crypto.randomUUID();
+ await runAccountJobs(cf);
  // Never retry a crashed activation automatically: its live outcome needs review.
  await query(cf,"UPDATE platform_release_targets SET status='failed',stage='needs_review',error_code='runner_interrupted',updated_at=? WHERE status='running' AND batch_id IN (SELECT id FROM platform_release_batches WHERE status='running' AND lease_until<?)",[Date.now(),Date.now()]);
  await query(cf,"UPDATE platform_release_targets SET status='failed',stage='not_started',error_code='runner_interrupted',updated_at=? WHERE status='queued' AND batch_id IN (SELECT id FROM platform_release_batches WHERE status='running' AND lease_until<?)",[Date.now(),Date.now()]);
