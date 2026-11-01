@@ -17,6 +17,8 @@ export async function applyAccountJob(cf,job,account,snapshot){
    await q('INSERT INTO platform_admin_account_links(platform_account_id,user_id,created_at) VALUES(?,?,?)',[account.id,user.id,Date.now()]);
    link={user_id:user.id};
   }else{
+   const linked=(await q('SELECT id,email,is_owner FROM admin_users WHERE id=?',[link.user_id]))[0];
+   if(!linked||linked.email.toLowerCase()!==account.email.toLowerCase()||!linked.is_owner)throw new ReleaseFailure('account_identity_mismatch');
    await q('UPDATE admin_users SET password_hash=?,password_salt=?,active=1,must_change_password=0,password_expires_at=NULL,auth_version=auth_version+1,updated_at=? WHERE id=? AND is_owner=1',[job.password_hash,job.password_salt,Date.now(),link.user_id]);
   }
  }else{
