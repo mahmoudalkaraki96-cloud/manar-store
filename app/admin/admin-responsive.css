@@ -43,7 +43,7 @@
 
 /* Shared fixed account toolbar and bounded phone forms, runtime 1.3.1. */
 .adminAccountBar{position:sticky;top:0;z-index:300;display:flex;align-items:center;gap:10px;background:#fff;color:#173536;border-bottom:1px solid #dce6e6;padding:8px 18px;box-sizing:border-box}
-.adminAccountBar .securityAccount{position:static;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0;padding:0;border:0;background:transparent;min-width:0;flex:1;justify-content:flex-end}
+.adminAccountBar .securityAccount{color:inherit;position:static;display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0;padding:0;border:0;background:transparent;min-width:0;flex:1;justify-content:flex-end}
 .adminMenuHost,.adminMenuFallback{display:none}
 body:has(.adminRedesign.themeDark) .adminAccountBar{background:#122626;color:#edf7f7;border-color:#294242}
 .adminRedesign .variantEditor{grid-template-columns:minmax(0,1fr);min-width:0;max-width:100%}
