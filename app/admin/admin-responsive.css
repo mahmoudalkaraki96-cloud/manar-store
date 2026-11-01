@@ -88,3 +88,12 @@ body:has(.adminRedesign.themeDark) .adminAccountBar{background:#122626;color:#ed
  .adminRedesign .adminTableScroll table{min-width:640px!important}
 }
 @media print{body:has(.orderDetailBackdrop){position:static!important;top:auto!important;width:auto!important}.adminMenuFallback,.adminMenuHost{display:none!important}}
+
+/* 1.3.2: device-cart details retain a full-width three-column table on phones. */
+.adminRedesign .browserCartBody,.adminRedesign .browserCartItems{width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+.adminRedesign .browserCartItems table{display:table;width:100%!important;min-width:0!important;max-width:100%;table-layout:fixed;overflow:visible;border-collapse:collapse}
+.adminRedesign .browserCartItems .cartProductColumn{width:48%}.adminRedesign .browserCartItems .cartVariantColumn{width:34%}.adminRedesign .browserCartItems .cartQuantityColumn{width:18%}
+.adminRedesign .browserCartItems th,.adminRedesign .browserCartItems td{white-space:normal;overflow-wrap:anywhere;text-align:right;vertical-align:top;line-height:1.7}
+.adminRedesign .browserCartItems th:last-child,.adminRedesign .browserCartItems td:last-child{text-align:center}
+.browserCartTotal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--admin-line);font-size:12px}.browserCartTotal>b{color:var(--admin-accent);font-variant-numeric:tabular-nums}.browserCartTotal>small{flex-basis:100%;color:var(--admin-muted);font-size:10px}
+@media(max-width:800px){.adminRedesign .browserCartItems th,.adminRedesign .browserCartItems td{padding:10px 5px;font-size:12px}.adminRedesign .browserCartItems td b{font-weight:600}.adminRedesign .browserCartItems td small{font-size:10px}}

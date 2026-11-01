@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import{execFileSync}from'n
 import{client,query,ROOT,PUBLISHING,sha256,wrangler,safeResources,verifyBindings,ReleaseFailure,safeError}from'./platform-publish-common.mjs';
 export async function prepare(){
  if(process.env.GITHUB_REF!=='refs/heads/main')throw new ReleaseFailure('reviewed_main_required');
- const version=fs.readFileSync(path.join(ROOT,'VERSION'),'utf8').trim();if(version!=='1.3.1')throw new ReleaseFailure('unexpected_release_version');
+ const version=fs.readFileSync(path.join(ROOT,'VERSION'),'utf8').trim();if(version!=='1.3.2')throw new ReleaseFailure('unexpected_release_version');
  const revision=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim(),cf=client(),id='runtime-'+version,manifest={schemaVersion:1,variants:{},certifications:{}};
  const existing=(await query(cf,'SELECT * FROM platform_releases WHERE id=?',[id]))[0];
  if(existing?.status==='ready'){const previous=JSON.parse(existing.manifest_json);if(previous.variants.shared?.revision!==revision)throw new ReleaseFailure('release_already_approved');console.log(JSON.stringify({releaseId:id,status:'already_ready'}));return}
