@@ -9,8 +9,8 @@ export const metadata:Metadata={
  applicationName:"إدارة المتجر",
  manifest:"/admin-manifest.webmanifest",
  icons:{
-  icon:[{url:"/_store/favicon?v=1.3.1"}],
-  apple:[{url:"/_store/favicon?v=1.3.1"}]
+  icon:[{url:"/_store/favicon?v=1.3.2"}],
+  apple:[{url:"/_store/favicon?v=1.3.2"}]
  },
  appleWebApp:{capable:true,statusBarStyle:"default",title:"إدارة المتجر"},
  robots:{index:false,follow:false}
