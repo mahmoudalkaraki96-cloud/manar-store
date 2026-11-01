@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import{execFileSync}from'n
 import{client,query,ROOT,PUBLISHING,sha256,wrangler,safeResources,verifyBindings,ReleaseFailure,safeError}from'./platform-publish-common.mjs';
 export async function prepare(){
  if(process.env.GITHUB_REF!=='refs/heads/main')throw new ReleaseFailure('reviewed_main_required');
- const version=fs.readFileSync(path.join(ROOT,'VERSION'),'utf8').trim();if(version!=='1.3.0')throw new ReleaseFailure('unexpected_release_version');
+ const version=fs.readFileSync(path.join(ROOT,'VERSION'),'utf8').trim();if(version!=='1.3.1')throw new ReleaseFailure('unexpected_release_version');
  const revision=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim(),cf=client(),id='runtime-'+version,manifest={schemaVersion:1,variants:{},certifications:{}};
  const existing=(await query(cf,'SELECT * FROM platform_releases WHERE id=?',[id]))[0];
  if(existing?.status==='ready'){const previous=JSON.parse(existing.manifest_json);if(previous.variants.shared?.revision!==revision)throw new ReleaseFailure('release_already_approved');console.log(JSON.stringify({releaseId:id,status:'already_ready'}));return}
@@ -10,7 +10,7 @@ export async function prepare(){
  if(!stores.length)throw new ReleaseFailure('no_ready_stores');
  const identities=new Set();
  for(const store of stores){
-  const r=JSON.parse(store.resources_json||'{}');if(!r.unifiedRuntimeReady||r.runtimeSchemaVersion!==version)throw new ReleaseFailure('store_upgrade_required');
+  const r=JSON.parse(store.resources_json||'{}');if(!r.unifiedRuntimeReady||r.runtimeSchemaVersion!=='1.3.0')throw new ReleaseFailure('store_upgrade_required');
   const snapshot=safeResources({worker:r.storefrontWorker,...r});
   for(const field of ['databaseId','mediaBucket','storefrontWorker','adminWorker']){const key=field+':'+r[field];if(identities.has(key))throw new ReleaseFailure('cross_store_resource_collision');identities.add(key)}
   for(const surface of ['storefront','admin']){const settings=await cf.call('/workers/scripts/'+r[surface+'Worker']+'/settings');verifyBindings(settings,snapshot,surface);if(surface==='admin'&&!['ADMIN_OWNER_EMAIL','ADMIN_CF_TEAM','ADMIN_CF_AUD'].every(name=>settings.bindings.some(b=>b.name===name&&b.text)))throw new ReleaseFailure('admin_auth_requires_review')}
