@@ -1,6 +1,7 @@
 "use client";
 import Notifications from "./Notifications";
 import FloatingAction from "./FloatingAction";
+import NotifyPrompt from "./NotifyPrompt";
 import {useEffect,useState} from "react";
 
 type InstallPromptEvent=Event&{
@@ -66,8 +67,9 @@ export default function PwaRegister(){
    window.removeEventListener("appinstalled",onInstalled);
   };
  },[]);
+ useEffect(()=>{const root=document.documentElement;if(!admin&&!installed&&(prompt||/iphone|ipad|ipod/i.test(navigator.userAgent)))root.dataset.pwaInstallable="1";else delete root.dataset.pwaInstallable;const open=()=>{if(prompt)void prompt.prompt().then(()=>prompt.userChoice).then(choice=>{if(choice.outcome==="accepted")setInstalled(true);setPrompt(null)}).catch(()=>{});else if(!installed)setShowIosHelp(true)};window.addEventListener("manar:install-app",open);return()=>window.removeEventListener("manar:install-app",open)},[prompt,installed,admin]);
 
- if(installed)return <Notifications/>;
+ if(installed)return <><Notifications/><NotifyPrompt/></>;
  const ios=typeof navigator!=="undefined"&&/iphone|ipad|ipod/i.test(navigator.userAgent);
  if(!prompt&&!ios)return <Notifications/>;
  const appName=admin?"إدارة المتجر":"المتجر";
