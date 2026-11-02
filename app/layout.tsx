@@ -6,6 +6,7 @@ import PwaRegister from "./components/PwaRegister";
 import ShoppingOverlay from "./components/ShoppingOverlay";
 import StickyCartBar from "./components/StickyCartBar";
 import CartCustomization from "./components/CartCustomization";
+import WhatsAppButton from "./components/WhatsAppButton";
 import "./sticky-cart.css";
 import "./globals.css";
 import "./checkout.css";
@@ -36,7 +37,7 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/></body></html>
+ return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></body></html>
 }
 
 
