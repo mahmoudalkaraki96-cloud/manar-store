@@ -66,3 +66,7 @@
 .product.softProduct .favBtn{top:35px}.product.softProduct .soldOutBadge{top:35px}
 
 .product.softProduct .productVisual{aspect-ratio:1/1!important;height:auto!important}
+
+/* 1.4.1: product card images fill their frame on desktop and mobile. */
+.product.softProduct .productVisual.containImage{background:transparent!important;padding:0!important}
+.product.softProduct .productVisual.containImage>img:not(.logoWatermark){position:absolute!important;inset:0;object-fit:cover!important;padding:0!important;background:transparent!important;width:100%!important;height:100%!important;max-height:none!important}
