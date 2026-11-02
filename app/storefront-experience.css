@@ -133,3 +133,5 @@ body:has(.stickyCartBar) .whatsappFloat{bottom:calc(86px + env(safe-area-inset-b
 .productPage .gallery .thumbs:has(>:only-child){display:none!important}
 @media(min-width:721px){.productPage.productContentWidth{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:start}}
 @media(prefers-reduced-motion:reduce){.mobileMenuLayer,.mobileMenuPanel,.whatsappFloat{transition:none!important}}
+/* 1.5.1: the legacy nav{display:none} rule under 1050px hid the menu panel. */
+@media(max-width:720px){.mobileMenuLayer .mobileMenuPanel{display:block}}
