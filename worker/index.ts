@@ -1,6 +1,9 @@
+import {trackingPhone,trackOrders} from "./order-tracking";
 import {storeAssetResponse} from "./store-assets";
 import {storeIconResponse} from "./store-icon";
 import {mediaSources} from "./media-sources";
+import {boundedReviewForm,reviewSchema,canReview,reviewInput,reviewImage,publicReviews,moderateReview,ReviewError} from "./product-reviews";
+import {shippingQuote} from "../shared/shipping";
 import {readStoreProfile,saveStoreProfile} from "./store-profile";
 import {validateStoreProfile,trackingAllowed,googleAnalyticsHead as configuredGoogleHead} from "../shared/store-profile";
 import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
@@ -59,7 +62,7 @@ interface D1Database {
   batch<T = Record<string, unknown>>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
 }
 interface R2ObjectBody { size:number; range?:{offset:number;length:number}; body: ReadableStream; httpEtag: string; writeHttpMetadata(headers: Headers): void }
-interface R2Bucket { get(key: string,options?:{range:Headers}): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string;cacheControl?:string } }): Promise<unknown> }
+interface R2Bucket { delete(key:string):Promise<void>; get(key: string,options?:{range:Headers}): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string;cacheControl?:string } }): Promise<unknown> }
 interface Fetcher { fetch(request: Request): Promise<Response> }
 
 interface ExecutionContext {
@@ -246,7 +249,7 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
-  let profile;try{const current=await readStoreProfile(env.DB),keys=["publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
   await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
@@ -516,7 +519,7 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
   if(!address)return json({error:"العنوان بالتفصيل مطلوب"},{status:400});
   const shippingRow=await env.DB.prepare("SELECT price_agorot FROM shipping_zones WHERE code=? AND active=1").bind(zone).first<{price_agorot:number}>();
   if(!shippingRow)return json({error:"منطقة التوصيل غير صحيحة أو غير مفعلة"},{status:400});
-  const shipping=Number(shippingRow.price_agorot);
+  let shipping=Number(shippingRow.price_agorot);
   const requested=Array.isArray(body.items)?body.items as Array<Record<string,unknown>>:[];
   if(!requested.length||requested.length>100)return json({error:"السلة فارغة أو تتجاوز الحد"},{status:400});
   const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
@@ -540,10 +543,12 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
     lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
   }
   const account=await getCustomerAccount(request,env);
-  const subtotal=lines.reduce((sum,line)=>sum+line.total,0),now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
+  const subtotal=lines.reduce((sum,line)=>sum+line.total,0);
+  shipping=shippingQuote(subtotal,shipping,await readStoreProfile(env.DB)).shippingAgorot;
+  const now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
   await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
   ctx.waitUntil(notifyNewOrder(env,orderId,number,new URL(request.url).origin,account?.id||null,body.pushDeviceId,body.pushDeviceToken).catch(()=>console.error("new_order_push_failed")));
-  return json({ok:true,orderNumber:number,total:(subtotal+shipping)/100});
+  return json({ok:true,orderNumber:number,subtotal:subtotal/100,shipping:shipping/100,total:(subtotal+shipping)/100});
 }
 
 async function readOrders(env:Env){
@@ -910,6 +915,41 @@ async function fetchImageSource(path:string,env:Env,request:Request):Promise<Res
 }
 
 async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): Promise<Response | null> {
+ const reviewMatch=url.pathname.match(/^\/api\/products\/(\d+)\/reviews$/),reviewAdmin=url.pathname.match(/^\/api\/admin\/reviews(?:\/(\d+))?$/);
+ if(reviewMatch||reviewAdmin){
+  await reviewSchema(env.DB);
+  try{
+   if(reviewAdmin){
+    if(request.method==="GET"){const rows=await env.DB.prepare("SELECT r.id,r.rating,r.body,r.photos_json,r.status,r.created_at,p.name AS product_name FROM product_reviews r JOIN products p ON p.id=r.product_id ORDER BY r.created_at DESC LIMIT 100").all();return json({reviews:rows.results},{headers:{"cache-control":"no-store"}})}
+    if(request.method==="PUT"&&reviewAdmin[1]){const body=await parseJson(request);await moderateReview(env.DB,Number(reviewAdmin[1]),body.status);return json({ok:true})}
+    return json({error:"الطريقة غير مدعومة"},{status:405});
+   }
+   const productId=Number(reviewMatch![1]),product=await env.DB.prepare("SELECT id FROM products WHERE id=? AND active=1 AND deleted_at IS NULL").bind(productId).first();
+   if(!product)return json({error:"المنتج غير موجود"},{status:404});
+   const account=await getCustomerAccount(request,env);
+   if(request.method==="GET")return json({reviews:await publicReviews(env.DB,productId),canReview:account?await canReview(env.DB,account.id,productId):false},{headers:{"cache-control":"no-store"}});
+   if(request.method!=="POST")return json({error:"الطريقة غير مدعومة"},{status:405});
+   if(request.headers.get("origin")!==url.origin)return json({error:"طلب غير مسموح"},{status:403});
+   if(!account||!await canReview(env.DB,account.id,productId))return json({error:"سجّل الدخول بحساب استلم هذا المنتج لإضافة مراجعة"},{status:403});
+   if(!await customerRateLimit(env,"review-account:"+account.id,5,3600000))return json({error:"انتظر قليلًا قبل المحاولة مجددًا"},{status:429});
+   if(Number(request.headers.get("content-length")||0)>4600000)return json({error:"الصور كبيرة جدًا"},{status:413});
+   const existing=await env.DB.prepare("SELECT id FROM product_reviews WHERE product_id=? AND account_id=?").bind(productId,account.id).first();if(existing)return json({error:"أرسلت مراجعة لهذا المنتج مسبقًا"},{status:409});
+   const form=await boundedReviewForm(request),input=reviewInput(form.get("rating"),form.get("body")),files=form.getAll("photos").filter((file):file is File=>file instanceof File&&file.size>0);
+   if(files.length>3)throw new ReviewError("يمكن إرفاق 3 صور بحد أقصى");
+   const uploads=await Promise.all(files.map(async file=>{const bytes=new Uint8Array(await file.arrayBuffer());return {bytes,...reviewImage(bytes)}})),photos:string[]=[];
+   for(const upload of uploads){const key="reviews/"+crypto.randomUUID()+"."+upload.ext;await env.MEDIA.put(key,upload.bytes.buffer,{httpMetadata:{contentType:upload.type}});photos.push("/media/"+key)}
+   try{await env.DB.prepare("INSERT INTO product_reviews(product_id,account_id,rating,body,photos_json,created_at) VALUES(?,?,?,?,?,?)").bind(productId,account.id,input.rating,input.body,JSON.stringify(photos),Date.now()).run()}catch(error){await Promise.all(photos.map(path=>env.MEDIA.delete(path.slice(7))));throw error}
+   return json({ok:true,message:"تم إرسال مراجعتك للموافقة عليها"});
+  }catch(error){if(error instanceof ReviewError)return json({error:error.message},{status:error.status});throw error}
+ }
+ if(request.method==="POST"&&url.pathname==="/api/orders/track"){
+  const body=await parseJson(request),phone=trackingPhone(body.phone);
+  if(phone.length<7||phone.length>15)return json({error:"رقم الهاتف غير صحيح"},{status:400});
+  const ip=request.headers.get("cf-connecting-ip")||"unknown";
+  if(!await customerRateLimit(env,"track-ip:"+await sha256(ip),15,600000)||!await customerRateLimit(env,"track-phone:"+await sha256(phone),8,600000))return json({error:"انتظر قليلًا ثم حاول مجددًا"},{status:429});
+  return json({orders:await trackOrders(env.DB,phone)},{headers:{"cache-control":"no-store","referrer-policy":"no-referrer"}});
+ }
+
   if(request.method==="POST"&&url.pathname==="/api/pwa/install"&&(env.APP_SURFACE==="storefront"||env.APP_SURFACE==="admin")){
     if(request.headers.get("origin")!==url.origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
     if(Number(request.headers.get("content-length")||0)>1000)return json({error:"الطلب كبير جدًا"},{status:413});

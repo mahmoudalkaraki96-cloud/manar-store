@@ -783,3 +783,7 @@
 
 ### Product editor image processing removal — candidate1.3.3, 2026-11-02
 - Removed the image cleanup button, unused aiInput/enhanceImage/acceptAiPreview helpers, state and preview overlay from the shared add/edit product editor. Upload/compression/removal and server/batch endpoints are unchanged. Strict page TypeScript passed locally. Owner performs artifact preparation and merchant publishing; no manual build dispatch or live deployment executed by agent.
+
+
+### Storefront UX 1.4.0
+Per-store JSON profile now includes mobileProductColumns (2/3), freeShippingEnabled (false by default), freeShippingThreshold (ILS). Shared shippingQuote uses integer agorot and server-priced merchandise totals. ShoppingOverlay owns cart/checkout on every public route; callers dispatch manar:open-cart/manar:open-checkout. /track-order intentionally exposes only number/date/status by phone, rate limited. product_reviews lazily stores verified delivered-account reviews/photos, pending approval from the content.write Reviews panel. No deployment is performed by the agent; owner builds and publishes through the existing release platform.
