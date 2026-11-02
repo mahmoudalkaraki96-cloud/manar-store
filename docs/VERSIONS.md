@@ -263,3 +263,15 @@ Red Rose مستقل ومنشور من7a730a8b، تشغيل41085890298ناجح. �
 
 ## 1.3.3 — مصدر مرشح، النشر بيد المالك (2026-11-02)
 - إزالة زر تنظيف/معالجة خلفية الصورة ونافذة المعاينة التابعة له من محرر الأصناف. الرفع والضغط والحذف باقية. TypeScript المحلي نجح؛ لا تشغيل لخدمة صور مدفوعة أو تجهيز حزمة أو نشر متجر. بعد دمج المصدر يشغّل المالك prepare-release ثم يختار المتاجر من المنصة.
+
+
+## 1.4.0 — 2026-11-02 (source candidate; owner publishes)
+- User approved the full storefront UX list; owner alone runs prepare-release and fleet deployment. No build/deployment dispatch, production D1 edits, paid AI, product merging, or merchant configuration changes by the agent.
+- Center desktop shell at 1180px including the independent category rail; six adaptive desktop columns, one home row, compact category cards, category above product image, visible item numbers, price before title/options, scrollable variant choices. Mobile product columns configurable (2/3); only highlights collapse on scroll; categories remain in store color with white bold labels.
+- Global cart/checkout overlays preserve current URL and scroll, support quantity/removal/customization, show review lines and order confirmation. Checkout inputs support placeholders/autocomplete. Internal payment-provider text/raw stock quantities removed; real descriptions/specifications preserved without inventing product facts. WhatsApp product order link added.
+- Per-store free shipping is disabled by default. Owner can enable a threshold in display settings. Server recalculates shipping from trusted merchandise prices; progress and checkout totals match. Checkout currently has no customer discount input, so its merchandise subtotal is already the after-discount basis.
+- User explicitly chose phone-only order tracking. POST lookup returns only order number/date/status, no items, names, amounts or address; exact phone matching, archived exclusions, hashed phone/IP rate limits, no-store response. Customer ownership is not verified in this deliberately limited view.
+- Verified delivered-account product reviews and up to three JPG/PNG/WebP photos (1.5MB each), pending moderation. Public reads return approved reviews only; content.write permission required for approval/rejection. Separate additive table created lazily per merchant DB; no cross-store data.
+- Local strict TypeScript and 23 regression tests passed before PR; responsive isolated fixture used synthetic data only. At 1920px measured shell1180/slider936 and six equal-height cards; at390px two columns, highlights collapse259→167px and categories remain; cart qty changed150→300 and URL /product/2 + scroll656 restored after checkout/review close.
+- Limit: actual missing supplier image files cannot be recreated by CSS; added original-image retry and intentional category/highlight fallbacks. No bulk supplier content rewrite. Physical iOS push delivery not retested in this UX task.
+- Source/CI readiness is separate from publication. Release artifact pin and all live store versions remain untouched. Final PR/CI outcome appended after verification.

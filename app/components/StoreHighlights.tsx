@@ -7,7 +7,7 @@ type ScrollStyle=CSSProperties&{"--highlight-scroll":string};
 function HighlightLabel({title}:{title:string}){
  const box=useRef<HTMLSpanElement|null>(null),text=useRef<HTMLSpanElement|null>(null),[distance,setDistance]=useState(0);
  useEffect(()=>{const measure=()=>setDistance(Math.max(0,(text.current?.scrollWidth||0)-(box.current?.clientWidth||0)));measure();const observer=typeof ResizeObserver==="undefined"?null:new ResizeObserver(measure);if(box.current)observer?.observe(box.current);if(text.current)observer?.observe(text.current);return()=>observer?.disconnect()},[title]);
- return <span ref={box} className={"storeHighlightLabel"+(distance>0?" scrolling":"")}><span ref={text} style={{"--highlight-scroll":distance+"px"} as ScrollStyle}>{title}</span></span>
+ return <span ref={box} className={"storeHighlightLabel"+(distance>0?" scrolling":"")}><span ref={text} style={{"--highlight-scroll":distance+"px"} as ScrollStyle}>{title.trim().toLowerCase()==="feedback"?"آراء الزبائن":title}</span></span>
 }
 export default function StoreHighlights({highlights,intervalMs=5000}:{highlights:Highlight[];intervalMs?:number}){
  const [open,setOpen]=useState<{highlight:number;image:number}|null>(null);
@@ -77,7 +77,7 @@ export default function StoreHighlights({highlights,intervalMs=5000}:{highlights
  return <div className="storeHighlights">
   <div className="storeHighlightsTrack" role="list" aria-label="هايلايتس المتجر">
    {highlights.map((item,index)=><button key={item.id} type="button" role="listitem" className="storeHighlightItem" onClick={()=>select(index,0)}>
-    <span className="storeHighlightRing"><img src={item.coverUrl||item.images[0]} alt="" loading="eager" decoding="async"/></span>
+    <span className="storeHighlightRing">{((!isVideo(item.coverUrl)?item.coverUrl:"")||item.images.find(url=>!isVideo(url)))?<img src={item.coverUrl||item.images.find(url=>!isVideo(url))} alt="" loading="lazy" decoding="async" onError={event=>{event.currentTarget.style.display="none";event.currentTarget.parentElement?.classList.add("highlightImageUnavailable")}}/>:<span aria-hidden="true">▧</span>}</span>
     <HighlightLabel title={item.title}/>
    </button>)}
   </div>

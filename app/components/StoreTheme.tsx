@@ -64,6 +64,7 @@ function applyStoreIdentity(settings:StoreSettings){
   style.textContent=storeThemeCss(settings);
  }
  const root=document.documentElement;
+ root.style.setProperty("--mobile-product-columns",String(settings.mobileProductColumns||2));
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
