@@ -38,7 +38,7 @@
 }
 @media(max-width:720px){
  .storeShell .productGrid,.storeShell .rowProducts{grid-template-columns:repeat(var(--mobile-product-columns,2),minmax(0,1fr))!important;gap:8px!important}
- .shopHeaderWrap.compactHighlights .storeHighlights{display:none!important}
+ .shopHeaderWrap .storeHighlights{max-height:120px;transition:max-height .28s ease,opacity .2s ease,transform .28s ease}.shopHeaderWrap.compactHighlights .storeHighlights{max-height:0;opacity:0;transform:translateY(-8px);pointer-events:none}
  .shopHeaderSpacer{height:var(--store-header-height,180px)!important}
  .shopHeaderWrap .categoryBar{background:var(--green)!important;color:#fff!important;padding-block:3px}
  .shopHeaderWrap .categoryBar .catItem>a{color:#fff!important;font-weight:800!important;font-size:12px}
@@ -70,3 +70,5 @@
 /* 1.4.1: product card images fill their frame on desktop and mobile. */
 .product.softProduct .productVisual.containImage{background:transparent!important;padding:0!important}
 .product.softProduct .productVisual.containImage>img:not(.logoWatermark){position:absolute!important;inset:0;object-fit:cover!important;padding:0!important;background:transparent!important;width:100%!important;height:100%!important;max-height:none!important}
+/* 1.4.2: highlights collapse smoothly on mobile; no animation when reduced motion is requested. */
+@media(prefers-reduced-motion:reduce){.shopHeaderWrap .storeHighlights{transition:none!important}}
