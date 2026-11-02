@@ -30,7 +30,7 @@ jobs:
         if: inputs.operation == 'prepare-release'
         run: |
           test "$GITHUB_REF" = "refs/heads/main"
-          test "$(cat VERSION)" = "1.3.2"
+          test "$(cat VERSION)" = "1.3.3"
           npm run build
       - name: Store private artifacts and certify independent resources
         if: inputs.operation == 'prepare-release'
