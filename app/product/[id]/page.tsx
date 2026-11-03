@@ -11,13 +11,14 @@ import {parseWatermark} from "../../watermark-config";
 import {addCartItem,cartCount as countCart,loadCart} from "../../cart-storage";
 import {trackEcommerce} from "../../analytics";
 import {productThumbnail} from "../../image-utils";
+import {toggleFavorite,useFavorites} from "../../favorites-storage";
 
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
 export default function ProductPage(){
- const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),[favorite,setFavorite]=useState(false),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(()=>cachedStoreSettings());
+ const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(()=>cachedStoreSettings());
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
- useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});try{setFavorite((JSON.parse(localStorage.getItem("manar_favorites")||"[]") as number[]).includes(Number(params.id)))}catch{}refreshCartCount();return()=>{active=false}},[params.id]);
+ useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(params.id));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
@@ -31,7 +32,7 @@ export default function ProductPage(){
  if(!product)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="emptyStore"><h1>الصنف غير موجود</h1><a href="/">العودة للمتجر</a></div></main>;
  const price=variant?.price??product.price;
  const available=variant?variant.stock>0:product.inStock;
- const fav=()=>{const list:number[]=JSON.parse(localStorage.getItem("manar_favorites")||"[]"),next=list.includes(product.id)?list.filter(id=>id!==product.id):[...list,product.id];localStorage.setItem("manar_favorites",JSON.stringify(next));setFavorite(next.includes(product.id))};
+ const favorite=favorites.includes(product.id),fav=()=>toggleFavorite(product.id);
  const add=()=>{if(!available)return;setCustomError("");const custom=Object.fromEntries(Object.entries(customizations).filter(([,value])=>value.trim()));addCartItem(product,variant,qty,custom,Object.keys(custom).length>0);if(product.customFields?.length)return;refreshCartCount();setAdded(true);window.setTimeout(()=>setAdded(false),1800)};
  const productUrl=typeof window==="undefined"?"":new URL("/product/"+product.id,window.location.origin).toString();
  const copyProductLink=async()=>{try{if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(productUrl);else{const input=document.createElement("textarea");input.value=productUrl;input.style.position="fixed";input.style.opacity="0";document.body.appendChild(input);input.select();document.execCommand("copy");input.remove()}setShareStatus("تم نسخ رابط المنتج");trackEcommerce("share",{method:"copy_link",content_type:"product",item_id:String(product.id),item_name:product.name});window.setTimeout(()=>setShareStatus(""),2200)}catch{setShareStatus("تعذر نسخ الرابط")}};
