@@ -6,6 +6,7 @@ import type {Product,Variant} from "../catalog-types";
 import {cachedStoreSettings,type StoreSettings} from "../storefront-types";
 import {parseWatermark} from "../watermark-config";
 import {productThumbnail} from "../image-utils";
+import {toggleFavorite,useFavorites} from "../favorites-storage";
 
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 const cardChoiceLimit=5;
@@ -26,10 +27,11 @@ function VariantPicker({p,wholesale,onClose,onConfirm}:{p:Product;wholesale:bool
   </div></div>,document.body);
 }
 
-export default function ProductCard({p,wholesale=false,watermark="",settings,favorite=false,onFavorite,onAdd}:{p:Product;wholesale?:boolean;watermark?:string;settings?:StoreSettings;favorite?:boolean;onFavorite?:()=>void;onAdd?:(variant?:Variant,qty?:number)=>void}){
+export default function ProductCard({p,wholesale=false,watermark="",settings,onAdd}:{p:Product;wholesale?:boolean;watermark?:string;settings?:StoreSettings;onAdd?:(variant?:Variant,qty?:number)=>void}){
   const store=settings||cachedStoreSettings(),configured=parseWatermark(store.watermarkUrl||""),watermarkImage=(watermark?parseWatermark(watermark).base:configured.base)||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
   const watermarkEnabled=store.watermarkEnabled??configured.enabled,watermarkX=store.watermarkX??configured.x,watermarkY=store.watermarkY??configured.y,watermarkSize=store.watermarkSize??configured.size;
   const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${watermarkSize}%`,left:`${watermarkX}%`,top:`${watermarkY}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};
+  const favorite=useFavorites().includes(p.id);
   const [failedImages,setFailedImages]=useState<Record<string,boolean>>({});
   const [variantIndex,setVariantIndex]=useState<number|null>(null),[picking,setPicking]=useState(false),[added,setAdded]=useState(false);
   const variant=variantIndex===null?undefined:p.variants?.[variantIndex];
@@ -43,7 +45,7 @@ export default function ProductCard({p,wholesale=false,watermark="",settings,fav
   const add=()=>{if(!onAdd||!canAdd)return;if(hasVariants&&!(variant&&variant.stock>0)){setPicking(true);return}onAdd(variant,1);confirmAdded()};
   const pick=(index:number,qty:number)=>{setVariantIndex(index);setPicking(false);onAdd?.(choices[index],qty);confirmAdded()};
   return <article className="product softProduct"><div className="productCategoryLabel">{p.subcategory||p.category}</div>
-    {onFavorite&&<button aria-label="إضافة للمفضلة" className={favorite?"favBtn active":"favBtn"} onClick={onFavorite}>♥</button>}
+    <button type="button" aria-label={favorite?"إزالة من المفضلة":"إضافة للمفضلة"} aria-pressed={favorite} className={favorite?"favBtn active":"favBtn"} onClick={()=>toggleFavorite(p.id)}>♥</button>
     {!p.inStock&&<span className="soldOutBadge">نفدت الكمية</span>}
     <Link className="productVisual portraitVisual containImage" style={{background:variant?.color||"#f5f2f3"}} href={`/product/${p.id}`}>{image?<img src={cardImage} alt={p.imageAlt||p.name} loading="lazy" decoding="async" fetchPriority="low" onError={event=>{const target=event.currentTarget;if(image&&target.getAttribute("src")!==image){setFailedImages(current=>({...current,[cardImage||""]:true}))}else{target.style.visibility="hidden";target.parentElement?.classList.add("imageUnavailable")}}}/>:<i>▧</i>}{watermarkEnabled&&watermarkImage&&<img className="logoWatermark wm-manual" src={watermarkImage} alt="" loading="lazy" decoding="async" style={watermarkStyle}/>}<small>#{p.itemNumber}</small></Link>
     <div className="productInfo">      <div className={"price "+(fallback?"retailFallback":"")}><b>{priceLabel}</b>{!wholesale&&p.oldPrice&&<del>{p.oldPrice} ₪</del>}</div>
