@@ -1,11 +1,14 @@
 "use client";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
+import {loadCatalog} from "../catalog-types";
 
 // React's hydration replaces worker-injected metadata with the root layout's
 // defaults. Restore the same server metadata after hydration and navigation.
 export default function StoreSeo(){
  const pathname=usePathname();
+ // The server's crawler-readable copy stays until the real page has its catalog, or if the catalog fails to load.
+ useEffect(()=>{if(!document.getElementById("storefront-seo-content"))return;loadCatalog().then(()=>document.getElementById("storefront-seo-content")?.remove()).catch(()=>{})},[]);
  useEffect(()=>{
   if(location.hostname.startsWith("admin.")||pathname.startsWith("/admin"))return;
   let stopped=false,observer:MutationObserver|undefined;

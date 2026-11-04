@@ -29,6 +29,9 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import { scrypt as nodeScrypt, pbkdf2 as nodePbkdf2 } from "node:crypto";
 import {pushApi,drainPushQueue,notifyNewOrder,notifyOrderStatus,pushAdminSummary,queueCampaign} from "./push";
 import handler from "vinext/server/app-router-entry";
+import {categorySeoContent,htmlEscape,insertSeoContent,productSeoContent,robotsTxt,sitemapXml,xmlEscape,type SitemapPage} from "./seo-content";
+
+const SITEMAP_IMAGES_PER_PRODUCT=5,CATEGORY_SEO_PRODUCTS=60;
 
 interface Env {
   ASSETS: Fetcher;
@@ -783,8 +786,6 @@ function cleanCatalogDescription(value: unknown): string {
   if (/you (?:don't|do not|don’t) have permission to access this resource|additionally, a 403|^403\\s*(?:forbidden)?$/i.test(text)) return "";
   return text;
 }
-function xmlEscape(value:string){return value.replace(/[<>&'"]/g,character=>({"<":"&lt;",">":"&gt;","&":"&amp;","'":"&apos;",'"':"&quot;"}[character]||character))}
-function htmlEscape(value:string){return value.replace(/[&<>"']/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]||character))}
 function absoluteStoreUrl(value:string,origin:string){if(!value)return origin+"/store-icon.svg";try{return new URL(value,origin).toString()}catch{return origin+"/store-icon.svg"}}
 function securityHeaders(headers:Headers){
   headers.set("x-content-type-options","nosniff");
@@ -797,8 +798,7 @@ function securityHeaders(headers:Headers){
 async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|null>{
   if(env.APP_SURFACE!=="storefront"||request.method!=="GET")return null;
   if(url.pathname==="/robots.txt"){
-    const body="User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /account\nSitemap: "+url.origin+"/sitemap.xml\n";
-    return new Response(body,{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
+    return new Response(robotsTxt(url.origin),{headers:securityHeaders(new Headers({"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=3600"}))});
   }
   if(url.pathname==="/google-merchant-feed.xml"){
     const catalog=await readCatalog(env,false);
@@ -830,17 +830,19 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
     return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=900, s-maxage=1800"}))});
   }
   if(url.pathname!=="/sitemap.xml")return null;
-  const [products,categories]=await Promise.all([
+  const [products,categories,media]=await Promise.all([
     env.DB.prepare("SELECT id,updated_at FROM products WHERE active=1 AND deleted_at IS NULL AND lower(trim(name)) NOT IN ('forbidden','403 forbidden','404 not found','access denied') ORDER BY id").all<{id:number;updated_at:number}>(),
-    env.DB.prepare("SELECT slug,updated_at FROM categories WHERE active=1 ORDER BY id").all<{slug:string;updated_at:number}>()
+    env.DB.prepare("SELECT slug,updated_at FROM categories WHERE active=1 ORDER BY id").all<{slug:string;updated_at:number}>(),
+    env.DB.prepare("SELECT product_id,url FROM product_media WHERE media_type='image' ORDER BY is_primary DESC,sort_order,id").all<{product_id:number;url:string}>()
   ]);
-  const pages:Array<{loc:string;lastmod?:number}>=[{loc:url.origin+"/"}];
+  const productImages=new Map<number,string[]>();
+  for(const row of media.results){const images=productImages.get(Number(row.product_id))||[];const image=row.url&&absoluteStoreUrl(String(row.url),url.origin);if(image&&images.length<SITEMAP_IMAGES_PER_PRODUCT&&!images.includes(image)){images.push(image);productImages.set(Number(row.product_id),images)}}
+  const pages:SitemapPage[]=[{loc:url.origin+"/"}];
   for(const row of categories.results)pages.push({loc:url.origin+"/category/"+encodeURIComponent(row.slug),lastmod:Number(row.updated_at||0)});
-  for(const row of products.results)pages.push({loc:url.origin+"/product/"+Number(row.id),lastmod:Number(row.updated_at||0)});
+  for(const row of products.results)pages.push({loc:url.origin+"/product/"+Number(row.id),lastmod:Number(row.updated_at||0),images:productImages.get(Number(row.id))});
   pages.push({loc:url.origin+"/policies/terms"});
   pages.push({loc:url.origin+"/privacy"});
-  const body='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(page=>"  <url><loc>"+xmlEscape(page.loc)+"</loc>"+(page.lastmod?"<lastmod>"+new Date(page.lastmod).toISOString()+"</lastmod>":"")+"</url>").join("\n")+"\n</urlset>";
-  return new Response(body,{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
+  return new Response(sitemapXml(pages),{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
 }
 async function storefrontSeo(env:Env,url:URL):Promise<string>{
   await ensureStorefrontColumns(env);
@@ -885,6 +887,38 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
   }
   const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
   return '<style id="storefront-initial-theme">'+storeThemeCss({primaryColor:settings?.primary_color,secondaryColor:settings?.secondary_color,backgroundColor:settings?.background_color})+'</style><title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+}
+// Page content for crawlers. A deleted product is reported as missing so the page answers 404.
+async function storefrontSeoBody(env:Env,url:URL):Promise<{html:string;missing:boolean}>{
+  const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
+  if(productMatch){
+    const id=Number(productMatch[1]);
+    const product=await env.DB.prepare("SELECT p.name,p.description,p.price_agorot,c.name AS category_name,c.slug AS category_slug FROM products p LEFT JOIN categories c ON c.id=p.category_id AND c.active=1 WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(id).first<Record<string,unknown>>();
+    if(!product||isImportedErrorName(product.name))return{html:"",missing:true};
+    const media=await env.DB.prepare("SELECT url,alt_text FROM product_media WHERE product_id=? AND media_type='image' ORDER BY is_primary DESC,sort_order,id LIMIT 8").bind(id).all<{url:string;alt_text:string|null}>();
+    return{missing:false,html:productSeoContent({
+      name:String(product.name),
+      description:cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),
+      priceAgorot:Number(product.price_agorot||0),
+      images:media.results.filter(row=>row.url).map(row=>({url:absoluteStoreUrl(String(row.url),url.origin),alt:String(row.alt_text||"")})),
+      category:product.category_slug?{name:String(product.category_name),slug:String(product.category_slug)}:null
+    })};
+  }
+  const categoryMatch=url.pathname.match(/^\/category\/([^/]+)\/?$/);
+  if(!categoryMatch)return{html:"",missing:false};
+  const slug=decodeURIComponent(categoryMatch[1]);
+  const category=await env.DB.prepare("SELECT id,name,description FROM categories WHERE slug=? AND active=1 LIMIT 1").bind(slug).first<{id:number;name:string;description:string|null}>();
+  if(!category)return{html:"",missing:false};
+  const [subcategories,products]=await Promise.all([
+    env.DB.prepare("SELECT name,slug FROM categories WHERE parent_id=? AND active=1 ORDER BY sort_order,id").bind(category.id).all<{name:string;slug:string}>(),
+    env.DB.prepare("WITH RECURSIVE tree(id) AS (SELECT ? UNION SELECT c.id FROM categories c JOIN tree t ON c.parent_id=t.id WHERE c.active=1) SELECT p.id,p.name,p.price_agorot,(SELECT m.url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p JOIN tree ON tree.id=p.category_id WHERE p.active=1 AND p.deleted_at IS NULL ORDER BY p.id DESC LIMIT ?").bind(category.id,CATEGORY_SEO_PRODUCTS).all<{id:number;name:string;price_agorot:number;image_url:string|null}>()
+  ]);
+  return{missing:false,html:categorySeoContent({
+    name:String(category.name),
+    description:String(category.description||"").trim(),
+    subcategories:subcategories.results,
+    products:products.results.filter(row=>!isImportedErrorName(row.name)).map(row=>({id:Number(row.id),name:String(row.name),priceAgorot:Number(row.price_agorot||0),image:row.image_url?absoluteStoreUrl(String(row.image_url),url.origin):undefined}))
+  })};
 }
 function injectSeo(html:string,head:string){
   return html.replace(/<title[^>]*>[\s\S]*?<\/title>/i,"").replace(/<meta[^>]+(?:name=["']description["']|property=["']og:[^"']+["']|name=["']twitter:[^"']+["'])[^>]*>/gi,"").replace(/<link[^>]+rel=["'](?:canonical|icon|apple-touch-icon)["'][^>]*>/gi,"").replace("</head>",head+"</head>");
@@ -1328,7 +1362,10 @@ const worker = {
         :'<title>لوحة إدارة المتجر</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
-      return new Response(injectSeo(html,head+seoData),{status:appResponse.status,statusText:appResponse.statusText,headers});
+      const seoBody=env.APP_SURFACE==="storefront"?await storefrontSeoBody(env,url):{html:"",missing:false};
+      const page=insertSeoContent(injectSeo(html,head+seoData),seoBody.html);
+      if(seoBody.missing)return new Response(page,{status:404,headers});
+      return new Response(page,{status:appResponse.status,statusText:appResponse.statusText,headers});
     }
     return new Response(appResponse.body,{status:appResponse.status,statusText:appResponse.statusText,headers});
   },

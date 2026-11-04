@@ -16,9 +16,9 @@ import {toggleFavorite,useFavorites} from "../../favorites-storage";
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
 export default function ProductPage(){
- const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(()=>cachedStoreSettings());
+ const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(()=>cachedStoreSettings()),[failed,setFailed]=useState(false);
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
- useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
+ useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(params.id));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
@@ -29,6 +29,7 @@ export default function ProductPage(){
  useEffect(()=>{setVariant(product?.variants?.find(item=>item.stock>0)||product?.variants?.[0])},[product?.id]);
  useEffect(()=>{setImageIndex(0)},[product?.id,variant?.id]);
  if(loading)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="storeState">جاري تحميل الصنف...</div></main>;
+ if(failed)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="storeState error">تعذر تحميل الصنف حالياً، حدّث الصفحة وحاول مرة ثانية</div></main>;
  if(!product)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="emptyStore"><h1>الصنف غير موجود</h1><a href="/">العودة للمتجر</a></div></main>;
  const price=variant?.price??product.price;
  const available=variant?variant.stock>0:product.inStock;
