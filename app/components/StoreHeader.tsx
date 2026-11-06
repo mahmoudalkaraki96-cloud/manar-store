@@ -16,6 +16,7 @@ import {useFavorites,openFavorites} from "../favorites-storage";
 import {SocialIcon,SocialPills,socialLinks} from "./SocialIcon";
 
 function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
+ const copy=useStoreCopy();
  const [selected,setSelected]=useState<number|null>(null);
  const variants=p.variants||[],variant=selected===null?undefined:variants[selected];
  const available=variants.length?variants.some(v=>v.stock>0):p.inStock;
