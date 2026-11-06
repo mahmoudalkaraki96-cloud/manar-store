@@ -37,7 +37,5 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></body></html>
+ return <html lang="ar" dir="rtl" suppressHydrationWarning><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></body></html>
 }
-
-

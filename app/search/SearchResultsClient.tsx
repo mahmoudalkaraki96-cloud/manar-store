@@ -1,4 +1,5 @@
 "use client";
+import {useStoreCopy} from "../use-store-copy";
 import {useEffect,useMemo,useState,type FormEvent} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
@@ -11,6 +12,7 @@ import {trackSearch} from "../analytics";
 import {addCartItem} from "../cart-storage";
 
 export default function SearchResultsClient({initialQuery}:{initialQuery:string}){
+ const copy=useStoreCopy();
  const router=useRouter();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]});
  const [settings,setSettings]=useState<StoreSettings>(defaultSettings);
@@ -28,14 +30,14 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
   <StoreHeader categories={data.categories} products={data.products} settings={settings}/>
   <section className="categoryProducts searchResultsContainer">
    <form className="horizontalFilters searchResultsForm" onSubmit={submit}>
-    <div className="filterSearch"><span>⌕</span><input aria-label="ابحث في المنتجات" value={query} onChange={event=>setQuery(event.target.value)} placeholder="اكتب اسم المنتج أو رقمه أو القسم"/></div>
-    <button className="cardAddButton" style={{width:"auto",flexShrink:0}} type="submit" disabled={!query.trim()}>ابحث</button>
+    <div className="filterSearch"><span>⌕</span><input aria-label={copy("ابحث في المنتجات")} value={query} onChange={event=>setQuery(event.target.value)} placeholder={copy("اكتب اسم المنتج أو رقمه أو القسم")}/></div>
+    <button className="cardAddButton" style={{width:"auto",flexShrink:0}} type="submit" disabled={!query.trim()}>{copy("ابحث")}</button>
    </form>
-   <div className="resultsHead"><div><h1>نتائج البحث</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
-   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>اكتب كلمة للبحث</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<>
-    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>الأقسام المطابقة</h2><span>{categories.length} قسم</span></div><CategoryCards categories={categories}/></section>}
-    <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>المنتجات</h2><span>{products.length} نتيجة</span></div><select aria-label="ترتيب نتائج البحث" value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">الأكثر ملاءمة</option><option value="newest">الأحدث</option><option value="priceAsc">السعر: الأقل أولًا</option><option value="priceDesc">السعر: الأعلى أولًا</option></select></div>
-    {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings} onAdd={(variant,qty)=>{addCartItem(product,variant,qty)}}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
+   <div className="resultsHead"><div><h1>{copy("نتائج البحث")}</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
+   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>{copy("اكتب كلمة للبحث")}</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<>
+    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>{copy("الأقسام المطابقة")}</h2><span>{categories.length} قسم</span></div><CategoryCards categories={categories}/></section>}
+    <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>{copy("المنتجات")}</h2><span>{products.length} نتيجة</span></div><select aria-label={copy("ترتيب نتائج البحث")} value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">{copy("الأكثر ملاءمة")}</option><option value="newest">{copy("الأحدث")}</option><option value="priceAsc">السعر: الأقل أولًا</option><option value="priceDesc">السعر: الأعلى أولًا</option></select></div>
+    {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings} onAdd={(variant,qty)=>{addCartItem(product,variant,qty)}}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>{copy("عرض المزيد من النتائج")}</button></div>}</>:<div className="emptyCategory"><b>{copy("ما لقينا منتجات مطابقة")}</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
    </>}
   </section>
   <style jsx global>{`
@@ -59,5 +61,3 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
   `}</style>
  </main>;
 }
-
-

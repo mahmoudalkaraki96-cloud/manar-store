@@ -119,6 +119,7 @@ export async function authApi(request:Request,env:SecurityEnv):Promise<Response>
 }
 
 export function routePermission(path:string,method:string):Permission[]|null{
+ if(path==="/api/admin/catalog-translations")return ["settings.write"];
  if(/^\/api\/admin\/reviews(?:\/\d+)?$/.test(path))return ["content.write"];
  const read=method==='GET';
  if(path==='/api/admin/navigation')return [];
