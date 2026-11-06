@@ -28,7 +28,18 @@ export default function ProductPage(){
  const watermarkConfig=parseWatermark(store.watermarkUrl||""),watermark=watermarkConfig.base||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
  const watermarkEnabled=store.watermarkEnabled??watermarkConfig.enabled,watermarkX=store.watermarkX??watermarkConfig.x,watermarkY=store.watermarkY??watermarkConfig.y,watermarkSize=store.watermarkSize??watermarkConfig.size;
  const watermarkStyle:WatermarkStyle={opacity:watermarkOpacity,"--wm-size":`${watermarkSize}%`,left:`${watermarkX}%`,top:`${watermarkY}%`,right:"auto",bottom:"auto",transform:"translate(-50%,-50%)"};
- useEffect(()=>{setVariant(product?.variants?.find(item=>item.stock>0)||product?.variants?.[0])},[product?.id]);
+ useEffect(()=>{
+  const requested = new URLSearchParams(window.location.search).get("variant");
+  const selected = product?.variants?.find(item => item.stock > 0 && String(item.id) === requested);
+  setVariant(selected || product?.variants?.find(item => item.stock > 0) || product?.variants?.[0]);
+ },[product?.id]);
+ const selectVariant = (item: Variant) => {
+  setVariant(item);
+  if (item.id == null) return;
+  const url = new URL(window.location.href);
+  url.searchParams.set("variant", String(item.id));
+  window.history.replaceState(window.history.state, "", url);
+ };
  useEffect(()=>{setImageIndex(0)},[product?.id,variant?.id]);
  if(loading)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="storeState">جاري تحميل الصنف...</div></main>;
  if(failed)return <main style={{"--green":store.primaryColor,"--gold":store.secondaryColor,"--pageBg":store.backgroundColor} as React.CSSProperties}><StoreHeader settings={store}/><div className="storeState error">تعذر تحميل الصنف حالياً، حدّث الصفحة وحاول مرة ثانية</div></main>;
@@ -56,7 +67,7 @@ export default function ProductPage(){
    <div className="bigPrice">{price} ₪</div>
    {product.rating>0&&<div className="stars">★★★★★ <span>{product.rating.toFixed(1)}</span></div>}
    <div className="productDetailLine"/>
-   {product.variants&&product.variants.length>0&&<section className="productVariantSection"><div className="productVariantHeading"><span>اختر {product.variantName||"الخيار"}</span><b>{variant?.name}</b>{specifications.length>0&&<a className="specsJump" href="#productSpecs" onClick={jumpToSpecs}>المواصفات ↓</a>}</div><div className="detailVariantChoices">{product.variants.map(item=>item.displayType==="color"?<button key={item.sku} disabled={item.stock<=0} title={item.stock<=0?`${item.name} - نفدت الكمية`:item.name} aria-label={item.name} className={`detailColorChoice ${variant?.sku===item.sku?"active":""}`} style={{background:item.color||"#ddd"}} onClick={()=>setVariant(item)}><span>{item.name}</span></button>:<button key={item.sku} disabled={item.stock<=0} title={item.stock<=0?`${item.name} - نفدت الكمية`:item.name} className={`detailTextChoice ${variant?.sku===item.sku?"active":""}`} onClick={()=>setVariant(item)}>{item.name}</button>)}</div><div className="variantMeta"><span>{(variant?.stock??0)>0?copy("متوفر"):copy("نفدت الكمية")}</span></div></section>}
+   {product.variants&&product.variants.length>0&&<section className="productVariantSection"><div className="productVariantHeading"><span>اختر {product.variantName||"الخيار"}</span><b>{variant?.name}</b>{specifications.length>0&&<a className="specsJump" href="#productSpecs" onClick={jumpToSpecs}>المواصفات ↓</a>}</div><div className="detailVariantChoices">{product.variants.map(item=>item.displayType==="color"?<button key={item.sku} disabled={item.stock<=0} title={item.stock<=0?`${item.name} - نفدت الكمية`:item.name} aria-label={item.name} className={`detailColorChoice ${variant?.sku===item.sku?"active":""}`} style={{background:item.color||"#ddd"}} onClick={()=>selectVariant(item)}><span>{item.name}</span></button>:<button key={item.sku} disabled={item.stock<=0} title={item.stock<=0?`${item.name} - نفدت الكمية`:item.name} className={`detailTextChoice ${variant?.sku===item.sku?"active":""}`} onClick={()=>selectVariant(item)}>{item.name}</button>)}</div><div className="variantMeta"><span>{(variant?.stock??0)>0?copy("متوفر"):copy("نفدت الكمية")}</span></div></section>}
    {product.customFields&&product.customFields.length>0&&<div className="customerCustomization"><h3>{copy("تخصيص المنتج")}</h3>{product.customFields.map(field=><label key={field.id||field.label}>{field.label}{field.required&&<b> *</b>}<input maxLength={field.maxLength} placeholder={field.placeholder} value={customizations[field.label]||""} onChange={e=>setCustomizations({...customizations,[field.label]:e.target.value})}/><small>{(customizations[field.label]||"").length}/{field.maxLength}</small></label>)}{customError&&<p className="customError">{customError}</p>}</div>}
    <div className="buyRow"><label className="quantityControl"><span>{copy("الكمية")}</span><input aria-label={copy("أدخل الكمية")} type="number" min="1" value={qty} onChange={event=>setQty(Math.max(1,Number(event.target.value)))}/></label><button className="mainBtn" disabled={!available} onClick={add}>{available?copy("أضف إلى السلة"):copy("نفدت الكمية")}</button></div>{added&&<div className="productAddedNotice">✓ تمت إضافة المنتج إلى السلة</div>}
    {store.whatsappEnabled&&store.whatsapp&&<a className="productWhatsapp" target="_blank" rel="noopener noreferrer" href={"https://wa.me/"+store.whatsapp.replace(/\D/g,"")+"?text="+encodeURIComponent("أرغب بطلب "+product.name+(variant?" — "+variant.name:"")+" — الكمية: "+qty+"\n"+(typeof window!=="undefined"?window.location.origin:"")+"/product/"+product.id)}>{copy("اطلب عبر واتساب")}</a>}

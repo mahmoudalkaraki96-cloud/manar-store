@@ -4,6 +4,42 @@ import {useEffect,useState} from "react";
 import {storeLanguage,type StoreLanguage} from "./store-language";
 
 const dictionary: Record<string,{en:string;he:string}> = {
+  "تعذر تحميل إعدادات الشحن": {
+    "en": "Could not load delivery options",
+    "he": "לא ניתן לטעון את אפשרויות המשלוח"
+  },
+  "تعذر تحميل سياسات المتجر؛ لا يمكن تأكيد الطلب حالياً": {
+    "en": "Could not load the store policies. Please try again before placing the order.",
+    "he": "לא ניתן לטעון את מדיניות החנות. נסו שוב לפני ביצוע ההזמנה."
+  },
+  "يجب قراءة سياسات المتجر والموافقة عليها قبل تأكيد الطلب": {
+    "en": "Read and accept the store policies before confirming the order.",
+    "he": "יש לקרוא ולאשר את מדיניות החנות לפני אישור ההזמנה."
+  },
+  "رقم الهاتف يجب أن يحتوي على 7 أرقام على الأقل": {
+    "en": "Enter a phone number with at least 7 digits.",
+    "he": "יש להזין מספר טלפון עם 7 ספרות לפחות."
+  },
+  "تعذر تحميل السلة، أعد المحاولة": {
+    "en": "Could not load the cart. Please try again.",
+    "he": "לא ניתן לטעון את הסל. נסו שוב."
+  },
+  "تعذر تحميل نتائج البحث حاليًا": {
+    "en": "Could not load search results",
+    "he": "לא ניתן לטעון את תוצאות החיפוש"
+  },
+  "روابط سريعة": {
+    "en": "Quick links",
+    "he": "קישורים מהירים"
+  },
+  "ابحث عن المنتجات": {
+    "en": "Search products",
+    "he": "חיפוש מוצרים"
+  },
+  "تواصل عبر واتساب": {
+    "en": "Contact us on WhatsApp",
+    "he": "צרו קשר בוואטסאפ"
+  },
   "الرئيسية": {
     "en": "Home",
     "he": "בית"
