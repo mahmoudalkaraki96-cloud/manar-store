@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 import { selectStoreLanguage, storeLanguage, type StoreLanguage } from "../store-language";
 
 const labels = { ar: "لغة المتجر", en: "Store language", he: "שפת החנות" };
+const choices = [
+  { code: "ar", label: "العربية" },
+  { code: "he", label: "עברית" },
+  { code: "en", label: "English" },
+] as const;
 
 export default function StoreLanguagePicker() {
   const [language, setLanguage] = useState<StoreLanguage>("ar");
@@ -18,13 +23,13 @@ export default function StoreLanguagePicker() {
     };
   }, []);
   return (
-    <select aria-label={labels[language]} value={language} onChange={event => {
-      const next = event.currentTarget.value;
-      if (next === "ar" || next === "he" || next === "en") selectStoreLanguage(next);
-    }}>
-      <option value="ar" lang="ar">العربية</option>
-      <option value="he" lang="he">עברית</option>
-      <option value="en" lang="en">English</option>
-    </select>
+    <div className="storeLanguagePicker" role="group" aria-label={labels[language]} dir="ltr">
+      {choices.map(({code,label}) => (
+        <button key={code} type="button" aria-label={label} aria-pressed={language === code}
+          title={label} onClick={() => { if (language !== code) selectStoreLanguage(code); }}>
+          {code.toUpperCase()}
+        </button>
+      ))}
+    </div>
   );
 }

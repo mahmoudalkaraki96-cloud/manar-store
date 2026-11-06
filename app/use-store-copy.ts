@@ -4,6 +4,118 @@ import {useEffect,useState} from "react";
 import {storeLanguage,type StoreLanguage} from "./store-language";
 
 const dictionary: Record<string,{en:string;he:string}> = {
+  "القائمة": {
+    "en": "Menu",
+    "he": "תפריט"
+  },
+  "إغلاق القائمة": {
+    "en": "Close menu",
+    "he": "סגירת תפריט"
+  },
+  "الأقسام": {
+    "en": "Categories",
+    "he": "קטגוריות"
+  },
+  "المتجر": {
+    "en": "Store",
+    "he": "חנות"
+  },
+  "الإشعارات": {
+    "en": "Notifications",
+    "he": "התראות"
+  },
+  "تثبيت التطبيق": {
+    "en": "Install app",
+    "he": "התקנת היישום"
+  },
+  "جاري تحميل السياسات": {
+    "en": "Loading policies",
+    "he": "טוען מדיניות"
+  },
+  "عرض جميع السياسات": {
+    "en": "View all policies",
+    "he": "הצגת כל סעיפי המדיניות"
+  },
+  "مراجعات الزبائن": {
+    "en": "Customer reviews",
+    "he": "חוות דעת של לקוחות"
+  },
+  "لا توجد مراجعات منشورة بعد.": {
+    "en": "No reviews have been published yet.",
+    "he": "עדיין לא פורסמו חוות דעת."
+  },
+  "يمكن للزبائن المسجلين الذين استلموا المنتج إضافة مراجعة.": {
+    "en": "Signed-in customers who received this item can leave a review.",
+    "he": "לקוחות שנכנסו לחשבון וקיבלו את המוצר יכולים לכתוב חוות דעת."
+  },
+  "التقييم": {
+    "en": "Rating",
+    "he": "דירוג"
+  },
+  "رأيك بالمنتج": {
+    "en": "Your review",
+    "he": "חוות הדעת שלך"
+  },
+  "إرسال المراجعة": {
+    "en": "Submit review",
+    "he": "שליחת חוות דעת"
+  },
+  "جاري الإرسال...": {
+    "en": "Submitting…",
+    "he": "שולח…"
+  },
+  "صورة من مراجعة زبون": {
+    "en": "Customer review photo",
+    "he": "תמונה מחוות דעת של לקוח"
+  },
+  "تعذر تحميل المراجعات": {
+    "en": "Could not load reviews",
+    "he": "לא ניתן לטעון את חוות הדעת"
+  },
+  "تعذر إرسال المراجعة": {
+    "en": "Could not submit the review",
+    "he": "לא ניתן לשלוח את חוות הדעת"
+  },
+  "تعذر الإرسال": {
+    "en": "Could not submit",
+    "he": "השליחה נכשלה"
+  },
+  "تم إرسال مراجعتك، وتظهر بعد موافقة المتجر": {
+    "en": "Review submitted. It will appear after approval.",
+    "he": "חוות הדעת נשלחה ותופיע לאחר אישור החנות"
+  },
+  "استقبال الطلبات": {
+    "en": "Order acceptance",
+    "he": "קבלת הזמנות"
+  },
+  "إلغاء الطلب": {
+    "en": "Order cancellation",
+    "he": "ביטול הזמנה"
+  },
+  "ابحث عن منتج، رقم صنف، قسم أو قسم فرعي...": {
+    "en": "Search by product, item number or category…",
+    "he": "חיפוש לפי מוצר, מספר פריט או קטגוריה…"
+  },
+  "طريقة عرض نتائج البحث": {
+    "en": "Search results view",
+    "he": "תצוגת תוצאות חיפוש"
+  },
+  "عرض شبكة": {
+    "en": "Grid view",
+    "he": "תצוגת רשת"
+  },
+  "عرض قائمة": {
+    "en": "List view",
+    "he": "תצוגת רשימה"
+  },
+  "روابط التواصل": {
+    "en": "Social links",
+    "he": "קישורים לרשתות חברתיות"
+  },
+  "اختر": {
+    "en": "Choose",
+    "he": "בחרו"
+  },
   "تعذر تحميل إعدادات الشحن": {
     "en": "Could not load delivery options",
     "he": "לא ניתן לטעון את אפשרויות המשלוח"

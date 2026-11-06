@@ -15,6 +15,7 @@ import "./highlights.css";
 import "./store-layout.css";
 import "./floating-actions.css";
 import "./storefront-experience.css";
+import "./store-language.css";
 
 export const metadata:Metadata={
  title:{default:"المتجر",template:"%s | المتجر"},
