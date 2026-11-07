@@ -1,7 +1,7 @@
 "use client";
 
 import {useEffect,useState} from "react";
-import {storeLanguage,type StoreLanguage} from "./store-language";
+import {resolveStoreLanguage,type StoreLanguage} from "./store-language";
 
 const dictionary: Record<string,{en:string;he:string}> = {
   "القائمة": {
@@ -692,6 +692,6 @@ const dictionary: Record<string,{en:string;he:string}> = {
 
 export function useStoreCopy(){
  const [language,setLanguage]=useState<StoreLanguage>("ar");
- useEffect(()=>setLanguage(storeLanguage()),[]);
+ useEffect(()=>{let alive=true;void resolveStoreLanguage().then(value=>{if(alive)setLanguage(value)});return()=>{alive=false}},[]);
  return (text:string)=>language==="ar"?text:(dictionary[text]?.[language]??text);
 }

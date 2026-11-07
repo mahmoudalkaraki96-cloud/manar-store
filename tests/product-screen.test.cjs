@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),ts=require('typescript'),{DatabaseSync}=require('node:sqlite');
 const root=path.resolve(__dirname,'..');
-function load(file){const m=new Module(file,module);m.filename=file;m.paths=module.paths;m.require=name=>name==='../catalog-types'?load(path.join(root,'app/catalog-types.ts')):name==='./store-language'?load(path.join(root,'app/store-language.ts')):require(name);m._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS}}).outputText,file);return m.exports}
+function load(file){const m=new Module(file,module);m.filename=file;m.paths=module.paths;m.require=name=>name==='../catalog-types'?load(path.join(root,'app/catalog-types.ts')):name==='./store-language'?load(path.join(root,'app/store-language.ts')):name==='./storefront-types'?load(path.join(root,'app/storefront-types.ts')):require(name);m._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS}}).outputText,file);return m.exports}
 const {filterProducts,emptyProductFilters}=load(path.join(root,'app/admin/product-filters.ts')),{changeProductCategory}=load(path.join(root,'worker/product-category.ts'));
 test('filters combine supplier, parent category, variants and a single option price range',()=>{
  const categories=[{id:1,parentId:null},{id:2,parentId:1}],p={id:1,name:'ورد',itemNumber:123,categoryId:2,category:'ورد',price:1,stock:0,active:true,suppliers:[{id:7}],variants:[{price:1,stock:3,name:'A'},{price:20,stock:0,name:'B'}]};
@@ -30,3 +30,4 @@ test('localized catalog changes display names and preserves variant identity',()
  assert.equal(en.name,'Box');assert.equal(he.name,'علبة');assert.equal(he.variants[0].name,'אדום');
  assert.deepEqual([he.variants[0].id,he.variants[0].price,he.variants[0].stock],[5,11,2]);
 });
+

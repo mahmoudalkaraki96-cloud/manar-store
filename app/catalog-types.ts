@@ -1,4 +1,4 @@
-import { storeLanguage, type StoreLanguage } from "./store-language";
+import { resolveStoreLanguage, type StoreLanguage } from "./store-language";
 
 export type Category = {
   id: number;
@@ -91,8 +91,8 @@ export function applyCatalogNames(catalog: CatalogResponse, language: StoreLangu
   };
 }
 
-export function loadCatalog(): Promise<CatalogResponse> {
-  const language = storeLanguage();
+export async function loadCatalog(): Promise<CatalogResponse> {
+  const language = await resolveStoreLanguage();
   const pending = catalogPromises.get(language);
   if (pending) return pending;
   const catalogPromise = fetch(`/api/catalog?lang=${language}&v=${Date.now()}`, { cache: "no-store" })
