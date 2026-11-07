@@ -314,3 +314,7 @@ Owner next steps: GitHub Actions → Platform release publisher → Run workflow
 - sitemap.xml يذكر حتى 5 صور لكل منتج.
 - المنتج المحذوف يرجع 404، وفشل تحميل الكتالوج يعرض "تعذر التحميل" بدل "غير موجود".
 - بعد النشر: إرسال sitemap.xml من Google Search Console؛ ظهور النتائج يحتاج وقتًا من Google.
+
+
+## 2026-11-07 — 1.6.3, all matching dropdown results
+User requested all matching products and categories in the search dropdown. Removed the product30 and category8 result slices. Existing dropdown max-height/overflow scrolling and complete search page pagination retained. Manual publication remains the owner's responsibility. Code preparation is separate from deployment. Browser check of live search found product1216 in the full page; current catalog gives37 hits for مراي and it previously ranked33 in dropdown order.
