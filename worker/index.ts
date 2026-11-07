@@ -1,4 +1,5 @@
 import {trackingPhone,trackOrders} from "./order-tracking";
+import {localizeCatalog,previewCatalogImport,type TranslationEntry} from "../catalog-localization.mjs";
 import {storeAssetResponse} from "./store-assets";
 import {storeIconResponse} from "./store-icon";
 import {mediaSources} from "./media-sources";
@@ -252,7 +253,7 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
-  let profile;try{const current=await readStoreProfile(env.DB),keys=["mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["englishEnabled","hebrewEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
   await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
@@ -579,7 +580,7 @@ async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContex
  }catch(error){if(error instanceof OrderEditError)return json({error:error.message},{status:error.status});throw error}
 }
 
-async function readCatalog(env: Env, includeInactive = false) {
+async function readCatalog(env: Env, includeInactive = false, includeOutOfStock = false) {
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
@@ -589,7 +590,7 @@ async function readCatalog(env: Env, includeInactive = false) {
     env.DB.prepare(`SELECT p.*, c.name AS category_name, pc.name AS parent_category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id LEFT JOIN categories pc ON pc.id = c.parent_id ${productWhere} ORDER BY p.created_at DESC, p.id DESC`).all(),
     env.DB.prepare("SELECT id, product_id, name, display_type, sort_order FROM product_options ORDER BY sort_order, id").all(),
     env.DB.prepare("SELECT id, option_id, value, color_hex, sort_order FROM product_option_values ORDER BY sort_order, id").all(),
-    env.DB.prepare("SELECT id, product_id, sku, price_agorot, wholesale_price_agorot, stock_quantity, active FROM product_variants ORDER BY id").all(),
+    env.DB.prepare("SELECT * FROM product_variants ORDER BY id").all(),
     env.DB.prepare("SELECT variant_id, option_value_id FROM variant_option_values").all(),
     env.DB.prepare("SELECT id, product_id, variant_id, media_type, url, alt_text, sort_order, is_primary FROM product_media ORDER BY is_primary DESC, sort_order, id").all(),
     env.DB.prepare("SELECT product_id, keyword FROM product_keywords ORDER BY keyword").all(),
@@ -642,11 +643,11 @@ async function readCatalog(env: Env, includeInactive = false) {
       const link = linksByVariant.get(Number(variant.id))?.[0];
       const value = optionValueById.get(Number(link?.option_value_id));
       const variantImages = productMedia.filter((item) => Number(item.variant_id) === Number(variant.id) && item.media_type === "image").map((item) => String(item.url));
-      return { id: Number(variant.id), name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
+      return { id: Number(variant.id), nameTranslations: readNameTranslations(variant.name_translations_json), name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
     });
     const inStock = productVariants.length > 0 ? productVariants.some((item) => item.stock > 0) : Number(row.stock_quantity) > 0;
     return {
-      id, itemNumber: Number(row.item_number), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
+      id, itemNumber: Number(row.item_number), nameTranslations: readNameTranslations(row.name_translations_json), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
       category: String(row.parent_category_name || row.category_name || "بدون قسم"), subcategory: row.parent_category_name ? String(row.category_name) : undefined,
       price: amount(row.price_agorot as number) || 0, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: amount(row.offer_price_agorot as number | null),
       image: images[0], images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
@@ -656,7 +657,7 @@ async function readCatalog(env: Env, includeInactive = false) {
       description: includeInactive ? String(row.description || row.short_description || "") : cleanCatalogDescription(row.description) || cleanCatalogDescription(row.short_description), specifications: String(row.specifications || ""), stock: Number(row.stock_quantity), inStock, active: Boolean(row.active), featured: Boolean(row.featured), views: Number(row.view_count), orders: Number(row.order_count), rating: Number(row.rating_average_x100) / 100, ratingCount:Number(row.rating_count||0),createdAt:Number(row.created_at||0), variants: productVariants,
     };
   });
-  return { categories, products: includeInactive || showOutOfStock ? products : products.filter((product) => product.inStock) };
+  return { categories, products: includeInactive || includeOutOfStock || showOutOfStock ? products : products.filter((product) => product.inStock) };
 }
 
 async function parseJson(request: Request) {
@@ -683,19 +684,51 @@ async function saveCategory(request: Request, env: Env, id?: number) {
   return json({ ok: true });
 }
 
+function readNameTranslations(value: unknown): Partial<Record<"he" | "en", string>> {
+  if (typeof value === "string") {
+    try { value = JSON.parse(value); } catch { return {}; }
+  }
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const result: Partial<Record<"he" | "en", string>> = {};
+  for (const language of ["he", "en"] as const) {
+    const text = (value as Record<string, unknown>)[language];
+    if (typeof text === "string" && text.trim()) result[language] = text.trim().slice(0, 250);
+  }
+  return result;
+}
+
+async function ensureNameTranslationColumns(db: D1Database) {
+  for (const table of ["products", "product_variants"]) {
+    const columns = await db.prepare(`PRAGMA table_info(${table})`).all<{name: string}>();
+    if (columns.results.some(column => column.name === "name_translations_json")) continue;
+    try {
+      await db.prepare(`ALTER TABLE ${table} ADD COLUMN name_translations_json TEXT`).run();
+    } catch (error) {
+      const current = await db.prepare(`PRAGMA table_info(${table})`).all<{name: string}>();
+      if (!current.results.some(column => column.name === "name_translations_json")) throw error;
+    }
+  }
+}
+
 async function saveProduct(request: Request, env: Env, id?: number) {
   await ensureCustomizationSchema(env);
   const body = await parseJson(request);
   const name = asText(body.name);
   if (!name) return json({ error: "اسم الصنف مطلوب" }, { status: 400 });
+  await ensureNameTranslationColumns(env.DB);
+  const oldTranslations = id
+    ? (await env.DB.prepare("SELECT id, name_translations_json FROM product_variants WHERE product_id=?").bind(id).all<{id:number;name_translations_json:string|null}>()).results
+    : [];
+  const previousNames = new Map(oldTranslations.map(row => [row.id, row.name_translations_json]));
+  const nameTranslations = body.nameTranslations === undefined ? null : JSON.stringify(readNameTranslations(body.nameTranslations));
   const categoryId = body.categoryId ? Number(body.categoryId) : null;
   const itemNumber = Number(body.itemNumber) || Number((await env.DB.prepare("SELECT COALESCE(MAX(item_number), 1000) + 1 AS next FROM products").first())?.next);
   const slug = slugify(asText(body.slug) || `${name}-${itemNumber}`);
   const now = Date.now();
   let productId = id;
   if (id) {
-    await env.DB.prepare("UPDATE products SET item_number=?, category_id=?, name=?, slug=?, description=?, specifications=?, price_agorot=?, wholesale_price_agorot=?, purchase_price_agorot=?, stock_quantity=?, active=?, featured=?, offer_price_agorot=?, updated_at=? WHERE id=?")
-      .bind(itemNumber, categoryId, name, slug, asOptionalText(body.description), asOptionalText(body.specifications), agorot(body.price), nullableAgorot(body.wholesale), nullableAgorot(body.purchasePrice), Number(body.stock || 0), asBoolean(body.active) ? 1 : 0, asBoolean(body.featured) ? 1 : 0, nullableAgorot(body.oldPrice), now, id).run();
+    await env.DB.prepare("UPDATE products SET item_number=?, category_id=?, name=?, slug=?, description=?, specifications=?, price_agorot=?, wholesale_price_agorot=?, purchase_price_agorot=?, stock_quantity=?, active=?, featured=?, offer_price_agorot=?, updated_at=?, name_translations_json=COALESCE(?,name_translations_json) WHERE id=?")
+      .bind(itemNumber, categoryId, name, slug, asOptionalText(body.description), asOptionalText(body.specifications), agorot(body.price), nullableAgorot(body.wholesale), nullableAgorot(body.purchasePrice), Number(body.stock || 0), asBoolean(body.active) ? 1 : 0, asBoolean(body.featured) ? 1 : 0, nullableAgorot(body.oldPrice), now, nameTranslations, id).run();
     await env.DB.batch([
       env.DB.prepare("DELETE FROM product_keywords WHERE product_id=?").bind(id),
       env.DB.prepare("DELETE FROM product_options WHERE product_id=?").bind(id),
@@ -704,8 +737,8 @@ async function saveProduct(request: Request, env: Env, id?: number) {
       env.DB.prepare("DELETE FROM product_custom_fields WHERE product_id=?").bind(id),
     ]);
   } else {
-    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0,0,0,0,?,?)")
-      .bind(itemNumber, categoryId, name, slug, asOptionalText(body.description), asOptionalText(body.specifications), agorot(body.price), nullableAgorot(body.wholesale), nullableAgorot(body.purchasePrice), Number(body.stock || 0), asBoolean(body.active) ? 1 : 0, asBoolean(body.featured) ? 1 : 0, nullableAgorot(body.oldPrice), now, now).run();
+    const result = await env.DB.prepare("INSERT INTO products (item_number,category_id,name,slug,description,specifications,price_agorot,wholesale_price_agorot,purchase_price_agorot,stock_quantity,active,featured,offer_price_agorot,view_count,order_count,rating_average_x100,rating_count,created_at,updated_at,name_translations_json) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0,0,0,0,?,?,?)")
+      .bind(itemNumber, categoryId, name, slug, asOptionalText(body.description), asOptionalText(body.specifications), agorot(body.price), nullableAgorot(body.wholesale), nullableAgorot(body.purchasePrice), Number(body.stock || 0), asBoolean(body.active) ? 1 : 0, asBoolean(body.featured) ? 1 : 0, nullableAgorot(body.oldPrice), now, now, nameTranslations).run();
     productId = Number(result.meta.last_row_id);
   }
   if (!productId) return json({ error: "تعذر حفظ الصنف" }, { status: 500 });
@@ -724,7 +757,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
     for (let index = 0; index < variants.length; index += 1) {
       const variant = variants[index];
       const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order) VALUES (?,?,?,?)").bind(optionId, asText(variant.name), asOptionalText(variant.color), index).run();
-      const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)").bind(productId, asOptionalText(variant.sku), nullableAgorot(variant.price), nullableAgorot(variant.wholesale), Number(variant.stock || 0), 1, now, now).run();
+      const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at,name_translations_json) VALUES (?,?,?,?,?,?,?,?,?)").bind(productId, asOptionalText(variant.sku), nullableAgorot(variant.price), nullableAgorot(variant.wholesale), Number(variant.stock || 0), 1, now, now, variant.nameTranslations === undefined ? previousNames.get(Number(variant.id)) ?? null : JSON.stringify(readNameTranslations(variant.nameTranslations))).run();
       const variantId = Number(variantResult.meta.last_row_id);
       await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(variantId, Number(valueResult.meta.last_row_id)).run();
       const variantImages = [...new Set(Array.isArray(variant.images) ? variant.images.map(asText).filter(Boolean) : asText(variant.image) ? [asText(variant.image)] : [])];
@@ -1002,7 +1035,16 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if(target.origin!==url.origin)return json({error:"Invalid path"},{status:400});
     return json({head:await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
   }
-  if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
+  if (request.method === "GET" && url.pathname === "/api/catalog") {
+    const catalog = await readCatalog(env, false);
+    const language = url.searchParams.get("lang");
+    if (language !== "en" && language !== "he") return publicJson(catalog);
+    const profile = await readStoreProfile(env.DB);
+    if (!(language === "en" ? profile.englishEnabled : profile.hebrewEnabled)) return publicJson(catalog);
+    const object = await env.MEDIA.get("internal/catalog-translations.json");
+    const entries = object ? await new Response(object.body).json() as TranslationEntry[] : [];
+    return publicJson(localizeCatalog(catalog, entries, language));
+  }
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
@@ -1146,6 +1188,28 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     return json({ok:true});
   }
   if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
+  if (request.method === "POST" && url.pathname === "/api/admin/catalog-translations" && env.APP_SURFACE === "admin") {
+    if (request.headers.get("origin") !== url.origin) return json({error:"طلب غير مسموح"},{status:403});
+    const mode = url.searchParams.get("mode");
+    if (mode !== "preview" && mode !== "apply") return json({error:"وضع استيراد غير صالح"},{status:400});
+    let rows: unknown[];
+    try {
+      if (Number(request.headers.get("content-length")) > 1_000_000) throw Error();
+      const text = await request.text();
+      if (new TextEncoder().encode(text).length > 1_000_000) throw Error();
+      rows = text.replace(/^\uFEFF/,"").split(/\r?\n/).filter(line=>line.trim()).map(line=>JSON.parse(line));
+      if (!rows.length || rows.length > 6000) throw Error();
+    } catch {
+      return json({error:"ملف الترجمات فارغ أو غير صالح أو يتجاوز الحد المسموح"},{status:400});
+    }
+    const result = previewCatalogImport(await readCatalog(env,false,true), rows);
+    const report = {matched:result.accepted.length,issues:result.errors};
+    if (mode === "preview") return json(report);
+    if (result.errors.length) return json({...report,error:"صحّح الصفوف قبل الحفظ"},{status:409});
+    await env.MEDIA.put("internal/catalog-translations.json",new TextEncoder().encode(JSON.stringify(result.accepted)).buffer,
+      {httpMetadata:{contentType:"application/json"}});
+    return json(report);
+  }
   if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
   if (request.method === "PUT" && url.pathname === "/api/admin/popup") return savePopup(request,env);
   const slideMatch=url.pathname.match(/^\/api\/admin\/sliders\/(\d+)$/);

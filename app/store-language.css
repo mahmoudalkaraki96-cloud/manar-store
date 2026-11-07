@@ -1,0 +1,46 @@
+.storeLanguagePicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.storeLanguagePicker button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 5px;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: 700 12px system-ui, sans-serif;
+}
+
+.storeLanguagePicker button[aria-pressed="true"] {
+  background: var(--green);
+  color: white;
+}
+
+@media (max-width: 1099px) {
+  .shopHeaderWrap .headerTopStrip {
+    display: flex;
+    justify-content: center;
+    min-height: 36px;
+  }
+
+  .shopHeaderWrap .headerTopStrip > :not(.storeLanguagePicker) {
+    display: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  html[lang="en"] .storeShell {
+    direction: rtl;
+  }
+
+  html[lang="en"] .storeShellContent,
+  html[lang="en"] .desktopCategorySlot {
+    direction: ltr;
+  }
+}

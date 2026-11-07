@@ -16,6 +16,6 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: node tests/storefront-experience.test.cjs
-      - run: node --test tests/category-picker.test.cjs tests/store-profile.test.cjs tests/store-icon.test.cjs tests/store-theme.test.cjs tests/order-preparation.test.cjs tests/admin-security.test.cjs tests/web-push.test.cjs tests/order-pdf.test.cjs tests/admin-category-list.test.cjs tests/platform-accounts.test.cjs
+      - run: node --test tests/store-languages.test.cjs tests/category-picker.test.cjs tests/store-profile.test.cjs tests/store-icon.test.cjs tests/store-theme.test.cjs tests/order-preparation.test.cjs tests/admin-security.test.cjs tests/web-push.test.cjs tests/order-pdf.test.cjs tests/admin-category-list.test.cjs tests/platform-accounts.test.cjs
       - run: npx tsc --noEmit --strict --skipLibCheck --jsx react-jsx --module esnext --moduleResolution bundler --target ES2022 --esModuleInterop --types next app/admin/page.tsx app/admin/AdminAccess.tsx app/admin/OrdersPanel.tsx app/admin/order-pdf.ts app/admin/admin-category-list.ts worker/index.ts
       - run: npm run build
