@@ -1,2 +1,8 @@
 undefined
 - Verification complete for the language-switch addition: CI42350455202 unified runtime,42350455193 isolated runtime,42350455197 storefront build all succeeded at e6083c745b8da93b099c30f68ac1dd093c00f1cd. Synthetic SettingsPanel UI selected لغات المتجر, enabled English and saved successfully with Hebrew remaining off. This was local mock persistence only. DraftPR107 remains unmerged/unpublished; remaining translation completeness/semantic review is unchanged.
+
+
+## 2026-11-07 (Asia/Hebron) — CATALOG-TRANSLATION-REVIEW / sample clarifications merged locally
+- Owner clarified1519: blue flower with pearl accent;1151: narrow adhesive-tape roll dispenser with cutter, not a glue gun;1676: cardboard cutout with a baby-girl illustration, not a box;1413: small plastic ornament with a central pearl, omit ambiguous محجر in translations.
+- Applied these four meanings plus six pending sample editorial corrections (1188,1648,1917,1700,2054,2254) to a new local reviewed JSONL;11 fields across10 products, including2254 duplicated name/description. Original Arabic source and all IDs preserved; prior import file retained. New outputs/active-catalog-reviewed-import.jsonl contains3200 fields/1323 products,163 editorial drafts and3037 model drafts.
+- Offline validator against Nov7 exported catalog matched3200/3200 with zero issues. This verifies source identity/structure, not full semantic quality. No merchant import, deployment, or paid AI usage. Remaining model drafts still require semantic review. Review decisions are in docs/catalog-review-2026-11-07.md; local script and validation report retained in outputs.
