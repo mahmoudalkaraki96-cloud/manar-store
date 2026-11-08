@@ -4,7 +4,7 @@ import {createPortal} from 'react-dom';
 import {modulePermission,type Permission} from '../../shared/admin-permissions';
 import './security.css';
 import {AdminNotificationControls} from '../components/AdminNotificationButton';
-export type Actor={id:number;email:string;name:string;owner:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword?:boolean;method:string};
+export type Actor={id:number;email:string;name:string;owner:boolean;platformAdmin?:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword?:boolean;method:string};
 const Context=createContext<Actor|null>(null);
 const ToolbarHost=createContext<HTMLElement|null>(null);
 export function AdminMenuAction({children}:{children:ReactNode}){const host=useContext(ToolbarHost);return host?createPortal(children,host):<div className="adminMenuFallback">{children}</div>}
