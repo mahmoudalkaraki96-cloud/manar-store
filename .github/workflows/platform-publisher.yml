@@ -7,7 +7,7 @@ on:
         options: [prepare-release, inspect, setup, upgrade-audit, upgrade-prepare, configure-rokon-owner]
         default: inspect
   pull_request:
-    paths: ['platform/control/**', 'platform/runner/**', 'scripts/platform-publish*', 'scripts/platform-account*', 'tests/platform-publish*', 'tests/platform-accounts*', '.github/workflows/platform-publisher.yml']
+    paths: ['platform/control/**', 'platform/runner/**', 'scripts/platform-publish*', 'scripts/platform-account*', 'scripts/platform-theme*', 'tests/platform-publish*', 'tests/platform-accounts*', 'tests/platform-themes*', '.github/workflows/platform-publisher.yml']
 permissions:
   contents: read
 concurrency:
@@ -24,7 +24,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: node --test tests/platform-console.test.cjs tests/platform-publishing.test.cjs tests/platform-publish-engine.test.mjs tests/platform-unified-schema.test.mjs tests/platform-accounts.test.cjs
+      - run: node --test tests/platform-console.test.cjs tests/platform-publishing.test.cjs tests/platform-publish-engine.test.mjs tests/platform-unified-schema.test.mjs tests/platform-accounts.test.cjs tests/platform-themes.test.cjs
       - run: npx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck platform/control/worker.ts
       - name: Build the reviewed shared runtime once
         if: inputs.operation == 'prepare-release'
