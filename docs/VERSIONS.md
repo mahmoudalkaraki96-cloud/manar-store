@@ -253,3 +253,85 @@ Red Rose مستقل ومنشور من7a730a8b، تشغيل41085890298ناجح. �
 
 ## 1.3.1 — مرشح 2026-11-01
 - شريط حساب وقائمة ثابت للهاتف، ضبط تمدد النماذج والمتغيرات والطلبات، وخط الحقول16px لمنع الزوم التلقائي مع السماح بالتكبير اليدوي. المنصة0.6.0تضيف إنشاء مدير متجر وضبط كلمة مروره وتعطيله عبر عمليات معزولة ومدققة. الفحوص الآلية نجحت محليًا؛ CIوالتحقق البصري والنشر قيد التنفيذ.
+
+
+### 1.3.1 — منشور ومتحقق 2026-11-01
+- PR96/source e3009b6993a4259ca26d7c1eceff68199502899d. الفحوص الخمسة النهائية41286302460/41286302384/41286302385/41286302542/41286302431 ناجحة. بناء الحزمة41286422608؛ نشر المنصة0.6.0 في41286412712.
+- نشر منار09:56 ثم بقية المتاجر09:59 من لوحة المنصة نجح؛ الواجهة والإدارة1.3.1 لكل من manar/rokon/red-rose. حزمة واحدة وبيانات مستقلة. نفس المصدر معتمد للمتاجر الجديدة.
+- شريط إدارة الهاتف ثابت مع الحساب والإشعارات والخروج، إصلاح عرض المتغيرات والنماذج والطلبات ومنع زوم التركيز بالحقول16px. فحص حي390/320 ناجح دون حفظ أصناف/طلبات. ليس اختبارiPhone فعليًا. المنصة0.6.0 تضيف إدارة حساب مدير مستقل لكل متجر؛ اختبارات أمنية7 ناجحة، ولم تُنشأ بيانات اعتماد حقيقية خلال الفحص.
+
+
+## 1.3.3 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- إزالة زر تنظيف/معالجة خلفية الصورة ونافذة المعاينة التابعة له من محرر الأصناف. الرفع والضغط والحذف باقية. TypeScript المحلي نجح؛ لا تشغيل لخدمة صور مدفوعة أو تجهيز حزمة أو نشر متجر. بعد دمج المصدر يشغّل المالك prepare-release ثم يختار المتاجر من المنصة.
+
+
+## 1.4.0 — 2026-11-02 (source candidate; owner publishes)
+- User approved the full storefront UX list; owner alone runs prepare-release and fleet deployment. No build/deployment dispatch, production D1 edits, paid AI, product merging, or merchant configuration changes by the agent.
+- Center desktop shell at 1180px including the independent category rail; six adaptive desktop columns, one home row, compact category cards, category above product image, visible item numbers, price before title/options, scrollable variant choices. Mobile product columns configurable (2/3); only highlights collapse on scroll; categories remain in store color with white bold labels.
+- Global cart/checkout overlays preserve current URL and scroll, support quantity/removal/customization, show review lines and order confirmation. Checkout inputs support placeholders/autocomplete. Internal payment-provider text/raw stock quantities removed; real descriptions/specifications preserved without inventing product facts. WhatsApp product order link added.
+- Per-store free shipping is disabled by default. Owner can enable a threshold in display settings. Server recalculates shipping from trusted merchandise prices; progress and checkout totals match. Checkout currently has no customer discount input, so its merchandise subtotal is already the after-discount basis.
+- User explicitly chose phone-only order tracking. POST lookup returns only order number/date/status, no items, names, amounts or address; exact phone matching, archived exclusions, hashed phone/IP rate limits, no-store response. Customer ownership is not verified in this deliberately limited view.
+- Verified delivered-account product reviews and up to three JPG/PNG/WebP photos (1.5MB each), pending moderation. Public reads return approved reviews only; content.write permission required for approval/rejection. Separate additive table created lazily per merchant DB; no cross-store data.
+- Local strict TypeScript and 23 regression tests passed before PR; responsive isolated fixture used synthetic data only. At 1920px measured shell1180/slider936 and six equal-height cards; at390px two columns, highlights collapse259→167px and categories remain; cart qty changed150→300 and URL /product/2 + scroll656 restored after checkout/review close.
+- Limit: actual missing supplier image files cannot be recreated by CSS; added original-image retry and intentional category/highlight fallbacks. No bulk supplier content rewrite. Physical iOS push delivery not retested in this UX task.
+- Source/CI readiness is separate from publication. Release artifact pin and all live store versions remain untouched. Final PR/CI outcome appended after verification.
+
+
+### 1.4.0 verification result — 2026-11-02
+PR #99 merged as 67837796bcef86f19111bbea156063d9875ec435. Final tested head e7b8fd4f13b06e306a465ef8fad4bc517db0d3a8. All four PR workflows succeeded: storefront build41456279619, generic runtime41456279736, unified runtime41456279887, publisher validation41456279692. Initial CI correctly rejected an omitted app/storefront-types.ts; follow-up commit included it and cart-storage.ts, then the complete checks/builds passed. Mobile390 verified both2 and3 columns; checkout displays names/quantities/prices and keeps the search route. No publication was run.
+Owner next steps: GitHub Actions → Platform release publisher → Run workflow on main → operation prepare-release. After success, choose version1.4.0 and target stores in the platform publication screen. Enable free shipping/threshold and choose mobile columns separately in each store's settings. Existing review moderation is under مراجعات المنتجات; only verified delivered-account submissions qualify. Source candidate is ready; live merchant versions, data and release artifact pin remain unchanged by this work.
+
+## 1.4.1 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- صور بطاقات المنتجات تملأ إطارها على الكمبيوتر والهاتف: إزالة الخلفية الرمادية والهامش الداخلي حول الصورة واعتماد object-fit:cover بدل contain، مع قص خفيف للأطراف عند اختلاف الأبعاد ودون تشويه. صورة صفحة المنتج والعلامة المائية ورقم الصنف واسم القسم دون تغيير.
+- الملفات: app/storefront-experience.css ورفع VERSION وفحص النسخة في platform-publisher.yml وplatform-publish-prepare.mjs إلى 1.4.1. جُرّب الـCSS مؤقتًا في المتصفح على manarstore.ps بمقاسي 1366 و375؛ لا بناء محلي ولا تجهيز حزمة أو نشر. بعد الدمج يشغّل المالك prepare-release ثم يختار المتاجر من المنصة.
+
+## 1.4.2 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- الهايلايتس على الهاتف تنطوي وتظهر بحركة ناعمة (حوالي 0.28 ثانية) بدل الإخفاء الفوري، ومساحة الهيدر تبقى بارتفاعه الكامل أثناء الطي فلا تقفز الصفحة 92px. بدون حركة عند طلب تقليل الحركة. الكمبيوتر دون تغيير.
+- الملفات: app/storefront-experience.css وapp/components/StoreShell.tsx ورفع النسخة إلى 1.4.2. جُرّب السلوك مؤقتًا في المتصفح على manarstore.ps بمقاس 375؛ لا بناء محلي ولا تجهيز حزمة أو نشر. تشمل 1.4.1 إذا لم تُنشر بعد.
+
+## 1.5.0 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- الهاتف: شريط علوي جديد (القائمة والشعار وأيقونة الدخول والمفضلة والسلة، ثم البحث) وقائمة جانبية تضم الحساب وتتبع الطلب وكل الأقسام وفروعها والسياسات والإشعارات وتثبيت التطبيق والتواصل. أُخفيت الأزرار العائمة للإشعارات والتثبيت.
+- الكمبيوتر: الهايلايتس تنطوي بنعومة عند التمرير والقائمة الجانبية تتبع ارتفاع الهيدر. زر واتساب ثابت برقم كل متجر مع اسم المنتج في صفحة المنتج. سؤال تفعيل الإشعارات أول مرة يُفتح التطبيق المثبّت (ويُعاد بعد 7 أيام عند «لاحقاً»). صفحة المنتج: إطار 4:5 وصورة أكبر وتحميل نسخة أخف وإخفاء المصغّرات للصورة الواحدة.
+- عُدّل عبر محرر GitHub دون بناء محلي؛ جُرّب ترتيب الهيدر وصفحة المنتج مؤقتًا في المتصفح. الفحوصات في PR تبني الكود. سؤال الإشعارات يحتاج تجربة على تطبيق مثبّت بعد النشر.
+
+## 1.5.1 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- إصلاح: قائمة الهاتف في 1.5.0 كانت تفتح فارغة لأن قاعدة قديمة nav{display:none} تحت 1050px أخفت لوحة القائمة. أُضيف سطر CSS يُظهرها، وجُرّب مؤقتًا على manarstore.ps بمقاس 375: ظهرت الأقسام والفروع والروابط.
+
+## 1.6.0 — مصدر مرشح، النشر بيد المالك (2026-11-02)
+- الهايلايتس تظهر في الصفحة الرئيسية فقط؛ باقي الصفحات بدونها (هاتف وديسكتوب).
+- زر «أضف إلى السلة» في البطاقة يبقى فعّالًا للمنتجات ذات المتغيرات: إن لم يُختر متغير تفتح نافذة لاختيار المتغير والكمية (من الأسفل على الهاتف، وسط الشاشة على الديسكتوب). أزرار المتغيرات تظهر على البطاقة إذا كانت 5 أو أقل، وإلا يظهر عدد الخيارات وتُستخدم النافذة.
+- صفحة المنتج: السعر ثم المتغيرات ثم الكمية وزر السلة أولًا، بعدها واتساب والمشاركة ونسخ الرابط، والمواصفات في الأسفل مع رابط «المواصفات ↓» بجانب عنوان المتغيرات.
+
+## 1.6.1 — مصدر مرشح، النشر بيد المالك (2026-11-03)
+- الديسكتوب: شريط رفيع أعلى الهيدر فيه «تتبع الطلب» والتوصيل وسياسات المتجر، وعلى الطرف الآخر «تابعنا» مع أزرار واتساب وإنستغرام وفيسبوك بألوانها واسمها. المفضلة والسلة صارتا بجانب البحث، وزر الحساب واحد بدل اثنين.
+- الهاتف: روابط التواصل في القائمة الجانبية صارت أزرارًا ملوّنة بأيقونة واسم بدل نص عادي. شكل الهيدر لم يتغيّر.
+- المفضلة: قائمة واحدة لكل الصفحات (كانت صفحة المنتج تحفظ نسخة منفصلة، والعدد يظهر 0 خارج الرئيسية). العدد صحيح في كل صفحة، و♥ يفتح المفضلة من أي صفحة، والقلب على البطاقات يعمل في الأقسام والبحث. تُدمج المفضلة القديمة من صفحة المنتج تلقائيًا.
+
+## 1.6.2 — مصدر مرشح، النشر بيد المالك (2026-11-04)
+- سبب التحديث: صور المتجر لا تظهر في صور Google، وأصناف موجودة تظهر في نتائج البحث بعبارة "الصنف غير موجود"، لأن robots.txt كان يمنع /api/catalog الذي تعتمد عليه الصفحات.
+- robots.txt يسمح بـ/api/catalog و/api/storefront و/api/seo فقط ضمن /api/.
+- صفحات المنتج والقسم تصل من السيرفر ومعها الاسم والسعر والصور والروابط، وتزال هذه النسخة بعد تحميل الكتالوج.
+- sitemap.xml يذكر حتى 5 صور لكل منتج.
+- المنتج المحذوف يرجع 404، وفشل تحميل الكتالوج يعرض "تعذر التحميل" بدل "غير موجود".
+- بعد النشر: إرسال sitemap.xml من Google Search Console؛ ظهور النتائج يحتاج وقتًا من Google.
+
+
+## 2026-11-07 — 1.6.3, all matching dropdown results
+User requested all matching products and categories in the search dropdown. Removed the product30 and category8 result slices. Existing dropdown max-height/overflow scrolling and complete search page pagination retained. Manual publication remains the owner's responsibility. Code preparation is separate from deployment. Browser check of live search found product1216 in the full page; current catalog gives37 hits for مراي and it previously ranked33 in dropdown order.
+
+## 1.7.0 — مصدر مرشح، النشر بيد المالك (2026-11-08)
+- أساس نظام الثيمات بطلب المالك. شكل المتجر الحالي هو الثيم standard، ولم يتغير شكل المتجر.
+- الزوايا والخط في تنسيق المتجر صارت متغيرات بقيم افتراضية مطابقة. مقارنة الأنماط المحسوبة لكل العناصر قبل وبعد على 6 صفحات بالهاتف والكمبيوتر: صفر فروقات.
+- الثيم محفوظ في store_profile ومحقون من السيرفر قبل JavaScript. خيار الزوايا (افتراضية، حادة، دائرية) يعمل من الآن.
+- قسم "ثيم المتجر" في الإعدادات، الألوان والشعارات، يظهر لمدير المنصة فقط، والسيرفر يرفض غيره.
+- صفة مدير المنصة من متغير PLATFORM_ADMIN_EMAIL على عامل الإدارة. يجب إضافته من Cloudflare، وبدونه يبقى القسم مخفيًا.
+- حساب مدير المنصة مخفي ومحمي من موظفي المتجر ومالكه.
+- إصلاح خطأ React 418 الناتج عن قراءة إعدادات المتصفح في أول رسم.
+- لم يُفحص قسم الثيم في واجهة الإدارة محليًا؛ مغطى باختبارات الـAPI وفحص الأنواع.
+
+## منصة 0.7.0 — مصدر مرشح، النشر بيد المالك (2026-11-08)
+- تغيير ثيم أي متجر من لوحة المنصة بطلب المالك، بنفس آلية مهام حسابات المدراء.
+- جدول platform_theme_jobs جديد (إضافة فقط). المشغّل يغيّر settings_json.theme فقط ويتحقق أن باقي الإعدادات لم تتغير.
+- لا تُعرض الثيمات لمتجر نسخته أقدم من 1.7.0. نسخة المتاجر تبقى 1.7.0؛ لا يلزم نشر نسخة متجر جديدة.
+- فُحصت صفحة اللوحة الحقيقية محليًا مع API الثيم على قاعدة تجريبية: الطلب، وحالة الانتظار، وسبب المنع لمتجر 1.1.5.
+- النشر يحتاج: bootstrap للوحة المنصة، ثم تحديث فرع platform/release-runner بموافقة المالك.

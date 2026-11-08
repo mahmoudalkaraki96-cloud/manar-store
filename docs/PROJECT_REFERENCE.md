@@ -181,9 +181,11 @@
 
 - المسار `/product/{id}` يستخدم رقم المنتج الداخلي `products.id` فقط، وليس رقم الصنف، لمنع تعارض الروابط.
 - `canonical` يُبنى من الأصل والمسار فقط دون query string أو hash.
-- صفحات المنتجات غير الموجودة تحمل `noindex,follow` حتى لا تظهر كصفحات متجر مكررة في Google.
+- صفحات المنتجات غير الموجودة ترجع 404 وتحمل `noindex,follow` حتى لا تظهر كصفحات متجر مكررة في Google.
+- `robots.txt` يسمح فقط بـ`/api/catalog` و`/api/storefront` و`/api/seo` ضمن `/api/`، لأن صفحات المتجر تحتاجها عند عرضها لدى Google.
+- صفحات المنتج والقسم تحمل نسخة HTML من السيرفر (`#storefront-seo-content`) فيها الاسم والسعر والصور، ويزيلها `StoreSeo` بعد تحميل الكتالوج.
 - صفحات المنتجات الصالحة تحمل metadata وProduct JSON-LD من D1 على مستوى Worker قبل إرسال HTML.
-- `sitemap.xml` يستخدم روابط المنتجات الداخلية نفسها وتاريخ `updated_at` الحقيقي.
+- `sitemap.xml` يستخدم روابط المنتجات الداخلية نفسها وتاريخ `updated_at` الحقيقي، ويذكر حتى 5 صور لكل منتج.
 
 
 ## المتابعة المشتركة — 2026-10-13
@@ -772,3 +774,33 @@
 ### Unified release readiness — 2026-11-01
 - Runtime1.3.0 / source6dd9ecb03f372b973709184ac7054a89232faec1 is ready as a single shared storefront/admin artifact, certified for the three independent stores. New-store provisioning pins the same runtime. Merchant activation remains a separate user action.
 - shipping_zones code/label is the current runtime schema. Upgrade comparison explicitly accepts its complete code primary-key form rather than adding the obsolete baseline id/name columns. Tests preserve existing zone rows/prices and reject incomplete schemas.
+
+
+### Mobile admin 1.3.1 / platform 0.6.0 — live 2026-11-01
+- PR96/source e3009b6993a4259ca26d7c1eceff68199502899d. Platform deploy41286412712 and shared artifact41286422608 succeeded. All three merchants have storefront/admin1.3.1; central platform0.6.0. No new merchant schema upgrade over1.3.0.
+- AdminMenuAction portals into the fixed mobile AdminAccess toolbar; global16px mobile form controls preserve manual zoom, bounded variant grids and body locks prevent focus/background panning. Order tables scroll inside their own wrappers; printing restores fixed body positioning. Live390/320 QA passed products/variants/categories/manual-order forms, with no persisted merchant mutations. Physical Safari keyboard behavior remains device validation, not claimed as tested.
+- Platform accounts API queues store-bound owner-admin jobs. Only scrypt hash/salt are stored, cleared after completion/failure; passwords are entered by owner, never documented. Runner validates immutable/current resources and actual DB/MEDIA/admin bindings. Existing unmanaged emails are refused; platform_admin_account_links protects reset/disable/enable and is verified before credential writes. Password min6, no complexity or forced expiry; reset/disable/enable revoke sessions. Seven security tests include actual authApi login against synthetic SQLite and wrong-linked-admin protection.
+- New-store runtime pin now references the same immutable1.3.1/e3009 source, not the documentation commit. Existing accounts remain intact; UI list covers accounts created through this platform only. Create/reset/disable/enable require owner actions from store Details; no real account created during QA.
+
+
+### Product editor image processing removal — candidate1.3.3, 2026-11-02
+- Removed the image cleanup button, unused aiInput/enhanceImage/acceptAiPreview helpers, state and preview overlay from the shared add/edit product editor. Upload/compression/removal and server/batch endpoints are unchanged. Strict page TypeScript passed locally. Owner performs artifact preparation and merchant publishing; no manual build dispatch or live deployment executed by agent.
+
+
+### Storefront UX 1.4.0
+Per-store JSON profile now includes mobileProductColumns (2/3), freeShippingEnabled (false by default), freeShippingThreshold (ILS). Shared shippingQuote uses integer agorot and server-priced merchandise totals. ShoppingOverlay owns cart/checkout on every public route; callers dispatch manar:open-cart/manar:open-checkout. /track-order intentionally exposes only number/date/status by phone, rate limited. product_reviews lazily stores verified delivered-account reviews/photos, pending approval from the content.write Reviews panel. No deployment is performed by the agent; owner builds and publishes through the existing release platform.
+
+
+### 1.4.0 verification result — 2026-11-02
+PR #99 merged as 67837796bcef86f19111bbea156063d9875ec435. Final tested head e7b8fd4f13b06e306a465ef8fad4bc517db0d3a8. All four PR workflows succeeded: storefront build41456279619, generic runtime41456279736, unified runtime41456279887, publisher validation41456279692. Initial CI correctly rejected an omitted app/storefront-types.ts; follow-up commit included it and cart-storage.ts, then the complete checks/builds passed. Mobile390 verified both2 and3 columns; checkout displays names/quantities/prices and keeps the search route. No publication was run.
+Owner next steps: GitHub Actions → Platform release publisher → Run workflow on main → operation prepare-release. After success, choose version1.4.0 and target stores in the platform publication screen. Enable free shipping/threshold and choose mobile columns separately in each store's settings. Existing review moderation is under مراجعات المنتجات; only verified delivered-account submissions qualify. Source candidate is ready; live merchant versions, data and release artifact pin remain unchanged by this work.
+
+## ثيمات المتجر (1.7.0)
+- shared/store-theme.ts يعرّف الثيمات وخيارات الزوايا كبيانات مشتركة بين كل المتاجر. الثيم الوحيد حاليًا هو standard، وهو شكل المتجر كما كان قبل الثيمات.
+- الثيم محفوظ في store_profile.settings_json تحت المفتاح theme. normalizeTheme يرجع standard لأي قيمة غير معروفة، وvalidateTheme يرفضها عند الحفظ.
+- storefrontSeo يحقن --theme-radius في style#storefront-initial-theme قبل JavaScript، وStoreTheme يعيد مزامنته من /api/storefront.
+- الزوايا في ملفات تنسيق المتجر مكتوبة كـ calc(Npx*var(--theme-radius,1))، والخط Tajawal كـ var(--theme-font,"Tajawal"). القيم الافتراضية تطابق الشكل السابق بالضبط، وقد تحقق ذلك بمقارنة الأنماط المحسوبة لكل عناصر 6 صفحات على الهاتف والكمبيوتر.
+- /api/admin/theme متاح لمدير المنصة فقط. مدير المنصة هو الحساب الذي يطابق بريده متغير PLATFORM_ADMIN_EMAIL في عامل الإدارة، ولا يأتي من الصلاحيات أو المجموعات، فلا يملكه المالك تلقائيًا.
+- حساب مدير المنصة مخفي من قائمة المستخدمين لغير مدير المنصة، ولا يمكن تعديله أو تعطيله منها، ولا يمكن إنشاء حساب جديد ببريده.
+- النشر عبر المنصة يستخدم --keep-vars، لذلك يضاف PLATFORM_ADMIN_EMAIL على عامل الإدارة في Cloudflare مباشرة، ولا يكفي وضعه في wrangler.admin.jsonc. دونه يبقى قسم الثيم مخفيًا عن الجميع.
+- أول رسم في StoreHeader وصفحة المنتج وصفحة تتبع الطلب يستخدم defaultSettings مثل السيرفر، والإعدادات المخزنة في المتصفح تطبق بعد الـhydration. هذا يزيل خطأ React 418.

@@ -43,10 +43,10 @@ export function syncCart(saved:Record<string,CartLine>,products:Product[]){
  const next:Record<string,CartLine>={};
  for(const [savedKey,line] of Object.entries(saved)){
   const product=products.find(item=>item.id===line.productId);if(!product)continue;
-  const variant=product.variants?.length?(product.variants.find(item=>item.id===line.variantId&&item.stock>0)||product.variants.find(item=>item.stock>0)):undefined;
+  const variant=product.variants?.length?product.variants.find(item=>item.id===line.variantId&&item.stock>0):undefined;
   if(product.variants?.length&&!variant)continue;
   const stock=variant?variant.stock:product.stock;if(stock<=0)continue;
-  const customized=(line.customizations&&Object.keys(line.customizations).length>0)||Boolean(line.notes),itemKey=customized?savedKey:`${product.id}:${variant?.id||"base"}`,qty=Math.min(Math.max(1,Number(line.qty)||1),stock),price=variant?.price??product.price;
+  const customized=(line.customizations&&Object.keys(line.customizations).length>0)||Boolean(line.notes),itemKey=customized?savedKey:`${product.id}:${variant?.id||"base"}`,qty=Math.min(Math.max(1,Math.floor(Number(line.qty)||1)),stock,99),price=variant?.price??product.price;
   next[itemKey]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations:line.customizations||{},notes:line.notes||"",qty:(next[itemKey]?.qty||0)+qty,price,image:variant?.image||product.image};
   next[itemKey].qty=Math.min(next[itemKey].qty,stock);
  }

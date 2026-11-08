@@ -14,10 +14,20 @@ export async function readGroupedCarts(db:Database,cutoff:number,page=1,now=Date
  WHERE s.updated_at>=? AND s.quantity>0 ORDER BY s.updated_at DESC,s.cart_id LIMIT ? OFFSET ?`).bind(cutoff,pageSize,(currentPage-1)*pageSize).all<CartRow>();
  const parsed=rows.results.map(row=>({row,lines:lines(row.items_json)})),productIds=[...new Set(parsed.flatMap(c=>c.lines.map(l=>l.productId)))];
  const [products,variants]=productIds.length?await Promise.all([
- db.prepare('SELECT id,item_number,name FROM products WHERE id IN(SELECT value FROM json_each(?))').bind(JSON.stringify(productIds)).all<{id:number;item_number:number;name:string}>(),
- db.prepare(`SELECT v.id,v.product_id,GROUP_CONCAT(pov.value,' / ') AS name FROM product_variants v LEFT JOIN variant_option_values vov ON vov.variant_id=v.id LEFT JOIN product_option_values pov ON pov.id=vov.option_value_id WHERE v.product_id IN(SELECT value FROM json_each(?)) GROUP BY v.id,v.product_id`).bind(JSON.stringify(productIds)).all<{id:number;product_id:number;name:string|null}>()
+ db.prepare('SELECT id,item_number,name,price_agorot FROM products WHERE id IN(SELECT value FROM json_each(?))').bind(JSON.stringify(productIds)).all<{id:number;item_number:number;name:string;price_agorot:number}>(),
+ db.prepare(`SELECT v.id,v.product_id,v.price_agorot,GROUP_CONCAT(pov.value,' / ') AS name FROM product_variants v LEFT JOIN variant_option_values vov ON vov.variant_id=v.id LEFT JOIN product_option_values pov ON pov.id=vov.option_value_id WHERE v.product_id IN(SELECT value FROM json_each(?)) GROUP BY v.id,v.product_id`).bind(JSON.stringify(productIds)).all<{id:number;product_id:number;name:string|null;price_agorot:number|null}>()
  ]):[{results:[]},{results:[]}];
  const productMap=new Map(products.results.map(p=>[p.id,p])),variantMap=new Map(variants.results.map(v=>[v.id,v]));
- const carts=await Promise.all(parsed.map(async({row,lines})=>({deviceKey:await anonymousDeviceKey(row.cart_id),deviceType:row.device_type||'unknown',browser:row.browser||'',country:row.country||'',city:row.city||'',lastSeen:row.updated_at,online:Number(row.last_seen_at||0)>=now-ONLINE_MS,quantity:Number(row.quantity),detailsAvailable:row.items_json!==null,items:lines.map(line=>{const product=productMap.get(line.productId),variant=line.variantId?variantMap.get(line.variantId):null;return {productId:line.productId,variantId:line.variantId,itemNumber:product?.item_number??null,productName:product?.name||'منتج محذوف #'+line.productId,variantName:line.variantId?(variant?.product_id===line.productId?variant.name:'')||'متغير #'+line.variantId:'الصنف الأساسي',quantity:line.qty}})})));
+ const carts=await Promise.all(parsed.map(async({row,lines})=>{
+  const items=lines.map(line=>{const product=productMap.get(line.productId),candidate=line.variantId?variantMap.get(line.variantId):null,variant=candidate?.product_id===line.productId?candidate:null;
+   const rawPrice=product&&(line.variantId==null||variant)?variant?.price_agorot??product.price_agorot:null;
+   const unitAgorot=rawPrice!=null&&Number.isSafeInteger(rawPrice)&&rawPrice>=0?rawPrice:null;
+   const totalAgorot=unitAgorot==null?null:unitAgorot*line.qty;
+   return {productId:line.productId,variantId:line.variantId,itemNumber:product?.item_number??null,productName:product?.name||'منتج محذوف #'+line.productId,variantName:line.variantId?variant?.name||'متغير #'+line.variantId:'الصنف الأساسي',quantity:line.qty,lineTotal:totalAgorot!=null&&Number.isSafeInteger(totalAgorot)?totalAgorot/100:null};
+  });
+  const complete=row.items_json!==null&&items.length>0&&items.every(item=>item.lineTotal!==null)&&items.reduce((sum,item)=>sum+item.quantity,0)===Number(row.quantity);
+  const agorot=items.reduce((sum,item)=>sum+Math.round((item.lineTotal??0)*100),0);
+  return {deviceKey:await anonymousDeviceKey(row.cart_id),deviceType:row.device_type||'unknown',browser:row.browser||'',country:row.country||'',city:row.city||'',lastSeen:row.updated_at,online:Number(row.last_seen_at||0)>=now-ONLINE_MS,quantity:Number(row.quantity),detailsAvailable:row.items_json!==null,items,subtotal:complete&&Number.isSafeInteger(agorot)?agorot/100:null};
+ }));
  return {asOf:now,cartQuantity:Number(totals?.quantity||0),nonemptyCarts:totalCarts,missingDetailsCarts:Number(totals?.missing||0),onlineDevices:Number(totals?.online||0),page:currentPage,pageSize,pages,carts};
 }

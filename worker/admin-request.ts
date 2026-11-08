@@ -1,4 +1,5 @@
 import {currentActor,authApi,securityApi,routePermission,sameOrigin,SecurityError,safeAuditDetails,audit,type SecurityEnv,type AdminActor,initDefaultGroups} from './admin-security';
+import {themeApi} from './theme-api';
 
 export async function adminRequest(request:Request,env:SecurityEnv,handler:()=>Promise<Response|null>):Promise<Response>{
  const url=new URL(request.url),path=url.pathname;
@@ -22,7 +23,7 @@ export async function adminRequest(request:Request,env:SecurityEnv,handler:()=>P
   if(record){const logged=await env.DB.prepare('INSERT INTO admin_audit_log(actor_id,actor_label,action,target,status,details,created_at) VALUES(?,?,?,?,102,?,?)').bind(actor.id,actor.email,request.method,path,JSON.stringify(details).slice(0,12000),Date.now()).run();auditId=logged.meta.last_row_id;}
   try{
    if(actor.owner&&path.startsWith('/api/admin/security/'))await initDefaultGroups(env);
-   const result=await securityApi(request,env,actor)||await handler()||Response.json({error:'Not Found'},{status:404});
+   const result=await securityApi(request,env,actor)||await themeApi(request,env,actor)||await handler()||Response.json({error:'Not Found'},{status:404});
    if(auditId!=null)await env.DB.prepare('UPDATE admin_audit_log SET status=? WHERE id=?').bind(result.status,auditId).run().catch(()=>console.error('audit_completion_failed'));
    const headers=new Headers(result.headers);headers.set('cache-control','no-store');return new Response(result.body,{status:result.status,headers});
   }catch(error){if(auditId!=null)await env.DB.prepare('UPDATE admin_audit_log SET status=? WHERE id=?').bind(error instanceof SecurityError?error.status:500,auditId).run().catch(()=>console.error('audit_completion_failed'));throw error}

@@ -15,9 +15,9 @@ export default function StoreShell({children}:{children:ReactNode}){
   if(admin)return;
   const root=document.documentElement,header=document.querySelector<HTMLElement>(".shopHeaderWrap"),main=document.querySelector<HTMLElement>(".shopHeaderMain");
   if(!header||!main)return;
-  const measure=()=>{root.style.setProperty("--store-header-height",`${Math.ceil(header.getBoundingClientRect().height)}px`);root.style.setProperty("--store-topbar-height",`${Math.ceil(main.getBoundingClientRect().bottom)+5}px`);setActive(null)};
-  const observer=new ResizeObserver(measure);observer.observe(header);observer.observe(main);measure();window.addEventListener("resize",measure);
-  return()=>{observer.disconnect();window.removeEventListener("resize",measure)};
+  const measure=()=>{const highlights=header.querySelector(".storeHighlights") as HTMLElement|null,height=`${Math.ceil(header.getBoundingClientRect().height)}px`,settling=Boolean(highlights)&&(header.classList.contains("compactHighlights")||Boolean(highlights?.getAnimations?.().length));root.style.setProperty("--store-header-live",height);if(!settling)root.style.setProperty("--store-header-height",height);root.style.setProperty("--store-topbar-height",`${Math.ceil(main.getBoundingClientRect().bottom)+5}px`);setActive(null)};
+  const observer=new ResizeObserver(measure);observer.observe(header);observer.observe(main);measure();window.addEventListener("resize",measure);const settle=(event:TransitionEvent)=>{if(event.target instanceof HTMLElement&&event.target.classList.contains("storeHighlights"))measure()};header.addEventListener("transitionend",settle);
+  return()=>{observer.disconnect();window.removeEventListener("resize",measure);header.removeEventListener("transitionend",settle)};
  },[pathname,admin]);
  if(admin)return <>{children}</>;
  const roots=categories.filter(c=>c.parentId==null),selected=categories.find(c=>c.id===active),branches=categories.filter(c=>c.parentId===active);

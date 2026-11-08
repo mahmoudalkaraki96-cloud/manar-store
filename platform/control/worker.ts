@@ -1,4 +1,5 @@
 import {accountsApi} from './accounts-api';
+import {themesApi} from './themes-api';
 import {publishingApi} from "./publishing-api";
 import {groupProvisioningJobs} from "./job-history";
 import {previewIdentity} from '../../worker/preview-access';
@@ -17,6 +18,7 @@ export default {async fetch(request:Request,env:Env):Promise<Response>{
  if(!['GET','HEAD'].includes(request.method)&&(request.headers.get('origin')!==url.origin||request.headers.get('sec-fetch-site')==='cross-site'))return json({error:'مصدر الطلب غير مسموح.'},403);
  if(request.method==='GET'&&url.pathname==='/')return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'no-store','x-robots-tag':'noindex, nofollow','x-frame-options':'DENY','referrer-policy':'no-referrer','content-security-policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"}});
  if(/^\/api\/stores\/[a-z0-9-]+\/admin-accounts/.test(url.pathname))return accountsApi(request,env,actor);
+ if(/^\/api\/stores\/[a-z0-9-]+\/theme(?:\/|$)/.test(url.pathname))return themesApi(request,env,actor);
  if(url.pathname.startsWith('/api/releases'))return publishingApi(request,env,actor);
  if(request.method==='GET'&&url.pathname==='/api/state'){
   const [stores,jobs,events]=await Promise.all([env.PLATFORM_DB.prepare('SELECT * FROM platform_stores ORDER BY created_at DESC,id').all(),env.PLATFORM_DB.prepare('SELECT id,store_id,operation,status,stage,error_code,attempts,created_at,updated_at FROM platform_jobs ORDER BY created_at DESC LIMIT 40').all(),env.PLATFORM_DB.prepare('SELECT actor,action,store_id,details_json,created_at FROM platform_audit ORDER BY created_at DESC LIMIT 25').all()]);

@@ -39,3 +39,32 @@ test('six-digit and six-letter passwords are accepted without complexity rules',
 test('new admin credentials can use six digits without expiry or forced change, and secrets stay out of audit',async()=>{const env=fixture();await user(env,{owner:1});const t=token(await login(env)),r=await adminRequest(request('/api/admin/security/users','POST',{name:'Numeric user',email:'numeric@example.test',password:'123456',permissions:['orders.read'],groupIds:[]},t),env,async()=>null);assert.equal(r.status,200);const created=env.DB.sql.prepare("SELECT * FROM admin_users WHERE email='numeric@example.test'").get();assert.equal(created.must_change_password,0);assert.equal(created.password_expires_at,null);assert.notEqual(created.password_hash,'123456');const logged=await security.authApi(request('/api/admin/auth/login','POST',{email:'numeric@example.test',password:'123456'}),env);assert.equal(logged.status,200);assert.equal((await logged.json()).actor.mustChangePassword,false);const details=env.DB.sql.prepare("SELECT details FROM admin_audit_log WHERE action='POST'").get().details;assert.ok(!details.includes('123456'))});
 test('customer reset accepts six digits and permanently clears previous expiration',async()=>{const env=fixture();await customerAccountAdmin(request('/api/admin/customer-accounts','POST',{name:'Customer',email:'customer@example.test',phone:'0590000000',password:'123456',requestId:'test-normal-password'}),env.DB);const old=env.DB.sql.prepare('SELECT * FROM customer_accounts').get();env.DB.sql.prepare('INSERT INTO customer_password_resets VALUES(?,1)').run(old.id);const result=await customerAccountAdmin(request('/api/admin/customer-accounts/'+old.id+'/password','POST',{password:'654321'}),env.DB);assert.equal(result.status,200);const next=env.DB.sql.prepare('SELECT * FROM customer_accounts').get();assert.equal(next.password_hash,await security.hashPassword('654321',next.password_salt));assert.equal(env.DB.sql.prepare('SELECT COUNT(*) n FROM customer_password_resets').get().n,0)});
 test('password migration clears legacy expiry metadata without changing password hashes',async()=>{const env=fixture();await user(env,{must:1});env.DB.sql.exec('UPDATE admin_users SET password_expires_at=1;INSERT INTO customer_password_resets VALUES(22,1)');const hash=env.DB.sql.prepare('SELECT password_hash FROM admin_users').get().password_hash;env.DB.sql.exec(fs.readFileSync('drizzle/0032_nonexpiring_user_passwords.sql','utf8'));const row=env.DB.sql.prepare('SELECT * FROM admin_users').get();assert.equal(row.must_change_password,0);assert.equal(row.password_expires_at,null);assert.equal(row.password_hash,hash);assert.equal(env.DB.sql.prepare('SELECT COUNT(*) n FROM customer_password_resets').get().n,0)});
+
+test('store theme is changed only by the platform admin, and that account stays hidden from store staff',async()=>{
+ const env=fixture();env.DB.sql.exec("CREATE TABLE store_profile(id integer PRIMARY KEY NOT NULL DEFAULT 1,settings_json text NOT NULL DEFAULT '{}',updated_at integer NOT NULL DEFAULT 0)");
+ env.PLATFORM_ADMIN_EMAIL='Platform@Example.test';
+ await user(env,{owner:1,email:'owner@example.test'});const platformId=await user(env,{email:'platform@example.test',grants:['users.manage']});
+ const owner=token(await login(env,'owner@example.test')),platform=token(await login(env,'platform@example.test'));
+ const call=(route,method,body,t)=>adminRequest(request(route,method,body,t),env,async()=>null);
+ // The store owner holds every permission but is not the platform admin.
+ for(const [method,body] of [['GET'],['PUT',{id:'standard',radius:'round'}]])assert.equal((await call('/api/admin/theme',method,body,owner)).status,403);
+ assert.equal(env.DB.sql.prepare('SELECT COUNT(*) n FROM store_profile').get().n,0);
+ let r=await call('/api/admin/theme','GET',undefined,platform);assert.equal(r.status,200);assert.deepEqual((await r.json()).theme,{id:'standard',radius:'standard'});
+ r=await call('/api/admin/theme','PUT',{id:'standard',radius:'round'},platform);assert.equal(r.status,200);
+ assert.deepEqual(JSON.parse(env.DB.sql.prepare('SELECT settings_json FROM store_profile').get().settings_json).theme,{id:'standard',radius:'round'});
+ for(const body of [{id:'modern'},{id:'standard',radius:'huge'},{id:'__proto__'}])assert.equal((await call('/api/admin/theme','PUT',body,platform)).status,400);
+ // Staff lists, edits and account creation never expose or reach the platform admin account.
+ r=await call('/api/admin/security/users','GET',undefined,owner);const listed=(await r.json()).users.map(u=>u.email);assert.ok(listed.includes('owner@example.test'));assert.ok(!listed.includes('platform@example.test'));
+ r=await call('/api/admin/security/users','GET',undefined,platform);assert.ok((await r.json()).users.some(u=>u.email==='platform@example.test'));
+ assert.equal((await call('/api/admin/security/users/'+platformId,'PUT',{name:'x',active:false},owner)).status,404);
+ assert.equal(env.DB.sql.prepare('SELECT active FROM admin_users WHERE id=?').get(platformId).active,1);
+ // In a store where the platform admin has no account yet, the owner cannot create one with that email.
+ const fresh=fixture();fresh.PLATFORM_ADMIN_EMAIL='platform@example.test';await user(fresh,{owner:1,email:'owner@example.test'});const freshOwner=token(await login(fresh,'owner@example.test'));
+ assert.equal((await adminRequest(request('/api/admin/security/users','POST',{name:'Fake',email:'PLATFORM@example.test',password:'123456'},freshOwner),fresh,async()=>null)).status,409);
+ assert.equal(fresh.DB.sql.prepare("SELECT COUNT(*) n FROM admin_users WHERE email='platform@example.test'").get().n,0);
+});
+test('without PLATFORM_ADMIN_EMAIL nobody can open the theme setting',async()=>{
+ const env=fixture();await user(env,{owner:1,email:'owner@example.test'});const t=token(await login(env,'owner@example.test'));
+ const r=await adminRequest(request('/api/admin/theme','GET',undefined,t),env,async()=>null);assert.equal(r.status,403);
+ const me=await security.authApi(request('/api/admin/auth/me','GET',undefined,t),env);assert.equal((await me.json()).actor.platformAdmin,false);
+});
