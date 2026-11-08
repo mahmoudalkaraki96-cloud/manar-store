@@ -1,8 +1,242 @@
 {
-  "started_at": "2026-11-01T12:01:36.891959+02:00",
+  "started_at": "2026-11-08T11:49:31.521257+02:00",
   "mode": "apply",
   "status": "completed",
   "results": [
+    {
+      "id": 3806,
+      "item_number": 4806,
+      "name": "شنتة bvc مقاس (35*24*20)",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1500,
+      "source_id": 1448,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1448",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3807,
+      "item_number": 4807,
+      "name": "انبوب زجاج كرستال مقاس (8*3)",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 2000,
+      "source_id": 1447,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1447",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3808,
+      "item_number": 4808,
+      "name": "اية الكرسي سيراميك زهري",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 300,
+      "source_id": 1445,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1445",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3809,
+      "item_number": 4809,
+      "name": "لفة كورية",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 2400,
+      "source_id": 1444,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1444",
+      "images": 1,
+      "variants": 1,
+      "fields": 0
+    },
+    {
+      "source_id": 1443,
+      "status": "possible_name_match"
+    },
+    {
+      "source_id": 1442,
+      "status": "possible_name_match"
+    },
+    {
+      "source_id": 1441,
+      "status": "possible_name_match"
+    },
+    {
+      "source_id": 1440,
+      "status": "possible_name_match"
+    },
+    {
+      "source_id": 1439,
+      "status": "possible_name_match"
+    },
+    {
+      "id": 3810,
+      "item_number": 4810,
+      "name": "علبة زجاج كرستال مقاس (7*4.5 )",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 200,
+      "source_id": 1438,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1438",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3811,
+      "item_number": 4811,
+      "name": "شمعة دب ارتفاع 8 سم مغلف",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 600,
+      "source_id": 1437,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1437",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3812,
+      "item_number": 4812,
+      "name": "تيبل لامب صهارة صغير",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 200,
+      "source_id": 1436,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1436",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3813,
+      "item_number": 4813,
+      "name": "تعليقة باب غيمة",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 5000,
+      "source_id": 1435,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1435",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3814,
+      "item_number": 4814,
+      "name": "معطر جو 30 مل مع وردة",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 400,
+      "source_id": 1434,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1434",
+      "images": 1,
+      "variants": 2,
+      "fields": 0
+    },
+    {
+      "id": 3815,
+      "item_number": 4815,
+      "name": "شبر قماش دنتيل 10 متر",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1500,
+      "source_id": 1433,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1433",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3816,
+      "item_number": 4816,
+      "name": "شبر قماش دنتيل 10متر",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1500,
+      "source_id": 1432,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1432",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3817,
+      "item_number": 4817,
+      "name": "شبر قماش تول موج 10 متر",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1200,
+      "source_id": 1431,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1431",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3818,
+      "item_number": 4818,
+      "name": "شبر قماش موج 10 متر",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1200,
+      "source_id": 1430,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1430",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "source_id": 1429,
+      "status": "possible_name_match"
+    },
+    {
+      "id": 3819,
+      "item_number": 4819,
+      "name": "عطر سبلاش للجسم (ميار)",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1500,
+      "source_id": 1428,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1428",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "id": 3820,
+      "item_number": 4820,
+      "name": "علبة كرتون مع قواطع (12) قاطع",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 4000,
+      "source_id": 1426,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1426",
+      "images": 2,
+      "variants": 3,
+      "fields": 0
+    },
     {
       "source_id": 1425,
       "status": "skipped_error",
@@ -68,18 +302,9 @@
       "reason": "ValueError"
     },
     {
-      "id": 3802,
-      "item_number": 4802,
-      "name": "قطع اكريلك لتزيين الشوكولاتة شكل دب",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 1000,
       "source_id": 1412,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1412",
-      "images": 1,
-      "variants": 2,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
       "source_id": 1411,
@@ -155,10 +380,6 @@
       "source_id": 1397,
       "status": "skipped_error",
       "reason": "ValueError"
-    },
-    {
-      "source_id": 1396,
-      "status": "duplicate_guard_skipped"
     },
     {
       "source_id": 1395,
@@ -3722,7 +3943,7 @@
     {
       "source_id": 654,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 652,
@@ -5862,7 +6083,7 @@
     {
       "source_id": 188,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 187,
@@ -5872,7 +6093,7 @@
     {
       "source_id": 186,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 185,
@@ -5892,7 +6113,7 @@
     {
       "source_id": 182,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 181,
@@ -5907,7 +6128,7 @@
     {
       "source_id": 179,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 178,
@@ -6117,7 +6338,7 @@
     {
       "source_id": 109,
       "status": "skipped_error",
-      "reason": "ValueError"
+      "reason": "SupplierMissing"
     },
     {
       "source_id": 108,
@@ -6521,6 +6742,6 @@
     }
   ],
   "pages": 22,
-  "cards": 1284,
-  "updated_at": "2026-11-01T13:51:54.168216+02:00"
+  "cards": 1297,
+  "updated_at": "2026-11-08T13:41:27.743825+02:00"
 }
