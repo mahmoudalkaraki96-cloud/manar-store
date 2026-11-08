@@ -794,3 +794,13 @@ Per-store JSON profile now includes mobileProductColumns (2/3), freeShippingEnab
 ### 1.4.0 verification result — 2026-11-02
 PR #99 merged as 67837796bcef86f19111bbea156063d9875ec435. Final tested head e7b8fd4f13b06e306a465ef8fad4bc517db0d3a8. All four PR workflows succeeded: storefront build41456279619, generic runtime41456279736, unified runtime41456279887, publisher validation41456279692. Initial CI correctly rejected an omitted app/storefront-types.ts; follow-up commit included it and cart-storage.ts, then the complete checks/builds passed. Mobile390 verified both2 and3 columns; checkout displays names/quantities/prices and keeps the search route. No publication was run.
 Owner next steps: GitHub Actions → Platform release publisher → Run workflow on main → operation prepare-release. After success, choose version1.4.0 and target stores in the platform publication screen. Enable free shipping/threshold and choose mobile columns separately in each store's settings. Existing review moderation is under مراجعات المنتجات; only verified delivered-account submissions qualify. Source candidate is ready; live merchant versions, data and release artifact pin remain unchanged by this work.
+
+## ثيمات المتجر (1.7.0)
+- shared/store-theme.ts يعرّف الثيمات وخيارات الزوايا كبيانات مشتركة بين كل المتاجر. الثيم الوحيد حاليًا هو standard، وهو شكل المتجر كما كان قبل الثيمات.
+- الثيم محفوظ في store_profile.settings_json تحت المفتاح theme. normalizeTheme يرجع standard لأي قيمة غير معروفة، وvalidateTheme يرفضها عند الحفظ.
+- storefrontSeo يحقن --theme-radius في style#storefront-initial-theme قبل JavaScript، وStoreTheme يعيد مزامنته من /api/storefront.
+- الزوايا في ملفات تنسيق المتجر مكتوبة كـ calc(Npx*var(--theme-radius,1))، والخط Tajawal كـ var(--theme-font,"Tajawal"). القيم الافتراضية تطابق الشكل السابق بالضبط، وقد تحقق ذلك بمقارنة الأنماط المحسوبة لكل عناصر 6 صفحات على الهاتف والكمبيوتر.
+- /api/admin/theme متاح لمدير المنصة فقط. مدير المنصة هو الحساب الذي يطابق بريده متغير PLATFORM_ADMIN_EMAIL في عامل الإدارة، ولا يأتي من الصلاحيات أو المجموعات، فلا يملكه المالك تلقائيًا.
+- حساب مدير المنصة مخفي من قائمة المستخدمين لغير مدير المنصة، ولا يمكن تعديله أو تعطيله منها، ولا يمكن إنشاء حساب جديد ببريده.
+- النشر عبر المنصة يستخدم --keep-vars، لذلك يضاف PLATFORM_ADMIN_EMAIL على عامل الإدارة في Cloudflare مباشرة، ولا يكفي وضعه في wrangler.admin.jsonc. دونه يبقى قسم الثيم مخفيًا عن الجميع.
+- أول رسم في StoreHeader وصفحة المنتج وصفحة تتبع الطلب يستخدم defaultSettings مثل السيرفر، والإعدادات المخزنة في المتصفح تطبق بعد الـhydration. هذا يزيل خطأ React 418.
