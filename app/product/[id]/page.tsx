@@ -6,7 +6,7 @@ import ProductReviews from "../../components/ProductReviews";
 import StoreHeader from "../../components/StoreHeader";
 import ProductCard from "../../components/ProductCard";
 import PolicySections from "../../components/PolicySections";
-import {cachedStoreSettings,loadStorefront,type StoreSettings} from "../../storefront-types";
+import {cachedStoreSettings,defaultSettings,loadStorefront,type StoreSettings} from "../../storefront-types";
 import {parseWatermark} from "../../watermark-config";
 import {addCartItem,cartCount as countCart,loadCart} from "../../cart-storage";
 import {trackEcommerce} from "../../analytics";
@@ -16,9 +16,9 @@ import {toggleFavorite,useFavorites} from "../../favorites-storage";
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
 export default function ProductPage(){
- const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(()=>cachedStoreSettings()),[failed,setFailed]=useState(false);
+ const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
- useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
+ useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(params.id));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);

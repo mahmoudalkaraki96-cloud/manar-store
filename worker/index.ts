@@ -43,6 +43,7 @@ interface Env {
   ADMIN_OWNER_CF_EMAIL?: string;
   ADMIN_CF_TEAM?: string;
   ADMIN_CF_AUD?: string;
+  PLATFORM_ADMIN_EMAIL?: string;
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
@@ -846,6 +847,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
 }
 async function storefrontSeo(env:Env,url:URL):Promise<string>{
   await ensureStorefrontColumns(env);
+  const themeProfile=await readStoreProfile(env.DB);
   const settings=await env.DB.prepare("SELECT store_name,site_name_ar,site_name_en,seo_description,logo_url,favicon_url,primary_color,secondary_color,background_color FROM store_settings WHERE id=1").first<{store_name:string;site_name_ar:string;site_name_en:string;seo_description:string;logo_url:string;favicon_url:string;primary_color:string;secondary_color:string;background_color:string}>();
   const storeName=String(settings?.site_name_ar||settings?.store_name||"المتجر");
   const alternateName=String(settings?.site_name_en||"");
@@ -886,7 +888,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
     }
   }
   const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
-  return '<style id="storefront-initial-theme">'+storeThemeCss({primaryColor:settings?.primary_color,secondaryColor:settings?.secondary_color,backgroundColor:settings?.background_color})+'</style><title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+  return '<style id="storefront-initial-theme">'+storeThemeCss({primaryColor:settings?.primary_color,secondaryColor:settings?.secondary_color,backgroundColor:settings?.background_color,theme:themeProfile.theme})+'</style><title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
 }
 // Page content for crawlers. A deleted product is reported as missing so the page answers 404.
 async function storefrontSeoBody(env:Env,url:URL):Promise<{html:string;missing:boolean}>{

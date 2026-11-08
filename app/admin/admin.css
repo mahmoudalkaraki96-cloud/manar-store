@@ -159,3 +159,6 @@
 /* Fulfillment print preview has no financial elements in its markup. */
 .orderPreparationSheet .orderPreparationTable{table-layout:auto}.orderPreparationTable td:nth-child(4){min-width:160px;white-space:normal;overflow-wrap:anywhere}.orderPreparationTable .preparationQuantity{font-size:18px;font-weight:700;text-align:center}.preparationCount{padding:12px 0;font-size:13px;border-bottom:1px solid var(--admin-line,#ddd)}.orderPreparationMode .orderPrintFooter{margin-top:28px}
 @media print{.orderPreparationSheet{color:#000!important;background:#fff!important}.orderPreparationTable thead{display:table-header-group}.orderPreparationTable tr{break-inside:avoid;page-break-inside:avoid}.orderPreparationTable td{white-space:normal!important;overflow-wrap:anywhere}.orderPreparationSheet .orderPrintFooter,.orderPreparationSheet .printedNotes{break-inside:avoid}.preparationCount{color:#000!important}.orderPreparationMode .orderDetailActions{display:none!important}}
+
+/* 1.7.0: store theme, visible to the platform admin only */
+.adminRedesign .editorThemePanel{margin-top:28px;padding-top:22px;border-top:1px solid var(--admin-line)}.adminRedesign .editorThemePanel>button{margin-top:16px}

@@ -4,6 +4,8 @@ import {matches,type CatalogResponse} from "../catalog-types";
 import {productThumbnail} from "../image-utils";
 import {defaultSettings,type Slide,type StoreSettings} from "../storefront-types";
 import {parseWatermark} from "../watermark-config";
+import {useAdminAccess} from "./AdminAccess";
+import ThemePanel from "./ThemePanel";
 
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
@@ -23,6 +25,7 @@ async function storefront(){
  return response.json();
 }
 export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogResponse;section:"settings"|"slider";upload:(file:File)=>Promise<string>}){
+ const {actor}=useAdminAccess();
  const [settings,setSettings]=useState<StoreSettings>(defaultSettings),[saved,setSaved]=useState<StoreSettings>(defaultSettings),[slides,setSlides]=useState<Slide[]>([]),[deleted,setDeleted]=useState<number[]>([]);
  const [busy,setBusy]=useState(false),[ready,setReady]=useState(false),[message,setMessage]=useState(""),[failed,setFailed]=useState(false),[group,setGroup]=useState<Group>("identity"),[productSearches,setProductSearches]=useState<Record<number,string>>({}),[customWatermarkPosition,setCustomWatermarkPosition]=useState(false);
  const parsedWatermark=parseWatermark(settings.watermarkUrl||"");
@@ -64,7 +67,7 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
     <label>الاسم الإنجليزي لجوجل<input dir="ltr" value={settings.siteNameEn} maxLength={60} onChange={e=>setSettings({...settings,siteNameEn:e.target.value})}/></label>
     <label className="editorWide">وصف المتجر<textarea rows={3} maxLength={170} value={settings.seoDescription} onChange={e=>setSettings({...settings,seoDescription:e.target.value})}/><small>{settings.seoDescription.length}/170 حرف</small></label>
    </div><div className="editorSearchPreview"><small>معاينة نتيجة البحث</small><span>{settings.publicOrigin||"رابط المتجر الرئيسي"}</span><strong>{settings.siteNameAr}{settings.siteNameEn?" | "+settings.siteNameEn:""}</strong><p>{settings.seoDescription}</p></div></>}
-   {group==="appearance"&&<><div className="editorSectionHead"><h3>ألوان المتجر وشعاراته</h3><p>اختر ألوان الهوية، ثم أضف الشعار وأيقونة المتصفح.</p></div><div className="editorColors">{([["primaryColor","اللون الرئيسي"],["secondaryColor","اللون الثانوي"],["backgroundColor","الخلفية"]] as const).map(([key,label])=><label key={key}><span>{label}</span><div><input type="color" value={settings[key]} onChange={e=>setSettings({...settings,[key]:e.target.value})}/><code dir="ltr">{settings[key]}</code></div></label>)}</div><div className="editorFields">{uploadCard("logoUrl","شعار المتجر")}{uploadCard("faviconUrl","أيقونة المتصفح وجوجل")}</div></>}
+   {group==="appearance"&&<><div className="editorSectionHead"><h3>ألوان المتجر وشعاراته</h3><p>اختر ألوان الهوية، ثم أضف الشعار وأيقونة المتصفح.</p></div><div className="editorColors">{([["primaryColor","اللون الرئيسي"],["secondaryColor","اللون الثانوي"],["backgroundColor","الخلفية"]] as const).map(([key,label])=><label key={key}><span>{label}</span><div><input type="color" value={settings[key]} onChange={e=>setSettings({...settings,[key]:e.target.value})}/><code dir="ltr">{settings[key]}</code></div></label>)}</div><div className="editorFields">{uploadCard("logoUrl","شعار المتجر")}{uploadCard("faviconUrl","أيقونة المتصفح وجوجل")}</div>{actor?.platformAdmin&&<ThemePanel/>}</>}
    {group==="watermark"&&<><div className="editorSectionHead"><h3>العلامة المائية للصور</h3><p>اضبط الشفافية والحجم والموقع وشاهد النتيجة في المعاينة.</p></div>
   <div className="watermarkSettingsCard">
    <div className="watermarkSettingHead"><div><b>إعدادات العلامة المائية</b><small>غيّر الإعدادات وشاهد النتيجة نفسها التي ستظهر على صور المنتجات.</small></div><label className="watermarkSwitch"><input type="checkbox" checked={watermark.enabled} onChange={e=>setWatermark({enabled:e.target.checked})}/><span>{watermark.enabled?"مفعلة":"متوقفة"}</span></label></div>

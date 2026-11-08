@@ -3,9 +3,12 @@ import {permissions,defaultGroups,validPermissions,modulePermission,type Permiss
 
 interface Statement {bind(...values:unknown[]):Statement;first<T=Record<string,unknown>>():Promise<T|null>;all<T=Record<string,unknown>>():Promise<{results:T[]}>;run():Promise<{meta:{changes?:number;last_row_id?:number|string}}>}
 export interface SecurityDb {prepare(sql:string):Statement;batch(statements:Statement[]):Promise<unknown[]>}
-export interface SecurityEnv {DB:SecurityDb;ADMIN_OWNER_EMAIL?:string;ADMIN_OWNER_CF_EMAIL?:string;ADMIN_CF_TEAM?:string;ADMIN_CF_AUD?:string}
+export interface SecurityEnv {DB:SecurityDb;ADMIN_OWNER_EMAIL?:string;ADMIN_OWNER_CF_EMAIL?:string;ADMIN_CF_TEAM?:string;ADMIN_CF_AUD?:string;PLATFORM_ADMIN_EMAIL?:string}
 type Row=Record<string,any>;
-export type AdminActor={id:number;email:string;name:string;owner:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword:boolean;method:string;version:number};
+// platformAdmin comes only from the worker variable PLATFORM_ADMIN_EMAIL, which store admins cannot change.
+export type AdminActor={id:number;email:string;name:string;owner:boolean;platformAdmin:boolean;permissions:Permission[];mustChangePassword:boolean;hasPassword:boolean;method:string;version:number};
+export function platformAdminEmail(env:SecurityEnv){return String(env.PLATFORM_ADMIN_EMAIL||'').trim().toLowerCase()}
+const isPlatformAdminEmail=(env:SecurityEnv,email:unknown)=>{const configured=platformAdminEmail(env);return Boolean(configured)&&String(email||'').trim().toLowerCase()===configured};
 export class SecurityError extends Error {constructor(message:string,public status=400){super(message)}}
 const COOKIE='__Host-manar_admin_session',MAX_AGE=8*60*60;
 const response=(body:unknown,status=200,headers:HeadersInit={})=>Response.json(body,{status,headers:{'cache-control':'no-store','x-content-type-options':'nosniff',...headers}});
@@ -46,7 +49,7 @@ async function bootstrapOwner(env:SecurityEnv){
 }
 async function actorFromUser(env:SecurityEnv,user:Row,method:string):Promise<AdminActor>{
  const direct=await env.DB.prepare('SELECT permission FROM admin_user_permissions WHERE user_id=? UNION SELECT gp.permission FROM admin_group_permissions gp JOIN admin_group_members gm ON gm.group_id=gp.group_id WHERE gm.user_id=?').bind(user.id,user.id).all<{permission:string}>();
- return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:false,hasPassword:!!user.password_hash,method,version:Number(user.auth_version)};
+ return {id:Number(user.id),email:user.email,name:user.name,owner:!!user.is_owner,platformAdmin:isPlatformAdminEmail(env,user.email),permissions:user.is_owner?[...permissions]:direct.results.map(r=>r.permission).filter(p=>permissions.includes(p as Permission)) as Permission[],mustChangePassword:false,hasPassword:!!user.password_hash,method,version:Number(user.auth_version)};
 }
 export async function currentActor(request:Request,env:SecurityEnv):Promise<AdminActor|null>{
  const token=readCookie(request);
@@ -141,12 +144,14 @@ export function routePermission(path:string,method:string):Permission[]|null{
  if(path.includes('/media'))return ['products.write','content.write','categories.write','settings.write'];
  if(path.includes('/storefront')||path.includes('/highlights')||path.includes('/policies')||path.includes('/sliders')||path.includes('/popup'))return ['content.write','settings.write'];
  if(path==='/api/admin/settings')return ['settings.write'];
+ // Any signed-in admin reaches the handler, which then requires platformAdmin.
+ if(path==='/api/admin/theme')return [];
  return null;
 }
 
 async function groupPermissions(env:SecurityEnv,ids:number[]){if(!ids.length)return [] as Permission[];const result=await env.DB.prepare(`SELECT permission FROM admin_group_permissions WHERE group_id IN (${ids.map(()=>'?').join(',')})`).bind(...ids).all<{permission:Permission}>();return result.results.map(r=>r.permission)}
 function canGrant(actor:AdminActor,grants:Permission[]){if(!actor.owner&&grants.some(p=>!actor.permissions.includes(p)))throw new SecurityError('لا يمكنك منح صلاحية لا تملكها',403)}
-async function editableUser(env:SecurityEnv,actor:AdminActor,id:number){const row=await env.DB.prepare('SELECT * FROM admin_users WHERE id=?').bind(id).first<Row>();if(!row)throw new SecurityError('المستخدم غير موجود',404);if(row.is_owner)throw new SecurityError('حساب المدير الرئيسي يُعدّل من حسابه فقط',403);if(id===actor.id)throw new SecurityError('لا يمكنك تغيير صلاحيات حسابك أو تعطيله بنفسك',403);const target=await actorFromUser(env,row,'password');canGrant(actor,target.permissions);return row}
+async function editableUser(env:SecurityEnv,actor:AdminActor,id:number){const row=await env.DB.prepare('SELECT * FROM admin_users WHERE id=?').bind(id).first<Row>();if(!row)throw new SecurityError('المستخدم غير موجود',404);if(row.is_owner)throw new SecurityError('حساب المدير الرئيسي يُعدّل من حسابه فقط',403);if(isPlatformAdminEmail(env,row.email)&&!actor.platformAdmin)throw new SecurityError('المستخدم غير موجود',404);if(id===actor.id)throw new SecurityError('لا يمكنك تغيير صلاحيات حسابك أو تعطيله بنفسك',403);const target=await actorFromUser(env,row,'password');canGrant(actor,target.permissions);return row}
 export async function securityApi(request:Request,env:SecurityEnv,actor:AdminActor):Promise<Response|null>{
  const path=new URL(request.url).pathname;
  if(!path.startsWith('/api/admin/security/'))return null;
@@ -156,7 +161,11 @@ export async function securityApi(request:Request,env:SecurityEnv,actor:AdminAct
    const groups=await env.DB.prepare('SELECT id,name FROM admin_groups ORDER BY name').all();return response({groups:groups.results,permissions});
   }
   if(path==='/api/admin/security/users'&&request.method==='GET'){
-   const [users,members,direct]=await Promise.all([env.DB.prepare('SELECT id,email,name,active,is_owner,must_change_password,created_at FROM admin_users ORDER BY is_owner DESC,id').all(),env.DB.prepare('SELECT user_id,group_id FROM admin_group_members').all(),env.DB.prepare('SELECT user_id,permission FROM admin_user_permissions').all()]);return response({users:users.results,members:members.results,direct:direct.results});
+   const [users,members,direct]=await Promise.all([env.DB.prepare('SELECT id,email,name,active,is_owner,must_change_password,created_at FROM admin_users ORDER BY is_owner DESC,id').all(),env.DB.prepare('SELECT user_id,group_id FROM admin_group_members').all(),env.DB.prepare('SELECT user_id,permission FROM admin_user_permissions').all()]);
+   // The platform admin account stays invisible to store staff, including the store owner.
+   const hidden=new Set(actor.platformAdmin?[]:users.results.filter(u=>isPlatformAdminEmail(env,u.email)).map(u=>Number(u.id)));
+   const visible=<T extends Record<string,unknown>>(rows:T[],key:string)=>rows.filter(row=>!hidden.has(Number(row[key])));
+   return response({users:visible(users.results,'id'),members:visible(members.results,'user_id'),direct:visible(direct.results,'user_id')});
   }
   if(path==='/api/admin/security/groups'&&request.method==='GET'){
    const [groups,grants]=await Promise.all([env.DB.prepare('SELECT id,name FROM admin_groups ORDER BY name').all(),env.DB.prepare('SELECT group_id,permission FROM admin_group_permissions').all()]);return response({groups:groups.results,grants:grants.results});
@@ -167,6 +176,8 @@ export async function securityApi(request:Request,env:SecurityEnv,actor:AdminAct
   }
   if(request.method==='POST'&&path==='/api/admin/security/users'){
    const b=await jsonBody(request),email=emailInput(b.email),name=String(b.name||'').trim().slice(0,100);if(!name)throw new SecurityError('الاسم مطلوب');
+   // Creating an account with the platform admin email would hand over platform access.
+   if(isPlatformAdminEmail(env,email))throw new SecurityError('البريد مستخدم مسبقًا',409);
    const grants=validPermissions(b.permissions||[]),groups=Array.isArray(b.groupIds)?[...new Set(b.groupIds.map(integer))]:[];canGrant(actor,[...grants,...await groupPermissions(env,groups)]);
    const salt=randomBytes(16).toString('hex'),temporary=assignedPassword(b.password),hash=await hashPassword(temporary,salt),now=Date.now();
    if(await env.DB.prepare('SELECT id FROM admin_users WHERE email=?').bind(email).first())throw new SecurityError('البريد مستخدم مسبقًا',409);
