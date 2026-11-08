@@ -318,3 +318,13 @@ Owner next steps: GitHub Actions → Platform release publisher → Run workflow
 
 ## 2026-11-07 — 1.6.3, all matching dropdown results
 User requested all matching products and categories in the search dropdown. Removed the product30 and category8 result slices. Existing dropdown max-height/overflow scrolling and complete search page pagination retained. Manual publication remains the owner's responsibility. Code preparation is separate from deployment. Browser check of live search found product1216 in the full page; current catalog gives37 hits for مراي and it previously ranked33 in dropdown order.
+
+## 1.7.0 — مصدر مرشح، النشر بيد المالك (2026-11-08)
+- أساس نظام الثيمات بطلب المالك. شكل المتجر الحالي هو الثيم standard، ولم يتغير شكل المتجر.
+- الزوايا والخط في تنسيق المتجر صارت متغيرات بقيم افتراضية مطابقة. مقارنة الأنماط المحسوبة لكل العناصر قبل وبعد على 6 صفحات بالهاتف والكمبيوتر: صفر فروقات.
+- الثيم محفوظ في store_profile ومحقون من السيرفر قبل JavaScript. خيار الزوايا (افتراضية، حادة، دائرية) يعمل من الآن.
+- قسم "ثيم المتجر" في الإعدادات، الألوان والشعارات، يظهر لمدير المنصة فقط، والسيرفر يرفض غيره.
+- صفة مدير المنصة من متغير PLATFORM_ADMIN_EMAIL على عامل الإدارة. يجب إضافته من Cloudflare، وبدونه يبقى القسم مخفيًا.
+- حساب مدير المنصة مخفي ومحمي من موظفي المتجر ومالكه.
+- إصلاح خطأ React 418 الناتج عن قراءة إعدادات المتصفح في أول رسم.
+- لم يُفحص قسم الثيم في واجهة الإدارة محليًا؛ مغطى باختبارات الـAPI وفحص الأنواع.
