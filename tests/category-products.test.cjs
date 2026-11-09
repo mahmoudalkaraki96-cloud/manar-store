@@ -1,0 +1,9 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript');
+const m={exports:{}};new Function('module','exports',ts.transpileModule(fs.readFileSync('app/category-products.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(m,m.exports);const {categoryProducts,categoryTreeIds}=m.exports;
+const categories=[{id:1,parentId:null},{id:2,parentId:1},{id:3,parentId:2},{id:4,parentId:null},{id:5,parentId:1,active:false},{id:6,parentId:5}];
+const products=[{id:10,categoryId:1},{id:20,categoryId:2},{id:30,categoryId:3},{id:40,categoryId:4},{id:50,categoryId:5},{id:60,categoryId:6},{id:70,categoryId:null},{id:80,categoryId:1,active:false}];
+test('initial listing stays direct-only; show all includes every descendant and excludes unrelated/hidden products',()=>{assert.deepEqual(categoryProducts(categories,products,1).map(p=>p.id),[10]);assert.deepEqual(categoryProducts(categories,products,1,true).map(p=>p.id),[10,20,30]);assert.deepEqual([...categoryTreeIds(categories,1)],[1,2,3]);});
+test('a root without direct products still exposes products in its nested branches',()=>{assert.equal(categoryProducts(categories,products.slice(1),1).length,0);assert.deepEqual(categoryProducts(categories,products.slice(1),1,true).map(p=>p.id),[20,30]);});
+test('each product ID appears once without mutating the catalog',()=>{const duplicated=[...products,products[1]],before=JSON.stringify(duplicated);assert.deepEqual(categoryProducts(categories,duplicated,1,true).map(p=>p.id),[10,20,30]);assert.equal(JSON.stringify(duplicated),before)});
+test('cycles terminate and missing roots produce an empty full-tree scope',()=>{assert.deepEqual([...categoryTreeIds([{id:1,parentId:2},{id:2,parentId:1}],1)],[1,2]);assert.equal(categoryProducts(categories,products,99,true).length,0)});
+
