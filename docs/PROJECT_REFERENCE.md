@@ -814,3 +814,7 @@ Zero-stock variant choices carry a visible variantSoldOutLabel in cards/picker/d
 
 ## Category full-tree listing (candidate1.7.2)
 Main-category pages expose an opt-in footer action «إظهار كافة منتجات القسم». app/category-products.ts provides cycle-safe active descendant IDs and stable product-ID deduplication. The expanded listing combines root and all nested branches, independent of the preview-section setting, then applies existing filters/sorting. Initial direct/preview mode stays unchanged; expansion resets on slug navigation. No category assignments or inventory writes; publication is owner-managed.
+
+
+## Whole-store collection (candidate1.7.3)
+/products/all reuses app/products/[collection]/page.tsx and the public catalog. Navigation from desktop rail, mobile menu and horizontal category bar has the exact label «عرض كل المنتجات». All mode excludes inactive rows and duplicate product IDs, supports catalog-wide query/availability/sort, and renders the complete filtered collection. Existing offers/featured/newest collections are unchanged. No store data or visibility settings are modified; owner manages publication.

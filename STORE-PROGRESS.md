@@ -11732,3 +11732,9 @@ User requested all matching products and categories in the search dropdown. Remo
 
 - Final verification for1.7.2 source d6b4467ba20e88d329c2324c99472856dd9bdb0e: unified42584514618,storefront42584514264,publisher42584514350 all succeeded. Synthetic browser initial root had1 direct product plus child previews; button produced1 grid with3 distinct root/child/grandchild products and no unrelated products or preview duplication. With root direct product removed and previews disabled, the footer button still produced2 nested products; search then narrowed to the grandchild product (1result). Exact label verified. No live data writes/deployment.
 - Source ready for owner prepare-release1.7.2 and selected-store publication. Browser fixture uses earlier common CSS/dependencies for local behavior; actual production artifact is validated by CI. Physical mobile hardware not exercised; no existing categories/assignments/settings changed. Documentation-only verification follow-up does not change runtime files.
+
+
+## 2026-11-09 (Asia/Hebron) — ALL-STORE-PRODUCTS / candidate1.7.3
+- User requested a menu action «عرض كل المنتجات» for the whole store. Added the link to desktop category rail, mobile menu and horizontal category bar, all targeting/products/all. Existing selected-category full-tree action retained.
+- Reused collection page route with an explicit all mode: every public active catalog product, stable ID deduplication, search across the entire catalog, availability filter and newest/price/rating sorting. No artificial result cap; no admin/private catalog endpoint or draft publication. Other collection modes retain existing behavior.
+- Candidate1.7.3 updates VERSION and publication preparation guards together. Source/CI/UI verification pending; no live merchant settings/data writes and no deployment dispatched. Owner prepares release and publishes selected stores. Next: CI plus synthetic menu/list verification and source merge.
