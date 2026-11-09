@@ -26,7 +26,7 @@ function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){
    <b>{p.name}</b>
    {!available&&<small className="searchSoldOutBadge">منتهي</small>}
   </Link>
-  {variants.length>0&&available&&<div className="searchVariantChoices" aria-label={`خيارات ${p.name} #${p.itemNumber}`}>{variants.map((v,index)=><button type="button" key={v.id??index} aria-pressed={selected===index} disabled={v.stock<=0} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} onClick={()=>setSelected(selected===index?null:index)}>{v.name}</button>)}</div>}
+  {variants.length>0&&<div className="searchVariantChoices" aria-label={`خيارات ${p.name} #${p.itemNumber}`}>{variants.map((v,index)=><button type="button" key={v.id??index} aria-pressed={selected===index} disabled={v.stock<=0} title={v.stock<=0?`${v.name} - نفدت الكمية`:v.name} onClick={()=>setSelected(selected===index?null:index)}>{v.name}{v.stock<=0&&<small className="variantSoldOutLabel">منتهي</small>}</button>)}</div>}
   <strong className="searchResultPrice" aria-live="polite" dir="ltr">{available?priceLabel:"غير متوفر"}</strong>
  </div>;
 }

@@ -1,0 +1,5 @@
+/* Keep zero-stock options visible and explicitly labelled in every variant chooser. */
+.variantSoldOutLabel{display:inline-block;font-size:10px!important;line-height:1.4;font-weight:800;background:#fff1f2;color:#9f1239;padding:1px 5px;border-radius:4px;white-space:nowrap;text-decoration:none;vertical-align:middle;margin-inline-start:4px}
+.cardVariantChoices button:disabled,.detailVariantChoices button:disabled,.variantPickerChoices button:disabled,.searchVariantChoices button:disabled{opacity:1!important;cursor:not-allowed;border-style:dashed;text-decoration:none}
+.cardVariantChoices .variantColorChoice:disabled,.productVariantSection .detailColorChoice:disabled{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:62px;width:auto;height:auto;min-height:38px;padding:3px}
+.variantColorChoice:disabled .variantSoldOutLabel,.detailColorChoice:disabled .variantSoldOutLabel{margin-inline-start:0}
