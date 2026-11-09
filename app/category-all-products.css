@@ -1,0 +1,2 @@
+.categoryAllProductsAction{display:flex;justify-content:center;padding:20px 12px 28px}.categoryAllProductsAction .mainBtn{min-height:44px;padding:12px 24px;max-width:100%;white-space:normal}
+.categoryProducts{scroll-margin-top:calc(var(--store-header-height,180px) + 12px)}
