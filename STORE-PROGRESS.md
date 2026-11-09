@@ -11707,3 +11707,11 @@ User requested all matching products and categories in the search dropdown. Remo
 - {"source_id": 6, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 5, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 2, "status": "skipped_error", "reason": "ValueError"}
+
+
+## 2026-11-09 (Asia/Hebron) — ADMIN-STABLE-SAVE / candidate1.7.1
+- User reported refresh/jump after saving a product and requested the same fix for orders. Latestmain058ff143 includes1.7.0 store themes; current language draftPR107 is separate and not copied into this patch.
+- Cause: catalog refresh setLoading(true) replaced the entire admin content subtree, remounting product grid and child order panel. Orders refresh similarly replaced its list. Removed loading re-entry after first fetch; existing React nodes/data remain while canonical catalog/orders are re-fetched after mutations. Existing filter/page/scroll/loaded-row state is retained instead of resetting a remounted viewport. No navigation or API contracts changed.
+- Added per-component request generation guards so older responses/errors cannot overwrite newer refreshes. Failed revalidation keeps displayed data and reports an error. Order save success message now precedes revalidation so a later refresh failure is not concealed by success text.
+- Eight focused tests evaluate the actual component refresh functions: initial loading, quiet subsequent refresh, failed revalidation, stale success/error suppression, and visibility regression against loading=true. Passed locally; sandbox process spawn initially denied, authorized local test execution then succeeded. PR build/CI pending; no real products/orders changed.
+- Owner alone runs prepare-release and selected-store publishing. No workflow dispatch/build preparation/deployment by agent. VERSION and preparation guards move together to1.7.1; no schema/merchant settings or data changes. Next: CI, synthetic UI verification where feasible, merge source and owner publication.

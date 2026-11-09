@@ -804,3 +804,7 @@ Owner next steps: GitHub Actions → Platform release publisher → Run workflow
 - حساب مدير المنصة مخفي من قائمة المستخدمين لغير مدير المنصة، ولا يمكن تعديله أو تعطيله منها، ولا يمكن إنشاء حساب جديد ببريده.
 - النشر عبر المنصة يستخدم --keep-vars، لذلك يضاف PLATFORM_ADMIN_EMAIL على عامل الإدارة في Cloudflare مباشرة، ولا يكفي وضعه في wrangler.admin.jsonc. دونه يبقى قسم الثيم مخفيًا عن الجميع.
 - أول رسم في StoreHeader وصفحة المنتج وصفحة تتبع الطلب يستخدم defaultSettings مثل السيرفر، والإعدادات المخزنة في المتصفح تطبق بعد الـhydration. هذا يزيل خطأ React 418.
+
+
+## Admin stable save (candidate1.7.1,2026-11-09)
+AdminContent catalog and OrdersPanel orders refresh show blocking loading only on initial mount; later revalidation retains mounted grids/lists, existing filters/pagination and scroll nodes. Per-component request-generation refs reject stale responses/errors. Canonical API data is still fetched after mutations; no optimistic product/order pricing is invented. Failed revalidation retains prior displayed data. Owner prepares release and deploys; code readiness does not imply live publication.
