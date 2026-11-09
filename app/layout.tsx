@@ -9,6 +9,7 @@ import CartCustomization from "./components/CartCustomization";
 import WhatsAppButton from "./components/WhatsAppButton";
 import "./sticky-cart.css";
 import "./globals.css";
+import "./variant-availability.css";
 import "./checkout.css";
 import "./watermark.css";
 import "./highlights.css";

@@ -808,3 +808,5 @@ Owner next steps: GitHub Actions → Platform release publisher → Run workflow
 
 ## Admin stable save (candidate1.7.1,2026-11-09)
 AdminContent catalog and OrdersPanel orders refresh show blocking loading only on initial mount; later revalidation retains mounted grids/lists, existing filters/pagination and scroll nodes. Per-component request-generation refs reject stale responses/errors. Canonical API data is still fetched after mutations; no optimistic product/order pricing is invented. Failed revalidation retains prior displayed data. Owner prepares release and deploys; code readiness does not imply live publication.
+
+Zero-stock variant choices carry a visible variantSoldOutLabel in cards/picker/detail/search; shared variant-availability.css keeps badges readable on color choices. Disabled options and cart confirmation guards prevent selection/confirmation at stock<=0; source data is unchanged.
