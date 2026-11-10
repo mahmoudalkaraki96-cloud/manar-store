@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const ts=require('typescript');
 function setup(){
- const storage=new Map(),events=[],tracked=[];
- const sandbox={exports:{},require:()=>({trackEcommerce:(...args)=>tracked.push(args)}),localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},window:{location:{hostname:'manarstore.ps'},dispatchEvent:e=>events.push(e)},CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail}},fetch:async()=>({}),crypto:require('node:crypto')};
+ const storage=new Map(),events=[],tracked=[],catalog={exports:{}};new Function('module','exports',ts.transpileModule(fs.readFileSync('app/catalog-types.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(catalog,catalog.exports);
+ const sandbox={exports:{},require:name=>name==='./catalog-types'?catalog.exports:({trackEcommerce:(...args)=>tracked.push(args)}),localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},window:{location:{hostname:'manarstore.ps'},dispatchEvent:e=>events.push(e)},CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail}},fetch:async()=>({}),crypto:require('node:crypto')};
  const source=ts.transpileModule(fs.readFileSync('app/cart-storage.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
  vm.runInNewContext(source,sandbox);return {api:sandbox.exports,events,tracked};
 }
@@ -15,3 +15,5 @@ test('confirmation keeps selected variant, quantity and separate customizations'
 test('required whitespace is rejected and optional blank customization is accepted',()=>{const {api}=setup();api.addCartItem(product,undefined,1,{'الاسم':'   '},true,true);assert.equal(Object.keys(api.loadCart()).length,0);api.addCartItem({...product,customFields:[{label:'ملاحظة',required:false}]},undefined,1,{},false,true);assert.equal(Object.values(api.loadCart())[0].qty,1)});
 test('ordinary products merge normally while sold out products cannot prompt or add',()=>{const {api,events}=setup(),plain={...product,customFields:[]};api.addCartItem(plain);api.addCartItem(plain);assert.equal(Object.values(api.loadCart())[0].qty,2);const n=events.length;api.addCartItem({...product,inStock:false});assert.equal(events.length,n)});
 
+
+test('disabled tracking permits zero-stock variant cart additions and synchronization',()=>{const {api}=setup(),p={...product,inventoryEnabled:false,inStock:false,stock:0,customFields:[],variants:[{id:8,name:'خيار',stock:0,price:15}]};api.addCartItem(p,p.variants[0],2);const cart=api.loadCart();assert.equal(Object.values(cart)[0].qty,2);const synced=api.syncCart(cart,[p]);assert.equal(Object.values(synced)[0].qty,2);assert.equal(p.stock,0);assert.equal(p.variants[0].stock,0)});

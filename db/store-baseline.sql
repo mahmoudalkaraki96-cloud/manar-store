@@ -714,3 +714,6 @@ INSERT INTO d1_migrations(name) VALUES('0031_admin_permissions.sql');
 INSERT INTO d1_migrations(name) VALUES('0032_nonexpiring_user_passwords.sql');
 
 INSERT INTO d1_migrations(name) VALUES('0033_store_profile.sql');
+
+CREATE TABLE IF NOT EXISTS order_inventory_policies(order_id INTEGER PRIMARY KEY,tracking_enabled INTEGER NOT NULL CHECK(tracking_enabled IN (0,1)),FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE);
+INSERT INTO d1_migrations(name) VALUES('0034_order_inventory_policy.sql');

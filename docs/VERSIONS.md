@@ -367,3 +367,8 @@ User requested all matching products and categories in the search dropdown. Remo
 ### نتيجة فحص1.7.3 — 2026-11-09
 - PR114؛ الفحوصات42587982579 و42587982640 و42587982543 ناجحة للمصدر697676f3. اختبار المتصفح عرض159منتجًا منشورًا من161سجلًا تجريبيًا مع حذف تكرار واحد واستبعاد مسودة واحدة. البحث يصل إلى المنتج159 وفلتر المنتهي صحيح؛ رابط القائمة الجانبية وقائمة الهاتف390px صحيحان.
 - لم يُشغل نشر حي أو تجهيز حزمة؛ المالك ينشر1.7.3 من المنصة بعد التجهيز.
+
+
+## v1.7.4 — 2026-11-10 (Asia/Hebron)
+- Candidate: HEIC/HEIF conversion to WebP, public variant-photo fallback, per-store inventory enable/disable with per-order policy snapshots.
+- Local35 tests passed; PR CI pending. No deployment or live data changes. Owner prepares release and publishes selected stores.

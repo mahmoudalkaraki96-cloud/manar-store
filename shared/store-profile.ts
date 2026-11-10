@@ -1,14 +1,15 @@
 import {defaultTheme,normalizeTheme,type ThemeSettings} from './store-theme';
-export type StoreProfile = {mobileProductColumns:2|3;freeShippingEnabled:boolean;freeShippingThreshold:number;publicOrigin:string;googleAnalyticsId:string;googleAnalyticsEnabled:boolean;metaPixelId:string;metaPixelEnabled:boolean;theme:ThemeSettings};
-export const emptyProfile:StoreProfile={mobileProductColumns:2,freeShippingEnabled:false,freeShippingThreshold:0,publicOrigin:'',googleAnalyticsId:'',googleAnalyticsEnabled:false,metaPixelId:'',metaPixelEnabled:false,theme:defaultTheme};
+export type StoreProfile = {inventoryEnabled:boolean;mobileProductColumns:2|3;freeShippingEnabled:boolean;freeShippingThreshold:number;publicOrigin:string;googleAnalyticsId:string;googleAnalyticsEnabled:boolean;metaPixelId:string;metaPixelEnabled:boolean;theme:ThemeSettings};
+export const emptyProfile:StoreProfile={inventoryEnabled:true,mobileProductColumns:2,freeShippingEnabled:false,freeShippingThreshold:0,publicOrigin:'',googleAnalyticsId:'',googleAnalyticsEnabled:false,metaPixelId:'',metaPixelEnabled:false,theme:defaultTheme};
 export function normalizeStoreProfile(value:unknown):StoreProfile{
  const row=value&&typeof value==='object'?value as Record<string,unknown>:{};
  let publicOrigin='';try{const url=new URL(String(row.publicOrigin||''));if(url.protocol==='https:'&&!url.username&&!url.password&&url.pathname==='/'&&!url.search&&!url.hash)publicOrigin=url.origin}catch{}
  const googleAnalyticsId=String(row.googleAnalyticsId||'').trim().toUpperCase(),metaPixelId=String(row.metaPixelId||'').trim();
- return {mobileProductColumns:row.mobileProductColumns===3?3:2,freeShippingEnabled:row.freeShippingEnabled===true,freeShippingThreshold:Number.isFinite(Number(row.freeShippingThreshold))?Math.max(0,Math.round(Number(row.freeShippingThreshold)*100)/100):0,publicOrigin,googleAnalyticsId:/^G-[A-Z0-9]{4,32}$/.test(googleAnalyticsId)?googleAnalyticsId:'',googleAnalyticsEnabled:row.googleAnalyticsEnabled===true,metaPixelId:/^\d{5,30}$/.test(metaPixelId)?metaPixelId:'',metaPixelEnabled:row.metaPixelEnabled===true,theme:normalizeTheme(row.theme)};
+ return {inventoryEnabled:row.inventoryEnabled!==false,mobileProductColumns:row.mobileProductColumns===3?3:2,freeShippingEnabled:row.freeShippingEnabled===true,freeShippingThreshold:Number.isFinite(Number(row.freeShippingThreshold))?Math.max(0,Math.round(Number(row.freeShippingThreshold)*100)/100):0,publicOrigin,googleAnalyticsId:/^G-[A-Z0-9]{4,32}$/.test(googleAnalyticsId)?googleAnalyticsId:'',googleAnalyticsEnabled:row.googleAnalyticsEnabled===true,metaPixelId:/^\d{5,30}$/.test(metaPixelId)?metaPixelId:'',metaPixelEnabled:row.metaPixelEnabled===true,theme:normalizeTheme(row.theme)};
 }
 export function validateStoreProfile(value:unknown):StoreProfile{
  const row=value as Record<string,unknown>,profile=normalizeStoreProfile(row);
+ if(row.inventoryEnabled!==undefined&&typeof row.inventoryEnabled!=="boolean")throw new Error("إعداد إدارة المخزون غير صالح");
  for(const key of ['publicOrigin','googleAnalyticsId','metaPixelId'] as const)if(String(row[key]||'').trim()&&!profile[key])throw new Error('قيمة غير صالحة في إعداد '+key);
  if(profile.googleAnalyticsEnabled&&!profile.googleAnalyticsId)throw new Error('أدخل معرّف Google Analytics قبل تفعيله');
  if(profile.metaPixelEnabled&&!profile.metaPixelId)throw new Error('أدخل رقم Meta Pixel قبل تفعيله');

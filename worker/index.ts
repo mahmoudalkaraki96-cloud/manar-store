@@ -1,3 +1,5 @@
+import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
+import {isHeifFile} from "../shared/heif";
 import {trackingPhone,trackOrders} from "./order-tracking";
 import {storeAssetResponse} from "./store-assets";
 import {storeIconResponse} from "./store-icon";
@@ -253,7 +255,7 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
-  let profile;try{const current=await readStoreProfile(env.DB),keys=["mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
   await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
@@ -524,6 +526,8 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
   const shippingRow=await env.DB.prepare("SELECT price_agorot FROM shipping_zones WHERE code=? AND active=1").bind(zone).first<{price_agorot:number}>();
   if(!shippingRow)return json({error:"منطقة التوصيل غير صحيحة أو غير مفعلة"},{status:400});
   let shipping=Number(shippingRow.price_agorot);
+  const inventoryEnabled=(await readStoreProfile(env.DB)).inventoryEnabled!==false;
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS order_inventory_policies(order_id INTEGER PRIMARY KEY,tracking_enabled INTEGER NOT NULL CHECK(tracking_enabled IN (0,1)),FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE)").run();
   const requested=Array.isArray(body.items)?body.items as Array<Record<string,unknown>>:[];
   if(!requested.length||requested.length>100)return json({error:"السلة فارغة أو تتجاوز الحد"},{status:400});
   const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
@@ -540,7 +544,7 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
       const variantCount=await env.DB.prepare("SELECT COUNT(*) AS count FROM product_variants WHERE product_id=? AND active=1").bind(productId).first<{count:number}>();
       if(Number(variantCount?.count||0)>0)return json({error:`اختر خيار الصنف ${String(product.name)} من جديد قبل إتمام الطلب`},{status:409});
     }
-    if(stock<qty)return json({error:`المتوفر من ${String(product.name)}${label?` — ${label}`:""} هو ${stock} فقط`},{status:409});
+    if(inventoryEnabled&&stock<qty)return json({error:`المتوفر من ${String(product.name)}${label?` — ${label}`:""} هو ${stock} فقط`},{status:409});
     const definitions=await env.DB.prepare("SELECT label,max_length,required FROM product_custom_fields WHERE product_id=? ORDER BY sort_order,id").bind(productId).all(),submitted=item.customizations&&typeof item.customizations==="object"?item.customizations as Record<string,unknown>:{},customizations:Record<string,string>={};
     for(const field of definitions.results as Array<Record<string,unknown>>){const fieldLabel=String(field.label),value=asText(submitted[fieldLabel]).slice(0,Number(field.max_length||60));if(Boolean(field.required)&&!value)return json({error:`الحقل ${fieldLabel} مطلوب للصنف ${String(product.name)}`},{status:400});if(value)customizations[fieldLabel]=value}
     const lineNote=asText(item.notes).slice(0,500);
@@ -550,7 +554,7 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
   const subtotal=lines.reduce((sum,line)=>sum+line.total,0);
   shipping=shippingQuote(subtotal,shipping,await readStoreProfile(env.DB)).shippingAgorot;
   const now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
-  await env.DB.batch(lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)));
+  await env.DB.batch([env.DB.prepare("INSERT INTO order_inventory_policies(order_id,tracking_enabled) VALUES (?,?)").bind(orderId,inventoryEnabled?1:0),...lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total))]);
   ctx.waitUntil(notifyNewOrder(env,orderId,number,new URL(request.url).origin,account?.id||null,body.pushDeviceId,body.pushDeviceToken).catch(()=>console.error("new_order_push_failed")));
   return json({ok:true,orderNumber:number,subtotal:subtotal/100,shipping:shipping/100,total:(subtotal+shipping)/100});
 }
@@ -582,7 +586,8 @@ async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContex
 
 async function readCatalog(env: Env, includeInactive = false) {
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
-  const showOutOfStock = Boolean(visibility?.show_out_of_stock ?? 1);
+  const inventoryEnabled=(await readStoreProfile(env.DB)).inventoryEnabled!==false;
+  const showOutOfStock = !inventoryEnabled || Boolean(visibility?.show_out_of_stock ?? 1);
   const categoryWhere = includeInactive ? "" : "WHERE active = 1";
   const productWhere = includeInactive ? "WHERE deleted_at IS NULL" : "WHERE p.active = 1 AND p.deleted_at IS NULL";
   const [categoryResult, productResult, optionResult, valueResult, variantResult, linkResult, mediaResult, keywordResult,customFieldResult] = await Promise.all([
@@ -645,12 +650,12 @@ async function readCatalog(env: Env, includeInactive = false) {
       const variantImages = productMedia.filter((item) => Number(item.variant_id) === Number(variant.id) && item.media_type === "image").map((item) => String(item.url));
       return { id: Number(variant.id), name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
     });
-    const inStock = productVariants.length > 0 ? productVariants.some((item) => item.stock > 0) : Number(row.stock_quantity) > 0;
+    const inStock = !inventoryEnabled || (productVariants.length > 0 ? productVariants.some((item) => item.stock > 0) : Number(row.stock_quantity) > 0);
     return {
-      id, itemNumber: Number(row.item_number), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
+      id, inventoryEnabled, itemNumber: Number(row.item_number), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
       category: String(row.parent_category_name || row.category_name || "بدون قسم"), subcategory: row.parent_category_name ? String(row.category_name) : undefined,
       price: amount(row.price_agorot as number) || 0, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: amount(row.offer_price_agorot as number | null),
-      image: images[0], images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
+      image: images[0]||(!includeInactive?productVariants.find(item=>item.image)?.image:undefined), images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
       keywords: (keywordsByProduct.get(id) || []).map((item) => String(item.keyword)).join(" "),
       customFields:(customFieldsByProduct.get(id) || []).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
       suppliers:(suppliersByProduct.get(id) || []).map(item=>({id:Number(item.supplier_id),name:String(item.supplier_name),sourceProductId:String(item.source_product_id||""),sourceUrl:String(item.source_url||""),supplierPrice:amount(item.supplier_price_agorot as number|null),preferred:Boolean(item.preferred)})),
@@ -868,7 +873,7 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
       description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
       canonicalUrl=url.origin+"/product/"+Number(product.id);
       image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
-      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:Boolean(product.available)?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
+      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:(themeProfile.inventoryEnabled===false||Boolean(product.available))?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
     }else{
       title="الصنف غير موجود – "+storeName;
       description="هذا الصنف غير متوفر حاليًا. تصفّح المنتجات المتاحة في "+storeName+".";
@@ -1112,7 +1117,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(request.method==="POST"&&url.pathname==="/api/admin/orders"){
   await ensureManualOrderSchema(env);
   const body=await parseJson(request);if(body.ledgerCustomerId!=null)await ensureCustomerAuthSchema(env);
-  try{return json(await createManualOrder(env.DB,body))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
+  try{return json(await createManualOrder(env.DB,body,(await readStoreProfile(env.DB)).inventoryEnabled))}catch(error){if(error instanceof ManualOrderError)return json({error:error.message},{status:error.status});throw error}
  }
  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
   if(request.method==='GET'&&url.pathname==='/api/admin/orders/customers'){const customers=await env.DB.prepare('SELECT id,name,phone,city,address FROM admin_customers ORDER BY name,id').all();return json({customers:customers.results});}
@@ -1211,12 +1216,13 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if (request.method === "POST" && url.pathname === "/api/admin/media") {
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (!contentLength || contentLength > 52_000_000) return json({ error: "حجم الملف غير مسموح" }, { status: 413 });
-    const form = await request.formData(); const file = form.get("file");
+    const form = await request.formData(); let file = form.get("file");
     if (!(file instanceof File)) return json({ error: "الملف مطلوب" }, { status: 400 });
-    const allowed = file.type.startsWith("image/") || file.type.startsWith("video/");
+    const allowed = file.type.startsWith("image/") || file.type.startsWith("video/") || isHeifFile(file);
     if (!allowed) return json({ error: "نوع الملف غير مدعوم" }, { status: 400 });
     if (file.type.startsWith("image/") && file.size > 12_000_000) return json({ error: "حجم الصورة يتجاوز 12MB" }, { status: 413 });
     if (file.type.startsWith("video/") && file.size > 50_000_000) return json({ error: "حجم الفيديو يتجاوز 50MB" }, { status: 413 });
+    try{file=await normalizeHeifUpload(file,env.IMAGES,{maxSize:form.get("imageMaxSize"),quality:form.get("imageQuality")})}catch(error){if(error instanceof ImageUploadError)return json({error:error.message},{status:error.status});throw error}
     const extension = file.name.split(".").pop()?.replace(/[^a-zA-Z0-9]/g, "") || (file.type.startsWith("video/") ? "mp4" : "webp");
     const key = `products/${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}.${extension}`;
     if(file.type.startsWith("image/")){

@@ -78,7 +78,9 @@ export async function saveOrderEdit(db:Database,id:number,body:Row){
  }
  const subtotal=lines.reduce((sum,l)=>sum+l.unit*l.quantity,0),feeTotal=fees.reduce((sum,f)=>sum+f.amount,0),total=subtotal+shipping+feeTotal-discount;
  if(!Number.isSafeInteger(total)||total<0||total>1000000000)throw new OrderEditError("الإجمالي أو الخصم يتجاوز المبلغ المسموح");
- const unknown=current.inventory_committed==null,wasCommitted=Number(current.inventory_committed)===1,willCommit=unknown?false:!["new","cancelled"].includes(status);
+ await db.prepare("CREATE TABLE IF NOT EXISTS order_inventory_policies(order_id INTEGER PRIMARY KEY,tracking_enabled INTEGER NOT NULL CHECK(tracking_enabled IN (0,1)),FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE)").run();
+ const policy=await db.prepare("SELECT tracking_enabled FROM order_inventory_policies WHERE order_id=?").bind(id).first<{tracking_enabled:number}>(),trackInventory=policy?.tracking_enabled!==0;
+ const unknown=trackInventory&&current.inventory_committed==null,wasCommitted=trackInventory&&Number(current.inventory_committed)===1,willCommit=trackInventory&&!unknown&&!["new","cancelled"].includes(status);
  // Catalog edits can recreate variant IDs; resolve historical labels before first commitment.
  if(willCommit&&!wasCommitted)for(const line of lines){
   if(line.productId==null)continue;
@@ -101,7 +103,9 @@ export async function saveOrderEdit(db:Database,id:number,body:Row){
   statements.push(db.prepare(`UPDATE ${table} SET stock_quantity=stock_quantity-?,updated_at=? WHERE id=?`).bind(delta.quantity,now,stockId));
  }
  const productDeltas=new Map<number,number>();
- for(const l of deltas.values())productDeltas.set(l.productId,(productDeltas.get(l.productId)||0)+l.quantity);
+ const wasCounted=!["new","cancelled"].includes(String(current.status)),willCount=!["new","cancelled"].includes(status);
+ for(const l of oldStock.values())if(wasCounted)productDeltas.set(l.productId,(productDeltas.get(l.productId)||0)-l.quantity);
+ for(const l of newStock.values())if(willCount)productDeltas.set(l.productId,(productDeltas.get(l.productId)||0)+l.quantity);
  for(const [productId,delta] of productDeltas)if(delta)statements.push(db.prepare("UPDATE products SET order_count=MAX(0,order_count+?),updated_at=? WHERE id=?").bind(delta,now,productId));
  if(body.items!==undefined||lines.some((line,index)=>line.variantId!==oldLines[index]?.variantId)){
   statements.push(db.prepare("DELETE FROM order_items WHERE order_id=?").bind(id));

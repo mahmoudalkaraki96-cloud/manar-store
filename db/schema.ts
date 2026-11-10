@@ -48,3 +48,5 @@ export const auditLogs=sqliteTable("audit_logs",{id:integer("id").primaryKey({au
 
 
 export const browserActivity=sqliteTable('store_browser_activity',{cartId:text('cart_id').primaryKey(),deviceType:text('device_type').notNull(),browser:text('browser').notNull(),country:text('country').notNull().default(''),city:text('city').notNull().default(''),firstSeenAt:integer('first_seen_at',{mode:'timestamp_ms'}).notNull(),lastSeenAt:integer('last_seen_at',{mode:'timestamp_ms'}).notNull()},t=>[index('idx_store_browser_activity_seen').on(t.lastSeenAt)]);
+
+export const orderInventoryPolicies=sqliteTable("order_inventory_policies",{orderId:integer("order_id").primaryKey().references(()=>orders.id,{onDelete:"cascade"}),trackingEnabled:integer("tracking_enabled",{mode:"boolean"}).notNull()});
