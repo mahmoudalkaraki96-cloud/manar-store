@@ -1,13 +1,13 @@
-export type FloatingId="install"|"notifications";
+export type FloatingId="install"|"admin-install"|"notifications";
 export type FloatingPosition={x:number;y:number};
 export type FloatingPreference={hidden:boolean;position?:FloatingPosition};
 export type FloatingPreferences=Record<FloatingId,FloatingPreference>;
 export const floatingKey="manar_floating_actions_v1",floatingEvent="manar:floating-actions";
-export const emptyFloatingPreferences=():FloatingPreferences=>({install:{hidden:false},notifications:{hidden:false}});
+export const emptyFloatingPreferences=():FloatingPreferences=>({install:{hidden:false},"admin-install":{hidden:false},notifications:{hidden:false}});
 const clamp=(value:number,min:number,max:number)=>Math.min(max,Math.max(min,value));
 export function parseFloatingPreferences(raw:string|null):FloatingPreferences{
  const result=emptyFloatingPreferences();
- try{const saved=JSON.parse(raw||"null");for(const id of ["install","notifications"] as const){const item=saved?.[id];result[id].hidden=item?.hidden===true;const p=item?.position;if(typeof p?.x==="number"&&Number.isFinite(p.x)&&typeof p?.y==="number"&&Number.isFinite(p.y))result[id].position={x:clamp(p.x,0,1),y:clamp(p.y,0,1)}}}catch{}
+ try{const saved=JSON.parse(raw||"null");for(const id of ["install","admin-install","notifications"] as const){const item=saved?.[id];result[id].hidden=item?.hidden===true;const p=item?.position;if(typeof p?.x==="number"&&Number.isFinite(p.x)&&typeof p?.y==="number"&&Number.isFinite(p.y))result[id].position={x:clamp(p.x,0,1),y:clamp(p.y,0,1)}}}catch{}
  return result;
 }
 export function floatingPoint(position:FloatingPosition,width:number,height:number,boxWidth:number,boxHeight:number){

@@ -374,3 +374,12 @@ User requested all matching products and categories in the search dropdown. Remo
 - Local35 tests passed; PR CI pending. No deployment or live data changes. Owner prepares release and publishes selected stores.
 
 - Validated code1f0d7affd8684f14e9b4929ac73ea0d170a2f8ac, [PR115](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/115). All4 PR checks succeeded: [unified](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42772310319), [storefront](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42772310219), [publisher validation](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42772310308), [generic runtime](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42772310434). Publication pending owner action; no live HEIC provider test yet.
+
+
+## v1.7.5 — 2026-11-10 (Asia/Hebron)
+- Candidate: movable/dismissible admin install button; independent local preference and restore action in appearance settings.
+- Validation pending; no live deployment. Owner prepares and publishes.
+
+- Includes owner-approved mobile navigation adjustment: «عرض كل المنتجات» stays in the phone drawer and is hidden only from the phone horizontal category bar. Desktop unchanged; publication remains owner-managed.
+
+- Code68a4bddadcaaada7370d8d6647b7d5efe4d1bb44, [PR116](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/116). [Unified42775604826](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42775604826), [storefront42775605006](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42775605006), [publisher validation42775604855](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42775604855) succeeded. Six local control tests passed. No live deployment; owner prepares/publishes1.7.5.
