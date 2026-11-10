@@ -27,6 +27,7 @@ export type CustomField={id?:number;label:string;placeholder:string;required:boo
 export type ProductSupplier={id:number;name:string;sourceProductId:string;sourceUrl:string;supplierPrice?:number;preferred:boolean};
 
 export type Product = {
+  inventoryEnabled?: boolean;
   id: number;
   itemNumber: number;
   name: string;
@@ -83,3 +84,6 @@ export function loadCatalog(): Promise<CatalogResponse> {
     });
   return catalogPromise;
 }
+
+export function stockLimit(product:Product|undefined,variant?:Variant):number{return product?.inventoryEnabled===false?99:Math.max(0,Number(variant?.stock??product?.stock)||0)}
+export function productAvailable(product:Product,variant?:Variant):boolean{return product.inventoryEnabled===false||(variant?variant.stock>0:product.variants?.length?product.variants.some(item=>item.stock>0):product.inStock)}

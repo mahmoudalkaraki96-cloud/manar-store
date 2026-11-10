@@ -1,4 +1,4 @@
-import type {Product,Variant} from "./catalog-types";
+import {stockLimit,productAvailable,type Product,type Variant} from "./catalog-types";
 import {trackEcommerce} from "./analytics";
 
 export type CartLine={productId:number;variantId?:number;variantSku?:string;variantName?:string;customizations?:Record<string,string>;notes?:string;qty:number;price:number;image?:string};
@@ -29,7 +29,7 @@ export function saveCart(cart:Record<string,CartLine>){
 }
 export type CartCustomizationRequest={product:Product;variant?:Variant;qty:number;customizations:Record<string,string>;unique:boolean};
 export function addCartItem(product:Product,variant?:Variant,qty=1,customizations:Record<string,string>={},unique=false,customizationConfirmed=false){
- if(variant?variant.stock<=0:!product.inStock)return loadCart();
+ if(!productAvailable(product,variant))return loadCart();
  if(product.customFields?.length&&!customizationConfirmed){window.dispatchEvent(new CustomEvent<CartCustomizationRequest>("manar:customize-cart",{detail:{product,variant,qty,customizations,unique}}));return loadCart()}
  if(product.customFields?.some(field=>field.required&&!customizations[field.label]?.trim()))return loadCart();
  const cart=loadCart(),base=`${product.id}:${variant?.id||"base"}`,key=unique?`${base}:custom:${crypto.randomUUID()}`:base,line=cart[key];
@@ -43,9 +43,9 @@ export function syncCart(saved:Record<string,CartLine>,products:Product[]){
  const next:Record<string,CartLine>={};
  for(const [savedKey,line] of Object.entries(saved)){
   const product=products.find(item=>item.id===line.productId);if(!product)continue;
-  const variant=product.variants?.length?product.variants.find(item=>item.id===line.variantId&&item.stock>0):undefined;
+  const variant=product.variants?.length?product.variants.find(item=>item.id===line.variantId&&stockLimit(product,item)>0):undefined;
   if(product.variants?.length&&!variant)continue;
-  const stock=variant?variant.stock:product.stock;if(stock<=0)continue;
+  const stock=stockLimit(product,variant);if(stock<=0)continue;
   const customized=(line.customizations&&Object.keys(line.customizations).length>0)||Boolean(line.notes),itemKey=customized?savedKey:`${product.id}:${variant?.id||"base"}`,qty=Math.min(Math.max(1,Math.floor(Number(line.qty)||1)),stock,99),price=variant?.price??product.price;
   next[itemKey]={productId:product.id,variantId:variant?.id,variantSku:variant?.sku,variantName:variant?.name,customizations:line.customizations||{},notes:line.notes||"",qty:(next[itemKey]?.qty||0)+qty,price,image:variant?.image||product.image};
   next[itemKey].qty=Math.min(next[itemKey].qty,stock);
