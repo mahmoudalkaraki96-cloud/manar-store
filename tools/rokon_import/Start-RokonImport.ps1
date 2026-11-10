@@ -1,8 +1,8 @@
-param([ValidateSet('sultan','bazar')][string]$Source='sultan',[string]$WorkFolder='H:\RokonImport')
+param([ValidateSet('sultan','bazar','tammouni')][string]$Source='sultan',[string]$WorkFolder='H:\RokonImport')
 $ErrorActionPreference='Stop'
 New-Item -ItemType Directory -Force -Path $WorkFolder | Out-Null
 $resolvedWorkFolder=(Resolve-Path -LiteralPath $WorkFolder).Path
-foreach($name in @('run-collector.mjs','collect-supplier.js','rokon_import.py','README.md')){
+foreach($name in @('run-collector.mjs','collect-supplier.js','tammouni-collector.mjs','woo-normalize.mjs','rokon_import.py','README.md')){
  $sourceFile=Join-Path $PSScriptRoot $name
  $targetFile=Join-Path $resolvedWorkFolder $name
  if([IO.Path]::GetFullPath($sourceFile) -ne [IO.Path]::GetFullPath($targetFile)){Copy-Item -LiteralPath $sourceFile -Destination $targetFile -Force}

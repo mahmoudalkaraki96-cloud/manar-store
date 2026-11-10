@@ -46,4 +46,10 @@ class Tests(unittest.TestCase):
  def test_cross_store_database_guard_before_writes(self):
   client=r.Cloudflare.__new__(r.Cloudflare);client.database='x';client.call=lambda path:{'name':'manar-store-db'}
   with self.assertRaisesRegex(RuntimeError,'Refusing'):client.verify()
+ def test_tammouni_paths_cdn_scope_and_stock(self):
+  p=product();p.update(source='tammouni-home.com',sourceUrl='https://tammouni-home.com/product/sample/')
+  for v in p['variants']:v['images']=['https://cdn.treesal.com/altammuni/uploads/2026/11/a.webp']
+  prepared=r.prepare(p);self.assertEqual(prepared['variants'][0]['stock'],100)
+  self.assertEqual(r.media_url(p['variants'][0]['images'][0],p['source']),p['variants'][0]['images'][0])
+  with self.assertRaises(ValueError):r.media_url('https://cdn.treesal.com/another/uploads/a.webp',p['source'])
 if __name__=='__main__':unittest.main()

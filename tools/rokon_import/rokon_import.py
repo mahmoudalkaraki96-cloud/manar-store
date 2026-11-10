@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit,quote
 from urllib.request import Request,urlopen,build_opener,HTTPRedirectHandler
 
-SOURCES={'alsultan-co.com':'السلطان','albazar.ps':'البازار'}
+SOURCES={'alsultan-co.com':'السلطان','albazar.ps':'البازار','tammouni-home.com':'تمّوني هوم'}
 DB_NAME='rokon-store-db'; BUCKET='rokon-store-media'
 WORKERS=('rokon-store','rokon-store-admin')
 class NoRedirect(HTTPRedirectHandler):
@@ -20,13 +20,18 @@ def sale_price(cost,before):
  return ((cost*120+9999)//10000)*100 if before==cost else before
 def media_url(value,host):
  u=urlsplit(value)
- if u.scheme!='https' or u.hostname!=host or not u.path.startswith('/upload/') or u.username or u.password: raise ValueError('unverified_media_url')
+ allowed=(u.hostname==host and u.path.startswith('/upload/')) if host!='tammouni-home.com' else ((u.hostname==host and u.path.startswith('/wp-content/uploads/')) or (u.hostname=='cdn.treesal.com' and u.path.startswith('/altammuni/uploads/')))
+ if u.scheme!='https' or not allowed or u.username or u.password: raise ValueError('unverified_media_url')
  return value
 def prepare(record):
  p=copy.deepcopy(record);host=p.get('source');sid=p.get('sourceId','')
  if host not in SOURCES or not isinstance(sid,str) or not sid.isdigit(): raise ValueError('invalid_source_identity')
  u=urlsplit(p.get('sourceUrl',''))
- if u.scheme!='https' or u.hostname!=host or u.query!='app=product.show.'+sid:raise ValueError('source_url_mismatch')
+ if host=='tammouni-home.com':
+  import re
+  valid_path=bool(re.fullmatch(r'/product/[^/]+/?',u.path)) and not u.query
+ else:valid_path=u.query=='app=product.show.'+sid and u.path=='/'
+ if u.scheme!='https' or u.hostname!=host or not valid_path or u.username or u.password:raise ValueError('source_url_mismatch')
  if not p.get('name') or len(p['name'])>400:raise ValueError('invalid_name')
  if p.get('review'):raise ValueError('review:'+','.join(p['review']))
  if not p.get('available'):return None
