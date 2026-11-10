@@ -11750,3 +11750,8 @@ User requested all matching products and categories in the search dropdown. Remo
 - Local35 targeted tests passed (HEIC MIME/size/failure/client bypass, card image/availability, cart, manual policy/retry, order confirmation/cancellation, profile defaults). Full PR build/CI pending. No live data/settings/migrations or publication performed; owner prepares/releases1.7.4. Next: strict CI and source merge.
 
 - Final code1f0d7affd8684f14e9b4929ac73ea0d170a2f8ac: unified42772310319,storefront42772310219,publisher42772310308,generic42772310434 all succeeded, including strict TypeScript and production build. One targeted card test initially exposed a missed image fallback expression; fixed before the35/35 local pass and this tested commit. Local tests exercise confirmation/cancel/reconfirm without quantity changes in untracked orders, default-on/manual policy snapshots and idempotent retry. No physical iPhone or live Images codec call exercised; verify a real HEIC after owner publication. Ready for source merge and owner prepare-release1.7.4; no deployment dispatched.
+
+
+## 2026-11-10 (Asia/Hebron) — ADMIN-INSTALL-MOVE / candidate1.7.5
+- User requested a close × and direct press/drag for the admin install button. Reuses existing FloatingAction pointer capture, drag threshold, click suppression, viewport clamping and keyboard movement. The admin-install preference is independent of customer install; same-device visibility/position persistence. Settings > appearance exposes restore-to-default so hidden controls can be recovered. Install tap/iOS help unchanged.
+- Candidate1.7.5; source/CI validation pending. No live settings/data writes or deployment; owner prepares/publishes. Next: validation and merge.

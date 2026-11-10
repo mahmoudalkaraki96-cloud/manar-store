@@ -85,11 +85,9 @@ export default function PwaRegister(){
 
  return <>
   <Notifications/>
-  {admin?(<button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
+  <FloatingAction id={admin?"admin-install":"install"} label={admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"} bottom={admin?14:24} hideHint={admin?"إخفاء الزر؛ يمكنك إظهاره من إعدادات لوحة التحكم":"إخفاء الزر؛ يمكنك إظهاره من التطبيق والإشعارات أعلى المتجر"}><button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
    <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
-  </button>):<FloatingAction id="install" label="تثبيت التطبيق" bottom={24}><button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
-   <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
-  </button></FloatingAction>}
+  </button></FloatingAction>
   {showIosHelp&&<div className="pwaInstallHelp" role="dialog" aria-modal="true" aria-label="طريقة تثبيت التطبيق">
    <button className="pwaInstallClose" type="button" onClick={()=>setShowIosHelp(false)} aria-label="إغلاق">×</button>
    <b>تثبيت {appName} على الآيفون</b>
