@@ -3,6 +3,14 @@ import path from 'node:path';
 import {normalizeSnapshot} from './woo-normalize.mjs';
 const HOST='tammouni-home.com';
 const pause=()=>new Promise(r=>setTimeout(r,3000+Math.random()*2000));
+export async function advanceListing(page,before,check){
+ try{await page.locator('#load-more-btn').press('Enter',{timeout:10000,noWaitAfter:true})}
+ catch(error){if(!/timeout/i.test(error.message))throw error}
+ // A timed-out input may already have loaded a batch. Verify progress, never click twice blindly.
+ await check();
+ await page.waitForFunction(n=>document.querySelectorAll('main a[href*="/product/"]').length>n||document.querySelector('#load-more-btn')?.getAttribute('data-has-more')==='0',before,{timeout:35000});
+ await check();
+}
 function extractDom(){
  const root=document.querySelector('div.product[id^="product-"],article.product[id^="product-"]')||document.querySelector('form.cart')?.closest('.product');if(!root)throw Error('product_container_missing');
  const form=root.querySelector('form.variations_form'),summary=root.querySelector('.summary')||root;
@@ -28,20 +36,9 @@ export async function collectTammouni(page,dir,{fresh=false}={}){
  delete state.stopReason;const save=async()=>{await fs.writeFile(checkpoint+'.tmp',JSON.stringify(state,null,2),'utf8');await fs.rename(checkpoint+'.tmp',checkpoint)};let blocked=null;
  const onResponse=response=>{if([403,429].includes(response.status())&&new URL(response.url()).hostname===HOST&&['document','xhr','fetch'].includes(response.request().resourceType()))blocked='STOP_HTTP_'+response.status()};page.on('response',onResponse);
  const check=async()=>{if(blocked)throw Error(blocked);if(/Just a moment|Access denied|Attention Required/i.test(await page.title()))throw Error('STOP_CHALLENGE')};
- try{
-  if(!state.discovered){
-   await pause();const response=await page.goto('https://'+HOST+'/shop',{waitUntil:'domcontentloaded'});if(response&&[403,429].includes(response.status()))throw Error('STOP_HTTP_'+response.status());await check();
-   await page.locator('main a.woocommerce-loop-product__link[href*="/product/"]').first().waitFor({state:'attached',timeout:35000});
-   for(let count=0;count<2000;count++){
-    await check();const links=await page.locator('main a[href*="/product/"]').evaluateAll(aa=>aa.map(a=>a.href));
-    for(const link of links){const u=new URL(link);if(u.hostname===HOST&&/^\/product\/[^/]+\/?$/.test(u.pathname)){u.search='';u.hash='';if(!state.urls.includes(u.href))state.urls.push(u.href)}}await save();console.log('تمّوني: اكتشاف '+state.urls.length+' رابط منتج');
-    const more=page.locator('#load-more-btn');if(!await more.count()||!await more.isVisible()||await more.getAttribute('data-has-more')==='0'){state.discovered=true;break}
-    const before=await page.locator('main a[href*="/product/"]').count();await pause();await more.click();
-    await page.waitForFunction(n=>document.querySelectorAll('main a[href*="/product/"]').length>n||document.querySelector('#load-more-btn')?.getAttribute('data-has-more')==='0'||document.querySelector('#load-more-btn')?.style.display==='none',before,{timeout:35000});
-   }
-   if(!state.discovered)throw Error('listing_not_complete');await save();
-  }
-  if(!state.urls.length)throw Error('no_product_urls');
+ const omitMedia=route=>['image','font','media'].includes(route.request().resourceType())?route.abort():route.continue();
+ await page.route('**/*',omitMedia);
+ const collectKnown=async()=>{
   for(const url of state.urls){
    if(state.products.some(p=>p.sourceUrl===url)||state.errors.some(e=>e.url===url))continue;await pause();await check();
    try{
@@ -50,8 +47,25 @@ export async function collectTammouni(page,dir,{fresh=false}={}){
    }catch(e){if(/^STOP_/.test(e.message))throw e;state.errors.push({url,reason:e.message})}
    await save();console.log('تمّوني: '+state.products.length+' منتج، '+state.errors.length+' للمراجعة من '+state.urls.length);
   }
+ };
+ try{
+  // Resume useful work immediately instead of rebuilding the long listing first.
+  if(state.urls.length){console.log('استكمال تفاصيل الروابط المحفوظة أولًا: '+state.urls.length);await collectKnown()}
+  if(!state.discovered){
+   await pause();const response=await page.goto('https://'+HOST+'/shop',{waitUntil:'domcontentloaded'});if(response&&[403,429].includes(response.status()))throw Error('STOP_HTTP_'+response.status());await check();
+   await page.locator('main a.woocommerce-loop-product__link[href*="/product/"]').first().waitFor({state:'attached',timeout:35000});
+   for(let count=0;count<2000;count++){
+    await check();const links=await page.locator('main a[href*="/product/"]').evaluateAll(aa=>aa.map(a=>a.href));
+    for(const link of links){const u=new URL(link);if(u.hostname===HOST&&/^\/product\/[^/]+\/?$/.test(u.pathname)){u.search='';u.hash='';if(!state.urls.includes(u.href))state.urls.push(u.href)}}await save();console.log('تمّوني: اكتشاف '+state.urls.length+' رابط منتج');
+    const more=page.locator('#load-more-btn');if(!await more.count())throw Error('listing_control_missing');if(await more.getAttribute('data-has-more')==='0'){state.discovered=true;break}
+    const before=await page.locator('main a[href*="/product/"]').count();await pause();await advanceListing(page,before,check);
+   }
+   if(!state.discovered)throw Error('listing_not_complete');await save();
+  }
+  if(!state.urls.length)throw Error('no_product_urls');
+  await collectKnown();
   state.completed=state.discovered&&state.products.length+state.errors.length===state.urls.length;
  }catch(e){state.stopReason=e.message;console.log('توقف آمن:',e.message)}finally{
-  await save();page.off('response',onResponse);const output=path.join(folder,'rokon-'+HOST+'-'+new Date().toISOString().slice(0,10)+'.json');await fs.writeFile(output,JSON.stringify(state,null,2),'utf8');console.log('تم حفظ الملف:',output);
+  await save();page.off('response',onResponse);await page.unroute('**/*',omitMedia);const output=path.join(folder,'rokon-'+HOST+'-'+new Date().toISOString().slice(0,10)+'.json');await fs.writeFile(output,JSON.stringify(state,null,2),'utf8');console.log('تم حفظ الملف:',output);
  }
 }
