@@ -830,3 +830,7 @@ StoreProfile.inventoryEnabled defaults true, configured in Settings > display > 
 PwaRegister wraps the admin install button in the existing FloatingAction component with an independent admin-install preference. Direct pointer drag,8px jitter threshold, click suppression after drag, clamped normalized positions and keyboard Home/arrows are shared with storefront controls. × hides only the control on the current origin/device; it does not uninstall the PWA. Settings > appearance restores visibility/default location. Installation eligibility and normal click/iOS help are unchanged. Owner manages release publication.
 
 Candidate1.7.5 also hides only .categoryAllProductsNav in the header category bar at max720px. MobileMenu keeps its all-products link; desktop category navigation and /products/all remain available.
+
+
+## Variant photo gallery (candidate1.7.6)
+Product.image is a display/card fallback and can refer to another variant when the true main photo is absent; Product.images is the authoritative general-photo list. productGalleryImages uses selected variant.images/image exclusively when available. If absent, it uses true general photos; an explicitly empty general list never treats Product.image as shared media for a selected variant. Legacy objects without an images field can use their image field. Neutral/no-selection view may use the display fallback. Order and URL dedup are stable. Product detail uses this helper for main image, thumbnails, arrows and lightbox. Saving/storage/media ownership remains unchanged.
