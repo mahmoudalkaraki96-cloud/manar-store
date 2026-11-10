@@ -828,3 +828,5 @@ StoreProfile.inventoryEnabled defaults true, configured in Settings > display > 
 
 ## Admin install control (candidate1.7.5)
 PwaRegister wraps the admin install button in the existing FloatingAction component with an independent admin-install preference. Direct pointer drag,8px jitter threshold, click suppression after drag, clamped normalized positions and keyboard Home/arrows are shared with storefront controls. × hides only the control on the current origin/device; it does not uninstall the PWA. Settings > appearance restores visibility/default location. Installation eligibility and normal click/iOS help are unchanged. Owner manages release publication.
+
+Candidate1.7.5 also hides only .categoryAllProductsNav in the header category bar at max720px. MobileMenu keeps its all-products link; desktop category navigation and /products/all remain available.

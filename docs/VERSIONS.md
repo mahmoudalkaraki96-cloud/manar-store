@@ -379,3 +379,5 @@ User requested all matching products and categories in the search dropdown. Remo
 ## v1.7.5 — 2026-11-10 (Asia/Hebron)
 - Candidate: movable/dismissible admin install button; independent local preference and restore action in appearance settings.
 - Validation pending; no live deployment. Owner prepares and publishes.
+
+- Includes owner-approved mobile navigation adjustment: «عرض كل المنتجات» stays in the phone drawer and is hidden only from the phone horizontal category bar. Desktop unchanged; publication remains owner-managed.
