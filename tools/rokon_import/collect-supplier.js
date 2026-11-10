@@ -4,7 +4,8 @@
  const SOURCES={'alsultan-co.com':'السلطان','albazar.ps':'البازار'},host=location.hostname.replace(/^www\./,'');
  if(!SOURCES[host])throw Error('شغّل الملف في موقع السلطان أو البازار فقط');
  if(window.rokonCollectorRunning)throw Error('الجمع شغال بالفعل');
- if(!document.querySelector('a[href*="account=logOut"]'))throw Error('سجّل دخول حساب الجملة أولًا؛ لم يتم تأكيد الدخول');
+ const requiresLogin=host==='alsultan-co.com';
+ if(requiresLogin&&!document.querySelector('a[href*="account=logOut"]'))throw Error('سجّل دخول حساب الجملة أولًا؛ لم يتم تأكيد الدخول');
  window.rokonCollectorRunning=true;
  const key='rokon-import-v1:'+host,old=localStorage.getItem(key),state=old?JSON.parse(old):{schema:1,source:host,sourceName:SOURCES[host],startedAt:new Date().toISOString(),products:[],errors:[],pages:[],queue:['/?app=product.all'],ids:[]};
  delete state.stopReason;
@@ -19,7 +20,7 @@
  const images=nodes=>[...new Set(Array.from(nodes).map(n=>url(n.getAttribute('src'))).filter(Boolean))];
  function price(node){if(!node)throw Error('missing_price');const clone=node.cloneNode(true),del=clone.querySelector('del');const before=del?money(text(del)):null;clone.querySelectorAll('del').forEach(n=>n.remove());return{now:money(text(clone)),before}}
  function call(input,name){const escaped=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),m=(input.getAttribute('onclick')||'').match(new RegExp(escaped+'\\(\\s*[\x27\x22]([^\x27\x22]*)[\x27\x22]\\s*,\\s*[\x27\x22]([^\x27\x22]*)[\x27\x22]'));return m?m.slice(1):null}
- async function get(path,authenticated=true){await delay();if(stopped)throw Error('stopped');const response=await fetch(new URL(path,location.origin),{credentials:authenticated?'same-origin':'omit',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(35000)});if([403,429].includes(response.status))throw Error('STOP_HTTP_'+response.status);if(!response.ok)throw Error('HTTP_'+response.status);const html=await response.text();if(/cf-chl-|captcha|access denied|too many requests/i.test(html))throw Error('STOP_CHALLENGE');const doc=new DOMParser().parseFromString(html,'text/html');if(authenticated&&!doc.querySelector('a[href*="account=logOut"]'))throw Error('STOP_LOGIN_EXPIRED');return doc}
+ async function get(path,authenticated=true){await delay();if(stopped)throw Error('stopped');const response=await fetch(new URL(path,location.origin),{credentials:authenticated?'same-origin':'omit',cache:'no-store',redirect:'error',signal:AbortSignal.timeout(35000)});if([403,429].includes(response.status))throw Error('STOP_HTTP_'+response.status);if(!response.ok)throw Error('HTTP_'+response.status);const html=await response.text();if(/cf-chl-|captcha|access denied|too many requests/i.test(html))throw Error('STOP_CHALLENGE');const doc=new DOMParser().parseFromString(html,'text/html');if(requiresLogin&&authenticated&&!doc.querySelector('a[href*="account=logOut"]'))throw Error('STOP_LOGIN_EXPIRED');return doc}
  function extract(auth,pub,id){
   const root=auth.querySelector('#this-is-product'),pr=pub.querySelector('#this-is-product');if(!root||!pr)throw Error('product_container_missing');
   const name=text(root.querySelector('h1'));if(!name||name!==text(pr.querySelector('h1')))throw Error('product_identity_mismatch');
@@ -53,7 +54,7 @@
    state.pages.push(path);persist();
   }
   for(const id of state.ids){if(stopped)break;if(state.products.some(p=>p.sourceId===id)||state.errors.some(e=>e.id===id))continue;status.textContent=SOURCES[host]+' — '+state.products.length+' منتج، '+state.errors.length+' للمراجعة، من '+state.ids.length;
-   try{const path='/?app=product.show.'+id,auth=await get(path),pub=await get(path,false);state.products.push(extract(auth,pub,id))}catch(e){if(/^STOP_|stopped/.test(e.message))throw e;state.errors.push({id,reason:e.message})}persist();
+   try{const path='/?app=product.show.'+id,auth=await get(path),pub=requiresLogin?await get(path,false):auth;state.products.push(extract(auth,pub,id))}catch(e){if(/^STOP_|stopped/.test(e.message))throw e;state.errors.push({id,reason:e.message})}persist();
   }
   state.completed=!stopped&&state.queue.length===0&&state.products.length+state.errors.length===state.ids.length;
  }catch(e){state.stopReason=e.message;console.warn('توقف آمن:',e.message)}finally{persist();download();window.rokonCollectorRunning=false;status.textContent='تم حفظ '+state.products.length+' منتج. '+(state.stopReason||'');stop.textContent='تنزيل الملف مرة أخرى';stop.onclick=download}

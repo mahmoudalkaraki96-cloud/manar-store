@@ -16,9 +16,11 @@ if(!process.argv.includes('--fresh')){
 await page.exposeFunction('rokonSaveCheckpoint',value=>{const parsed=JSON.parse(value);if(parsed.source!==host||parsed.schema!==1)throw Error('Wrong source checkpoint');writes=writes.then(async()=>{await fs.writeFile(checkpoint+'.tmp',value,'utf8');await fs.rename(checkpoint+'.tmp',checkpoint)});return writes});
 try{
  await page.goto(sites[arg],{waitUntil:'domcontentloaded'});
- console.log('سجل الدخول بنفسك في نافذة Chrome الجديدة. لا ترسل كلمة المرور لأحد.');
- await rl.question('بعد ظهور حسابك اضغط Enter هنا لبدء الجمع: ');
- if(!await page.locator('a[href*="account=logOut"]').count())throw Error('لم يتم تأكيد الدخول؛ لم تبدأ أي عملية جمع');
+ if(arg==='sultan'){
+  console.log('سجل الدخول بنفسك في نافذة Chrome الجديدة. لا ترسل كلمة المرور لأحد.');
+  await rl.question('بعد ظهور حسابك اضغط Enter هنا لبدء الجمع: ');
+  if(!await page.locator('a[href*="account=logOut"]').count())throw Error('لم يتم تأكيد الدخول؛ لم تبدأ أي عملية جمع');
+ }else console.log('البازار بدون تسجيل دخول — يبدأ جمع الأسعار العامة الآن.');
  const download=page.waitForEvent('download',{timeout:0});
  const source=await fs.readFile(path.join(dir,'collect-supplier.js'),'utf8');
  // This code runs locally in the authenticated supplier tab; no session export.
