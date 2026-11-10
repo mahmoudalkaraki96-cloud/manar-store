@@ -1,2 +1,4 @@
 
 - 2026-11-10 MOBILE-ALL-PRODUCTS clarification: owner explicitly wants «عرض كل المنتجات» inside the phone drawer only, not the horizontal phone category bar. Added a dedicated class on that bar entry and max720px scoped display:none; desktop entry/rail, drawer and all-products route remain unchanged. Included in unpublished candidate1.7.5. Variant gallery mixing reported separately; code analysis finds synthetic variant fallback included as a general photo. No gallery changes authorized/performed in this patch.
+
+- Final1.7.5 code68a4bddadcaaada7370d8d6647b7d5efe4d1bb44 passed unified42775604826,storefront42775605006,publisher42775604855; six local floating preference/threshold/reset tests passed. No physical iPhone drag test or production publication performed. Ready for merge and owner prepare-release1.7.5. Gallery report was explained from code but remains unchanged.
