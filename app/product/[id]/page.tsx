@@ -2,6 +2,7 @@
 import {useEffect,useState,type CSSProperties} from "react";
 import {useParams} from "next/navigation";
 import {stockLimit,productAvailable,loadCatalog,type Category,type Product,type Variant} from "../../catalog-types";
+import {productGalleryImages} from "../../product-gallery";
 import ProductReviews from "../../components/ProductReviews";
 import StoreHeader from "../../components/StoreHeader";
 import ProductCard from "../../components/ProductCard";
@@ -40,7 +41,7 @@ export default function ProductPage(){
  const jumpToSpecs=(event:React.MouseEvent)=>{event.preventDefault();const target=document.getElementById("productSpecs");if(!target)return;target.scrollIntoView({behavior:"smooth",block:"center"});target.classList.remove("specsFlash");void target.offsetWidth;target.classList.add("specsFlash")};
  const shareProduct=async()=>{const text=`${product.name}\nرقم المنتج: #${product.itemNumber}\nالسعر: ${price} ₪`;if(typeof navigator.share!=="function"){await copyProductLink();return}try{await navigator.share({title:product.name,text,url:productUrl});setShareStatus("تمت مشاركة المنتج");trackEcommerce("share",{method:"native_share",content_type:"product",item_id:String(product.id),item_name:product.name});window.setTimeout(()=>setShareStatus(""),2200)}catch(error){if(error instanceof DOMException&&error.name==="AbortError")return;await copyProductLink()}};
 
- const galleryImages=[...new Set([...(variant?.images||[]),variant?.image,...(product.images||[]),product.image].filter((url):url is string=>Boolean(url)))];
+ const galleryImages=productGalleryImages(product,variant);
  const selectedImage=galleryImages[imageIndex]||galleryImages[0];
  const showPrevious=(event?:React.MouseEvent)=>{event?.stopPropagation();if(galleryImages.length<2)return;setImageIndex(current=>(current-1+galleryImages.length)%galleryImages.length);setZoom("")};
  const showNext=(event?:React.MouseEvent)=>{event?.stopPropagation();if(galleryImages.length<2)return;setImageIndex(current=>(current+1)%galleryImages.length);setZoom("")};
