@@ -388,3 +388,5 @@ User requested all matching products and categories in the search dropdown. Remo
 ## v1.7.6 — 2026-11-10 (Asia/Hebron)
 - Candidate: selected variant galleries no longer merge other variant card fallback photos. Keeps multiple own photos and real general fallback for options without photos; no media data edits.
 - Targeted regression and CI pending; no deployment. Owner prepares/publishes.
+
+- Validated code585c557b74b71d6529d8a3257608ad1de25be035, [PR117](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/117). [Unified42776142501](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142501), [storefront42776142383](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142383), [publisher validation42776142521](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142521) succeeded; five local gallery tests passed. Owner publication pending.
