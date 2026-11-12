@@ -21,6 +21,6 @@ export const modulePermission:Record<string,Permission>={
  'نظرة عامة':'dashboard.read','التحليلات':'analytics.read','الطلبات':'orders.read','الزبائن':'customers.read',
  'المنتجات':'products.read','الأقسام':'products.read','المتغيرات والمخزون':'products.read','الهايلايتس':'content.write',
  'استيراد الأصناف':'suppliers.write','المشتريات والموردون':'suppliers.write','الشحن والمناطق':'shipping.write',
- 'مراجعات المنتجات':'content.write','العروض والمحتوى':'content.write','سياسات المتجر':'content.write','الإعدادات':'settings.write',
+ 'مراجعات المنتجات':'content.write','العروض والمحتوى':'content.write','سياسات المتجر':'content.write','الإعدادات':'settings.write','الخصومات وأكواد الخصم':'settings.write',
  'المستخدمون والصلاحيات':'users.manage','مجموعات الصلاحيات':'groups.manage','سجل الحركات':'audit.read'
 };

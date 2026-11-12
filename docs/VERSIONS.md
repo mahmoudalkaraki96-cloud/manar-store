@@ -390,3 +390,9 @@ User requested all matching products and categories in the search dropdown. Remo
 - Targeted regression and CI pending; no deployment. Owner prepares/publishes.
 
 - Validated code585c557b74b71d6529d8a3257608ad1de25be035, [PR117](https://github.com/mahmoudalkaraki96-cloud/manar-store/pull/117). [Unified42776142501](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142501), [storefront42776142383](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142383), [publisher validation42776142521](https://github.com/mahmoudalkaraki96-cloud/manar-store/actions/runs/42776142521) succeeded; five local gallery tests passed. Owner publication pending.
+
+## v1.7.7 — 2026-11-12 (Asia/Hebron)
+
+- الحالة: نسخة مرشحة. لم تُنشر.
+- خصومات تلقائية وأكواد خصم مستقلة لكل متجر، وحساب الخصم قبل التوصيل وتسجيل استخدام الكود مع الطلب.
+- يتطلب ترحيل قاعدة البيانات 0035 قبل تشغيل الإصدار.
