@@ -14,8 +14,8 @@ jobs:
           set -euo pipefail
           url='https://rokon-store.mahmoud-alkaraki96.workers.dev/media/imports/428a3a281657c2fc68840405f676e89aa9eb98156a3ee052269b98f8e3d6f3d5.webp'
           curl -fsS --max-time 30 "$url" -o original.webp
-          encoded=$(base64 -w0 original.webp)
-          jq -n --arg image "data:image/webp;base64,$encoded" '{model:"gpt-4.1-mini",store:false,input:[{role:"user",content:[{type:"input_text",text:"Classify this retail product image. A supplier watermark is a digitally added overlay, including corner logos and translucent text. Physical labels, packaging and genuine branding printed on the product are permitted. Check the entire image. Reply with exactly one word: clean, watermark, or review. Use review when unsure or if details are unreadable."},{type:"input_image",image_url:$image}]}]}' > request.json
+          base64 -w0 original.webp > image.b64
+          jq -n --rawfile image image.b64 '{model:"gpt-4.1-mini",store:false,input:[{role:"user",content:[{type:"input_text",text:"Classify this retail product image. A supplier watermark is a digitally added overlay, including corner logos and translucent text. Physical labels, packaging and genuine branding printed on the product are permitted. Check the entire image. Reply with exactly one word: clean, watermark, or review. Use review when unsure or if details are unreadable."},{type:"input_image",image_url:("data:image/webp;base64,"+$image)}]}]}' > request.json
           curl -fsS --max-time 90 https://api.openai.com/v1/responses -H "Authorization: Bearer $OPENAI_API_KEY" -H 'Content-Type: application/json' --data-binary @request.json > response.json
           jq -e '{result:[.output[].content[]? | select(.type=="output_text") | .text],usage}' response.json | tee usage.json
       - uses: actions/upload-artifact@v4
