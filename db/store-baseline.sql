@@ -743,3 +743,4 @@ BEGIN
       (SELECT COUNT(*) FROM discount_redemptions d WHERE d.rule_id = r.id) < json_extract(r.config, '$.limit'))
   );
 END;
+INSERT INTO d1_migrations(name) VALUES('0035_discounts.sql');
