@@ -1,3 +1,4 @@
+import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
 import {isHeifFile} from "../shared/heif";
 import {trackingPhone,trackOrders} from "./order-tracking";
@@ -9,6 +10,7 @@ import {shippingQuote} from "../shared/shipping";
 import {readStoreProfile,saveStoreProfile} from "./store-profile";
 import {validateStoreProfile,trackingAllowed,googleAnalyticsHead as configuredGoogleHead} from "../shared/store-profile";
 import {readCustomerLedger,createLedgerCustomer,linkCustomerOrder,recordCustomerPayment,LedgerError} from "./customer-ledger";
+import {cartDiscount, discountRules, saveDiscount} from "./discounts";
 import {adminRequest} from './admin-request';
 import {archiveOrder} from './admin-order-lifecycle';
 import {customerAccountAdmin} from './customer-admin-auth';
@@ -63,7 +65,7 @@ interface D1PreparedStatement {
   first<T = Record<string, unknown>>(): Promise<T | null>;
   run<T = Record<string, unknown>>(): Promise<D1Result<T>>;
 }
-interface D1Database {
+export interface D1Database {
   prepare(query: string): D1PreparedStatement;
   batch<T = Record<string, unknown>>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
 }
@@ -530,10 +532,10 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
   await env.DB.prepare("CREATE TABLE IF NOT EXISTS order_inventory_policies(order_id INTEGER PRIMARY KEY,tracking_enabled INTEGER NOT NULL CHECK(tracking_enabled IN (0,1)),FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE)").run();
   const requested=Array.isArray(body.items)?body.items as Array<Record<string,unknown>>:[];
   if(!requested.length||requested.length>100)return json({error:"السلة فارغة أو تتجاوز الحد"},{status:400});
-  const lines:Array<{productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
+  const lines:Array<{categoryId:number|null;productId:number;variantId:number|null;itemNumber:number;name:string;variantLabel:string|null;customizations:Record<string,string>;qty:number;unit:number;total:number}>=[];
   for(const item of requested){
-    const productId=Number(item.productId),variantId=item.variantId?Number(item.variantId):null,qty=Math.min(99,Math.max(1,Number(item.qty)||1));
-    const product=await env.DB.prepare("SELECT id,item_number,name,price_agorot,stock_quantity FROM products WHERE id=? AND active=1 AND deleted_at IS NULL").bind(productId).first<Record<string,unknown>>();
+    const productId=Number(item.productId),variantId=item.variantId?Number(item.variantId):null,qty=Math.min(99,Math.max(1,Math.floor(Number(item.qty)||1)));
+    const product=await env.DB.prepare("SELECT id,item_number,name,price_agorot,stock_quantity,category_id FROM products WHERE id=? AND active=1 AND deleted_at IS NULL").bind(productId).first<Record<string,unknown>>();
     if(!product)return json({error:"أحد الأصناف لم يعد متاحاً"},{status:409});
     let stock=Number(product.stock_quantity),unit=Number(product.price_agorot),label:string|null=null;
     if(variantId){
@@ -548,15 +550,35 @@ async function createOrder(request:Request,env:Env,ctx:ExecutionContext){
     const definitions=await env.DB.prepare("SELECT label,max_length,required FROM product_custom_fields WHERE product_id=? ORDER BY sort_order,id").bind(productId).all(),submitted=item.customizations&&typeof item.customizations==="object"?item.customizations as Record<string,unknown>:{},customizations:Record<string,string>={};
     for(const field of definitions.results as Array<Record<string,unknown>>){const fieldLabel=String(field.label),value=asText(submitted[fieldLabel]).slice(0,Number(field.max_length||60));if(Boolean(field.required)&&!value)return json({error:`الحقل ${fieldLabel} مطلوب للصنف ${String(product.name)}`},{status:400});if(value)customizations[fieldLabel]=value}
     const lineNote=asText(item.notes).slice(0,500);
-    lines.push({productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
+    lines.push({categoryId:product.category_id==null?null:Number(product.category_id),productId,variantId,itemNumber:Number(product.item_number),name:String(product.name),variantLabel:label,customizations:{...customizations,...(lineNote?{"ملاحظات على المنتج":lineNote}:{})},qty,unit,total:unit*qty});
   }
   const account=await getCustomerAccount(request,env);
-  const subtotal=lines.reduce((sum,line)=>sum+line.total,0);
-  shipping=shippingQuote(subtotal,shipping,await readStoreProfile(env.DB)).shippingAgorot;
-  const now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001),result=await env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,0,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,subtotal+shipping,notes,now,now,account?.id||null,acceptedPolicyVersion,now).run(),orderId=Number(result.meta.last_row_id);
-  await env.DB.batch([env.DB.prepare("INSERT INTO order_inventory_policies(order_id,tracking_enabled) VALUES (?,?)").bind(orderId,inventoryEnabled?1:0),...lines.map(line=>env.DB.prepare("INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (?,?,?,?,?,?,?,?,?,?)").bind(orderId,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total))]);
+  let quote;
+  try{quote=await cartDiscount(env.DB,lines.map(line=>({...line,qty:line.qty})),body.discountCode,lines)}
+  catch{return json({error:"تعذر حساب سعر السلة، حاول مجددًا"},{status:409})}
+  const expected=body.expectedDiscountedSubtotalAgorot;
+  if(expected!==undefined && expected!==quote.discountedSubtotalAgorot)return json({error:"تغيّر سعر السلة، راجع الخصم وحاول مجددًا"},{status:409});
+  if(quote.invalidCode)return json({error:"كود الخصم غير متاح لهذه السلة"},{status:409});
+  const subtotal=quote.subtotalAgorot,discount=quote.automaticAgorot+quote.couponAgorot;
+  shipping=shippingQuote(quote.discountedSubtotalAgorot,shipping,await readStoreProfile(env.DB)).shippingAgorot;
+  const total=quote.discountedSubtotalAgorot+shipping;
+  const now=Date.now(),number=Number((await env.DB.prepare("SELECT COALESCE(MAX(order_number),1000)+1 AS next FROM orders").first<{next:number}>())?.next||1001);
+  const orderIdQuery="(SELECT id FROM orders WHERE order_number=?)";
+  const statements=[
+    env.DB.prepare("INSERT INTO orders (order_number,status,customer_name,phone,address,city,subtotal_agorot,shipping_agorot,discount_agorot,total_agorot,payment_method,payment_status,notes,created_at,updated_at,customer_account_id,accepted_policy_version,policy_accepted_at) VALUES (?,'new',?,?,?,?,?,?,?,?,'cash_on_delivery','pending',?,?,?,?,?,?)").bind(number,name,phone,address,city,subtotal,shipping,discount,total,notes,now,now,account?.id||null,acceptedPolicyVersion,now),
+    env.DB.prepare(`INSERT INTO order_inventory_policies(order_id,tracking_enabled) VALUES (${orderIdQuery},?)`).bind(number,inventoryEnabled?1:0),
+    ...lines.map(line=>env.DB.prepare(`INSERT INTO order_items (order_id,product_id,variant_id,item_number,product_name,variant_label,customization_json,quantity,unit_price_agorot,line_total_agorot) VALUES (${orderIdQuery},?,?,?,?,?,?,?,?,?)`).bind(number,line.productId,line.variantId,line.itemNumber,line.name,line.variantLabel,JSON.stringify(line.customizations),line.qty,line.unit,line.total)),
+  ];
+  if(quote.couponId)statements.push(env.DB.prepare("INSERT INTO discount_redemptions(order_number,rule_id,discount_agorot,order_total_agorot) VALUES(?,?,?,?)").bind(number,quote.couponId,quote.couponAgorot,total));
+  let results;
+  try{results=await env.DB.batch(statements)}
+  catch(error){
+    if(/discount_unavailable|UNIQUE.*orders.order_number/.test(String(error)))return json({error:"تغيّر توفر الخصم أو الطلب، راجع السلة وحاول مجددًا"},{status:409});
+    throw error;
+  }
+  const orderId=Number(results[0].meta.last_row_id);
   ctx.waitUntil(notifyNewOrder(env,orderId,number,new URL(request.url).origin,account?.id||null,body.pushDeviceId,body.pushDeviceToken).catch(()=>console.error("new_order_push_failed")));
-  return json({ok:true,orderNumber:number,subtotal:subtotal/100,shipping:shipping/100,total:(subtotal+shipping)/100});
+  return json({ok:true,orderNumber:number,subtotal:subtotal/100,discount:discount/100,shipping:shipping/100,total:total/100});
 }
 
 async function readOrders(env:Env){
@@ -636,8 +658,19 @@ async function readCatalog(env: Env, includeInactive = false) {
   const customFieldsByProduct = grouped(customFields, "product_id");
   const suppliersByProduct = grouped(productSuppliers, "product_id");
 
+  const now = Date.now();
+  const displayDiscounts = includeInactive ? [] : (await discountRules(env.DB)).filter(rule=>rule.code===null && rule.minimumAgorot===0);
+  const categoryParents = new Map(categories.map(category=>[category.id,category.parentId]));
   const products = (productResult.results as Array<Record<string, unknown>>).map((row) => {
     const id = Number(row.id);
+    const categoryIds:number[]=[];
+    let categoryId=Number(row.category_id);
+    while(categoryId && !categoryIds.includes(categoryId)){
+      categoryIds.push(categoryId);
+      categoryId=categoryParents.get(categoryId) ?? 0;
+    }
+    const displayPrice=(unitAgorot:number)=>priceDiscounts([{productId:id,categoryIds,unitAgorot,quantity:1}],displayDiscounts,"",now).discountedSubtotalAgorot;
+    const base=Number(row.price_agorot),sale=displayPrice(base);
     const productMedia = mediaByProduct.get(id) || [];
     const images = productMedia.filter((item) => item.media_type === "image" && item.variant_id == null).map((item) => String(item.url));
     const video = productMedia.find((item) => item.media_type === "video" && item.variant_id == null);
@@ -648,13 +681,14 @@ async function readCatalog(env: Env, includeInactive = false) {
       const link = linksByVariant.get(Number(variant.id))?.[0];
       const value = optionValueById.get(Number(link?.option_value_id));
       const variantImages = productMedia.filter((item) => Number(item.variant_id) === Number(variant.id) && item.media_type === "image").map((item) => String(item.url));
-      return { id: Number(variant.id), name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
+      const original=Number(variant.price_agorot ?? base),discounted=displayPrice(original);
+      return { id: Number(variant.id),oldPrice:discounted<original?original/100:undefined, name: String(value?.value || variant.sku || "خيار"), sku: String(variant.sku || ""), displayType: String(option?.display_type || "text"), color: value?.color_hex ? String(value.color_hex) : undefined, stock: Number(variant.stock_quantity), price: discounted<original ? discounted/100 : amount(variant.price_agorot as number | null), wholesale: amount(variant.wholesale_price_agorot as number | null), image: variantImages[0], images: variantImages };
     });
     const inStock = !inventoryEnabled || (productVariants.length > 0 ? productVariants.some((item) => item.stock > 0) : Number(row.stock_quantity) > 0);
     return {
       id, inventoryEnabled, itemNumber: Number(row.item_number), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
       category: String(row.parent_category_name || row.category_name || "بدون قسم"), subcategory: row.parent_category_name ? String(row.category_name) : undefined,
-      price: amount(row.price_agorot as number) || 0, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: amount(row.offer_price_agorot as number | null),
+      price: sale/100, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: sale<base ? base/100 : amount(row.offer_price_agorot as number | null),
       image: images[0]||(!includeInactive?productVariants.find(item=>item.image)?.image:undefined), images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
       keywords: (keywordsByProduct.get(id) || []).map((item) => String(item.keyword)).join(" "),
       customFields:(customFieldsByProduct.get(id) || []).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
@@ -1022,6 +1056,14 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(request.method==="POST"&&highlightImageViewMatch)return trackHighlightImageView(request,env,Number(highlightImageViewMatch[1]),Number(highlightImageViewMatch[2]));
   const highlightViewMatch=url.pathname.match(/^\/api\/highlights\/(\d+)\/view$/);
   if(request.method==="POST"&&highlightViewMatch)return trackHighlightView(request,env,Number(highlightViewMatch[1]));
+  if(request.method==="POST" && url.pathname==="/api/discount-quote" && env.APP_SURFACE==="storefront"){
+    if(request.headers.get("origin")!==url.origin)return json({error:"مصدر الطلب غير مسموح"},{status:403});
+    const ip=request.headers.get("cf-connecting-ip")||"unknown";
+    if(!await customerRateLimit(env,"discount-ip:"+await sha256(ip),120,600000))return json({error:"حاول مجددًا بعد قليل"},{status:429});
+    try{const body=await parseJson(request);const quote=await cartDiscount(env.DB,body.items,body.code);
+      return json({subtotalAgorot:quote.subtotalAgorot,automaticAgorot:quote.automaticAgorot,couponAgorot:quote.couponAgorot,discountedSubtotalAgorot:quote.discountedSubtotalAgorot,invalidCode:quote.invalidCode});
+    }catch{return json({error:"تعذر حساب خصم السلة"},{status:400})}
+  }
   if (request.method === "POST" && url.pathname === "/api/orders") {
     const result=await createOrder(request,env,ctx);
     let details='{}';if(result.ok){const saved=await result.clone().json() as {orderNumber?:number};details=JSON.stringify({orderNumber:saved.orderNumber})}
@@ -1151,6 +1193,13 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     await ensureHighlightSchema(env);
     await env.DB.prepare("DELETE FROM store_highlights WHERE id=?").bind(Number(highlightMatch[1])).run();
     return json({ok:true});
+  }
+  if(url.pathname==="/api/admin/discounts"){
+    if(request.method==="GET")return json({rules:await discountRules(env.DB)});
+    if(request.method==="POST"){
+      try{await saveDiscount(env.DB,await parseJson(request));return json({ok:true})}
+      catch(error){return json({error:/UNIQUE/.test(String(error))?"الكود مستخدم من قبل":error instanceof Error?error.message:"تعذر حفظ الخصم"},{status:400})}
+    }
   }
   if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
   if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
@@ -1298,7 +1347,7 @@ const worker = {
       const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
       if (cacheablePublicApi) {
         const cache = (caches as CacheStorage & {default:Cache}).default;
-        const cacheKey = new Request(url.toString(), { method: "GET" });
+        const cacheKey = new Request(new URL(url.pathname + "?discounts=1",url.origin), { method: "GET" });
         const cached = await cache.match(cacheKey);
         if (cached) return cached;
         const apiResponse = await api(request, env, url,ctx);

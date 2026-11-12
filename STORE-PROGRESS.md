@@ -26,3 +26,9 @@
 
 - ROKON-SUPPLIER-SCRIPT v0.4 resume fix2026-11-10: inspected owner-generated H files read-only. Bazar completed1484/1484 with0 errors; Sultan parsed868/869 with one source492 HTTP404; Tammouni incomplete,768 saved URLs,0 product details, timeout during mouse activation of #load-more-btn. These are collection counts, not imported/available-product counts. No merchant DB writes.
 - Updated Tammouni collector to process saved links before rebuilding listing, omit image/media/font transfers during metadata collection, activate load-more with Enter and verify actual new links/end flag. Input timeout never blindly repeats; hidden/missing control no longer fabricates completion. Added4 regression tests; all9 Node tests and syntax pass. Copied only updated collector to H; checkpoint file untouched. Public browser structure inspected; raw source-file HTTP fetch refused403, no evasion/retries used. Full new collection not run by agent. Owner resumes same tammouni command without --fresh; helper-only, no runtime release/deploy.
+
+## 2026-11-12 (Asia/Hebron) — STORE-DISCOUNTS / candidate 1.7.7
+
+- Owner approved automatic offers and one coupon per storefront order, with optional stacking, product/category targeting, minimum basket, dates and usage cap. Checkout computes free shipping after discount.
+- Each store saves its own rules and coupon usage in D1. Coupon usage and the order write share one batch, with a database trigger enforcing the usage cap. Reports show historical usage, savings and order totals.
+- Source prepared locally. Pricing and migration checks passed. Owner publishes after reviewing the update. No production migration or deployment run by this task.

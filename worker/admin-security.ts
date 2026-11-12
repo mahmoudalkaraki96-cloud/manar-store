@@ -143,7 +143,7 @@ export function routePermission(path:string,method:string):Permission[]|null{
  if(path.includes('/categories'))return ['categories.write'];
  if(path.includes('/media'))return ['products.write','content.write','categories.write','settings.write'];
  if(path.includes('/storefront')||path.includes('/highlights')||path.includes('/policies')||path.includes('/sliders')||path.includes('/popup'))return ['content.write','settings.write'];
- if(path==='/api/admin/settings')return ['settings.write'];
+ if(path==='/api/admin/settings'||path==='/api/admin/discounts')return ['settings.write'];
  // Any signed-in admin reaches the handler, which then requires platformAdmin.
  if(path==='/api/admin/theme')return [];
  return null;

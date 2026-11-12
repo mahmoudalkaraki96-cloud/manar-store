@@ -12,6 +12,7 @@ export type Category = {
 };
 
 export type Variant = {
+  oldPrice?: number;
   id?: number;
   name: string;
   sku: string;
