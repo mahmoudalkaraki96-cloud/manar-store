@@ -1,4 +1,4 @@
-name: Rokon Sunburst Batch trial
+name: Rokon Flare Batch trial
 on: workflow_dispatch
 permissions:
   contents: read
@@ -16,8 +16,8 @@ jobs:
           url='https://rokon-store.mahmoud-alkaraki96.workers.dev/media/imports/428a3a281657c2fc68840405f676e89aa9eb98156a3ee052269b98f8e3d6f3d5.webp'
           curl -fsS --max-time 30 "$url" -o comparison/original.webp
           api() { curl -fsS --max-time 90 -H "Authorization: Bearer $OPENAI_API_KEY" "$@"; }
-          prompt='Edit the background of this exact pancake pan. Place it on a light stone counter in a quiet warm kitchen with soft natural daylight. Preserve its exact dimensions, coating, handle, shape and color. Preserve every physical label, brand mark, letter and number on the item or packaging. Remove only obvious watermarks superimposed on the photo. Add no products or props.'
-          jq -cn --arg url "$url" --arg prompt "$prompt" '{custom_id:"rokon-pan",method:"POST",url:"/v1/images/edits",body:{model:"gpt-image-2.5-sunburst",images:[{image_url:$url}],prompt:$prompt,quality:"medium",size:"1024x1536"}}' > input.jsonl
+          prompt='Edit the background of this exact pancake pan. Place it on a light stone counter in a quiet warm kitchen with soft natural daylight. Preserve its exact dimensions, coating, handle, shape and color. Preserve every physical label, brand mark, letter and number on the item or packaging. Inspect the entire photo, including the corners and background, for the supplier’s digitally overlaid logo or watermark. Remove that overlay completely, including any translucent text or icon, and reconstruct only the area it covered. Preserve all branding and writing physically printed on the pan or packaging. Add no products or props.'
+          jq -cn --arg url "$url" --arg prompt "$prompt" '{custom_id:"rokon-pan",method:"POST",url:"/v1/images/edits",body:{model:"gpt-image-2.5-flare",images:[{image_url:$url}],prompt:$prompt,quality:"medium",size:"1024x1536"}}' > input.jsonl
           file=$(api https://api.openai.com/v1/files -F purpose=batch -F file=@input.jsonl | jq -er .id)
           jq -cn --arg file "$file" '{input_file_id:$file,endpoint:"/v1/images/edits",completion_window:"24h"}' > request.json
           api https://api.openai.com/v1/batches -H 'Content-Type: application/json' -d @request.json > comparison/batch.json
@@ -34,10 +34,10 @@ jobs:
           done
           out=$(jq -er .output_file_id comparison/batch.json)
           api "https://api.openai.com/v1/files/$out/content" > output.jsonl
-          jq -er '.response.body.data[0].b64_json' output.jsonl | base64 -d > comparison/sunburst.png
+          jq -er '.response.body.data[0].b64_json' output.jsonl | base64 -d > comparison/flare.png
           jq -e '.response.body.usage' output.jsonl | tee comparison/usage.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: rokon-sunburst-comparison
+          name: rokon-flare-comparison
           path: comparison/
