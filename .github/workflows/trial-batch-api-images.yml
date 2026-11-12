@@ -1,4 +1,4 @@
-name: Rokon ten-draft logo preview
+name: Rokon watermark screening and publication
 on: workflow_dispatch
 permissions:
   contents: read
@@ -34,7 +34,7 @@ jobs:
           s = s.replace('except (OSError, ValueError, subprocess.TimeoutExpired):', 'except (OSError, ValueError, subprocess.TimeoutExpired) as error:\n                print("SCREEN_ERROR", product_id, image["id"], type(error).__name__, getattr(error, "code", ""), flush=True)')
           p.write_text(s)
           PY
-          timeout 330m python3 -u rokon_logo_screen.py --limit 10 | tee rokon-logo-report.txt
+          timeout 330m python3 -u rokon_logo_screen.py --publish | tee rokon-logo-report.txt
       - uses: actions/cache/save@v4
         if: always()
         with:
