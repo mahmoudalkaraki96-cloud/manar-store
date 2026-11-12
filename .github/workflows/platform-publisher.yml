@@ -30,41 +30,7 @@ jobs:
         if: inputs.operation == 'prepare-release'
         run: |
           test "$GITHUB_REF" = "refs/heads/main"
-          grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+
-          npm run build
-      - name: Store private artifacts and certify independent resources
-        if: inputs.operation == 'prepare-release'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-publish-prepare.mjs
-
-      - name: Inspect publishing access
-        if: inputs.operation == 'inspect'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-publish-setup.mjs inspect
-      - name: Configure authorized dedicated release runner
-        if: inputs.operation == 'setup'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-publish-setup.mjs setup
-
-      - name: Inspect independent resources before unified upgrade
-        if: inputs.operation == 'upgrade-audit'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-unified-upgrade.mjs audit
-      - name: Back up and prepare existing stores for the unified runtime
-        if: inputs.operation == 'upgrade-prepare'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-unified-upgrade.mjs prepare
-      - name: Apply the explicitly approved Rokon administrator
-        if: inputs.operation == 'configure-rokon-owner'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: node scripts/platform-unified-upgrade.mjs configure-rokon-owner
- VERSION
+          test -s VERSION
           npm run build
       - name: Store private artifacts and certify independent resources
         if: inputs.operation == 'prepare-release'
