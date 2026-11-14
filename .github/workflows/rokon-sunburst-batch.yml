@@ -46,9 +46,10 @@ jobs:
           import subprocess
           import tempfile
           import time
-          from urllib.request import urlopen
+          from urllib.parse import quote
+          from urllib.request import Request, build_opener
           
-          from rokon_import import Cloudflare, BUCKET
+          from rokon_import import Cloudflare, BUCKET, NoRedirect
           from rokon_logo_screen import ACCOUNT, DATABASE, ORIGIN, RULE
           
           MODEL = "gpt-image-2.5-sunburst"
@@ -69,9 +70,10 @@ jobs:
               url = url.removeprefix(ORIGIN)
               if not url.startswith("/media/imports/"):
                   raise ValueError("Expected a Rokon import image")
-              with urlopen(ORIGIN + url, timeout=45) as response:
-                  if response.url != ORIGIN + url:
-                      raise ValueError("Unexpected media redirect")
+              key = quote(url.removeprefix("/media/"), safe="/")
+              endpoint = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/r2/buckets/{BUCKET}/objects/{key}"
+              request = Request(endpoint, headers={"Authorization": "Bearer " + os.environ["CLOUDFLARE_API_TOKEN"]})
+              with build_opener(NoRedirect()).open(request, timeout=45) as response:
                   data = response.read(20_000_001)
                   mime = response.headers.get_content_type()
               if len(data) > 20_000_000 or mime not in {"image/webp", "image/jpeg", "image/png"}:
