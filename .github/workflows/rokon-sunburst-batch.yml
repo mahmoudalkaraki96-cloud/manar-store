@@ -66,6 +66,7 @@ jobs:
           
           
           def download(url):
+              url = url.removeprefix(ORIGIN)
               if not url.startswith("/media/imports/"):
                   raise ValueError("Expected a Rokon import image")
               with urlopen(ORIGIN + url, timeout=45) as response:
@@ -92,7 +93,7 @@ jobs:
                       live = db.query(f"""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,p.item_number,p.name
                           FROM products p JOIN product_media m ON m.product_id=p.id
                           WHERE p.id=? AND p.active=0 AND p.deleted_at IS NULL AND EXISTS (SELECT 1 FROM rokon_supplier_imports i WHERE i.product_id=p.id AND i.state='complete') AND m.variant_id IS NULL AND m.is_primary=1 AND m.media_type='image'
-                          AND m.url LIKE '/media/imports/%'""", [product])
+                          AND (m.url LIKE '/media/imports/%' OR m.url LIKE 'https://rokon-store.mahmoud-alkaraki96.workers.dev/media/imports/%')""", [product])
                       if len(live) != 1:
                           continue
                       row = live[0]
@@ -228,7 +229,7 @@ jobs:
                                                "estimated_usd": round(cost, 6), "items": rows})
               sections = []
               for row in rows:
-                  old = html.escape(ORIGIN + row["url"], quote=True)
+                  old = html.escape(ORIGIN + row["url"].removeprefix(ORIGIN), quote=True)
                   new = html.escape(row.get("file", ""), quote=True)
                   edited = f'<img loading="lazy" src="{new}" alt="بعد">' if new else ""
                   sections.append(f'<section><h2>{row["item_number"]} · {html.escape(row["name"])}</h2>'
