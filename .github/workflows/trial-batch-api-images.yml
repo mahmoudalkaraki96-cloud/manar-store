@@ -137,7 +137,7 @@ jobs:
                       seen.add(product)
                       live = db.query(f"""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,p.item_number,p.name
                           FROM products p JOIN product_media m ON m.product_id=p.id
-                          WHERE p.id=? AND p.{DRAFT} AND m.variant_id IS NULL AND m.is_primary=1 AND m.media_type='image'
+                          WHERE p.id=? AND p.active=0 AND p.deleted_at IS NULL AND EXISTS (SELECT 1 FROM rokon_supplier_imports i WHERE i.product_id=p.id AND i.state='complete') AND m.variant_id IS NULL AND m.is_primary=1 AND m.media_type='image'
                           AND m.url LIKE '/media/imports/%'""", [product])
                       if len(live) != 1:
                           continue
