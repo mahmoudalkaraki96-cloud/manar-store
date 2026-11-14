@@ -1,0 +1,18 @@
+name: Rokon Home - Sunburst Batch
+on:
+  workflow_dispatch:
+    inputs:
+      image_count:
+        description: عدد الصور (1 إلى 300)
+        required: true
+        type: number
+        default: 300
+permissions:
+  contents: read
+jobs:
+  select-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo 'Select the rokon-image-model-trial branch in Run workflow.'
+          exit 1
