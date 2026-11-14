@@ -1,3 +1,4 @@
+import {StoreLanguageProvider} from "./store-language";
 import type {Metadata,Viewport} from "next";
 import StoreShell from "./components/StoreShell";
 import StoreSeo from "./components/StoreSeo";
@@ -38,7 +39,7 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></body></html>
+ return <html lang="ar" dir="rtl"><body><StoreLanguageProvider><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></StoreLanguageProvider></body></html>
 }
 
 

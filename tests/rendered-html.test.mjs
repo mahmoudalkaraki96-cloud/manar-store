@@ -11,6 +11,21 @@ test("renders production store metadata", async () => {
       headers: { accept: "text/html" },
     }),
     {
+      APP_SURFACE: "storefront",
+      DB: {
+        prepare(sql) {
+          return {
+            async all() { return {results: []}; },
+            async first() {
+              if (sql.includes("FROM store_settings")) {
+                return {site_name_ar: "متجر منار", site_name_en: "Manar Store"};
+              }
+              return null;
+            },
+            async run() { return {success: true}; },
+          };
+        },
+      },
       ASSETS: {
         fetch: async () => new Response("Not found", { status: 404 }),
       },

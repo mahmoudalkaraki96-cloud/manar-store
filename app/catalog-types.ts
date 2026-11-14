@@ -1,4 +1,7 @@
+export type CatalogTranslations = Partial<Record<"EN" | "HE", Partial<Record<"name" | "description" | "specifications", string>>>>;
+
 export type Category = {
+  translations?: CatalogTranslations;
   id: number;
   categoryNumber: number;
   parentId: number | null;
@@ -12,6 +15,7 @@ export type Category = {
 };
 
 export type Variant = {
+  translations?: CatalogTranslations;
   oldPrice?: number;
   id?: number;
   name: string;
@@ -28,6 +32,7 @@ export type CustomField={id?:number;label:string;placeholder:string;required:boo
 export type ProductSupplier={id:number;name:string;sourceProductId:string;sourceUrl:string;supplierPrice?:number;preferred:boolean};
 
 export type Product = {
+  translations?: CatalogTranslations;
   inventoryEnabled?: boolean;
   id: number;
   itemNumber: number;
@@ -88,3 +93,17 @@ export function loadCatalog(): Promise<CatalogResponse> {
 
 export function stockLimit(product:Product|undefined,variant?:Variant):number{return product?.inventoryEnabled===false?99:Math.max(0,Number(variant?.stock??product?.stock)||0)}
 export function productAvailable(product:Product,variant?:Variant):boolean{return product.inventoryEnabled===false||(variant?variant.stock>0:product.variants?.length?product.variants.some(item=>item.stock>0):product.inStock)}
+
+export function catalogText(item: {translations?: CatalogTranslations}, language: "AR" | "EN" | "HE", field: "name" | "description" | "specifications") {
+ return language === "AR" ? "" : item.translations?.[language]?.[field] || "";
+}
+
+export function matchesLocale(product: Product, query: string, language: "AR" | "EN" | "HE") {
+ if (language === "AR") return matches(product, query);
+ const searchable = norm([
+  product.itemNumber, catalogText(product, language, "name"),
+  catalogText(product, language, "description"), catalogText(product, language, "specifications"),
+  ...(product.variants || []).map(variant => catalogText(variant, language, "name")),
+ ].join(" "));
+ return norm(query).split(/\s+/).filter(Boolean).every(term => searchable.includes(term));
+}
