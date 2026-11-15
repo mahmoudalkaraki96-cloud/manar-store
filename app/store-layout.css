@@ -34,3 +34,9 @@
 
 /* The mobile drawer retains the all-products action; keep its top-bar twin desktop-only. */
 @media(max-width:720px){.shopHeaderWrap .categoryBar>.categoryAllProductsNav{display:none}}
+
+.languagePicker{display:flex;flex:none;gap:2px;align-items:center}
+.languagePicker button{display:grid;justify-items:center;gap:2px;min-width:30px;padding:2px;border:0;background:none;color:inherit;cursor:pointer}
+.languageBadge{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--green);border-radius:50%;color:var(--green);font-weight:700;font-size:14px;line-height:1}
+.languagePicker button[aria-pressed="true"] .languageBadge{background:var(--green);color:#fff}
+.languageCode{font-size:9px;font-weight:700;line-height:1}
