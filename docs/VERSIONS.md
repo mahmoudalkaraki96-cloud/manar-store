@@ -396,3 +396,6 @@ User requested all matching products and categories in the search dropdown. Remo
 - الحالة: نسخة مرشحة. لم تُنشر.
 - خصومات تلقائية وأكواد خصم مستقلة لكل متجر، وحساب الخصم قبل التوصيل وتسجيل استخدام الكود مع الطلب.
 - يتطلب ترحيل قاعدة البيانات 0035 قبل تشغيل الإصدار.
+
+## v1.7.10 — 2026-11-15 (Asia/Hebron)
+- Candidate: localized category names on cards, header account controls, existing storefront policies and delivery labels. Production publication pending.

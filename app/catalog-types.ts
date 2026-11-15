@@ -39,6 +39,7 @@ export type Product = {
   name: string;
   slug: string;
   categoryId: number | null;
+  categoryTranslations?: CatalogTranslations;
   category: string;
   subcategory?: string;
   price: number;
