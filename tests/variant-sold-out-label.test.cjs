@@ -1,7 +1,8 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
 const catalogModule={exports:{}};new Function('module','exports',ts.transpileModule(fs.readFileSync('app/catalog-types.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(catalogModule,catalogModule.exports);
-function component(popup=false){let state=0;const module={exports:{}},stubs={
+function component(popup=false,language="AR"){let state=0;const module={exports:{}},stubs={
  '../catalog-types':catalogModule.exports,
+ '../store-language':{useStoreLanguage:()=>({language,t:(ar,en,he)=>({AR:ar,EN:en,HE:he})[language]})},
  'next/link':({href,children,...props})=>React.createElement('a',{href,...props},children),
  '../storefront-types':{cachedStoreSettings:()=>({})},'../watermark-config':{parseWatermark:()=>({base:'',enabled:false,x:0,y:0,size:0})},
  '../image-utils':{productThumbnail:value=>value||''},'../favorites-storage':{useFavorites:()=>[],toggleFavorite:()=>{}},
@@ -16,3 +17,11 @@ test('picker rejects a selected option whose stock became zero',()=>{const Picke
 
 
 test('a card without a main photo uses a variant photo; tracking off enables zero-stock choices',()=>{const Card=component().default,p={...base,inventoryEnabled:false,inStock:false,variants:[{...variant(1,'Option',0),image:'/variant-only.webp'}]};const markup=renderToStaticMarkup(React.createElement(Card,{p,settings:{},onAdd:()=>{}}));assert.match(markup,/src="\/variant-only.webp"/);assert.doesNotMatch(markup,/variantSoldOutLabel/);const add=buttons(markup).find(b=>b.attrs.includes('cardAddButton'));assert.doesNotMatch(add.attrs,/disabled/)});
+
+for(const [language, label] of [['EN','Sold out'],['HE','אזל מהמלאי']]){
+ test(language+' renders the unavailable variant label',()=>{
+  const Card=component(false,language).default;
+  const markup=renderToStaticMarkup(React.createElement(Card,{p:{...base,variants:[variant(1,'Unavailable',0),variant(2,'Available',3)]},settings:{}}));
+  assert.ok(markup.includes(label));
+ });
+}

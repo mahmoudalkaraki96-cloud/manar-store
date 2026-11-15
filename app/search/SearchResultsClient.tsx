@@ -1,4 +1,6 @@
 "use client";
+import {matchesLocale,catalogText} from "../catalog-types";
+import {useStoreLanguage} from "../store-language";
 import {useEffect,useMemo,useState,type FormEvent} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
@@ -11,6 +13,7 @@ import {trackSearch} from "../analytics";
 import {addCartItem} from "../cart-storage";
 
 export default function SearchResultsClient({initialQuery}:{initialQuery:string}){
+ const {t,language}=useStoreLanguage();
  const router=useRouter();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]});
  const [settings,setSettings]=useState<StoreSettings>(defaultSettings);
@@ -21,21 +24,21 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
  const [error,setError]=useState("");
  useEffect(()=>{setQuery(initialQuery);setVisible(48)},[initialQuery]);
  useEffect(()=>{let alive=true;Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(alive){setData(catalog);setSettings(store.settings)}}).catch(()=>{if(alive)setError("تعذر تحميل نتائج البحث حاليًا")}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[]);
- const products=useMemo(()=>{const term=query.trim();if(!term)return[];const found=data.products.filter(product=>matches(product,term));return found.sort((a,b)=>sort==="newest"?b.createdAt-a.createdAt:sort==="priceAsc"?a.price-b.price:sort==="priceDesc"?b.price-a.price:(Number(b.featured)-Number(a.featured))||b.orders-a.orders)},[data.products,query,sort]);
- const categories=useMemo(()=>{const term=norm(query.trim());if(!term)return[];return data.categories.filter(category=>norm(category.name).includes(term)).slice(0,12)},[data.categories,query]);
+ const products=useMemo(()=>{const term=query.trim();if(!term)return[];const found=data.products.filter(product=>matchesLocale(product,term,language));return found.sort((a,b)=>sort==="newest"?b.createdAt-a.createdAt:sort==="priceAsc"?a.price-b.price:sort==="priceDesc"?b.price-a.price:(Number(b.featured)-Number(a.featured))||b.orders-a.orders)},[data.products,query,sort,language]);
+ const categories=useMemo(()=>{const term=norm(query.trim());if(!term)return[];return data.categories.filter(category=>norm(language==="AR"?category.name:catalogText(category,language,"name")).includes(term)).slice(0,12)},[data.categories,query,language]);
  const submit=(event:FormEvent<HTMLFormElement>)=>{event.preventDefault();const term=query.trim();if(!term)return;trackSearch(term);setVisible(48);router.push("/search?q="+encodeURIComponent(term))};
  return <main className="searchResultsPage" style={{background:settings.backgroundColor,"--green":settings.primaryColor,"--gold":settings.secondaryColor} as React.CSSProperties}>
   <StoreHeader categories={data.categories} products={data.products} settings={settings}/>
   <section className="categoryProducts searchResultsContainer">
    <form className="horizontalFilters searchResultsForm" onSubmit={submit}>
     <div className="filterSearch"><span>⌕</span><input aria-label="ابحث في المنتجات" value={query} onChange={event=>setQuery(event.target.value)} placeholder="اكتب اسم المنتج أو رقمه أو القسم"/></div>
-    <button className="cardAddButton" style={{width:"auto",flexShrink:0}} type="submit" disabled={!query.trim()}>ابحث</button>
+    <button className="cardAddButton" style={{width:"auto",flexShrink:0}} type="submit" disabled={!query.trim()}>{t("ابحث","Search","חיפוש")}</button>
    </form>
-   <div className="resultsHead"><div><h1>نتائج البحث</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
-   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">جاري تحميل المنتجات...</div>:!query.trim()?<div className="emptyCategory"><b>اكتب كلمة للبحث</b><span>استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.</span></div>:<>
-    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>الأقسام المطابقة</h2><span>{categories.length} قسم</span></div><CategoryCards categories={categories}/></section>}
-    <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>المنتجات</h2><span>{products.length} نتيجة</span></div><select aria-label="ترتيب نتائج البحث" value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">الأكثر ملاءمة</option><option value="newest">الأحدث</option><option value="priceAsc">السعر: الأقل أولًا</option><option value="priceDesc">السعر: الأعلى أولًا</option></select></div>
-    {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings} onAdd={(variant,qty)=>{addCartItem(product,variant,qty)}}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>عرض المزيد من النتائج</button></div>}</>:<div className="emptyCategory"><b>ما لقينا منتجات مطابقة</b><span>جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.</span></div>}
+   <div className="resultsHead"><div><h1>{t("نتائج البحث","Search results","תוצאות חיפוש")}</h1>{query.trim()&&<p>نتائج البحث عن «{query.trim()}»</p>}</div><span>{loading?"جاري البحث...":products.length+" منتج"}</span></div>
+   {error?<div className="emptyCategory">{error}</div>:loading?<div className="storeState">{t("جاري تحميل المنتجات...","Loading products…","המוצרים נטענים…")}</div>:!query.trim()?<div className="emptyCategory"><b>{t("اكتب كلمة للبحث","Enter a search term","הקלידו מונח לחיפוש")}</b><span>{t("استخدم مربع البحث بالأعلى أو اكتب كلمة هنا.","Use either search box.","אפשר להשתמש בכל אחת מתיבות החיפוש.")}</span></div>:<>
+    {categories.length>0&&<section className="subcategorySection searchCategoryResults"><div className="categorySectionHead"><h2>{t("الأقسام المطابقة","Matching categories","קטגוריות תואמות")}</h2><span>{categories.length} قسم</span></div><CategoryCards categories={categories}/></section>}
+    <div className="horizontalFilters searchSort"><div className="searchSortHeading"><h2>{t("المنتجات","Products","מוצרים")}</h2><span>{products.length} نتيجة</span></div><select aria-label="ترتيب نتائج البحث" value={sort} onChange={event=>setSort(event.target.value)}><option value="relevance">{t("الأكثر ملاءمة","Most relevant","רלוונטיות")}</option><option value="newest">{t("الأحدث","Newest","החדשים ביותר")}</option><option value="priceAsc">{t("السعر: الأقل أولًا","Price: low to high","מחיר: מהנמוך לגבוה")}</option><option value="priceDesc">{t("السعر: الأعلى أولًا","Price: high to low","מחיר: מהגבוה לנמוך")}</option></select></div>
+    {products.length?<><div className="productGrid">{products.slice(0,visible).map(product=><ProductCard key={product.id} p={product} settings={settings} onAdd={(variant,qty)=>{addCartItem(product,variant,qty)}}/>)}</div>{visible<products.length&&<div className="searchMoreWrap" style={{display:"flex",justifyContent:"center",marginBlock:20}}><button type="button" className="cardAddButton" onClick={()=>setVisible(count=>count+48)}>{t("عرض المزيد من النتائج","Show more results","הצגת תוצאות נוספות")}</button></div>}</>:<div className="emptyCategory"><b>{t("ما لقينا منتجات مطابقة","No matching products","לא נמצאו מוצרים תואמים")}</b><span>{t("جرّب كلمة ثانية أو تصفّح الأقسام المطابقة.","Try another term or browse the matching categories.","נסו מונח אחר או עיינו בקטגוריות התואמות.")}</span></div>}
    </>}
   </section>
   <style jsx global>{`
