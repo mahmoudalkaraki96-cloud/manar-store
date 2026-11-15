@@ -5,6 +5,8 @@ def request(url, payload=None):
     headers = {"Content-Type":"application/json"}
     if url.startswith("https://api.openai.com/"):
         headers["Authorization"] = "Bearer " + os.environ["OPENAI_API_KEY"]
+    if url.startswith("https://api.cloudflare.com/"):
+        headers["Authorization"] = "Bearer " + os.environ["CLOUDFLARE_API_TOKEN"]
     data = json.dumps(payload, ensure_ascii=False).encode() if payload is not None else None
     for attempt in range(5):
         try:
@@ -15,7 +17,23 @@ def request(url, payload=None):
                 raise
             time.sleep(2 ** attempt)
 
-catalog = request("https://rokon-store.mahmoud-alkaraki96.workers.dev/api/catalog")
+endpoint = "https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/a5c50923-c7ec-4ede-95b3-d19b93914902/query"
+catalog = {"products":[]}
+cursor = 0
+while True:
+    result = request(endpoint, {"sql": """SELECT p.id,p.item_number AS itemNumber,p.name,p.description,p.specifications,
+        (SELECT json_group_array(json_object('id',v.id,'name',ov.value))
+         FROM product_variants v JOIN variant_option_values links ON links.variant_id=v.id
+         JOIN product_option_values ov ON ov.id=links.option_value_id
+         WHERE v.product_id=p.id AND links.option_value_id=(SELECT min(option_value_id) FROM variant_option_values WHERE variant_id=v.id)) AS variants
+        FROM products p WHERE p.active=1 AND p.deleted_at IS NULL AND p.id>? ORDER BY p.id LIMIT 100""", "params":[cursor]})
+    rows = result["result"][0]["results"]
+    if not rows:
+        break
+    for row in rows:
+        row["variants"] = json.loads(row["variants"])
+    catalog["products"].extend(rows)
+    cursor = rows[-1]["id"]
 products = []
 for p in catalog["products"]:
     products.append({**{k:p.get(k) for k in ("id","itemNumber","name","description","specifications")},

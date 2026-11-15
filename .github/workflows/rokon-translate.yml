@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 scripts/rokon-translate.py
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - uses: actions/upload-artifact@v4
         if: always()
