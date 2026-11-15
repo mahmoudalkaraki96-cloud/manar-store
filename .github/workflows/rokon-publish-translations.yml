@@ -29,7 +29,7 @@ jobs:
           from pathlib import Path
           loader = Path("scripts/rokon-translate.py").read_text()
           exec(loader.split("catalog =")[0])
-          exec(loader.split("def translate(group):")[1].split("groups=[")[0].join(["def translate(group):",""]))
+          exec("def translate(group):" + loader.split("def translate(group):",1)[1].split("groups=[",1)[0].replace('assert all(isinstance(p[language][f],str) for f in ("name","description","specifications")) and p[language]["name"].strip()', 'assert isinstance(p[language]["name"],str) and p[language]["name"].strip()\n            for f in ("description","specifications"):\n                if not group[0].get(f) and len(group)==1: p[language][f] = p[language].get(f) or ""'))
           out = Path("rokon-translations")
           source = {p["id"]:p for p in json.loads((out/"source.json").read_text())}
           data = {p["id"]:p for p in map(json.loads,(out/"review.jsonl").read_text().splitlines())}
@@ -45,10 +45,17 @@ jobs:
                   return [p for group in pool.map(translate,rows) for p in group[0]]
           missing = sorted(source.keys()-data.keys())
           print("Reusing",len(data),"products; retrying",len(missing),flush=True)
-          for p in translate_missing([[source[i]] for i in missing]):
+          names = sorted({v["name"] for i in missing for v in source[i]["variants"] if v["name"].strip()})
+          def name_record(i,name):
+              return dict(id=i,name=name,description="",specifications="",variants=[])
+          names_by_id = dict(enumerate(names,1))
+          translated_names = translate_missing([[name_record(i,name)] for i,name in names_by_id.items()])
+          option_labels = {names_by_id[v["id"]]:{lang:{"name":v[lang]["name"]} for lang in ("EN","HE")} for v in translated_names}
+          for p in translate_missing([[dict(source[i],variants=[],description=source[i]["description"] or "",specifications=source[i]["specifications"] or "")] for i in missing]):
+              p["variants"] = [dict(id=v["id"],**option_labels[v["name"]]) for v in source[p["id"]]["variants"] if v["name"] in option_labels]
               data[p["id"]] = p
           category_sources = query("SELECT id,name FROM categories ORDER BY id")["results"]
-          categories = translate_missing([[dict(c,description="",specifications="",variants=[]) for c in category_sources[i:i+8]] for i in range(0,len(category_sources),8)])
+          categories = translate_missing([[name_record(c["id"],c["name"])] for c in category_sources])
           def localized(row, fields, original):
               return {lang:{f:row[lang][f] for f in fields if original.get(f)} for lang in ("EN","HE")}
           products = [dict(source[i], translation=localized(p,("name","description","specifications"),source[i])) for i,p in data.items()]
