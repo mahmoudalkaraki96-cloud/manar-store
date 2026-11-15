@@ -1,0 +1,98 @@
+name: Resume and publish Rokon translations
+on:
+  push:
+    branches: [jobs/rokon-catalog-translation]
+    paths: ['.github/workflows/rokon-publish-translations.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rokon-catalog-translation
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: rokon-catalog-translations
+          path: rokon-translations
+          run-id: '43735502560'
+          github-token: ${{ github.token }}
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          loader = Path("scripts/rokon-translate.py").read_text()
+          exec(loader.split("catalog =")[0])
+          exec(loader.split("def translate(group):")[1].split("groups=[")[0].join(["def translate(group):",""]))
+          out = Path("rokon-translations")
+          source = {p["id"]:p for p in json.loads((out/"source.json").read_text())}
+          data = {p["id"]:p for p in map(json.loads,(out/"review.jsonl").read_text().splitlines())}
+          assert set(data) <= set(source)
+          def query(sql, params=()):
+              result = request(endpoint, {"sql":sql,"params":params})
+              assert result["success"] and result["result"][0]["success"]
+              return result["result"][0]
+          for table in ("products","categories","product_option_values"):
+              assert "translations" in {row["name"] for row in query(f"PRAGMA table_info({table})")["results"]}
+          def translate_missing(rows):
+              with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+                  return [p for group in pool.map(translate,rows) for p in group[0]]
+          missing = sorted(source.keys()-data.keys())
+          print("Reusing",len(data),"products; retrying",len(missing),flush=True)
+          for p in translate_missing([[source[i]] for i in missing]):
+              data[p["id"]] = p
+          category_sources = query("SELECT id,name FROM categories ORDER BY id")["results"]
+          categories = translate_missing([[dict(c,description="",specifications="",variants=[]) for c in category_sources[i:i+8]] for i in range(0,len(category_sources),8)])
+          def localized(row, fields, original):
+              return {lang:{f:row[lang][f] for f in fields if original.get(f)} for lang in ("EN","HE")}
+          products = [dict(source[i], translation=localized(p,("name","description","specifications"),source[i])) for i,p in data.items()]
+          variants = []
+          for i,p in data.items():
+              names = {v["id"]:v["name"] for v in source[i]["variants"]}
+              variants.extend(dict(id=v["id"], product=i, name=names[v["id"]], translation=localized(v,("name",),{"name":names[v["id"]]})) for v in p["variants"])
+          cat_names = {c["id"]:c["name"] for c in category_sources}
+          cats = [dict(id=c["id"], name=cat_names[c["id"]], translation=localized(c,("name",),{"name":c["EN"]["name"]})) for c in categories]
+          (out/"publication-input.json").write_text(json.dumps(dict(products=products,variants=variants,categories=cats),ensure_ascii=False))
+          def apply(table,rows,match):
+              total = 0
+              for i in range(0,len(rows),30):
+                  sql = f"""WITH records AS (SELECT value AS row FROM json_each(?))
+                  UPDATE {table} AS target
+                  SET translations=json_patch(CASE WHEN json_valid(target.translations) THEN target.translations ELSE '{{}}' END,json_extract(records.row,'$.translation'))
+                  FROM records WHERE target.id=json_extract(records.row,'$.id') AND ({match})"""
+                  total += query(sql,[json.dumps(rows[i:i+30],ensure_ascii=False)])["meta"]["changes"]
+              return total
+          counts = {}
+          counts["products"] = apply("products",products,"target.name=json_extract(records.row,'$.name') AND target.description IS json_extract(records.row,'$.description') AND target.specifications IS json_extract(records.row,'$.specifications') AND target.active=1 AND target.deleted_at IS NULL")
+          counts["categories"] = apply("categories",cats,"target.name=json_extract(records.row,'$.name')")
+          option_count = 0
+          for i in range(0,len(variants),30):
+              sql = """WITH records AS (SELECT value AS row FROM json_each(?)), matches AS (
+                SELECT DISTINCT ov.id, json_extract(records.row,'$.translation') AS translation
+                FROM records JOIN product_variants v ON v.id=json_extract(records.row,'$.id') AND v.product_id=json_extract(records.row,'$.product')
+                JOIN products p ON p.id=v.product_id AND p.active=1 AND p.deleted_at IS NULL
+                JOIN variant_option_values links ON links.variant_id=v.id
+                JOIN product_option_values ov ON ov.id=links.option_value_id
+                WHERE ov.value=json_extract(records.row,'$.name') AND links.option_value_id=(SELECT min(option_value_id) FROM variant_option_values WHERE variant_id=v.id))
+                UPDATE product_option_values AS target SET translations=json_patch(
+                  CASE WHEN json_valid(target.translations) THEN target.translations ELSE '{}' END,matches.translation)
+                FROM matches WHERE target.id=matches.id"""
+              option_count += query(sql,[json.dumps(variants[i:i+30],ensure_ascii=False)])["meta"]["changes"]
+          counts["option_value_updates"] = option_count
+          counts["verified_products"] = query("""SELECT count(*) n FROM products WHERE active=1 AND deleted_at IS NULL AND
+            CASE WHEN json_valid(translations) THEN length(json_extract(translations,'$.EN.name'))>0 AND length(json_extract(translations,'$.HE.name'))>0 END""")["results"][0]["n"]
+          counts["active_products"] = query("SELECT count(*) n FROM products WHERE active=1 AND deleted_at IS NULL")["results"][0]["n"]
+          print(json.dumps(counts),flush=True)
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text(json.dumps(counts,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rokon-translation-publication
+          path: rokon-translations/publication-input.json
