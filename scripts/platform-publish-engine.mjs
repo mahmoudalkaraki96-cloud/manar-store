@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {fileURLToPath} from 'node:url';
-import {client,query,ROOT,PUBLISHING,ReleaseFailure,safeResources,verifyBindings,verifyArtifact,surfaceConfig,wrangler,command,safeError} from './platform-publish-common.mjs';
+import {client,query,ROOT,PUBLISHING,rows,ReleaseFailure,safeResources,verifyBindings,verifyArtifact,surfaceConfig,wrangler,command,safeError} from './platform-publish-common.mjs';
 import {parseManifest} from '../platform/control/publishing-model.ts';
 
 export async function executeTargets(targets,adapter){
@@ -55,6 +55,22 @@ export async function run(){
     return {snapshot,settings,surfaces,dir:artifacts.get(t.track)};
    },
    async activate(t,p){
+    const [major, minor, patch] = t.version.split('.').map(Number);
+    if (major > 1 || (major === 1 && (minor > 7 || (minor === 7 && patch >= 8)))) {
+     await update(t,'running','migrate_database');
+     const migration = '0036_catalog_languages.sql';
+     const sql = fs.readFileSync(path.join(ROOT,'drizzle',migration),'utf8');
+     const pending = [];
+     for (const statement of sql.trim().split(/;\s*/).filter(Boolean)) {
+      const [, table, column] = /^ALTER TABLE (\w+) ADD COLUMN (\w+)/.exec(statement) || [];
+      if (!table || !column) throw new ReleaseFailure('invalid_catalog_migration');
+      const columns = rows(await cf.query(p.snapshot.databaseId,'SELECT name FROM pragma_table_info(?) WHERE name=?',[table,column]));
+      if (!columns.length) pending.push(statement);
+     }
+     pending.push("INSERT INTO d1_migrations(name) SELECT '"+migration+"' WHERE NOT EXISTS(SELECT 1 FROM d1_migrations WHERE name='"+migration+"')");
+     await cf.query(p.snapshot.databaseId,pending.join(';\n'));
+    }
+
     const workerVersions={};
     for(const surface of p.surfaces){
      const worker=surface==='admin'?p.snapshot.adminWorker:p.snapshot.worker;
