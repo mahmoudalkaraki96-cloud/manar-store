@@ -1,0 +1,33 @@
+name: Weekly Jabari stock check and new drafts
+on:
+  schedule:
+    - cron: '0 3 * * 2'
+  workflow_dispatch:
+  push:
+    branches: [ops/jabari-weekly-start]
+    paths: ['.github/workflows/jabari-weekly.yml']
+permissions:
+  contents: read
+concurrency:
+  group: manar-jabari-supplier-jobs
+  cancel-in-progress: false
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify supplier parsing and pricing
+        run: PYTHONPATH=tools python tools/test_jabari_supplier_jobs.py
+      - name: Check availability and import new drafts
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python tools/jabari_weekly.py --mode apply --delay 6
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jabari-weekly-report
+          path: docs/jabari-weekly
