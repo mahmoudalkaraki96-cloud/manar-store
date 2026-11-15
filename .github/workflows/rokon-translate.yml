@@ -1,0 +1,25 @@
+name: Translate Rokon Home catalog
+on:
+  push:
+    branches: [jobs/rokon-catalog-translation]
+    paths: ['.github/workflows/rokon-translate.yml', 'scripts/rokon-translate.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: rokon-catalog-translation
+  cancel-in-progress: false
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/rokon-translate.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rokon-catalog-translations
+          path: rokon-translations/
