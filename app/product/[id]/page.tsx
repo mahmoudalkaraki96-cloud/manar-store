@@ -19,12 +19,17 @@ import {toggleFavorite,useFavorites} from "../../favorites-storage";
 type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
 export default function ProductPage(){
+ const {id}=useParams<{id:string}>();
+ return <ProductDetail key={id} productId={id}/>;
+}
+
+function ProductDetail({productId}:{productId:string}){
  const {language,t}=useStoreLanguage();
- const params=useParams<{id:string}>(),[catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
+ const [catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
- useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[params.id]);
+ useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[productId]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
- const product=catalog.find(item=>item.id===Number(params.id));
+ const product=catalog.find(item=>item.id===Number(productId));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:"ILS",value:product.price,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);
  useEffect(()=>{if(!product)return;const key="manar_product_view_"+product.id,now=Date.now();try{const last=Number(localStorage.getItem(key)||0);if(now-last<30*60*1000)return}catch{}void fetch("/api/products/"+product.id+"/view",{method:"POST",credentials:"same-origin",keepalive:true}).then(response=>{if(response.ok)try{localStorage.setItem(key,String(now))}catch{}}).catch(()=>{})},[product?.id]);
  const watermarkConfig=parseWatermark(store.watermarkUrl||""),watermark=watermarkConfig.base||store.logoUrl,watermarkOpacity=Math.min(100,Math.max(0,store.watermarkOpacity??25))/100;
