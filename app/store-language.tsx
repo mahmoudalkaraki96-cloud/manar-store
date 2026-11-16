@@ -3,6 +3,8 @@ import {createContext, useContext, useEffect, useMemo, useState, type ReactNode}
 import {usePathname} from "next/navigation";
 import {useStoreSettings} from "./use-store-settings";
 import {interfaceText, type StoreTexts} from "../shared/ui-messages";
+import {formatDate, formatMoney, formatMoneyRange, formatNumber, type MoneySettings} from "../shared/money";
+import {emptyProfile} from "../shared/store-profile";
 import {bootstrapLanguages, defaultLanguage, enabledLanguages, languageTag, readStoreLanguages, sourceLanguage, type LanguageCode, type StoreLanguage, type TextDirection} from "../shared/store-languages";
 
 export type Language = LanguageCode;
@@ -17,8 +19,11 @@ type LanguageState = {
  languageList: StoreLanguage[];
  sourceCode: Language;
  texts: StoreTexts;
+ money: MoneySettings;
  choose: (language: Language) => void;
 };
+// Same as a pre-1.8.2 store until its settings load (shekels, Latin digits).
+const defaultMoney: MoneySettings = {currency: emptyProfile.currency, currencySymbol: "", digits: emptyProfile.digits};
 const LanguageContext = createContext<LanguageState>({
  language: bootstrapLanguages[0].code,
  dir: bootstrapLanguages[0].dir,
@@ -26,6 +31,7 @@ const LanguageContext = createContext<LanguageState>({
  languageList: bootstrapLanguages,
  sourceCode: bootstrapLanguages[0].code,
  texts: {},
+ money: defaultMoney,
  choose: () => {},
 });
 
@@ -65,12 +71,13 @@ export function StoreLanguageProvider({children}: {children: ReactNode}) {
   setPreferred(value);
   try { localStorage.setItem(STORAGE_KEY, value); } catch {}
  }
- const value: LanguageState = {language, dir, languages: list.map(item => item.code), languageList: list, sourceCode: source.code, texts: settings.texts || {}, choose};
+ const money: MoneySettings = {currency: settings.currency || defaultMoney.currency, currencySymbol: settings.currencySymbol || "", digits: settings.digits || defaultMoney.digits};
+ const value: LanguageState = {language, dir, languages: list.map(item => item.code), languageList: list, sourceCode: source.code, texts: settings.texts || {}, money, choose};
  activeState = value;
  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
-let activeState: Pick<LanguageState, "texts" | "language" | "sourceCode"> | null = null;
+let activeState: Pick<LanguageState, "texts" | "language" | "sourceCode" | "money"> | null = null;
 /**
  * Interface text for code that runs outside a component render (event handlers, request helpers).
  * Reads the language at call time; components should use `useStoreLanguage().t` so they re-render on change.
@@ -87,5 +94,22 @@ export function uiText(key: string, vars?: Record<string, string | number>) {
 export function useStoreLanguage() {
  const context = useContext(LanguageContext);
  const t = (key: string, vars?: Record<string, string | number>) => interfaceText(context.texts, key, context.language, context.sourceCode, vars);
- return {...context, t};
+ const tag = languageTag(context.language);
+ /** Prices, numbers and dates in the store's currency/digits and the visitor's language. */
+ const money = (amount: number) => formatMoney(amount, context.money, tag);
+ const moneyRange = (min: number, max: number) => formatMoneyRange(min, max, context.money, tag);
+ const number = (value: number) => formatNumber(value, tag, context.money.digits);
+ const date = (value: number | string | Date) => formatDate(value, tag, context.money.digits);
+ return {...context, t, money, moneyRange, number, date};
+}
+
+/** The store's currency code (for analytics events), read at call time. */
+export function storeCurrency() {
+ return (activeState?.money || defaultMoney).currency;
+}
+
+/** Call-time price formatting for helpers outside a component render. */
+export function uiMoney(amount: number) {
+ const state = activeState || {language: bootstrapLanguages[0].code, money: defaultMoney};
+ return formatMoney(amount, state.money, languageTag(state.language));
 }

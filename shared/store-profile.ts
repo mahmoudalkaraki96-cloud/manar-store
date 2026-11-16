@@ -1,11 +1,13 @@
 import {defaultTheme,normalizeTheme,type ThemeSettings} from './store-theme';
-export type StoreProfile = {inventoryEnabled:boolean;mobileProductColumns:2|3;freeShippingEnabled:boolean;freeShippingThreshold:number;publicOrigin:string;googleAnalyticsId:string;googleAnalyticsEnabled:boolean;metaPixelId:string;metaPixelEnabled:boolean;theme:ThemeSettings};
-export const emptyProfile:StoreProfile={inventoryEnabled:true,mobileProductColumns:2,freeShippingEnabled:false,freeShippingThreshold:0,publicOrigin:'',googleAnalyticsId:'',googleAnalyticsEnabled:false,metaPixelId:'',metaPixelEnabled:false,theme:defaultTheme};
+import {validCurrency,validDigits,DEFAULT_DIGITS,type DigitStyle} from './money';
+export type StoreProfile = {inventoryEnabled:boolean;mobileProductColumns:2|3;freeShippingEnabled:boolean;freeShippingThreshold:number;publicOrigin:string;googleAnalyticsId:string;googleAnalyticsEnabled:boolean;metaPixelId:string;metaPixelEnabled:boolean;theme:ThemeSettings;currency:string;currencySymbol:string;digits:DigitStyle};
+// Stores created before 1.8.2 priced everything in shekels with Latin digits; that stays their default until changed.
+export const emptyProfile:StoreProfile={inventoryEnabled:true,mobileProductColumns:2,freeShippingEnabled:false,freeShippingThreshold:0,publicOrigin:'',googleAnalyticsId:'',googleAnalyticsEnabled:false,metaPixelId:'',metaPixelEnabled:false,theme:defaultTheme,currency:'ILS',currencySymbol:'',digits:DEFAULT_DIGITS};
 export function normalizeStoreProfile(value:unknown):StoreProfile{
  const row=value&&typeof value==='object'?value as Record<string,unknown>:{};
  let publicOrigin='';try{const url=new URL(String(row.publicOrigin||''));if(url.protocol==='https:'&&!url.username&&!url.password&&url.pathname==='/'&&!url.search&&!url.hash)publicOrigin=url.origin}catch{}
  const googleAnalyticsId=String(row.googleAnalyticsId||'').trim().toUpperCase(),metaPixelId=String(row.metaPixelId||'').trim();
- return {inventoryEnabled:row.inventoryEnabled!==false,mobileProductColumns:row.mobileProductColumns===3?3:2,freeShippingEnabled:row.freeShippingEnabled===true,freeShippingThreshold:Number.isFinite(Number(row.freeShippingThreshold))?Math.max(0,Math.round(Number(row.freeShippingThreshold)*100)/100):0,publicOrigin,googleAnalyticsId:/^G-[A-Z0-9]{4,32}$/.test(googleAnalyticsId)?googleAnalyticsId:'',googleAnalyticsEnabled:row.googleAnalyticsEnabled===true,metaPixelId:/^\d{5,30}$/.test(metaPixelId)?metaPixelId:'',metaPixelEnabled:row.metaPixelEnabled===true,theme:normalizeTheme(row.theme)};
+ return {inventoryEnabled:row.inventoryEnabled!==false,mobileProductColumns:row.mobileProductColumns===3?3:2,freeShippingEnabled:row.freeShippingEnabled===true,freeShippingThreshold:Number.isFinite(Number(row.freeShippingThreshold))?Math.max(0,Math.round(Number(row.freeShippingThreshold)*100)/100):0,publicOrigin,googleAnalyticsId:/^G-[A-Z0-9]{4,32}$/.test(googleAnalyticsId)?googleAnalyticsId:'',googleAnalyticsEnabled:row.googleAnalyticsEnabled===true,metaPixelId:/^\d{5,30}$/.test(metaPixelId)?metaPixelId:'',metaPixelEnabled:row.metaPixelEnabled===true,theme:normalizeTheme(row.theme),currency:validCurrency(String(row.currency||'').trim().toUpperCase())?String(row.currency).trim().toUpperCase():emptyProfile.currency,currencySymbol:String(row.currencySymbol||'').trim().slice(0,8),digits:validDigits(row.digits)?row.digits:DEFAULT_DIGITS};
 }
 export function validateStoreProfile(value:unknown):StoreProfile{
  const row=value as Record<string,unknown>,profile=normalizeStoreProfile(row);
@@ -14,6 +16,9 @@ export function validateStoreProfile(value:unknown):StoreProfile{
  if(profile.googleAnalyticsEnabled&&!profile.googleAnalyticsId)throw new Error('أدخل معرّف Google Analytics قبل تفعيله');
  if(profile.metaPixelEnabled&&!profile.metaPixelId)throw new Error('أدخل رقم Meta Pixel قبل تفعيله');
  if((profile.googleAnalyticsEnabled||profile.metaPixelEnabled)&&!profile.publicOrigin)throw new Error('حدّد رابط المتجر الرئيسي قبل تفعيل التتبع');
+ if(row.currency!==undefined&&!validCurrency(String(row.currency||'').trim().toUpperCase()))throw new Error('رمز العملة غير صالح (مثال: ILS، JOD، USD)');
+ if(row.currencySymbol!==undefined&&String(row.currencySymbol||'').trim().length>8)throw new Error('رمز العملة المخصص طويل جداً (8 أحرف كحد أقصى)');
+ if(row.digits!==undefined&&!validDigits(row.digits))throw new Error('نظام الأرقام غير مدعوم');
  if(row.mobileProductColumns!==undefined&&![2,3].includes(row.mobileProductColumns as number))throw new Error('عدد الأعمدة يجب أن يكون 2 أو 3');
  if(profile.freeShippingEnabled&&(!Number.isFinite(Number(row.freeShippingThreshold))||Number(row.freeShippingThreshold)<=0||Number(row.freeShippingThreshold)>1000000))throw new Error('أدخل حدًا صالحًا للتوصيل المجاني');
  return profile;

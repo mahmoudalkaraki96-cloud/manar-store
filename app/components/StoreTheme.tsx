@@ -1,5 +1,5 @@
 "use client";
-import {uiText} from "../store-language";
+import {uiText,uiMoney} from "../store-language";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 import {storeThemeCss} from "../../shared/store-theme";
@@ -46,7 +46,7 @@ async function applyPageSeo(settings:StoreSettings,pathname:string){
   const value=Number(productMatch[1]),product=catalog.products.find(item=>item.id===value||item.itemNumber===value);
   if(product){
    title=`${product.name} | ${name}`;
-   description=(product.description||"").trim().slice(0,155)||uiText("seo.product_description",{product:product.name,store:name,price:product.price.toFixed(2)});
+   description=(product.description||"").trim().slice(0,155)||uiText("seo.product_description",{product:product.name,store:name,price:uiMoney(product.price)});
    image=absoluteUrl(product.image);type="product";
   }
  }else{

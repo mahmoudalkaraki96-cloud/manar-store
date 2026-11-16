@@ -8,6 +8,7 @@ import {parseWatermark} from "../watermark-config";
 import {useAdminAccess} from "./AdminAccess";
 import ThemePanel from "./ThemePanel";
 import StoreLanguagesEditor from "./StoreLanguagesEditor";
+import StoreMoneySettings from "./StoreMoneySettings";
 
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
@@ -65,6 +66,7 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
    {!ready&&!failed&&<p role="status">جاري تحميل إعداداتك…</p>}
    {group==="identity"&&<><div className="editorSectionHead"><h3>اسم المتجر وظهوره في البحث</h3><p>الاسم والوصف اللذان يعرّفان الزائر بمتجرك.</p></div><div className="editorFields">
     <StoreLanguagesEditor value={settings.languages} onChange={languages=>setSettings({...settings,languages})}/>
+    <StoreMoneySettings value={{currency:settings.currency,currencySymbol:settings.currencySymbol||"",digits:settings.digits||"latn"}} languages={settings.languages} onChange={money=>setSettings({...settings,...money})}/>
     <label className="editorWide">الاسم الظاهر في المتجر<input value={settings.storeName} onChange={e=>setSettings({...settings,storeName:e.target.value})}/><small>الاسم الذي سيظهر لزبائن هذا المتجر</small></label>
     <label>الاسم العربي لجوجل<input value={settings.siteNameAr} maxLength={60} onChange={e=>setSettings({...settings,siteNameAr:e.target.value})}/></label>
     <label>الاسم الإنجليزي لجوجل<input dir="ltr" value={settings.siteNameEn} maxLength={60} onChange={e=>setSettings({...settings,siteNameEn:e.target.value})}/></label>

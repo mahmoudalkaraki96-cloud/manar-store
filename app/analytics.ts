@@ -1,4 +1,5 @@
 "use client";
+import {storeCurrency} from "./store-language";
 
 declare global {
   interface Window {
@@ -54,7 +55,7 @@ export function trackEcommerce(event: "view_item" | "add_to_cart" | "begin_check
     content_type: "product",
     content_ids: contents.map(item => item.id),
     contents,
-    currency: String(parameters.currency || "ILS"),
+    currency: String(parameters.currency || storeCurrency()),
     value: Number(parameters.value) || 0,
     num_items: contents.reduce((sum, item) => sum + item.quantity, 0),
     ...(items.length === 1 && items[0].item_name ? {content_name: items[0].item_name} : {})
