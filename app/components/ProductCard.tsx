@@ -27,7 +27,7 @@ function VariantPicker({p,wholesale,onClose,onConfirm}:{p:Product;wholesale:bool
     <h4>اختر {label}{variant&&<b>{catalogText(variant,language,"name")||variant.name}</b>}</h4>
     <div className="variantPickerChoices">{choices.map((v,i)=>{const color=variantKind(p,v)==="color";return <button type="button" key={v.id??i} disabled={stockLimit(p,v)<=0} aria-pressed={index===i} title={stockLimit(p,v)<=0?`${v.name} - نفدت الكمية`:v.name} className={`${color?"variantPickerColor":"variantPickerText"} ${index===i?"active":""}`} onClick={()=>setIndex(i)}>{color&&<i style={{background:v.color||"#ddd"}}/>}<span>{catalogText(v,language,"name")||v.name}</span>{stockLimit(p,v)<=0&&<small className="variantSoldOutLabel">{t("منتهي", "Sold out", "אזל מהמלאי")}</small>}</button>})}</div>
     <div className="variantPickerQty"><span>{t("الكمية", "Quantity", "כמות")}</span><div><button type="button" aria-label="إنقاص الكمية" disabled={qty<=1} onClick={()=>setQty(qty-1)}>−</button><b>{qty}</b><button type="button" aria-label="زيادة الكمية" disabled={!variant||qty>=max} onClick={()=>setQty(qty+1)}>+</button></div></div>
-    <button type="button" className="variantPickerAdd" disabled={!variant||stockLimit(p,variant)<=0} onClick={()=>index!==null&&onConfirm(index,qty)}>{variant?`أضف إلى السلة · ${Math.round(price*qty*100)/100} ₪`:`اختر ${label} أولاً`}</button>
+    <button type="button" className="variantPickerAdd" disabled={!variant||stockLimit(p,variant)<=0} onClick={()=>index!==null&&onConfirm(index,qty)}>{variant?`${t("أضف إلى السلة","Add to cart","הוספה לעגלה")} · ${Math.round(price*qty*100)/100} ₪`:t("اختر خياراً أولاً","Choose an option first","יש לבחור אפשרות תחילה")}</button>
   </div></div>,document.body);
 }
 
@@ -46,7 +46,9 @@ export default function ProductCard({p,wholesale=false,watermark="",settings,onA
   const oldPrice=variant ? variant.oldPrice : p.oldPrice;
   const choices=p.variants||[],hasVariants=choices.length>0,hasAvailableVariant=choices.some(item=>stockLimit(p,item)>0),showChoices=hasVariants&&choices.length<=cardChoiceLimit;
   const canAdd=hasVariants?hasAvailableVariant:productAvailable(p);
-  const addLabel=added?"✓ تمت الإضافة":canAdd?"أضف إلى السلة":"نفدت الكمية";
+  const addToCart=t("أضف إلى السلة","Add to cart","הוספה לעגלה");
+  const soldOut=t("نفدت الكمية","Out of stock","אזל מהמלאי");
+  const addLabel=added?t("✓ تمت الإضافة","✓ Added","✓ נוסף"):canAdd?addToCart:soldOut;
   const confirmAdded=()=>{setAdded(true);window.setTimeout(()=>setAdded(false),1600)};
   const add=()=>{if(!onAdd||!canAdd)return;if(hasVariants&&!(variant&&stockLimit(p,variant)>0)){setPicking(true);return}onAdd(variant,1);confirmAdded()};
   const pick=(index:number,qty:number)=>{if(!choices[index]||stockLimit(p,choices[index])<=0)return;setVariantIndex(index);setPicking(false);onAdd?.(choices[index],qty);confirmAdded()};
@@ -57,7 +59,7 @@ export default function ProductCard({p,wholesale=false,watermark="",settings,onA
     <div className="productInfo">      <div className={"price "+(fallback?"retailFallback":"")}><b>{priceLabel}</b>{!wholesale&&oldPrice&&<del>{oldPrice} ₪</del>}</div>
 <Link href={`/product/${p.id}`}><h3>{catalogText(p,language,"name")||p.name}</h3></Link>
       {showChoices?<div className="cardVariantChoices">{choices.map((v,index)=>{const kind=variantKind(p,v);return <button type="button" disabled={stockLimit(p,v)<=0} aria-label={stockLimit(p,v)<=0?`${v.name} — منتهي`:v.name} aria-pressed={variantIndex===index} title={stockLimit(p,v)<=0?`${v.name} - نفدت الكمية`:v.name} key={v.id??index} className={`${kind==="color"?"variantColorChoice":"variantTextChoice"} ${variantIndex===index?"active":""}`} style={kind==="color"?{background:v.color||"#ddd"}:undefined} onClick={()=>setVariantIndex(index)}>{kind==="color"?<span>{catalogText(v,language,"name")||v.name}</span>:v.name}{stockLimit(p,v)<=0&&<small className="variantSoldOutLabel">{t("منتهي", "Sold out", "אזל מהמלאי")}</small>}</button>})}</div>:hasVariants&&canAdd?<small className="cardVariantCount">{choices.filter(item=>stockLimit(p,item)>0).length} خيارات متوفرة</small>:null}
-      {onAdd&&<button className={`cardAddButton ${added?"added":""}`} disabled={!canAdd} aria-label={canAdd?`إضافة ${catalogText(p,language,"name")||p.name} للسلة`:`${catalogText(p,language,"name")||p.name} غير متوفر`} onClick={add}>{addLabel}</button>}
+      {onAdd&&<button className={`cardAddButton ${added?"added":""}`} disabled={!canAdd} aria-label={`${canAdd?addToCart:soldOut}: ${catalogText(p,language,"name")||p.name}`} onClick={add}>{addLabel}</button>}
     </div>
     {picking&&<VariantPicker p={p} wholesale={wholesale} onClose={()=>setPicking(false)} onConfirm={pick}/>}
   </article>;
