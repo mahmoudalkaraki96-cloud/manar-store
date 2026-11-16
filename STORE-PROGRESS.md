@@ -1376,3 +1376,6 @@
 ### 2026-11-15 — JABARI-SUPPLIER-JOBS
 - طلب المستخدم تشغيل متابعة أسبوعية مستقلة للنفاد والمسودات الجديدة وتشغيل تسعير مستقل مرة واحدة دون معاينة. سعر البيع: سعر جعبري الأصلي +10%، وتقريب الناتج إلى الشيكل الصحيح الأعلى. لا تحديث لواجهة الموقع أو رقم نسختها.
 - نجحت أربعة اختبارات محلية، ولا تعتبر نتيجة الاستيراد أو التسعير مؤكدة قبل تقارير التشغيل. الجدولة الثلاثاء 03:00 UTC؛ يتوقف طلب المورد عند الحظر ولا يوجد تنزيل صور.
+
+## 2026-11-15 (Asia/Hebron) — STOREFRONT-LOCALIZATION / 1.7.10
+- Authorized storefront fixes for Manar and Rokon. Use category translations on cards, translate header/account controls, and match the live policy texts and delivery-zone labels to English and Hebrew copy. Pending shared release preparation and live verification.

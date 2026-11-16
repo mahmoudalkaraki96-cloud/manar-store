@@ -850,3 +850,6 @@ Rokon helper v0.4: Tammouni resume first collects pending details from checkpoin
 ### Storefront discounts
 
 The admin Discounts page requires store settings permission. Rules and coupon redemptions live in each store's own D1. Apply migration 0035 before starting the new runtime. New stores receive the same tables and trigger from the baseline. Automatic offers apply the largest eligible per-unit reduction, and one coupon applies to eligible lines after that reduction if stacking is enabled. A basket minimum is based on the undiscounted merchandise total. Shipping uses the discounted merchandise total. Historical coupon usage remains counted when the order status changes.
+
+### Storefront policy and delivery translations
+English and Hebrew storefront copy for the current policies and shipping labels is matched against the Arabic source. Changed source text falls back to Arabic until its translation is added. The order still uses the stored shipping zone code and price.

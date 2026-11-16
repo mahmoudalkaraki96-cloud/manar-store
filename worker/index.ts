@@ -648,6 +648,7 @@ async function readCatalog(env: Env, includeInactive = false) {
     name: String(row.name), translations: readTranslations(row.translations), slug: String(row.slug), description: String(row.description || ""), bannerUrl: String(row.banner_url || ""), iconUrl: String(row.icon_url || ""),
     sortOrder: Number(row.sort_order), active: Boolean(row.active),
   }));
+  const categoryById = new Map(categories.map(category => [category.id, category]));
   const options = optionResult.results as Array<Record<string, unknown>>;
   const values = valueResult.results as Array<Record<string, unknown>>;
   const variants = variantResult.results as Array<Record<string, unknown>>;
@@ -706,6 +707,7 @@ async function readCatalog(env: Env, includeInactive = false) {
     const inStock = !inventoryEnabled || (productVariants.length > 0 ? productVariants.some((item) => item.stock > 0) : Number(row.stock_quantity) > 0);
     return {
       id, inventoryEnabled, translations: readTranslations(row.translations), itemNumber: Number(row.item_number), name: String(row.name), slug: String(row.slug), categoryId: row.category_id == null ? null : Number(row.category_id),
+      categoryTranslations: categoryById.get(Number(row.category_id))?.translations,
       category: String(row.parent_category_name || row.category_name || "بدون قسم"), subcategory: row.parent_category_name ? String(row.category_name) : undefined,
       price: sale/100, wholesale: amount(row.wholesale_price_agorot as number | null), purchasePrice: amount(row.purchase_price_agorot as number | null), oldPrice: sale<base ? base/100 : amount(row.offer_price_agorot as number | null),
       image: images[0]||(!includeInactive?productVariants.find(item=>item.image)?.image:undefined), images, video: video ? String(video.url) : undefined, variantName: option ? String(option.name) : undefined,
