@@ -14,11 +14,14 @@ export function validateShippingZones(value:unknown){
   if(!Number.isFinite(price)||price<0||price>1000||Math.abs(price*100-agorot)>0.00001)throw new ShippingZoneError("سعر الشحن يجب أن يكون بين 0 و1000 شيكل وبمنزلتين عشريتين كحد أقصى");
   if(typeof zone.active!=="boolean")throw new ShippingZoneError("حالة منطقة الشحن غير صحيحة");
   codes.add(code);labels.add(label.toLocaleLowerCase());
-  return {code,label,priceAgorot:agorot,active:zone.active,sortOrder:index};
+  const translations=zone.translations as Record<string,unknown>|undefined;
+  return {code,label,translations,priceAgorot:agorot,active:zone.active,sortOrder:index};
  });
 }
-export async function persistShippingZones(db:Database,value:unknown){
+export async function persistShippingZones(db:Database,value:unknown, finalize?:(zones:ReturnType<typeof validateShippingZones>)=>Statement){
  const zones=validateShippingZones(value),now=Date.now();
  // Stable codes preserve saved addresses; omitted zones are not deleted.
- await db.batch(zones.map(zone=>db.prepare("INSERT INTO shipping_zones(code,label,price_agorot,active,sort_order,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(code) DO UPDATE SET label=excluded.label,price_agorot=excluded.price_agorot,active=excluded.active,sort_order=excluded.sort_order,updated_at=excluded.updated_at").bind(zone.code,zone.label,zone.priceAgorot,zone.active?1:0,zone.sortOrder,now)));
+ const statements=zones.map(zone=>db.prepare("INSERT INTO shipping_zones(code,label,price_agorot,active,sort_order,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(code) DO UPDATE SET label=excluded.label,price_agorot=excluded.price_agorot,active=excluded.active,sort_order=excluded.sort_order,updated_at=excluded.updated_at").bind(zone.code,zone.label,zone.priceAgorot,zone.active?1:0,zone.sortOrder,now));
+ if(finalize)statements.push(finalize(zones));
+ await db.batch(statements);
 }

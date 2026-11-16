@@ -1,4 +1,5 @@
 "use client";
+import TranslationFields from "./TranslationFields";
 import {useEffect,useMemo,useRef,useState} from "react";
 import {isHeifFile} from "../../shared/heif";
 import {useStoreSettings} from "../use-store-settings";
@@ -40,11 +41,13 @@ function AdminContent(){
  const [categorySearch,setCategorySearch]=useState(''),[columnFiltersOpen,setColumnFiltersOpen]=useState(false);
  const storeSettings=useStoreSettings();
  const translationFields=(item:{translations?:CatalogTranslations}, fields:Array<"name"|"description"|"specifications">, update:(value:CatalogTranslations)=>void)=>
-  (["EN","HE"] as const).filter(language=>language==="EN"?storeSettings.englishEnabled:storeSettings.hebrewEnabled).flatMap(language=>
-   fields.map(field=><label key={language+field}>{({name:"الاسم",description:"الوصف",specifications:"المواصفات"})[field]} ({language})
+  <TranslationFields languages={(["EN","HE"] as const).filter(language=>language==="EN"?storeSettings.englishEnabled:storeSettings.hebrewEnabled)}
+   status={language=>fields.every(field=>Boolean(item.translations?.[language]?.[field]?.trim()))}>
+   {language=>fields.map(field=><label key={field}>{({name:"الاسم",description:"الوصف",specifications:"المواصفات"})[field]}
     <input dir={language==="EN"?"ltr":"rtl"} value={item.translations?.[language]?.[field]||""}
      onChange={event=>update({...item.translations,[language]:{...item.translations?.[language],[field]:event.target.value}})}/>
-   </label>));
+   </label>)}
+  </TranslationFields>;
 
  const [manualCustomer,setManualCustomer]=useState<CustomerOrderDraft|null>(null);
  const [tab,setTab]=useState("نظرة عامة"),[data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[loading,setLoading]=useState(true),[message,setMessage]=useState(""),[productMessage,setProductMessage]=useState<{text:string;kind:"error"|"success"|"info"}|null>(null),[editingProduct,setEditingProduct]=useState<Product|null>(null),[editingCategory,setEditingCategory]=useState<Category|null>(null),[search,setSearch]=useState(""),[imageUrl,setImageUrl]=useState(""),[variantImageUrls,setVariantImageUrls]=useState<Record<number,string>>({}),[saving,setSaving]=useState(false),[mobileMenu,setMobileMenu]=useState(false);
