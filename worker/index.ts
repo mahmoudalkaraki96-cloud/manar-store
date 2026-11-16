@@ -18,9 +18,10 @@ import {currentActor,cloudflareLogin,hashPassword as adminHashPassword,jsonBody 
 import {storeThemeCss} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {loadStoreLanguages,saveStoreLanguages,translatableCodes,mergeTranslations,applyDocumentLanguage,manifestLanguage,setHtmlLanguage} from "./store-languages";
-import {StoreLanguageError,validateStoreLanguages,enabledLanguages} from "../shared/store-languages";
+import {StoreLanguageError,validateStoreLanguages,enabledLanguages,sourceLanguage,languageTag} from "../shared/store-languages";
 import {loadUiTexts,saveUiTexts} from "./ui-texts";
-import {UiTextError,uiTextKeys,defaultUiText} from "../shared/ui-messages";
+import {UiTextError,uiTextKeys,defaultUiText,interfaceText} from "../shared/ui-messages";
+import {formatMoney} from "../shared/money";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
 import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {createManualOrder,ManualOrderError} from "./manual-order";
@@ -265,7 +266,7 @@ async function readStorefront(env: Env) {
     loadStoreLanguages(env.DB),
   ]);
   const texts = await loadUiTexts(env.DB, enabledLanguages(languages).map(item=>item.code));
-  const settings = { ...profile,languages,texts,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
+  const settings = { ...profile,languages,texts,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:profile.currency,whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
   return {settings,highlightsEnabled:highlightData.enabled,highlightsIntervalMs:highlightData.intervalMs,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
@@ -273,11 +274,11 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
-  let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled","currency","currencySymbol","digits"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   if(body.languages!==undefined)try{validateStoreLanguages(body.languages)}catch(error){if(error instanceof StoreLanguageError)return json({error:error.message},{status:400});throw error}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
-  await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
+  await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,currency=excluded.currency,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),profile.currency,asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
   await env.DB.prepare("UPDATE store_settings SET watermark_enabled=?,watermark_x=?,watermark_y=?,watermark_size=? WHERE id=1").bind(asBoolean(body.watermarkEnabled)?1:0,Math.min(98,Math.max(2,Number(body.watermarkX)||90)),Math.min(98,Math.max(2,Number(body.watermarkY)||90)),Math.min(60,Math.max(2,Number(body.watermarkSize)||24))).run();
   await env.DB.prepare("UPDATE store_settings SET site_name_ar=?,site_name_en=?,seo_description=?,favicon_url=? WHERE id=1").bind((asText(body.siteNameAr)||"").slice(0,60),(asText(body.siteNameEn)||"").slice(0,60),(asText(body.seoDescription)||"").slice(0,170),asOptionalText(body.faviconUrl)).run();
   if(body.languages!==undefined)await saveStoreLanguages(env.DB,body.languages);
@@ -886,6 +887,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
     const catalog=await readCatalog(env,false);
     const merchant=await env.DB.prepare("SELECT store_name,site_name_ar,seo_description FROM store_settings WHERE id=1").first<Record<string,unknown>>();
     const merchantName=String(merchant?.site_name_ar||merchant?.store_name||"المتجر");
+    const feedCurrency=(await readStoreProfile(env.DB)).currency;
     const products=catalog.products.filter(product=>product.active&&!isImportedErrorName(product.name)&&Number(product.price)>0&&Boolean(product.image));
     const clean=(value:unknown)=>String(value??"").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g," ").trim();
     const items=products.map(product=>{
@@ -902,7 +904,7 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
         "      <g:link>"+xmlEscape(link)+"</g:link>\n"+
         "      <g:image_link>"+xmlEscape(image)+"</g:image_link>\n"+
         "      <g:availability>"+availability+"</g:availability>\n"+
-        "      <g:price>"+Number(product.price).toFixed(2)+" ILS</g:price>\n"+
+        "      <g:price>"+Number(product.price).toFixed(2)+" "+feedCurrency+"</g:price>\n"+
         "      <g:condition>new</g:condition>\n"+
         "      <g:brand>"+xmlEscape(merchantName)+"</g:brand>\n"+
         "      <g:identifier_exists>false</g:identifier_exists>\n"+
@@ -926,6 +928,16 @@ async function publicSeoRoute(request:Request,env:Env,url:URL):Promise<Response|
   pages.push({loc:url.origin+"/privacy"});
   return new Response(sitemapXml(pages),{headers:securityHeaders(new Headers({"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=1800"}))});
 }
+/** Prices for server-rendered SEO, in the store's currency and source content language. */
+async function sourceMoneyFormatter(env:Env){
+  const [profile,languages]=await Promise.all([readStoreProfile(env.DB),loadStoreLanguages(env.DB)]);
+  const tag=languageTag(sourceLanguage(languages).code);
+  return (amount:number)=>formatMoney(amount,profile,tag);
+}
+async function sourceUiText(env:Env,key:string,vars:Record<string,string|number>){
+  const languages=await loadStoreLanguages(env.DB),source=sourceLanguage(languages).code;
+  return interfaceText(await loadUiTexts(env.DB,[source]),key,source,source,vars);
+}
 async function storefrontSeo(env:Env,url:URL):Promise<string>{
   await ensureStorefrontColumns(env);
   const themeProfile=await readStoreProfile(env.DB);
@@ -946,10 +958,10 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
     if(product&&!isImportedErrorName(product.name)){
       const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
       title=name+" – "+storeName;
-      description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||name+" متوفر لدى "+storeName+" بسعر "+price+" شيكل.";
+      description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||await sourceUiText(env,"seo.product_description",{product:name,store:storeName,price:(await sourceMoneyFormatter(env))(Number(price))});
       canonicalUrl=url.origin+"/product/"+Number(product.id);
       image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
-      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:"ILS",price,availability:(themeProfile.inventoryEnabled===false||Boolean(product.available))?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
+      jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:themeProfile.currency,price,availability:(themeProfile.inventoryEnabled===false||Boolean(product.available))?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
     }else{
       title="الصنف غير موجود – "+storeName;
       description="هذا الصنف غير متوفر حاليًا. تصفّح المنتجات المتاحة في "+storeName+".";
@@ -979,7 +991,7 @@ async function storefrontSeoBody(env:Env,url:URL):Promise<{html:string;missing:b
     const product=await env.DB.prepare("SELECT p.name,p.description,p.price_agorot,c.name AS category_name,c.slug AS category_slug FROM products p LEFT JOIN categories c ON c.id=p.category_id AND c.active=1 WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(id).first<Record<string,unknown>>();
     if(!product||isImportedErrorName(product.name))return{html:"",missing:true};
     const media=await env.DB.prepare("SELECT url,alt_text FROM product_media WHERE product_id=? AND media_type='image' ORDER BY is_primary DESC,sort_order,id LIMIT 8").bind(id).all<{url:string;alt_text:string|null}>();
-    return{missing:false,html:productSeoContent({
+    return{missing:false,html:productSeoContent({formatPrice:await sourceMoneyFormatter(env),
       name:String(product.name),
       description:cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),
       priceAgorot:Number(product.price_agorot||0),
@@ -996,7 +1008,7 @@ async function storefrontSeoBody(env:Env,url:URL):Promise<{html:string;missing:b
     env.DB.prepare("SELECT name,slug FROM categories WHERE parent_id=? AND active=1 ORDER BY sort_order,id").bind(category.id).all<{name:string;slug:string}>(),
     env.DB.prepare("WITH RECURSIVE tree(id) AS (SELECT ? UNION SELECT c.id FROM categories c JOIN tree t ON c.parent_id=t.id WHERE c.active=1) SELECT p.id,p.name,p.price_agorot,(SELECT m.url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p JOIN tree ON tree.id=p.category_id WHERE p.active=1 AND p.deleted_at IS NULL ORDER BY p.id DESC LIMIT ?").bind(category.id,CATEGORY_SEO_PRODUCTS).all<{id:number;name:string;price_agorot:number;image_url:string|null}>()
   ]);
-  return{missing:false,html:categorySeoContent({
+  return{missing:false,html:categorySeoContent({formatPrice:await sourceMoneyFormatter(env),
     name:String(category.name),
     description:String(category.description||"").trim(),
     subcategories:subcategories.results,

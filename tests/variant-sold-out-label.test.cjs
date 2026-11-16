@@ -1,10 +1,10 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
 const catalogModule={exports:{}};new Function('module','exports',ts.transpileModule(fs.readFileSync('app/catalog-types.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(catalogModule,catalogModule.exports);
 const loadTs=(file,deps={})=>{const m={exports:{}};new Function('require','module','exports',ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(name=>name in deps?deps[name]:require(name),m,m.exports);return m.exports};
-const uiMessages=loadTs('shared/ui-messages.ts',{'./ui-message-defaults':loadTs('shared/ui-message-defaults.ts')});
+const uiMessages=loadTs('shared/ui-messages.ts',{'./ui-message-defaults':loadTs('shared/ui-message-defaults.ts')}),money=loadTs('shared/money.ts');
 function component(popup=false,language="AR"){let state=0;const module={exports:{}},stubs={
  '../catalog-types':catalogModule.exports,
- '../store-language':{useStoreLanguage:()=>({language,sourceCode:'AR',t:(key,vars)=>uiMessages.interfaceText({},key,language,'AR',vars)})},
+ '../store-language':{useStoreLanguage:()=>({language,sourceCode:'AR',t:(key,vars)=>uiMessages.interfaceText({},key,language,'AR',vars),money:value=>money.formatMoney(value,{currency:'ILS'},language.toLowerCase()),moneyRange:(min,max)=>money.formatMoneyRange(min,max,{currency:'ILS'},language.toLowerCase())})},
  'next/link':({href,children,...props})=>React.createElement('a',{href,...props},children),
  '../storefront-types':{cachedStoreSettings:()=>({})},'../watermark-config':{parseWatermark:()=>({base:'',enabled:false,x:0,y:0,size:0})},
  '../image-utils':{productThumbnail:value=>value||''},'../favorites-storage':{useFavorites:()=>[],toggleFavorite:()=>{}},

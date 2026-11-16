@@ -15,13 +15,13 @@ import {trackPageView,trackSearch} from "../analytics";
 import {useFavorites,openFavorites} from "../favorites-storage";
 import {SocialIcon,SocialPills,socialLinks} from "./SocialIcon";
 
-function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){const {t}=useStoreLanguage();
+function SearchProductResult({p,onOpen}:{p:Product;onOpen:()=>void}){const {money,moneyRange,t}=useStoreLanguage();
  const [selected,setSelected]=useState<number|null>(null);
  const variants=p.variants||[],variant=selected===null?undefined:variants[selected];
  const available=variants.length?variants.some(v=>stockLimit(p,v)>0):productAvailable(p);
  const availableVariants=variants.filter(v=>stockLimit(p,v)>0);
  const prices=availableVariants.map(v=>v.price??p.price),min=prices.length?Math.min(...prices):p.price,max=prices.length?Math.max(...prices):p.price;
- const priceLabel=variant?`${variant.price??p.price} ₪`:min===max?`${min} ₪`:`${min} – ${max} ₪`;
+ const priceLabel=variant?money(variant.price??p.price):moneyRange(min,max);
  return <div className="searchProductResult">
   <Link className="searchResultLink" href={`/product/${p.id}`} onClick={onOpen}>
    <span className="searchResultVisual">{p.image?<img src={productThumbnail(p.image,320)} alt={p.name} loading="lazy" decoding="async" fetchPriority="low"/>:<span className="searchPlaceholder">▧</span>}<small className="searchItemBadge">#{p.itemNumber}</small></span>

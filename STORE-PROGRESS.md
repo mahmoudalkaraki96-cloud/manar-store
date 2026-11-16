@@ -1396,3 +1396,10 @@
 - Dashboard tab «نصوص الواجهة» (content.write) lists every key with defaults per store language; empty value restores the default. API /api/admin/ui-texts validates keys and languages before writing.
 - Deliberately still Arabic: dashboard-only notification controls and admin install button inside storefront components, initial static page metadata, developer error messages and Arabic search normalisation. A test fails if any other Arabic text is written inline in storefront code.
 - Local: 4 new tests, all existing suites (updated sold-out label stub to the key lookup) and strict type check of all app files + worker passed; verified build passed. Not verified in a browser or live; no migration/deployment run. Next: PR CI, then 1.8.2 currency and formats.
+
+## 2026-11-16 19:22 (Asia/Hebron) — FORMATS / candidate 1.8.2
+- Last step of the approved 1.8.x plan. PR #132 (1.8.0) merged by owner as squash 6df020d; the 1.8.1 branch merged main with -s ours (main tree identical to the 1.8.0 commit) so PR #133 shows only 1.8.1, without force-push. 1.8.2 builds on 1.8.1.
+- Store profile gains currency (ISO 4217, validated with Intl), currencySymbol (optional, max 8) and digits (Unicode numbering system, validated with Intl). Defaults ILS / no symbol / latn keep every existing store unchanged. saveSettings no longer forces ILS into store_settings.currency.
+- shared/money.ts formats money, ranges, numbers and dates with the visitor language + store numbering system. Storefront components use money/moneyRange/number/date from useStoreLanguage; analytics events use the store currency. Merchant feed, JSON-LD priceCurrency and SEO price text use the store currency in the source content language. Texts with amounts take {amount}/{price} placeholders.
+- Category price filter thresholds (20 and 50) are still fixed numbers, now shown in the store currency; changing the thresholds themselves is not part of this plan.
+- Local: money tests (4) + all 201 cjs and 24 mjs tests, strict type check of all app files + worker, verified build passed. Not verified in a browser or live; no deployment. Next: PR CI; owner merges #133 then this PR, and publishes.
