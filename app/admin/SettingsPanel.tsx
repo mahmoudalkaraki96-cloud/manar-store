@@ -7,6 +7,7 @@ import {defaultSettings,type Slide,type StoreSettings} from "../storefront-types
 import {parseWatermark} from "../watermark-config";
 import {useAdminAccess} from "./AdminAccess";
 import ThemePanel from "./ThemePanel";
+import StoreLanguagesEditor from "./StoreLanguagesEditor";
 
 
 const blank:Slide={id:0,title:"",imageUrl:"",productId:null,categoryId:null,externalUrl:"",sortOrder:0,active:true};
@@ -63,7 +64,7 @@ export default function SettingsPanel({catalog,section,upload}:{catalog:CatalogR
   <fieldset className="editorFieldset" disabled={!ready||busy}><section className="editorCard" role="tabpanel" id={"setting-panel-"+group} aria-labelledby={"setting-tab-"+group}>
    {!ready&&!failed&&<p role="status">جاري تحميل إعداداتك…</p>}
    {group==="identity"&&<><div className="editorSectionHead"><h3>اسم المتجر وظهوره في البحث</h3><p>الاسم والوصف اللذان يعرّفان الزائر بمتجرك.</p></div><div className="editorFields">
-    <fieldset className="editorWide"><legend>لغات واجهة المتجر</legend><label><input type="checkbox" checked={!!settings.englishEnabled} onChange={e=>setSettings({...settings,englishEnabled:e.target.checked})}/> الإنجليزية</label> <label><input type="checkbox" checked={!!settings.hebrewEnabled} onChange={e=>setSettings({...settings,hebrewEnabled:e.target.checked})}/> العبرية</label></fieldset>
+    <StoreLanguagesEditor value={settings.languages} onChange={languages=>setSettings({...settings,languages})}/>
     <label className="editorWide">الاسم الظاهر في المتجر<input value={settings.storeName} onChange={e=>setSettings({...settings,storeName:e.target.value})}/><small>الاسم الذي سيظهر لزبائن هذا المتجر</small></label>
     <label>الاسم العربي لجوجل<input value={settings.siteNameAr} maxLength={60} onChange={e=>setSettings({...settings,siteNameAr:e.target.value})}/></label>
     <label>الاسم الإنجليزي لجوجل<input dir="ltr" value={settings.siteNameEn} maxLength={60} onChange={e=>setSettings({...settings,siteNameEn:e.target.value})}/></label>

@@ -1,5 +1,5 @@
 export type StorePolicyKey="receiving"|"shipping"|"cancellation"|"exchange";
-export type StorePolicies={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number;translations?:Partial<Record<"EN"|"HE",Partial<Record<StorePolicyKey,string>>>>};
+export type StorePolicies={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number;translations?:Partial<Record<string,Partial<Record<StorePolicyKey,string>>>>};
 export const policySections:Array<{key:StorePolicyKey;title:string;icon:string}>=[
  {key:"receiving",title:"استقبال الطلبات",icon:"✓"},
  {key:"shipping",title:"التوصيل",icon:"🚚"},

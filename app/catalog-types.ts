@@ -1,4 +1,5 @@
-export type CatalogTranslations = Partial<Record<"EN" | "HE", Partial<Record<"name" | "description" | "specifications", string>>>>;
+// Keyed by the store's configured language codes (store_languages); the base fields hold the source content language.
+export type CatalogTranslations = Partial<Record<string, Partial<Record<"name" | "description" | "specifications", string>>>>;
 
 export type Category = {
   translations?: CatalogTranslations;
@@ -95,12 +96,13 @@ export function loadCatalog(): Promise<CatalogResponse> {
 export function stockLimit(product:Product|undefined,variant?:Variant):number{return product?.inventoryEnabled===false?99:Math.max(0,Number(variant?.stock??product?.stock)||0)}
 export function productAvailable(product:Product,variant?:Variant):boolean{return product.inventoryEnabled===false||(variant?variant.stock>0:product.variants?.length?product.variants.some(item=>item.stock>0):product.inStock)}
 
-export function catalogText(item: {translations?: CatalogTranslations}, language: "AR" | "EN" | "HE", field: "name" | "description" | "specifications") {
- return language === "AR" ? "" : item.translations?.[language]?.[field] || "";
+/** Translated text for `language`, or "" so callers fall back to the base (source-language) field. */
+export function catalogText(item: {translations?: CatalogTranslations}, language: string, field: "name" | "description" | "specifications") {
+ return item.translations?.[language]?.[field] || "";
 }
 
-export function matchesLocale(product: Product, query: string, language: "AR" | "EN" | "HE") {
- if (language === "AR") return matches(product, query);
+export function matchesLocale(product: Product, query: string, language: string) {
+ if (matches(product, query)) return true;
  const searchable = norm([
   product.itemNumber, catalogText(product, language, "name"),
   catalogText(product, language, "description"), catalogText(product, language, "specifications"),

@@ -17,6 +17,8 @@ import {customerAccountAdmin} from './customer-admin-auth';
 import {currentActor,cloudflareLogin,hashPassword as adminHashPassword,jsonBody as adminJsonBody,SecurityError} from './admin-security';
 import {storeThemeCss} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
+import {loadStoreLanguages,saveStoreLanguages,translatableCodes,mergeTranslations,applyDocumentLanguage,manifestLanguage,setHtmlLanguage} from "./store-languages";
+import {StoreLanguageError,validateStoreLanguages} from "../shared/store-languages";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
 import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {createManualOrder,ManualOrderError} from "./manual-order";
@@ -235,10 +237,6 @@ async function contentTranslations(env:Env,scope:string){
 function translationUpdate(env:Env,scope:string,content:unknown){
   return env.DB.prepare("INSERT INTO storefront_translations(scope,content) VALUES(?,?) ON CONFLICT(scope) DO UPDATE SET content=excluded.content").bind(scope,JSON.stringify(content));
 }
-function cleanContentTranslations(input:unknown, keys:string[],limit:number){
-  const value=input as Record<string,Record<string,unknown>>|undefined;
-  return Object.fromEntries(["EN","HE"].map(language=>[language,Object.fromEntries(keys.map(key=>[key,asText(value?.[language]?.[key]).slice(0,limit)]))]));
-}
 async function readPolicies(env:Env):Promise<StorePolicyRecord>{
   await ensureStorePoliciesSchema(env);
   const row=await env.DB.prepare("SELECT version,receiving,shipping,cancellation,exchange_policy,updated_at FROM store_policies WHERE id=1").first<Record<string,unknown>>();
@@ -250,20 +248,21 @@ async function savePolicies(request:Request,env:Env){
   if(!receiving||!shipping||!cancellation||!exchange)return json({error:"نص الأقسام الأربعة مطلوب"},{status:400});
   if([receiving,shipping,cancellation,exchange].some(value=>value.length>12000))return json({error:"نص السياسة طويل جداً"},{status:400});
   const current=await contentTranslations(env,"policies");
-  const translations=body.translations===undefined?current:cleanContentTranslations(body.translations,["receiving","shipping","cancellation","exchange"],12000);
+  const translations=body.translations===undefined?current:mergeTranslations(current,body.translations,await translatableCodes(env.DB),["receiving","shipping","cancellation","exchange"],12000);
   await env.DB.batch([env.DB.prepare("UPDATE store_policies SET version=version+1,receiving=?,shipping=?,cancellation=?,exchange_policy=?,updated_at=? WHERE id=1").bind(receiving,shipping,cancellation,exchange,Date.now()),translationUpdate(env,"policies",translations)]);
   return json({ok:true,policies:await readPolicies(env)});
 }
 
 async function readStorefront(env: Env) {
   const profile=await readStoreProfile(env.DB);
-  const [row, slides, popup, highlightData] = await Promise.all([
+  const [row, slides, popup, highlightData, languages] = await Promise.all([
     env.DB.prepare("SELECT * FROM store_settings WHERE id=1").first<Record<string, unknown>>(),
     env.DB.prepare("SELECT id,title,image_url,product_id,category_id,external_url,sort_order,active FROM sliders ORDER BY sort_order,id").all(),
     env.DB.prepare("SELECT id,title,body,image_url,target_url,active FROM popups ORDER BY id DESC LIMIT 1").first<Record<string,unknown>>(),
     readHighlights(env),
+    loadStoreLanguages(env.DB),
   ]);
-  const settings = { ...profile,englishEnabled:Boolean(row?.english_enabled),hebrewEnabled:Boolean(row?.hebrew_enabled),storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
+  const settings = { ...profile,languages,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
   return {settings,highlightsEnabled:highlightData.enabled,highlightsIntervalMs:highlightData.intervalMs,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
@@ -272,14 +271,13 @@ async function saveSettings(request:Request,env:Env){
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
   let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  if(body.languages!==undefined)try{validateStoreLanguages(body.languages)}catch(error){if(error instanceof StoreLanguageError)return json({error:error.message},{status:400});throw error}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
   await env.DB.prepare(`INSERT INTO store_settings (id,store_name,logo_url,watermark_url,watermark_opacity,primary_color,secondary_color,background_color,currency,whatsapp,whatsapp_enabled,facebook_url,facebook_enabled,instagram_url,instagram_enabled,tiktok_url,tiktok_enabled,slider_enabled,slider_interval_ms,show_out_of_stock,popup_enabled,show_offers,show_most_ordered,show_top_rated,show_newest,show_featured,home_products_limit,show_subcategory_products_in_parent,created_at,updated_at) VALUES (1,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET store_name=excluded.store_name,logo_url=excluded.logo_url,watermark_url=excluded.watermark_url,watermark_opacity=excluded.watermark_opacity,primary_color=excluded.primary_color,secondary_color=excluded.secondary_color,background_color=excluded.background_color,whatsapp=excluded.whatsapp,whatsapp_enabled=excluded.whatsapp_enabled,facebook_url=excluded.facebook_url,facebook_enabled=excluded.facebook_enabled,instagram_url=excluded.instagram_url,instagram_enabled=excluded.instagram_enabled,tiktok_url=excluded.tiktok_url,tiktok_enabled=excluded.tiktok_enabled,slider_enabled=excluded.slider_enabled,slider_interval_ms=excluded.slider_interval_ms,show_out_of_stock=excluded.show_out_of_stock,popup_enabled=excluded.popup_enabled,show_offers=excluded.show_offers,show_most_ordered=excluded.show_most_ordered,show_top_rated=excluded.show_top_rated,show_newest=excluded.show_newest,show_featured=excluded.show_featured,home_products_limit=excluded.home_products_limit,show_subcategory_products_in_parent=excluded.show_subcategory_products_in_parent,updated_at=excluded.updated_at`).bind(asText(body.storeName)||"المتجر",asOptionalText(body.logoUrl),asOptionalText(body.watermarkUrl),Math.min(100,Math.max(0,Number(body.watermarkOpacity??25))),validColor(body.primaryColor,"#b85f7d"),validColor(body.secondaryColor,"#f8e8ef"),validColor(body.backgroundColor,"#ffffff"),"ILS",asOptionalText(body.whatsapp),asBoolean(body.whatsappEnabled)?1:0,safeUrl(body.facebookUrl),asBoolean(body.facebookEnabled)?1:0,safeUrl(body.instagramUrl),asBoolean(body.instagramEnabled)?1:0,safeUrl(body.tiktokUrl),asBoolean(body.tiktokEnabled)?1:0,asBoolean(body.sliderEnabled)?1:0,interval,asBoolean(body.showOutOfStock)?1:0,asBoolean(body.popupEnabled)?1:0,asBoolean(body.showOffers)?1:0,asBoolean(body.showMostOrdered)?1:0,asBoolean(body.showTopRated)?1:0,asBoolean(body.showNewest)?1:0,asBoolean(body.showFeatured)?1:0,limit,asBoolean(body.showSubcategoryProductsInParent)?1:0,now,now).run();
   await env.DB.prepare("UPDATE store_settings SET watermark_enabled=?,watermark_x=?,watermark_y=?,watermark_size=? WHERE id=1").bind(asBoolean(body.watermarkEnabled)?1:0,Math.min(98,Math.max(2,Number(body.watermarkX)||90)),Math.min(98,Math.max(2,Number(body.watermarkY)||90)),Math.min(60,Math.max(2,Number(body.watermarkSize)||24))).run();
   await env.DB.prepare("UPDATE store_settings SET site_name_ar=?,site_name_en=?,seo_description=?,favicon_url=? WHERE id=1").bind((asText(body.siteNameAr)||"").slice(0,60),(asText(body.siteNameEn)||"").slice(0,60),(asText(body.seoDescription)||"").slice(0,170),asOptionalText(body.faviconUrl)).run();
-  if(body.englishEnabled!==undefined||body.hebrewEnabled!==undefined){
-    await env.DB.prepare("UPDATE store_settings SET english_enabled=COALESCE(?,english_enabled),hebrew_enabled=COALESCE(?,hebrew_enabled) WHERE id=1").bind(body.englishEnabled===undefined?null:Number(asBoolean(body.englishEnabled)),body.hebrewEnabled===undefined?null:Number(asBoolean(body.hebrewEnabled))).run();
-  }
+  if(body.languages!==undefined)await saveStoreLanguages(env.DB,body.languages);
   if(metaPixelId!==undefined)await env.DB.prepare("UPDATE store_settings SET meta_pixel_id=? WHERE id=1").bind(metaPixelId).run();
   if(body.metaPixelEnabled!==undefined)await env.DB.prepare("UPDATE store_settings SET meta_pixel_enabled=? WHERE id=1").bind(asBoolean(body.metaPixelEnabled)?1:0).run();
   await saveStoreProfile(env.DB,profile);
@@ -364,21 +362,22 @@ async function createCustomerSession(env:Env,accountId:number){
   await env.DB.prepare("INSERT INTO customer_sessions (account_id,token_hash,created_at,last_seen_at) VALUES (?,?,?,?)").bind(accountId,await sha256(token),now,now).run();
   return token;
 }
-type ShippingZone={translations?:Partial<Record<"EN"|"HE",string>>;code:string;label:string;price:number;active:boolean;sortOrder:number};
+type ShippingZone={translations?:Record<string,string|undefined>;code:string;label:string;price:number;active:boolean;sortOrder:number};
 async function readShippingZones(env:Env,includeInactive=false):Promise<ShippingZone[]>{
   await ensureCustomerAuthSchema(env);
   const rows=await env.DB.prepare("SELECT code,label,price_agorot,active,sort_order FROM shipping_zones "+(includeInactive?"":"WHERE active=1 ")+"ORDER BY sort_order,code").all<{code:string;label:string;price_agorot:number;active:number;sort_order:number}>();
   const translations=await contentTranslations(env,"shipping");
-  return rows.results.map(row=>({translations:{EN:translations.EN?.[row.code],HE:translations.HE?.[row.code]},code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
+  return rows.results.map(row=>({translations:Object.fromEntries(Object.keys(translations).map(language=>[language,translations[language]?.[row.code]])),code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
 }
 async function saveShippingZones(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
   const {zones}=await parseJson(request);
-  const translations=await contentTranslations(env,"shipping");
+  const translations=await contentTranslations(env,"shipping"),languageCodes=await translatableCodes(env.DB);
   try{await persistShippingZones(env.DB,zones,validated=>{
     for(const zone of validated){
       if(!zone.translations)continue;
-      for(const language of ["EN","HE"] as const){
+      for(const language of languageCodes){
+        if(zone.translations[language]===undefined)continue;
         (translations[language]??={})[zone.code]=asText(zone.translations[language]).slice(0,60);
       }
     }
@@ -637,17 +636,8 @@ async function updateOrder(request:Request,env:Env,id:number,ctx:ExecutionContex
 function readTranslations(value: unknown) {
   try { return JSON.parse(String(value || "{}")); } catch { return {}; }
 }
-function writeTranslations(value: unknown, existing: unknown = "{}") {
-  const result = readTranslations(existing);
-  if (value && typeof value === "object") {
-    for (const language of ["EN", "HE"]) {
-      const fields = (value as Record<string, unknown>)[language];
-      if (!fields || typeof fields !== "object") continue;
-      result[language] = Object.fromEntries(["name", "description", "specifications"]
-        .map(key => [key, asText((fields as Record<string, unknown>)[key]).slice(0, 12000)]));
-    }
-  }
-  return JSON.stringify(result);
+function writeTranslations(value: unknown, existing: unknown, codes: string[]) {
+  return JSON.stringify(mergeTranslations(readTranslations(existing), value, codes, ["name", "description", "specifications"], 12000));
 }
 
 async function readCatalog(env: Env, includeInactive = false) {
@@ -766,13 +756,14 @@ async function saveCategory(request: Request, env: Env, id?: number) {
     await env.DB.prepare("INSERT INTO categories (category_number,parent_id,name,slug,description,banner_url,icon_url,sort_order,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)")
       .bind(number, parentId, name, slug, asOptionalText(body.description), asOptionalText(body.bannerUrl), asOptionalText(body.iconUrl), Number(body.sortOrder || 0), asBoolean(body.active) ? 1 : 0, Date.now(), Date.now()).run();
   }
-  if (body.translations !== undefined) await env.DB.prepare("UPDATE categories SET translations=? WHERE category_number=?").bind(writeTranslations(body.translations,(await env.DB.prepare("SELECT translations FROM categories WHERE category_number=?").bind(number).first())?.translations),number).run();
+  if (body.translations !== undefined) await env.DB.prepare("UPDATE categories SET translations=? WHERE category_number=?").bind(writeTranslations(body.translations,(await env.DB.prepare("SELECT translations FROM categories WHERE category_number=?").bind(number).first())?.translations,await translatableCodes(env.DB)),number).run();
   return json({ ok: true });
 }
 
 async function saveProduct(request: Request, env: Env, id?: number) {
   await ensureCustomizationSchema(env);
   const body = await parseJson(request);
+  const languageCodes = await translatableCodes(env.DB);
   const name = asText(body.name);
   if (!name) return json({ error: "اسم الصنف مطلوب" }, { status: 400 });
   const categoryId = body.categoryId ? Number(body.categoryId) : null;
@@ -796,7 +787,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
     productId = Number(result.meta.last_row_id);
   }
   if (!productId) return json({ error: "تعذر حفظ الصنف" }, { status: 500 });
-  if (body.translations !== undefined) await env.DB.prepare("UPDATE products SET translations=? WHERE id=?").bind(writeTranslations(body.translations,(await env.DB.prepare("SELECT translations FROM products WHERE id=?").bind(productId).first())?.translations),productId).run();
+  if (body.translations !== undefined) await env.DB.prepare("UPDATE products SET translations=? WHERE id=?").bind(writeTranslations(body.translations,(await env.DB.prepare("SELECT translations FROM products WHERE id=?").bind(productId).first())?.translations,languageCodes),productId).run();
   const customFields=(Array.isArray(body.customFields)?body.customFields as Array<Record<string,unknown>>:[]).slice(0,5).filter(field=>asText(field.label));
   if(customFields.length)await env.DB.batch(customFields.map((field,index)=>env.DB.prepare("INSERT INTO product_custom_fields (product_id,label,placeholder,max_length,required,sort_order) VALUES (?,?,?,?,?,?)").bind(productId,asText(field.label),asOptionalText(field.placeholder),Math.min(200,Math.max(1,Number(field.maxLength)||60)),asBoolean(field.required)?1:0,index)));
   const keywordList = asText(body.keywords).split(/[،,\n]+/).map((value) => value.trim()).filter(Boolean);
@@ -811,7 +802,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
     const optionId = Number(optionResult.meta.last_row_id);
     for (let index = 0; index < variants.length; index += 1) {
       const variant = variants[index];
-      const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order,translations) VALUES (?,?,?,?,?)").bind(optionId, asText(variant.name), asOptionalText(variant.color), index, writeTranslations(variant.translations)).run();
+      const valueResult = await env.DB.prepare("INSERT INTO product_option_values (option_id,value,color_hex,sort_order,translations) VALUES (?,?,?,?,?)").bind(optionId, asText(variant.name), asOptionalText(variant.color), index, writeTranslations(variant.translations, "{}", languageCodes)).run();
       const variantResult = await env.DB.prepare("INSERT INTO product_variants (product_id,sku,price_agorot,wholesale_price_agorot,stock_quantity,active,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)").bind(productId, asOptionalText(variant.sku), nullableAgorot(variant.price), nullableAgorot(variant.wholesale), Number(variant.stock || 0), 1, now, now).run();
       const variantId = Number(variantResult.meta.last_row_id);
       await env.DB.prepare("INSERT INTO variant_option_values (variant_id,option_value_id) VALUES (?,?)").bind(variantId, Number(valueResult.meta.last_row_id)).run();
@@ -1382,7 +1373,7 @@ const worker = {
       if(request.method==="GET"&&["/manifest.webmanifest","/admin-manifest.webmanifest"].includes(url.pathname)){
         const row=await env.DB.prepare("SELECT store_name,site_name_ar,seo_description,logo_url,favicon_url,primary_color,background_color FROM store_settings WHERE id=1").first<Record<string,unknown>>();
         const name=String(row?.site_name_ar||row?.store_name||"المتجر"),admin=env.APP_SURFACE==="admin",icon=String(row?.favicon_url||row?.logo_url||"/store-icon.svg");
-        return json({name:admin?name+" — الإدارة":name,short_name:name.slice(0,24),description:String(row?.seo_description||""),lang:"ar",dir:"rtl",start_url:admin?"/admin":"/",scope:"/",display:"standalone",background_color:String(row?.background_color||"#ffffff"),theme_color:String(row?.primary_color||"#475569"),icons:[{src:icon,sizes:"any",purpose:"any"}]},{headers:{"content-type":"application/manifest+json"}});
+        return json({name:admin?name+" — الإدارة":name,short_name:name.slice(0,24),description:String(row?.seo_description||""),...(admin?{lang:"ar",dir:"rtl"}:manifestLanguage(await loadStoreLanguages(env.DB))),start_url:admin?"/admin":"/",scope:"/",display:"standalone",background_color:String(row?.background_color||"#ffffff"),theme_color:String(row?.primary_color||"#475569"),icons:[{src:icon,sizes:"any",purpose:"any"}]},{headers:{"content-type":"application/manifest+json"}});
       }
       if(env.APP_SURFACE==='admin'&&url.pathname==='/admin/cloudflare')return await cloudflareLogin(request,env);
       if(env.APP_SURFACE==='admin'&&isAdminPath&&url.pathname!=='/admin/login'){
@@ -1468,7 +1459,9 @@ const worker = {
       headers.delete("content-length");headers.delete("content-encoding");
       const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
       const seoBody=env.APP_SURFACE==="storefront"?await storefrontSeoBody(env,url):{html:"",missing:false};
-      const page=insertSeoContent(injectSeo(html,head+seoData),seoBody.html);
+      const seoPage=insertSeoContent(injectSeo(html,head+seoData),seoBody.html);
+      // The admin dashboard interface is Arabic-only by decision; the storefront follows the store's language settings.
+      const page=env.APP_SURFACE==="storefront"?applyDocumentLanguage(seoPage,await loadStoreLanguages(env.DB)):setHtmlLanguage(seoPage,"ar","rtl");
       if(seoBody.missing)return new Response(page,{status:404,headers});
       return new Response(page,{status:appResponse.status,statusText:appResponse.statusText,headers});
     }

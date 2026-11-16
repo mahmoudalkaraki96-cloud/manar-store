@@ -39,7 +39,8 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="ar" dir="rtl"><body><StoreLanguageProvider><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></StoreLanguageProvider></body></html>
+ // lang/dir are written by the worker from the store's language settings; StoreLanguageProvider keeps them in sync.
+ return <html suppressHydrationWarning><body><StoreLanguageProvider><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></StoreLanguageProvider></body></html>
 }
 
 

@@ -1,5 +1,6 @@
 "use client";
 import TranslationFields from "./TranslationFields";
+import {translationLanguages} from "../../shared/store-languages";
 import {useEffect,useMemo,useRef,useState} from "react";
 import {isHeifFile} from "../../shared/heif";
 import {useStoreSettings} from "../use-store-settings";
@@ -41,10 +42,10 @@ function AdminContent(){
  const [categorySearch,setCategorySearch]=useState(''),[columnFiltersOpen,setColumnFiltersOpen]=useState(false);
  const storeSettings=useStoreSettings();
  const translationFields=(item:{translations?:CatalogTranslations}, fields:Array<"name"|"description"|"specifications">, update:(value:CatalogTranslations)=>void)=>
-  <TranslationFields languages={(["EN","HE"] as const).filter(language=>language==="EN"?storeSettings.englishEnabled:storeSettings.hebrewEnabled)}
+  <TranslationFields languages={translationLanguages(storeSettings.languages)}
    status={language=>fields.every(field=>Boolean(item.translations?.[language]?.[field]?.trim()))}>
-   {language=>fields.map(field=><label key={field}>{({name:"الاسم",description:"الوصف",specifications:"المواصفات"})[field]}
-    <input dir={language==="EN"?"ltr":"rtl"} value={item.translations?.[language]?.[field]||""}
+   {(language,dir)=>fields.map(field=><label key={field}>{({name:"الاسم",description:"الوصف",specifications:"المواصفات"})[field]}
+    <input dir={dir} value={item.translations?.[language]?.[field]||""}
      onChange={event=>update({...item.translations,[language]:{...item.translations?.[language],[field]:event.target.value}})}/>
    </label>)}
   </TranslationFields>;

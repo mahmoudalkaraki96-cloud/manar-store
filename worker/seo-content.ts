@@ -10,7 +10,7 @@ type SeoLink={name:string;slug:string};
 
 const price=(agorot:number)=>(Number(agorot||0)/100).toFixed(2)+" ₪";
 const categoryHref=(slug:string)=>"/category/"+encodeURIComponent(slug);
-const block=(content:string)=>'<section id="storefront-seo-content" class="seoContent" dir="rtl">'+content+"</section>";
+const block=(content:string)=>'<section id="storefront-seo-content" class="seoContent" dir="auto">'+content+"</section>";
 const image=(url:string,alt:string)=>'<img src="'+htmlEscape(url)+'" alt="'+htmlEscape(alt)+'" loading="lazy" decoding="async">';
 
 // The storefront pages read these public endpoints, so a crawler that renders the page needs them too.
