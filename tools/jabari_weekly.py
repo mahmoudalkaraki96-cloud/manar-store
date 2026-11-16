@@ -187,7 +187,8 @@ def stock_plan(data,sid,variants):
     if len(roots)!=1 or not re.search(r'رقم المنتج\s+'+str(sid)+r'(?!\d)',tree.text()):
         raise ValueError('source_identity_not_verified')
     root=roots[0]
-    if len([n for n in root.all() if n.tag=='h1'])!=1:raise ValueError('title_not_verified')
+    titles={n.text().strip() for n in root.all() if n.tag=='h1' and n.text().strip()}
+    if len(titles)!=1:raise ValueError('title_not_verified')
     if 'هذا المنتج لم يعد متوفر' in root.text():return True,[v['id'] for v in variants]
     source=parse_product(data,sid)
     if source['variants']:
@@ -273,7 +274,7 @@ def main():
             except SupplierBlocked:raise
             except Exception as e:
                 # Read/parse errors do not zero or import anything. Never print credentials or response bodies.
-                state['results'].append({'source_id':sid,'status':'skipped_error','reason':type(e).__name__})
+                state['results'].append({'source_id':sid,'status':'skipped_error','reason':str(e) if type(e) is ValueError and re.fullmatch(r'[a-z_]{1,80}',str(e)) else type(e).__name__})
                 if isinstance(e,RuntimeError) and not isinstance(e,SupplierMissing):raise
             save(state)
             print(f"source={sid} status={state['results'][-1]['status']}",flush=True)
