@@ -2,6 +2,7 @@
 import {createContext, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
 import {usePathname} from "next/navigation";
 import {useStoreSettings} from "./use-store-settings";
+import {interfaceText, type StoreTexts} from "../shared/ui-messages";
 import {bootstrapLanguages, defaultLanguage, enabledLanguages, languageTag, readStoreLanguages, sourceLanguage, type LanguageCode, type StoreLanguage, type TextDirection} from "../shared/store-languages";
 
 export type Language = LanguageCode;
@@ -15,6 +16,7 @@ type LanguageState = {
  languages: Language[];
  languageList: StoreLanguage[];
  sourceCode: Language;
+ texts: StoreTexts;
  choose: (language: Language) => void;
 };
 const LanguageContext = createContext<LanguageState>({
@@ -23,6 +25,7 @@ const LanguageContext = createContext<LanguageState>({
  languages: [bootstrapLanguages[0].code],
  languageList: bootstrapLanguages,
  sourceCode: bootstrapLanguages[0].code,
+ texts: {},
  choose: () => {},
 });
 
@@ -62,19 +65,27 @@ export function StoreLanguageProvider({children}: {children: ReactNode}) {
   setPreferred(value);
   try { localStorage.setItem(STORAGE_KEY, value); } catch {}
  }
- const value: LanguageState = {language, dir, languages: list.map(item => item.code), languageList: list, sourceCode: source.code, choose};
+ const value: LanguageState = {language, dir, languages: list.map(item => item.code), languageList: list, sourceCode: source.code, texts: settings.texts || {}, choose};
+ activeState = value;
  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
+let activeState: Pick<LanguageState, "texts" | "language" | "sourceCode"> | null = null;
 /**
- * `t(ar, en, he)` is the 1.7.x interface-text helper, kept until 1.8.1 moves interface texts into settings.
- * For any other configured language it falls back to the store's source content language, then to Arabic.
+ * Interface text for code that runs outside a component render (event handlers, request helpers).
+ * Reads the language at call time; components should use `useStoreLanguage().t` so they re-render on change.
+ */
+export function uiText(key: string, vars?: Record<string, string | number>) {
+ const state = activeState || {texts: {}, language: bootstrapLanguages[0].code, sourceCode: bootstrapLanguages[0].code};
+ return interfaceText(state.texts, key, state.language, state.sourceCode, vars);
+}
+
+/**
+ * Interface text by key. Order: the store's own text in the visitor's language, the default text in that
+ * language, then the same two for the store's source content language. `{name}` placeholders are filled from `vars`.
  */
 export function useStoreLanguage() {
  const context = useContext(LanguageContext);
- const t = (ar: string, en: string, he: string) => {
-  const known: Record<string, string> = {AR: ar, EN: en, HE: he};
-  return known[context.language] ?? known[context.sourceCode] ?? ar;
- };
+ const t = (key: string, vars?: Record<string, string | number>) => interfaceText(context.texts, key, context.language, context.sourceCode, vars);
  return {...context, t};
 }

@@ -1,4 +1,5 @@
 "use client";
+import {useStoreLanguage} from "../store-language";
 import Notifications from "./Notifications";
 import FloatingAction from "./FloatingAction";
 import NotifyPrompt from "./NotifyPrompt";
@@ -20,7 +21,7 @@ function isAdminSurface(){
  return window.location.hostname.startsWith("admin.")||window.location.pathname.startsWith("/admin");
 }
 
-export default function PwaRegister(){
+export default function PwaRegister(){const {t}=useStoreLanguage();
  const [prompt,setPrompt]=useState<InstallPromptEvent|null>(null);
  const [showIosHelp,setShowIosHelp]=useState(false);
  const [installed,setInstalled]=useState(false);
@@ -85,13 +86,13 @@ export default function PwaRegister(){
 
  return <>
   <Notifications/>
-  <FloatingAction id={admin?"admin-install":"install"} label={admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"} bottom={admin?14:24} hideHint={admin?"إخفاء الزر؛ يمكنك إظهاره من إعدادات لوحة التحكم":"إخفاء الزر؛ يمكنك إظهاره من التطبيق والإشعارات أعلى المتجر"}><button className="pwaInstallButton" type="button" onClick={install} aria-label={`تثبيت تطبيق ${appName}`}>
-   <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":"تثبيت التطبيق"}
+  <FloatingAction id={admin?"admin-install":"install"} label={admin?"تثبيت لوحة التحكم":t("pwa.install_app")} bottom={admin?14:24} hideHint={admin?"إخفاء الزر؛ يمكنك إظهاره من إعدادات لوحة التحكم":t("floating.hide_hint")}><button className="pwaInstallButton" type="button" onClick={install} aria-label={t("pwa.install_app_named",{name:appName})}>
+   <span aria-hidden="true">↧</span> {admin?"تثبيت لوحة التحكم":t("pwa.install_app")}
   </button></FloatingAction>
-  {showIosHelp&&<div className="pwaInstallHelp" role="dialog" aria-modal="true" aria-label="طريقة تثبيت التطبيق">
-   <button className="pwaInstallClose" type="button" onClick={()=>setShowIosHelp(false)} aria-label="إغلاق">×</button>
-   <b>تثبيت {appName} على الآيفون</b>
-   <p>اضغط زر المشاركة في Safari، ثم اختر «إضافة إلى الشاشة الرئيسية» وبعدها «إضافة».</p>
+  {showIosHelp&&<div className="pwaInstallHelp" role="dialog" aria-modal="true" aria-label={t("pwa.how_to_install")}>
+   <button className="pwaInstallClose" type="button" onClick={()=>setShowIosHelp(false)} aria-label={t("common.close")}>×</button>
+   <b>{t("pwa.install")} {appName} {t("pwa.on_iphone")}</b>
+   <p>{t("pwa.iphone_steps")}</p>
   </div>}
  </>;
 }

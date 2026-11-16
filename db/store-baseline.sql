@@ -769,3 +769,12 @@ INSERT OR IGNORE INTO store_languages(code,name,dir,enabled,is_default,is_source
 INSERT OR IGNORE INTO store_languages(code,name,dir,enabled,is_default,is_source,sort_order) VALUES ('EN','English','ltr',COALESCE((SELECT english_enabled FROM store_settings WHERE id=1),0),0,0,1);
 INSERT OR IGNORE INTO store_languages(code,name,dir,enabled,is_default,is_source,sort_order) VALUES ('HE','עברית','rtl',COALESCE((SELECT hebrew_enabled FROM store_settings WHERE id=1),0),0,0,2);
 INSERT INTO d1_migrations(name) VALUES('0037_store_languages.sql');
+
+CREATE TABLE IF NOT EXISTS ui_texts (
+  text_key TEXT NOT NULL,
+  language TEXT NOT NULL,
+  value TEXT NOT NULL,
+  updated_at INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (text_key, language)
+);
+INSERT INTO d1_migrations(name) VALUES('0038_ui_texts.sql');

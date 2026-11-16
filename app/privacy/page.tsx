@@ -1,12 +1,13 @@
+import {useStoreLanguage} from "../store-language";
 import StoreHeader from "../components/StoreHeader";
 
-export default function PrivacyPage(){
- return <main><StoreHeader/><article className="privacyPage"><small>آخر تحديث: 22 أكتوبر 2026</small><h1>سياسة الخصوصية وملفات تعريف الارتباط</h1><p>نحترم خصوصية زوار المتجر، ونستخدم البيانات بالقدر اللازم لتشغيل الحسابات وتنفيذ الطلبات وتحسين المتجر.</p>
- <section><h2>البيانات التي نجمعها</h2><ul><li>بيانات الحساب: الاسم والبريد الإلكتروني ورقم الهاتف عند تقديمها.</li><li>بيانات الطلب والتوصيل: الاسم ورقم الهاتف والمدينة والعنوان والمنتجات والملاحظات.</li><li>بيانات استخدام مجهولة أو شبه مجهولة مثل الصفحات والمنتجات التي تمت مشاهدتها، نوع الجهاز، مصدر الزيارة وأحداث السلة والطلب عبر Google Analytics.</li><li>تحليلات داخلية للمتجر: معرّف عشوائي مجزّأ، وتاريخ/ساعة الزيارة، ومسار الصفحة، والمنتجات التي شوهدت أو أضيفت للسلة، وبدء الدفع والطلبات ومصدر الحملة عند توفر وسومها. نسجل كلمات البحث الجديدة بعد حذف الأرقام وعناوين البريد أو أرقام الهاتف الواضحة، دون ربطها بمعرّف الزائر؛ ولا نسجل النصوص غير المطابقة لهذه التصفية. البحث السابق محفوظ كعدد فقط. لا ننسخ الاسم أو الهاتف أو العنوان أو الملاحظات إلى سجل التحليلات، ونحذف أحداثه بعد 180 يومًا.</li><li>نستخدم معرّف متصفح عشوائيًا لتقدير الأجهزة النشطة وعرض السلال لإدارة المتجر، مع نوع الجهاز والمتصفح والدولة والمدينة التقريبية المقدمة من Cloudflare. لا نحفظ عنوان IP أو الإحداثيات في سجل النشاط، ونحذف سجل النشاط الأقدم من 30 يومًا. قد لا يعكس الموقع التقريبي مكانك الفعلي، خاصة عند استخدام VPN.</li><li>بيانات محلية في المتصفح لحفظ السلة والمفضلة واختيار الخصوصية.</li></ul></section>
- <section><h2>كيف نستخدم البيانات</h2><ul><li>تنفيذ الطلب والتواصل بشأنه وتوصيله.</li><li>إدارة الحساب والعناوين المحفوظة.</li><li>حماية المتجر ومنع إساءة الاستخدام.</li><li>قياس أداء المتجر وتحسين المنتجات وتجربة الاستخدام.</li></ul></section>
- <section><h2>مشاركة البيانات</h2><p>لا نبيع بياناتك. قد نشارك بيانات التوصيل الضرورية مع جهة التوصيل، وبيانات الاستخدام مع Google Analytics. لا يجمع المتجر حاليًا بيانات بطاقات دفع لأن الدفع عند الاستلام.</p></section>
- <section><h2>ملفات تعريف الارتباط والتحليلات</h2><p>يستخدم المتجر Google Analytics لقياس الزيارات والأداء وتحسين تجربة الاستخدام. يمكنك تقييد ملفات تعريف الارتباط أو حذف بيانات الموقع من إعدادات متصفحك.</p></section>
- <section><h2>حفظ البيانات وحقوقك</h2><p>نحتفظ ببيانات الطلبات والحسابات للمدة اللازمة لتقديم الخدمة والمتابعة والسجلات التجارية. يمكنك طلب تصحيح بياناتك أو حذف حسابك، ما لم يلزم الاحتفاظ ببعض البيانات لتنفيذ طلب قائم أو التزام قانوني.</p></section>
- <section><h2>التواصل</h2><p>لأي طلب متعلق بالخصوصية، تواصل معنا عبر وسائل التواصل الرسمية الظاهرة في المتجر.</p></section></article></main>
+export default function PrivacyPage(){const {t}=useStoreLanguage();
+ return <main><StoreHeader/><article className="privacyPage"><small>{t("privacy.updated")}</small><h1>{t("privacy.title")}</h1><p>{t("privacy.intro")}</p>
+ <section><h2>{t("privacy.collect_title")}</h2><ul><li>{t("privacy.collect_account")}</li><li>{t("privacy.collect_order")}</li><li>{t("privacy.collect_usage")}</li><li>{t("privacy.collect_internal")}</li><li>{t("privacy.collect_activity")}</li><li>{t("privacy.collect_local")}</li></ul></section>
+ <section><h2>{t("privacy.use_title")}</h2><ul><li>{t("privacy.use_orders")}</li><li>{t("privacy.use_account")}</li><li>{t("privacy.use_security")}</li><li>{t("privacy.use_improve")}</li></ul></section>
+ <section><h2>{t("privacy.share_title")}</h2><p>{t("privacy.share_text")}</p></section>
+ <section><h2>{t("privacy.cookies_title")}</h2><p>{t("privacy.cookies_text")}</p></section>
+ <section><h2>{t("privacy.rights_title")}</h2><p>{t("privacy.rights_text")}</p></section>
+ <section><h2>{t("privacy.contact_title")}</h2><p>{t("privacy.contact_text")}</p></section></article></main>
 }
 
