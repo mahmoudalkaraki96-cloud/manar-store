@@ -1,4 +1,5 @@
 "use client";
+import {uiText} from "../store-language";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 import {storeThemeCss} from "../../shared/store-theme";
@@ -37,22 +38,22 @@ function setPageSeo(title:string,description:string,url:string,image:string,type
 }
 function absoluteUrl(value:string|undefined){try{return new URL(value||"/store-icon.svg",location.origin).toString()}catch{return location.origin+"/store-icon.svg"}}
 async function applyPageSeo(settings:StoreSettings,pathname:string){
- const name=settings.siteNameAr||settings.storeName||"المتجر",alternate=settings.siteNameEn||"";
- let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||"تصفح منتجات المتجر.",image=absoluteUrl(settings.logoUrl),type="website";
+ const name=settings.siteNameAr||settings.storeName||uiText("store.default_name"),alternate=settings.siteNameEn||"";
+ let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||uiText("seo.default_description"),image=absoluteUrl(settings.logoUrl),type="website";
  const catalog=await loadCatalog();
  const productMatch=pathname.match(/^\/product\/(\d+)\/?$/);
  if(productMatch){
   const value=Number(productMatch[1]),product=catalog.products.find(item=>item.id===value||item.itemNumber===value);
   if(product){
    title=`${product.name} | ${name}`;
-   description=(product.description||"").trim().slice(0,155)||`${product.name} متوفر لدى ${name} بسعر ${product.price.toFixed(2)} شيكل.`;
+   description=(product.description||"").trim().slice(0,155)||uiText("seo.product_description",{product:product.name,store:name,price:product.price.toFixed(2)});
    image=absoluteUrl(product.image);type="product";
   }
  }else{
   const categoryMatch=pathname.match(/^\/category\/([^/]+)\/?$/);
   if(categoryMatch){
    const slug=decodeURIComponent(categoryMatch[1]),category=catalog.categories.find(item=>item.slug===slug);
-   if(category){title=`${category.name} | ${name}`;description=`تصفّح منتجات قسم ${category.name} في ${name}.`;image=absoluteUrl(category.bannerUrl||settings.logoUrl)}
+   if(category){title=`${category.name} | ${name}`;description=uiText("seo.category_description",{category:category.name,store:name});image=absoluteUrl(category.bannerUrl||settings.logoUrl)}
   }
  }
  setPageSeo(title,description,location.href,image,type);
@@ -68,7 +69,7 @@ function applyStoreIdentity(settings:StoreSettings){
  root.style.setProperty("--green",settings.primaryColor);
  root.style.setProperty("--gold",settings.secondaryColor);
  root.style.setProperty("--pageBg",settings.backgroundColor);
- const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||"المتجر";
+ const name=settings.storeName||[settings.siteNameAr,settings.siteNameEn].filter(Boolean).join(" | ")||uiText("store.default_name");
  const favicon=absoluteUrl(settings.faviconUrl||settings.logoUrl||"/_store/favicon?v=1.3.0");upsertLink("icon",favicon);upsertLink("apple-touch-icon",favicon);
  upsertMeta('meta[property="og:site_name"]',{property:"og:site_name",content:settings.siteNameAr||name});
  if(location.pathname.startsWith("/admin"))document.title=`${name} – لوحة التحكم`;

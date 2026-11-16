@@ -1,3 +1,4 @@
+import {uiText} from "../store-language";
 import type {StoreSettings} from "../storefront-types";
 
 export type SocialName="whatsapp"|"instagram"|"facebook"|"tiktok";
@@ -11,10 +12,10 @@ export function SocialIcon({name}:{name:SocialName}){
 
 export function socialLinks(s:StoreSettings){
  const links:{name:SocialName;label:string;href:string}[]=[];
- if(s.whatsappEnabled&&s.whatsapp)links.push({name:"whatsapp",label:"واتساب",href:`https://wa.me/${s.whatsapp.replace(/\D/g,"")}`});
- if(s.instagramEnabled&&s.instagramUrl)links.push({name:"instagram",label:"إنستغرام",href:s.instagramUrl});
- if(s.facebookEnabled&&s.facebookUrl)links.push({name:"facebook",label:"فيسبوك",href:s.facebookUrl});
- if(s.tiktokEnabled&&s.tiktokUrl)links.push({name:"tiktok",label:"تيك توك",href:s.tiktokUrl});
+ if(s.whatsappEnabled&&s.whatsapp)links.push({name:"whatsapp",label:uiText("social.whatsapp"),href:`https://wa.me/${s.whatsapp.replace(/\D/g,"")}`});
+ if(s.instagramEnabled&&s.instagramUrl)links.push({name:"instagram",label:uiText("social.instagram"),href:s.instagramUrl});
+ if(s.facebookEnabled&&s.facebookUrl)links.push({name:"facebook",label:uiText("social.facebook"),href:s.facebookUrl});
+ if(s.tiktokEnabled&&s.tiktokUrl)links.push({name:"tiktok",label:uiText("social.tiktok"),href:s.tiktokUrl});
  return links;
 }
 

@@ -18,7 +18,9 @@ import {currentActor,cloudflareLogin,hashPassword as adminHashPassword,jsonBody 
 import {storeThemeCss} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {loadStoreLanguages,saveStoreLanguages,translatableCodes,mergeTranslations,applyDocumentLanguage,manifestLanguage,setHtmlLanguage} from "./store-languages";
-import {StoreLanguageError,validateStoreLanguages} from "../shared/store-languages";
+import {StoreLanguageError,validateStoreLanguages,enabledLanguages} from "../shared/store-languages";
+import {loadUiTexts,saveUiTexts} from "./ui-texts";
+import {UiTextError,uiTextKeys,defaultUiText} from "../shared/ui-messages";
 import {changeProductCategory,ProductCategoryError} from "./product-category";
 import {saveOrderEdit,OrderEditError} from "./order-edit";
 import {createManualOrder,ManualOrderError} from "./manual-order";
@@ -262,7 +264,8 @@ async function readStorefront(env: Env) {
     readHighlights(env),
     loadStoreLanguages(env.DB),
   ]);
-  const settings = { ...profile,languages,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
+  const texts = await loadUiTexts(env.DB, enabledLanguages(languages).map(item=>item.code));
+  const settings = { ...profile,languages,texts,storeName:String(row?.store_name||"المتجر"),siteNameAr:String(row?.site_name_ar||""),siteNameEn:String(row?.site_name_en||""),seoDescription:String(row?.seo_description||""),faviconUrl:String(row?.favicon_url||row?.logo_url||""),logoUrl:String(row?.logo_url||""),watermarkUrl:String(row?.watermark_url||""),watermarkOpacity:Math.min(100,Math.max(0,Number(row?.watermark_opacity??25))),watermarkEnabled:Boolean(row?.watermark_enabled??1),watermarkX:Math.min(98,Math.max(2,Number(row?.watermark_x??90))),watermarkY:Math.min(98,Math.max(2,Number(row?.watermark_y??90))),watermarkSize:Math.min(60,Math.max(2,Number(row?.watermark_size??24))),primaryColor:String(row?.primary_color||"#b85f7d"),secondaryColor:String(row?.secondary_color||"#f8e8ef"),backgroundColor:String(row?.background_color||"#ffffff"),currency:String(row?.currency||"ILS"),whatsapp:String(row?.whatsapp||""),whatsappEnabled:Boolean(row?.whatsapp_enabled??1),facebookUrl:String(row?.facebook_url||""),facebookEnabled:Boolean(row?.facebook_enabled??1),instagramUrl:String(row?.instagram_url||""),instagramEnabled:Boolean(row?.instagram_enabled??1),tiktokUrl:String(row?.tiktok_url||""),tiktokEnabled:Boolean(row?.tiktok_enabled??1),sliderEnabled:Boolean(row?.slider_enabled??1),sliderIntervalMs:Number(row?.slider_interval_ms||5000),showOutOfStock:Boolean(row?.show_out_of_stock??1),popupEnabled:Boolean(row?.popup_enabled??0),showOffers:Boolean(row?.show_offers??1),showMostOrdered:Boolean(row?.show_most_ordered??0),showTopRated:Boolean(row?.show_top_rated??0),showNewest:Boolean(row?.show_newest??1),showFeatured:Boolean(row?.show_featured??1),homeProductsLimit:Math.min(24,Math.max(1,Number(row?.home_products_limit||6))),showSubcategoryProductsInParent:Boolean(row?.show_subcategory_products_in_parent??1)};
   return {settings,highlightsEnabled:highlightData.enabled,highlightsIntervalMs:highlightData.intervalMs,highlights:highlightData.highlights,sliders:(slides.results as Array<Record<string,unknown>>).map(item=>({id:Number(item.id),title:String(item.title||""),imageUrl:String(item.image_url),productId:item.product_id==null?null:Number(item.product_id),categoryId:item.category_id==null?null:Number(item.category_id),externalUrl:String(item.external_url||""),sortOrder:Number(item.sort_order),active:Boolean(item.active)})),popup:popup?{id:Number(popup.id),title:String(popup.title||""),body:String(popup.body||""),imageUrl:String(popup.image_url||""),targetUrl:String(popup.target_url||""),active:Boolean(popup.active)}:null};
 }
 
@@ -1241,6 +1244,14 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     }
   }
   if (request.method === "PUT" && url.pathname === "/api/admin/settings") return saveSettings(request,env);
+  if (url.pathname === "/api/admin/ui-texts") {
+    const languages=await loadStoreLanguages(env.DB),codes=languages.map(item=>item.code);
+    if (request.method === "PUT") {
+      try{await saveUiTexts(env.DB,(await parseJson(request)).texts,codes)}
+      catch(error){if(error instanceof UiTextError)return json({error:error.message},{status:400});throw error}
+    }
+    if (request.method === "GET" || request.method === "PUT") return json({languages,keys:uiTextKeys().map(key=>({key,defaults:Object.fromEntries(codes.map(code=>[code,defaultUiText(key,code)||""]))})),texts:await loadUiTexts(env.DB,codes)});
+  }
   if (request.method === "POST" && url.pathname === "/api/admin/sliders") return saveSlide(request,env);
   if (request.method === "PUT" && url.pathname === "/api/admin/popup") return savePopup(request,env);
   const slideMatch=url.pathname.match(/^\/api\/admin\/sliders\/(\d+)$/);
