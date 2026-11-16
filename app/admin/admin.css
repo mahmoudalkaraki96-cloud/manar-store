@@ -162,3 +162,5 @@
 
 /* 1.7.0: store theme, visible to the platform admin only */
 .adminRedesign .editorThemePanel{margin-top:28px;padding-top:22px;border-top:1px solid var(--admin-line)}.adminRedesign .editorThemePanel>button{margin-top:16px}
+/* 1.8.0 store languages editor */
+.adminLanguages .adminHint{margin:0 0 10px;color:#6b5a62;font-size:13px;line-height:1.7}.adminLanguagesScroll{overflow-x:auto}.adminLanguagesTable{width:100%;border-collapse:collapse;font-size:13px}.adminLanguagesTable th,.adminLanguagesTable td{padding:6px;border-bottom:1px solid #eee3e7;text-align:start;vertical-align:middle;white-space:nowrap}.adminLanguagesTable input:not([type]),.adminLanguagesTable select{min-width:90px}.adminLanguagesOrder button{padding:2px 7px;margin-inline-end:3px}.adminLanguagesError{margin:8px 0 0;color:#b42318;font-weight:700}

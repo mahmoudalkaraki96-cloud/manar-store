@@ -1382,3 +1382,10 @@
 
 ## 2026-11-16 (Asia/Hebron) - 1.7.11 translation settings
 - Store policy and delivery translations now use per-store storage and admin language tabs. Existing translations require a separate guarded seed into each live database. Deployment and live verification pending.
+
+## 2026-11-16 18:28 (Asia/Hebron) — STORE-LANGUAGES / candidate 1.8.0
+- Owner approved the 1.8.x plan to move storefront languages out of code into each store's settings, plus fixing alignment when the language changes. This step is 1.8.0; interface texts (1.8.1) and currency/formats (1.8.2) are not started.
+- Migration 0037 adds store_languages (code, name, dir, enabled, default, source content language, order) and copies each store's current english/hebrew switches; worker re-seeds the same rows if a store's table is empty. Saving keeps the old english_enabled/hebrew_enabled columns in step so a rollback to 1.7.x shows the same state.
+- Worker writes <html lang/dir> from the store default and embeds the language list; manifest and SEO block follow settings. Translation writes accept only configured non-source languages and keep languages not submitted.
+- Storefront: provider, catalog lookups, header, search, checkout, addresses, policies and the category flyout no longer test AR/EN/HE. About 110 physical left/right CSS declarations converted to logical properties; decorative shapes, gallery arrows and corner floating buttons intentionally stay physical. Admin interface stays Arabic.
+- Local: 9 new tests + 115 existing tests passed, strict type check (CI list + changed files + worker/index.ts) clean, verified production build passed. Not yet verified in a browser or on a live store; no migration or deployment run. Next: PR CI, preview check in English/Hebrew/Arabic, owner release.
