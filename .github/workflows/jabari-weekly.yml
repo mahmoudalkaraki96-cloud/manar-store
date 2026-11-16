@@ -4,7 +4,7 @@ on:
     - cron: '0 3 * * 2'
   workflow_dispatch:
   push:
-    branches: [ops/jabari-weekly-start]
+    branches: [ops/jabari-retry-20261116]
     paths: ['.github/workflows/jabari-weekly.yml']
 permissions:
   contents: read
