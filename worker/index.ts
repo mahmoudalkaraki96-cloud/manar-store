@@ -199,7 +199,7 @@ const jabariRetailAgorot = (sourcePrice: number) => {
   return Math.round(retail * 100);
 };
 
-type StorePolicyRecord={version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number};
+type StorePolicyRecord={translations?:Record<string,Record<string,string>>;version:number;receiving:string;shipping:string;cancellation:string;exchange:string;updatedAt:number};
 const defaultStorePolicies={receiving:'يرجى مراجعة المتجر بشأن استقبال الطلبات.',shipping:'تُحدد مناطق ورسوم التوصيل من إدارة المتجر.',cancellation:'يرجى التواصل مع المتجر لمعرفة شروط الإلغاء.',exchange:'يرجى التواصل مع المتجر لمعرفة شروط الاستبدال.'};
 let storePoliciesReady:Promise<void>|null=null;
 async function ensureStorePoliciesSchema(env:Env){
@@ -227,17 +227,31 @@ async function ensureOrderPolicyColumns(env:Env){
   })().catch(error=>{orderPolicyColumnsReady=null;throw error});
   return orderPolicyColumnsReady;
 }
+async function contentTranslations(env:Env,scope:string){
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS storefront_translations (scope TEXT PRIMARY KEY, content TEXT NOT NULL)").run();
+  const row=await env.DB.prepare("SELECT content FROM storefront_translations WHERE scope=?").bind(scope).first<{content:string}>();
+  return readTranslations(row?.content) as Record<string,Record<string,string>>;
+}
+function translationUpdate(env:Env,scope:string,content:unknown){
+  return env.DB.prepare("INSERT INTO storefront_translations(scope,content) VALUES(?,?) ON CONFLICT(scope) DO UPDATE SET content=excluded.content").bind(scope,JSON.stringify(content));
+}
+function cleanContentTranslations(input:unknown, keys:string[],limit:number){
+  const value=input as Record<string,Record<string,unknown>>|undefined;
+  return Object.fromEntries(["EN","HE"].map(language=>[language,Object.fromEntries(keys.map(key=>[key,asText(value?.[language]?.[key]).slice(0,limit)]))]));
+}
 async function readPolicies(env:Env):Promise<StorePolicyRecord>{
   await ensureStorePoliciesSchema(env);
   const row=await env.DB.prepare("SELECT version,receiving,shipping,cancellation,exchange_policy,updated_at FROM store_policies WHERE id=1").first<Record<string,unknown>>();
-  return {version:Number(row?.version||1),receiving:String(row?.receiving||defaultStorePolicies.receiving),shipping:String(row?.shipping||defaultStorePolicies.shipping),cancellation:String(row?.cancellation||defaultStorePolicies.cancellation),exchange:String(row?.exchange_policy||defaultStorePolicies.exchange),updatedAt:Number(row?.updated_at||Date.now())};
+  return {translations:await contentTranslations(env,"policies"),version:Number(row?.version||1),receiving:String(row?.receiving||defaultStorePolicies.receiving),shipping:String(row?.shipping||defaultStorePolicies.shipping),cancellation:String(row?.cancellation||defaultStorePolicies.cancellation),exchange:String(row?.exchange_policy||defaultStorePolicies.exchange),updatedAt:Number(row?.updated_at||Date.now())};
 }
 async function savePolicies(request:Request,env:Env){
   await ensureStorePoliciesSchema(env);
   const body=await parseJson(request),receiving=asText(body.receiving),shipping=asText(body.shipping),cancellation=asText(body.cancellation),exchange=asText(body.exchange);
   if(!receiving||!shipping||!cancellation||!exchange)return json({error:"نص الأقسام الأربعة مطلوب"},{status:400});
   if([receiving,shipping,cancellation,exchange].some(value=>value.length>12000))return json({error:"نص السياسة طويل جداً"},{status:400});
-  await env.DB.prepare("UPDATE store_policies SET version=version+1,receiving=?,shipping=?,cancellation=?,exchange_policy=?,updated_at=? WHERE id=1").bind(receiving,shipping,cancellation,exchange,Date.now()).run();
+  const current=await contentTranslations(env,"policies");
+  const translations=body.translations===undefined?current:cleanContentTranslations(body.translations,["receiving","shipping","cancellation","exchange"],12000);
+  await env.DB.batch([env.DB.prepare("UPDATE store_policies SET version=version+1,receiving=?,shipping=?,cancellation=?,exchange_policy=?,updated_at=? WHERE id=1").bind(receiving,shipping,cancellation,exchange,Date.now()),translationUpdate(env,"policies",translations)]);
   return json({ok:true,policies:await readPolicies(env)});
 }
 
@@ -350,15 +364,26 @@ async function createCustomerSession(env:Env,accountId:number){
   await env.DB.prepare("INSERT INTO customer_sessions (account_id,token_hash,created_at,last_seen_at) VALUES (?,?,?,?)").bind(accountId,await sha256(token),now,now).run();
   return token;
 }
-type ShippingZone={code:string;label:string;price:number;active:boolean;sortOrder:number};
+type ShippingZone={translations?:Partial<Record<"EN"|"HE",string>>;code:string;label:string;price:number;active:boolean;sortOrder:number};
 async function readShippingZones(env:Env,includeInactive=false):Promise<ShippingZone[]>{
   await ensureCustomerAuthSchema(env);
   const rows=await env.DB.prepare("SELECT code,label,price_agorot,active,sort_order FROM shipping_zones "+(includeInactive?"":"WHERE active=1 ")+"ORDER BY sort_order,code").all<{code:string;label:string;price_agorot:number;active:number;sort_order:number}>();
-  return rows.results.map(row=>({code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
+  const translations=await contentTranslations(env,"shipping");
+  return rows.results.map(row=>({translations:{EN:translations.EN?.[row.code],HE:translations.HE?.[row.code]},code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
 }
 async function saveShippingZones(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
-  try{await persistShippingZones(env.DB,(await parseJson(request)).zones)}
+  const {zones}=await parseJson(request);
+  const translations=await contentTranslations(env,"shipping");
+  try{await persistShippingZones(env.DB,zones,validated=>{
+    for(const zone of validated){
+      if(!zone.translations)continue;
+      for(const language of ["EN","HE"] as const){
+        (translations[language]??={})[zone.code]=asText(zone.translations[language]).slice(0,60);
+      }
+    }
+    return translationUpdate(env,"shipping",translations);
+  })}
   catch(error){if(error instanceof ShippingZoneError)return json({error:error.message},{status:400});throw error}
   return json({ok:true,zones:await readShippingZones(env,true)});
 }

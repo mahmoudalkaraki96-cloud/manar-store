@@ -1379,3 +1379,6 @@
 
 ## 2026-11-15 (Asia/Hebron) — STOREFRONT-LOCALIZATION / 1.7.10
 - Authorized storefront fixes for Manar and Rokon. Use category translations on cards, translate header/account controls, and match the live policy texts and delivery-zone labels to English and Hebrew copy. Pending shared release preparation and live verification.
+
+## 2026-11-16 (Asia/Hebron) - 1.7.11 translation settings
+- Store policy and delivery translations now use per-store storage and admin language tabs. Existing translations require a separate guarded seed into each live database. Deployment and live verification pending.
