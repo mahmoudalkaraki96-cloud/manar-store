@@ -2,6 +2,7 @@
 import {useEffect,useRef,useState} from "react";
 import {usePathname} from "next/navigation";
 import {catalogIsStale,refreshCatalog} from "../catalog-types";
+import {catalogViewsStale,refreshCatalogViews} from "../catalog-views";
 import {loadStorefront,storefrontIsStale} from "../storefront-types";
 import {useStoreLanguage} from "../store-language";
 
@@ -9,7 +10,7 @@ const PULL_TRIGGER=72,PULL_MAX=110;
 
 /** Fetches fresh products and settings now; pages showing them update through the store data event. */
 export function refreshStoreData(){
- return Promise.allSettled([refreshCatalog(),loadStorefront(true)]);
+ return Promise.allSettled([refreshCatalog(),refreshCatalogViews(),loadStorefront(true)]);
 }
 
 function installedApp(){
@@ -30,7 +31,7 @@ export default function StoreRefresh(){
 
  useEffect(()=>{
   if(admin)return;
-  const onVisible=()=>{if(document.visibilityState==="visible"&&(catalogIsStale()||storefrontIsStale()))void refreshStoreData()};
+  const onVisible=()=>{if(document.visibilityState==="visible"&&(catalogIsStale()||catalogViewsStale()||storefrontIsStale()))void refreshStoreData()};
   document.addEventListener("visibilitychange",onVisible);
   window.addEventListener("pageshow",onVisible);
   return()=>{document.removeEventListener("visibilitychange",onVisible);window.removeEventListener("pageshow",onVisible)};

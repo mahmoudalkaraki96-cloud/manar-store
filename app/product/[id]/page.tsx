@@ -1,5 +1,6 @@
 "use client";
 import {useStoreDataVersion} from "../../fresh-cache";
+import {loadProductCatalog} from "../../catalog-views";
 import {catalogText} from "../../catalog-types";
 import {useStoreLanguage,storeCurrency} from "../../store-language";
 import {useEffect,useState,type CSSProperties} from "react";
@@ -28,7 +29,7 @@ function ProductDetail({productId}:{productId:string}){const storeDataVersion=us
  const {money,language,t}=useStoreLanguage();
  const [catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
- useEffect(()=>{let active=true;loadCatalog().then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[productId,storeDataVersion]);
+ useEffect(()=>{let active=true;loadProductCatalog(productId).then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[productId,storeDataVersion]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
  const product=catalog.find(item=>item.id===Number(productId));
  useEffect(()=>{if(!product)return;trackEcommerce("view_item",{currency:storeCurrency(),value:product.price,items:[{item_id:String(product.id),meta_content_id:String(product.itemNumber),item_name:product.name,item_category:product.category,price:product.price,quantity:1}]})},[product?.id]);

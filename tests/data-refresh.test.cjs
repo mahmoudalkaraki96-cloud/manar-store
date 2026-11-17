@@ -27,6 +27,6 @@ test("a failed first load can be retried",async()=>{
 
 test("pages that show products or settings reload when store data changes",()=>{
  for(const file of ["app/page.tsx","app/category/[slug]/page.tsx","app/products/[collection]/page.tsx","app/product/[id]/page.tsx","app/search/SearchResultsClient.tsx","app/components/StoreHeader.tsx","app/components/StoreShell.tsx","app/components/ShoppingOverlay.tsx","app/components/WhatsAppButton.tsx"])
-  assert.match(fs.readFileSync(file,"utf8"),/,?storeDataVersion\]\)/,file);
+  assert.match(fs.readFileSync(file,"utf8"),/\[[^\]]*\bstoreDataVersion\b[^\]]*\]\)/,file);
  const layout=fs.readFileSync("app/layout.tsx","utf8");assert.match(layout,/<StoreRefresh\/>/);
 });
