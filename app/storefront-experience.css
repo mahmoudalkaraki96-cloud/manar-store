@@ -219,3 +219,9 @@ body:has(.stickyCartBar) .whatsappFloat{bottom:calc(86px + env(safe-area-inset-b
 [dir=ltr] .mobileMenuPanel{transform:translateX(-100%)}[dir=ltr] .mobileMenuLayer.open .mobileMenuPanel{transform:none}
 /* 1.8.0: direction arrows (forward, breadcrumbs, open-submenu) point the reading way */
 .dirFlip{display:inline-block}[dir=ltr] .dirFlip{transform:scaleX(-1)}
+/* 1.8.5: pull-to-refresh indicator (installed app) */
+.pullRefresh{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:50%;z-index:2200;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;color:var(--ink,#382c32);box-shadow:0 6px 22px #0002;font-size:13px;font-weight:700;pointer-events:none;transition:transform .12s ease-out}
+.pullRefreshIcon{display:inline-block;font-size:18px;color:var(--green)}
+.pullRefresh.isBusy .pullRefreshIcon{animation:pullRefreshSpin .8s linear infinite}
+@keyframes pullRefreshSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.pullRefresh{transition:none}.pullRefresh.isBusy .pullRefreshIcon{animation:none}}

@@ -1,4 +1,5 @@
 "use client";
+import {useStoreDataVersion} from "../fresh-cache";
 import {matchesLocale,catalogText} from "../catalog-types";
 import {useStoreLanguage} from "../store-language";
 import {useEffect,useMemo,useState,type FormEvent} from "react";
@@ -12,7 +13,7 @@ import {defaultSettings,loadStorefront,type StoreSettings} from "../storefront-t
 import {trackSearch} from "../analytics";
 import {addCartItem} from "../cart-storage";
 
-export default function SearchResultsClient({initialQuery}:{initialQuery:string}){
+export default function SearchResultsClient({initialQuery}:{initialQuery:string}){const storeDataVersion=useStoreDataVersion();
  const {t,language}=useStoreLanguage();
  const router=useRouter();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]});
@@ -23,7 +24,7 @@ export default function SearchResultsClient({initialQuery}:{initialQuery:string}
  const [loading,setLoading]=useState(true);
  const [error,setError]=useState("");
  useEffect(()=>{setQuery(initialQuery);setVisible(48)},[initialQuery]);
- useEffect(()=>{let alive=true;Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(alive){setData(catalog);setSettings(store.settings)}}).catch(()=>{if(alive)setError(t("search.load_failed"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[]);
+ useEffect(()=>{let alive=true;Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(alive){setData(catalog);setSettings(store.settings)}}).catch(()=>{if(alive)setError(t("search.load_failed"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[storeDataVersion]);
  const products=useMemo(()=>{const term=query.trim();if(!term)return[];const found=data.products.filter(product=>matchesLocale(product,term,language));return found.sort((a,b)=>sort==="newest"?b.createdAt-a.createdAt:sort==="priceAsc"?a.price-b.price:sort==="priceDesc"?b.price-a.price:(Number(b.featured)-Number(a.featured))||b.orders-a.orders)},[data.products,query,sort,language]);
  const categories=useMemo(()=>{const term=norm(query.trim());if(!term)return[];return data.categories.filter(category=>norm(catalogText(category,language,"name")||category.name).includes(term)).slice(0,12)},[data.categories,query,language]);
  const submit=(event:FormEvent<HTMLFormElement>)=>{event.preventDefault();const term=query.trim();if(!term)return;trackSearch(term);setVisible(48);router.push("/search?q="+encodeURIComponent(term))};

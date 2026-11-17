@@ -1,4 +1,5 @@
 import {defaultTheme,type ThemeSettings} from "../shared/store-theme";
+import {freshCache} from "./catalog-types";
 import {bootstrapLanguages,type StoreLanguage} from "../shared/store-languages";
 import type {StoreTexts} from "../shared/ui-messages";
 import type {DigitStyle} from "../shared/money";
@@ -12,5 +13,7 @@ export const defaultSettings:StoreSettings={languages:bootstrapLanguages,invento
 let storefrontCache:StorefrontResponse|null=null;
 function settingsCacheKey(){return typeof window!=="undefined"?`store_settings:${window.location.hostname}`:"store_settings"}
 export function cachedStoreSettings(){if(storefrontCache)return storefrontCache.settings;if(typeof window!=="undefined")try{const key=settingsCacheKey(),saved=JSON.parse(localStorage.getItem(key)||"{}") as Partial<StoreSettings>;return {...defaultSettings,...saved} as StoreSettings}catch{}return defaultSettings}
-let storefrontPromise:Promise<StorefrontResponse>|null=null;
-export async function loadStorefront(force=false):Promise<StorefrontResponse>{if(force){storefrontCache=null;storefrontPromise=null}if(storefrontCache)return storefrontCache;if(storefrontPromise)return storefrontPromise;storefrontPromise=fetch(`/api/storefront?v=${Date.now()}`,{cache:"no-store"}).then(async response=>{if(!response.ok)throw new Error("تعذر تحميل إعدادات المتجر");storefrontCache=await response.json() as StorefrontResponse;if(typeof window!=="undefined")localStorage.setItem(settingsCacheKey(),JSON.stringify(storefrontCache.settings));return storefrontCache}).catch(error=>{storefrontPromise=null;throw error});return storefrontPromise}
+const storefrontStore=freshCache<StorefrontResponse>("storefront",()=>fetch(`/api/storefront?v=${Date.now()}`,{cache:"no-store"}).then(async response=>{if(!response.ok)throw new Error("تعذر تحميل إعدادات المتجر");const data=await response.json() as StorefrontResponse;storefrontCache=data;try{if(typeof window!=="undefined")localStorage.setItem(settingsCacheKey(),JSON.stringify(data.settings))}catch{}return data}),data=>{if(typeof window!=="undefined")window.dispatchEvent(new CustomEvent("store-settings-updated",{detail:data.settings}))});
+/** Store settings for this visit; refreshed in the background once older than a minute (force = wait for a fresh copy). */
+export async function loadStorefront(force=false):Promise<StorefrontResponse>{return force?storefrontStore.refresh():storefrontStore.get()}
+export const storefrontIsStale=()=>storefrontStore.isStale();

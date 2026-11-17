@@ -1,4 +1,5 @@
 "use client";
+import {useStoreDataVersion} from "../fresh-cache";
 import {useStoreLanguage,storeCurrency} from "../store-language";
 import {useEffect,useState} from "react";
 import {usePathname} from "next/navigation";
@@ -12,7 +13,7 @@ import {toggleFavorite,useFavorites} from "../favorites-storage";
 import type {CartDiscountQuote} from "../../shared/discounts";
 import CheckoutModal from "./CheckoutModal";
 import FreeShippingProgress from "./FreeShippingProgress";
-export default function ShoppingOverlay(){
+export default function ShoppingOverlay(){const storeDataVersion=useStoreDataVersion();
  const {money,t,language}=useStoreLanguage();
  const productLabel=(product?:Product)=>product?(catalogText(product,language,"name")||product.name):t("product");
  const variantLabel=(product:Product|undefined,line:{variantId?:number|null;variantName?:string})=>{
@@ -21,7 +22,7 @@ export default function ShoppingOverlay(){
  };
  const pathname=usePathname();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[settings,setSettings]=useState(defaultSettings),[cart,setCart]=useState<Record<string,CartLine>>({}),[cartOpen,setCartOpen]=useState(false),[favoritesOpen,setFavoritesOpen]=useState(false),[checkoutOpen,setCheckoutOpen]=useState(false),[completedOrder,setCompletedOrder]=useState<number|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState("");
- useEffect(()=>{if(pathname.startsWith("/admin"))return;let alive=true;setCart(loadCart());Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(!alive)return;setData(catalog);setSettings(store.settings);const next=syncCart(loadCart(),catalog.products);saveCart(next);setCart(next);setError("")}).catch(()=>{if(alive)setError(t("could_not_load_the_cart_try_again"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[pathname]);
+ useEffect(()=>{if(pathname.startsWith("/admin"))return;let alive=true;setCart(loadCart());Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(!alive)return;setData(catalog);setSettings(store.settings);const next=syncCart(loadCart(),catalog.products);saveCart(next);setCart(next);setError("")}).catch(()=>{if(alive)setError(t("could_not_load_the_cart_try_again"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[pathname,storeDataVersion]);
  useEffect(()=>{const refresh=()=>setCart(loadCart());window.addEventListener("manar:cart",refresh);window.addEventListener("storage",refresh);return()=>{window.removeEventListener("manar:cart",refresh);window.removeEventListener("storage",refresh)}},[]);
  const updateCart=(change:(current:Record<string,CartLine>)=>Record<string,CartLine>)=>{const next=change(loadCart());saveCart(next);setCart(next)};
  useEffect(()=>{const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){setCartOpen(false);setFavoritesOpen(false);setCompletedOrder(null)}};window.addEventListener("keydown",escape);return()=>window.removeEventListener("keydown",escape)},[]);

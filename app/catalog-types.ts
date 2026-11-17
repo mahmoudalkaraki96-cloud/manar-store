@@ -77,21 +77,52 @@ export type CatalogResponse = { categories: Category[]; products: Product[] };
 export const norm = (value: string) => value.toLowerCase().replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
 export const matches = (product: Product, query: string) => norm(query).split(/\s+/).filter(Boolean).every((term) => norm(`${product.name} ${product.category} ${product.subcategory || ""} ${product.itemNumber} ${product.keywords || ""} ${(product.variants || []).map((variant) => `${variant.name} ${variant.sku}`).join(" ")}`).includes(term));
 
-let catalogPromise: Promise<CatalogResponse> | null = null;
+// Kept here (no imports) so this module stays loadable on its own in tests and tools.
+/** Fired on window when store data (products or settings) changed after a background refresh. */
+export const STORE_DATA_EVENT="store:data-updated";
+/** Data older than this is refreshed in the background the next time a page asks for it. */
+export const STORE_DATA_MAX_AGE_MS=60_000;
 
-export function loadCatalog(): Promise<CatalogResponse> {
-  if (catalogPromise) return catalogPromise;
-  catalogPromise = fetch(`/api/catalog?v=${Date.now()}`, { cache: "no-store" })
-    .then((response) => {
-      if (!response.ok) throw new Error("تعذر تحميل بيانات المتجر");
-      return response.json() as Promise<CatalogResponse>;
-    })
-    .catch((error) => {
-      catalogPromise = null;
-      throw error;
-    });
-  return catalogPromise;
+/**
+ * Keeps one copy of a response for the whole visit. Pages get it immediately; when it is older than a minute
+ * a fresh copy is fetched in the background, and pages are told only if something actually changed.
+ */
+export function freshCache<T>(name:string,fetcher:()=>Promise<T>,onChange?:(value:T)=>void){
+ let value:T|undefined,loadedAt=0,signature="",inflight:Promise<T>|null=null;
+ const fetchNow=()=>{
+  if(inflight)return inflight;
+  inflight=fetcher().then(next=>{
+   const nextSignature=JSON.stringify(next),changed=value!==undefined&&nextSignature!==signature;
+   value=next;signature=nextSignature;loadedAt=Date.now();
+   if(changed){onChange?.(next);if(typeof window!=="undefined")window.dispatchEvent(new CustomEvent(STORE_DATA_EVENT,{detail:name}))}
+   return next;
+  }).finally(()=>{inflight=null});
+  return inflight;
+ };
+ return {
+  get():Promise<T>{
+   if(value===undefined)return fetchNow();
+   if(Date.now()-loadedAt>STORE_DATA_MAX_AGE_MS)void fetchNow().catch(()=>{});
+   return Promise.resolve(value);
+  },
+  refresh:fetchNow,
+  isStale:()=>value===undefined||Date.now()-loadedAt>STORE_DATA_MAX_AGE_MS,
+  current:()=>value,
+ };
 }
+
+const catalogCache = freshCache<CatalogResponse>("catalog", () =>
+  fetch(`/api/catalog?v=${Date.now()}`, { cache: "no-store" }).then((response) => {
+    if (!response.ok) throw new Error("تعذر تحميل بيانات المتجر");
+    return response.json() as Promise<CatalogResponse>;
+  }));
+
+/** Products and categories for this visit; refreshed in the background once older than a minute. */
+export function loadCatalog(): Promise<CatalogResponse> {
+  return catalogCache.get();
+}
+export const refreshCatalog = () => catalogCache.refresh();
+export const catalogIsStale = () => catalogCache.isStale();
 
 export function stockLimit(product:Product|undefined,variant?:Variant):number{return product?.inventoryEnabled===false?99:Math.max(0,Number(variant?.stock??product?.stock)||0)}
 export function productAvailable(product:Product,variant?:Variant):boolean{return product.inventoryEnabled===false||(variant?variant.stock>0:product.variants?.length?product.variants.some(item=>item.stock>0):product.inStock)}

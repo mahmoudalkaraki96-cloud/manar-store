@@ -1417,3 +1417,9 @@
 - Kept-original uploads were considered and rejected: phone JPEGs carry EXIF GPS/device data; re-encoding strips it.
 - Measured on the owner's sample (chat copy 1500x2000, 312KB): product page phone image 29KB → 69KB WebP / 46KB AVIF, visibly sharper; card 16KB unchanged.
 - Local: image-quality tests (3) + 209 cjs and 24 mjs tests, strict type check and verified build passed. Not published.
+
+## 2026-11-17 14:47 (Asia/Hebron) — DATA-REFRESH / candidate 1.8.5
+- Owner added a product on Red Rose and did not see it. Live check: /api/catalog on redroseps.com returned #1026 (active, stock 100, image, price) and a fresh browser showed it first in «مضاف حديثاً». Cause: loadCatalog/loadStorefront memoised their first response for the whole page life, so open tabs and the installed app kept the old list.
+- freshCache (catalog-types.ts, no imports so tests can load it alone): returns cached data at once, refreshes in the background after 60s, shares in-flight requests, and dispatches store:data-updated only when content changed. Pages that load catalog/settings re-run their effect on that event (storeDataVersion); effects only set data, no loading flash. StoreRefresh refreshes on return to tab/app and adds pull-to-refresh in standalone (installed app) only.
+- Measured catalog sizes: Red Rose 6KB gzip; Manar 95KB gzip / 1.1MB raw (1,354 products) — per-page loading is planned as 1.8.6.
+- Local: data-refresh tests (3) + 212 cjs and 24 mjs tests, strict type check and verified build passed. Not published.
