@@ -1,0 +1,43 @@
+name: Export Manar Jabari products
+on:
+  push:
+    branches: [ops/manar-jabari-report-20261117]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          url="https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/4afe4c16-e513-43ac-a397-26fa4141e5c9/query"
+          products=[]
+          cursor=0
+          while True:
+              sql="""SELECT p.id,p.item_number,p.name,p.active,p.stock_quantity,c.name AS category,
+                  (SELECT m.url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) image
+                  FROM products p LEFT JOIN categories c ON c.id=p.category_id
+                  WHERE p.deleted_at IS NULL AND p.id>? AND
+                  (EXISTS (SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=p.id AND s.supplier_number=9102)
+                   OR p.slug GLOB 'supplier-jabari-[0-9]*'
+                   OR EXISTS (SELECT 1 FROM product_keywords k WHERE k.product_id=p.id AND k.keyword GLOB 'jabari-[0-9]*'))
+                  ORDER BY p.id LIMIT 100"""
+              request=urllib.request.Request(url,data=json.dumps({"sql":sql,"params":[cursor]}).encode(),headers={"Authorization":"Bearer "+os.environ["CLOUDFLARE_API_TOKEN"],"Content-Type":"application/json"})
+              with urllib.request.urlopen(request,timeout=40) as response:
+                  result=json.load(response)
+              assert result["success"] and result["result"][0]["success"]
+              rows=result["result"][0]["results"]
+              if not rows: break
+              products.extend(rows)
+              cursor=rows[-1]["id"]
+          with open("jabari-products.json","w",encoding="utf-8") as file:
+              json.dump(products,file,ensure_ascii=False)
+          print("Products:",len(products))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manar-jabari-products
+          path: jabari-products.json
