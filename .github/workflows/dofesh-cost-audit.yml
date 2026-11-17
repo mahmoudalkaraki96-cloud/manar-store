@@ -1,0 +1,63 @@
+name: Audit Dofesh prices at cost
+on:
+  push:
+    branches: [ops/dofesh-cost-audit]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import csv,json,os,urllib.request
+          url="https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/4afe4c16-e513-43ac-a397-26fa4141e5c9/query"
+          def query(sql):
+              req=urllib.request.Request(url,data=json.dumps({"sql":sql}).encode(),headers={"Authorization":"Bearer "+os.environ["CLOUDFLARE_API_TOKEN"],"Content-Type":"application/json"})
+              with urllib.request.urlopen(req,timeout=45) as response:
+                  data=json.load(response)
+              assert data["success"] and data["result"][0]["success"]
+              return data["result"][0]["results"]
+          sql="""WITH supplier_products AS (
+              SELECT p.*, (SELECT ps.supplier_price_agorot FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=p.id AND s.supplier_number=9101 LIMIT 1) supplier_cost
+              FROM products p WHERE p.deleted_at IS NULL AND (
+              EXISTS(SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=p.id AND s.supplier_number=9101)
+              OR p.slug GLOB 'supplier-dofesh-[0-9]*'
+              OR EXISTS(SELECT 1 FROM product_keywords k WHERE k.product_id=p.id AND k.keyword GLOB 'dofesh-[0-9]*'))
+              ), prices AS (
+              SELECT p.id,p.item_number,p.name,p.active,0 variant_id,'' variant_name, p.price_agorot sale,COALESCE(NULLIF(p.purchase_price_agorot,0),p.supplier_cost) cost FROM supplier_products p
+              UNION ALL
+              SELECT p.id,p.item_number,p.name,p.active,v.id,
+                COALESCE((SELECT group_concat(o.value,' / ') FROM variant_option_values l JOIN product_option_values o ON o.id=l.option_value_id WHERE l.variant_id=v.id),''),
+                COALESCE(v.price_agorot,p.price_agorot),v.purchase_price_agorot
+                FROM supplier_products p JOIN product_variants v ON v.product_id=p.id WHERE v.active=1
+              ) SELECT * FROM prices"""
+          matches=[]
+          cursor=(-1,-1)
+          scanned=unknown=0
+          while True:
+              rows=query(sql+f" WHERE (id,variant_id)>({cursor[0]},{cursor[1]}) ORDER BY id,variant_id LIMIT 200")
+              if not rows: break
+              scanned+=len(rows)
+              unknown+=sum(not (r["cost"] and r["cost"]>0) for r in rows)
+              matches.extend(r for r in rows if r["cost"] and r["cost"]>0 and r["cost"]==r["sale"])
+              cursor=rows[-1]["id"],rows[-1]["variant_id"]
+          cols=["id","item_number","name","active","variant_id","variant_name","sale_shekels","cost_shekels"]
+          with open("dofesh-at-cost.csv","w",encoding="utf-8-sig",newline="") as file:
+              writer=csv.DictWriter(file,fieldnames=cols,extrasaction="ignore")
+              writer.writeheader()
+              for row in matches:
+                  writer.writerow(dict(row,sale_shekels=row["sale"]/100,cost_shekels=row["cost"]/100))
+          summary=dict(scanned=scanned,missing_cost=unknown,products=len({r["id"] for r in matches}),product_prices=sum(not r["variant_id"] for r in matches),variant_prices=sum(bool(r["variant_id"]) for r in matches))
+          with open("summary.json","w") as file: json.dump(summary,file)
+          print("AUDIT",summary)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dofesh-price-audit
+          path: |
+            dofesh-at-cost.csv
+            summary.json
