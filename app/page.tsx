@@ -1,5 +1,6 @@
 "use client";
 import {useStoreDataVersion} from "./fresh-cache";
+import {loadHomeCatalog} from "./catalog-views";
 import {catalogText as categoryTranslation} from "./catalog-types";
 import {useStoreLanguage} from "./store-language";
 import {useEffect,useState} from "react";
@@ -16,7 +17,7 @@ import {addCartItem,loadCart,type CartLine} from "./cart-storage";
 export default function Home(){const storeDataVersion=useStoreDataVersion();
  const {t,language}=useStoreLanguage();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[store,setStore]=useState<StorefrontResponse>({settings:defaultSettings,sliders:[],popup:null,highlightsEnabled:false,highlights:[],highlightsIntervalMs:5000}),[loading,setLoading]=useState(true),[error,setError]=useState(""),[wholesale]=useState(false),[cart,setCart]=useState<Record<string,CartLine>>({});
- useEffect(()=>{let saved:Record<string,CartLine>={};try{saved=loadCart();setCart(saved);}catch{}Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setStore(storefront);setCart(loadCart())}).catch(()=>setError(t("home.load_failed"))).finally(()=>setLoading(false))},[storeDataVersion]);
+ useEffect(()=>{let saved:Record<string,CartLine>={};try{saved=loadCart();setCart(saved);}catch{}Promise.all([loadHomeCatalog(),loadStorefront()]).then(([catalog,storefront])=>{setData(catalog);setStore(storefront);setCart(loadCart())}).catch(()=>setError(t("home.load_failed"))).finally(()=>setLoading(false))},[storeDataVersion]);
  useEffect(()=>{const refresh=(event:Event)=>setCart((event as CustomEvent<Record<string,CartLine>>).detail||loadCart());window.addEventListener("manar:cart",refresh);return()=>window.removeEventListener("manar:cart",refresh)},[]);
 
  const count=Object.values(cart).reduce((sum,line)=>sum+line.qty,0),subtotal=Object.values(cart).reduce((sum,line)=>sum+line.price*line.qty,0),roots=data.categories.filter(category=>category.parentId==null);

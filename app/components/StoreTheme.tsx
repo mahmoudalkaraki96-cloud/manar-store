@@ -1,5 +1,6 @@
 "use client";
 import {uiText,uiMoney} from "../store-language";
+import {loadCategories,loadProductCatalog} from "../catalog-views";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 import {storeThemeCss} from "../../shared/store-theme";
@@ -40,7 +41,9 @@ function absoluteUrl(value:string|undefined){try{return new URL(value||"/store-i
 async function applyPageSeo(settings:StoreSettings,pathname:string){
  const name=settings.siteNameAr||settings.storeName||uiText("store.default_name"),alternate=settings.siteNameEn||"";
  let title=alternate?`${name} | ${alternate}`:name,description=settings.seoDescription||uiText("seo.default_description"),image=absoluteUrl(settings.logoUrl),type="website";
- const catalog=await loadCatalog();
+ // Only the slice this page needs: the product (by id or item number) on product pages, otherwise the categories.
+ const productKey=pathname.match(/^\/product\/(\d+)\/?$/)?.[1];
+ const catalog=productKey?await loadProductCatalog(productKey):await loadCategories();
  const productMatch=pathname.match(/^\/product\/(\d+)\/?$/);
  if(productMatch){
   const value=Number(productMatch[1]),product=catalog.products.find(item=>item.id===value||item.itemNumber===value);

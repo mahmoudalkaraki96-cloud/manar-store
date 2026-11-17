@@ -1,5 +1,6 @@
 "use client";
 import {useStoreDataVersion} from "../fresh-cache";
+import {loadCategories} from "../catalog-views";
 import {catalogText} from "../catalog-types";
 import {useStoreLanguage} from "../store-language";
 import {useEffect,useRef,useState,type ReactNode} from "react";
@@ -13,7 +14,7 @@ export default function StoreShell({children}:{children:ReactNode}){const storeD
  const admin=pathname.startsWith("/admin");
  const cancelClose=()=>{if(closeTimer.current){clearTimeout(closeTimer.current);closeTimer.current=null}};
  const close=()=>{cancelClose();setActive(null)};
- useEffect(()=>{if(admin)return;let alive=true;loadCatalog().then(data=>{if(alive)setCategories(data.categories.filter(c=>c.active))}).catch(()=>{});return()=>{alive=false}},[admin,storeDataVersion]);
+ useEffect(()=>{if(admin)return;let alive=true;loadCategories().then(data=>{if(alive)setCategories(data.categories.filter(c=>c.active))}).catch(()=>{});return()=>{alive=false}},[admin,storeDataVersion]);
  useEffect(()=>{close();return cancelClose},[pathname]);
  useEffect(()=>{
   if(admin)return;

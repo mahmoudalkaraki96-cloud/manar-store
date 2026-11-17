@@ -1,6 +1,8 @@
 import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
 import {THUMBNAIL_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
+import {catalogViewRequest,categoriesView,homeView,categoryView,collectionView,productView,itemsView,searchView} from "./catalog-views";
+import type {CatalogResponse} from "../app/catalog-types";
 import {isHeifFile} from "../shared/heif";
 import {trackingPhone,trackOrders} from "./order-tracking";
 import {storeAssetResponse} from "./store-assets";
@@ -89,7 +91,9 @@ const json = (data: unknown, init: ResponseInit = {}) => Response.json(data, {
   headers: { "cache-control": "no-store", ...(init.headers || {}) },
 });
 
-const PUBLIC_API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400";
+// Catalog and settings are cached for 30s at the edge (was 5 minutes with no purge on save, so new products
+// appeared late). With the storefront's own one-minute refresh, changes reach visitors within about 1.5 minutes.
+const PUBLIC_API_CACHE_CONTROL = "public, max-age=30, s-maxage=30";
 const publicJson = (data: unknown) => json(data, { headers: { "cache-control": PUBLIC_API_CACHE_CONTROL } });
 async function readTrackingHead(env:Env,url:URL){
  const profile=await readStoreProfile(env.DB);
@@ -740,6 +744,26 @@ async function readCatalog(env: Env, includeInactive = false) {
   return { categories, products: includeInactive || showOutOfStock ? products : products.filter((product) => product.inStock) };
 }
 
+/** /api/catalog/<view>: the slice of the catalog one storefront page needs (see worker/catalog-views.ts). */
+async function catalogViewResponse(env: Env, request: {view: string; arg: string; lang?: string}) {
+  const data = await readCatalog(env, false) as unknown as CatalogResponse;
+  let result: CatalogResponse | null;
+  switch (request.view) {
+    case "categories": result = categoriesView(data); break;
+    case "home": {
+      const row = await env.DB.prepare("SELECT home_products_limit FROM store_settings WHERE id=1").first<{home_products_limit: number}>();
+      result = homeView(data, Number(row?.home_products_limit || 6));
+      break;
+    }
+    case "category": result = categoryView(data, request.arg); break;
+    case "collection": result = collectionView(data, request.arg); break;
+    case "product": result = productView(data, Number(request.arg)); break;
+    case "items": result = itemsView(data, request.arg ? request.arg.split(",").map(Number) : []); break;
+    default: result = searchView(data, request.arg, request.lang || "");
+  }
+  return result ? publicJson(result) : json({ error: "Not Found" }, { status: 404 });
+}
+
 async function parseJson(request: Request) {
   const contentLength = Number(request.headers.get("content-length") || 0);
   if (contentLength > 1_000_000) throw new Error("الطلب أكبر من الحد المسموح");
@@ -1099,6 +1123,10 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     return json({head:await storefrontSeo(env,target)},{headers:{"cache-control":"no-store"}});
   }
   if (request.method === "GET" && url.pathname === "/api/catalog") return publicJson(await readCatalog(env, false));
+  if (request.method === "GET" && url.pathname.startsWith("/api/catalog/")) {
+    const viewRequest = catalogViewRequest(url.pathname, url.searchParams);
+    if (viewRequest) return catalogViewResponse(env, viewRequest);
+  }
   if (request.method === "GET" && url.pathname === "/api/storefront") return publicJson(await readStorefront(env));
   if (request.method === "GET" && url.pathname === "/api/policies") return publicJson({policies:await readPolicies(env)});
   if (request.method === "GET" && url.pathname === "/api/shipping-zones") return publicJson({zones:await readShippingZones(env)});
@@ -1407,10 +1435,13 @@ const worker = {
       if(env.APP_SURFACE==='admin'&&url.pathname.startsWith('/api/admin/'))return await adminRequest(request,env,()=>api(request,env,url,ctx));
       const seoRouteResponse=await publicSeoRoute(request,env,url);
       if(seoRouteResponse)return seoRouteResponse;
-      const cacheablePublicApi = request.method === "GET" && url.pathname === "/api/catalog";
+      const catalogView = request.method === "GET" && url.pathname.startsWith("/api/catalog/") ? catalogViewRequest(url.pathname, url.searchParams) : null;
+      const cacheablePublicApi = request.method === "GET" && (url.pathname === "/api/catalog" || catalogView !== null);
       if (cacheablePublicApi) {
         const cache = (caches as CacheStorage & {default:Cache}).default;
-        const cacheKey = new Request(new URL(url.pathname + "?discounts=1",url.origin), { method: "GET" });
+        // Views are keyed by their normalised arguments only (the client's ?v= cache-buster is ignored).
+        const viewKey = catalogView ? `/api/catalog/${catalogView.view}?arg=${encodeURIComponent(catalogView.arg)}${"lang" in catalogView ? "&lang=" + catalogView.lang : ""}&discounts=1` : url.pathname + "?discounts=1";
+        const cacheKey = new Request(new URL(viewKey, url.origin), { method: "GET" });
         const cached = await cache.match(cacheKey);
         if (cached) return cached;
         const apiResponse = await api(request, env, url,ctx);

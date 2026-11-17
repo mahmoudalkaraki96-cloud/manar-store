@@ -1423,3 +1423,10 @@
 - freshCache (catalog-types.ts, no imports so tests can load it alone): returns cached data at once, refreshes in the background after 60s, shares in-flight requests, and dispatches store:data-updated only when content changed. Pages that load catalog/settings re-run their effect on that event (storeDataVersion); effects only set data, no loading flash. StoreRefresh refreshes on return to tab/app and adds pull-to-refresh in standalone (installed app) only.
 - Measured catalog sizes: Red Rose 6KB gzip; Manar 95KB gzip / 1.1MB raw (1,354 products) — per-page loading is planned as 1.8.6.
 - Local: data-refresh tests (3) + 212 cjs and 24 mjs tests, strict type check and verified build passed. Not published.
+
+## 2026-11-17 14:55 (Asia/Hebron) — PAGE-CATALOG / candidate 1.8.6
+- Owner asked to stop loading every product on every page. Field-size analysis of Manar's catalog showed no single heavy field, so trimming fields would not help; pages now load page-sized slices.
+- worker/catalog-views.ts + /api/catalog/{categories,home,category/:slug,collection/:name,product/:id,items?ids=,search?q=&lang=}, same {categories,products} shape as /api/catalog so page logic is unchanged; slices keep catalog order. Edge cache key per normalised view args (client ?v= ignored). PUBLIC_API_CACHE_CONTROL lowered to 30s (was s-maxage=300 + SWR 1 day with no purge on product save).
+- Client app/catalog-views.ts (freshCache per view). Header search queries the server (200ms debounce) instead of filtering a full list on every page; cart drawer loads only cart+favorite ids read from storage (never from unloaded state, so syncCart cannot drop lines). Search page and /products/all still use the full catalog.
+- Measured on Manar's live catalog: full 96KB gzip; home 7KB (+1KB categories), product 3KB, largest category 23KB, search 5KB, cart 2KB.
+- Local: catalog-views tests (4, incl. home-row equivalence vs full catalog) + 216 cjs and 24 mjs tests, strict type check and verified build passed. Not published.

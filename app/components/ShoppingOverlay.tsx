@@ -1,5 +1,6 @@
 "use client";
 import {useStoreDataVersion} from "../fresh-cache";
+import {loadItemsCatalog} from "../catalog-views";
 import {useStoreLanguage,storeCurrency} from "../store-language";
 import {useEffect,useState} from "react";
 import {usePathname} from "next/navigation";
@@ -9,7 +10,7 @@ import {defaultSettings,loadStorefront} from "../storefront-types";
 import {loadCart,saveCart,syncCart,type CartLine} from "../cart-storage";
 import {trackEcommerce} from "../analytics";
 import {productThumbnail} from "../image-utils";
-import {toggleFavorite,useFavorites} from "../favorites-storage";
+import {toggleFavorite,useFavorites,loadFavorites} from "../favorites-storage";
 import type {CartDiscountQuote} from "../../shared/discounts";
 import CheckoutModal from "./CheckoutModal";
 import FreeShippingProgress from "./FreeShippingProgress";
@@ -22,7 +23,8 @@ export default function ShoppingOverlay(){const storeDataVersion=useStoreDataVer
  };
  const pathname=usePathname();
  const [data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[settings,setSettings]=useState(defaultSettings),[cart,setCart]=useState<Record<string,CartLine>>({}),[cartOpen,setCartOpen]=useState(false),[favoritesOpen,setFavoritesOpen]=useState(false),[checkoutOpen,setCheckoutOpen]=useState(false),[completedOrder,setCompletedOrder]=useState<number|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState("");
- useEffect(()=>{if(pathname.startsWith("/admin"))return;let alive=true;setCart(loadCart());Promise.all([loadCatalog(),loadStorefront()]).then(([catalog,store])=>{if(!alive)return;setData(catalog);setSettings(store.settings);const next=syncCart(loadCart(),catalog.products);saveCart(next);setCart(next);setError("")}).catch(()=>{if(alive)setError(t("could_not_load_the_cart_try_again"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[pathname,storeDataVersion]);
+ const favoriteIds=useFavorites(),itemsKey=[...new Set([...Object.values(cart).map(line=>line.productId),...favoriteIds])].sort((a,b)=>a-b).join(",");
+  useEffect(()=>{if(pathname.startsWith("/admin"))return;let alive=true;setCart(loadCart());const saved=loadCart(),ids=[...Object.values(saved).map(line=>line.productId),...loadFavorites()];Promise.all([loadItemsCatalog(ids),loadStorefront()]).then(([catalog,store])=>{if(!alive)return;setData(catalog);setSettings(store.settings);const next=syncCart(loadCart(),catalog.products);saveCart(next);setCart(next);setError("")}).catch(()=>{if(alive)setError(t("could_not_load_the_cart_try_again"))}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[pathname,storeDataVersion,itemsKey]);
  useEffect(()=>{const refresh=()=>setCart(loadCart());window.addEventListener("manar:cart",refresh);window.addEventListener("storage",refresh);return()=>{window.removeEventListener("manar:cart",refresh);window.removeEventListener("storage",refresh)}},[]);
  const updateCart=(change:(current:Record<string,CartLine>)=>Record<string,CartLine>)=>{const next=change(loadCart());saveCart(next);setCart(next)};
  useEffect(()=>{const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"){setCartOpen(false);setFavoritesOpen(false);setCompletedOrder(null)}};window.addEventListener("keydown",escape);return()=>window.removeEventListener("keydown",escape)},[]);
