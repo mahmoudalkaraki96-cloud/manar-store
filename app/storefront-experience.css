@@ -125,7 +125,7 @@ body:has(.stickyCartBar) .whatsappFloat{bottom:calc(86px + env(safe-area-inset-b
 .notifyPrompt .notifyPromptYes{background:var(--green);border-color:var(--green);color:#fff}
 .productPage .gallery{display:flex!important;flex-direction:column;gap:10px;min-width:0}
 .productPage .gallery .mainImage{width:100%!important;max-width:520px;margin-inline:auto;aspect-ratio:4/5!important;height:auto!important;border-radius:calc(14px*var(--theme-radius,1));overflow:hidden}
-.productPage .gallery .mainImage>img:not(.logoWatermark){width:100%!important;height:100%!important;object-fit:contain!important;padding:0!important}
+.productPage .gallery .mainImage>img:not(.logoWatermark),.productPage .gallery .mainImage>picture>img:not(.logoWatermark){width:100%!important;height:100%!important;object-fit:contain!important;padding:0!important}
 .productPage .gallery .productItemBadge{top:auto!important;bottom:10px}
 .productPage .gallery .thumbs{display:flex!important;gap:8px;overflow-x:auto;justify-content:center;padding:2px}
 .productPage .gallery .thumbs button{flex:0 0 64px;width:64px;height:80px;border-radius:calc(9px*var(--theme-radius,1));overflow:hidden;padding:0}
