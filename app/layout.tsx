@@ -1,4 +1,5 @@
 import {StoreLanguageProvider} from "./store-language";
+import StoreRefresh from "./components/StoreRefresh";
 import type {Metadata,Viewport} from "next";
 import StoreShell from "./components/StoreShell";
 import StoreSeo from "./components/StoreSeo";
@@ -40,7 +41,7 @@ export const viewport:Viewport={
 
 export default function RootLayout({children}:{children:React.ReactNode}){
  // lang/dir are written by the worker from the store's language settings; StoreLanguageProvider keeps them in sync.
- return <html suppressHydrationWarning><body><StoreLanguageProvider><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></StoreLanguageProvider></body></html>
+ return <html suppressHydrationWarning><body><StoreLanguageProvider><StoreRefresh/><StoreSeo/><StoreTheme/><PwaRegister/><StoreShell>{children}</StoreShell><StickyCartBar/><ShoppingOverlay/><CartCustomization/><WhatsAppButton/></StoreLanguageProvider></body></html>
 }
 
 

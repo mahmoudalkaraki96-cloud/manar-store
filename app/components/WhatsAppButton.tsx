@@ -1,12 +1,13 @@
 "use client";
+import {useStoreDataVersion} from "../fresh-cache";
 import {useStoreLanguage} from "../store-language";
 import {useEffect,useState} from "react";
 import {usePathname} from "next/navigation";
 import {cachedStoreSettings,loadStorefront,type StoreSettings} from "../storefront-types";
 
-export default function WhatsAppButton(){const {t}=useStoreLanguage();
+export default function WhatsAppButton(){const storeDataVersion=useStoreDataVersion();const {t}=useStoreLanguage();
  const pathname=usePathname(),[s,setS]=useState<StoreSettings|null>(null),[admin,setAdmin]=useState(true);
- useEffect(()=>{setAdmin(location.hostname.startsWith("admin.")||location.pathname.startsWith("/admin"));setS(cachedStoreSettings());loadStorefront().then(data=>setS(data.settings)).catch(()=>{})},[]);
+ useEffect(()=>{setAdmin(location.hostname.startsWith("admin.")||location.pathname.startsWith("/admin"));setS(cachedStoreSettings());loadStorefront().then(data=>setS(data.settings)).catch(()=>{})},[storeDataVersion]);
  if(admin||pathname.startsWith("/admin")||!s?.whatsappEnabled||!s.whatsapp)return null;
  const number=s.whatsapp.replace(/\D/g,"");
  const open=()=>{const name=pathname.startsWith("/product/")?document.querySelector("h1.desktopProductTitle,h1.mobileProductTitle,h1")?.textContent?.trim():"";const text=name?t("whatsapp.ask_about",{name}):t("whatsapp.greeting");window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`,"_blank","noopener,noreferrer")};

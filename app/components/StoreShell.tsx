@@ -1,4 +1,5 @@
 "use client";
+import {useStoreDataVersion} from "../fresh-cache";
 import {catalogText} from "../catalog-types";
 import {useStoreLanguage} from "../store-language";
 import {useEffect,useRef,useState,type ReactNode} from "react";
@@ -6,13 +7,13 @@ import {usePathname} from "next/navigation";
 import Link from "next/link";
 import {loadCatalog,type Category} from "../catalog-types";
 
-export default function StoreShell({children}:{children:ReactNode}){
+export default function StoreShell({children}:{children:ReactNode}){const storeDataVersion=useStoreDataVersion();
  const {t,language,dir}=useStoreLanguage();
  const pathname=usePathname(),[categories,setCategories]=useState<Category[]>([]),[active,setActive]=useState<number|null>(null),[position,setPosition]=useState({top:100,offset:260}),railRef=useRef<HTMLElement>(null),slotRef=useRef<HTMLDivElement>(null),closeTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
  const admin=pathname.startsWith("/admin");
  const cancelClose=()=>{if(closeTimer.current){clearTimeout(closeTimer.current);closeTimer.current=null}};
  const close=()=>{cancelClose();setActive(null)};
- useEffect(()=>{if(admin)return;let alive=true;loadCatalog().then(data=>{if(alive)setCategories(data.categories.filter(c=>c.active))}).catch(()=>{});return()=>{alive=false}},[admin]);
+ useEffect(()=>{if(admin)return;let alive=true;loadCatalog().then(data=>{if(alive)setCategories(data.categories.filter(c=>c.active))}).catch(()=>{});return()=>{alive=false}},[admin,storeDataVersion]);
  useEffect(()=>{close();return cancelClose},[pathname]);
  useEffect(()=>{
   if(admin)return;

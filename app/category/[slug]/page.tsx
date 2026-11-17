@@ -1,4 +1,5 @@
 "use client";
+import {useStoreDataVersion} from "../../fresh-cache";
 import {catalogText} from "../../catalog-types";
 import {useStoreLanguage} from "../../store-language";
 import {useEffect,useMemo,useRef,useState} from "react";
@@ -12,10 +13,10 @@ import CategoryCards from "../../components/CategoryCards";
 import ProductCard from "../../components/ProductCard";
 import {addCartItem} from "../../cart-storage";
 
-export default function CategoryPage(){
+export default function CategoryPage(){const storeDataVersion=useStoreDataVersion();
  const {money,moneyRange,t,language}=useStoreLanguage();
  const params=useParams<{slug:string}>(),[data,setData]=useState<CatalogResponse>({categories:[],products:[]}),[settings,setSettings]=useState<StoreSettings>(defaultSettings),[loading,setLoading]=useState(true),[sort,setSort]=useState("featured"),[term,setTerm]=useState(""),[price,setPrice]=useState("all"),[stock,setStock]=useState("all"),[failed,setFailed]=useState(false);
- useEffect(()=>{Promise.all([loadCatalog(),loadStorefront().catch(()=>({settings:defaultSettings}))]).then(([catalog,storefront])=>{setData(catalog);setSettings(storefront.settings)}).catch(()=>setFailed(true)).finally(()=>setLoading(false))},[]);
+ useEffect(()=>{Promise.all([loadCatalog(),loadStorefront().catch(()=>({settings:defaultSettings}))]).then(([catalog,storefront])=>{setData(catalog);setSettings(storefront.settings)}).catch(()=>setFailed(true)).finally(()=>setLoading(false))},[storeDataVersion]);
  const [showAll,setShowAll]=useState(false),productsRef=useRef<HTMLElement>(null);
  useEffect(()=>{if(showAll)productsRef.current?.scrollIntoView({behavior:"smooth",block:"start"})},[showAll]);
  useEffect(()=>setShowAll(false),[params.slug]);
