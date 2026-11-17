@@ -1,0 +1,127 @@
+name: Translate missing Rokon catalog content
+on:
+  push:
+    branches: [jobs/rokon-missing-translations-20261117]
+concurrency:
+  group: rokon-catalog-translation
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, concurrent.futures, time
+          from pathlib import Path
+          
+          def request(url, payload=None):
+              headers = {"Content-Type":"application/json"}
+              if url.startswith("https://api.openai.com/"):
+                  headers["Authorization"] = "Bearer " + os.environ["OPENAI_API_KEY"]
+              if url.startswith("https://api.cloudflare.com/"):
+                  headers["Authorization"] = "Bearer " + os.environ["CLOUDFLARE_API_TOKEN"]
+              data = json.dumps(payload, ensure_ascii=False).encode() if payload is not None else None
+              for attempt in range(5):
+                  try:
+                      with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=headers), timeout=150) as response:
+                          return json.load(response)
+                  except urllib.error.HTTPError as error:
+                      if error.code not in (429,500,502,503,504) or attempt == 4:
+                          raise
+                      time.sleep(2 ** attempt)
+          
+          endpoint = "https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/a5c50923-c7ec-4ede-95b3-d19b93914902/query"
+          def translate(group):
+              instruction = """Translate this Rokon Home catalog from Arabic to natural retail English (EN) and Hebrew (HE).
+          Return a JSON object with products, an array of objects with id, EN and HE (each containing name, description and specifications), and variants (an array of {id, EN:{name}, HE:{name}}). Copy IDs exactly. Keep quantities, units, material, brand and model codes. Preserve empty fields. Do not infer missing facts."""
+              response = request("https://api.openai.com/v1/chat/completions", {
+                  "model":"gpt-5-mini","reasoning_effort":"minimal","max_completion_tokens":12000,
+                  "response_format":{"type":"json_object"},
+                  "messages":[{"role":"system","content":instruction},{"role":"user","content":json.dumps(group,ensure_ascii=False)}]})
+              result = json.loads(response["choices"][0]["message"]["content"])["products"]
+              expected = {p["id"]:{v["id"] for v in p["variants"]} for p in group}
+              assert len(result)==len(group) and {p["id"] for p in result}==set(expected)
+              for p in result:
+                  variants=p["variants"]
+                  assert len(variants)==len(expected[p["id"]]) and {v["id"] for v in variants}==expected[p["id"]]
+                  for language in ("EN","HE"):
+                      assert isinstance(p[language]["name"],str) and p[language]["name"].strip()
+                      for f in ("description","specifications"):
+                          assert not group[0].get(f) or isinstance(p[language].get(f),str)
+                      assert all(isinstance(v[language]["name"],str) and v[language]["name"].strip() for v in variants)
+              return result,response.get("usage",{})
+          
+          
+          def query(sql,params=()):
+              data=request(endpoint,{"sql":sql,"params":params})
+              assert data["success"] and data["result"][0]["success"]
+              return data["result"][0]["results"]
+          
+          def parse(value):
+              try: return json.loads(value) or {}
+              except (ValueError,TypeError): return {}
+          
+          def missing(row,fields):
+              saved=parse(row["translations"])
+              return [(lang,f) for lang in ("EN","HE") for f in fields
+                      if str(row.get(f) or "").strip() and not str(saved.get(lang,{}).get(f) or "").strip()]
+          
+          targets=[]
+          for table,sql,fields in (
+              ("products","SELECT id,name,description,specifications,translations FROM products WHERE active=1 AND deleted_at IS NULL AND id>?",("name","description","specifications")),
+              ("product_option_values","SELECT ov.id,ov.value AS name,ov.translations FROM product_option_values ov JOIN product_options o ON o.id=ov.option_id JOIN products p ON p.id=o.product_id WHERE p.active=1 AND p.deleted_at IS NULL AND ov.id>?",("name",)),
+          ):
+              cursor=0
+              while rows:=query(sql+" ORDER BY id LIMIT 150",[cursor]):
+                  for row in rows:
+                      gaps=missing(row,fields)
+                      if gaps: targets.append((table,row,gaps))
+                  cursor=rows[-1]["id"]
+          
+          def run_target(target):
+              table,row,gaps=target
+              source={f:row.get(f) or "" for f in ("name","description","specifications")}
+              subject=dict(source,id=row["id"],variants=[])
+              result,usage=translate([subject])
+              updated=parse(row["translations"])
+              for lang,field in gaps:
+                  value=result[0][lang].get(field)
+                  assert isinstance(value,str) and value.strip()
+                  updated.setdefault(lang,{})[field]=value
+              guard="active=1 AND deleted_at IS NULL AND name=? AND description IS ? AND specifications IS ?" if table=="products" else "value=?"
+              originals=[row["name"],row.get("description"),row.get("specifications")] if table=="products" else [row["name"]]
+              matched=query(f"UPDATE {table} SET translations=? WHERE id=? AND translations IS ? AND "+guard+" RETURNING id",[json.dumps(updated,ensure_ascii=False),row["id"],row["translations"],*originals])
+              return bool(matched),usage
+          
+          print("TARGETS",len(targets),flush=True)
+          errors=[]
+          done=0
+          usage={"prompt_tokens":0,"completion_tokens":0}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              futures={pool.submit(run_target,target):target for target in targets}
+              for future in concurrent.futures.as_completed(futures):
+                  table,row,_=futures[future]
+                  try:
+                      saved,tokens=future.result()
+                      for key in usage: usage[key]+=tokens.get(key,0)
+                      if not saved: raise ValueError("source_changed")
+                      done+=1
+                      if done%50==0: print("PUBLISHED",done,flush=True)
+                  except Exception as error:
+                      errors.append(dict(table=table,id=row["id"],error=type(error).__name__))
+          summary=dict(targets=len(targets),published=done,errors=errors,usage=usage)
+          Path("translation-summary.json").write_text(json.dumps(summary,indent=2))
+          print("SUMMARY",json.dumps(summary),flush=True)
+          if errors: raise SystemExit(1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rokon-missing-translation-summary
+          path: translation-summary.json
