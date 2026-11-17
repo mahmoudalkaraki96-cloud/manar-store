@@ -1,0 +1,31 @@
+name: Remove selected Manar Jabari products
+on:
+  push:
+    branches: [ops/manar-remove-selected-jabari-21]
+permissions:
+  contents: read
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json,os,time,urllib.request
+          ids=[{"id":1381,"item_number":2381},{"id":1441,"item_number":2441},{"id":1440,"item_number":2440},{"id":1442,"item_number":2442},{"id":2097,"item_number":3097},{"id":2099,"item_number":3099},{"id":2098,"item_number":3098},{"id":2141,"item_number":3141},{"id":2989,"item_number":3989},{"id":2988,"item_number":3988},{"id":2987,"item_number":3987},{"id":2986,"item_number":3986},{"id":3159,"item_number":4159},{"id":3160,"item_number":4160},{"id":3162,"item_number":4162},{"id":3163,"item_number":4163},{"id":3164,"item_number":4164},{"id":3165,"item_number":4165},{"id":3168,"item_number":4168},{"id":3167,"item_number":4167},{"id":3166,"item_number":4166}]
+          pairs=",".join("("+str(p["id"])+","+str(p["item_number"])+")" for p in ids)
+          url="https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/4afe4c16-e513-43ac-a397-26fa4141e5c9/query"
+          def query(sql):
+              request=urllib.request.Request(url,data=json.dumps({"sql":sql}).encode(),headers={"Authorization":"Bearer "+os.environ["CLOUDFLARE_API_TOKEN"],"Content-Type":"application/json"})
+              with urllib.request.urlopen(request,timeout=40) as response: result=json.load(response)
+              assert result["success"] and result["result"][0]["success"]
+              return result["result"][0]
+          match=f"(p.id,p.item_number) IN ({pairs}) AND (EXISTS (SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=p.id AND s.supplier_number=9102) OR p.slug GLOB 'supplier-jabari-[0-9]*' OR EXISTS (SELECT 1 FROM product_keywords k WHERE k.product_id=p.id AND k.keyword GLOB 'jabari-[0-9]*'))"
+          assert query("SELECT count(*) n FROM products p WHERE "+match)["results"][0]["n"]==21
+          now=int(time.time()*1000)
+          result=query(f"UPDATE products AS p SET active=0,deleted_at={now},updated_at={now} WHERE deleted_at IS NULL AND "+match+" AND (SELECT count(*) FROM products p WHERE "+match+")==21")
+          left=query("SELECT count(*) n FROM products p WHERE deleted_at IS NULL AND "+match)["results"][0]["n"]
+          print("VERIFIED",result["meta"]["changes"],left)
+          assert left==0
+          PY
