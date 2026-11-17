@@ -26,8 +26,8 @@ export default function DiscountsPanel({catalog}:{catalog:{products:{id:number;n
   };
   return <section className="dataPanel" dir="rtl">
     <h2>الخصومات وأكواد الخصم</h2>
-    <button type="button" disabled={busy} onClick={()=>setDraft({...empty})}>إضافة خصم تلقائي</button>{" "}
-    <button type="button" disabled={busy} onClick={()=>setDraft({...empty,code:""})}>إضافة كود خصم</button>
+    <button type="button" className="secondaryAction" disabled={busy} onClick={()=>setDraft({...empty})}>إضافة خصم تلقائي</button>{" "}
+    <button type="button" className="secondaryAction" disabled={busy} onClick={()=>setDraft({...empty,code:""})}>إضافة كود خصم</button>
     {message&&<p role="status">{message}</p>}
     {draft&&<form className="checkoutFields" onSubmit={event=>{event.preventDefault();void save(draft)}}>
       <label>اسم العرض<input required value={draft.label} onChange={e=>setDraft({...draft,label:e.target.value})}/></label>

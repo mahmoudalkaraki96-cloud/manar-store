@@ -97,3 +97,57 @@ body:has(.adminRedesign.themeDark) .adminAccountBar{background:#122626;color:#ed
 .adminRedesign .browserCartItems th:last-child,.adminRedesign .browserCartItems td:last-child{text-align:center}
 .browserCartTotal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--admin-line);font-size:12px}.browserCartTotal>b{color:var(--admin-accent);font-variant-numeric:tabular-nums}.browserCartTotal>small{flex-basis:100%;color:var(--admin-muted);font-size:10px}
 @media(max-width:800px){.adminRedesign .browserCartItems th,.adminRedesign .browserCartItems td{padding:10px 5px;font-size:12px}.adminRedesign .browserCartItems td b{font-weight:600}.adminRedesign .browserCartItems td small{font-size:10px}}
+
+/* 1.8.3: buttons look like buttons, clear selected states, phone layout fixes */
+.adminRedesign :is(.secondaryAction,.orderDetailActions>.secondaryAction,.categoryAdmin button:not([class]),.sliderSelectedProduct>button){display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 14px;border:1px solid var(--admin-line);border-radius:8px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px;font-weight:700;line-height:1.3;cursor:pointer;box-shadow:0 1px 2px #0000000f}
+.adminRedesign :is(.secondaryAction,.categoryAdmin button:not([class]),.sliderSelectedProduct>button):hover:not(:disabled){border-color:var(--admin-accent);color:var(--admin-accent)}
+.adminRedesign :is(.secondaryAction,.categoryAdmin button:not([class]),.sliderSelectedProduct>button):disabled{opacity:.55;cursor:not-allowed}
+.adminRedesign :is(button,a,select,input,textarea):focus-visible{outline:2px solid var(--admin-accent);outline-offset:2px}
+/* Order details: close first and round, actions in a tidy grid, delete last and quieter */
+.adminRedesign .orderDetailActions{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;align-items:stretch}
+.adminRedesign .orderDetailActions>button{margin:0;min-height:42px;font-size:13px;white-space:normal}
+.adminRedesign .orderDetailActions>.orderDetailClose{grid-column:1/-1;justify-self:end;width:42px;height:42px;min-height:42px;padding:0;border:1px solid var(--admin-line);border-radius:50%;background:var(--admin-panel);color:var(--admin-ink);font-size:22px;line-height:1}
+.adminRedesign .orderDetailActions>.orderDeleteAction{grid-column:1/-1;justify-self:start;min-height:38px;padding:7px 16px;font-size:12px;border:1px solid #c2535c55}
+/* Order detail controls: edit actions look like buttons */
+.adminRedesign :is(.orderDetailControls,.orderExtraFees)>button:not([class]){display:inline-flex;align-items:center;justify-content:center;min-height:42px;margin:0;padding:8px 12px;border:1px solid var(--admin-line);border-radius:8px;background:var(--admin-panel);color:var(--admin-ink);font-weight:700;font-size:13px;cursor:pointer}
+/* The storefront's site-header rule (header{height:70px;position:sticky}) must not apply to dashboard card headers:
+   it pinned the order heading over the edit fields and cut its content at 70px. */
+.adminRedesign header:not(.adminTop){height:auto;position:static;backdrop-filter:none;z-index:auto}
+.adminRedesign .orderDetail .orderPrintHead{background:var(--admin-panel,#fff)}
+.adminRedesign .highlightBulkImport b{display:block;margin-bottom:4px}
+/* Editor close (×) as a round icon on the title row, not a full-width bar */
+.adminRedesign .panelHead:has(>.panelClose){display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:10px}
+.adminRedesign .panelHead:has(>.panelClose)>h2{margin:0;flex:1 1 auto;min-width:0}
+.adminRedesign .panelHead>.panelClose{flex:0 0 42px;width:42px;height:42px;min-height:42px;margin:0;padding:0;border:1px solid var(--admin-line);border-radius:50%;background:var(--admin-panel);color:var(--admin-ink);font-size:22px;line-height:1}
+/* Language switch for translations: separated pills, selected one filled */
+.adminTranslationFields>summary{cursor:pointer;font-weight:700;padding:6px 0}
+.adminTranslationFields>[role=group]{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.adminTranslationFields>[role=group]>button{min-width:52px;min-height:34px;padding:5px 14px;border:1px solid var(--admin-line);border-radius:999px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.adminTranslationFields>[role=group]>button[aria-pressed=true]{background:var(--admin-accent);border-color:var(--admin-accent);color:#fff}
+/* Tab strips: visible track and selected tab */
+.adminRedesign .customerTabs{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--admin-line);border-radius:10px;background:var(--admin-panel)}
+.adminRedesign .customerTabs>button{flex:1 1 auto;min-height:38px;padding:7px 12px;border:0;border-radius:7px;background:transparent;color:var(--admin-muted);font-weight:700;cursor:pointer}
+.adminRedesign .customerTabs>button[aria-selected=true]{background:var(--admin-accent);color:#fff}
+.adminRedesign :is(.periodSwitch,.editorTabs)>button:not([aria-pressed=true]):not(.active):hover{color:var(--admin-accent)}
+/* Theme selector looks like a control */
+.adminRedesign .themeControl select{border:1px solid var(--admin-line);border-radius:8px;padding:4px 8px;min-height:32px;background:var(--admin-panel)}
+.adminRedesign .inventoryMore{width:100%;margin-top:12px}
+@media(max-width:720px){
+ /* Orders header: three actions side by side instead of three full-width bars */
+ .adminRedesign .ordersPanel .ordersHeadActions{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%}
+ .adminRedesign .ordersPanel .ordersHeadActions>button{width:auto;margin:0;min-height:40px;padding:8px 6px;font-size:12px;white-space:nowrap}
+ .adminRedesign .ordersPanel .ordersHeadActions>.saveOrderChanges{grid-column:1/-1;order:-1;font-size:14px}
+ .adminRedesign .orderDetailActions{grid-template-columns:1fr 1fr}
+ /* Order fields: label above its field, two per row, save on its own row */
+ .adminRedesign .orderDetailControls{grid-template-columns:1fr 1fr;gap:12px 10px;align-items:end}
+ .adminRedesign .orderDetailControls>label{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:12px;font-weight:700}
+ .adminRedesign .orderDetailControls>label>:is(input,select){flex:1 1 75%;min-width:0;width:auto;min-height:42px}
+ .adminRedesign .orderDetailControls>.saveOrderChanges{grid-column:1/-1;min-height:46px;font-size:14px}
+ /* Panels never grow wider than the screen (highlights pushed everything off the edge) */
+ .adminRedesign .dataPanel{grid-template-columns:minmax(0,1fr);max-width:100%}
+ .adminRedesign .dataPanel>*{min-width:0;max-width:100%}
+ .adminRedesign .highlightAdminImages{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .adminRedesign .panelHead{flex-wrap:wrap;gap:8px}
+ /* Floating notifications button: compact so it covers less of the page */
+ .adminNotificationFloating{padding:7px 11px!important;font-size:13px!important;max-width:calc(100vw - 24px)}
+}
