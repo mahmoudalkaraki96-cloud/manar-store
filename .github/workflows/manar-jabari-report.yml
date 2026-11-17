@@ -17,7 +17,7 @@ jobs:
           products=[]
           cursor=0
           while True:
-              sql="""SELECT p.id,p.item_number,p.name,p.active,p.stock_quantity,c.name AS category,
+              sql="""SELECT p.id,p.item_number,p.name,p.active,p.stock_quantity,c.name AS category,p.price_agorot sale, COALESCE(NULLIF(p.purchase_price_agorot,0),(SELECT ps.supplier_price_agorot FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE ps.product_id=p.id AND s.supplier_number=9102)) cost,
                   (SELECT m.url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) image
                   FROM products p LEFT JOIN categories c ON c.id=p.category_id
                   WHERE p.deleted_at IS NULL AND p.id>? AND
