@@ -36,12 +36,12 @@ class Tests(unittest.TestCase):
     def test_draft_import_all_components(self):
         db=DB();r=a.import_one(db,1421,self.source(),'apply')
         self.assertEqual(r['status'],'imported_draft')
-        self.assertEqual((r['active'],r['stock_quantity'],r['price_agorot']),(0,0,7500))
+        self.assertEqual((r['active'],r['stock_quantity'],r['price_agorot']),(0,9999,7500))
         self.assertEqual(len(db.query('SELECT * FROM product_custom_fields')),2)
         self.assertEqual(len(db.query('SELECT * FROM product_variants')),2)
         self.assertEqual(len(db.query('SELECT * FROM variant_option_values')),2)
         self.assertEqual(len(db.query('SELECT * FROM audit_logs')),1)
-        self.assertTrue(all(v['stock_quantity']==0 for v in db.query('SELECT * FROM product_variants')))
+        self.assertTrue(all(v['stock_quantity']==(9999 if v['active'] else 0) for v in db.query('SELECT * FROM product_variants')))
     def test_repeated_import_skips_without_change(self):
         db=DB();a.import_one(db,1421,self.source(),'apply')
         self.assertEqual(a.import_one(db,1421,self.source(),'apply')['status'],'already_present')
