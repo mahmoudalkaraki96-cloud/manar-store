@@ -78,7 +78,7 @@ jobs:
               ("product_option_values","SELECT ov.id,ov.value AS name,ov.translations FROM product_option_values ov JOIN product_options o ON o.id=ov.option_id JOIN products p ON p.id=o.product_id WHERE p.active=1 AND p.deleted_at IS NULL AND ov.id>?",("name",)),
           ):
               cursor=0
-              while rows:=query(sql+" ORDER BY id LIMIT 150",[cursor]):
+              while rows:=query(sql+" ORDER BY 1 LIMIT 150",[cursor]):
                   for row in rows:
                       gaps=missing(row,fields)
                       if gaps: targets.append((table,row,gaps))
