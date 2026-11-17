@@ -48,7 +48,7 @@ export default function HighlightsPanel({upload}:Props){
   if(selected.some(file=>file.type.startsWith("video/")&&file.size>MAX_VIDEO_BYTES))throw new Error("حجم كل فيديو يجب ألا يتجاوز 50MB");
   const urls:string[]=new Array(selected.length);
   let cursor=0;
-  await Promise.all(Array.from({length:Math.min(3,selected.length)},async()=>{while(cursor<selected.length){const position=cursor++;urls[position]=await upload(selected[position],{maxSize:1200,quality:.72})}}));
+  await Promise.all(Array.from({length:Math.min(3,selected.length)},async()=>{while(cursor<selected.length){const position=cursor++;urls[position]=await upload(selected[position],{maxSize:1600,quality:.88})}}));
   edit(index,{images:[...item.images,...urls],imageNumbers:[...(item.imageNumbers||[]),...urls.map(()=>"بعد الحفظ")],imageViews:[...(item.imageViews||[]),...urls.map(()=>0)],coverUrl:item.coverUrl||urls.find(url=>!isVideo(url))||""});
   setMessage("تم رفع الملفات؛ اضغط حفظ الهايلايت لتظهر في المتجر");
  }catch(error){setMessage(error instanceof Error?error.message:"فشل رفع الصور")}finally{setBusyAction(null)}};
@@ -76,7 +76,7 @@ export default function HighlightsPanel({upload}:Props){
     setImportProgress({done:completed,total:all.length,current:title});
     try{
      const urls:string[]=new Array(filesInGroup.length);let cursor=0,uploaded=0,reused=0;
-     await Promise.all(Array.from({length:Math.min(3,filesInGroup.length)},async()=>{while(cursor<filesInGroup.length){const position=cursor++,file=filesInGroup[position],key=fileKey(root,file),saved=cache[key];if(saved){urls[position]=saved;reused++}else{urls[position]=await upload(file,{maxSize:1200,quality:.72});cache[key]=urls[position];localStorage.setItem(cacheName,JSON.stringify(cache));uploaded++}completed++;setImportProgress({done:completed,total:all.length,current:title})}}));
+     await Promise.all(Array.from({length:Math.min(3,filesInGroup.length)},async()=>{while(cursor<filesInGroup.length){const position=cursor++,file=filesInGroup[position],key=fileKey(root,file),saved=cache[key];if(saved){urls[position]=saved;reused++}else{urls[position]=await upload(file,{maxSize:1600,quality:.88});cache[key]=urls[position];localStorage.setItem(cacheName,JSON.stringify(cache));uploaded++}completed++;setImportProgress({done:completed,total:all.length,current:title})}}));
      const prior=existing.find(item=>item.title.trim()===title),merged=prior?[...prior.images,...urls.filter(url=>!prior.images.includes(url))]:urls;
      if(merged.length>MAX_MEDIA)throw new Error("المجموع بعد الدمج يتجاوز "+MAX_MEDIA+" ملف");
      const coverNamed=filesInGroup.findIndex(file=>file.type.startsWith("image/")&&/^cover(?:\.|[-_ ])/i.test(file.name)),newCover=urls[coverNamed>=0?coverNamed:filesInGroup.findIndex(file=>file.type.startsWith("image/"))];
@@ -91,7 +91,7 @@ export default function HighlightsPanel({upload}:Props){
  const pastedImages=(event:React.ClipboardEvent<HTMLElement>)=>Array.from(event.clipboardData.items).filter(item=>item.type.startsWith("image/")).map(item=>item.getAsFile()).filter((file):file is File=>Boolean(file));
  const uploadCover=async(index:number,file:File|null)=>{if(!file)return;setBusyAction("upload-cover-"+index);setMessage("");try{
   if(!file.type.startsWith("image/"))throw new Error("الغلاف يجب أن يكون صورة");
-  const url=await upload(file,{maxSize:480,quality:.7});
+  const url=await upload(file,{maxSize:480,quality:.85});
   edit(index,{coverUrl:url});setMessage("تم رفع الغلاف؛ اضغط حفظ الهايلايت");
  }catch(error){setMessage(error instanceof Error?error.message:"فشل رفع الغلاف")}finally{setBusyAction(null)}};
  const remove=(item:Highlight,index:number)=>{if(!window.confirm("حذف الهايلايت من المتجر؟"))return;void perform(async()=>{if(item.id)await request("/api/admin/highlights/"+item.id,"DELETE");setItems(current=>current.filter((candidate,i)=>item.id?candidate.id!==item.id:i!==index))},"تم حذف الهايلايت","delete-"+(item.id||index),false)};

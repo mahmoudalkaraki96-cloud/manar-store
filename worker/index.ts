@@ -1,5 +1,6 @@
 import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
+import {THUMBNAIL_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
 import {isHeifFile} from "../shared/heif";
 import {trackingPhone,trackOrders} from "./order-tracking";
 import {storeAssetResponse} from "./store-assets";
@@ -1428,16 +1429,19 @@ const worker = {
     if(request.method==="GET"&&url.pathname==="/_media/thumbnail"){
       const source=url.searchParams.get("src")||"",width=Number(url.searchParams.get("width"));
       if(!source.startsWith("/media/")&&!source.startsWith("/product-images/"))return new Response("Invalid image source",{status:400});
-      if(![256,384,640].includes(width))return new Response("Invalid image width",{status:400});
+      if(!THUMBNAIL_WIDTHS.includes(width))return new Response("Invalid image width",{status:400});
+      // Card sizes (256/384/640) keep their original WebP q75 output and stored copies; large product-page sizes get
+      // higher quality and may be requested as AVIF (smaller at the same quality) through <picture>.
+      const thumb=thumbnailFormat(width,url.searchParams.get("format"));
       const cache=(caches as CacheStorage & {default:Cache}).default,cacheKey=new Request(url.toString(),{method:"GET"}),cached=await cache.match(cacheKey);
       if(cached)return cached;
       if(source.startsWith("/media/")){
         try{
           const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
-          const thumbnailKey=`thumbnails/w${width}/${sourceKey.replace(/\.[^.]+$/,"")}.webp`;
+          const thumbnailKey=`thumbnails/w${width}${thumb.suffix}/${sourceKey.replace(/\.[^.]+$/,"")}.${thumb.extension}`;
           const saved=await env.MEDIA.get(thumbnailKey);
           if(saved){
-            const headers=new Headers();saved.writeHttpMetadata(headers);headers.set("content-type","image/webp");headers.set("cache-control","public, max-age=31536000, immutable");
+            const headers=new Headers();saved.writeHttpMetadata(headers);headers.set("content-type",thumb.mime);headers.set("cache-control","public, max-age=31536000, immutable");
             const response=new Response(saved.body,{headers});ctx.waitUntil(cache.put(cacheKey,response.clone()));return response;
           }
         }catch{}
@@ -1445,15 +1449,15 @@ const worker = {
       const original=await fetchImageSource(source,env,request);
       if(!original.ok||!original.body)return new Response("Image not found",{status:original.status||404});
       if(!original.headers.get("content-type")?.startsWith("image/"))return new Response("Invalid image content",{status:415});
-      const resized=await env.IMAGES.input(original.body).transform({width}).output({format:"image/webp",quality:75});
+      const resized=await env.IMAGES.input(original.body).transform({width}).output({format:thumb.mime,quality:thumb.quality});
       const transformed=await resized.response(),bytes=await transformed.arrayBuffer(),headers=new Headers(transformed.headers);
-      headers.set("content-type","image/webp");headers.set("cache-control","public, max-age=31536000, immutable");
+      headers.set("content-type",thumb.mime);headers.set("cache-control","public, max-age=31536000, immutable");
       const response=new Response(bytes,{status:transformed.status,headers});
       if(source.startsWith("/media/")){
         try{
           const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
-          const thumbnailKey=`thumbnails/w${width}/${sourceKey.replace(/\.[^.]+$/,"")}.webp`;
-          ctx.waitUntil(env.MEDIA.put(thumbnailKey,bytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}}));
+          const thumbnailKey=`thumbnails/w${width}${thumb.suffix}/${sourceKey.replace(/\.[^.]+$/,"")}.${thumb.extension}`;
+          ctx.waitUntil(env.MEDIA.put(thumbnailKey,bytes,{httpMetadata:{contentType:thumb.mime,cacheControl:"public, max-age=31536000, immutable"}}));
         }catch{}
       }
       ctx.waitUntil(cache.put(cacheKey,response.clone()));
