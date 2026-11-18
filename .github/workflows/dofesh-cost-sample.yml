@@ -16,6 +16,7 @@ jobs:
           url='https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/4afe4c16-e513-43ac-a397-26fa4141e5c9/query'
           for sql in (
             "SELECT p.id,p.item_number,p.slug,p.name,p.purchase_price_agorot, ps.source_product_id,s.supplier_number FROM products p LEFT JOIN product_suppliers ps ON ps.product_id=p.id LEFT JOIN suppliers s ON s.id=ps.supplier_id WHERE p.id=717 OR (s.supplier_number=9101 AND ps.source_product_id='742')",
+            "SELECT product_id,keyword FROM product_keywords WHERE (product_id=717 AND keyword LIKE 'dofesh-%') OR keyword='dofesh-742'",
             "SELECT v.id,v.active,v.purchase_price_agorot,group_concat(ov.value,' / ') AS option FROM product_variants v LEFT JOIN variant_option_values l ON l.variant_id=v.id LEFT JOIN product_option_values ov ON ov.id=l.option_value_id WHERE v.product_id=717 GROUP BY v.id"
           ):
             req=urllib.request.Request(url,data=json.dumps({'sql':sql}).encode(),headers={'Authorization':'Bearer '+os.environ['CF_TOKEN'],'Content-Type':'application/json'})
