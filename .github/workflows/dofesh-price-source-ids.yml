@@ -1,0 +1,30 @@
+name: Export Manar Dofesh source IDs
+on:
+  push:
+    branches: [ops/dofesh-price-source-ids]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 008c61df8c322c27b8d1c1137922e328
+        run: |
+          PYTHONPATH=tools python3 - <<'PY'
+          from dofesh_missing_products import local_catalog
+          from dofesh_variant_audit import D1
+          from pathlib import Path
+          import json
+          _, links, _ = local_catalog(D1())
+          ids = sorted(sid for sid, products in links.items() if len(products)==1)
+          assert ids
+          Path("dofesh-source-ids.json").write_text(json.dumps(ids))
+          print("Unique source IDs:",len(ids))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dofesh-source-ids
+          path: dofesh-source-ids.json
