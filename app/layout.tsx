@@ -18,6 +18,8 @@ import "./highlights.css";
 import "./store-layout.css";
 import "./floating-actions.css";
 import "./storefront-experience.css";
+// Theme rules: every selector is scoped to html[data-theme="<id>"], so other themes are untouched.
+import "./themes/rooms.css";
 
 export const metadata:Metadata={
  title:{default:"المتجر",template:"%s | المتجر"},

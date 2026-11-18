@@ -356,6 +356,8 @@ export const uiMessageDefaults: Record<string, Record<string, string>> = {
   "reviews.title": {AR: "مراجعات الزبائن", EN: "Customer reviews", HE: "ביקורות לקוחות"},
   "reviews.who_can_review": {AR: "يمكن للزبائن المسجلين الذين استلموا المنتج إضافة مراجعة.", EN: "Signed-in customers who received the product can add a review.", HE: "לקוחות מחוברים שקיבלו את המוצר יכולים להוסיף ביקורת."},
   "reviews.your_opinion": {AR: "رأيك بالمنتج", EN: "Your opinion of the product", HE: "דעתכם על המוצר"},
+  "rooms.sections": {AR: "{count} أقسام", EN: "{count} sections", HE: "{count} קטגוריות"},
+  "rooms.title": {AR: "تسوّق حسب الغرفة", EN: "Shop by room", HE: "קנו לפי חדר"},
   "save_details": {AR: "حفظ البيانات", EN: "Save details", HE: "שמירת פרטים"},
   "saved_shipping_address": {AR: "عنوان الشحن المحفوظ", EN: "Saved shipping address", HE: "כתובת משלוח שמורה"},
   "search": {AR: "ابحث", EN: "Search", HE: "חיפוש"},
