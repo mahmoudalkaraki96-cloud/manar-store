@@ -26,15 +26,24 @@ jobs:
           excluded={2381,2441,2440,2442,3097,3099,3098,3141,3989,3988,3987,3986,4159,4160,4162,4163,4164,4165,4168,4167,4166}
           rows=[p for p in json.loads(Path('jabari-products.json').read_text()) if p['item_number'] not in excluded]
           def classify(group):
-              prompt="""Classify Manar Party catalog products sold as gifts, favors, crafts and packaging. Assign each item to an existing category ID using product purpose and material. Use the most specific suitable existing category, or a suitable main category. Do not invent categories. If the name and context are too ambiguous, return category_id null and a brief concrete question in Arabic about what must be clarified. Current category is a hint and may be wrong. Return JSON object {items:[{id,category_id,question}]}, one entry for every ID. Keep questions empty for confident matches."""
-              payload=dict(model='gpt-5-mini',reasoning_effort='minimal',max_completion_tokens=4800,response_format={'type':'json_object'},messages=[{'role':'system','content':prompt},{'role':'user','content':json.dumps({'categories':categories,'products':[{k:p[k] for k in ('id','name','category')} for p in group]},ensure_ascii=False)}])
+              prompt="""Reassess EVERY Manar Party/Jabari product from scratch. Current assignment is weak evidence. Classify by actual purpose, not merely material or a word match. Use a suitable existing leaf or main category. Avoid Miscellaneous / مستلزمات متنوعة whenever a meaningful fit or cohesive new category is possible. If no existing fit, suggest a concise reusable Arabic category name and the most suitable EXISTING top-level parent ID, with brief Arabic reason. Prefer new branches under existing main categories; suggest a new main category only when none meaningfully fits, represented by parent_id=null. Never propose a category named for one SKU, brand, color or size. If the product itself is unclear, ask a concrete Arabic question instead. Return JSON {items:[{id,category_id,question,new_category,new_parent_id,reason}]}, every ID exactly once. Existing fit: category_id and empty question/new_category. New category: category_id null, nonempty new_category, reason, empty question. Unclear: category_id null, nonempty question, empty new_category."""
+              payload=dict(model='gpt-5-mini',reasoning_effort='minimal',max_completion_tokens=8500,response_format={'type':'json_object'},messages=[{'role':'system','content':prompt},{'role':'user','content':json.dumps({'categories':categories,'products':[{k:p[k] for k in ('id','name','category')} for p in group]},ensure_ascii=False)}])
               request=urllib.request.Request('https://api.openai.com/v1/chat/completions',data=json.dumps(payload).encode(),headers={'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],'Content-Type':'application/json'})
               for attempt in range(3):
                   try:
                       with urllib.request.urlopen(request,timeout=120) as response: data=json.load(response)
                       out=json.loads(data['choices'][0]['message']['content'])['items']
                       assert len(out)==len(group) and {p['id'] for p in out}=={p['id'] for p in group}
-                      assert all((p['category_id'] in valid and not p.get('question')) or (p['category_id'] is None and isinstance(p.get('question'),str) and p['question'].strip()) for p in out)
+                      for p in out:
+                          category=p.get('category_id'); proposed=str(p.get('new_category') or '').strip(); question=str(p.get('question') or '').strip()
+                          assert sum((category is not None,bool(proposed),bool(question)))==1
+                          assert category is None or category in valid
+                          if proposed:
+                              parent=p.get('new_parent_id')
+                              assert parent is None or (parent in valid and valid[parent]['parentId'] is None)
+                              assert str(p.get('reason') or '').strip()
+                          p['question']=question
+                          p['new_category']=proposed
                       return out,data.get('usage',{})
                   except (urllib.error.HTTPError,ValueError,KeyError,AssertionError) as e:
                       if isinstance(e,urllib.error.HTTPError) and e.code not in (429,500,502,503,504): raise
@@ -57,8 +66,8 @@ jobs:
           for row in rows:
               match=by_id.get(row['id'])
               category=valid.get(match['category_id']) if match else None
-              classified.append({**row,'proposedCategory':category,'question':match['question'] if match else '', 'status':'proposed' if category else 'question' if match else 'error'})
-          summary={'products':len(rows),'proposed':sum(p['status']=='proposed' for p in classified),'questions':sum(p['status']=='question' for p in classified),'errors':errors,'usage':usage}
+              classified.append({**row,'proposedCategory':category,'question':match['question'] if match else '', 'newCategory':match.get('new_category') if match else None, 'newParent':valid.get(match.get('new_parent_id')) if match else None, 'reason':match.get('reason') if match else None, 'status':'proposed' if category else 'new_category' if match and match.get('new_category') else 'question' if match else 'error'})
+          summary={'products':len(rows),'proposed':sum(p['status']=='proposed' for p in classified),'new_category_items':sum(p['status']=='new_category' for p in classified),'questions':sum(p['status']=='question' for p in classified),'errors':errors,'usage':usage}
           Path('jabari-ai-classification.json').write_text(json.dumps(classified,ensure_ascii=False))
           Path('summary.json').write_text(json.dumps(summary))
           print('SUMMARY',summary)
@@ -67,7 +76,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: jabari-ai-classification
+          name: jabari-ai-classification-with-new-categories
           path: |
             jabari-ai-classification.json
             summary.json
