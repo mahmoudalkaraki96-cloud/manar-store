@@ -1,0 +1,28 @@
+name: Set Rokon canonical storefront domain
+on:
+  push:
+    branches: [ops/rokon-canonical-www]
+permissions:
+  contents: read
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json,os,time,urllib.request
+          url="https://api.cloudflare.com/client/v4/accounts/008c61df8c322c27b8d1c1137922e328/d1/database/a5c50923-c7ec-4ede-95b3-d19b93914902/query"
+          def query(sql,params=[]):
+              req=urllib.request.Request(url,data=json.dumps(dict(sql=sql,params=params)).encode(),headers={"Authorization":"Bearer "+os.environ["CF_TOKEN"],"Content-Type":"application/json"})
+              with urllib.request.urlopen(req,timeout=40) as res: data=json.load(res)
+              assert data["success"] and data["result"][0]["success"]
+              return data["result"][0]["results"]
+          old="https://rokon-store.mahmoud-alkaraki96.workers.dev"
+          new="https://www.rokon-home.com"
+          query("UPDATE store_profile SET settings_json=json_set(settings_json,'$.publicOrigin',?),updated_at=? WHERE id=1 AND json_extract(settings_json,'$.publicOrigin')=?",[new,int(time.time()*1000),old])
+          rows=query("SELECT json_extract(settings_json,'$.publicOrigin') origin FROM store_profile WHERE id=1")
+          assert rows==[{"origin":new}], rows
+          print("VERIFIED",new)
+          PY
