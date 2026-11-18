@@ -6,6 +6,7 @@ const uuid=(v:unknown)=>typeof v==='string'&&/^[a-f0-9-]{36}$/.test(v);
 
 // First store release that reads each theme. Older stores ignore theme settings, so the platform does not offer them.
 export const themeSince:Record<string,string>={standard:'1.7.0'};
+export const PREVIEW_SINCE='1.9.0';
 const atLeast=(version:string,minimum:string)=>{const a=version.split('.').map(Number),b=minimum.split('.').map(Number);for(let i=0;i<3;i++)if(a[i]!==b[i])return a[i]>b[i];return true};
 export function themeSupport(store:Row){
  const version=String(store.app_version||'');
@@ -33,7 +34,9 @@ export async function themesApi(request:Request,env:PublishingEnv,actor:string,f
  const r=JSON.parse(store.resources_json||'{}'),support=themeSupport(store);
  if(request.method==='GET'&&!action){
   const jobs=(await db.prepare('SELECT id,theme_json,status,stage,error_code,created_at,updated_at FROM platform_theme_jobs WHERE store_id=? ORDER BY created_at DESC LIMIT 10').bind(storeId).all<Row>()).results.map((job:Row):Row=>({...job,theme:JSON.parse(job.theme_json),theme_json:undefined}));
-  return json({ready:ready(store,r),version:store.app_version||null,allowed:support.allowed,reason:support.reason,applied:jobs.find(job=>job.status==='succeeded')?.theme||null,jobs,
+  // Theme preview links (?theme_preview=) are read by store releases from 1.9.0 on.
+  const version=String(store.app_version||''),previewable=/^\d+\.\d+\.\d+$/.test(version)&&atLeast(version,PREVIEW_SINCE);
+  return json({ready:ready(store,r),version:store.app_version||null,previewable,allowed:support.allowed,reason:support.reason,applied:jobs.find(job=>job.status==='succeeded')?.theme||null,jobs,
    themes:Object.entries(themes).map(([id,theme])=>({id,label:theme.label,since:themeSince[id]||null})),radius:Object.entries(radiusOptions).map(([id,option])=>({id,label:option.label}))});
  }
  if(request.method!=='POST')return json({error:'الطريقة غير مسموحة.'},405);

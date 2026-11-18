@@ -225,3 +225,7 @@ body:has(.stickyCartBar) .whatsappFloat{bottom:calc(86px + env(safe-area-inset-b
 .pullRefresh.isBusy .pullRefreshIcon{animation:pullRefreshSpin .8s linear infinite}
 @keyframes pullRefreshSpin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.pullRefresh{transition:none}.pullRefresh.isBusy .pullRefreshIcon{animation:none}}
+
+/* 1.9.0: theme preview notice, shown only on a ?theme_preview link. */
+.themePreviewBar{position:fixed;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:2150;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:12px;background:#1f2937;color:#fff;font-size:14px;line-height:1.5;box-shadow:0 8px 24px rgba(15,23,42,.25)}
+.themePreviewBar a{flex:none;padding:6px 12px;border-radius:8px;background:#fff;color:#1f2937;font-weight:700;text-decoration:none}

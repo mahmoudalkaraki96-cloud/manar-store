@@ -422,6 +422,8 @@ export const uiMessageDefaults: Record<string, Record<string, string>> = {
   "subtotal": {AR: "إجمالي المنتجات", EN: "Subtotal", HE: "סכום ביניים"},
   "subtotal_before_delivery": {AR: "قيمة المنتجات بدون التوصيل", EN: "Subtotal before delivery", HE: "סכום ביניים לפני משלוח"},
   "the_install_button_appears_when_your_browser_sup": {AR: "زر تثبيت التطبيق يظهر عندما يكون التثبيت متاحًا في متصفحك. إخفاء زر الإشعارات لا يوقف اشتراكك.", EN: "The install button appears when your browser supports installation. Hiding the notification button keeps your subscription active.", HE: "כפתור ההתקנה מופיע כשהדפדפן מאפשר התקנה. הסתרת כפתור ההתראות משאירה את המינוי פעיל."},
+  "theme.preview_exit": {AR: "إنهاء المعاينة", EN: "End preview", HE: "סיום תצוגה מקדימה"},
+  "theme.preview_notice": {AR: "معاينة ثيم: هذا الشكل يظهر لمن يفتح رابط المعاينة فقط", EN: "Theme preview: only people with this preview link see this look", HE: "תצוגה מקדימה של ערכת עיצוב: רק מי שפותח את הקישור רואה את המראה הזה"},
   "this_code_is_unavailable_for_this_cart": {AR: "الكود غير متاح لهذه السلة", EN: "This code is unavailable for this cart", HE: "הקוד אינו זמין לעגלה הזו"},
   "top_rated": {AR: "الأعلى تقييماً", EN: "Top rated", HE: "המדורגים ביותר"},
   "total": {AR: "الإجمالي", EN: "Total", HE: "סך הכול"},

@@ -18,7 +18,7 @@ import {adminRequest} from './admin-request';
 import {archiveOrder} from './admin-order-lifecycle';
 import {customerAccountAdmin} from './customer-admin-auth';
 import {currentActor,cloudflareLogin,hashPassword as adminHashPassword,jsonBody as adminJsonBody,SecurityError} from './admin-security';
-import {storeThemeCss} from "../shared/store-theme";
+import {previewThemeId,setHtmlTheme,storeThemeCss,withPreview,type ThemeSettings} from "../shared/store-theme";
 import {persistShippingZones,ShippingZoneError} from "./shipping-zones";
 import {loadStoreLanguages,saveStoreLanguages,translatableCodes,mergeTranslations,applyDocumentLanguage,manifestLanguage,setHtmlLanguage} from "./store-languages";
 import {StoreLanguageError,validateStoreLanguages,enabledLanguages,sourceLanguage,languageTag} from "../shared/store-languages";
@@ -963,9 +963,12 @@ async function sourceUiText(env:Env,key:string,vars:Record<string,string|number>
   const languages=await loadStoreLanguages(env.DB),source=sourceLanguage(languages).code;
   return interfaceText(await loadUiTexts(env.DB,[source]),key,source,source,vars);
 }
-async function storefrontSeo(env:Env,url:URL):Promise<string>{
+async function storefrontSeo(env:Env,url:URL):Promise<string>{return (await storefrontHead(env,url)).head}
+// The head also reports the theme for <html data-theme>; ?theme_preview=<id> swaps it for this page view only.
+async function storefrontHead(env:Env,url:URL):Promise<{head:string;theme:ThemeSettings;preview:boolean}>{
   await ensureStorefrontColumns(env);
   const themeProfile=await readStoreProfile(env.DB);
+  const preview=previewThemeId(url.search),theme=withPreview(themeProfile.theme,preview);
   const settings=await env.DB.prepare("SELECT store_name,site_name_ar,site_name_en,seo_description,logo_url,favicon_url,primary_color,secondary_color,background_color FROM store_settings WHERE id=1").first<{store_name:string;site_name_ar:string;site_name_en:string;seo_description:string;logo_url:string;favicon_url:string;primary_color:string;secondary_color:string;background_color:string}>();
   const storeName=String(settings?.site_name_ar||settings?.store_name||"المتجر");
   const alternateName=String(settings?.site_name_en||"");
@@ -1006,7 +1009,10 @@ async function storefrontSeo(env:Env,url:URL):Promise<string>{
     }
   }
   const safeJson=JSON.stringify(jsonLd).replace(/</g,"\\u003c");
-  return '<style id="storefront-initial-theme">'+storeThemeCss({primaryColor:settings?.primary_color,secondaryColor:settings?.secondary_color,backgroundColor:settings?.background_color,theme:themeProfile.theme})+'</style><title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+  // A preview link must never be indexed as the store's page.
+  if(preview)robots="noindex,nofollow";
+  const head='<style id="storefront-initial-theme">'+storeThemeCss({primaryColor:settings?.primary_color,secondaryColor:settings?.secondary_color,backgroundColor:settings?.background_color,theme})+'</style><title>'+htmlEscape(title)+'</title><meta name="description" content="'+htmlEscape(description)+'"><meta name="robots" content="'+robots+'"><link rel="icon" href="'+htmlEscape(favicon)+'"><link rel="apple-touch-icon" href="'+htmlEscape(favicon)+'"><meta property="og:site_name" content="'+htmlEscape(storeName)+'"><link rel="canonical" href="'+htmlEscape(canonicalUrl)+'"><meta property="og:title" content="'+htmlEscape(title)+'"><meta property="og:description" content="'+htmlEscape(description)+'"><meta property="og:type" content="'+type+'"><meta property="og:url" content="'+htmlEscape(canonicalUrl)+'"><meta property="og:image" content="'+htmlEscape(image)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+htmlEscape(title)+'"><meta name="twitter:description" content="'+htmlEscape(description)+'"><meta name="twitter:image" content="'+htmlEscape(image)+'"><script type="application/ld+json">'+safeJson+'</script>';
+  return {head,theme,preview:Boolean(preview)};
 }
 // Page content for crawlers. A deleted product is reported as missing so the page answers 404.
 async function storefrontSeoBody(env:Env,url:URL):Promise<{html:string;missing:boolean}>{
@@ -1511,15 +1517,16 @@ const worker = {
     if(env.APP_SURFACE==="admin"){headers.set("x-robots-tag","noindex, nofollow, noarchive");headers.set("cache-control","no-store");}
     if(request.method==="GET"&&headers.get("content-type")?.includes("text/html")){
       const html=await appResponse.text();
-      const head=env.APP_SURFACE==="storefront"
-        ?(await storefrontSeo(env,url))+(await readTrackingHead(env,url))
+      const storefront=env.APP_SURFACE==="storefront"?await storefrontHead(env,url):null;
+      const head=storefront
+        ?storefront.head+(await readTrackingHead(env,url))
         :'<title>لوحة إدارة المتجر</title><meta name="description" content="لوحة إدارة المتجر"><meta name="robots" content="noindex,nofollow">';
       headers.delete("content-length");headers.delete("content-encoding");
       const seoData=env.APP_SURFACE==="storefront"?'<script id="storefront-seo" type="application/json">'+JSON.stringify({path:url.pathname,head}).replace(/</g,"\\u003c")+'</script>':"";
       const seoBody=env.APP_SURFACE==="storefront"?await storefrontSeoBody(env,url):{html:"",missing:false};
       const seoPage=insertSeoContent(injectSeo(html,head+seoData),seoBody.html);
       // The admin dashboard interface is Arabic-only by decision; the storefront follows the store's language settings.
-      const page=env.APP_SURFACE==="storefront"?applyDocumentLanguage(seoPage,await loadStoreLanguages(env.DB)):setHtmlLanguage(seoPage,"ar","rtl");
+      const page=storefront?setHtmlTheme(applyDocumentLanguage(seoPage,await loadStoreLanguages(env.DB)),storefront.theme.id,storefront.preview):setHtmlLanguage(seoPage,"ar","rtl");
       if(seoBody.missing)return new Response(page,{status:404,headers});
       return new Response(page,{status:appResponse.status,statusText:appResponse.statusText,headers});
     }

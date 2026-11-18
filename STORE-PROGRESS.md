@@ -1430,3 +1430,10 @@
 - Client app/catalog-views.ts (freshCache per view). Header search queries the server (200ms debounce) instead of filtering a full list on every page; cart drawer loads only cart+favorite ids read from storage (never from unloaded state, so syncCart cannot drop lines). Search page and /products/all still use the full catalog.
 - Measured on Manar's live catalog: full 96KB gzip; home 7KB (+1KB categories), product 3KB, largest category 23KB, search 5KB, cart 2KB.
 - Local: catalog-views tests (4, incl. home-row equivalence vs full catalog) + 216 cjs and 24 mjs tests, strict type check and verified build passed. Not published.
+
+## 2026-11-18 07:28 (Asia/Hebron) — THEME-FOUNDATION / candidate 1.9.0
+- Owner decisions: theme choice stays platform-admin only; themes are built one at a time in later versions; store colors stay from each store's settings.
+- shared/store-theme.ts: themes registry now {label,tokens}; tokens are --theme-* custom properties validated by name/value and appended to the server theme CSS. standard has no tokens, so its CSS is byte-identical (test).
+- Worker storefrontHead returns head+theme; setHtmlTheme writes <html data-theme> (and data-theme-preview). ?theme_preview=<known id> applies a theme for that page view only, sets robots noindex,nofollow, saves nothing. StoreTheme keeps the preview across client navigation and shows a preview bar with an exit link (ui texts theme.preview_notice/theme.preview_exit).
+- Platform console: themes API reports previewable (store app_version >= 1.9.0); the theme form shows a preview link to the store's domain for the selected theme.
+- Not published. No new theme yet.
