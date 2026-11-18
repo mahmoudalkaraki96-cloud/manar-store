@@ -1,0 +1,73 @@
+name: Classify Manar Jabari products with AI
+on:
+  push:
+    branches: [ops/manar-jabari-ai-classification]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: manar-jabari-products
+          run-id: '44038844720'
+          github-token: ${{ github.token }}
+      - env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import concurrent.futures,json,os,time,urllib.request,urllib.error
+          from pathlib import Path
+          categories=json.loads("[{\"id\":25,\"parentId\":18,\"name\":\"قسم الشوكولاتة\"},{\"id\":61,\"parentId\":30,\"name\":\"السبح والمصاحف\"},{\"id\":62,\"parentId\":36,\"name\":\"علب وصناديق الزجاج\"},{\"id\":9,\"parentId\":54,\"name\":\"المرايا\"},{\"id\":10,\"parentId\":43,\"name\":\"الشموع\"},{\"id\":11,\"parentId\":40,\"name\":\"الورود\"},{\"id\":31,\"parentId\":30,\"name\":\"توزيعات الأعراس والحناء\"},{\"id\":37,\"parentId\":36,\"name\":\"علب وصناديق\"},{\"id\":47,\"parentId\":46,\"name\":\"الأكريليك\"},{\"id\":51,\"parentId\":50,\"name\":\"زينة الشوكولاتة\"},{\"id\":58,\"parentId\":57,\"name\":\"أدوات العمل\"},{\"id\":32,\"parentId\":30,\"name\":\"توزيعات المواليد\"},{\"id\":38,\"parentId\":36,\"name\":\"أكياس وورق تغليف\"},{\"id\":41,\"parentId\":40,\"name\":\"الشبر والببيونات\"},{\"id\":44,\"parentId\":43,\"name\":\"العطور والصابون\"},{\"id\":48,\"parentId\":46,\"name\":\"الخشب وCNC\"},{\"id\":52,\"parentId\":50,\"name\":\"اللولو والسترس\"},{\"id\":55,\"parentId\":54,\"name\":\"الستاندات\"},{\"id\":59,\"parentId\":57,\"name\":\"الخامات\"},{\"id\":33,\"parentId\":30,\"name\":\"الحج والعمرة\"},{\"id\":39,\"parentId\":36,\"name\":\"صواني وسلال\"},{\"id\":42,\"parentId\":40,\"name\":\"الأقمشة والتول\"},{\"id\":45,\"parentId\":43,\"name\":\"المباخر\"},{\"id\":49,\"parentId\":46,\"name\":\"الطباعة والكروت\"},{\"id\":53,\"parentId\":50,\"name\":\"زينة وإكسسوارات عامة\"},{\"id\":56,\"parentId\":54,\"name\":\"المسكات واللوحات\"},{\"id\":60,\"parentId\":57,\"name\":\"مستلزمات متنوعة\"},{\"id\":34,\"parentId\":30,\"name\":\"التخرج والنجاح\"},{\"id\":35,\"parentId\":30,\"name\":\"هدايا وتوزيعات عامة\"},{\"id\":30,\"parentId\":null,\"name\":\"التوزيعات ومستلزماتها\"},{\"id\":36,\"parentId\":null,\"name\":\"التغليف والعلب\"},{\"id\":40,\"parentId\":null,\"name\":\"الورد والشبر والأقمشة\"},{\"id\":43,\"parentId\":null,\"name\":\"الشموع والعطور والمباخر\"},{\"id\":46,\"parentId\":null,\"name\":\"الأكريليك والخشب والطباعة\"},{\"id\":50,\"parentId\":null,\"name\":\"الزينة والإكسسوارات\"},{\"id\":54,\"parentId\":null,\"name\":\"المرايا والستاندات\"},{\"id\":57,\"parentId\":null,\"name\":\"أدوات ومستلزمات العمل\"}]")
+          valid={c['id']:c for c in categories}
+          excluded={2381,2441,2440,2442,3097,3099,3098,3141,3989,3988,3987,3986,4159,4160,4162,4163,4164,4165,4168,4167,4166}
+          rows=[p for p in json.loads(Path('jabari-products.json').read_text()) if p['item_number'] not in excluded]
+          def classify(group):
+              prompt="""Classify Manar Party catalog products sold as gifts, favors, crafts and packaging. Assign each item to an existing category ID using product purpose and material. Use the most specific suitable existing category, or a suitable main category. Do not invent categories. If the name and context are too ambiguous, return category_id null and a brief concrete question in Arabic about what must be clarified. Current category is a hint and may be wrong. Return JSON object {items:[{id,category_id,question}]}, one entry for every ID. Keep questions empty for confident matches."""
+              payload=dict(model='gpt-5-mini',reasoning_effort='minimal',max_completion_tokens=4800,response_format={'type':'json_object'},messages=[{'role':'system','content':prompt},{'role':'user','content':json.dumps({'categories':categories,'products':[{k:p[k] for k in ('id','name','category')} for p in group]},ensure_ascii=False)}])
+              request=urllib.request.Request('https://api.openai.com/v1/chat/completions',data=json.dumps(payload).encode(),headers={'Authorization':'Bearer '+os.environ['OPENAI_API_KEY'],'Content-Type':'application/json'})
+              for attempt in range(3):
+                  try:
+                      with urllib.request.urlopen(request,timeout=120) as response: data=json.load(response)
+                      out=json.loads(data['choices'][0]['message']['content'])['items']
+                      assert len(out)==len(group) and {p['id'] for p in out}=={p['id'] for p in group}
+                      assert all((p['category_id'] in valid and not p.get('question')) or (p['category_id'] is None and isinstance(p.get('question'),str) and p['question'].strip()) for p in out)
+                      return out,data.get('usage',{})
+                  except (urllib.error.HTTPError,ValueError,KeyError,AssertionError) as e:
+                      if isinstance(e,urllib.error.HTTPError) and e.code not in (429,500,502,503,504): raise
+                      if attempt==2: raise
+                      time.sleep(2**attempt)
+          groups=[rows[i:i+24] for i in range(0,len(rows),24)]
+          result=[]; errors=[]; usage={'prompt_tokens':0,'completion_tokens':0}
+          print('CLASSIFYING',len(rows),flush=True)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              tasks={pool.submit(classify,g):g for g in groups}
+              for task in concurrent.futures.as_completed(tasks):
+                  try:
+                      out,tokens=task.result()
+                      result.extend(out)
+                      for k in usage: usage[k]+=tokens.get(k,0)
+                  except Exception as e:
+                      errors.append({'ids':[p['id'] for p in tasks[task]],'error':type(e).__name__})
+          by_id={p['id']:p for p in result}
+          classified=[]
+          for row in rows:
+              match=by_id.get(row['id'])
+              category=valid.get(match['category_id']) if match else None
+              classified.append({**row,'proposedCategory':category,'question':match['question'] if match else '', 'status':'proposed' if category else 'question' if match else 'error'})
+          summary={'products':len(rows),'proposed':sum(p['status']=='proposed' for p in classified),'questions':sum(p['status']=='question' for p in classified),'errors':errors,'usage':usage}
+          Path('jabari-ai-classification.json').write_text(json.dumps(classified,ensure_ascii=False))
+          Path('summary.json').write_text(json.dumps(summary))
+          print('SUMMARY',summary)
+          if errors: raise SystemExit(1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jabari-ai-classification
+          path: |
+            jabari-ai-classification.json
+            summary.json
