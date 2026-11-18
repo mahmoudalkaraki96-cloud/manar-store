@@ -31,6 +31,9 @@ async function loadStoreTheme(store){
   const current=data.applied||{id:data.allowed[0],radius:'standard'};
   const theme=select('الثيم',data.themes.filter(t=>data.allowed.includes(t.id)),current.id),radius=select('الزوايا',data.radius,current.radius);
   const button=el('button','تطبيق على المتجر','btn primary full');button.type='submit';form.append(button);
+  // Preview opens the live store with ?theme_preview=<id>: only that page view changes, nothing is saved or shown to customers.
+  const base=store.customDomain?'https://'+store.customDomain+'/':store.resources?.storefrontUrl;let origin='';try{const u=new URL(base||'');if(u.protocol==='https:')origin=u.origin}catch{}
+  if(origin&&data.previewable){const preview=link('معاينة الثيم على المتجر ↗',origin+'/');preview.className='btn full';const sync=()=>{preview.href=origin+'/?theme_preview='+encodeURIComponent(theme.value)};theme.addEventListener('change',sync);sync();form.append(preview)}
   form.onsubmit=async event=>{event.preventDefault();if(!confirm('تطبيق ثيم '+themeName(theme.value)+' على '+store.nameAr+'؟'))return;button.disabled=true;notice.textContent='جاري حفظ الطلب…';try{await api('/api/stores/'+store.id+'/theme','POST',{id:theme.value,radius:radius.value,requestKey});requestKey=crypto.randomUUID();notice.textContent='تم حفظ الطلب. انتظر اكتمال التنفيذ.';void loadStoreTheme(store)}catch(e){notice.textContent=e.message;button.disabled=false}};
   section.append(form);
  }

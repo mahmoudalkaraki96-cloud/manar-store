@@ -853,3 +853,11 @@ The admin Discounts page requires store settings permission. Rules and coupon re
 
 ### Storefront policy and delivery translations
 English and Hebrew storefront copy for the current policies and shipping labels is matched against the Arabic source. Changed source text falls back to Arabic until its translation is added. The order still uses the stored shipping zone code and price.
+
+## أساس الثيمات (1.9.0)
+- shared/store-theme.ts: كل ثيم = label + tokens. التوكنز متغيرات CSS باسم --theme-* فقط، وقيمها بدون < > { } ; \ ، وتُضاف إلى style#storefront-initial-theme. الثيم الأساسي بدون توكنز، فناتجه مطابق لما قبل 1.9.0.
+- قواعد الثيم التي تحتاج أكثر من التوكنز تُكتب في app/themes/<id>.css، كلها مقيدة بـ html[data-theme="<id>"]، حتى لا تغيّر أي متجر على ثيم آخر.
+- worker/index.ts: storefrontHead يرجع الـhead والثيم، وsetHtmlTheme يكتب data-theme على <html> بعد اللغة والاتجاه.
+- المعاينة: ?theme_preview=<id> لثيم معروف فقط. لا تحفظ شيئاً، والصفحة noindex,nofollow. StoreTheme يقرأ data-theme-preview ويحافظ عليها أثناء التنقل، ويعرض شريط إنهاء المعاينة.
+- لوحة المنصة: GET /api/stores/<id>/theme يرجع previewable (نسخة المتجر 1.9.0 أو أحدث)، والنموذج يعرض رابط المعاينة على دومين المتجر.
+- إضافة ثيم جديد: تعريفه في themes، وthemeSince في platform/control/themes-api.ts بنسخة المتجر التي تحمله، وملف app/themes/<id>.css عند الحاجة.

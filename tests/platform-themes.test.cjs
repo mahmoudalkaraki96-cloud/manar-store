@@ -66,3 +66,10 @@ test('mismatched resources, invalid stored settings and expired requests never w
 });
 
 test('theme UI script parses and uses safe DOM text rather than innerHTML',()=>{const{themesScript}=load('platform/control/themes-ui.ts');new Function(themesScript);assert.equal(themesScript.includes('innerHTML'),false)});
+
+test('1.9.0: the console offers a theme preview link only to stores that read it',async()=>{
+ const{env,control}=fixture();
+ let data=await (await themesApi(request('/api/stores/store-a/theme'),env,'owner')).json();assert.equal(data.previewable,false,'1.7.0 ignores preview links');
+ control.prepare("UPDATE platform_stores SET app_version='1.9.0' WHERE id='store-a'").run();
+ data=await (await themesApi(request('/api/stores/store-a/theme'),env,'owner')).json();assert.equal(data.previewable,true);
+});

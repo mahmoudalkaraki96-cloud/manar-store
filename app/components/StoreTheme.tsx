@@ -1,9 +1,9 @@
 "use client";
 import {uiText,uiMoney} from "../store-language";
 import {loadCategories,loadProductCatalog} from "../catalog-views";
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import {usePathname} from "next/navigation";
-import {storeThemeCss} from "../../shared/store-theme";
+import {knownThemeId,storeThemeCss,withPreview} from "../../shared/store-theme";
 import {trackPageView} from "../analytics";
 import {loadCatalog} from "../catalog-types";
 import {loadStorefront,type StoreSettings} from "../storefront-types";
@@ -65,7 +65,10 @@ function applyStoreIdentity(settings:StoreSettings){
  if(!location.pathname.startsWith("/admin")){
   let style=document.getElementById("storefront-initial-theme");
   if(!style){style=document.createElement("style");style.id="storefront-initial-theme";document.head.appendChild(style)}
-  style.textContent=storeThemeCss(settings);
+  // Keep a theme preview opened by the platform admin (server marks it on <html>) until the page is reloaded without it.
+  const theme=withPreview(settings.theme,knownThemeId(document.documentElement.dataset.themePreview));
+  style.textContent=storeThemeCss({...settings,theme});
+  document.documentElement.dataset.theme=theme.id;
  }
  const root=document.documentElement;
  root.style.setProperty("--mobile-product-columns",String(settings.mobileProductColumns||2));
@@ -81,7 +84,8 @@ function applyStoreIdentity(settings:StoreSettings){
 }
 
 export default function StoreTheme(){
- const pathname=usePathname();
+ const pathname=usePathname(),[preview,setPreview]=useState(false);
+ useEffect(()=>{setPreview(Boolean(knownThemeId(document.documentElement.dataset.themePreview)))},[]);
  useEffect(()=>{if(!pathname.startsWith("/admin"))trackPageView(pathname)},[pathname]);
  useEffect(()=>{if(pathname.startsWith("/admin"))return;try{const key="manar_visitor_id",visitorId=localStorage.getItem(key)||crypto.randomUUID();localStorage.setItem(key,visitorId);void fetch("/api/analytics/visit",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({visitorId}),keepalive:true})}catch{}},[pathname]);
  useEffect(()=>{
@@ -92,5 +96,7 @@ export default function StoreTheme(){
   loadStorefront().then(({settings})=>{if(active)apply(settings)}).catch(()=>{});
   return()=>{active=false;window.removeEventListener("store-settings-updated",onSettings)};
  },[pathname]);
- return null;
+ if(!preview||pathname.startsWith("/admin"))return null;
+ // Leaving reloads the page without ?theme_preview, so the store's own theme comes back from the server.
+ return <div className="themePreviewBar" role="status"><span>{uiText("theme.preview_notice")}</span><a href={pathname}>{uiText("theme.preview_exit")}</a></div>;
 }
