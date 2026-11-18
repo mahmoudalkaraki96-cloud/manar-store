@@ -62,3 +62,24 @@ test('1.9.0: the server and the page agree on the theme, and previews are never 
  assert.match(client,/dataset\.theme=theme\.id/);
  assert.match(fs.readFileSync('platform/control/themes-ui.ts','utf8'),/\?theme_preview='\+encodeURIComponent\(theme\.value\)/);
 });
+
+test('1.9.1: the rooms theme is registered with a safe font and its own scoped stylesheet',()=>{
+ const {themeFontLink}=sandbox.exports;
+ assert.equal(themes.rooms.label,'غرف البيت');
+ assert.match(themeFontLink('rooms'),/^<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin><link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com\/css2\?family=Almarai:wght@400;700;800&display=swap">$/);
+ assert.equal(themeFontLink('standard'),'','the standard theme keeps the store font and adds nothing');
+ assert.match(storeThemeCss({theme:{id:'rooms',radius:'standard'}}),/--theme-font:Almarai;/);
+ // Every rule in a theme stylesheet must be scoped to that theme so other stores are untouched.
+ const css=fs.readFileSync('app/themes/rooms.css','utf8').replace(/\/\*[\s\S]*?\*\//g,'');
+ const selectors=css.replace(/@media[^{]*\{/g,'').split('}').map(block=>block.split('{')[0].trim()).filter(Boolean);
+ assert.ok(selectors.length>40);
+ for(const group of selectors)for(const selector of group.split(','))assert.match(selector.trim(),/^html\[data-theme="rooms"\]/,selector);
+ assert.match(fs.readFileSync('app/layout.tsx','utf8'),/import "\.\/themes\/rooms\.css";/);
+ assert.match(fs.readFileSync('worker/index.ts','utf8'),/const head=themeFontLink\(theme\.id\)\+/);
+});
+test('1.9.1: room cards appear only on the rooms theme and the cart bar photos stay hidden elsewhere',()=>{
+ const home=fs.readFileSync('app/page.tsx','utf8');
+ assert.match(home,/themeId==="rooms"&&<RoomCards categories=\{data\.categories\} products=\{data\.products\}\/>/);
+ assert.match(home,/<section className="homeRow" data-row=\{href\|\|""\}>/);
+ assert.match(fs.readFileSync('app/sticky-cart.css','utf8'),/\.stickyCartThumbs\{display:none\}/);
+});

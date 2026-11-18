@@ -1,0 +1,160 @@
+/*
+ * 1.9.1 "غرف البيت" (rooms) theme: photo-led, calm surfaces, the store's own colours as accents.
+ * Every rule is scoped to html[data-theme="rooms"], so stores on other themes are unaffected.
+ * --green / --gold are the store's primary / secondary colours from settings; --pageBg its background.
+ */
+html[data-theme="rooms"]{
+ --r-ink:#23291D;--r-muted:#5F6556;--r-line:#DDDACB;--r-white:#FFFFFF;--r-whats:#1F8F55;
+ --r-font:"Almarai",Tajawal,Arial,sans-serif;
+ --r-band:color-mix(in srgb,var(--gold) 22%,var(--pageBg,#F6F4EC));
+ --r-deep:color-mix(in srgb,var(--green) 70%,var(--r-ink));
+ --ink:var(--r-ink);--line:var(--r-line);
+}
+html[data-theme="rooms"] body,
+html[data-theme="rooms"] button,
+html[data-theme="rooms"] input,
+html[data-theme="rooms"] select,
+html[data-theme="rooms"] textarea,
+html[data-theme="rooms"] h1,html[data-theme="rooms"] h2,html[data-theme="rooms"] h3,
+html[data-theme="rooms"] .brand b{font-family:var(--r-font)!important;letter-spacing:0}
+html[data-theme="rooms"] body{color:var(--r-ink);-webkit-font-smoothing:antialiased}
+
+/* Header: a brand strip on top, then a quiet bar; categories read as text, not a coloured band. */
+html[data-theme="rooms"] .headerTopStrip{display:flex!important;justify-content:center;background:var(--green)!important;color:#fff!important;font-size:13px;padding:6px 12px}
+html[data-theme="rooms"] .headerTopStrip a{color:#fff!important}
+html[data-theme="rooms"] .headerTopStrip nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px}
+html[data-theme="rooms"] .shopHeaderWrap{background:color-mix(in srgb,var(--pageBg,#F6F4EC) 94%,transparent)!important;box-shadow:none!important;border-bottom:1px solid var(--r-line)}
+html[data-theme="rooms"] .headerSearchRow input{background:var(--r-white)!important;border:1px solid var(--r-line)!important;border-radius:999px!important}
+html[data-theme="rooms"] .categoryBar{background:transparent!important;border-top:1px solid var(--r-line)}
+html[data-theme="rooms"] .categoryBar .catItem>a{color:var(--r-ink)!important;font-weight:700;background:none!important;border-radius:0!important;border-bottom:2px solid transparent}
+html[data-theme="rooms"] .categoryBar .catItem>a:hover,
+html[data-theme="rooms"] .categoryBar .catItem>a:focus-visible{border-bottom-color:var(--green);color:var(--green)!important}
+html[data-theme="rooms"] .themeStrip{height:0!important;background:none!important}
+html[data-theme="rooms"] .storeHighlightRing{border-color:var(--r-line)!important;box-shadow:none!important}
+
+/* Slider: edge to edge, no frame. */
+html[data-theme="rooms"] .imageOnlySlider{width:100%!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html[data-theme="rooms"] .imageOnlySlider .sliderVisual{border-radius:0!important}
+html[data-theme="rooms"] .imageOnlySlider .sliderDots button.active{background:var(--green)}
+
+/* Shop by room: large photo cards with the name on a solid label, readable on any photo. */
+html[data-theme="rooms"] .roomCards{width:min(1180px,100%);margin:0 auto;padding:30px 16px 6px}
+html[data-theme="rooms"] .roomCardsHead h2{margin:0 0 14px;font-size:22px;font-weight:800;line-height:1.4}
+html[data-theme="rooms"] .roomCardsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+html[data-theme="rooms"] .roomCard{position:relative;display:block;aspect-ratio:4/5;border-radius:calc(14px*var(--theme-radius,1));overflow:hidden;background:var(--r-white);color:var(--r-ink);text-decoration:none}
+html[data-theme="rooms"] .roomCard:first-child{grid-column:1/-1;aspect-ratio:16/10}
+html[data-theme="rooms"] .roomCard img,
+html[data-theme="rooms"] .roomCardBlank{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:color-mix(in srgb,var(--gold) 25%,var(--r-white));transition:transform .5s ease}
+html[data-theme="rooms"] .roomCard:hover img{transform:scale(1.04)}
+html[data-theme="rooms"] .roomCardLabel{position:absolute;inset-inline:8px;bottom:8px;display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:calc(10px*var(--theme-radius,1));background:var(--r-white)}
+html[data-theme="rooms"] .roomCardLabel>span{flex:1;min-width:0}
+html[data-theme="rooms"] .roomCardLabel b{display:block;font-weight:800;font-size:14px;line-height:1.45}
+html[data-theme="rooms"] .roomCardLabel small{display:block;color:var(--r-muted);font-size:12.5px;line-height:1.5}
+html[data-theme="rooms"] .roomCardLabel i{display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-style:normal;font-size:13px}
+html[data-theme="rooms"] .roomCard:first-child .roomCardLabel b{font-size:18px}
+@media(min-width:860px){
+ html[data-theme="rooms"] .roomCards{padding:44px 24px 8px}
+ html[data-theme="rooms"] .roomCardsHead h2{font-size:26px}
+ html[data-theme="rooms"] .roomCardsGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+ html[data-theme="rooms"] .roomCard:first-child{grid-column:span 2;aspect-ratio:auto}
+ html[data-theme="rooms"] .roomCardLabel{inset-inline:12px;bottom:12px;padding:14px 16px}
+ html[data-theme="rooms"] .roomCardLabel b{font-size:17px}
+ html[data-theme="rooms"] .roomCard:first-child .roomCardLabel b{font-size:22px}
+}
+
+/* Home rows: a plain heading instead of a coloured banner; new arrivals sit on a full-width band. */
+html[data-theme="rooms"] .homeRow{background:transparent!important;padding-top:30px!important}
+html[data-theme="rooms"] .homeRow[data-row="/products/newest"]{background:var(--r-band)!important;box-shadow:0 0 0 100vmax var(--r-band);clip-path:inset(0 -100vmax);margin-top:26px;padding-bottom:26px!important}
+html[data-theme="rooms"] .homeCategoryBanner{background:none!important;border:0!important;box-shadow:none!important;min-height:0!important;padding:0 2px!important;margin:0 0 14px!important;display:flex!important;align-items:baseline;justify-content:space-between;gap:12px;border-radius:0!important}
+html[data-theme="rooms"] .homeCategoryBanner::before,
+html[data-theme="rooms"] .homeCategoryBanner::after,
+html[data-theme="rooms"] .homeCategoryBanner>span,
+html[data-theme="rooms"] .homeCategoryBanner .categoryBannerIcon,
+html[data-theme="rooms"] .homeCategoryBanner small{display:none!important}
+html[data-theme="rooms"] .homeCategoryBanner h2{margin:0!important;font-size:22px!important;font-weight:800!important;line-height:1.4;color:var(--r-ink)!important}
+html[data-theme="rooms"] .homeCategoryBanner>a{background:none!important;color:var(--green)!important;padding:2px 0!important;font-size:14px!important;font-weight:700;border-radius:0!important;box-shadow:none!important;border-bottom:1px solid currentColor;white-space:nowrap}
+@media(min-width:860px){html[data-theme="rooms"] .homeCategoryBanner h2{font-size:26px!important}}
+
+/* Sub-categories: text tabs in one scrolling line. */
+html[data-theme="rooms"] .categoryCards{display:flex!important;flex-wrap:nowrap!important;gap:18px!important;overflow-x:auto;scrollbar-width:none;margin:-4px 2px 14px!important;padding:0 0 2px!important}
+html[data-theme="rooms"] .categoryCards::-webkit-scrollbar{display:none}
+html[data-theme="rooms"] .categoryCards .categoryCard{flex:none;width:auto!important;min-height:0!important;padding:6px 0!important;background:none!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important;box-shadow:none!important;color:var(--r-muted)!important;font-weight:700;white-space:nowrap}
+html[data-theme="rooms"] .categoryCards .categoryCard:hover{color:var(--r-ink)!important;border-bottom-color:var(--green)!important}
+html[data-theme="rooms"] .categoryCards .categoryCardIcon,
+html[data-theme="rooms"] .categoryCards .categoryCardArrow{display:none!important}
+
+/* Product cards: no frame or shadow; the photo leads, then name, price and the add button. */
+html[data-theme="rooms"] .product.softProduct,
+html[data-theme="rooms"] article.product{border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;overflow:visible!important}
+html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(8px*var(--theme-radius,1))!important;overflow:hidden;border:0!important}
+html[data-theme="rooms"] .product .productCategoryLabel{display:none!important}
+html[data-theme="rooms"] .product .favBtn{background:rgba(255,255,255,.92)!important;color:var(--r-ink)!important;border:0!important;box-shadow:none!important}
+html[data-theme="rooms"] .product .productInfo{padding:10px 2px 0!important;text-align:start!important;background:transparent!important}
+html[data-theme="rooms"] .product .productInfo h3{font-size:14px!important;font-weight:700!important;line-height:1.55!important;color:var(--r-ink)!important;text-align:start!important}
+html[data-theme="rooms"] .product .price,
+html[data-theme="rooms"] .product .price b{color:var(--green)!important;font-weight:800!important;text-align:start!important;justify-content:flex-start!important}
+html[data-theme="rooms"] .product .price b{font-size:16px!important}
+html[data-theme="rooms"] .product .cardAddButton{background:transparent!important;color:var(--green)!important;border:1px solid var(--green)!important;border-radius:999px!important;font-weight:800!important;box-shadow:none!important}
+html[data-theme="rooms"] .product .cardAddButton:hover:not(:disabled){background:var(--green)!important;color:#fff!important}
+
+/* Product page. */
+html[data-theme="rooms"] .productPage .bigPrice,
+html[data-theme="rooms"] .productPage .bigPrice b{color:var(--green)!important;font-weight:800!important}
+html[data-theme="rooms"] .productBreadcrumb a{color:var(--green)!important;font-weight:700}
+html[data-theme="rooms"] .productPage h1{font-weight:800!important;line-height:1.5}
+html[data-theme="rooms"] .gallery .mainImage{background:var(--r-white)!important;border:0!important;border-radius:calc(12px*var(--theme-radius,1))!important;box-shadow:none!important}
+html[data-theme="rooms"] .thumbs button,html[data-theme="rooms"] .thumbs img{border-radius:calc(8px*var(--theme-radius,1))!important}
+html[data-theme="rooms"] .thumbs .active,html[data-theme="rooms"] .thumbs [aria-current="true"]{border-color:var(--green)!important;box-shadow:0 0 0 1px var(--green)!important}
+html[data-theme="rooms"] .detailVariantChoices button{min-height:44px;border:1px solid var(--r-line)!important;border-radius:999px!important;background:var(--r-white)!important;color:var(--r-ink)!important;font-weight:700;box-shadow:none!important}
+html[data-theme="rooms"] .detailVariantChoices button[aria-pressed="true"],
+html[data-theme="rooms"] .detailVariantChoices button.active,
+html[data-theme="rooms"] .detailVariantChoices button.selected{border-color:var(--green)!important;box-shadow:inset 0 0 0 1px var(--green)!important;background:color-mix(in srgb,var(--green) 8%,var(--r-white))!important}
+html[data-theme="rooms"] .productPage .gallery,
+html[data-theme="rooms"] .productPage .details{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+html[data-theme="rooms"] .productPage .details{padding-inline:2px!important}
+html[data-theme="rooms"] .gallery .mainImage{padding:0!important}
+html[data-theme="rooms"] .details>small{color:var(--r-muted)!important;font-weight:700}
+html[data-theme="rooms"] .detailFav{background:var(--r-white)!important;border:1px solid var(--r-line)!important;box-shadow:none!important;color:var(--r-ink)!important}
+html[data-theme="rooms"] .productDetailLine{height:1px!important;background:var(--r-line)!important;border:0!important}
+html[data-theme="rooms"] .productVariantSection{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
+html[data-theme="rooms"] .productVariantHeading{padding:0!important}
+html[data-theme="rooms"] .productPage .detailVariantChoices{display:flex!important;flex-wrap:wrap!important;gap:8px!important}
+html[data-theme="rooms"] .productPage .detailVariantChoices button{flex:0 0 auto!important;width:auto!important;max-width:100%!important;white-space:nowrap;padding:6px 14px!important}
+html[data-theme="rooms"] .variantMeta span{background:transparent!important;border:0!important;color:var(--green)!important;font-weight:800;padding:0!important}
+html[data-theme="rooms"] .productPage .details .buyRow{background:var(--pageBg,#F6F4EC)!important;border:0!important;box-shadow:none!important}
+html[data-theme="rooms"] .productPage .details .buyRow .mainBtn{min-height:50px!important;border:0!important;border-radius:999px!important;background:var(--green)!important;color:#fff!important;font-weight:800!important;box-shadow:none!important}
+html[data-theme="rooms"] .productPage .details .quantityControl{border:1px solid var(--r-line)!important;border-radius:12px!important;background:var(--r-white)!important;box-shadow:none!important}
+html[data-theme="rooms"] .inlineSpecifications{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:0!important}
+html[data-theme="rooms"] .inlineSpecifications h3{font-weight:800!important}
+html[data-theme="rooms"] .productWhatsapp{border:1px solid var(--r-whats)!important;border-radius:999px!important;background:var(--r-white)!important;color:var(--r-whats)!important;font-weight:800!important;box-shadow:none!important}
+html[data-theme="rooms"] .productShareRow button,html[data-theme="rooms"] .productShareRow a{border:1px solid var(--r-line)!important;border-radius:999px!important;background:transparent!important;color:var(--r-ink)!important;font-weight:700;box-shadow:none!important}
+html[data-theme="rooms"] .productDescriptionCard{background:transparent!important;border:0!important;border-top:1px solid var(--r-line)!important;border-radius:0!important;box-shadow:none!important;padding-inline:0!important}
+html[data-theme="rooms"] .specificationsGrid{border:1px solid var(--r-line)!important;border-radius:calc(10px*var(--theme-radius,1))!important;overflow:hidden;background:var(--r-white)!important;gap:0!important}
+html[data-theme="rooms"] .specificationsGrid>*{border-radius:0!important;box-shadow:none!important}
+
+/* Cart bar: the store colour, with product photos, and a white checkout button. */
+html[data-theme="rooms"] .stickyCartBar{background:var(--green)!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:0 -6px 20px rgba(35,41,29,.18)!important}
+html[data-theme="rooms"] .stickyCartSummary{color:#fff!important;background:none!important}
+html[data-theme="rooms"] .stickyCartSummary *{color:inherit!important}
+html[data-theme="rooms"] .stickyCartSummary small{opacity:.85}
+html[data-theme="rooms"] .stickyCartThumbs{display:flex;flex:none}
+html[data-theme="rooms"] .stickyCartThumbs:empty{display:none}
+html[data-theme="rooms"] .stickyCartThumbs img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--green);background:#fff}
+html[data-theme="rooms"] .stickyCartThumbs img+img{margin-inline-start:-12px}
+@media(max-width:420px){html[data-theme="rooms"] .stickyCartThumbs img:nth-child(n+3){display:none}}
+html[data-theme="rooms"] .stickyCheckoutButton{background:#fff!important;color:var(--green)!important;border:0!important;border-radius:999px!important;font-weight:800!important;box-shadow:none!important}
+
+/* Cart drawer. */
+html[data-theme="rooms"] .cartOverlay .cart{background:var(--pageBg,#F6F4EC)!important}
+html[data-theme="rooms"] .cartOverlay .cartHead{border-bottom:1px solid var(--r-line)!important}
+html[data-theme="rooms"] .cartOverlay .cartHead h2{font-weight:800!important}
+html[data-theme="rooms"] .cartOverlay .cartItem{background:transparent!important;border:0!important;border-bottom:1px solid var(--r-line)!important;border-radius:0!important;box-shadow:none!important}
+html[data-theme="rooms"] .cartOverlay .cartItem img{border-radius:calc(8px*var(--theme-radius,1))!important}
+html[data-theme="rooms"] .cartOverlay .cartSummary{background:var(--r-white)!important;border-top:1px solid var(--r-line)!important;box-shadow:none!important}
+html[data-theme="rooms"] .cartOverlay .cartSummary button:last-child,
+html[data-theme="rooms"] .cartOverlay .cartSummary .mainBtn{min-height:50px;border-radius:999px!important;background:var(--green)!important;color:#fff!important;font-weight:800!important}
+html[data-theme="rooms"] .cartOverlay .cartCustomizationEditor{background:var(--r-white)!important;border:1px solid var(--r-line)!important;box-shadow:none!important}
+
+/* Footer: the store colour, deepened. */
+html[data-theme="rooms"] .storeFooter{background:var(--r-deep)!important;color:#EEF0E6!important;border:0!important;border-radius:0!important}
+html[data-theme="rooms"] .storeFooter a,html[data-theme="rooms"] .storeFooter h2,html[data-theme="rooms"] .storeFooter b{color:#fff!important}

@@ -4,8 +4,13 @@ const color=(value:unknown,fallback:string)=>typeof value==="string"&&/^#(?:[0-9
 // Themes are data shared by every store. Each one is a label plus design tokens (CSS custom properties named --theme-*)
 // and, when it needs more than tokens, rules scoped to html[data-theme="<id>"] in app/themes/<id>.css.
 // "standard" is the store design as it was before themes existed, so it has no tokens and no rules.
-type ThemeDefinition={label:string;tokens:Readonly<Record<string,string>>};
-export const themes={standard:{label:"الأساسي",tokens:{}}} as const satisfies Record<string,ThemeDefinition>;
+// font: a Google Fonts family query (letters, digits, spaces, +:;@,.) loaded only on stores using the theme.
+type ThemeDefinition={label:string;tokens:Readonly<Record<string,string>>;font?:string};
+export const themes={
+ standard:{label:"الأساسي",tokens:{}},
+ // 1.9.1: photo-led home-goods layout (Rokon). Store colours stay from settings; rules live in app/themes/rooms.css.
+ rooms:{label:"غرف البيت",tokens:{"--theme-font":"Almarai"},font:"Almarai:wght@400;700;800"}
+} as const satisfies Record<string,ThemeDefinition>;
 export const radiusOptions={standard:{label:"افتراضية",scale:1},sharp:{label:"حادة",scale:0.4},round:{label:"دائرية",scale:1.5}} as const;
 export type ThemeId=keyof typeof themes;
 export type RadiusOption=keyof typeof radiusOptions;
@@ -24,6 +29,12 @@ export function withPreview(value:unknown,preview:ThemeId|null):ThemeSettings{co
 const tokenName=/^--theme-[a-z][a-z0-9-]*$/,tokenValue=/^[^<>{};\\]*$/;
 export function themeTokensCss(id:ThemeId){
  return Object.entries(themes[id].tokens as Record<string,string>).filter(([name,value])=>tokenName.test(name)&&tokenValue.test(value)).map(([name,value])=>name+":"+value+";").join("");
+}
+const fontQuery=/^[A-Za-z0-9 +:;@,.]{1,120}$/;
+/** Stylesheet link for the theme's font, or "" when the theme uses the store default (Tajawal). */
+export function themeFontLink(id:ThemeId){
+ const font=(themes[id] as ThemeDefinition).font;
+ return font&&fontQuery.test(font)?'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family='+font.replace(/ /g,"+")+'&display=swap">':"";
 }
 /** Writes the theme on <html> (data-theme, plus data-theme-preview while previewing) so theme rules apply before first paint. */
 export function setHtmlTheme(html:string,id:ThemeId,preview:boolean){

@@ -5,7 +5,7 @@ const json=(value:unknown,status=200)=>Response.json(value,{status,headers:{'cac
 const uuid=(v:unknown)=>typeof v==='string'&&/^[a-f0-9-]{36}$/.test(v);
 
 // First store release that reads each theme. Older stores ignore theme settings, so the platform does not offer them.
-export const themeSince:Record<string,string>={standard:'1.7.0'};
+export const themeSince:Record<string,string>={standard:'1.7.0',rooms:'1.9.1'};
 export const PREVIEW_SINCE='1.9.0';
 const atLeast=(version:string,minimum:string)=>{const a=version.split('.').map(Number),b=minimum.split('.').map(Number);for(let i=0;i<3;i++)if(a[i]!==b[i])return a[i]>b[i];return true};
 export function themeSupport(store:Row){

@@ -1437,3 +1437,10 @@
 - Worker storefrontHead returns head+theme; setHtmlTheme writes <html data-theme> (and data-theme-preview). ?theme_preview=<known id> applies a theme for that page view only, sets robots noindex,nofollow, saves nothing. StoreTheme keeps the preview across client navigation and shows a preview bar with an exit link (ui texts theme.preview_notice/theme.preview_exit).
 - Platform console: themes API reports previewable (store app_version >= 1.9.0); the theme form shows a preview link to the store's domain for the selected theme.
 - Not published. No new theme yet.
+
+## 2026-11-18 08:45 (Asia/Hebron) — ROOMS-THEME / candidate 1.9.1
+- Owner approved the Rokon "غرف البيت" mockup (full-width slider, large room cards, olive identity, cart bar, Almarai) and asked for an initial build to iterate on.
+- shared/store-theme.ts: themes.rooms {label, tokens --theme-font, font Almarai}; themeFontLink() adds the Google Fonts link only for themes with a font (validated query). worker head prepends it. themes-api themeSince rooms 1.9.1.
+- app/theme-hooks.ts useThemeId() follows <html data-theme>. app/components/RoomCards.tsx renders "Shop by room" cards (banner, else first product photo in the tree, else icon) on the home page only for rooms. homeRow carries data-row={href}; StickyCartBar renders hidden product thumbs (shown by the theme).
+- app/themes/rooms.css: header strip, quiet header/category bar, full-width slider, room cards, plain row headings, new-arrivals band (data-row=/products/newest), sub-category text tabs, frameless cards, product page (gallery/details/variants/buy row/specs), cart bar and drawer, footer. All selectors scoped (test).
+- Verified by injecting the stylesheet into live Rokon in a private browser session (phone + desktop): home, rows, product page with colour variants, cart bar and drawer. Not published; Rokon still on the standard theme.

@@ -14,4 +14,5 @@ body:has(.stickyCartBar) .cookieConsent{bottom:calc(96px + env(safe-area-inset-b
 @media(max-width:480px){.stickyCartInner{gap:12px}.stickyCartSummary{gap:1px 9px;font-size:13px}.stickyCartSummary strong{font-size:18px}.stickyCartSummary small{font-size:11px}.stickyCheckoutButton{padding:10px 17px;font-size:14px;flex-shrink:0}.stickyCheckoutButton span{margin-inline-start:5px}}
 @media(prefers-reduced-motion:reduce){.stickyCheckoutButton{animation:none}}
 @media print{.stickyCartBar,.stickyCartSpace,.cartCustomizationDialog{display:none!important}}
-
+/* Product photos in the cart bar are shown only by themes that ask for them (1.9.1 rooms). */
+.stickyCartThumbs{display:none}

@@ -73,3 +73,12 @@ test('1.9.0: the console offers a theme preview link only to stores that read it
  control.prepare("UPDATE platform_stores SET app_version='1.9.0' WHERE id='store-a'").run();
  data=await (await themesApi(request('/api/stores/store-a/theme'),env,'owner')).json();assert.equal(data.previewable,true);
 });
+
+test('1.9.1: the rooms theme is offered only to stores on 1.9.1 or later',async()=>{
+ const{env,control}=fixture();
+ control.prepare("UPDATE platform_stores SET app_version='1.9.0' WHERE id='store-a'").run();
+ let data=await (await themesApi(request('/api/stores/store-a/theme'),env,'owner')).json();assert.deepEqual(data.allowed,['standard']);
+ control.prepare("UPDATE platform_stores SET app_version='1.9.1' WHERE id='store-a'").run();
+ data=await (await themesApi(request('/api/stores/store-a/theme'),env,'owner')).json();assert.deepEqual(data.allowed,['standard','rooms']);
+ assert.ok(data.themes.some(theme=>theme.id==='rooms'&&theme.label==='غرف البيت'&&theme.since==='1.9.1'));
+});

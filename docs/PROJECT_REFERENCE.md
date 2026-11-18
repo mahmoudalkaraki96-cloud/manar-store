@@ -861,3 +861,10 @@ English and Hebrew storefront copy for the current policies and shipping labels 
 - المعاينة: ?theme_preview=<id> لثيم معروف فقط. لا تحفظ شيئاً، والصفحة noindex,nofollow. StoreTheme يقرأ data-theme-preview ويحافظ عليها أثناء التنقل، ويعرض شريط إنهاء المعاينة.
 - لوحة المنصة: GET /api/stores/<id>/theme يرجع previewable (نسخة المتجر 1.9.0 أو أحدث)، والنموذج يعرض رابط المعاينة على دومين المتجر.
 - إضافة ثيم جديد: تعريفه في themes، وthemeSince في platform/control/themes-api.ts بنسخة المتجر التي تحمله، وملف app/themes/<id>.css عند الحاجة.
+
+## ثيم «غرف البيت» (1.9.1)
+- المعرّف rooms. يُختار من لوحة المنصة للمتاجر على 1.9.1 أو أحدث (themeSince في platform/control/themes-api.ts).
+- الخط: themes.rooms.font (Almarai) يضيف رابط Google Fonts في الـhead عبر themeFontLink فقط للمتاجر على الثيم.
+- التصميم كله في app/themes/rooms.css، وكل محدد يبدأ بـ html[data-theme="rooms"]. اختبار store-theme يرفض أي قاعدة غير مقيدة.
+- إضافات الكود الصغيرة: RoomCards في الرئيسية (فقط على rooms عبر useThemeId)، data-row على صفوف الرئيسية، وصور مصغّرة مخفية افتراضياً في شريط السلة.
+- صورة بطاقة الغرفة: بانر القسم، وإلا أول صورة منتج في القسم وفروعه، وإلا أيقونة القسم.
