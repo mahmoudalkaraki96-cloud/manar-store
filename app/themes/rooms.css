@@ -88,13 +88,14 @@ html[data-theme="rooms"] .categoryCards .categoryCard:hover{color:var(--r-ink)!i
 html[data-theme="rooms"] .categoryCards .categoryCardIcon,
 html[data-theme="rooms"] .categoryCards .categoryCardArrow{display:none!important}
 
-/* Product cards: no frame or shadow; the photo leads, then name, price and the add button. */
+/* Product cards: a barely-there surface keeps each name and price with its own photo (1.9.3); no hard frame. */
 html[data-theme="rooms"] .product.softProduct,
-html[data-theme="rooms"] article.product{border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;overflow:visible!important;padding:0!important}
-html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(14px*var(--theme-radius,1))!important;overflow:hidden;border:0!important;box-shadow:0 0 0 1px var(--r-hair),0 8px 20px -14px rgba(35,41,29,.5)!important}
+html[data-theme="rooms"] article.product{border:0!important;box-shadow:inset 0 0 0 1px rgba(35,41,29,.06)!important;background:color-mix(in srgb,#fff 62%,transparent)!important;border-radius:calc(16px*var(--theme-radius,1))!important;overflow:hidden!important;padding:6px 6px 10px!important}
+html[data-theme="rooms"] .rowProducts{gap:10px!important}
+html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(12px*var(--theme-radius,1))!important;overflow:hidden;border:0!important;box-shadow:0 0 0 1px var(--r-hair),0 8px 20px -14px rgba(35,41,29,.5)!important}
 html[data-theme="rooms"] .product .productCategoryLabel{display:none!important}
 html[data-theme="rooms"] .product .favBtn{background:rgba(255,255,255,.92)!important;color:var(--r-ink)!important;border:0!important;box-shadow:none!important}
-html[data-theme="rooms"] .product .productInfo{padding:10px 2px 0!important;text-align:start!important;background:transparent!important}
+html[data-theme="rooms"] .product .productInfo{padding:10px 6px 0!important;text-align:start!important;background:transparent!important}
 html[data-theme="rooms"] .product .productInfo h3{font-size:14px!important;font-weight:700!important;line-height:1.55!important;color:var(--r-ink)!important;text-align:start!important}
 html[data-theme="rooms"] .product .price,
 html[data-theme="rooms"] .product .price b{color:var(--green)!important;font-weight:800!important;text-align:start!important;justify-content:flex-start!important}
