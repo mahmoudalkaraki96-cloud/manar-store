@@ -1447,3 +1447,9 @@
 
 ## 2026-11-19 08:39 (Asia/Hebron) — ROOMS-HEADING / candidate 1.9.2
 - Owner asked the rooms-theme home heading to read «تسوّق حسب القسم» instead of «تسوّق حسب الغرفة». Changed the rooms.title default (AR/EN/HE); stores that edited this text keep their own wording. Not published.
+
+## 2026-11-19 15:36 (Asia/Hebron) — ROOMS-FIXES / candidate 1.9.3
+- Owner reported (rooms theme, phone): search opens wrong, page freezes while scrolling as products load, weak edges between buttons and cards.
+- Root cause of the freeze (all themes): StoreRefresh's pageshow check treated never-loaded caches as stale, so every page load also fetched the full /api/catalog (Rokon: 3160 products, ~4.6MB). freshCache.isStale is now false for never-loaded data, refreshCatalog only refreshes a catalog this visit loaded (refreshLoaded).
+- Rooms theme: phone search panel anchored under the input; photo shimmer until load (ProductCard marks data-loaded); spinner on loading states; no header blur; band via border-image; content-visibility on far rows; bordered white cards, filled add button, darker control edges.
+- Verified by injecting the CSS on the live Rokon store (390px). Not published.
