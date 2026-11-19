@@ -106,7 +106,10 @@ export function freshCache<T>(name:string,fetcher:()=>Promise<T>,onChange?:(valu
    return Promise.resolve(value);
   },
   refresh:fetchNow,
-  isStale:()=>value===undefined||Date.now()-loadedAt>STORE_DATA_MAX_AGE_MS,
+  /** Refreshes only data this visit already loaded (never downloads a list no page asked for). */
+  refreshLoaded:():Promise<T|undefined>=>value===undefined?Promise.resolve(undefined):fetchNow(),
+  // 1.9.3: data never loaded is not "stale"; a page that needs it loads it itself.
+  isStale:()=>value!==undefined&&Date.now()-loadedAt>STORE_DATA_MAX_AGE_MS,
   current:()=>value,
  };
 }
@@ -121,7 +124,8 @@ const catalogCache = freshCache<CatalogResponse>("catalog", () =>
 export function loadCatalog(): Promise<CatalogResponse> {
   return catalogCache.get();
 }
-export const refreshCatalog = () => catalogCache.refresh();
+/** Refreshes the full catalog only when this visit loaded it (search, all products); it is large. */
+export const refreshCatalog = () => catalogCache.refreshLoaded();
 export const catalogIsStale = () => catalogCache.isStale();
 
 export function stockLimit(product:Product|undefined,variant?:Variant):number{return product?.inventoryEnabled===false?99:Math.max(0,Number(variant?.stock??product?.stock)||0)}

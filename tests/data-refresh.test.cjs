@@ -30,3 +30,13 @@ test("pages that show products or settings reload when store data changes",()=>{
   assert.match(fs.readFileSync(file,"utf8"),/\[[^\]]*\bstoreDataVersion\b[^\]]*\]\)/,file);
  const layout=fs.readFileSync("app/layout.tsx","utf8");assert.match(layout,/<StoreRefresh\/>/);
 });
+
+test("1.9.3: coming back to the page never downloads data this visit did not load (the full catalog is large)",async()=>{
+ const {freshCache}=load();let calls=0;
+ const cache=freshCache("catalog",async()=>{calls++;return {products:[1]}});
+ assert.equal(cache.isStale(),false,"never loaded is not stale");
+ assert.equal(await cache.refreshLoaded(),undefined);assert.equal(calls,0,"no request for data no page asked for");
+ await cache.get();assert.equal(calls,1);await cache.refreshLoaded();assert.equal(calls,2,"loaded data is refreshed");
+ const source=fs.readFileSync("app/catalog-types.ts","utf8");
+ assert.match(source,/export const refreshCatalog = \(\) => catalogCache\.refreshLoaded\(\)/);
+});

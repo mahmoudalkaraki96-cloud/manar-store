@@ -71,7 +71,9 @@ test('1.9.1: the rooms theme is registered with a safe font and its own scoped s
  assert.match(storeThemeCss({theme:{id:'rooms',radius:'standard'}}),/--theme-font:Almarai;/);
  // Every rule in a theme stylesheet must be scoped to that theme so other stores are untouched.
  const css=fs.readFileSync('app/themes/rooms.css','utf8').replace(/\/\*[\s\S]*?\*\//g,'');
- const selectors=css.replace(/@media[^{]*\{/g,'').split('}').map(block=>block.split('{')[0].trim()).filter(Boolean);
+  // Animations are allowed only under a theme-prefixed name (1.9.3).
+ const frames=[...css.matchAll(/@keyframes\s+([\w-]+)/g)].map(m=>m[1]);for(const name of frames)assert.match(name,/^rooms[A-Z]/,name);
+ const selectors=css.replace(/@keyframes\s+[\w-]+\{(?:[^{}]*\{[^}]*\})*\s*\}/g,'').replace(/@media[^{]*\{/g,'').split('}').map(block=>block.split('{')[0].trim()).filter(Boolean);
  assert.ok(selectors.length>40);
  for(const group of selectors)for(const selector of group.split(','))assert.match(selector.trim(),/^html\[data-theme="rooms"\]/,selector);
  assert.match(fs.readFileSync('app/layout.tsx','utf8'),/import "\.\/themes\/rooms\.css";/);
@@ -82,4 +84,24 @@ test('1.9.1: room cards appear only on the rooms theme and the cart bar photos s
  assert.match(home,/themeId==="rooms"&&<RoomCards categories=\{data\.categories\} products=\{data\.products\}\/>/);
  assert.match(home,/<section className="homeRow" data-row=\{href\|\|""\}>/);
  assert.match(fs.readFileSync('app/sticky-cart.css','utf8'),/\.stickyCartThumbs\{display:none\}/);
+});
+
+test("1.9.3: rooms theme fixes phone search, shows loading and keeps scrolling light",()=>{
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ assert.match(css,/@media\(max-width:720px\)\{\s*html\[data-theme="rooms"\] \.globalSearch\{position:relative\}\s*html\[data-theme="rooms"\] \.globalSearchPanel\{position:absolute!important;top:calc\(100% \+ 8px\)!important/,"search panel opens under the search box");
+ assert.match(css,/img\[data-card-image\]:not\(\[data-loaded\]\)\)::before/,"photos shimmer until loaded");
+ assert.match(css,/\.storeState:not\(\.error\)::before/,"loading spinner");
+ assert.match(css,/backdrop-filter:none!important/,"no blur behind the sticky header");
+ assert.doesNotMatch(css,/100vmax var\(--r-band\)|clip-path:inset\(0 -100vmax\)/,"band without huge shadow");
+ const card=fs.readFileSync("app/components/ProductCard.tsx","utf8");
+ assert.match(card,/data-card-image="" onLoad=\{event=>\{event\.currentTarget\.dataset\.loaded="1"\}\}/);
+});
+
+test("1.9.3: the category bar marks the current category and the rooms theme shows it as a filled chip",()=>{
+ const header=fs.readFileSync("app/components/StoreHeader.tsx","utf8");
+ assert.match(header,/aria-current=\{current\?"page":undefined\}/);
+ assert.match(header,/children\.some\(x=>pathname===`\/category\/\$\{x\.slug\}`\)/,"a sub-category page highlights its parent");
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ assert.match(css,/\.categoryBar \.catItem>a\[aria-current="page"\]\{background:var\(--green\)!important;color:#fff!important/);
+ assert.doesNotMatch(css,/article\.product\{border:1px/,"cards stay frameless; the photo tile carries the edge");
 });

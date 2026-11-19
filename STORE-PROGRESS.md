@@ -1444,3 +1444,12 @@
 - app/theme-hooks.ts useThemeId() follows <html data-theme>. app/components/RoomCards.tsx renders "Shop by room" cards (banner, else first product photo in the tree, else icon) on the home page only for rooms. homeRow carries data-row={href}; StickyCartBar renders hidden product thumbs (shown by the theme).
 - app/themes/rooms.css: header strip, quiet header/category bar, full-width slider, room cards, plain row headings, new-arrivals band (data-row=/products/newest), sub-category text tabs, frameless cards, product page (gallery/details/variants/buy row/specs), cart bar and drawer, footer. All selectors scoped (test).
 - Verified by injecting the stylesheet into live Rokon in a private browser session (phone + desktop): home, rows, product page with colour variants, cart bar and drawer. Not published; Rokon still on the standard theme.
+
+## 2026-11-19 08:39 (Asia/Hebron) — ROOMS-HEADING / candidate 1.9.2
+- Owner asked the rooms-theme home heading to read «تسوّق حسب القسم» instead of «تسوّق حسب الغرفة». Changed the rooms.title default (AR/EN/HE); stores that edited this text keep their own wording. Not published.
+
+## 2026-11-19 15:36 (Asia/Hebron) — ROOMS-FIXES / candidate 1.9.3
+- Owner reported (rooms theme, phone): search opens wrong, page freezes while scrolling as products load, weak edges between buttons and cards.
+- Root cause of the freeze (all themes): StoreRefresh's pageshow check treated never-loaded caches as stale, so every page load also fetched the full /api/catalog (Rokon: 3160 products, ~4.6MB). freshCache.isStale is now false for never-loaded data, refreshCatalog only refreshes a catalog this visit loaded (refreshLoaded).
+- Rooms theme: phone search panel anchored under the input; photo shimmer until load (ProductCard marks data-loaded); spinner on loading states; no header blur; band via border-image; content-visibility on far rows; frameless cards with a soft photo tile, tonal add button, ring on the chosen option; category bar as chips with the current category filled (StoreHeader sets aria-current, parent stays marked on sub-category pages, scrolled into view in rooms) — owner rejected the first boxed-card take as too close to the standard theme.
+- Verified by injecting the CSS on the live Rokon store (390px). Not published.
