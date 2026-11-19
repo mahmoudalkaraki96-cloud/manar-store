@@ -1444,3 +1444,6 @@
 - app/theme-hooks.ts useThemeId() follows <html data-theme>. app/components/RoomCards.tsx renders "Shop by room" cards (banner, else first product photo in the tree, else icon) on the home page only for rooms. homeRow carries data-row={href}; StickyCartBar renders hidden product thumbs (shown by the theme).
 - app/themes/rooms.css: header strip, quiet header/category bar, full-width slider, room cards, plain row headings, new-arrivals band (data-row=/products/newest), sub-category text tabs, frameless cards, product page (gallery/details/variants/buy row/specs), cart bar and drawer, footer. All selectors scoped (test).
 - Verified by injecting the stylesheet into live Rokon in a private browser session (phone + desktop): home, rows, product page with colour variants, cart bar and drawer. Not published; Rokon still on the standard theme.
+
+## 2026-11-19 08:39 (Asia/Hebron) — ROOMS-HEADING / candidate 1.9.2
+- Owner asked the rooms-theme home heading to read «تسوّق حسب القسم» instead of «تسوّق حسب الغرفة». Changed the rooms.title default (AR/EN/HE); stores that edited this text keep their own wording. Not published.
