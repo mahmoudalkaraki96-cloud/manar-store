@@ -96,3 +96,12 @@ test("1.9.3: rooms theme fixes phone search, shows loading and keeps scrolling l
  const card=fs.readFileSync("app/components/ProductCard.tsx","utf8");
  assert.match(card,/data-card-image="" onLoad=\{event=>\{event\.currentTarget\.dataset\.loaded="1"\}\}/);
 });
+
+test("1.9.3: the category bar marks the current category and the rooms theme shows it as a filled chip",()=>{
+ const header=fs.readFileSync("app/components/StoreHeader.tsx","utf8");
+ assert.match(header,/aria-current=\{current\?"page":undefined\}/);
+ assert.match(header,/children\.some\(x=>pathname===`\/category\/\$\{x\.slug\}`\)/,"a sub-category page highlights its parent");
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ assert.match(css,/\.categoryBar \.catItem>a\[aria-current="page"\]\{background:var\(--green\)!important;color:#fff!important/);
+ assert.doesNotMatch(css,/article\.product\{border:1px/,"cards stay frameless; the photo tile carries the edge");
+});

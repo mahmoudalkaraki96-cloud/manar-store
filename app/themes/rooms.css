@@ -4,7 +4,7 @@
  * --green / --gold are the store's primary / secondary colours from settings; --pageBg its background.
  */
 html[data-theme="rooms"]{
- --r-ink:#23291D;--r-muted:#5F6556;--r-line:#CFC9B4;--r-edge:#BDB69E;--r-white:#FFFFFF;--r-whats:#1F8F55;
+ --r-ink:#23291D;--r-muted:#5F6556;--r-line:#CFC9B4;--r-edge:#BDB69E;--r-hair:rgba(35,41,29,.11);--r-tonal:color-mix(in srgb,var(--green) 14%,#fff);--r-white:#FFFFFF;--r-whats:#1F8F55;
  --r-font:"Almarai",Tajawal,Arial,sans-serif;
  --r-band:color-mix(in srgb,var(--gold) 22%,var(--pageBg,#F6F4EC));
  --r-deep:color-mix(in srgb,var(--green) 70%,var(--r-ink));
@@ -25,10 +25,15 @@ html[data-theme="rooms"] .headerTopStrip a{color:#fff!important}
 html[data-theme="rooms"] .headerTopStrip nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px}
 html[data-theme="rooms"] .shopHeaderWrap{background:var(--pageBg,#F6F4EC)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;border-bottom:1px solid var(--r-line)}
 html[data-theme="rooms"] .headerSearchRow input{background:var(--r-white)!important;border:1px solid var(--r-line)!important;border-radius:999px!important}
-html[data-theme="rooms"] .categoryBar{background:transparent!important;border-top:1px solid var(--r-line)}
-html[data-theme="rooms"] .categoryBar .catItem>a{color:var(--r-ink)!important;font-weight:700;background:none!important;border-radius:0!important;border-bottom:2px solid transparent}
-html[data-theme="rooms"] .categoryBar .catItem>a:hover,
-html[data-theme="rooms"] .categoryBar .catItem>a:focus-visible{border-bottom-color:var(--green);color:var(--green)!important}
+/* Category bar: soft chips; the current category is a filled chip in the store colour (1.9.3). */
+html[data-theme="rooms"] .categoryBar{background:transparent!important;border-top:0!important;height:auto!important;gap:8px!important;padding:8px 12px 10px!important;align-items:center;scroll-padding-inline:12px}
+html[data-theme="rooms"] .categoryBar .catItem{background:none!important}
+html[data-theme="rooms"] .categoryBar .catItem>a{height:34px!important;padding:0 14px!important;gap:6px;border-radius:999px!important;background:var(--r-white)!important;color:var(--r-ink)!important;font-size:13px!important;font-weight:700!important;box-shadow:0 0 0 1px var(--r-hair) inset,0 1px 2px rgba(35,41,29,.06);transition:background .18s ease,color .18s ease,box-shadow .18s ease}
+html[data-theme="rooms"] .categoryBar .catItem>a>span:last-child:not(.navCategoryFallback),html[data-theme="rooms"] .categoryBar .navCategoryFallback{display:none!important}
+html[data-theme="rooms"] .categoryBar .navCategoryIcon{width:20px!important;height:20px!important;border-radius:50%!important;margin:0!important;background:color-mix(in srgb,var(--gold) 14%,#fff)!important}
+html[data-theme="rooms"] .categoryBar .catItem>a:hover{box-shadow:0 0 0 1px color-mix(in srgb,var(--green) 45%,transparent) inset;color:var(--green)!important}
+html[data-theme="rooms"] .categoryBar .catItem>a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+html[data-theme="rooms"] .categoryBar .catItem>a[aria-current="page"]{background:var(--green)!important;color:#fff!important;box-shadow:0 4px 12px -4px color-mix(in srgb,var(--green) 70%,transparent)}
 html[data-theme="rooms"] .themeStrip{height:0!important;background:none!important}
 html[data-theme="rooms"] .storeHighlightRing{border-color:var(--r-line)!important;box-shadow:none!important}
 
@@ -41,7 +46,7 @@ html[data-theme="rooms"] .imageOnlySlider .sliderDots button.active{background:v
 html[data-theme="rooms"] .roomCards{width:min(1180px,100%);margin:0 auto;padding:30px 16px 6px}
 html[data-theme="rooms"] .roomCardsHead h2{margin:0 0 14px;font-size:22px;font-weight:800;line-height:1.4}
 html[data-theme="rooms"] .roomCardsGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-html[data-theme="rooms"] .roomCard{position:relative;display:block;border:1px solid var(--r-line);aspect-ratio:4/5;border-radius:calc(14px*var(--theme-radius,1));overflow:hidden;background:var(--r-white);color:var(--r-ink);text-decoration:none}
+html[data-theme="rooms"] .roomCard{position:relative;display:block;box-shadow:0 0 0 1px var(--r-hair),0 10px 24px -16px rgba(35,41,29,.45);aspect-ratio:4/5;border-radius:calc(14px*var(--theme-radius,1));overflow:hidden;background:var(--r-white);color:var(--r-ink);text-decoration:none}
 html[data-theme="rooms"] .roomCard:first-child{grid-column:1/-1;aspect-ratio:16/10}
 html[data-theme="rooms"] .roomCard img,
 html[data-theme="rooms"] .roomCardBlank{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:color-mix(in srgb,var(--gold) 25%,var(--r-white));transition:transform .5s ease}
@@ -85,18 +90,18 @@ html[data-theme="rooms"] .categoryCards .categoryCardArrow{display:none!importan
 
 /* Product cards: no frame or shadow; the photo leads, then name, price and the add button. */
 html[data-theme="rooms"] .product.softProduct,
-html[data-theme="rooms"] article.product{border:1px solid var(--r-line)!important;box-shadow:none!important;background:var(--r-white)!important;border-radius:calc(12px*var(--theme-radius,1))!important;overflow:hidden!important;padding:6px 6px 10px!important}
-html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(8px*var(--theme-radius,1))!important;overflow:hidden;border:0!important}
+html[data-theme="rooms"] article.product{border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;overflow:visible!important;padding:0!important}
+html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(14px*var(--theme-radius,1))!important;overflow:hidden;border:0!important;box-shadow:0 0 0 1px var(--r-hair),0 8px 20px -14px rgba(35,41,29,.5)!important}
 html[data-theme="rooms"] .product .productCategoryLabel{display:none!important}
 html[data-theme="rooms"] .product .favBtn{background:rgba(255,255,255,.92)!important;color:var(--r-ink)!important;border:0!important;box-shadow:none!important}
-html[data-theme="rooms"] .product .productInfo{padding:10px 4px 0!important;text-align:start!important;background:transparent!important}
+html[data-theme="rooms"] .product .productInfo{padding:10px 2px 0!important;text-align:start!important;background:transparent!important}
 html[data-theme="rooms"] .product .productInfo h3{font-size:14px!important;font-weight:700!important;line-height:1.55!important;color:var(--r-ink)!important;text-align:start!important}
 html[data-theme="rooms"] .product .price,
 html[data-theme="rooms"] .product .price b{color:var(--green)!important;font-weight:800!important;text-align:start!important;justify-content:flex-start!important}
 html[data-theme="rooms"] .product .price b{font-size:16px!important}
-html[data-theme="rooms"] .product .cardAddButton{background:var(--green)!important;color:#fff!important;border:1px solid var(--green)!important;border-radius:999px!important;font-weight:800!important;box-shadow:none!important}
-html[data-theme="rooms"] .product .cardAddButton:hover:not(:disabled){background:var(--r-deep)!important;border-color:var(--r-deep)!important}
-html[data-theme="rooms"] .product .cardAddButton:disabled{background:var(--r-white)!important;color:var(--r-muted)!important;border-color:var(--r-line)!important}
+html[data-theme="rooms"] .product .cardAddButton{background:var(--r-tonal)!important;color:var(--green)!important;border:0!important;border-radius:999px!important;font-weight:800!important;font-size:13px!important;min-height:38px!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 40%,transparent)!important;transition:background .18s ease,color .18s ease}
+html[data-theme="rooms"] .product .cardAddButton:hover:not(:disabled),html[data-theme="rooms"] .product .cardAddButton:active:not(:disabled){background:var(--green)!important;color:#fff!important;box-shadow:none!important}
+html[data-theme="rooms"] .product .cardAddButton:disabled{background:transparent!important;color:var(--r-muted)!important;box-shadow:inset 0 0 0 1px var(--r-hair)!important}
 
 /* Product page. */
 html[data-theme="rooms"] .productPage .bigPrice,
@@ -160,14 +165,18 @@ html[data-theme="rooms"] .cartOverlay .cartCustomizationEditor{background:var(--
 html[data-theme="rooms"] .storeFooter{background:var(--r-deep)!important;color:#EEF0E6!important;border:0!important;border-radius:0!important}
 html[data-theme="rooms"] .storeFooter a,html[data-theme="rooms"] .storeFooter h2,html[data-theme="rooms"] .storeFooter b{color:#fff!important}
 
-/* 1.9.3: clearer edges between buttons and cards. */
-html[data-theme="rooms"] .product .productVisual{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--r-line) 70%,transparent)}
-html[data-theme="rooms"] .product .cardVariantChoices button{border:1px solid var(--r-edge)!important}
-html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice{background:var(--r-white)!important;color:var(--r-ink)!important}
-html[data-theme="rooms"] .product .cardVariantChoices button.active{border-color:var(--green)!important;box-shadow:inset 0 0 0 1px var(--green)!important}
+/* 1.9.3: clear but quiet edges. Photos sit on a soft raised tile, controls are tonal pills, the chosen option gets a ring. */
+html[data-theme="rooms"] .product .cardVariantChoices{scrollbar-width:none;padding:2px!important;gap:6px!important}
+html[data-theme="rooms"] .product .cardVariantChoices::-webkit-scrollbar{display:none}
+html[data-theme="rooms"] .product .cardVariantChoices button{border:0!important;box-shadow:inset 0 0 0 1px var(--r-hair)!important;border-radius:999px!important}
+html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice{background:var(--r-white)!important;color:var(--r-ink)!important;font-size:11.5px!important;min-height:26px!important;padding:0 10px!important}
+html[data-theme="rooms"] .product .cardVariantChoices button.active{box-shadow:inset 0 0 0 1.5px var(--green)!important}
+html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice.active{background:var(--r-tonal)!important;color:var(--green)!important}
 html[data-theme="rooms"] .detailVariantChoices button,html[data-theme="rooms"] .productShareRow button,html[data-theme="rooms"] .productShareRow a,html[data-theme="rooms"] .productPage .details .quantityControl,html[data-theme="rooms"] .quantityControl,html[data-theme="rooms"] .detailFav,html[data-theme="rooms"] .headerSearchRow input{border-color:var(--r-edge)!important}
-html[data-theme="rooms"] .categoryCards .categoryCard{border-bottom-width:2px!important}
-html[data-theme="rooms"] .searchProductResult{border:1px solid var(--r-line)!important;border-radius:calc(10px*var(--theme-radius,1))!important;background:var(--r-white)!important}
+html[data-theme="rooms"] .categoryCards .categoryCard{height:32px;padding:0 14px!important;border:0!important;border-radius:999px!important;background:var(--r-white)!important;color:var(--r-ink)!important;box-shadow:inset 0 0 0 1px var(--r-hair)!important;display:inline-flex!important;align-items:center}
+html[data-theme="rooms"] .categoryCards .categoryCard:hover{background:var(--r-tonal)!important;color:var(--green)!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 35%,transparent)!important}
+html[data-theme="rooms"] .categoryCards{gap:8px!important;padding:2px!important}
+html[data-theme="rooms"] .searchProductResult{border:0!important;border-radius:calc(12px*var(--theme-radius,1))!important;background:var(--r-white)!important;box-shadow:0 0 0 1px var(--r-hair)!important}
 
 /* 1.9.3: phone search opens right under the search box (the theme strip makes the header taller). */
 @media(max-width:720px){
