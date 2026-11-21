@@ -1453,3 +1453,9 @@
 - Root cause of the freeze (all themes): StoreRefresh's pageshow check treated never-loaded caches as stale, so every page load also fetched the full /api/catalog (Rokon: 3160 products, ~4.6MB). freshCache.isStale is now false for never-loaded data, refreshCatalog only refreshes a catalog this visit loaded (refreshLoaded).
 - Rooms theme: phone search panel anchored under the input; photo shimmer until load (ProductCard marks data-loaded); spinner on loading states; no header blur; band via border-image; content-visibility on far rows; frameless cards with a soft photo tile, tonal add button, ring on the chosen option; category bar as chips with the current category filled (StoreHeader sets aria-current, parent stays marked on sub-category pages, scrolled into view in rooms) — owner rejected the first boxed-card take as too close to the standard theme.
 - Verified by injecting the CSS on the live Rokon store (390px). Not published.
+
+## 2026-11-21 (Asia/Hebron) — LANGUAGE-AND-CARD / candidate 1.9.4
+- Owner reported: with Hebrew chosen, options and some product-page details/category names showed in Arabic; header search said "no products" while still searching; rooms product card had uneven gaps.
+- Rokon data already had HE translations (3160 products, 42 categories, 1618 of 2907 option values); the storefront rendered raw names in several places. Added variantText/variantParts/optionTitle (app/catalog-types.ts) and used them in ProductCard, StoreHeader search results, product page (variants, option title, description, category label, breadcrumb), MobileMenu sub-categories and the category breadcrumb.
+- Header search keeps a searching state until the request answers (searchPanelLoading in globals.css).
+- Rooms card: flex column, order name → price → options (one sliding line, «اللون:» prefix hidden via .variantPrefix) → add button at margin-top:auto; two-line name clamp.

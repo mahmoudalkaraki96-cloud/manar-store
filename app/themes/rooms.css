@@ -95,11 +95,11 @@ html[data-theme="rooms"] .rowProducts{gap:10px!important}
 html[data-theme="rooms"] .product .productVisual{background:var(--r-white)!important;border-radius:calc(12px*var(--theme-radius,1))!important;overflow:hidden;border:0!important;box-shadow:0 0 0 1px var(--r-hair),0 8px 20px -14px rgba(35,41,29,.5)!important}
 html[data-theme="rooms"] .product .productCategoryLabel{display:none!important}
 html[data-theme="rooms"] .product .favBtn{background:rgba(255,255,255,.92)!important;color:var(--r-ink)!important;border:0!important;box-shadow:none!important}
-html[data-theme="rooms"] .product .productInfo{padding:10px 6px 0!important;text-align:start!important;background:transparent!important}
-html[data-theme="rooms"] .product .productInfo h3{font-size:14px!important;font-weight:700!important;line-height:1.55!important;color:var(--r-ink)!important;text-align:start!important}
+html[data-theme="rooms"] .product .productInfo{padding:8px 3px 0!important;text-align:start!important;background:transparent!important}
+html[data-theme="rooms"] .product .productInfo h3{font-size:13px!important;font-weight:700!important;line-height:1.45!important;color:var(--r-ink)!important;text-align:start!important}
 html[data-theme="rooms"] .product .price,
 html[data-theme="rooms"] .product .price b{color:var(--green)!important;font-weight:800!important;text-align:start!important;justify-content:flex-start!important}
-html[data-theme="rooms"] .product .price b{font-size:16px!important}
+html[data-theme="rooms"] .product .price b{font-size:15px!important;line-height:1.2!important}
 html[data-theme="rooms"] .product .cardAddButton{background:var(--r-tonal)!important;color:var(--green)!important;border:0!important;border-radius:999px!important;font-weight:800!important;font-size:13px!important;min-height:38px!important;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 40%,transparent)!important;transition:background .18s ease,color .18s ease}
 html[data-theme="rooms"] .product .cardAddButton:hover:not(:disabled),html[data-theme="rooms"] .product .cardAddButton:active:not(:disabled){background:var(--green)!important;color:#fff!important;box-shadow:none!important}
 html[data-theme="rooms"] .product .cardAddButton:disabled{background:transparent!important;color:var(--r-muted)!important;box-shadow:inset 0 0 0 1px var(--r-hair)!important}
@@ -170,7 +170,7 @@ html[data-theme="rooms"] .storeFooter a,html[data-theme="rooms"] .storeFooter h2
 html[data-theme="rooms"] .product .cardVariantChoices{scrollbar-width:none;padding:2px!important;gap:6px!important}
 html[data-theme="rooms"] .product .cardVariantChoices::-webkit-scrollbar{display:none}
 html[data-theme="rooms"] .product .cardVariantChoices button{border:0!important;box-shadow:inset 0 0 0 1px var(--r-hair)!important;border-radius:999px!important}
-html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice{background:var(--r-white)!important;color:var(--r-ink)!important;font-size:11.5px!important;min-height:26px!important;padding:0 10px!important}
+html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice{background:var(--r-white)!important;color:var(--r-ink)!important;font-size:11px!important;height:24px!important;min-height:0!important;line-height:24px!important;padding:0 9px!important;white-space:nowrap!important;margin:0!important}
 html[data-theme="rooms"] .product .cardVariantChoices button.active{box-shadow:inset 0 0 0 1.5px var(--green)!important}
 html[data-theme="rooms"] .product .cardVariantChoices .variantTextChoice.active{background:var(--r-tonal)!important;color:var(--green)!important}
 html[data-theme="rooms"] .detailVariantChoices button,html[data-theme="rooms"] .productShareRow button,html[data-theme="rooms"] .productShareRow a,html[data-theme="rooms"] .productPage .details .quantityControl,html[data-theme="rooms"] .quantityControl,html[data-theme="rooms"] .detailFav,html[data-theme="rooms"] .headerSearchRow input{border-color:var(--r-edge)!important}
@@ -197,3 +197,17 @@ html[data-theme="rooms"] .storeState:not(.error)::before{content:"";width:34px;h
 
 /* 1.9.3: lighter scrolling; rows far below the screen are laid out only when they come near. */
 html[data-theme="rooms"] .homeRow:not([data-row="/products/newest"]){content-visibility:auto;contain-intrinsic-size:auto 420px}
+
+/* 1.9.4: a tidy card. Name first (two lines at most), then the price, then the options on one sliding line,
+   and the add button lined up at the bottom of every card in the row. Small, even gaps between them. */
+html[data-theme="rooms"] article.product{display:flex!important;flex-direction:column!important;height:100%!important;padding:5px 5px 8px!important}
+html[data-theme="rooms"] .product .productInfo{display:flex!important;flex-direction:column!important;gap:5px!important;flex:1 1 auto!important}
+html[data-theme="rooms"] .product .productInfo>a{order:1;display:block;min-width:0;text-decoration:none}
+html[data-theme="rooms"] .product .productInfo h3{margin:0!important;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden!important;min-height:2.9em;max-height:2.9em!important;height:auto!important;white-space:normal!important;overflow-wrap:anywhere}
+html[data-theme="rooms"] .product .price{order:2;display:flex!important;align-items:baseline!important;flex-wrap:wrap;gap:2px 6px!important;margin:0!important;min-height:0!important}
+html[data-theme="rooms"] .product .price del{font-size:11px;font-weight:700;color:var(--r-muted)}
+html[data-theme="rooms"] .product .cardVariantChoices{order:3;display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:4px!important;margin:0!important;padding:1px!important}
+html[data-theme="rooms"] .product .cardVariantChoices button{flex:0 0 auto!important}
+html[data-theme="rooms"] .product .cardVariantChoices .variantPrefix{display:none}
+html[data-theme="rooms"] .product .cardVariantCount{order:3;margin:0!important;font-size:11px;color:var(--r-muted)}
+html[data-theme="rooms"] .product .cardAddButton{order:4;margin-top:auto!important;min-height:34px!important;font-size:12px!important}
