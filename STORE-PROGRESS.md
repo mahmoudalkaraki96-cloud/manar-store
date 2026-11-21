@@ -1453,3 +1453,8 @@
 - Root cause of the freeze (all themes): StoreRefresh's pageshow check treated never-loaded caches as stale, so every page load also fetched the full /api/catalog (Rokon: 3160 products, ~4.6MB). freshCache.isStale is now false for never-loaded data, refreshCatalog only refreshes a catalog this visit loaded (refreshLoaded).
 - Rooms theme: phone search panel anchored under the input; photo shimmer until load (ProductCard marks data-loaded); spinner on loading states; no header blur; band via border-image; content-visibility on far rows; frameless cards with a soft photo tile, tonal add button, ring on the chosen option; category bar as chips with the current category filled (StoreHeader sets aria-current, parent stays marked on sub-category pages, scrolled into view in rooms) — owner rejected the first boxed-card take as too close to the standard theme.
 - Verified by injecting the CSS on the live Rokon store (390px). Not published.
+
+## 2026-11-21 07:39 (Asia/Hebron) — ROKON-LIVE-CHECK / publish engine fix (no store version change)
+- Owner: 1.9.3 would not publish to Rokon. Two batches (07:33, 07:36 UTC) failed for Rokon with live_verification_failed; Manar and Red Rose succeeded.
+- Cause: Rokon now has a public origin (www.rokon-home.com), so its workers.dev storefront answers 308 to that domain; the engine's live check used redirect:'manual' and required 200. The new storefront code was in fact deployed (1.9.3 CSS served live) but the platform still records Rokon as 1.9.1 and its admin was not upgraded.
+- Fix: liveFetch follows exactly one permanent (301/308) https redirect to the same path and query, storefront only. Store runtime stays 1.9.3; after merge, retry Rokon from the console.

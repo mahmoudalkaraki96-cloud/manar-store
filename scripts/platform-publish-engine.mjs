@@ -71,8 +71,8 @@ export async function run(){
      for(let attempt=0;attempt<6&&!verified;attempt++){
       const deployments=await cf.call('/workers/scripts/'+worker+'/deployments'),active=deployments.deployments?.[0]?.versions?.some(v=>v.version_id===id&&v.percentage===100);
       const origin=surface==='admin'?p.snapshot.adminUrl:p.snapshot.storefrontUrl;
-      const response=await fetch(new URL(surface==='admin'?'/admin/login':'/?release-check='+t.id,origin),{redirect:'manual',signal:AbortSignal.timeout(20000)});
-      const api=await fetch(new URL(surface==='admin'?'/api/admin/orders':'/api/catalog',origin),{redirect:'manual',signal:AbortSignal.timeout(20000)});
+      const response=await liveFetch(new URL(surface==='admin'?'/admin/login':'/?release-check='+t.id,origin),surface);
+      const api=await liveFetch(new URL(surface==='admin'?'/api/admin/orders':'/api/catalog',origin),surface);
       const accessRedirect=r=>r.status===302&&new URL(r.headers.get('location')||'',origin).hostname.endsWith('.cloudflareaccess.com');
       const healthy=surface==='admin'?(response.status===200||accessRedirect(response))&&(api.status===401||accessRedirect(api)):response.ok&&api.ok;
       verified=Boolean(active&&healthy);await response.body?.cancel();await api.body?.cancel();if(!verified)await new Promise(resolve=>setTimeout(resolve,5000));
@@ -92,3 +92,13 @@ export async function run(){
  }
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))run().catch(error=>{console.error(safeError(error));process.exitCode=1});
+// A storefront with its own domain answers its workers.dev address with a permanent redirect to that domain
+// (same path and query). The live check follows exactly that one redirect; anything else is checked as returned.
+export async function liveFetch(url,surface,fetcher=fetch){
+ const options={redirect:'manual',signal:AbortSignal.timeout(20000)};let response=await fetcher(url,options);
+ if(surface==='storefront'&&(response.status===301||response.status===308)){
+  const target=new URL(response.headers.get('location')||'',url);
+  if(target.protocol==='https:'&&target.pathname===url.pathname&&target.search===url.search){await response.body?.cancel();response=await fetcher(target,options)}
+ }
+ return response;
+}
