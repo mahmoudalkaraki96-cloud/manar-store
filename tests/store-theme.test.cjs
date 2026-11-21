@@ -105,3 +105,15 @@ test("1.9.3: the category bar marks the current category and the rooms theme sho
  assert.match(css,/\.categoryBar \.catItem>a\[aria-current="page"\]\{background:var\(--green\)!important;color:#fff!important/);
  assert.doesNotMatch(css,/article\.product\{border:1px/,"cards stay frameless; the photo tile carries the edge");
 });
+
+test("1.9.4: rooms card order is name, price, options, button, with the button lined up at the bottom",()=>{
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ assert.match(css,/\.product \.productInfo>a\{order:1;/);
+ assert.match(css,/\.product \.price\{order:2;/);
+ assert.match(css,/\.product \.cardVariantChoices\{order:3;display:flex!important;flex-wrap:nowrap!important/);
+ assert.match(css,/\.product \.cardAddButton\{order:4;margin-top:auto!important/);
+ assert.match(css,/-webkit-line-clamp:2;/);
+ assert.match(css,/\.cardVariantChoices \.variantPrefix\{display:none\}/,"rooms chips hide the repeated «اللون:» prefix");
+ const card=fs.readFileSync("app/components/ProductCard.tsx","utf8");
+ assert.match(card,/<span className="variantPrefix">\{parts\.prefix\} <\/span>/,"other themes keep the full option text");
+});

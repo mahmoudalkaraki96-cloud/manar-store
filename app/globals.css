@@ -502,3 +502,9 @@ img{max-width:100%}.productGrid,.rowProducts{display:grid;grid-template-columns:
 
 /* 1.8.4: product image is a <picture> (AVIF + WebP sizes); keep the img laid out as a direct child */
 .mainImage>picture{display:contents}
+
+/* 1.9.4: the header search says it is searching until the store answers, instead of "no products". */
+.globalSearchPanel .searchPanelLoading{display:flex;align-items:center;justify-content:center;gap:10px;padding:22px 12px;color:var(--muted,#6b6b6b);font-size:14px;font-weight:700}
+.globalSearchPanel .searchPanelLoading::before{content:"";width:18px;height:18px;flex:0 0 auto;border-radius:50%;border:2px solid color-mix(in srgb,var(--green,#555) 22%,transparent);border-top-color:var(--green,#555);animation:searchPanelSpin .8s linear infinite}
+@keyframes searchPanelSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.globalSearchPanel .searchPanelLoading::before{animation:none}}

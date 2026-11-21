@@ -132,6 +132,19 @@ export function stockLimit(product:Product|undefined,variant?:Variant):number{re
 export function productAvailable(product:Product,variant?:Variant):boolean{return product.inventoryEnabled===false||(variant?variant.stock>0:product.variants?.length?product.variants.some(item=>item.stock>0):product.inStock)}
 
 /** Translated text for `language`, or "" so callers fall back to the base (source-language) field. */
+/** 1.9.4: a variant's name in the visitor's language (falls back to the store's source text). */
+export function variantText(variant: Variant, language: string) {
+ return catalogText(variant, language, "name") || variant.name;
+}
+/** 1.9.4: splits "اللون: أبيض" into its repeated prefix and the value, so compact chips can hide the prefix. */
+export function variantParts(label: string) {
+ const match = /^([^:：]{1,24}[:：])\s*(\S.*)$/.exec(label);
+ return match ? {prefix: match[1], value: match[2]} : {prefix: "", value: label};
+}
+/** 1.9.4: the option group's title is stored only in the source language, so other languages show the translated generic word. */
+export function optionTitle(product: Product, language: string, sourceCode: string, fallback: string) {
+ return language === sourceCode && product.variantName ? product.variantName : fallback;
+}
 export function catalogText(item: {translations?: CatalogTranslations}, language: string, field: "name" | "description" | "specifications") {
  return item.translations?.[language]?.[field] || "";
 }
