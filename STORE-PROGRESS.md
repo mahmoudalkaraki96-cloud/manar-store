@@ -2809,3 +2809,8 @@
 - Owner asked to reorder the rooms product page and cut unsuitable gaps (Rokon, phone).
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
+
+## 2026-11-22 (Asia/Hebron) — PRODUCT-SWITCH / candidate 1.9.6
+- Owner reported: moving from one product to another looks like a full page reload (used to update in place).
+- Measured on live Manar: client navigation, but the keyed ProductDetail (#124) remounted the whole page including StoreHeader, and since 1.8.6 each product view is fetched, so «جاري تحميل الصنف...» showed for ~0.6–0.9s.
+- Fix: catalog-views remembers every product a view returned (productPreview); ProductDetail has no key, resets its per-product state during render when the id changes, and starts from the preview (loading only when the product is unknown). The product view still loads and replaces the preview.

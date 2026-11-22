@@ -128,3 +128,14 @@ test("1.9.5: rooms phone product page puts price and favourite on one line, quan
  assert.match(block,/\.quantityControl>span\{display:none!important\}/);
  assert.match(block,/\.productSectionDivider\{display:none!important\}/);
 });
+
+test("1.9.6: switching products keeps the header mounted and shows a loaded product without a loading screen",()=>{
+ const page=fs.readFileSync("app/product/[id]/page.tsx","utf8");
+ assert.doesNotMatch(page,/<ProductDetail key=/,"a key would remount the header on every product");
+ assert.match(page,/if\(shownId!==productId\)\{const preview=productPreview\(productId\);/);
+ assert.match(page,/setVariant\(undefined\);setImageIndex\(0\);setQty\(1\);setZoom\(""\);setLoading\(!preview\);setCustomizations\(\{\}\)/,"old product state is reset");
+ assert.match(page,/\[loading,setLoading\]=useState\(\(\)=>!productPreview\(productId\)\)/);
+ const views=fs.readFileSync("app/catalog-views.ts","utf8");
+ assert.match(views,/return cache\.get\(\)\.then\(remember\);/);
+ assert.match(views,/export function productPreview\(/);
+});

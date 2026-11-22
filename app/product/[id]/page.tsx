@@ -1,6 +1,6 @@
 "use client";
 import {useStoreDataVersion} from "../../fresh-cache";
-import {loadProductCatalog} from "../../catalog-views";
+import {loadProductCatalog,productPreview} from "../../catalog-views";
 import {catalogText,variantText,optionTitle} from "../../catalog-types";
 import {useStoreLanguage,storeCurrency} from "../../store-language";
 import {useEffect,useState,type CSSProperties} from "react";
@@ -22,12 +22,15 @@ type WatermarkStyle=CSSProperties&{"--wm-size":string};
 
 export default function ProductPage(){
  const {id}=useParams<{id:string}>();
- return <ProductDetail key={id} productId={id}/>;
+ // 1.9.6: no key, so the header stays mounted between products; ProductDetail resets its own state when the id changes.
+ return <ProductDetail productId={id}/>;
 }
 
 function ProductDetail({productId}:{productId:string}){const storeDataVersion=useStoreDataVersion();
  const {money,language,sourceCode,t}=useStoreLanguage();
- const [catalog,setCatalog]=useState<Product[]>([]),[categories,setCategories]=useState<Category[]>([]),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(true),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
+ const [catalog,setCatalog]=useState<Product[]>(()=>productPreview(productId)?.products||[]),[categories,setCategories]=useState<Category[]>(()=>productPreview(productId)?.categories||[]),[shownId,setShownId]=useState(productId),[variant,setVariant]=useState<Variant>(),[imageIndex,setImageIndex]=useState(0),[qty,setQty]=useState(1),favorites=useFavorites(),[zoom,setZoom]=useState(""),[loading,setLoading]=useState(()=>!productPreview(productId)),[customizations,setCustomizations]=useState<Record<string,string>>({}),[customError,setCustomError]=useState(""),[cartCount,setCartCount]=useState(0),[added,setAdded]=useState(false),[shareStatus,setShareStatus]=useState(""),[store,setStore]=useState<StoreSettings>(defaultSettings),[failed,setFailed]=useState(false);
+ // 1.9.6: on a new product, reset everything that belongs to the old one and show the new one from data this visit already has (no loading screen).
+ if(shownId!==productId){const preview=productPreview(productId);setShownId(productId);setCatalog(preview?.products||[]);if(preview?.categories.length)setCategories(preview.categories);setVariant(undefined);setImageIndex(0);setQty(1);setZoom("");setLoading(!preview);setCustomizations({});setCustomError("");setAdded(false);setShareStatus("");setFailed(false)}
  const refreshCartCount=()=>setCartCount(countCart(loadCart()));
  useEffect(()=>{let active=true;loadProductCatalog(productId).then(data=>{if(!active)return;setCatalog(data.products);setCategories(data.categories)}).catch(()=>{if(active)setFailed(true)}).finally(()=>{if(active)setLoading(false)});setStore(cachedStoreSettings());loadStorefront().then(storefront=>{if(active)setStore(storefront.settings)}).catch(()=>{});refreshCartCount();return()=>{active=false}},[productId,storeDataVersion]);
  useEffect(()=>{document.body.style.overflow=zoom?"hidden":"";return()=>{document.body.style.overflow=""}},[zoom]);
