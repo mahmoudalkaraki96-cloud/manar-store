@@ -1,175 +1,151 @@
 {
-  "started_at": "2026-11-15T12:20:40.740904+02:00",
+  "started_at": "2026-11-22T12:39:58.540304+02:00",
   "mode": "apply",
   "status": "completed",
   "results": [
     {
-      "id": 3821,
-      "item_number": 4821,
-      "name": "مراية حديد ملبسة جلد مع ايد لولو",
+      "id": 4033,
+      "item_number": 5033,
+      "name": "كيس ديور ازرق مميز",
       "active": 0,
       "stock_quantity": 0,
-      "price_agorot": 700,
-      "source_id": 1462,
+      "price_agorot": 2000,
+      "source_id": 1468,
       "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1462",
+      "source_url": "https://dofesh.ps/?app=product.show.1468",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
+    {
+      "id": 4034,
+      "item_number": 5034,
+      "name": "ستاند اكرليك قفص اسماء العروسين للخطوبة (تفصيل)",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 9500,
+      "source_id": 1467,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1467",
+      "images": 2,
+      "variants": 2,
+      "fields": 2
+    },
+    {
+      "id": 4035,
+      "item_number": 5035,
+      "name": "توزيعة مصحف ياسين مغلفة بشبرة وعبارة",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 1200,
+      "source_id": 1466,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1466",
+      "images": 1,
+      "variants": 3,
+      "fields": 0
+    },
+    {
+      "id": 4036,
+      "item_number": 5036,
+      "name": "صدفة شمع معطر مع حبات لولو",
+      "active": 0,
+      "stock_quantity": 0,
+      "price_agorot": 300,
+      "source_id": 1465,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1465",
       "images": 1,
       "variants": 0,
       "fields": 0
     },
     {
-      "id": 3822,
-      "item_number": 4822,
-      "name": "علبة خواتم شفاف حجم 4.5 سم",
+      "id": 4037,
+      "item_number": 5037,
+      "name": "كيس كرتون مع خيط ذهبي مقاس (16*10*8)",
       "active": 0,
       "stock_quantity": 0,
-      "price_agorot": 200,
-      "source_id": 1461,
+      "price_agorot": 2500,
+      "source_id": 1464,
       "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1461",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
-    },
-    {
-      "id": 3823,
-      "item_number": 4823,
-      "name": "مبخرة حجر هرمية",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 700,
-      "source_id": 1460,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1460",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
-    },
-    {
-      "id": 3824,
-      "item_number": 4824,
-      "name": "كيس شفاف bvc مقاس (20*25*10)",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 4000,
-      "source_id": 1459,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1459",
+      "source_url": "https://dofesh.ps/?app=product.show.1464",
       "images": 1,
       "variants": 1,
       "fields": 0
     },
     {
-      "id": 3825,
-      "item_number": 4825,
-      "name": "صندوق كرتون مع وجه شباك شفاف",
+      "id": 4038,
+      "item_number": 5038,
+      "name": "مكرمية قوس قزح لون بيج",
       "active": 0,
       "stock_quantity": 0,
-      "price_agorot": 500,
+      "price_agorot": 400,
+      "source_id": 1463,
+      "status": "imported_draft",
+      "source_url": "https://dofesh.ps/?app=product.show.1463",
+      "images": 1,
+      "variants": 0,
+      "fields": 0
+    },
+    {
+      "source_id": 1462,
+      "status": "skipped_error",
+      "reason": "ValueError"
+    },
+    {
+      "source_id": 1461,
+      "status": "skipped_error",
+      "reason": "ValueError"
+    },
+    {
+      "source_id": 1460,
+      "status": "skipped_error",
+      "reason": "ValueError"
+    },
+    {
+      "source_id": 1459,
+      "status": "skipped_error",
+      "reason": "ValueError"
+    },
+    {
       "source_id": 1458,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1458",
-      "images": 1,
-      "variants": 4,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3826,
-      "item_number": 4826,
-      "name": "صندوق بلالين 4 قطعة مع 16 بلون",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 3000,
       "source_id": 1457,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1457",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3827,
-      "item_number": 4827,
-      "name": "علبة كرتون مقسمة مقاس (10*10*5)",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 300,
       "source_id": 1456,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1456",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3828,
-      "item_number": 4828,
-      "name": "مراية حديد فضي",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 200,
       "source_id": 1455,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1455",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3829,
-      "item_number": 4829,
-      "name": "علبة اكريلك قاعدة خشب مدور ارتفاع 14 سم",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 550,
       "source_id": 1452,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1452",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3830,
-      "item_number": 4830,
-      "name": "عطر LV ازرق",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 1200,
       "source_id": 1451,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1451",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3831,
-      "item_number": 4831,
-      "name": "عطر LV زهري",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 1200,
       "source_id": 1450,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1450",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
-      "id": 3832,
-      "item_number": 4832,
-      "name": "منظم اكسسوارات مخمل مقاس (20*15)",
-      "active": 0,
-      "stock_quantity": 0,
-      "price_agorot": 1000,
       "source_id": 1449,
-      "status": "imported_draft",
-      "source_url": "https://dofesh.ps/?app=product.show.1449",
-      "images": 1,
-      "variants": 0,
-      "fields": 0
+      "status": "skipped_error",
+      "reason": "ValueError"
     },
     {
       "source_id": 1448,
@@ -6780,6 +6756,6 @@
     }
   ],
   "pages": 22,
-  "cards": 1310,
-  "updated_at": "2026-11-15T14:13:50.668061+02:00"
+  "cards": 1312,
+  "updated_at": "2026-11-22T14:33:34.819627+02:00"
 }
