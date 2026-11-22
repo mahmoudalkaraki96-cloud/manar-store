@@ -139,3 +139,11 @@ test("1.9.6: switching products keeps the header mounted and shows a loaded prod
  assert.match(views,/return cache\.get\(\)\.then\(remember\);/);
  assert.match(views,/export function productPreview\(/);
 });
+test("1.9.7: rooms top strip stays one thin line with icon-only socials on phones",()=>{
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ const phone=css.slice(css.indexOf("/* 1.9.7:"));
+ assert.match(phone,/@media\(max-width:859px\)\{\nhtml\[data-theme="rooms"\] \.headerTopStrip\{flex-wrap:nowrap!important/);
+ assert.match(phone,/\.headerTopSocials>span\{display:none!important\}/,"«تابعنا» label hidden on phones");
+ assert.match(phone,/\.socialPills a\{width:24px!important;height:24px!important;[^}]*font-size:0!important/,"pills become icons");
+ assert.match(phone,/@media\(max-width:389px\)/);
+});

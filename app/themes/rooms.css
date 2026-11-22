@@ -242,3 +242,26 @@ html[data-theme="rooms"] .relatedProducts{padding-top:12px!important}
 html[data-theme="rooms"] .relatedProducts .homeCategoryBanner{min-height:0!important;align-items:center!important}
 html[data-theme="rooms"] .relatedProducts .homeCategoryBanner h2{font-size:20px!important;white-space:nowrap;line-height:1.3!important}
 }
+/* 1.9.7: thin one-line top strip — social links became icon-only on phones so the strip no longer wraps */
+html[data-theme="rooms"] .headerTopStrip{align-items:center!important}
+@media(min-width:860px){
+html[data-theme="rooms"] .headerTopStrip{padding:3px 4vw!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills a{height:24px!important;font-size:12px!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills a svg{width:14px!important;height:14px!important}
+}
+@media(max-width:859px){
+html[data-theme="rooms"] .headerTopStrip{flex-wrap:nowrap!important;justify-content:space-between!important;gap:8px!important;min-height:0!important;padding:3px 10px!important;font-size:12px!important}
+html[data-theme="rooms"] .headerTopStrip nav{flex-wrap:nowrap!important;gap:12px!important;white-space:nowrap;overflow:hidden;min-width:0}
+html[data-theme="rooms"] .headerTopStrip nav a{display:inline-flex!important;align-items:center;gap:3px;padding:0!important}
+html[data-theme="rooms"] .headerTopSocials{display:flex!important;align-items:center;gap:5px!important;flex:0 0 auto}
+html[data-theme="rooms"] .headerTopSocials>span{display:none!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills{display:flex!important;flex-wrap:nowrap!important;gap:5px!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills a{width:24px!important;height:24px!important;min-width:0!important;padding:0!important;justify-content:center!important;border-radius:50%!important;font-size:0!important;gap:0!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills a svg{width:14px!important;height:14px!important;margin:0!important}
+}
+@media(max-width:389px){
+html[data-theme="rooms"] .headerTopStrip{font-size:11px!important;padding:3px 8px!important;gap:6px!important}
+html[data-theme="rooms"] .headerTopStrip nav{gap:8px!important}
+html[data-theme="rooms"] .headerTopStrip nav a>span{display:none!important}
+html[data-theme="rooms"] .headerTopSocials .socialPills a{width:22px!important;height:22px!important}
+}

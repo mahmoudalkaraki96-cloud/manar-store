@@ -2810,6 +2810,11 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-23 (Asia/Hebron) — ROOMS-TOPSTRIP / candidate 1.9.7
+- Owner reported: after adding social links the Rokon top strip got thick and wrapped to a second line.
+- Measured live: on phones the rooms theme shows .headerTopStrip and the labelled social pills wrapped under the links (93.5px tall).
+- Fix (rooms.css only): phones keep one nowrap line with icon-only 24px social circles and no «تابعنا»; ≤389px shrinks text and hides the 📦 icon; desktop pills 24px tall (strip 36px).
+
 ## 2026-11-22 (Asia/Hebron) — PRODUCT-SWITCH / candidate 1.9.6
 - Owner reported: moving from one product to another looks like a full page reload (used to update in place).
 - Measured on live Manar: client navigation, but the keyed ProductDetail (#124) remounted the whole page including StoreHeader, and since 1.8.6 each product view is fetched, so «جاري تحميل الصنف...» showed for ~0.6–0.9s.
