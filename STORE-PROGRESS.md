@@ -2804,3 +2804,8 @@
 - {"source_id": 6, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 5, "status": "skipped_error", "reason": "ValueError"}
 - {"source_id": 2, "status": "skipped_error", "reason": "ValueError"}
+
+## 2026-11-22 (Asia/Hebron) — PRODUCT-PAGE-SPACING / candidate 1.9.5
+- Owner asked to reorder the rooms product page and cut unsuitable gaps (Rokon, phone).
+- rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
+- Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.

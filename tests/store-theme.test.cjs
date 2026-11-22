@@ -117,3 +117,14 @@ test("1.9.4: rooms card order is name, price, options, button, with the button l
  const card=fs.readFileSync("app/components/ProductCard.tsx","utf8");
  assert.match(card,/<span className="variantPrefix">\{parts\.prefix\} <\/span>/,"other themes keep the full option text");
 });
+
+test("1.9.5: rooms phone product page puts price and favourite on one line, quantity beside the button, and drops the duplicate heading",()=>{
+ const css=fs.readFileSync("app/themes/rooms.css","utf8");
+ const block=css.slice(css.indexOf("/* 1.9.5:"));
+ assert.match(block,/^\/\* 1\.9\.5:[^\n]*\n@media\(max-width:859px\)\{/,"phone only; desktop layout unchanged");
+ assert.match(block,/\.productPage \.details\{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important/);
+ assert.match(block,/\.details>\.bigPrice\{order:2;/);
+ assert.match(block,/\.details>\.detailFav\{order:3;/);
+ assert.match(block,/\.quantityControl>span\{display:none!important\}/);
+ assert.match(block,/\.productSectionDivider\{display:none!important\}/);
+});

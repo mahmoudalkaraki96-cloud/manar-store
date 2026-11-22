@@ -211,3 +211,34 @@ html[data-theme="rooms"] .product .cardVariantChoices button{flex:0 0 auto!impor
 html[data-theme="rooms"] .product .cardVariantChoices .variantPrefix{display:none}
 html[data-theme="rooms"] .product .cardVariantCount{order:3;margin:0!important;font-size:11px;color:var(--r-muted)}
 html[data-theme="rooms"] .product .cardAddButton{order:4;margin-top:auto!important;min-height:34px!important;font-size:12px!important}
+
+/* 1.9.5: phone product page — category over price, price and favourite on one line, quantity beside the add button, smaller gaps, no duplicate "details" heading. */
+@media(max-width:859px){
+html[data-theme="rooms"] .productHeading{margin-top:8px!important}
+html[data-theme="rooms"] .mobileProductTitle{margin:6px 0 0!important;line-height:1.35}
+html[data-theme="rooms"] .productPage{gap:10px!important;padding-top:6px!important;padding-bottom:6px!important}
+html[data-theme="rooms"] .productPage .gallery{padding:6px!important;gap:6px!important}
+html[data-theme="rooms"] .productPage .details{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;column-gap:10px!important;row-gap:0!important;padding:2px 4px!important}
+html[data-theme="rooms"] .productPage .details>*{flex:1 1 100%;order:10}
+html[data-theme="rooms"] .productPage .details>small{order:1;text-align:start!important;margin:0 0 2px!important}
+html[data-theme="rooms"] .productPage .details>.bigPrice{order:2;flex:1 1 auto!important;text-align:start!important;margin:0!important}
+html[data-theme="rooms"] .productPage .details>.detailFav{order:3;flex:0 0 42px!important;margin:0!important;position:static!important}
+html[data-theme="rooms"] .productPage .details>.productDetailLine{margin:12px 0!important}
+html[data-theme="rooms"] .productPage .productVariantSection{margin:0 0 6px!important;gap:8px!important}
+html[data-theme="rooms"] .productPage .variantMeta{margin-top:-2px}
+html[data-theme="rooms"] .productPage .details .buyRow{padding:4px 0!important;margin:0!important;align-items:stretch!important}
+html[data-theme="rooms"] .productPage .quantityControl{display:flex!important;width:96px!important}
+html[data-theme="rooms"] .productPage .quantityControl>span{display:none!important}
+html[data-theme="rooms"] .productPage .quantityControl input{height:52px!important;width:100%!important}
+html[data-theme="rooms"] .productPage .productShareRow{margin:8px 0 0!important}
+html[data-theme="rooms"] .productPage .productShareRow button{min-height:36px!important;padding:5px 10px!important}
+html[data-theme="rooms"] .productPage .inlineSpecifications{gap:8px!important}
+html[data-theme="rooms"] .productSectionDivider{display:none!important}
+html[data-theme="rooms"] .productDescriptionCard{margin:14px auto 10px!important;padding-block:12px!important}
+html[data-theme="rooms"] .productDescriptionCard h2{margin-bottom:6px!important}
+html[data-theme="rooms"] .productReviews{margin:10px auto!important;padding-block:12px!important}
+html[data-theme="rooms"] .productPolicies{margin:12px 0!important}
+html[data-theme="rooms"] .relatedProducts{padding-top:12px!important}
+html[data-theme="rooms"] .relatedProducts .homeCategoryBanner{min-height:0!important;align-items:center!important}
+html[data-theme="rooms"] .relatedProducts .homeCategoryBanner h2{font-size:20px!important;white-space:nowrap;line-height:1.3!important}
+}
