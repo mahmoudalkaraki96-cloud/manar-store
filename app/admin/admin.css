@@ -166,3 +166,66 @@
 .adminLanguages .adminHint{margin:0 0 10px;color:#6b5a62;font-size:13px;line-height:1.7}.adminLanguagesScroll{overflow-x:auto}.adminLanguagesTable{width:100%;border-collapse:collapse;font-size:13px}.adminLanguagesTable th,.adminLanguagesTable td{padding:6px;border-bottom:1px solid #eee3e7;text-align:start;vertical-align:middle;white-space:nowrap}.adminLanguagesTable input:not([type]),.adminLanguagesTable select{min-width:90px}.adminLanguagesOrder button{padding:2px 7px;margin-inline-end:3px}.adminLanguagesError{margin:8px 0 0;color:#b42318;font-weight:700}
 /* 1.8.1 interface texts editor */
 .uiTextsHead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.uiTextsTools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}.uiTextsTools [role=group]{display:flex;flex-wrap:wrap;gap:6px}.uiTextsTools [aria-pressed=true]{font-weight:800;outline:2px solid currentColor}.uiTextsTools input[type=search]{min-width:min(320px,100%)}.uiTextsScroll{overflow-x:auto}.uiTextsTable{width:100%;border-collapse:collapse;font-size:13px}.uiTextsTable th,.uiTextsTable td{padding:6px;border-bottom:1px solid #eee3e7;text-align:start;vertical-align:top}.uiTextsTable code{font-size:11px;color:#6b5a62;word-break:break-all}.uiTextsTable textarea{width:100%;min-width:200px;resize:vertical;font:inherit}.uiTextsMessage{font-weight:700}
+/* 1.9.8: new sidebar — search, six groups (three fold away), line icons */
+.visuallyHidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.adminRedesign .adminBrand{margin-bottom:18px}
+.adminNavSearch{display:flex;align-items:center;gap:8px;min-height:40px;margin:0 2px 14px;padding:0 12px;border-radius:10px;background:#ffffff0d;border:1px solid #ffffff14;color:#9fc7bf}
+.adminNavSearch:focus-within{border-color:#7fe0bd80}
+.adminRedesign .adminNavSearch input{flex:1;min-width:0;min-height:38px;padding:0;border:0!important;outline:0;background:transparent!important;color:#fff!important;font:inherit;font-size:13px}
+.adminNavSearch input::placeholder{color:#8fb3ad}
+.adminNavSearch input::-webkit-search-cancel-button{filter:invert(1) opacity(.6)}
+.adminNavEmpty{margin:4px 12px;color:#9fc7bf;font-size:12px}
+.adminRedesign .adminNavGroup{margin-bottom:12px}
+.adminRedesign .adminNavGroup>small{color:#8fb3ad;font-size:11px;margin:0 12px 6px}
+.adminRedesign .adminNavGroup.collapsible{margin-bottom:4px}
+.adminRedesign .adminNavGroup button{font-size:13px;min-height:40px;padding:8px 12px}
+.adminRedesign .adminNavGroup button.adminNavGroupToggle{min-height:36px;color:#8fb3ad;font-size:11px;font-weight:700;padding:6px 12px}
+.adminRedesign .adminNavGroup button.adminNavGroupToggle:hover{color:#fff;background:#ffffff09}
+.adminNavChevron{width:16px;height:16px;margin-inline-start:auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.adminNavChevron.closed{transform:rotate(90deg)}
+.adminNavDot{width:7px;height:7px;border-radius:50%;background:#7fe0bd;margin-inline-start:6px}
+.adminRedesign svg.navIcon{width:19px;height:19px;flex:0 0 19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.95}
+.adminRedesign .navBadge,.adminRedesign .navNewOrders{margin-inline-start:auto;margin-right:auto}
+@media (prefers-reduced-motion:reduce){.adminNavChevron{transition:none}}
+/* 1.9.8: overview — what needs attention first, one chart with a switch, quieter extras */
+.attentionSection{margin:20px 0 18px}
+.attentionHead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.attentionHead h2{margin:0;font-size:17px;font-weight:800;color:var(--admin-ink)}
+.attentionHead small{font-size:11px}
+.attentionGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.adminRedesign .attentionCard{--tone:#d7a244;--tone-soft:#d7a24416;display:flex;align-items:center;gap:12px;min-width:0;padding:16px;border-radius:12px;border:1px solid color-mix(in srgb,var(--tone) 28%,var(--admin-line));background:var(--tone-soft);color:var(--admin-ink);text-align:right;cursor:pointer;transition:border-color .15s,transform .15s}
+.adminRedesign .attentionCard:hover{border-color:var(--tone);transform:translateY(-1px)}
+.attentionCard.teal{--tone:#159879;--tone-soft:#15987914}
+.attentionCard.red{--tone:#d56e75;--tone-soft:#d56e7514}
+.attentionCard.violet{--tone:#997ad0;--tone-soft:#997ad014}
+.adminRedesign .attentionCard.calm{--tone-soft:var(--admin-panel);border-color:var(--admin-line)}
+.attentionCard.calm strong{color:var(--admin-muted)}
+.attentionDot{width:10px;height:10px;border-radius:50%;background:var(--tone);flex-shrink:0}
+.attentionCard.calm .attentionDot{background:var(--admin-line)}
+.attentionText{display:flex;flex-direction:column;min-width:0}
+.attentionText strong{font-size:26px;font-weight:800;line-height:1.15;color:var(--admin-ink)}
+.attentionText b{font-size:12px;font-weight:700}
+.attentionText small{font-size:10px}
+.attentionCard>i{font-style:normal;margin-right:auto;color:var(--admin-muted)}
+.dashboardChartSingle{margin-top:18px}
+.chartHeadEnd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.chartSwitch{display:flex;padding:3px;gap:3px;border:1px solid var(--admin-line);background:var(--admin-soft);border-radius:9px}
+.adminRedesign .chartSwitch button{border:0;background:transparent;color:var(--admin-muted);border-radius:6px;font-size:12px;padding:6px 12px;min-height:32px}
+.adminRedesign .chartSwitch button[aria-pressed=true]{background:var(--admin-panel);color:var(--admin-accent);font-weight:700;box-shadow:0 1px 2px #10191f14}
+.dashboardFact{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--admin-line);color:var(--admin-ink)}
+.dashboardFact b{font-size:11px;display:block}
+.dashboardFact small{font-size:10px;display:block}
+.alertDot.teal{background:#159879}
+.engagementPanel{margin-top:18px}
+.engagementPanel>summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;color:var(--admin-ink)}
+.engagementPanel>summary::-webkit-details-marker{display:none}
+.engagementPanel>summary>span{display:flex;flex-direction:column;gap:2px}
+.engagementPanel>summary b{font-size:14px}
+.engagementPanel>summary small{font-size:11px}
+.engagementPanel>summary>i{font-style:normal;margin-right:auto;color:var(--admin-muted);transition:transform .2s}
+.engagementPanel[open]>summary>i{transform:rotate(180deg)}
+.engagementPanel[open]>.metricGrid{margin-top:16px}
+.adminDashboard .liveActivityPanel,.adminDashboard .dashboardContent>section.liveActivity{margin-top:18px}
+@media(max-width:1050px){.attentionGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.attentionGrid{gap:9px}.adminRedesign .attentionCard{padding:12px;gap:9px}.attentionText strong{font-size:22px}.attentionCard>i{display:none}}
+@media (prefers-reduced-motion:reduce){.adminRedesign .attentionCard,.engagementPanel>summary>i{transition:none}}
