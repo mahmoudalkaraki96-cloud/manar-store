@@ -2810,6 +2810,12 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-23 (Asia/Hebron) — ADMIN-NAV-OVERVIEW / candidate 1.9.8
+- Owner approved the admin redesign samples (canvas + single-page preview) and asked to start with the sidebar and overview.
+- AdminNav.tsx: six groups (اليوم/الكتالوج/التسويق open; العمليات/واجهة المتجر/الإدارة fold, auto-open for the active page, remembered in localStorage), SVG line icons, menu search (Enter opens the first match). Same 20 pages, still filtered by canModule.
+- Dashboard: attention cards first (new/preparing orders, soldout/low stock), metrics, one chart with a sales/visits switch (today keeps hourly charts), recent orders + top products, statuses + store facts, live activity, app/notifications folded in <details>. Removed duplicated orderActionBanner/liveSummary/dashWelcome.
+- Kept formal Arabic labels to match the rest of the admin (sample said «بدها انتباهك هلّأ», shipped «يحتاج انتباهك الآن»).
+
 ## 2026-11-23 (Asia/Hebron) — ROOMS-TOPSTRIP / candidate 1.9.7
 - Owner reported: after adding social links the Rokon top strip got thick and wrapped to a second line.
 - Measured live: on phones the rooms theme shows .headerTopStrip and the labelled social pills wrapped under the links (93.5px tall).
