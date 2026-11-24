@@ -229,3 +229,63 @@
 @media(max-width:1050px){.attentionGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){.attentionGrid{gap:9px}.adminRedesign .attentionCard{padding:12px;gap:9px}.attentionText strong{font-size:22px}.attentionCard>i{display:none}}
 @media (prefers-reduced-motion:reduce){.adminRedesign .attentionCard,.engagementPanel>summary>i{transition:none}}
+/* 1.9.9: orders list — status tabs, filters, table and pager */
+.adminRedesign .ordersPageHead{display:flex;justify-content:space-between;align-items:flex-start}
+.adminRedesign .ordersTitle{flex:1 1 240px;min-width:0}.adminRedesign .ordersTitle h3{margin:0;font-size:22px}.adminRedesign .ordersTitle p{margin:4px 0 0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .ordersHeadActions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.adminRedesign .orderStatusTabs{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--admin-line);margin:14px 0 0;scrollbar-width:thin}
+.adminRedesign .orderStatusTabs button{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 14px;border:0;border-bottom:3px solid transparent;background:none;color:var(--admin-muted);font:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;border-radius:0}
+.adminRedesign .orderStatusTabs button:hover{color:var(--admin-ink)}
+.adminRedesign .orderStatusTabs button.on{color:var(--admin-accent);border-bottom-color:var(--admin-accent)}
+.adminRedesign .orderStatusTabs i{font-style:normal;font-size:12px;background:var(--admin-soft);color:var(--admin-ink);border-radius:999px;padding:1px 8px}
+.adminRedesign .orderFilterChip{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:4px 6px 4px 12px;border-radius:999px;background:var(--admin-soft);font-size:13px;font-weight:700}
+.adminRedesign .orderFilterChip button{width:28px;height:28px;min-height:0;padding:0;border:0;border-radius:50%;background:none;color:var(--admin-muted);font-size:18px;cursor:pointer}
+.adminRedesign .orderFilters{display:flex;flex-wrap:wrap;gap:10px;padding:14px 0}
+.adminRedesign .orderSearch,.adminRedesign .orderFilterField{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel);color:var(--admin-muted);box-sizing:border-box}
+.adminRedesign .orderSearch{flex:2 1 260px}.adminRedesign .orderFilterField{flex:1 1 160px}
+.adminRedesign .orderSearch svg{width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.adminRedesign .orderFilterField span{font-size:13px;font-weight:700;white-space:nowrap}
+.adminRedesign .orderSearch input,.adminRedesign .orderFilterField select{flex:1;min-width:0;min-height:40px;border:0;outline:0;background:none;color:var(--admin-ink);font:inherit;font-size:14px;padding:0;box-shadow:none}
+.adminRedesign .orderSearch:focus-within,.adminRedesign .orderFilterField:focus-within{border-color:var(--admin-accent)}
+.adminRedesign .ordersTableWrap{overflow-x:auto;border:1px solid var(--admin-line);border-radius:12px}
+.adminRedesign .ordersTable{width:100%;border-collapse:collapse}
+.adminRedesign .ordersTable th{font-size:12px;color:var(--admin-muted);font-weight:700;text-align:right;padding:12px;border-bottom:1px solid var(--admin-line);white-space:nowrap;background:var(--admin-soft)}
+.adminRedesign .ordersTable td{font-size:14px;padding:10px 12px;border-bottom:1px solid var(--admin-line);white-space:nowrap;vertical-align:middle;color:var(--admin-ink)}
+.adminRedesign .ordersTable tbody tr{cursor:pointer}.adminRedesign .ordersTable tbody tr:hover{background:var(--admin-soft)}
+.adminRedesign .ordersTable tbody tr:last-child td{border-bottom:0}
+.adminRedesign .ordersTable td small{display:block;color:var(--admin-muted);font-size:12px}
+.adminRedesign .ordersTable td[data-label="الزبون"] small{text-align:right}
+.adminRedesign .orderNumberLink{border:0;background:none;padding:0;min-height:0;color:var(--admin-accent);font:inherit;font-weight:800;cursor:pointer}
+.adminRedesign .ordersTable .manualOrderBadge{display:block;margin-top:2px}
+.adminRedesign .ordersTable .statusPill{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700}
+.adminRedesign .orderRowMenuCell{position:relative;width:48px;text-align:left}
+.adminRedesign .orderRowMenuButton{width:40px;height:40px;min-height:0;padding:0;border:0;border-radius:10px;background:none;color:var(--admin-muted);font-size:20px;cursor:pointer}
+.adminRedesign .orderRowMenuButton:hover,.adminRedesign .orderRowMenuButton[aria-expanded="true"]{background:var(--admin-soft);color:var(--admin-ink)}
+.adminRedesign .orderRowMenu{position:absolute;left:8px;top:calc(100% - 4px);z-index:30;display:flex;flex-direction:column;gap:12px;width:240px;padding:14px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel);box-shadow:0 12px 32px rgba(0,0,0,.14);white-space:normal;cursor:default;text-align:right}
+.adminRedesign .orderRowMenu .orderQuickStatus{display:flex;flex-direction:column;gap:6px}
+.adminRedesign .orderRowMenu label,.adminRedesign .orderRowContact>span:first-child{font-size:12px;font-weight:700;color:var(--admin-muted)}
+.adminRedesign .orderRowMenu select{width:100%;min-height:40px}
+.adminRedesign .orderRowContact{display:flex;flex-direction:column;gap:6px}
+.adminRedesign .orderRowOpen{min-height:40px;border:1px solid var(--admin-line);border-radius:10px;background:none;color:var(--admin-accent);font:inherit;font-weight:700;cursor:pointer}
+.adminRedesign .ordersPager{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0 0}
+.adminRedesign .ordersPager>small{flex:1;color:var(--admin-muted);font-size:13px}
+.adminRedesign .ordersPager nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.adminRedesign .ordersPager nav span{display:inline-flex;align-items:center;gap:6px}
+.adminRedesign .ordersPager button{min-height:40px;min-width:40px}
+.adminRedesign .ordersPager button.on{border:1px solid var(--admin-accent);border-radius:10px;background:var(--admin-accent);color:#fff;font-weight:800}
+.adminRedesign .ordersPanel .emptyCategory small{display:block;margin-top:4px;color:var(--admin-muted)}
+@media(max-width:800px){
+ .adminRedesign .ordersTitle h3{font-size:19px}
+ .adminRedesign .ordersTableWrap{border:0;overflow:visible}
+ .adminRedesign .ordersTable thead{display:none}
+ .adminRedesign .ordersTable,.adminRedesign .ordersTable tbody{display:block}
+ .adminRedesign .ordersTable tbody tr{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:12px;margin-bottom:10px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}
+ .adminRedesign .ordersTable tbody tr:last-child td{border-bottom:0}
+ .adminRedesign .ordersTable td{display:block;padding:0;border:0;white-space:normal}
+ .adminRedesign .ordersTable td[data-label="المدينة"],.adminRedesign .ordersTable td[data-label="القطع"]{display:none}
+ .adminRedesign .ordersTable td[data-label="الزبون"]{grid-column:1;grid-row:2}.adminRedesign .ordersTable td[data-label="المجموع"]{grid-column:2;grid-row:2}.adminRedesign .ordersTable td[data-label="التاريخ"]{grid-column:1;grid-row:3}.adminRedesign .ordersTable td[data-label="الحالة"]{grid-column:2;grid-row:3}
+ .adminRedesign .ordersTable td[data-label="المجموع"],.adminRedesign .ordersTable td[data-label="الحالة"]{text-align:left}
+ .adminRedesign .orderRowMenuCell{grid-column:2;grid-row:1;width:auto}
+ .adminRedesign .ordersTable td[data-label="رقم الطلب"]{grid-column:1;grid-row:1}
+ .adminRedesign .orderRowMenu{left:0;width:min(260px,80vw)}
+ .adminRedesign .orderFilterField{flex:1 1 140px}
+}

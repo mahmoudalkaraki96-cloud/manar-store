@@ -16,7 +16,7 @@ function AttentionCard({tone,value,label,hint,onClick}:{tone:'amber'|'teal'|'red
 export function DashboardView({data,onNavigate}:{data:DashboardData;onNavigate:(tab:string,filter?:string)=>void}){const statuses=Object.entries(statusLabels).map(([key,label],i)=>({key,label,value:data.statuses[key]||0,color:colors[i]})),total=statuses.reduce((s,v)=>s+v.value,0);let angle=0;const gradient=statuses.map(s=>{const start=angle;angle+=total?s.value/total*100:0;return `${s.color} ${start}% ${angle}%`;}).join(',');const waiting=data.queue.newOrders+data.queue.preparingOrders+data.inventory.soldout+data.inventory.low;return <div className="dashboardContent">
  <section className="attentionSection" aria-labelledby="attention-title"><div className="attentionHead"><h2 id="attention-title">يحتاج انتباهك الآن</h2><small>{waiting?'اضغط على أي بطاقة لتفتح القائمة المطلوبة':'كل شيء تحت السيطرة حاليًا'}</small></div><div className="attentionGrid">
   <AttentionCard tone="amber" value={data.queue.newOrders} label="طلب جديد بحاجة لتأكيد" hint="كل الطلبات الجديدة" onClick={()=>onNavigate('الطلبات','new')}/>
-  <AttentionCard tone="teal" value={data.queue.preparingOrders} label="طلب مؤكد أو قيد التجهيز" hint="طلبات العمل الحالية" onClick={()=>onNavigate('الطلبات','preparing')}/>
+  <AttentionCard tone="teal" value={data.queue.preparingOrders} label="طلب مؤكد أو قيد التجهيز" hint="طلبات العمل الحالية" onClick={()=>onNavigate('الطلبات','working')}/>
   <AttentionCard tone="red" value={data.inventory.soldout} label="صنف نافد" hint="من الأصناف النشطة في المتجر" onClick={()=>onNavigate('المنتجات','soldout')}/>
   <AttentionCard tone="violet" value={data.inventory.low} label="صنف مخزونه منخفض" hint="بين قطعة و5 قطع" onClick={()=>onNavigate('المنتجات','low')}/>
  </div></section>
