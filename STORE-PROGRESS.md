@@ -2810,6 +2810,12 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-24 (Asia/Hebron) — ADMIN-ORDERS-LIST / candidate 1.9.9
+- Owner approved 1.9.8 and the orders-list plan from the Orders sample.
+- OrdersPanel: status tabs with counts (counts follow search/city/period), city + period filters, table with 25 per page and a pager, row ⋯ menu (quick status + WhatsApp + open), CSV export of the filtered list (BOM, formula-safe cells). Detail/edit/print untouched.
+- Dashboard preparing card now opens filter "working" (confirmed + preparing) shown as a removable chip; the preparing tab is exact.
+- Not done (owner agreed): payment column (no payment method stored), combined daily prep sheet, bulk selection.
+
 ## 2026-11-23 (Asia/Hebron) — ADMIN-NAV-OVERVIEW / candidate 1.9.8
 - Owner approved the admin redesign samples (canvas + single-page preview) and asked to start with the sidebar and overview.
 - AdminNav.tsx: six groups (اليوم/الكتالوج/التسويق open; العمليات/واجهة المتجر/الإدارة fold, auto-open for the active page, remembered in localStorage), SVG line icons, menu search (Enter opens the first match). Same 20 pages, still filtered by canModule.
