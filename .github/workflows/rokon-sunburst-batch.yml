@@ -6,7 +6,7 @@ on:
         description: عدد الصور (1 إلى 300)
         required: true
         type: number
-        default: 300
+        default: 100
 permissions:
   contents: read
 concurrency:
@@ -16,18 +16,17 @@ jobs:
   process:
     if: github.run_attempt == 1
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 330
     steps:
       - uses: actions/cache/restore@v4
         with:
           path: rokon-logo-checks.sqlite
           key: rokon-logo-checks-43517042366-1
           fail-on-cache-miss: true
-      - run: pip install 'openai>=2.15,<3'
+      - run: pip install 'openai>=2.15,<3' Pillow && npm install --no-save wrangler@4
       - name: Select up to 300 previously screened images
         env:
           IMAGE_COUNT: ${{ inputs.image_count }}
-          OPERATION: process
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
@@ -46,10 +45,9 @@ jobs:
           import subprocess
           import tempfile
           import time
-          from urllib.parse import quote
-          from urllib.request import Request, build_opener
+          from urllib.request import urlopen
           
-          from rokon_import import Cloudflare, BUCKET, NoRedirect
+          from rokon_import import Cloudflare, BUCKET
           from rokon_logo_screen import ACCOUNT, DATABASE, ORIGIN, RULE
           
           MODEL = "gpt-image-2.5-sunburst"
@@ -67,13 +65,11 @@ jobs:
           
           
           def download(url):
-              url = url.removeprefix(ORIGIN)
               if not url.startswith("/media/imports/"):
                   raise ValueError("Expected a Rokon import image")
-              key = quote(url.removeprefix("/media/"), safe="/")
-              endpoint = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/r2/buckets/{BUCKET}/objects/{key}"
-              request = Request(endpoint, headers={"Authorization": "Bearer " + os.environ["CLOUDFLARE_API_TOKEN"]})
-              with build_opener(NoRedirect()).open(request, timeout=45) as response:
+              with urlopen(ORIGIN + url, timeout=45) as response:
+                  if response.url != ORIGIN + url:
+                      raise ValueError("Unexpected media redirect")
                   data = response.read(20_000_001)
                   mime = response.headers.get_content_type()
               if len(data) > 20_000_000 or mime not in {"image/webp", "image/jpeg", "image/png"}:
@@ -92,23 +88,37 @@ jobs:
                       if product in seen:
                           continue
                       seen.add(product)
-                      live = db.query(f"""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,p.item_number,p.name
-                          FROM products p JOIN product_media m ON m.product_id=p.id
-                          WHERE p.id=? AND p.active=0 AND p.deleted_at IS NULL AND EXISTS (SELECT 1 FROM rokon_supplier_imports i WHERE i.product_id=p.id AND i.state='complete') AND m.variant_id IS NULL AND m.is_primary=1 AND m.media_type='image'""", [product])
-                      live = [row for row in live if row["url"].removeprefix(ORIGIN).startswith("/media/imports/")]
-                      if len(live) != 1:
+                      draft = DRAFT.replace("products.id", "p.id")
+                      live = db.query(f"""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,p.item_number,p.name,
+                          m.variant_id FROM products p JOIN product_media m ON m.product_id=p.id
+                          WHERE p.id=? AND p.{draft} AND m.media_type='image' ORDER BY m.id""", [product])
+                      checked_images = json.loads(raw)
+                      group = []
+                      clear = True
+                      for row in live:
+                          if row["url"].startswith("/media/edited/"):
+                              continue
+                          if [row["media_id"], row["url"], row["updated_at"]] not in checked_images:
+                              clear = False
+                              continue
+                          try:
+                              data, _ = download(row["url"])
+                          except (OSError, ValueError):
+                              clear = False
+                              continue
+                          digest = hashlib.sha256(data).hexdigest()
+                          verdict = connection.execute("SELECT result FROM image_checks WHERE fingerprint=?",
+                                                       (f"{RULE}:gpt-4.1-mini:{digest}",)).fetchone()
+                          if verdict == ("watermark",):
+                              group.append({**row, "sha256": digest})
+                          elif verdict != ("clean",):
+                              clear = False
+                      if len(group) > count - len(rows):
                           continue
-                      row = live[0]
-                      if [row["media_id"], row["url"], row["updated_at"]] not in json.loads(raw):
-                          continue
-                      data, _ = download(row["url"])
-                      digest = hashlib.sha256(data).hexdigest()
-                      verdict = connection.execute("SELECT result FROM image_checks WHERE fingerprint=?",
-                                                   (f"{RULE}:gpt-4.1-mini:{digest}",)).fetchone()
-                      if verdict == ("watermark",) or (verdict is not None and os.getenv("OPERATION") == "process"):
-                          rows.append({**row, "sha256": digest})
-                          if len(rows) == count:
-                              break
+                      snapshot = [[row["media_id"], row["url"], row["updated_at"]] for row in live]
+                      rows.extend({**row, "snapshot": snapshot, "clear": clear} for row in group)
+                      if len(rows) == count:
+                          break
               return rows
           
           
@@ -122,7 +132,7 @@ jobs:
                       raise ValueError(f"Original changed for media {row['media_id']}")
                   payloads.append({"custom_id": f"media-{row['media_id']}", "method": "POST", "url": ENDPOINT,
                                    "body": {"model": MODEL, "images": [{"image_url": f"data:{mime};base64," + base64.b64encode(data).decode()}],
-                                            "prompt": PROMPT, "size": "1024x1536", "quality": "medium", "output_format": "webp"}})
+                                            "prompt": PROMPT, "size": "1024x1536", "quality": "low", "output_format": "webp"}})
               data = ("\n".join(map(json.dumps, payloads)) + "\n").encode()
               if len(data) >= 200_000_000:
                   raise ValueError("Batch file exceeds 200 MB. Use a smaller preview count.")
@@ -145,7 +155,7 @@ jobs:
               batch = client.batches.retrieve(submission["batch_id"])
               print(batch.id, batch.status)
               if batch.status not in {"completed", "failed", "expired", "cancelled"}:
-                  return
+                  return False
               result = {}
               for file_id in (batch.output_file_id, batch.error_file_id):
                   if file_id:
@@ -160,6 +170,15 @@ jobs:
                   response = record.get("response") or {}
                   body = response.get("body") or {}
                   item["usage"] = body.get("usage")
+                  try:
+                      original, mime = download(row["url"])
+                      if hashlib.sha256(original).hexdigest() == row["sha256"]:
+                          extension = {"image/jpeg": "jpg", "image/webp": "webp", "image/png": "png"}[mime]
+                          before = directory / f"{row['media_id']}-before.{extension}"
+                          before.write_bytes(original)
+                          item["before"] = before.name
+                  except (OSError, ValueError) as error:
+                      item["before_error"] = str(error)[:300]
                   try:
                       if response.get("status_code") != 200:
                           raise ValueError(str(record.get("error") or body or "No successful image output")[:600])
@@ -177,45 +196,72 @@ jobs:
                       path.write_bytes(data)
                       item["file"] = path.name
                       risk = next((word for word in RISK if word in row["name"]), None)
-                      if risk:
-                          item.update(status="pending_review", reason=f"Review rule matched {risk}")
-                          continue
-                      # Only auto-publish a single-photo draft. Other photos retain their existing review status.
-                      media = db.query("SELECT id,url FROM product_media WHERE product_id=? AND media_type='image'",
-                                       [row["product_id"]])
-                      key = f"edited/rokon/{batch.id}/{row['media_id']}.webp"
-                      target = "/media/" + key
-                      if media == [{"id": row["media_id"], "url": target}] and db.query(
-                          "SELECT id FROM products WHERE id=? AND active=1 AND deleted_at IS NULL", [row["product_id"]]
-                      ):
-                          item["status"] = "published"
-                          continue
-                      if media != [{"id": row["media_id"], "url": row["url"]}]:
-                          item.update(status="pending_review", reason="Additional or changed product images")
-                          continue
-                      upload(path, key)
-                      upload(thumbnail, "thumbnails/w384/" + key)
-                      now = int(time.time() * 1000)
-                      db.batch([
-                          (f"""UPDATE product_media SET url=?,updated_at=? WHERE id=? AND product_id=? AND url=? AND updated_at=?
-                               AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=1
-                               AND EXISTS(SELECT 1 FROM products WHERE id=? AND {DRAFT})""",
-                           [target, now, row["media_id"], row["product_id"], row["url"], row["updated_at"],
-                            row["product_id"], row["product_id"]]),
-                          (f"""UPDATE products SET active=1,updated_at=? WHERE id=? AND {DRAFT}
-                               AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=1
-                               AND EXISTS(SELECT 1 FROM product_media WHERE product_id=? AND id=? AND url=?)""",
-                           [now, row["product_id"], row["product_id"], row["product_id"], row["media_id"], target]),
-                      ])
-                      verified = db.query("""SELECT p.id FROM products p JOIN product_media m ON m.product_id=p.id
-                                           WHERE p.id=? AND p.active=1 AND m.id=? AND m.url=?""",
-                                          [row["product_id"], row["media_id"], target])
-                      item.update(status="published" if verified else "pending_review",
-                                  reason="" if verified else "Draft or image changed before publication")
+                      item.update(status="pending_review" if risk else "ready",
+                                  reason=f"Review rule matched {risk}" if risk else "")
                   except Exception as error:
                       item["reason"] = str(error)[:600]
-                  finally:
-                      write_report(directory, batch.id, report)
+          
+              groups = {}
+              for item in report:
+                  groups.setdefault(item["product_id"], []).append(item)
+              for product, items in groups.items():
+                  ready = [item for item in items if item["status"] == "ready"]
+                  if not ready:
+                      continue
+                  try:
+                      snapshot = items[0].get("snapshot")
+                      if len(ready) != len(items) or not items[0].get("clear") or not snapshot:
+                          raise ValueError("Some product images need review")
+                      publish_group(db, directory, batch.id, product, snapshot, ready)
+                      for item in ready:
+                          item["status"] = "published"
+                  except Exception as error:
+                      for item in ready:
+                          item.update(status="pending_review", reason=str(error)[:600])
+              write_report(directory, batch.id, report)
+              return True
+          
+          
+          def publish_group(db, directory, batch_id, product, snapshot, items):
+              targets = {item["media_id"]: f"/media/edited/rokon/{batch_id}/{item['media_id']}.webp"
+                         for item in items}
+              images = "SELECT id,url,updated_at FROM product_media WHERE product_id=? AND media_type='image' ORDER BY id"
+              current = db.query(images, [product])
+              already_published = db.query(
+                  "SELECT id FROM products WHERE id=? AND active=1 AND deleted_at IS NULL", [product])
+              expected = [(media, targets.get(media, url)) for media, url, _ in snapshot]
+              if already_published and [(row["id"], row["url"]) for row in current] == expected:
+                  return
+              if [[row["id"], row["url"], row["updated_at"]] for row in current] != snapshot:
+                  raise ValueError("Product images changed after submission")
+              for item in items:
+                  media = item["media_id"]
+                  key = targets[media].removeprefix("/media/")
+                  upload(directory / item["file"], key)
+                  upload(directory / f"{media}-thumb.webp", "thumbnails/w384/" + key)
+              now = int(time.time() * 1000)
+              checks = " AND ".join("EXISTS (SELECT 1 FROM product_media WHERE id=? AND product_id=? AND url=? AND updated_at IS ?)"
+                                    for _ in snapshot)
+              values = [value for media, url, updated in snapshot for value in (media, product, url, updated)]
+              guard = f"""EXISTS (SELECT 1 FROM products WHERE id=? AND {DRAFT})
+                  AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=?
+                  AND {checks}"""
+              pairs = [(media, url) for media, url in targets.items()]
+              cases = " ".join("WHEN ? THEN ?" for _ in pairs)
+              ids = ",".join("?" for _ in pairs)
+              verified_checks = " AND ".join("EXISTS (SELECT 1 FROM product_media WHERE id=? AND product_id=? AND url=?)"
+                                             for _ in expected)
+              verified_values = [value for media, url in expected for value in (media, product, url)]
+              db.batch([
+                  (f"UPDATE product_media SET url=CASE id {cases} END,updated_at=? WHERE id IN ({ids}) AND {guard}",
+                   [value for pair in pairs for value in pair] + [now, *targets, product, product, len(snapshot), *values]),
+                  (f"""UPDATE products SET active=1,updated_at=? WHERE id=? AND {DRAFT}
+                       AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=?
+                       AND {verified_checks}""", [now, product, product, len(snapshot), *verified_values]),
+              ])
+              if not db.query(f"SELECT id FROM products WHERE id=? AND active=1 AND {verified_checks}",
+                              [product, *verified_values]):
+                  raise ValueError("Draft changed before publication")
           
           
           def write_report(directory, batch_id, rows):
@@ -231,7 +277,7 @@ jobs:
                                                "estimated_usd": round(cost, 6), "items": rows})
               sections = []
               for row in rows:
-                  old = html.escape(ORIGIN + row["url"].removeprefix(ORIGIN), quote=True)
+                  old = html.escape(row.get("before") or ORIGIN + row["url"], quote=True)
                   new = html.escape(row.get("file", ""), quote=True)
                   edited = f'<img loading="lazy" src="{new}" alt="بعد">' if new else ""
                   sections.append(f'<section><h2>{row["item_number"]} · {html.escape(row["name"])}</h2>'
@@ -247,7 +293,7 @@ jobs:
           
           def main():
               parser = argparse.ArgumentParser(description=__doc__)
-              parser.add_argument("mode", choices=("preview", "submit", "collect"))
+              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait"))
               parser.add_argument("--directory", required=True, type=Path)
               parser.add_argument("--cache", type=Path)
               parser.add_argument("--count", type=int, choices=range(1, 301), default=300)
@@ -273,7 +319,14 @@ jobs:
                       parser.error("Submission already attempted. Check submission.json before taking further action.")
                   submit(client, directory, rows)
               else:
-                  collect(client, db, directory, rows, json.loads(state.read_text(encoding="utf-8")))
+                  submission = json.loads(state.read_text(encoding="utf-8"))
+                  deadline = time.monotonic() + 270 * 60
+                  while not collect(client, db, directory, rows, submission):
+                      if args.mode != "wait":
+                          break
+                      if time.monotonic() >= deadline:
+                          raise TimeoutError("Batch still processing; collect with submission artifact")
+                      time.sleep(60)
           
           
           if __name__ == "__main__":
@@ -285,4 +338,14 @@ jobs:
         if: always()
         with:
           name: rokon-sunburst-submission
+          path: result/
+      - name: Collect results and publish complete products
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python rokon_sunburst_batch.py wait --directory result
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rokon-sunburst-report
           path: result/
