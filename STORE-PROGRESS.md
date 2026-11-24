@@ -2810,6 +2810,13 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-24 (Asia/Hebron) — ADMIN-OVERVIEW-SAMPLE-CARTS / candidate 1.9.10
+- Owner feedback on 1.9.9: overview did not match the Main sample; quick status change was hidden in the row menu. Owner also asked for cart contents in a popup.
+- OrdersPanel: inline colour-coded status select per row (same quickStatus flow); ⋯ menu keeps WhatsApp + details.
+- Dashboard: rebuilt in sample order and colloquial wording; periods 1/7/30 (90 removed per sample); today shows one hourly chart with orders/visits switch. Old statuses/store-facts/live activity/carts moved into <details> «تفاصيل أكثر» (open state remembered).
+- API: recent orders add customer_name + item_count (LIMIT 5); top products add product_id + first image from product_media; grouped carts add unitPrice + image (variant image first).
+- CartMetricsPanel: cart rows are buttons opening an accessible dialog (Esc/backdrop/× close, focus restore, bottom sheet on phones); product name opens the product editor.
+
 ## 2026-11-24 (Asia/Hebron) — ADMIN-ORDERS-LIST / candidate 1.9.9
 - Owner approved 1.9.8 and the orders-list plan from the Orders sample.
 - OrdersPanel: status tabs with counts (counts follow search/city/period), city + period filters, table with 25 per page and a pager, row ⋯ menu (quick status + WhatsApp + open), CSV export of the filtered list (BOM, formula-safe cells). Detail/edit/print untouched.

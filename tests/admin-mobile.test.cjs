@@ -28,6 +28,6 @@ test("phone layout: panels cannot grow wider than the screen and the inventory l
  assert.match(ops,/products\.slice\(0,inventoryLimit\)/);
 });
 
-test("period switch uses correct Arabic plural for 11+ days",()=>{
- assert.match(fs.readFileSync("app/admin/Dashboard.tsx","utf8"),/v<=10\?`آخر \$\{v\} أيام`:`آخر \$\{v\} يومًا`/);
+test("overview period pills are today, 7 days and 30 days like the sample",()=>{
+ assert.ok(fs.readFileSync("app/admin/Dashboard.tsx","utf8").includes('[1,7,30].map(v=><button key={v} type="button" aria-pressed={days===v}'));
 });

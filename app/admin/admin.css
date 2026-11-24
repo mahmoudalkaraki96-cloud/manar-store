@@ -289,3 +289,78 @@
  .adminRedesign .orderRowMenu{left:0;width:min(260px,80vw)}
  .adminRedesign .orderFilterField{flex:1 1 140px}
 }
+/* 1.9.10: status select inside each orders row */
+.adminRedesign .orderStatusCell{cursor:default}
+.adminRedesign .orderStatusSelect{min-height:34px;padding:0 28px 0 12px;border-radius:999px;border:1px solid transparent;font:inherit;font-size:13px;font-weight:700;cursor:pointer;background-color:var(--admin-soft);color:var(--admin-ink);max-width:150px}
+.adminRedesign .orderStatusSelect.new{background-color:#fff1d6;color:#7a5200}.adminRedesign .orderStatusSelect.confirmed{background-color:#e2f0fb;color:#1d5a8a}.adminRedesign .orderStatusSelect.preparing{background-color:#ece6fb;color:#4a3290}.adminRedesign .orderStatusSelect.shipped{background-color:#e1f4f6;color:#1a6470}.adminRedesign .orderStatusSelect.delivered{background-color:#e2f4ec;color:#0d6b52}.adminRedesign .orderStatusSelect.cancelled{background-color:#fde4df;color:#9a2c1a}
+.adminRedesign .orderStatusSelect:focus-visible{outline:2px solid var(--admin-accent);outline-offset:2px}
+.adminRedesign .orderStatusSelect:disabled{opacity:.7;cursor:not-allowed}
+.adminRedesign .orderStatusSelect option{background:var(--admin-panel);color:var(--admin-ink)}
+.adminRedesign .orderStatusCell small{display:block;margin-top:4px}
+/* 1.9.10: overview like the sample */
+.adminRedesign .overviewHead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:-14px 0 20px}
+.adminRedesign .overviewGreeting{margin:0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .overviewControls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.adminRedesign .periodPills{display:flex;gap:6px}
+.adminRedesign .periodPills button{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--admin-line);background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.adminRedesign .periodPills button[aria-pressed=true]{background:var(--admin-accent);border-color:var(--admin-accent);color:#fff}
+.adminRedesign .overviewSample{display:flex;flex-direction:column;gap:22px}
+.adminRedesign .overviewAttention{display:flex;flex-direction:column;gap:12px}.adminRedesign .overviewAttention h2{margin:0;font-size:16px;font-weight:800}
+.adminRedesign .attnGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.adminRedesign .attnCard{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;text-align:right;cursor:pointer;min-height:0}
+.adminRedesign .attnCard:hover{border-color:var(--admin-accent)}
+.adminRedesign .attnIcon{width:44px;height:44px;flex:0 0 44px;border-radius:12px;display:grid;place-items:center}
+.adminRedesign .attnIcon svg,.adminRedesign .attnChevron{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.adminRedesign .attnText{display:flex;flex-direction:column;flex:1;min-width:0}.adminRedesign .attnText strong{font-size:24px;line-height:1.1}.adminRedesign .attnText small{font-size:13px;color:var(--admin-muted)}
+.adminRedesign .attnChevron{color:var(--admin-muted);flex:0 0 20px}
+.adminRedesign .attnCard.amber .attnIcon{background:#f9e3b0;color:#7a5200}.adminRedesign .attnCard.violet .attnIcon{background:#ece6fb;color:#5a3fa8}.adminRedesign .attnCard.red .attnIcon{background:#fde4df;color:#a8321f}.adminRedesign .attnCard.orange .attnIcon{background:#ffeedd;color:#9a4a00}
+.adminRedesign .attnCard.amber:not(.calm){border-color:#f3d48f;background:#fffaf0}.adminRedesign .attnCard.amber:not(.calm) small{color:#5f4a1c}.adminRedesign .attnCard.amber:not(.calm) .attnChevron{color:#7a5200}
+.adminRedesign.themeDark .attnCard.amber:not(.calm){background:#3a2f1a;border-color:#7a5f2a}.adminRedesign.themeDark .attnCard.amber:not(.calm) small,.adminRedesign.themeDark .attnCard.amber:not(.calm) .attnChevron{color:#f2d398}
+.adminRedesign .attnCard.calm{opacity:.85}
+.adminRedesign .statGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.adminRedesign .statCard{display:flex;flex-direction:column;gap:6px;padding:18px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .statCard>small:first-child{font-size:13px;font-weight:700;color:var(--admin-muted)}.adminRedesign .statCard>b{font-size:28px;line-height:1.2}
+.adminRedesign .statTrend{font-size:13px;color:var(--admin-muted)}.adminRedesign .statTrend.up{color:#0d7a5f;font-weight:700}.adminRedesign .statTrend.down{color:#b03a26;font-weight:700}
+.adminRedesign .overviewRow{display:flex;flex-wrap:wrap;gap:14px}
+.adminRedesign .overviewWide{flex:2 1 460px;min-width:0}.adminRedesign .overviewNarrow{flex:1 1 300px;min-width:0}
+.adminRedesign .overviewWide>.chartPanel{height:100%;box-sizing:border-box;margin:0}
+.adminRedesign .overviewSample .dashboardPanel{border-radius:16px}
+.adminRedesign .recentRows{display:flex;flex-direction:column;gap:2px}
+.adminRedesign .recentRow{display:flex;align-items:center;gap:10px;padding:10px 8px;border:0;border-radius:10px;background:none;color:var(--admin-ink);font:inherit;text-align:right;cursor:pointer;min-height:0;width:100%}
+.adminRedesign .recentRow:hover{background:var(--admin-soft)}
+.adminRedesign .recentMain{flex:1;display:flex;flex-direction:column;min-width:0}.adminRedesign .recentMain b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.adminRedesign .recentMain small{font-size:12px;color:var(--admin-muted)}
+.adminRedesign .recentTotal{font-size:14px;white-space:nowrap}
+.adminRedesign .overviewSample .statusPill{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700}
+.adminRedesign .topPanel{display:flex;flex-direction:column;gap:10px}
+.adminRedesign .topRow{display:flex;align-items:center;gap:12px}
+.adminRedesign .topThumb{width:44px;height:44px;flex:0 0 44px;border-radius:10px;background:var(--admin-soft);overflow:hidden}.adminRedesign .topThumb img{width:100%;height:100%;object-fit:cover;display:block}
+.adminRedesign .topName{flex:1;min-width:0;font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminRedesign .topBar{flex:0 1 140px;height:8px;border-radius:99px;background:var(--admin-soft);overflow:hidden}.adminRedesign .topBar span{display:block;height:100%;background:var(--admin-accent);border-radius:99px}
+.adminRedesign .topQty{width:48px;text-align:left;font-size:14px}
+.adminRedesign .engagementCard{display:flex;flex-direction:column;gap:10px}.adminRedesign .engagementCard h2{margin:0;font-size:16px;font-weight:800}.adminRedesign .engagementCard p{margin:0;color:var(--admin-muted);font-size:13px}
+.adminRedesign .engagementTiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.adminRedesign .engagementTiles div{background:var(--admin-soft);border-radius:12px;padding:12px;display:flex;flex-direction:column}.adminRedesign .engagementTiles b{font-size:20px}.adminRedesign .engagementTiles small{font-size:12px;color:var(--admin-muted)}
+.adminRedesign .overviewMore{border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .overviewMore>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer}.adminRedesign .overviewMore>summary::-webkit-details-marker{display:none}
+.adminRedesign .overviewMore>summary span{flex:1;display:flex;flex-direction:column}.adminRedesign .overviewMore>summary small{color:var(--admin-muted);font-size:13px}
+.adminRedesign .overviewMore>summary i{font-style:normal;transition:transform .2s}.adminRedesign .overviewMore[open]>summary i{transform:rotate(180deg)}
+.adminRedesign .overviewMoreBody{display:flex;flex-direction:column;gap:18px;padding:0 16px 16px}
+@media(max-width:800px){.adminRedesign .overviewHead{margin-top:-6px}.adminRedesign .attnGrid,.adminRedesign .statGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.adminRedesign .attnCard{padding:12px;gap:10px}.adminRedesign .attnIcon{width:36px;height:36px;flex-basis:36px}.adminRedesign .attnText strong{font-size:20px}.adminRedesign .attnChevron{display:none}.adminRedesign .statCard{padding:14px}.adminRedesign .statCard>b{font-size:22px}.adminRedesign .topBar{display:none}}
+/* 1.9.10: cart contents popup */
+.adminRedesign .browserCartButton{display:flex;gap:12px;align-items:center;width:100%;padding:15px;border:0;border-bottom:1px solid var(--admin-line);border-radius:0;background:var(--admin-panel);color:var(--admin-ink);font:inherit;text-align:right;cursor:pointer;min-height:0}
+.adminRedesign .browserCartButton:hover,.adminRedesign .browserCartButton:focus-visible{background:var(--admin-soft)}
+.adminRedesign .browserCartButton .cartValue{display:block;font-weight:700;color:var(--admin-accent)}
+.cartDialogBackdrop{position:fixed;inset:0;z-index:400;background:rgba(10,20,24,.45);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.cartDialog{width:min(560px,100%);max-height:min(86svh,760px);display:flex;flex-direction:column;background:var(--admin-panel,#fff);color:var(--admin-ink,#243338);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden}
+.cartDialogHead{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--admin-line,#e4eaee)}
+.cartDialogHead>div{flex:1;min-width:0}.cartDialogHead h2{margin:0;font-size:17px;font-weight:800}.cartDialogHead h2 em{font-style:normal;font-size:11px;margin-inline-start:8px;padding:2px 8px;border-radius:999px;background:#e2f4ec;color:#0d6b52}.cartDialogHead small{display:block;margin-top:4px;color:var(--admin-muted,#5f6f78);font-size:12px}
+.cartDialogClose{width:40px;height:40px;min-height:0;padding:0;border:0;border-radius:10px;background:var(--admin-soft,#f3f5f7);color:var(--admin-ink,#243338);font-size:22px;cursor:pointer}
+.cartDialogItems{list-style:none;margin:0;padding:8px 18px;overflow:auto;flex:1}
+.cartDialogItems li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--admin-line,#e4eaee)}.cartDialogItems li:last-child{border-bottom:0}
+.cartItemThumb{width:56px;height:56px;flex:0 0 56px;border-radius:12px;background:var(--admin-soft,#f3f5f7);overflow:hidden;display:grid;place-items:center;color:var(--admin-muted,#5f6f78)}.cartItemThumb img{width:100%;height:100%;object-fit:cover;display:block}
+.cartItemInfo{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.cartItemInfo small{color:var(--admin-muted,#5f6f78);font-size:12px}
+.cartItemName{font:inherit;font-size:14px;font-weight:700;text-align:right;padding:0;min-height:0;border:0;background:none;color:var(--admin-ink,#243338);cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{text-decoration:underline}
+.cartItemTotal{font-size:14px;white-space:nowrap}
+.cartDialogEmpty{margin:0;padding:24px 18px;color:var(--admin-muted,#5f6f78);font-size:14px}
+.cartDialogTotal{display:flex;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid var(--admin-line,#e4eaee);background:var(--admin-soft,#f3f5f7)}.cartDialogTotal span{flex:1;display:flex;flex-direction:column}.cartDialogTotal small{color:var(--admin-muted,#5f6f78);font-size:12px}.cartDialogTotal strong{font-size:20px}
+@media(max-width:800px){.cartDialogBackdrop{align-items:flex-end;padding:0}.cartDialog{width:100%;max-height:92svh;border-radius:16px 16px 0 0}}
