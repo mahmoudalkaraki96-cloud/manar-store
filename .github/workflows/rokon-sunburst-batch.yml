@@ -7,8 +7,13 @@ on:
         required: true
         type: number
         default: 100
+      publish_trial:
+        description: Publish processed trial results
+        type: boolean
+        default: false
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: rokon-draft-logo-screening
   cancel-in-progress: false
@@ -19,14 +24,24 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/cache/restore@v4
+        if: '!inputs.publish_trial'
         with:
           path: rokon-logo-checks.sqlite
           key: rokon-logo-checks-43517042366-1
           fail-on-cache-miss: false
       - run: pip install 'openai>=2.15,<3' Pillow && npm install --no-save wrangler@4
-      - name: Select and submit draft images
+      - uses: actions/download-artifact@v4
+        if: inputs.publish_trial
+        with:
+          name: rokon-sunburst-report
+          run-id: 45368002815
+          github-token: ${{ github.token }}
+          path: result
+      - name: Prepare and execute batch
+
         env:
           IMAGE_COUNT: ${{ inputs.image_count }}
+          PUBLISH_TRIAL: ${{ inputs.publish_trial }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
@@ -333,9 +348,37 @@ jobs:
                   encoding="utf-8")
           
           
+          def publish_reviewed(db, directory):
+              report = json.loads((directory / "report.json").read_text(encoding="utf-8"))
+              if report["batch_id"] != "batch_6b055d173104819089144d75dbbafc8a":
+                  raise ValueError("Unexpected source batch")
+              groups = {}
+              for item in report["items"]:
+                  groups.setdefault(item["product_id"], []).append(item)
+              for product, items in groups.items():
+                  if any(not item.get("file") or item["status"] == "failed" for item in items):
+                      continue
+                  snapshot = items[0]["snapshot"]
+                  if {media for media, url, _ in snapshot if original_path(url)} != {item["media_id"] for item in items}:
+                      continue
+                  try:
+                      publish_group(db, directory, report["batch_id"], product, snapshot, items)
+                  except Exception as error:
+                      for item in items:
+                          item.update(status="pending_review", reason=str(error)[:600])
+                  else:
+                      for item in items:
+                          item.update(status="published", reason="")
+              write_report(directory, report["batch_id"], report["items"])
+              print(json.dumps(report_counts(report["items"])))
+          
+          def report_counts(items):
+              from collections import Counter
+              return dict(Counter(item["status"] for item in items))
+
           def main():
               parser = argparse.ArgumentParser(description=__doc__)
-              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait"))
+              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait", "publish-reviewed"))
               parser.add_argument("--directory", required=True, type=Path)
               parser.add_argument("--cache", type=Path)
               parser.add_argument("--count", type=int, choices=range(1, 301), default=300)
@@ -346,6 +389,9 @@ jobs:
               state = directory / "submission.json"
               db = Cloudflare(ACCOUNT, DATABASE)
               db.verify()
+              if args.mode == "publish-reviewed":
+                  publish_reviewed(db, directory)
+                  return
               if args.mode == "preview":
                   if not args.cache or state.exists():
                       parser.error("Preview requires the screening cache and an unused batch directory")
@@ -375,14 +421,19 @@ jobs:
           if __name__ == "__main__":
               main()
           PYTHON_SCRIPT
+          if [ "$PUBLISH_TRIAL" = true ]; then
+            python rokon_sunburst_batch.py publish-reviewed --directory result
+            exit
+          fi
           python rokon_sunburst_batch.py preview --cache rokon-logo-checks.sqlite --directory result --count "$IMAGE_COUNT"
           python rokon_sunburst_batch.py submit --directory result
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: '!inputs.publish_trial && always()'
         with:
           name: rokon-sunburst-submission
           path: result/
       - name: Collect results and publish complete products
+        if: '!inputs.publish_trial'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
