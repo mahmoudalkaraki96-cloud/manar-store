@@ -15,6 +15,10 @@ on:
         description: Process remaining draft images in three groups
         type: boolean
         default: false
+      resume_remaining:
+        description: Resume submitted Rokon image groups and publish results
+        type: boolean
+        default: false
 permissions:
   contents: read
   actions: read
@@ -28,7 +32,7 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/cache/restore@v4
-        if: '!inputs.publish_trial && !inputs.process_remaining'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining'
         with:
           path: rokon-logo-checks.sqlite
           key: rokon-logo-checks-43517042366-1
@@ -41,12 +45,20 @@ jobs:
           run-id: 45368002815
           github-token: ${{ github.token }}
           path: result
+      - uses: actions/download-artifact@v4
+        if: inputs.resume_remaining
+        with:
+          name: rokon-sunburst-report
+          run-id: 45386101237
+          github-token: ${{ github.token }}
+          path: result
       - name: Prepare and execute batch
 
         env:
           IMAGE_COUNT: ${{ inputs.image_count }}
           PUBLISH_TRIAL: ${{ inputs.publish_trial }}
           PROCESS_REMAINING: ${{ inputs.process_remaining }}
+          RESUME_REMAINING: ${{ inputs.resume_remaining }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
@@ -213,7 +225,7 @@ jobs:
                              env={**os.environ, "CLOUDFLARE_ACCOUNT_ID": ACCOUNT}, check=True, timeout=120)
           
           
-          def collect(client, db, directory, rows, submission):
+          def collect(client, db, directory, rows, submission, approved=False, prior=()):
               batch = client.batches.retrieve(submission["batch_id"])
               print(batch.id, batch.status)
               if batch.status not in {"completed", "failed", "expired", "cancelled"}:
@@ -224,7 +236,7 @@ jobs:
                       for line in client.files.content(file_id).text.splitlines():
                           record = json.loads(line)
                           result[record["custom_id"]] = record
-              report = []
+              report = list(prior)
               for row in rows:
                   item = {**row, "status": "failed"}
                   report.append(item)
@@ -258,8 +270,8 @@ jobs:
                       path.write_bytes(data)
                       item["file"] = path.name
                       risk = next((word for word in RISK if word in row["name"]), None)
-                      item.update(status="pending_review" if risk else "ready",
-                                  reason=f"Review rule matched {risk}" if risk else "")
+                      item.update(status="pending_review" if risk and not approved else "ready",
+                                  reason=f"Review rule matched {risk}" if risk and not approved else "")
                   except Exception as error:
                       item["reason"] = str(error)[:600]
           
@@ -448,9 +460,50 @@ jobs:
                           raise TimeoutError("Some OpenAI batches are still processing")
                       time.sleep(60)
 
+          def resume_remaining(db, client, directory):
+              def wait_for(target, rows, submission, prior=()):
+                  deadline = time.monotonic() + 240 * 60
+                  while not collect(client, db, target, rows, submission, approved=True, prior=prior):
+                      if time.monotonic() >= deadline:
+                          raise TimeoutError("Batch still processing; retain the submission artifact")
+                      time.sleep(60)
+          
+              folders = sorted(directory.glob("group-*"), key=lambda x: int(x.name.rsplit("-", 1)[1]))
+              if len(folders) != 6:
+                  raise ValueError(f"Expected 6 saved batch manifests; found {len(folders)}")
+              # Collect the completed OpenAI batches first, including any whose results GitHub missed.
+              retry_plan = []
+              for folder in folders:
+                  plan = json.loads((folder / "preview.json").read_text(encoding="utf-8"))
+                  state = json.loads((folder / "submission.json").read_text(encoding="utf-8"))
+                  status = client.batches.retrieve(state["batch_id"]).status
+                  if status in {"failed", "expired", "cancelled"}:
+                      retry_plan.append((folder, plan, []))
+                      continue
+                  wait_for(folder, plan, state)
+                  items = json.loads((folder / "report.json").read_text(encoding="utf-8"))["items"]
+                  failed = [item for item in items if item["status"] == "failed"]
+                  if failed:
+                      products = {item["product_id"] for item in failed}
+                      prior = [{**item, "status": "ready", "reason": ""} for item in items
+                               if item["product_id"] in products and item.get("file") and item["status"] != "failed"]
+                      ids = {item["media_id"] for item in failed}
+                      retry_plan.append((folder, [row for row in plan if row["media_id"] in ids], prior))
+              for folder, plan, prior in retry_plan:
+                  target = directory / f"retry-{folder.name}"
+                  target.mkdir()
+                  from shutil import copy2
+                  for item in prior:
+                      for name in filter(None, (item["file"], item.get("before"), f"{item['media_id']}-thumb.webp")):
+                          copy2(folder / name, target / name)
+                  save(target / "preview.json", plan)
+                  submit(client, target, plan)
+                  state = json.loads((target / "submission.json").read_text(encoding="utf-8"))
+                  wait_for(target, plan, state, prior)
+
           def main():
               parser = argparse.ArgumentParser(description=__doc__)
-              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait", "publish-reviewed", "process-remaining"))
+              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait", "publish-reviewed", "process-remaining", "resume-remaining"))
               parser.add_argument("--directory", required=True, type=Path)
               parser.add_argument("--cache", type=Path)
               parser.add_argument("--count", type=int, choices=range(1, 301), default=300)
@@ -474,6 +527,9 @@ jobs:
                   return
               from openai import OpenAI
               client = OpenAI(max_retries=0, timeout=240)
+              if args.mode == "resume-remaining":
+                  resume_remaining(db, client, directory)
+                  return
               if args.mode == "process-remaining":
                   process_remaining(db, client, directory)
                   return
@@ -496,6 +552,10 @@ jobs:
           if __name__ == "__main__":
               main()
           PYTHON_SCRIPT
+          if [ "$RESUME_REMAINING" = true ]; then
+            python -u rokon_sunburst_batch.py resume-remaining --directory result
+            exit
+          fi
           if [ "$PROCESS_REMAINING" = true ]; then
             python -u rokon_sunburst_batch.py process-remaining --directory result
             exit
@@ -507,12 +567,12 @@ jobs:
           python rokon_sunburst_batch.py preview --cache rokon-logo-checks.sqlite --directory result --count "$IMAGE_COUNT"
           python rokon_sunburst_batch.py submit --directory result
       - uses: actions/upload-artifact@v4
-        if: '!inputs.publish_trial && !inputs.process_remaining && always()'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining && always()'
         with:
           name: rokon-sunburst-submission
           path: result/
       - name: Collect results and publish complete products
-        if: '!inputs.publish_trial'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
