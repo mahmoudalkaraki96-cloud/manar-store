@@ -12,7 +12,7 @@ test('1.9.10: overview follows the sample order and wording',()=>{
  for(const target of ["'الطلبات','new'","'الطلبات','working'","'المنتجات','soldout'","'المنتجات','low'"])assert.ok(view.includes(target),target);
  assert.match(d,/عن الفترة اللي قبل/);
  assert.match(view,/o\.customerName\?' · '\+o\.customerName/);
- assert.match(view,/productThumbnail\(p\.image,96\)/);
+ assert.ok(view.includes('<AdminThumb src={p.image}/>'));
  const more=view.slice(view.indexOf('className="overviewMore"'));
  for(const kept of ['حالات الطلبات','المتجر بالأرقام','<LiveActivityPanel/>','{extra}'])assert.ok(more.includes(kept),kept+' kept under تفاصيل أكثر');
  assert.match(d,/هاي أهم إشي بمتجرك/);
@@ -35,9 +35,16 @@ test('1.9.10: a cart opens in a dialog with images, prices and total',()=>{
  const c=read('app/admin/CartMetricsPanel.tsx');
  assert.match(c,/className="browserCart browserCartButton"[^>]*aria-haspopup="dialog" onClick=\{\(\)=>setOpenKey\(cart\.deviceKey\)\}/);
  assert.match(c,/role="dialog" aria-modal="true"/);
- assert.match(c,/productThumbnail\(item\.image,120\)/);
+ assert.ok(c.includes('<AdminThumb src={item.image}/>'));
  assert.match(c,/\{n\(item\.quantity\)\} × \{price\(item\.unitPrice\)\}/);
  assert.match(c,/event\.key==='Escape'/);
  assert.match(c,/مجموع السلة/);
  assert.match(read('app/admin/admin.css'),/@media\(max-width:800px\)\{\.cartDialogBackdrop\{align-items:flex-end/);
+});
+test('1.9.11: admin thumbnails load eagerly and fall back to the original image',()=>{
+ const t=read('app/admin/AdminThumb.tsx');
+ assert.ok(!t.includes('loading="lazy"'),'no lazy loading inside scrolling popups');
+ assert.ok(t.includes('onError={()=>{if(src&&current!==src)setCurrent(src);else setFailed(true)}}'));
+ assert.ok(t.includes('className={"adminThumbEmpty"'));
+ for(const f of ['app/admin/CartMetricsPanel.tsx','app/admin/Dashboard.tsx'])assert.ok(!read(f).includes('loading="lazy"'),f);
 });

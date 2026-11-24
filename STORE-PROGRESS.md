@@ -2810,6 +2810,10 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-24 (Asia/Hebron) — ADMIN-CART-IMAGES / candidate 1.9.11
+- Owner: not all images show in the cart popup. Checked all 3 stores: every cart product has a product_media image and every thumbnail returns 200. In a 24-item cart the last 7 lazy images stayed unloaded until scrolled, and on-the-fly resizing takes ~1s with no retry.
+- New AdminThumb: eager load, falls back to the original image on error, grey placeholder if both fail. Used in the cart popup and top products.
+
 ## 2026-11-24 (Asia/Hebron) — ADMIN-OVERVIEW-SAMPLE-CARTS / candidate 1.9.10
 - Owner feedback on 1.9.9: overview did not match the Main sample; quick status change was hidden in the row menu. Owner also asked for cart contents in a popup.
 - OrdersPanel: inline colour-coded status select per row (same quickStatus flow); ⋯ menu keeps WhatsApp + details.
