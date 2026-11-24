@@ -22,9 +22,9 @@ jobs:
         with:
           path: rokon-logo-checks.sqlite
           key: rokon-logo-checks-43517042366-1
-          fail-on-cache-miss: true
+          fail-on-cache-miss: false
       - run: pip install 'openai>=2.15,<3' Pillow && npm install --no-save wrangler@4
-      - name: Select up to 300 previously screened images
+      - name: Select and submit draft images
         env:
           IMAGE_COUNT: ${{ inputs.image_count }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -77,6 +77,34 @@ jobs:
               return data, mime
           
           
+          def preview_unscreened(db, count):
+              rows = []
+              products = db.query(f"""SELECT id FROM products WHERE {DRAFT} ORDER BY id""")
+              for product in products:
+                  live = db.query("""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,
+                      p.item_number,p.name,m.variant_id FROM product_media m JOIN products p ON p.id=m.product_id
+                      WHERE p.id=? AND p.active=0 AND p.deleted_at IS NULL AND m.media_type='image' ORDER BY m.id""",
+                      [product["id"]])
+                  originals = [row for row in live if row["url"].startswith("/media/imports/")]
+                  if not originals or len(originals) > count - len(rows):
+                      continue
+                  snapshot = [[row["media_id"], row["url"], row["updated_at"]] for row in live]
+                  # Unscreened outputs are staged for inspection before any publication.
+                  group = []
+                  for row in originals:
+                      try:
+                          data, _ = download(row["url"])
+                      except (OSError, ValueError):
+                          break
+                      group.append({**row, "sha256": hashlib.sha256(data).hexdigest(),
+                                    "snapshot": snapshot, "clear": False})
+                  if len(group) == len(originals):
+                      rows.extend(group)
+                  if len(rows) == count:
+                      break
+              return rows
+
+
           def preview(db, cache, count):
               rows = []
               with sqlite3.connect(cache.resolve().as_uri() + "?mode=ro", uri=True) as connection:
@@ -307,7 +335,8 @@ jobs:
               if args.mode == "preview":
                   if not args.cache or state.exists():
                       parser.error("Preview requires the screening cache and an unused batch directory")
-                  rows = preview(db, args.cache, args.count)
+                  rows = (preview(db, args.cache, args.count) if args.cache.is_file()
+                              else preview_unscreened(db, args.count))
                   save(plan, rows)
                   print(f"{len(rows)} eligible images")
                   return
