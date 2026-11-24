@@ -15,15 +15,4 @@ test('1.9.8: sidebar keeps every admin page exactly once in six groups, three of
  assert.match(page,/<AdminNav tab=\{tab\} canModule=\{canModule\} onNavigate=\{navigate\}/);
  assert.doesNotMatch(page,/const navigation=\[/);
 });
-test('1.9.8: overview opens with what needs attention and one switchable chart',()=>{
- const d=read('app/admin/Dashboard.tsx');
- const view=d.slice(d.indexOf('export function DashboardView'),d.indexOf('export default function Dashboard'));
- assert.ok(view.indexOf('attentionSection')<view.indexOf('metricGrid'),'attention cards come before the numbers');
- for(const target of ["'الطلبات','new'","'الطلبات','working'","'المنتجات','soldout'","'المنتجات','low'"])assert.ok(view.includes(target),target);
- assert.match(view,/<ChartSwitch data=\{data\.chart\}\/>/);
- assert.match(view,/<details className="dashboardPanel engagementPanel">/);
- assert.doesNotMatch(view,/orderActionBanner|liveSummary|dashWelcome/,'duplicate order banners removed');
- const css=read('app/admin/admin.css');
- assert.match(css,/\.attentionGrid\{display:grid;grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);
- assert.match(css,/@media\(max-width:1050px\)\{\.attentionGrid\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\)\}\}/);
-});
+

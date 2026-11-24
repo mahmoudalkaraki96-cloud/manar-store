@@ -14,8 +14,8 @@ export async function readGroupedCarts(db:Database,cutoff:number,page=1,now=Date
  WHERE s.updated_at>=? AND s.quantity>0 ORDER BY s.updated_at DESC,s.cart_id LIMIT ? OFFSET ?`).bind(cutoff,pageSize,(currentPage-1)*pageSize).all<CartRow>();
  const parsed=rows.results.map(row=>({row,lines:lines(row.items_json)})),productIds=[...new Set(parsed.flatMap(c=>c.lines.map(l=>l.productId)))];
  const [products,variants]=productIds.length?await Promise.all([
- db.prepare('SELECT id,item_number,name,price_agorot FROM products WHERE id IN(SELECT value FROM json_each(?))').bind(JSON.stringify(productIds)).all<{id:number;item_number:number;name:string;price_agorot:number}>(),
- db.prepare(`SELECT v.id,v.product_id,v.price_agorot,GROUP_CONCAT(pov.value,' / ') AS name FROM product_variants v LEFT JOIN variant_option_values vov ON vov.variant_id=v.id LEFT JOIN product_option_values pov ON pov.id=vov.option_value_id WHERE v.product_id IN(SELECT value FROM json_each(?)) GROUP BY v.id,v.product_id`).bind(JSON.stringify(productIds)).all<{id:number;product_id:number;name:string|null;price_agorot:number|null}>()
+ db.prepare("SELECT p.id,p.item_number,p.name,p.price_agorot,(SELECT pm.url FROM product_media pm WHERE pm.product_id=p.id AND pm.media_type='image' ORDER BY pm.is_primary DESC,pm.sort_order,pm.id LIMIT 1) AS image_url FROM products p WHERE p.id IN(SELECT value FROM json_each(?))").bind(JSON.stringify(productIds)).all<{id:number;item_number:number;name:string;price_agorot:number;image_url:string|null}>(),
+ db.prepare(`SELECT v.id,v.product_id,v.price_agorot,GROUP_CONCAT(pov.value,' / ') AS name,(SELECT pm.url FROM product_media pm WHERE pm.variant_id=v.id AND pm.media_type='image' ORDER BY pm.is_primary DESC,pm.sort_order,pm.id LIMIT 1) AS image_url FROM product_variants v LEFT JOIN variant_option_values vov ON vov.variant_id=v.id LEFT JOIN product_option_values pov ON pov.id=vov.option_value_id WHERE v.product_id IN(SELECT value FROM json_each(?)) GROUP BY v.id,v.product_id`).bind(JSON.stringify(productIds)).all<{id:number;product_id:number;name:string|null;price_agorot:number|null;image_url:string|null}>()
  ]):[{results:[]},{results:[]}];
  const productMap=new Map(products.results.map(p=>[p.id,p])),variantMap=new Map(variants.results.map(v=>[v.id,v]));
  const carts=await Promise.all(parsed.map(async({row,lines})=>{
@@ -23,7 +23,7 @@ export async function readGroupedCarts(db:Database,cutoff:number,page=1,now=Date
    const rawPrice=product&&(line.variantId==null||variant)?variant?.price_agorot??product.price_agorot:null;
    const unitAgorot=rawPrice!=null&&Number.isSafeInteger(rawPrice)&&rawPrice>=0?rawPrice:null;
    const totalAgorot=unitAgorot==null?null:unitAgorot*line.qty;
-   return {productId:line.productId,variantId:line.variantId,itemNumber:product?.item_number??null,productName:product?.name||'منتج محذوف #'+line.productId,variantName:line.variantId?variant?.name||'متغير #'+line.variantId:'الصنف الأساسي',quantity:line.qty,lineTotal:totalAgorot!=null&&Number.isSafeInteger(totalAgorot)?totalAgorot/100:null};
+   return {productId:line.productId,variantId:line.variantId,itemNumber:product?.item_number??null,productName:product?.name||'منتج محذوف #'+line.productId,variantName:line.variantId?variant?.name||'متغير #'+line.variantId:'الصنف الأساسي',quantity:line.qty,unitPrice:unitAgorot==null?null:unitAgorot/100,image:variant?.image_url||product?.image_url||null,lineTotal:totalAgorot!=null&&Number.isSafeInteger(totalAgorot)?totalAgorot/100:null};
   });
   const complete=row.items_json!==null&&items.length>0&&items.every(item=>item.lineTotal!==null)&&items.reduce((sum,item)=>sum+item.quantity,0)===Number(row.quantity);
   const agorot=items.reduce((sum,item)=>sum+Math.round((item.lineTotal??0)*100),0);
