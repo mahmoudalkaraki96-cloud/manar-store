@@ -45,7 +45,8 @@ jobs:
           import subprocess
           import tempfile
           import time
-          from urllib.request import urlopen
+          from urllib.parse import urlsplit
+          from urllib.request import Request, urlopen
           
           from rokon_import import Cloudflare, BUCKET
           from rokon_logo_screen import ACCOUNT, DATABASE, ORIGIN, RULE
@@ -64,11 +65,23 @@ jobs:
               temp.replace(path)
           
           
+          MEDIA_ORIGIN = "https://www.rokon-home.com"
+
+          def original_path(url):
+              value = urlsplit(url)
+              if value.netloc not in {"", "www.rokon-home.com", "rokon-home.com", urlsplit(ORIGIN).netloc}:
+                  return None
+              if value.scheme not in {"", "https"} or not value.path.startswith("/media/imports/"):
+                  return None
+              return value.path
+
           def download(url):
-              if not url.startswith("/media/imports/"):
+              path = original_path(url)
+              if not path:
                   raise ValueError("Expected a Rokon import image")
-              with urlopen(ORIGIN + url, timeout=45) as response:
-                  if response.url != ORIGIN + url:
+              request = Request(MEDIA_ORIGIN + path, headers={"User-Agent": "Mozilla/5.0"})
+              with urlopen(request, timeout=45) as response:
+                  if response.url != MEDIA_ORIGIN + path:
                       raise ValueError("Unexpected media redirect")
                   data = response.read(20_000_001)
                   mime = response.headers.get_content_type()
@@ -85,7 +98,7 @@ jobs:
                       p.item_number,p.name,m.variant_id FROM product_media m JOIN products p ON p.id=m.product_id
                       WHERE p.id=? AND p.active=0 AND p.deleted_at IS NULL AND m.media_type='image' ORDER BY m.id""",
                       [product["id"]])
-                  originals = [row for row in live if row["url"].startswith("/media/imports/")]
+                  originals = [row for row in live if original_path(row["url"])]
                   if not originals or len(originals) > count - len(rows):
                       continue
                   snapshot = [[row["media_id"], row["url"], row["updated_at"]] for row in live]
@@ -94,7 +107,8 @@ jobs:
                   for row in originals:
                       try:
                           data, _ = download(row["url"])
-                      except (OSError, ValueError):
+                      except (OSError, ValueError) as error:
+                          print(f"Skipping media {row['media_id']}: {type(error).__name__}: {error}")
                           break
                       group.append({**row, "sha256": hashlib.sha256(data).hexdigest(),
                                     "snapshot": snapshot, "clear": False})
@@ -305,7 +319,7 @@ jobs:
                                                "estimated_usd": round(cost, 6), "items": rows})
               sections = []
               for row in rows:
-                  old = html.escape(row.get("before") or ORIGIN + row["url"], quote=True)
+                  old = html.escape(row.get("before") or MEDIA_ORIGIN + (original_path(row["url"]) or "/"), quote=True)
                   new = html.escape(row.get("file", ""), quote=True)
                   edited = f'<img loading="lazy" src="{new}" alt="بعد">' if new else ""
                   sections.append(f'<section><h2>{row["item_number"]} · {html.escape(row["name"])}</h2>'
