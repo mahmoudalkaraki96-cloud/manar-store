@@ -33,5 +33,5 @@ export function filterProducts(products:Product[],categories:Category[],f:Produc
  });
  const stock=(p:Product)=>p.variants?.length?p.variants.reduce((n,v)=>n+Math.max(0,v.stock),0):p.stock;
  const price=(p:Product)=>p.variants?.length?Math.min(...p.variants.map(v=>v.price??p.price)):p.price;
- return rows.sort((a,b)=>f.sort==='name'?a.name.localeCompare(b.name,'ar'):f.sort==='number'?a.itemNumber-b.itemNumber:f.sort==='stock'?stock(a)-stock(b):f.sort==='price'?price(a)-price(b):b.createdAt-a.createdAt||b.id-a.id);
+ return rows.sort((a,b)=>f.sort==='sold'?(b.orders||0)-(a.orders||0)||b.id-a.id:f.sort==='views'?(b.views||0)-(a.views||0)||b.id-a.id:f.sort==='name'?a.name.localeCompare(b.name,'ar'):f.sort==='number'?a.itemNumber-b.itemNumber:f.sort==='stock'?stock(a)-stock(b):f.sort==='price'?price(a)-price(b):b.createdAt-a.createdAt||b.id-a.id);
 }
