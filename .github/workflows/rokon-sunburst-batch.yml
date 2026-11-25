@@ -19,6 +19,10 @@ on:
         description: Resume submitted Rokon image groups and publish results
         type: boolean
         default: false
+      finish_drafts:
+        description: Finish remaining Rokon drafts from saved results
+        type: boolean
+        default: false
 permissions:
   contents: read
   actions: read
@@ -32,7 +36,7 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/cache/restore@v4
-        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining && !inputs.finish_drafts'
         with:
           path: rokon-logo-checks.sqlite
           key: rokon-logo-checks-43517042366-1
@@ -52,6 +56,13 @@ jobs:
           run-id: 45386101237
           github-token: ${{ github.token }}
           path: result
+      - uses: actions/download-artifact@v4
+        if: inputs.finish_drafts
+        with:
+          name: rokon-sunburst-report
+          run-id: 45464984956
+          github-token: ${{ github.token }}
+          path: result
       - name: Prepare and execute batch
 
         env:
@@ -59,6 +70,7 @@ jobs:
           PUBLISH_TRIAL: ${{ inputs.publish_trial }}
           PROCESS_REMAINING: ${{ inputs.process_remaining }}
           RESUME_REMAINING: ${{ inputs.resume_remaining }}
+          FINISH_DRAFTS: ${{ inputs.finish_drafts }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
@@ -314,30 +326,38 @@ jobs:
                   upload(directory / item["file"], key)
                   upload(directory / f"{media}-thumb.webp", "thumbnails/w384/" + key)
               now = int(time.time() * 1000)
-              checks = " AND ".join("EXISTS (SELECT 1 FROM product_media WHERE id=? AND product_id=? AND url=? AND updated_at IS ?)"
-                                    for _ in snapshot)
-              values = [value for media, url, updated in snapshot for value in (media, product, url, updated)]
-              guard = f"""EXISTS (SELECT 1 FROM products WHERE id=? AND {DRAFT})
-                  AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=?
-                  AND {checks}"""
-              pairs = [(media, url) for media, url in targets.items()]
-              cases = " ".join("WHEN ? THEN ?" for _ in pairs)
-              ids = ",".join("?" for _ in pairs)
-              verified_checks = " AND ".join("EXISTS (SELECT 1 FROM product_media WHERE id=? AND product_id=? AND url=?)"
-                                             for _ in expected)
-              verified_values = [value for media, url in expected for value in (media, product, url)]
+              guard = f"""(SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=?
+                 AND NOT EXISTS (
+                   SELECT 1 FROM json_each(?) AS j
+                   LEFT JOIN product_media m ON m.id=json_extract(j.value,'$[0]')
+                      AND m.product_id=? AND m.media_type='image'
+                      AND m.url=json_extract(j.value,'$[1]')
+                      AND m.updated_at IS json_extract(j.value,'$[2]')
+                   WHERE m.id IS NULL
+                 ) AND EXISTS (SELECT 1 FROM products WHERE id=? AND {DRAFT})"""
+              verified_checks = """NOT EXISTS (
+                   SELECT 1 FROM json_each(?) AS j LEFT JOIN product_media m
+                   ON m.id=json_extract(j.value,'$[0]') AND m.product_id=?
+                      AND m.media_type='image' AND m.url=json_extract(j.value,'$[1]')
+                   WHERE m.id IS NULL
+                 )"""
+              expected_json = json.dumps(expected)
               db.batch([
-                  (f"UPDATE product_media SET url=CASE id {cases} END,updated_at=? WHERE id IN ({ids}) AND {guard}",
-                   [value for pair in pairs for value in pair] + [now, *targets, product, product, len(snapshot), *values]),
+                  (f"""WITH changes AS MATERIALIZED (
+                         SELECT CAST(key AS INTEGER) AS id, value AS url FROM json_each(?) WHERE {guard}
+                       )
+                       UPDATE product_media SET url=(SELECT url FROM changes WHERE id=product_media.id),updated_at=?
+                       WHERE id IN (SELECT id FROM changes)""",
+                   [json.dumps(targets), product, len(snapshot), json.dumps(snapshot), product, product, now]),
                   (f"""UPDATE products SET active=1,updated_at=? WHERE id=? AND {DRAFT}
                        AND (SELECT COUNT(*) FROM product_media WHERE product_id=? AND media_type='image')=?
-                       AND {verified_checks}""", [now, product, product, len(snapshot), *verified_values]),
+                       AND {verified_checks}""", [now, product, product, len(snapshot), expected_json, product]),
               ])
               if not db.query(f"SELECT id FROM products WHERE id=? AND active=1 AND {verified_checks}",
-                              [product, *verified_values]):
+                              [product, expected_json, product]):
                   raise ValueError("Draft changed before publication")
-          
-          
+
+
           def write_report(directory, batch_id, rows):
               from collections import Counter
               counts = Counter(row["status"] for row in rows)
@@ -501,9 +521,76 @@ jobs:
                   state = json.loads((target / "submission.json").read_text(encoding="utf-8"))
                   wait_for(target, plan, state, prior)
 
+          def finish_drafts(db, client, directory):
+              from itertools import groupby
+              from shutil import copy2
+          
+              ready_media = {}
+              for path in directory.rglob("report.json"):
+                  report = json.loads(path.read_text(encoding="utf-8"))
+                  for item in report["items"]:
+                      if item.get("file") and (path.parent / item["file"]).is_file():
+                          key = (item["media_id"], item["url"], item["updated_at"])
+                          ready_media[key] = (path.parent, report["batch_id"], item)
+              draft = DRAFT.replace("products.id", "p.id")
+              live = db.query(f"""SELECT m.id AS media_id,m.url,m.updated_at,p.id AS product_id,
+                  p.item_number,p.name,m.variant_id FROM products p JOIN product_media m ON m.product_id=p.id
+                  WHERE p.{draft} AND m.media_type='image' ORDER BY p.id,m.id""")
+              results = []
+              for product, media in groupby(live, key=lambda row: row["product_id"]):
+                  rows = list(media)
+                  snapshot = [[row["media_id"], row["url"], row["updated_at"]] for row in rows]
+                  target = directory / f"finish-{product}"
+                  target.mkdir()
+                  known = []
+                  missing = []
+                  batch_id = None
+                  try:
+                      for row in rows:
+                          if "/media/edited/" in row["url"]:
+                              continue
+                          if not original_path(row["url"]):
+                              raise ValueError("Unrecognized original image URL")
+                          key = (row["media_id"], row["url"], row["updated_at"])
+                          saved = ready_media.get(key)
+                          if saved:
+                              folder, batch_id, item = saved
+                              for name in (item["file"], f"{item['media_id']}-thumb.webp"):
+                                  copy2(folder / name, target / name)
+                              known.append({**item, "status": "ready", "reason": "",
+                                            "snapshot": snapshot, "clear": True})
+                          else:
+                              raw, _ = download(row["url"])
+                              missing.append({**row, "sha256": hashlib.sha256(raw).hexdigest(),
+                                              "snapshot": snapshot, "clear": True})
+                      if missing:
+                          save(target / "preview.json", missing)
+                          submit(client, target, missing)
+                          state = json.loads((target / "submission.json").read_text(encoding="utf-8"))
+                          deadline = time.monotonic() + 90 * 60
+                          while not collect(client, db, target, missing, state, approved=True, prior=known):
+                              if time.monotonic() >= deadline:
+                                  raise TimeoutError("Still processing; retain submission.json")
+                              time.sleep(60)
+                          report = json.loads((target / "report.json").read_text(encoding="utf-8"))
+                          published = all(item["status"] == "published" for item in report["items"])
+                      elif known:
+                          publish_group(db, target, batch_id, product, snapshot, known)
+                          published = True
+                      else:
+                          raise ValueError("No images to apply")
+                      results.append({"product": product, "published": published,
+                                      "reused": len(known), "submitted": len(missing)})
+                  except Exception as error:
+                      results.append({"product": product, "published": False, "error": str(error)})
+                  save(directory / "finish-summary.json", results)
+                  print(json.dumps(results[-1]), flush=True)
+              if any(not row["published"] for row in results):
+                  raise RuntimeError("Some drafts remain; see finish-summary.json")
+
           def main():
               parser = argparse.ArgumentParser(description=__doc__)
-              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait", "publish-reviewed", "process-remaining", "resume-remaining"))
+              parser.add_argument("mode", choices=("preview", "submit", "collect", "wait", "publish-reviewed", "process-remaining", "resume-remaining", "finish-drafts"))
               parser.add_argument("--directory", required=True, type=Path)
               parser.add_argument("--cache", type=Path)
               parser.add_argument("--count", type=int, choices=range(1, 301), default=300)
@@ -527,6 +614,9 @@ jobs:
                   return
               from openai import OpenAI
               client = OpenAI(max_retries=0, timeout=240)
+              if args.mode == "finish-drafts":
+                  finish_drafts(db, client, directory)
+                  return
               if args.mode == "resume-remaining":
                   resume_remaining(db, client, directory)
                   return
@@ -552,6 +642,10 @@ jobs:
           if __name__ == "__main__":
               main()
           PYTHON_SCRIPT
+          if [ "$FINISH_DRAFTS" = true ]; then
+            python -u rokon_sunburst_batch.py finish-drafts --directory result
+            exit
+          fi
           if [ "$RESUME_REMAINING" = true ]; then
             python -u rokon_sunburst_batch.py resume-remaining --directory result
             exit
@@ -567,18 +661,27 @@ jobs:
           python rokon_sunburst_batch.py preview --cache rokon-logo-checks.sqlite --directory result --count "$IMAGE_COUNT"
           python rokon_sunburst_batch.py submit --directory result
       - uses: actions/upload-artifact@v4
-        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining && always()'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining && !inputs.finish_drafts && always()'
         with:
           name: rokon-sunburst-submission
           path: result/
       - name: Collect results and publish complete products
-        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining'
+        if: '!inputs.publish_trial && !inputs.process_remaining && !inputs.resume_remaining && !inputs.finish_drafts'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python rokon_sunburst_batch.py wait --directory result
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: '!inputs.finish_drafts && always()'
         with:
           name: rokon-sunburst-report
           path: result/
+      - uses: actions/upload-artifact@v4
+        if: inputs.finish_drafts && always()
+        with:
+          name: rokon-finish-summary
+          path: |
+            result/finish-summary.json
+            result/finish-*/preview.json
+            result/finish-*/submission.json
+            result/finish-*/report.json
