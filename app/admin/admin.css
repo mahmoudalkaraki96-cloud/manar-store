@@ -460,3 +460,79 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
  .adminRedesign .productRowMenu{left:0}
  .adminRedesign .productsGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 }
+/* 1.9.14: product editor as a two-column page like the sample */
+.adminRedesign .editModal.productEditorPage{padding:16px;place-items:stretch}
+.adminRedesign .productEditorV2{width:min(1240px,100%)!important;max-width:100%!important;max-height:calc(100dvh - 32px)!important;margin:0 auto;padding:0!important;background:var(--admin-bg,#f3f5f7);border-radius:16px;overflow:auto;display:flex;flex-direction:column}
+.adminRedesign.themeDark .productEditorV2{background:#0f1a1c}
+.adminRedesign .productEditorBar{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 20px;background:var(--admin-panel);border-bottom:1px solid var(--admin-line)}
+.adminRedesign .productEditorCrumb{flex:1 1 240px;min-width:0;display:flex;flex-direction:column}
+.adminRedesign .productEditorCrumb small{color:var(--admin-muted);font-size:13px}
+.adminRedesign .productEditorCrumb b{font-size:20px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminRedesign .crumbLink{border:0;background:none;padding:0;min-height:0;color:var(--admin-accent);font:inherit;font-weight:700;cursor:pointer}
+.adminRedesign .unsavedNote{color:#9a4a00;font-size:13px;font-weight:700}
+.adminRedesign .productEditorActions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.adminRedesign .productEditorActions a.secondaryAction{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--admin-line);border-radius:12px;color:var(--admin-ink);text-decoration:none;font-weight:700;font-size:14px}
+.adminRedesign .productEditorActions .mainBtn{min-height:44px;padding:0 18px;border-radius:12px!important;margin:0}
+.adminRedesign .productEditorV2 .productEditorMessage{margin:14px 20px 0}
+.adminRedesign .productEditorColumns{display:flex;flex-wrap:wrap;gap:18px;padding:18px 20px 24px;align-items:flex-start}
+.adminRedesign .productEditorMain{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.adminRedesign .productEditorSide{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:18px;position:sticky;top:96px}
+.adminRedesign .editorCard{background:var(--admin-panel);border:1px solid var(--admin-line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.adminRedesign .editorCard h3{margin:0;font-size:16px;font-weight:800}
+.adminRedesign .editorCardHead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.adminRedesign .editorLangTabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--admin-soft)}
+.adminRedesign .editorLangTabs button{min-height:32px;padding:0 12px;border:0;border-radius:999px!important;background:none;color:var(--admin-muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.adminRedesign .editorLangTabs button[aria-pressed=true]{background:var(--admin-panel);color:var(--admin-accent);box-shadow:0 1px 2px #10191f14}
+.adminRedesign .editorField{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;min-width:0}
+.adminRedesign .editorField small{font-weight:400;color:var(--admin-muted);font-size:12px}
+.adminRedesign .editorField input,.adminRedesign .editorField textarea,.adminRedesign .editorField select{width:100%;box-sizing:border-box;min-height:44px;border:1px solid var(--admin-line);border-radius:10px;padding:8px 12px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-weight:400}
+.adminRedesign .editorField textarea{min-height:120px;resize:vertical}
+.adminRedesign .editorField.disabledField input{opacity:.6}
+.adminRedesign .editorNumber{max-width:220px}
+.adminRedesign .editorHint{color:var(--admin-muted);font-size:12px;margin:0}
+.adminRedesign .editorWarn{color:#9a4a00!important}
+.adminRedesign .editorPriceGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.adminRedesign .editorProfit{color:#0d7a5f;font-size:13px;font-weight:700}
+.adminRedesign .productEditorV2 .mediaEditor{margin:0;padding:0;border:0;background:none}
+.adminRedesign .productEditorV2 .mediaThumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.adminRedesign .productEditorV2 .mediaThumbs>div{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--admin-line)}
+.adminRedesign .productEditorV2 .mediaThumbs>div.mainImage{border:2px solid var(--admin-accent)}
+.adminRedesign .productEditorV2 .mediaThumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.adminRedesign .mainImageBadge{position:absolute;bottom:6px;right:6px;padding:2px 8px;border-radius:999px;background:var(--admin-accent);color:#fff;font-size:11px;font-weight:700}
+.adminRedesign .mediaDropZone{border-style:dashed!important}
+.adminRedesign .mediaDropZone.dragOver{border-color:var(--admin-accent)!important;background:var(--admin-accent-soft,#e7f5ef)!important}
+.adminRedesign .productEditorV2 .variantEditor{margin:0;padding:0;border:0;background:none;display:flex;flex-direction:column;gap:12px}
+.adminRedesign .variantSummary{overflow-x:auto;border:1px solid var(--admin-line);border-radius:12px}
+.adminRedesign .variantSummary table{width:100%;border-collapse:collapse;font-size:14px}
+.adminRedesign .variantSummary th{text-align:right;font-size:12px;color:var(--admin-muted);padding:10px 12px;background:var(--admin-soft);border-bottom:1px solid var(--admin-line)}
+.adminRedesign .variantSummary td{padding:10px 12px;border-bottom:1px solid var(--admin-line)}.adminRedesign .variantSummary tr:last-child td{border-bottom:0}
+.adminRedesign .outOfStock{color:#b03a26!important;font-weight:700}
+.adminRedesign .editorMore{padding:0}
+.adminRedesign .editorMore>summary{list-style:none;display:flex;flex-direction:column;gap:2px;padding:18px 20px;cursor:pointer}.adminRedesign .editorMore>summary::-webkit-details-marker{display:none}
+.adminRedesign .editorMore>summary small{color:var(--admin-muted);font-size:13px}
+.adminRedesign .editorMoreBody{display:flex;flex-direction:column;gap:14px;padding:0 20px 20px}
+.adminRedesign .editorMoreBody label.wide{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+.adminRedesign .editorMoreBody .customFieldEditor{margin:0}
+.adminRedesign .editorSwitchRow{display:flex;align-items:center;gap:12px;cursor:pointer}
+.adminRedesign .editorSwitchRow>span{display:flex;flex-direction:column}.adminRedesign .editorSwitchRow small{color:var(--admin-muted);font-size:12px}
+.adminRedesign .editorStockTiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adminRedesign .editorStockTiles div{background:var(--admin-soft);border-radius:12px;padding:12px;display:flex;flex-direction:column}
+.adminRedesign .editorStockTiles b{font-size:22px}.adminRedesign .editorStockTiles small{font-size:12px;color:var(--admin-muted)}
+.adminRedesign .googlePreview{display:flex;flex-direction:column;gap:4px;padding:12px;border-radius:12px;background:var(--admin-soft)}
+.adminRedesign .googlePreview small:first-child{color:#0d7a5f;font-size:12px}
+.adminRedesign .googlePreview b{color:#1a4fb5;font-size:16px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminRedesign.themeDark .googlePreview b{color:#8ab4f8}
+.adminRedesign .googlePreview small:last-child{color:var(--admin-muted);font-size:13px;line-height:1.5}
+.adminRedesign .productEditorMobileSave{display:none}
+@media(max-width:800px){
+ .adminRedesign .editModal.productEditorPage{padding:0}
+ .adminRedesign .productEditorV2{border-radius:0;max-height:100%!important;height:100%}
+ .adminRedesign .productEditorBar{padding:10px 12px}
+ .adminRedesign .productEditorCrumb b{font-size:17px}
+ .adminRedesign .productEditorActions .mainBtn{display:none}
+ .adminRedesign .productEditorColumns{padding:12px;gap:12px}
+ .adminRedesign .productEditorSide{position:static}
+ .adminRedesign .editorCard{padding:14px;border-radius:12px}
+ .adminRedesign .productEditorMobileSave{display:block;position:sticky;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--admin-panel);border-top:1px solid var(--admin-line);z-index:20}
+ .adminRedesign .productEditorMobileSave .mainBtn{width:100%;min-height:48px;margin:0}
+}
