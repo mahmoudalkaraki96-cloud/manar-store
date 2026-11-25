@@ -15,13 +15,15 @@ export function filterProducts(products:Product[],categories:Category[],f:Produc
  const rows=products.filter(p=>{
   if(f.search.trim()&&!matches(p,f.search))return false;
   const stock=p.variants?.length?p.variants.reduce((sum,v)=>sum+Math.max(0,v.stock),0):p.stock;
+  // 1.9.13: products without stock tracking never run out, same as the summary chips and the storefront.
+  const untracked=p.inventoryEnabled===false;
   const flowerText=(text:string)=>norm(text).replace(/ورود/g,'ورد');
   if(f.name.trim()&&!flowerText(f.name).split(/\s+/).every(term=>flowerText(p.name).includes(term)))return false;
   if(f.number.trim()&&!String(p.itemNumber).includes(f.number.trim().replace(/^#/,'')))return false;
   if(f.categoryText.trim()&&!norm(categoryLabel(p.categoryId!,categories)).includes(norm(f.categoryText.trim())))return false;
   if(f.featured==='yes'&&!p.featured||f.featured==='no'&&p.featured)return false;
   if(f.stockMin!==''&&stock<Number(f.stockMin)||f.stockMax!==''&&stock>Number(f.stockMax)||f.viewsMin!==''&&(p.views||0)<Number(f.viewsMin))return false;
-  if(f.status==='active'&&!p.active||f.status==='draft'&&p.active||f.status==='soldout'&&(!p.active||stock>0)||f.status==='low'&&(!p.active||stock<=0||stock>5)||f.status==='available'&&(!p.active||stock<=0)||f.status==='featured'&&!p.featured)return false;
+  if(f.status==='active'&&!p.active||f.status==='draft'&&p.active||f.status==='soldout'&&(!p.active||untracked||stock>0)||f.status==='low'&&(!p.active||untracked||stock<=0||stock>5)||f.status==='available'&&(!p.active||!untracked&&stock<=0)||f.status==='featured'&&!p.featured)return false;
   if(f.category==='none'&&p.categoryId!=null||f.category!=='all'&&f.category!=='none'&&!categoryIds.has(p.categoryId!))return false;
   const suppliers=p.suppliers||[];
   if(f.supplier==='none'&&suppliers.length||f.supplier!=='all'&&f.supplier!=='none'&&!suppliers.some(s=>String(s.id)===f.supplier))return false;

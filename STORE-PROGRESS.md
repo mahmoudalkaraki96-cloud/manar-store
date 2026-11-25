@@ -2810,6 +2810,9 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-25 (Asia/Hebron) — PRODUCT-STOCK-FILTERS / candidate 1.9.13
+- After 1.9.12 on Manar: «خلصت» chip showed 0 but its filter listed 58 (all 1354 active products have inventoryEnabled=false). filterProducts now treats untracked stock as never soldout/low and always available, matching the chips and the storefront.
+
 ## 2026-11-25 (Asia/Hebron) — ADMIN-PRODUCTS-PAGE / candidate 1.9.12
 - Owner approved the products plan from the Products sample.
 - page.tsx products tab rebuilt: header + import/new buttons, status chips with counts, search/category/sort toolbar with list/grid switch (remembered in localStorage), folded «فلاتر أكثر» holding every previous filter, table (product+image, number, category picker, price, stock badge, sold=order_count, show/hide switch, ⋯ menu edit/feature/delete), grid cards, numbered pager. Column header filters and scroll mode removed; views column moved to sort.
