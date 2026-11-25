@@ -2810,6 +2810,9 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-25 (Asia/Hebron) — EDITOR-STICKY-BAR / candidate 1.9.15
+- Live check of 1.9.14: editor top bar scrolled away. admin-responsive.css (loaded after admin.css) has .adminRedesign header:not(.adminTop){position:static} at (0,2,1). Selector raised to .adminRedesign .productEditorV2 header.productEditorBar (0,3,1); verified sticky on the live page by injecting the rule.
+
 ## 2026-11-25 (Asia/Hebron) — PRODUCT-EDITOR-PAGE / candidate 1.9.14
 - Owner approved the ProductEdit sample plan. Editor modal rebuilt into a two-column page; every old control kept (media upload/paste/url/video, variants with media, custom fields, keywords, import source, category picker, item number, wholesale/purchase/stock).
 - New: oldPrice field (saved as offer_price), profit line, language tabs replacing the translations <details> for the product (variants keep it), main-image badge, drag-and-drop upload, variant summary table, stock tiles, read-only Google preview, unsaved-changes note + confirm on close + beforeunload.

@@ -464,7 +464,7 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .editModal.productEditorPage{padding:16px;place-items:stretch}
 .adminRedesign .productEditorV2{width:min(1240px,100%)!important;max-width:100%!important;max-height:calc(100dvh - 32px)!important;margin:0 auto;padding:0!important;background:var(--admin-bg,#f3f5f7);border-radius:16px;overflow:auto;display:flex;flex-direction:column}
 .adminRedesign.themeDark .productEditorV2{background:#0f1a1c}
-.adminRedesign .productEditorBar{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 20px;background:var(--admin-panel);border-bottom:1px solid var(--admin-line)}
+.adminRedesign .productEditorV2 header.productEditorBar{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 20px;background:var(--admin-panel);border-bottom:1px solid var(--admin-line)}
 .adminRedesign .productEditorCrumb{flex:1 1 240px;min-width:0;display:flex;flex-direction:column}
 .adminRedesign .productEditorCrumb small{color:var(--admin-muted);font-size:13px}
 .adminRedesign .productEditorCrumb b{font-size:20px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

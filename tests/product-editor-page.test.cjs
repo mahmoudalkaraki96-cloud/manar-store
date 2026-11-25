@@ -41,3 +41,9 @@ test('1.9.14: editor stacks to one column with a sticky save on phones',()=>{
  assert.ok(b.includes('.adminRedesign .productEditorMobileSave{display:block;position:sticky;bottom:0'));
  assert.ok(b.includes('.adminRedesign .productEditorSide{position:static}'));
 });
+test('1.9.15: editor top bar beats the generic static header rule',()=>{
+ // admin-responsive.css loads after admin.css and sets .adminRedesign header:not(.adminTop){position:static} (0,2,1),
+ // so the sticky bar needs a stronger selector (0,3,1), not just a later one.
+ assert.ok(read('app/admin/admin-responsive.css').includes('.adminRedesign header:not(.adminTop){height:auto;position:static'));
+ assert.ok(read('app/admin/admin.css').includes('.adminRedesign .productEditorV2 header.productEditorBar{position:sticky;top:0'));
+});
