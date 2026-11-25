@@ -12,16 +12,28 @@ test('1.9.14: editor top bar has breadcrumb, unsaved note, store preview and sav
  assert.ok(s.includes('window.confirm("في تغييرات مش محفوظة. بدك تسكّر بدون حفظ؟")'));
  assert.ok(s.includes('window.addEventListener("beforeunload",warn)'));
 });
-test('1.9.14: main column sections in sample order and side column cards',()=>{
+test('1.9.16: main column opens with the quick basics card, side keeps the summaries',()=>{
  const e=editor(),main=e.slice(e.indexOf('productEditorMain'),e.indexOf('productEditorSide'));
- const order=['المعلومات الأساسية','<h3>الصور</h3>','<h3>السعر</h3>','<h3>المتغيرات</h3>','إعدادات إضافية'].map(x=>main.indexOf(x));
+ const order=['<h3>الأساسيات</h3>','الوصف والمواصفات','<h3>الصور</h3>','<h3>المتغيرات</h3>','إعدادات إضافية'].map(x=>main.indexOf(x));
  assert.ok(order.every(i=>i>=0),'all main sections');
  assert.deepEqual([...order].sort((a,b)=>a-b),order);
+ const quick=main.slice(main.indexOf('quickBasics'),main.indexOf('الوصف والمواصفات'));
+ for(const field of ['اسم المنتج','رقم الصنف','<span>القسم</span><SearchableCategory','السعر (₪)','السعر قبل الخصم','المخزون','سعر الجملة','التكلفة','الربح','aria-checked={editingProduct.active}'])assert.ok(quick.includes(field),field+' in quick card');
+ assert.ok(!main.includes('<h3>السعر</h3>'),'separate price card removed');
  const side=e.slice(e.indexOf('productEditorSide'));
- for(const card of ['<h3>الحالة</h3>','<h3>القسم</h3>','<h3>المخزون</h3>','<h3>كيف بيطلع بجوجل</h3>'])assert.ok(side.includes(card),card);
- assert.ok(side.includes('role="switch" aria-checked={editingProduct.active}'));
- assert.ok(side.includes('role="switch" aria-checked={editingProduct.featured}'));
+ for(const card of ['<h3>الحالة</h3>','<h3>المخزون</h3>','<h3>كيف بيطلع بجوجل</h3>'])assert.ok(side.includes(card),card);
+ assert.ok(!side.includes('<h3>القسم</h3>')&&!side.includes('aria-checked={editingProduct.active}'),'category and visibility moved to the quick card');
+ assert.ok(side.includes('aria-checked={editingProduct.featured}'));
+ assert.equal((e.match(/SearchableCategory categories={data.categories} value={editingProduct.categoryId}/g)||[]).length,1,'one category picker');
 });
+test('1.9.16: fast entry — autofocus, Ctrl+S, save and add another in the same category',()=>{
+ const s=read('app/admin/page.tsx'),e=editor();
+ assert.ok(e.includes('ref={productNameRef} autoFocus={!editingProduct.id}'));
+ assert.ok(s.includes('(event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="s"'));
+ assert.ok(e.includes('onClick={()=>void saveProduct(true)}')&&e.includes('حفظ وإضافة منتج تاني'));
+ assert.ok(s.includes('if(another)setEditingProduct({...emptyProduct,images:[],variants:[],categoryId:keepCategory})'));
+});
+
 test('1.9.14: nothing from the old editor is lost',()=>{
  const e=editor();
  for(const kept of ['addMedia(event.target.files,"image")','onPaste={pasteImages}','importImageUrl()','addMedia(event.target.files,"video")','addVariant','addVariantMedia(index','pasteVariantImages(index','importVariantImageUrl(index)','addCustomField','updateCustomField(index','الكلمات المفتاحية','مصدر الاستيراد','SearchableCategory','value={editingProduct.itemNumber||""}','value={editingProduct.wholesale??""}','value={editingProduct.purchasePrice??""}','value={editingProduct.stock}','value={editingProduct.specifications||""}'])assert.ok(e.includes(kept),kept);
@@ -46,4 +58,9 @@ test('1.9.15: editor top bar beats the generic static header rule',()=>{
  // so the sticky bar needs a stronger selector (0,3,1), not just a later one.
  assert.ok(read('app/admin/admin-responsive.css').includes('.adminRedesign header:not(.adminTop){height:auto;position:static'));
  assert.ok(read('app/admin/admin.css').includes('.adminRedesign .productEditorV2 header.productEditorBar{position:sticky;top:0'));
+});
+test('1.9.16: quick card fields sit side by side, two per row on phones',()=>{
+ const css=read('app/admin/admin.css'),b=css.slice(css.indexOf('/* 1.9.16: quick basics'));
+ assert.ok(b.includes('.adminRedesign .quickRow2{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr))}'));
+ assert.ok(b.includes('@media(max-width:1100px){.adminRedesign .quickRow2{grid-template-columns:repeat(2,minmax(0,1fr))}'));
 });
