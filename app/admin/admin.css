@@ -536,3 +536,23 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
  .adminRedesign .productEditorMobileSave{display:block;position:sticky;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--admin-panel);border-top:1px solid var(--admin-line);z-index:20}
  .adminRedesign .productEditorMobileSave .mainBtn{width:100%;min-height:48px;margin:0}
 }
+/* 1.9.16: quick basics card — every field you need to add a product on one screen */
+.adminRedesign .quickBasics{gap:12px;padding:16px 18px}
+.adminRedesign .quickRow{display:grid;gap:10px 12px;align-items:start}
+.adminRedesign .quickRow1{grid-template-columns:minmax(0,1fr) 150px}
+.adminRedesign .quickRow2{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr))}
+.adminRedesign .quickRow3{grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,1.2fr) auto;align-items:center}
+.adminRedesign .quickBasics .editorField{gap:4px;font-size:12px}
+.adminRedesign .quickBasics .editorField input,.adminRedesign .quickBasics .categoryPickerTrigger{min-height:42px}
+.adminRedesign .quickBasics .editorField>small{font-size:11px;line-height:1.3}
+.adminRedesign .quickCategory .categoryPickerTrigger{width:100%}
+.adminRedesign .quickStockTotal{display:flex;align-items:center;min-height:42px;padding:0 12px;border:1px dashed var(--admin-line);border-radius:10px;font-size:14px}
+.adminRedesign .quickProfit{padding-top:16px}
+.adminRedesign .quickActive{padding-top:14px}.adminRedesign .quickActive .editorSwitchRow small{display:none}
+.adminRedesign .productEditorV2 .mediaUploadGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.adminRedesign .productEditorV2 .mediaUploadCard,.adminRedesign .productEditorV2 .mediaPasteCard{padding:12px;min-height:0}
+.adminRedesign .productEditorV2 .mediaUploadCard small,.adminRedesign .productEditorV2 .mediaPasteCard small{display:none}
+.adminRedesign .productEditorV2 .editorField textarea{min-height:90px}
+.adminRedesign .saveAnother{min-height:44px;padding:0 14px;border-radius:12px!important;font-weight:700}
+@media(max-width:1100px){.adminRedesign .quickRow2{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .quickRow3{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .quickProfit,.adminRedesign .quickActive{padding-top:0}}
+@media(max-width:800px){.adminRedesign .quickRow1{grid-template-columns:minmax(0,1fr) 110px}.adminRedesign .productEditorV2 .mediaUploadGrid{grid-template-columns:1fr}.adminRedesign .saveAnother{display:none}}
