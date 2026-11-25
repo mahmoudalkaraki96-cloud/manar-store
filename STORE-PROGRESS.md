@@ -2810,6 +2810,11 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-25 (Asia/Hebron) — ADMIN-PRODUCTS-PAGE / candidate 1.9.12
+- Owner approved the products plan from the Products sample.
+- page.tsx products tab rebuilt: header + import/new buttons, status chips with counts, search/category/sort toolbar with list/grid switch (remembered in localStorage), folded «فلاتر أكثر» holding every previous filter, table (product+image, number, category picker, price, stock badge, sold=order_count, show/hide switch, ⋯ menu edit/feature/delete), grid cards, numbered pager. Column header filters and scroll mode removed; views column moved to sort.
+- worker: PATCH /api/admin/products/:id/active (products.write via /products/ prefix), 404 for deleted. product-filters: sold and views sorts.
+
 ## 2026-11-24 (Asia/Hebron) — ADMIN-CART-IMAGES / candidate 1.9.11
 - Owner: not all images show in the cart popup. Checked all 3 stores: every cart product has a product_media image and every thumbnail returns 200. In a 24-item cart the last 7 lazy images stayed unloaded until scrolled, and on-the-fly resizing takes ~1s with no retry.
 - New AdminThumb: eager load, falls back to the original image on error, grey placeholder if both fail. Used in the cart popup and top products.

@@ -1317,6 +1317,14 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     await env.DB.prepare("UPDATE products SET featured=?,updated_at=? WHERE id=? AND deleted_at IS NULL").bind(asBoolean(body.featured)?1:0,Date.now(),Number(featuredMatch[1])).run();
     return json({ok:true});
   }
+  // 1.9.12: show/hide a product from the products list switch.
+  const activeMatch=url.pathname.match(/^\/api\/admin\/products\/(\d+)\/active$/);
+  if(activeMatch&&request.method==="PATCH"){
+    const body=await parseJson(request);
+    const result=await env.DB.prepare("UPDATE products SET active=?,updated_at=? WHERE id=? AND deleted_at IS NULL").bind(asBoolean(body.active)?1:0,Date.now(),Number(activeMatch[1])).run();
+    if(!result.meta?.changes)return json({error:"المنتج غير موجود"},{status:404});
+    return json({ok:true});
+  }
   const productMatch = url.pathname.match(/^\/api\/admin\/products\/(\d+)$/);
   if (productMatch && request.method === "PUT") return saveProduct(request, env, Number(productMatch[1]));
   if (productMatch && request.method === "DELETE") { await env.DB.prepare("UPDATE products SET deleted_at=?, active=0 WHERE id=?").bind(Date.now(), Number(productMatch[1])).run(); return json({ ok: true }); }
