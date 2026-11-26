@@ -16,7 +16,7 @@ test('1.9.10: overview follows the sample order and wording',()=>{
  const more=view.slice(view.indexOf('className="overviewMore"'));
  for(const kept of ['حالات الطلبات','المتجر بالأرقام','<LiveActivityPanel/>','{extra}'])assert.ok(more.includes(kept),kept+' kept under تفاصيل أكثر');
  assert.match(d,/هاي أهم إشي بمتجرك/);
- assert.match(read('app/admin/page.tsx'),/<Dashboard onNavigate=\{navigate\} extra=\{<section className="dashboardPanel dashboardCarts"><CartMetricsPanel onOpenProduct=/);
+ assert.match(read('app/admin/page.tsx'),/<Dashboard onNavigate=\{navigate\}[\s\S]{0,300}? extra=\{<section className="dashboardPanel dashboardCarts"><CartMetricsPanel onOpenProduct=/);
 });
 test('1.9.10: orders rows change status directly again',()=>{
  const p=read('app/admin/OrdersPanel.tsx');

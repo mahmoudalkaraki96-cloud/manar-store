@@ -1,5 +1,5 @@
 import {matches,norm,type Product,type Category} from '../catalog-types';
-export type ProductFilters={search:string;status:string;category:string;supplier:string;variants:string;image:string;min:string;max:string;sort:string;name:string;number:string;categoryText:string;featured:string;stockMin:string;stockMax:string;viewsMin:string};
+export type ProductFilters={search:string;status:string;category:string;supplier:string;variants:string;image:string;min:string;max:string;sort:string;name:string;number:string;categoryText:string;featured:string;stockMin:string;stockMax:string;viewsMin:string;lowStock?:number};
 export const emptyProductFilters:ProductFilters={search:'',status:'all',category:'all',supplier:'all',variants:'all',image:'all',min:'',max:'',sort:'newest',name:'',number:'',categoryText:'',featured:'all',stockMin:'',stockMax:'',viewsMin:''};
 export function categoryLabel(id:number,categories:Category[]):string {
  const names:string[]=[],seen=new Set<number>();let current=categories.find(c=>c.id===id);
@@ -23,7 +23,7 @@ export function filterProducts(products:Product[],categories:Category[],f:Produc
   if(f.categoryText.trim()&&!norm(categoryLabel(p.categoryId!,categories)).includes(norm(f.categoryText.trim())))return false;
   if(f.featured==='yes'&&!p.featured||f.featured==='no'&&p.featured)return false;
   if(f.stockMin!==''&&stock<Number(f.stockMin)||f.stockMax!==''&&stock>Number(f.stockMax)||f.viewsMin!==''&&(p.views||0)<Number(f.viewsMin))return false;
-  if(f.status==='active'&&!p.active||f.status==='draft'&&p.active||f.status==='soldout'&&(!p.active||untracked||stock>0)||f.status==='low'&&(!p.active||untracked||stock<=0||stock>5)||f.status==='available'&&(!p.active||!untracked&&stock<=0)||f.status==='featured'&&!p.featured)return false;
+  if(f.status==='active'&&!p.active||f.status==='draft'&&p.active||f.status==='soldout'&&(!p.active||untracked||stock>0)||f.status==='low'&&(!p.active||untracked||stock<=0||stock>(f.lowStock||5))||f.status==='available'&&(!p.active||!untracked&&stock<=0)||f.status==='featured'&&!p.featured)return false;
   if(f.category==='none'&&p.categoryId!=null||f.category!=='all'&&f.category!=='none'&&!categoryIds.has(p.categoryId!))return false;
   const suppliers=p.suppliers||[];
   if(f.supplier==='none'&&suppliers.length||f.supplier!=='all'&&f.supplier!=='none'&&!suppliers.some(s=>String(s.id)===f.supplier))return false;

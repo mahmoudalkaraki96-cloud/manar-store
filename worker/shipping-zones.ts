@@ -15,13 +15,16 @@ export function validateShippingZones(value:unknown){
   if(typeof zone.active!=="boolean")throw new ShippingZoneError("حالة منطقة الشحن غير صحيحة");
   codes.add(code);labels.add(label.toLocaleLowerCase());
   const translations=zone.translations as Record<string,unknown>|undefined;
-  return {code,label,translations,priceAgorot:agorot,active:zone.active,sortOrder:index};
+  // 1.10.0: optional delivery time shown in the admin (e.g. «1–2 يوم»).
+  const deliveryTime=zone.deliveryTime===undefined?undefined:String(zone.deliveryTime??"").trim().slice(0,40);
+  return {code,label,translations,priceAgorot:agorot,active:zone.active,sortOrder:index,deliveryTime};
  });
 }
 export async function persistShippingZones(db:Database,value:unknown, finalize?:(zones:ReturnType<typeof validateShippingZones>)=>Statement){
  const zones=validateShippingZones(value),now=Date.now();
  // Stable codes preserve saved addresses; omitted zones are not deleted.
  const statements=zones.map(zone=>db.prepare("INSERT INTO shipping_zones(code,label,price_agorot,active,sort_order,updated_at) VALUES(?,?,?,?,?,?) ON CONFLICT(code) DO UPDATE SET label=excluded.label,price_agorot=excluded.price_agorot,active=excluded.active,sort_order=excluded.sort_order,updated_at=excluded.updated_at").bind(zone.code,zone.label,zone.priceAgorot,zone.active?1:0,zone.sortOrder,now));
+ for(const zone of zones)if(zone.deliveryTime!==undefined)statements.push(db.prepare("UPDATE shipping_zones SET delivery_time=? WHERE code=?").bind(zone.deliveryTime,zone.code));
  if(finalize)statements.push(finalize(zones));
  await db.batch(statements);
 }

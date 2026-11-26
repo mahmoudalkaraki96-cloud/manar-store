@@ -558,3 +558,120 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 @media(max-width:800px){.adminRedesign .quickRow1{grid-template-columns:minmax(0,1fr) 110px}.adminRedesign .productEditorV2 .mediaUploadGrid{grid-template-columns:1fr}.adminRedesign .saveAnother{display:none}}
 /* 1.9.17: the product editor sits above the sticky account bar (z-index 300), so its top bar buttons stay clickable */
 .adminRedesign .editModal.productEditorPage{z-index:360}
+/* 1.10.0: orders — bulk status, payment column, day preparation sheet */
+.adminRedesign .orderSelectCell{width:36px;text-align:center;cursor:default}
+.adminRedesign .orderSelectCell input{width:18px;height:18px;cursor:pointer}
+.adminRedesign .ordersTable tbody tr.selected{background:var(--admin-accent-soft,#e7f5ef)}
+.adminRedesign .ordersBulkBar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px;padding:10px 14px;border:1px solid var(--admin-accent);border-radius:12px;background:var(--admin-accent-soft,#e7f5ef)}
+.adminRedesign .ordersBulkBar label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
+.adminRedesign .ordersBulkBar select{min-height:38px}
+.adminRedesign .orderPaymentCell{cursor:default}
+.adminRedesign .orderPaymentSelect{min-height:34px;max-width:130px;padding:0 8px;border:1px solid var(--admin-line);border-radius:999px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px}
+.adminRedesign .dayPreparation{max-width:900px}
+.adminRedesign .dayPrepTitle{margin:6px 0 14px;font-size:18px}
+.adminRedesign .dayPrepOrder{padding-bottom:18px;margin-bottom:18px;border-bottom:2px dashed var(--admin-line)}
+.adminRedesign .dayPrepEmpty{color:var(--admin-muted)}
+@media print{.dayPrepOrder{break-after:page;page-break-after:always;border:0!important;margin:0!important}.dayPrepOrder:last-child{break-after:auto;page-break-after:auto}}
+@media(max-width:800px){.adminRedesign .ordersTable td.orderSelectCell{grid-column:2;grid-row:4;text-align:left}.adminRedesign .ordersTable td[data-label="الدفع"]{grid-column:1;grid-row:4}}
+/* 1.10.0: phone save bar holds save + save-and-add-another */
+@media(max-width:800px){.adminRedesign .productEditorMobileSave{display:flex;gap:8px}.adminRedesign .productEditorMobileSave .mobileSaveAnother{flex:0 0 auto;min-height:48px;padding:0 12px;border-radius:12px}.adminRedesign .productEditorMobileSave .mainBtn{flex:1}}
+/* 1.10.0: customers summary like the sample */
+.adminRedesign .customersOverview{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.adminRedesign .customersOverviewHead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}.adminRedesign .customersOverviewHead p{margin:0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .customerStats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.adminRedesign .customerStats>div{display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel)}
+.adminRedesign .customerStats small{color:var(--admin-muted);font-size:13px;font-weight:700}.adminRedesign .customerStats b{font-size:26px}
+.adminRedesign .customersFilters{display:flex;flex-wrap:wrap;gap:10px}
+.adminRedesign .customersSearchField,.adminRedesign .customersSegmentField{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}
+.adminRedesign .customersSearchField{flex:2 1 260px}.adminRedesign .customersSegmentField{flex:1 1 180px}.adminRedesign .customersSegmentField span{font-size:13px;font-weight:700;color:var(--admin-muted)}
+.adminRedesign .customersSearchField input,.adminRedesign .customersSegmentField select{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--admin-ink);font:inherit;min-height:40px;box-shadow:none}
+.adminRedesign .customersTableWrap{overflow-x:auto;border:1px solid var(--admin-line);border-radius:12px}
+.adminRedesign .customersTable{width:100%;border-collapse:collapse}
+.adminRedesign .customersTable th{text-align:right;font-size:12px;color:var(--admin-muted);padding:12px;background:var(--admin-soft);border-bottom:1px solid var(--admin-line);white-space:nowrap}
+.adminRedesign .customersTable td{padding:10px 12px;border-bottom:1px solid var(--admin-line);font-size:14px;vertical-align:middle}
+.adminRedesign .customersTable tbody tr{cursor:pointer}.adminRedesign .customersTable tbody tr:hover{background:var(--admin-soft)}.adminRedesign .customersTable tbody tr:last-child td{border-bottom:0}
+.adminRedesign .customerCell{display:flex;align-items:center;gap:10px}.adminRedesign .customerCell small{display:block;color:var(--admin-muted);font-size:12px;text-align:right}
+.adminRedesign .customerAvatar{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;background:var(--admin-accent-soft,#e7f5ef);color:var(--admin-accent);font-weight:800}
+.adminRedesign .customerTag{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;background:var(--admin-soft);color:var(--admin-ink)}
+.adminRedesign .customerTag.vip{background:#fff1d6;color:#7a5200}.adminRedesign .customerTag.new{background:#e2f0fb;color:#1d5a8a}.adminRedesign .customerTag.back{background:#e2f4ec;color:#0d6b52}.adminRedesign .customerTag.sleep{background:#fde4df;color:#9a2c1a}
+@media(max-width:800px){.adminRedesign .customersTableWrap{border:0;overflow:visible}.adminRedesign .customersTable thead{display:none}.adminRedesign .customersTable,.adminRedesign .customersTable tbody{display:block}.adminRedesign .customersTable tbody tr{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding:12px;margin-bottom:10px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}.adminRedesign .customersTable td{padding:0;border:0}.adminRedesign .customersTable td[data-label="الزبون"]{grid-column:1/-1}.adminRedesign .customersTable td[data-label="المدينة"],.adminRedesign .customersTable td[data-label="آخر طلب"]{display:none}.adminRedesign .customerStats{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .customerStats b{font-size:20px}}
+/* 1.10.0: discounts as cards like the sample */
+.adminRedesign .discountsHead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px}.adminRedesign .discountsHead h2{margin:0}.adminRedesign .discountsHead p{margin:4px 0 0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .discountsHeadActions{display:flex;flex-wrap:wrap;gap:8px}
+.adminRedesign .discountFilters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.adminRedesign .discountFilters button{min-height:36px;padding:0 14px;border:1px solid var(--admin-line);border-radius:999px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.adminRedesign .discountFilters button[aria-pressed=true]{background:var(--admin-accent);border-color:var(--admin-accent);color:#fff}
+.adminRedesign .discountGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.adminRedesign .discountCard{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .discountCard.ended,.adminRedesign .discountCard.paused{opacity:.8}
+.adminRedesign .discountCardHead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.adminRedesign .discountCode{font-family:ui-monospace,monospace;font-weight:800;font-size:15px;padding:4px 10px;border:1px dashed var(--admin-accent);border-radius:8px;color:var(--admin-accent)}
+.adminRedesign .discountAuto{font-size:13px;font-weight:700;color:var(--admin-muted)}
+.adminRedesign .discountStatus{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700}
+.adminRedesign .discountStatus.active{background:#e2f4ec;color:#0d6b52}.adminRedesign .discountStatus.scheduled{background:#e2f0fb;color:#1d5a8a}.adminRedesign .discountStatus.ended{background:var(--admin-soft);color:var(--admin-muted)}.adminRedesign .discountStatus.paused{background:#fff1d6;color:#7a5200}
+.adminRedesign .discountValue{font-size:20px}.adminRedesign .discountValue small{font-size:13px;font-weight:400;color:var(--admin-muted)}
+.adminRedesign .discountLabel{color:var(--admin-muted);font-size:13px;margin-top:-6px}
+.adminRedesign .discountUsage>div:first-child{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.adminRedesign .discountBar{height:8px;margin-top:6px;border-radius:99px;background:var(--admin-soft);overflow:hidden}.adminRedesign .discountBar span{display:block;height:100%;background:var(--admin-accent);border-radius:99px}
+.adminRedesign .discountWhen{color:var(--admin-muted);font-size:12px}
+.adminRedesign .discountActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.adminRedesign .discountForm{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;padding:16px;margin:0 0 16px;border:1px solid var(--admin-accent);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .discountForm label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+/* 1.10.0: shipping like the sample */
+.adminRedesign .shippingHead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px}.adminRedesign .shippingHead p{margin:4px 0 0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .shippingHeadActions{display:flex;flex-wrap:wrap;gap:8px}
+.adminRedesign .freeShippingCard{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0;padding:16px 18px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .freeShippingText{flex:1 1 240px;display:flex;flex-direction:column;gap:2px}.adminRedesign .freeShippingText small{color:var(--admin-muted)}
+.adminRedesign .freeShippingAmount{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}.adminRedesign .freeShippingAmount input{width:110px;min-height:40px}
+.adminRedesign .shippingFieldset{border:0;padding:0;margin:0;min-width:0}
+.adminRedesign .shippingTableWrap{overflow-x:auto;border:1px solid var(--admin-line);border-radius:12px}
+.adminRedesign .shippingTable{width:100%;border-collapse:collapse}
+.adminRedesign .shippingTable th{text-align:right;font-size:12px;color:var(--admin-muted);padding:12px;background:var(--admin-soft);border-bottom:1px solid var(--admin-line)}
+.adminRedesign .shippingTable td{padding:10px 12px;border-bottom:1px solid var(--admin-line);vertical-align:top}.adminRedesign .shippingTable tr:last-child td{border-bottom:0}
+.adminRedesign .shippingTable tr.inactive{opacity:.65}
+.adminRedesign .shippingTable input{width:100%;min-height:40px;box-sizing:border-box}.adminRedesign .shippingTable td[data-label="سعر التوصيل"]{width:150px}.adminRedesign .shippingTable td small{color:#0d7a5f;font-weight:700}
+@media(max-width:800px){.adminRedesign .shippingTableWrap{border:0;overflow:visible}.adminRedesign .shippingTable thead{display:none}.adminRedesign .shippingTable,.adminRedesign .shippingTable tbody{display:block}.adminRedesign .shippingTable tr{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;padding:12px;margin-bottom:10px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}.adminRedesign .shippingTable td{padding:0;border:0;width:auto!important}.adminRedesign .shippingTable td[data-label="المنطقة"]{grid-column:1/-1}}
+/* 1.10.0: settings with a side menu + phone bottom bar */
+.adminRedesign .settingsLayout{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+.adminRedesign .settingsNav{flex:0 0 220px;display:flex;flex-direction:column;gap:4px;padding:8px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel);position:sticky;top:16px;overflow:visible}
+.adminRedesign .settingsNav button{justify-content:flex-start;text-align:right;min-height:42px;padding:0 14px;border:0;border-radius:10px;background:none;color:var(--admin-ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;width:100%}
+.adminRedesign .settingsNav button[aria-selected=true]{background:var(--admin-accent-soft,#e7f5ef);color:var(--admin-accent);font-weight:800}
+.adminRedesign .settingsLayout>.editorFieldset{flex:1 1 480px;min-width:0}
+.adminRedesign .settingsSaveBar{position:sticky;bottom:0;z-index:15;margin-top:16px;padding:12px 16px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel);box-shadow:0 -6px 18px rgba(0,0,0,.06)}
+.adminRedesign .adminBottomBar{display:none}
+@media(max-width:800px){
+ .adminRedesign .settingsNav{flex:1 1 100%;flex-direction:row;overflow-x:auto;position:static}.adminRedesign .settingsNav button{flex:0 0 auto;width:auto}
+ .adminRedesign .adminBottomBar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;inset:auto 0 0 0;z-index:280;padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:var(--admin-panel);border-top:1px solid var(--admin-line);box-shadow:0 -6px 18px rgba(0,0,0,.08)}
+ .adminRedesign .adminBottomBar button{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:52px;padding:4px 0;border:0;background:none;color:var(--admin-muted);font:inherit;font-size:11px;font-weight:700;cursor:pointer}
+ .adminRedesign .adminBottomBar button.active{color:var(--admin-accent)}
+ .adminRedesign .adminBottomBar .navIcon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .adminRedesign .bottomBarBadge{position:absolute;top:2px;left:calc(50% - 22px);min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#f2b544;color:#3a2a00;font-size:10px;display:grid;place-items:center}
+ .adminRedesign .adminMain{padding-bottom:84px!important}
+ .adminRedesign .settingsSaveBar{bottom:72px}
+}
+/* 1.10.0: overview extras, shortcuts and notifications bell */
+.adminRedesign .quickShortcuts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.adminRedesign .quickShortcuts button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;text-align:right;min-height:0}
+.adminRedesign .quickShortcuts button:hover{border-color:var(--admin-accent)}
+.adminRedesign .quickShortcuts button>span{width:40px;height:40px;border-radius:12px;background:var(--admin-accent-soft,#e7f5ef);color:var(--admin-accent);display:grid;place-items:center}
+.adminRedesign .quickShortcuts svg,.adminRedesign .bellButton svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.adminRedesign .overviewExtras{display:flex;flex-direction:column;gap:14px}
+.adminRedesign .extraCard{display:flex;flex-direction:column;gap:10px;flex:1 1 380px;min-width:0}
+.adminRedesign .extraCard h2{margin:0;font-size:16px;font-weight:800}
+.adminRedesign .extraHint{color:var(--admin-muted);font-size:13px;margin:0}
+.adminRedesign .goalNumbers{display:flex;align-items:baseline;gap:8px}.adminRedesign .goalNumbers b{font-size:28px}.adminRedesign .goalNumbers small{color:var(--admin-muted);font-size:14px}
+.adminRedesign .extraBarRow{display:flex;align-items:center;gap:10px;font-size:14px}
+.adminRedesign .extraBarLabel{flex:0 0 90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminRedesign .extraBar{flex:1;height:10px;border-radius:99px;background:var(--admin-soft);overflow:hidden}.adminRedesign .extraBar span{display:block;height:100%;border-radius:99px;background:var(--admin-accent)}
+.adminRedesign .extraBarRow>b{flex:0 0 44px;text-align:left}
+.adminRedesign .searchChips{display:flex;flex-wrap:wrap;gap:8px}.adminRedesign .searchChips span{display:inline-flex;align-items:center;gap:4px;min-height:34px;padding:0 12px;border:1px solid var(--admin-line);border-radius:999px;font-size:13px;font-weight:700}.adminRedesign .searchChips b{color:var(--admin-muted)}
+.adminRedesign .pendingReview{display:flex;align-items:flex-start;gap:12px;padding:10px;border-radius:12px;background:var(--admin-soft)}.adminRedesign .pendingReview>div{flex:1;min-width:0}.adminRedesign .pendingReview p{margin:4px 0;font-size:14px}.adminRedesign .pendingReview small{color:var(--admin-muted)}
+.adminRedesign .reviewStars{color:#c98a12;letter-spacing:1px}
+.adminRedesign .abandonedCarts{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between}.adminRedesign .abandonedCarts p{margin:6px 0}
+.adminRedesign .notificationsBell{position:relative}
+.adminRedesign .bellButton{position:relative;width:44px;height:44px;min-height:0;padding:0;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel);color:var(--admin-ink);display:grid;place-items:center;cursor:pointer}
+.adminRedesign .bellButton i{position:absolute;top:4px;left:4px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:#e0533d;color:#fff;font-style:normal;font-size:10px;font-weight:800;display:grid;place-items:center}
+.adminRedesign .bellMenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;width:min(300px,86vw);display:flex;flex-direction:column;gap:2px;padding:10px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel);box-shadow:0 12px 32px rgba(0,0,0,.16)}
+.adminRedesign .bellMenu>b{padding:4px 8px 8px}.adminRedesign .bellMenu p{margin:0;padding:8px;color:var(--admin-muted);font-size:13px}
+.adminRedesign .bellMenu button{display:flex;justify-content:space-between;gap:8px;min-height:40px;padding:0 10px;border:0;border-radius:10px;background:none;color:var(--admin-ink);font:inherit;font-size:14px;text-align:right;cursor:pointer}.adminRedesign .bellMenu button:hover{background:var(--admin-soft)}
+@media(max-width:800px){.adminRedesign .quickShortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .extraBarLabel{flex-basis:70px}}

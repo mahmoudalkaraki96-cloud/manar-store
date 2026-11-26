@@ -125,7 +125,7 @@ export function routePermission(path:string,method:string):Permission[]|null{
  if(/^\/api\/admin\/reviews(?:\/\d+)?$/.test(path))return ["content.write"];
  const read=method==='GET';
  if(path==='/api/admin/navigation')return [];
- if(path==='/api/admin/dashboard'||path==='/api/admin/live-activity'||path==='/api/admin/carts'||path==='/api/admin/cart-metrics')return ['dashboard.read'];
+ if(path==='/api/admin/dashboard'||path==='/api/admin/overview-extras'||path==='/api/admin/live-activity'||path==='/api/admin/carts'||path==='/api/admin/cart-metrics')return ['dashboard.read'];
  if(path==='/api/admin/marketing-analytics')return ['analytics.read'];
  if(path==='/api/admin/catalog')return ['products.read','orders.write','content.write','suppliers.write','settings.write'];
  if(path==='/api/admin/orders/customers')return ['orders.write'];
