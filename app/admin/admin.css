@@ -649,3 +649,29 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
  .adminRedesign .adminMain{padding-bottom:84px!important}
  .adminRedesign .settingsSaveBar{bottom:72px}
 }
+/* 1.10.0: overview extras, shortcuts and notifications bell */
+.adminRedesign .quickShortcuts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.adminRedesign .quickShortcuts button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:14px;font-weight:700;cursor:pointer;text-align:right;min-height:0}
+.adminRedesign .quickShortcuts button:hover{border-color:var(--admin-accent)}
+.adminRedesign .quickShortcuts button>span{width:40px;height:40px;border-radius:12px;background:var(--admin-accent-soft,#e7f5ef);color:var(--admin-accent);display:grid;place-items:center}
+.adminRedesign .quickShortcuts svg,.adminRedesign .bellButton svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.adminRedesign .overviewExtras{display:flex;flex-direction:column;gap:14px}
+.adminRedesign .extraCard{display:flex;flex-direction:column;gap:10px;flex:1 1 380px;min-width:0}
+.adminRedesign .extraCard h2{margin:0;font-size:16px;font-weight:800}
+.adminRedesign .extraHint{color:var(--admin-muted);font-size:13px;margin:0}
+.adminRedesign .goalNumbers{display:flex;align-items:baseline;gap:8px}.adminRedesign .goalNumbers b{font-size:28px}.adminRedesign .goalNumbers small{color:var(--admin-muted);font-size:14px}
+.adminRedesign .extraBarRow{display:flex;align-items:center;gap:10px;font-size:14px}
+.adminRedesign .extraBarLabel{flex:0 0 90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adminRedesign .extraBar{flex:1;height:10px;border-radius:99px;background:var(--admin-soft);overflow:hidden}.adminRedesign .extraBar span{display:block;height:100%;border-radius:99px;background:var(--admin-accent)}
+.adminRedesign .extraBarRow>b{flex:0 0 44px;text-align:left}
+.adminRedesign .searchChips{display:flex;flex-wrap:wrap;gap:8px}.adminRedesign .searchChips span{display:inline-flex;align-items:center;gap:4px;min-height:34px;padding:0 12px;border:1px solid var(--admin-line);border-radius:999px;font-size:13px;font-weight:700}.adminRedesign .searchChips b{color:var(--admin-muted)}
+.adminRedesign .pendingReview{display:flex;align-items:flex-start;gap:12px;padding:10px;border-radius:12px;background:var(--admin-soft)}.adminRedesign .pendingReview>div{flex:1;min-width:0}.adminRedesign .pendingReview p{margin:4px 0;font-size:14px}.adminRedesign .pendingReview small{color:var(--admin-muted)}
+.adminRedesign .reviewStars{color:#c98a12;letter-spacing:1px}
+.adminRedesign .abandonedCarts{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between}.adminRedesign .abandonedCarts p{margin:6px 0}
+.adminRedesign .notificationsBell{position:relative}
+.adminRedesign .bellButton{position:relative;width:44px;height:44px;min-height:0;padding:0;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel);color:var(--admin-ink);display:grid;place-items:center;cursor:pointer}
+.adminRedesign .bellButton i{position:absolute;top:4px;left:4px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:#e0533d;color:#fff;font-style:normal;font-size:10px;font-weight:800;display:grid;place-items:center}
+.adminRedesign .bellMenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;width:min(300px,86vw);display:flex;flex-direction:column;gap:2px;padding:10px;border:1px solid var(--admin-line);border-radius:14px;background:var(--admin-panel);box-shadow:0 12px 32px rgba(0,0,0,.16)}
+.adminRedesign .bellMenu>b{padding:4px 8px 8px}.adminRedesign .bellMenu p{margin:0;padding:8px;color:var(--admin-muted);font-size:13px}
+.adminRedesign .bellMenu button{display:flex;justify-content:space-between;gap:8px;min-height:40px;padding:0 10px;border:0;border-radius:10px;background:none;color:var(--admin-ink);font:inherit;font-size:14px;text-align:right;cursor:pointer}.adminRedesign .bellMenu button:hover{background:var(--admin-soft)}
+@media(max-width:800px){.adminRedesign .quickShortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .extraBarLabel{flex-basis:70px}}
