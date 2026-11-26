@@ -556,3 +556,5 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .saveAnother{min-height:44px;padding:0 14px;border-radius:12px!important;font-weight:700}
 @media(max-width:1100px){.adminRedesign .quickRow2{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .quickRow3{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .quickProfit,.adminRedesign .quickActive{padding-top:0}}
 @media(max-width:800px){.adminRedesign .quickRow1{grid-template-columns:minmax(0,1fr) 110px}.adminRedesign .productEditorV2 .mediaUploadGrid{grid-template-columns:1fr}.adminRedesign .saveAnother{display:none}}
+/* 1.9.17: the product editor sits above the sticky account bar (z-index 300), so its top bar buttons stay clickable */
+.adminRedesign .editModal.productEditorPage{z-index:360}

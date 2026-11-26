@@ -64,3 +64,9 @@ test('1.9.16: quick card fields sit side by side, two per row on phones',()=>{
  assert.ok(b.includes('.adminRedesign .quickRow2{grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr))}'));
  assert.ok(b.includes('@media(max-width:1100px){.adminRedesign .quickRow2{grid-template-columns:repeat(2,minmax(0,1fr))}'));
 });
+test('1.9.17: product editor is above the sticky account bar',()=>{
+ const css=read('app/admin/admin.css');
+ assert.ok(css.includes('.adminRedesign .editModal.productEditorPage{z-index:360}'));
+ const bars=[...(css+read('app/admin/admin-responsive.css')).matchAll(/\.adminAccountBar\{[^}]*z-index:(\d+)/g)].map(m=>Number(m[1]));
+ assert.ok(bars.length&&bars.every(z=>z<360),'account bar stays below the editor: '+bars);
+});
