@@ -380,15 +380,19 @@ async function createCustomerSession(env:Env,accountId:number){
   await env.DB.prepare("INSERT INTO customer_sessions (account_id,token_hash,created_at,last_seen_at) VALUES (?,?,?,?)").bind(accountId,await sha256(token),now,now).run();
   return token;
 }
-type ShippingZone={translations?:Record<string,string|undefined>;code:string;label:string;price:number;active:boolean;sortOrder:number};
+type ShippingZone={translations?:Record<string,string|undefined>;code:string;label:string;price:number;active:boolean;sortOrder:number;deliveryTime?:string};
+let shippingDeliveryReady:Promise<void>|null=null;
+async function ensureShippingDeliveryColumn(env:Env){if(!shippingDeliveryReady)shippingDeliveryReady=(async()=>{const info=await env.DB.prepare("PRAGMA table_info(shipping_zones)").all(),names=new Set((info.results as Array<Record<string,unknown>>).map(row=>String(row.name)));if(!names.has("delivery_time"))await env.DB.prepare("ALTER TABLE shipping_zones ADD COLUMN delivery_time text DEFAULT '' NOT NULL").run()})().catch(error=>{shippingDeliveryReady=null;throw error});return shippingDeliveryReady}
 async function readShippingZones(env:Env,includeInactive=false):Promise<ShippingZone[]>{
   await ensureCustomerAuthSchema(env);
-  const rows=await env.DB.prepare("SELECT code,label,price_agorot,active,sort_order FROM shipping_zones "+(includeInactive?"":"WHERE active=1 ")+"ORDER BY sort_order,code").all<{code:string;label:string;price_agorot:number;active:number;sort_order:number}>();
+  await ensureShippingDeliveryColumn(env);
+  const rows=await env.DB.prepare("SELECT code,label,price_agorot,active,sort_order,delivery_time FROM shipping_zones "+(includeInactive?"":"WHERE active=1 ")+"ORDER BY sort_order,code").all<{code:string;label:string;price_agorot:number;active:number;sort_order:number;delivery_time:string|null}>();
   const translations=await contentTranslations(env,"shipping");
-  return rows.results.map(row=>({translations:Object.fromEntries(Object.keys(translations).map(language=>[language,translations[language]?.[row.code]])),code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order}));
+  return rows.results.map(row=>({translations:Object.fromEntries(Object.keys(translations).map(language=>[language,translations[language]?.[row.code]])),code:row.code,label:row.label,price:row.price_agorot/100,active:row.active!==0,sortOrder:row.sort_order,deliveryTime:String(row.delivery_time||"")}));
 }
 async function saveShippingZones(request:Request,env:Env){
   await ensureCustomerAuthSchema(env);
+  await ensureShippingDeliveryColumn(env);
   const {zones}=await parseJson(request);
   const translations=await contentTranslations(env,"shipping"),languageCodes=await translatableCodes(env.DB);
   try{await persistShippingZones(env.DB,zones,validated=>{

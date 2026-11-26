@@ -617,3 +617,17 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .discountActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
 .adminRedesign .discountForm{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;padding:16px;margin:0 0 16px;border:1px solid var(--admin-accent);border-radius:16px;background:var(--admin-panel)}
 .adminRedesign .discountForm label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+/* 1.10.0: shipping like the sample */
+.adminRedesign .shippingHead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px}.adminRedesign .shippingHead p{margin:4px 0 0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .shippingHeadActions{display:flex;flex-wrap:wrap;gap:8px}
+.adminRedesign .freeShippingCard{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0;padding:16px 18px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .freeShippingText{flex:1 1 240px;display:flex;flex-direction:column;gap:2px}.adminRedesign .freeShippingText small{color:var(--admin-muted)}
+.adminRedesign .freeShippingAmount{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}.adminRedesign .freeShippingAmount input{width:110px;min-height:40px}
+.adminRedesign .shippingFieldset{border:0;padding:0;margin:0;min-width:0}
+.adminRedesign .shippingTableWrap{overflow-x:auto;border:1px solid var(--admin-line);border-radius:12px}
+.adminRedesign .shippingTable{width:100%;border-collapse:collapse}
+.adminRedesign .shippingTable th{text-align:right;font-size:12px;color:var(--admin-muted);padding:12px;background:var(--admin-soft);border-bottom:1px solid var(--admin-line)}
+.adminRedesign .shippingTable td{padding:10px 12px;border-bottom:1px solid var(--admin-line);vertical-align:top}.adminRedesign .shippingTable tr:last-child td{border-bottom:0}
+.adminRedesign .shippingTable tr.inactive{opacity:.65}
+.adminRedesign .shippingTable input{width:100%;min-height:40px;box-sizing:border-box}.adminRedesign .shippingTable td[data-label="سعر التوصيل"]{width:150px}.adminRedesign .shippingTable td small{color:#0d7a5f;font-weight:700}
+@media(max-width:800px){.adminRedesign .shippingTableWrap{border:0;overflow:visible}.adminRedesign .shippingTable thead{display:none}.adminRedesign .shippingTable,.adminRedesign .shippingTable tbody{display:block}.adminRedesign .shippingTable tr{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;padding:12px;margin-bottom:10px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}.adminRedesign .shippingTable td{padding:0;border:0;width:auto!important}.adminRedesign .shippingTable td[data-label="المنطقة"]{grid-column:1/-1}}
