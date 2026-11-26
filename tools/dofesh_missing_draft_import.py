@@ -61,17 +61,18 @@ def import_one(db,sid,source,mode):
     if len(category)!=1 or len(supplier)!=1:raise ValueError('category_or_supplier_not_verified')
     now=int(time.time()*1000);token=uuid.uuid4().hex;slug=f'supplier-dofesh-{sid}'
     url=f'https://dofesh.ps/?app=product.show.{sid}'
-    spec=json.dumps({'source_url':url,'source_minimum':source['minimum'],'draft_import_token':token},ensure_ascii=False)
-    gate="slug=? AND json_extract(specifications,'$.draft_import_token')=? AND active=0"
-    g=[slug,token]
-    gate_p=gate.replace('slug=','p.slug=').replace('specifications','p.specifications').replace('active=','p.active=')
+    gate="slug=? AND active=0 AND EXISTS (SELECT 1 FROM audit_logs a WHERE a.entity_type='product' AND a.action=? AND json_extract(a.details_json,'$.draft_import_token')=?)"
+    g=[slug,ACTION,token]
+    gate_p=gate.replace('slug=','p.slug=').replace('active=','p.active=')
     insert="""INSERT INTO products(item_number,category_id,name,slug,description,specifications,price_agorot,purchase_price_agorot,stock_quantity,active,featured,created_at,updated_at)
     SELECT COALESCE(MAX(item_number),1000)+1,?,?,?,?,?,?,?,0,0,0,?,? FROM products
     HAVING NOT EXISTS(SELECT 1 FROM products p WHERE p.slug=?)
     AND NOT EXISTS(SELECT 1 FROM product_keywords k WHERE k.keyword=?)
     AND NOT EXISTS(SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE s.supplier_number=9101 AND ps.source_product_id=?)
     """
-    sql=[(insert,[category[0]['id'],source['title'],slug,source['title'],spec,price,price,now,now,slug,f'dofesh-{sid}',str(sid)])]
+    sql=[(insert,[category[0]['id'],source['title'],slug,source['title'],'',price,price,now,now,slug,f'dofesh-{sid}',str(sid)])]
+    detail=json.dumps({'draft_import_token':token,'source_id':sid,'source_url':url,'name':source['title'],'active':0,'stock':0,'source':source},ensure_ascii=False)
+    sql.append(("INSERT INTO audit_logs(entity_type,entity_id,action,details_json,created_at) SELECT 'product',CAST(id AS TEXT),?,?,? FROM products WHERE slug=? AND changes()=1",[ACTION,detail,now,slug]))
     sql.append((f'INSERT INTO product_keywords(product_id,keyword) SELECT id,? FROM products WHERE {gate}',[f'dofesh-{sid}']+g))
     sql.append((f'INSERT INTO product_suppliers(product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) SELECT id,?,?,?,?,1,?,? FROM products WHERE {gate}',[supplier[0]['id'],str(sid),url,price,now,now]+g))
     for i,image in enumerate(source['images']):
@@ -85,8 +86,6 @@ def import_one(db,sid,source,mode):
             sql.append((f'INSERT INTO variant_option_values(variant_id,option_value_id) SELECT v.id,ov.id FROM product_variants v JOIN products p ON p.id=v.product_id JOIN product_options o ON o.product_id=p.id JOIN product_option_values ov ON ov.option_id=o.id WHERE v.sku=? AND ov.value=? AND {gate_p}',[sku,v['name']]+g))
     for i,field in enumerate(source['fields']):
         sql.append((f'INSERT INTO product_custom_fields(product_id,label,placeholder,max_length,required,sort_order) SELECT id,?,?,?,?,? FROM products WHERE {gate}',[field['label'],field['placeholder'],field['max_length'],int(field['required']),i]+g))
-    detail=json.dumps({'source_id':sid,'source_url':url,'name':source['title'],'active':0,'stock':0,'source':source},ensure_ascii=False)
-    sql.append((f"INSERT INTO audit_logs(entity_type,entity_id,action,details_json,created_at) SELECT 'product',CAST(id AS TEXT),?,?,? FROM products WHERE {gate}",[ACTION,detail,now]+g))
     result=db.batch(sql)
     if result[0]['meta'].get('changes')!=1:return {'source_id':sid,'status':'duplicate_guard_skipped'}
     p=db.query('SELECT id,item_number,name,active,stock_quantity,price_agorot FROM products WHERE slug=?',[slug])[0]
@@ -141,5 +140,3 @@ def main():
     if status!='completed':raise SystemExit(1)
 
 if __name__=='__main__':main()
-
-
