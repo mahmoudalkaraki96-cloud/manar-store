@@ -595,3 +595,25 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .customerTag{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;background:var(--admin-soft);color:var(--admin-ink)}
 .adminRedesign .customerTag.vip{background:#fff1d6;color:#7a5200}.adminRedesign .customerTag.new{background:#e2f0fb;color:#1d5a8a}.adminRedesign .customerTag.back{background:#e2f4ec;color:#0d6b52}.adminRedesign .customerTag.sleep{background:#fde4df;color:#9a2c1a}
 @media(max-width:800px){.adminRedesign .customersTableWrap{border:0;overflow:visible}.adminRedesign .customersTable thead{display:none}.adminRedesign .customersTable,.adminRedesign .customersTable tbody{display:block}.adminRedesign .customersTable tbody tr{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding:12px;margin-bottom:10px;border:1px solid var(--admin-line);border-radius:12px;background:var(--admin-panel)}.adminRedesign .customersTable td{padding:0;border:0}.adminRedesign .customersTable td[data-label="الزبون"]{grid-column:1/-1}.adminRedesign .customersTable td[data-label="المدينة"],.adminRedesign .customersTable td[data-label="آخر طلب"]{display:none}.adminRedesign .customerStats{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .customerStats b{font-size:20px}}
+/* 1.10.0: discounts as cards like the sample */
+.adminRedesign .discountsHead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px}.adminRedesign .discountsHead h2{margin:0}.adminRedesign .discountsHead p{margin:4px 0 0;color:var(--admin-muted);font-size:14px}
+.adminRedesign .discountsHeadActions{display:flex;flex-wrap:wrap;gap:8px}
+.adminRedesign .discountFilters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.adminRedesign .discountFilters button{min-height:36px;padding:0 14px;border:1px solid var(--admin-line);border-radius:999px;background:var(--admin-panel);color:var(--admin-ink);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.adminRedesign .discountFilters button[aria-pressed=true]{background:var(--admin-accent);border-color:var(--admin-accent);color:#fff}
+.adminRedesign .discountGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.adminRedesign .discountCard{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--admin-line);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .discountCard.ended,.adminRedesign .discountCard.paused{opacity:.8}
+.adminRedesign .discountCardHead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.adminRedesign .discountCode{font-family:ui-monospace,monospace;font-weight:800;font-size:15px;padding:4px 10px;border:1px dashed var(--admin-accent);border-radius:8px;color:var(--admin-accent)}
+.adminRedesign .discountAuto{font-size:13px;font-weight:700;color:var(--admin-muted)}
+.adminRedesign .discountStatus{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700}
+.adminRedesign .discountStatus.active{background:#e2f4ec;color:#0d6b52}.adminRedesign .discountStatus.scheduled{background:#e2f0fb;color:#1d5a8a}.adminRedesign .discountStatus.ended{background:var(--admin-soft);color:var(--admin-muted)}.adminRedesign .discountStatus.paused{background:#fff1d6;color:#7a5200}
+.adminRedesign .discountValue{font-size:20px}.adminRedesign .discountValue small{font-size:13px;font-weight:400;color:var(--admin-muted)}
+.adminRedesign .discountLabel{color:var(--admin-muted);font-size:13px;margin-top:-6px}
+.adminRedesign .discountUsage>div:first-child{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.adminRedesign .discountBar{height:8px;margin-top:6px;border-radius:99px;background:var(--admin-soft);overflow:hidden}.adminRedesign .discountBar span{display:block;height:100%;background:var(--admin-accent);border-radius:99px}
+.adminRedesign .discountWhen{color:var(--admin-muted);font-size:12px}
+.adminRedesign .discountActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.adminRedesign .discountForm{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;padding:16px;margin:0 0 16px;border:1px solid var(--admin-accent);border-radius:16px;background:var(--admin-panel)}
+.adminRedesign .discountForm label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
