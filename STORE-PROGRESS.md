@@ -2810,6 +2810,9 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-26 (Asia/Hebron) — PHONE-BAR-FIX / candidate 1.10.1
+- Live check of 1.10.0 on a 375px viewport: .adminBottomBar was rendered inside .adminSide, whose nav rules made it display:block (4 stacked buttons, 221px). Moved it to the start of main.adminShell; verified on the live page by moving the node (grid, 65px, one row).
+
 ## 2026-11-26 (Asia/Hebron) — ADMIN-COMPLETE / candidate 1.10.0
 - Owner asked for every remaining sample and deferred item in one release.
 - New data (runtime ALTER, guarded): products.is_new/seo_title/seo_description; shipping_zones.delivery_time; store profile lowStockThreshold (default 5) and monthlySalesGoal (default 0). orders.payment_method already existed (always cash_on_delivery) — now editable via PATCH /api/admin/orders/:id/payment.
