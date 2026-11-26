@@ -149,13 +149,13 @@ def import_one(db,sid,source,mode):
     g=[slug,ACTION,token]
     gate_p=gate.replace('slug=','p.slug=').replace('active=','p.active=')
     insert="""INSERT INTO products(item_number,category_id,name,slug,description,specifications,price_agorot,purchase_price_agorot,stock_quantity,active,featured,created_at,updated_at)
-    SELECT COALESCE(MAX(item_number),1000)+1,?,?,?,?,?,?,?,0,0,0,?,? FROM products
+    SELECT COALESCE(MAX(item_number),1000)+1,?,?,?,?,?,?,?,?,0,0,?,? FROM products
     HAVING NOT EXISTS(SELECT 1 FROM products p WHERE p.slug=?)
     AND NOT EXISTS(SELECT 1 FROM product_keywords k WHERE k.keyword=?)
     AND NOT EXISTS(SELECT 1 FROM product_suppliers ps JOIN suppliers s ON s.id=ps.supplier_id WHERE s.supplier_number=9102 AND ps.source_product_id=?)
     """
-    sql=[(insert,[category[0]['id'],source['title'],slug,source['title'] ,'',agreed_price(price),price,now,now,slug,f'jabari-{sid}',str(sid)])]
-    detail=json.dumps({'draft_import_token':token,'source_id':sid,'source_url':url,'name':source['title'],'active':0,'stock':0,'source':source},ensure_ascii=False)
+    sql=[(insert,[category[0]['id'],source['title'],slug,source['title'] ,'',agreed_price(price),price,9999,now,now,slug,f'jabari-{sid}',str(sid)])]
+    detail=json.dumps({'draft_import_token':token,'source_id':sid,'source_url':url,'name':source['title'],'active':0,'stock':9999,'source':source},ensure_ascii=False)
     sql.append(("INSERT INTO audit_logs(entity_type,entity_id,action,details_json,created_at) SELECT 'product',CAST(id AS TEXT),?,?,? FROM products WHERE slug=? AND changes()=1",[ACTION,detail,now,slug]))
     sql.append((f'INSERT INTO product_keywords(product_id,keyword) SELECT id,? FROM products WHERE {gate}',[f'jabari-{sid}']+g))
     sql.append((f'INSERT INTO product_suppliers(product_id,supplier_id,source_product_id,source_url,supplier_price_agorot,preferred,created_at,updated_at) SELECT id,?,?,?,?,1,?,? FROM products WHERE {gate}',[supplier[0]['id'],str(sid),url,price,now,now]+g))
@@ -166,15 +166,15 @@ def import_one(db,sid,source,mode):
         for i,v in enumerate(source['variants']):
             sku=f"jabari-draft-{sid}-{hashlib.sha256(v['name'].encode()).hexdigest()[:16]}"
             sql.append((f'INSERT INTO product_option_values(option_id,value,sort_order) SELECT o.id,?,? FROM product_options o JOIN products p ON p.id=o.product_id WHERE {gate_p}',[v['name'],i]+g))
-            sql.append((f'INSERT INTO product_variants(product_id,sku,price_agorot,purchase_price_agorot,stock_quantity,active,created_at,updated_at) SELECT id,?,?,?,0,?,?,? FROM products WHERE {gate}',[sku,agreed_price(v['price']),v['price'],int(v['active']),now,now]+g))
+            sql.append((f'INSERT INTO product_variants(product_id,sku,price_agorot,purchase_price_agorot,stock_quantity,active,created_at,updated_at) SELECT id,?,?,?,?,?,?,? FROM products WHERE {gate}',[sku,agreed_price(v['price']),v['price'],9999 if v['active'] else 0,int(v['active']),now,now]+g))
             sql.append((f'INSERT INTO variant_option_values(variant_id,option_value_id) SELECT v.id,ov.id FROM product_variants v JOIN products p ON p.id=v.product_id JOIN product_options o ON o.product_id=p.id JOIN product_option_values ov ON ov.option_id=o.id WHERE v.sku=? AND ov.value=? AND {gate_p}',[sku,v['name']]+g))
     for i,field in enumerate(source['fields']):
         sql.append((f'INSERT INTO product_custom_fields(product_id,label,placeholder,max_length,required,sort_order) SELECT id,?,?,?,?,? FROM products WHERE {gate}',[field['label'],field['placeholder'],field['max_length'],int(field['required']),i]+g))
     result=db.batch(sql)
     if result[0]['meta'].get('changes')!=1:return {'source_id':sid,'status':'duplicate_guard_skipped'}
     p=db.query('SELECT id,item_number,name,active,stock_quantity,price_agorot FROM products WHERE slug=?',[slug])[0]
-    variants=db.query('SELECT stock_quantity FROM product_variants WHERE product_id=?',[p['id']])
-    if p['active']!=0 or p['stock_quantity']!=0 or any(v['stock_quantity'] for v in variants):
+    variants=db.query('SELECT stock_quantity,active FROM product_variants WHERE product_id=?',[p['id']])
+    if p['active']!=0 or p['stock_quantity']!=9999 or any(v['stock_quantity']!=(9999 if v['active'] else 0) for v in variants):
         raise RuntimeError('post_import_draft_verification_failed')
     return dict(p,source_id=sid,status='imported_draft',source_url=url,images=len(source['images']),variants=len(source['variants']),fields=len(source['fields']))
 
