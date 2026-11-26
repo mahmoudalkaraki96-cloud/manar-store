@@ -92,3 +92,9 @@ test('1.10.0: settings side menu, phone bottom bar and overview route permission
  assert.ok(read('app/admin/page.tsx').includes('<nav className="adminBottomBar" aria-label="التنقل السريع">'));
  assert.ok(read('worker/admin-security.ts').includes("path==='/api/admin/overview-extras'"));
 });
+test('1.10.1: phone bottom bar sits directly in the admin shell, not inside the side drawer',()=>{
+ const s=read('app/admin/page.tsx'),open=s.indexOf('return <main className={`adminShell adminRedesign'),bar=s.indexOf('<nav className="adminBottomBar"'),side=s.indexOf('className={`adminSide');
+ assert.ok(open>0&&bar>open,'bar inside the shell');
+ assert.ok(side<0||bar<side,'bar rendered before the drawer opens');
+ assert.equal((s.match(/<nav className="adminBottomBar"/g)||[]).length,1);
+});
