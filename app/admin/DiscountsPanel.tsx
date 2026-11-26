@@ -14,7 +14,7 @@ const DAY=864e5;
 const whenText=(rule:Rule,status:Status,now:number)=>{if(status==="scheduled"&&rule.startsAt)return "بيبلّش "+new Date(rule.startsAt).toLocaleString("ar-PS-u-nu-latn",{timeZone:"Asia/Hebron",weekday:"long",hour:"2-digit",minute:"2-digit"});if(status==="ended"&&rule.endsAt&&rule.endsAt<=now){const days=Math.floor((now-rule.endsAt)/DAY);return days<1?"خلص اليوم":days<30?"خلص من "+days+" يوم":"خلص من "+Math.floor(days/30)+" شهر"}if(rule.endsAt){const days=Math.ceil((rule.endsAt-now)/DAY);return days<=1?"بيخلص اليوم":"بيخلص بعد "+days+" أيام"}return "بدون تاريخ انتهاء"};
 
 export default function DiscountsPanel({catalog}:{catalog:{products:{id:number;name:string}[];categories:{id:number;name:string}[]}}){
-  const [statusFilter,setStatusFilter]=useState<"all"|Status>("all"),[rules,setRules]=useState<Rule[]>([]),[draft,setDraft]=useState<Rule|null>(null),[message,setMessage]=useState(""),[busy,setBusy]=useState(false);
+  const [now]=useState(()=>Date.now()),[statusFilter,setStatusFilter]=useState<"all"|Status>("all"),[rules,setRules]=useState<Rule[]>([]),[draft,setDraft]=useState<Rule|null>(null),[message,setMessage]=useState(""),[busy,setBusy]=useState(false);
   const load=async()=>{
     const response=await fetch("/api/admin/discounts",{cache:"no-store"});
     if(!response.ok)throw new Error("تعذر تحميل الخصومات");
@@ -30,7 +30,7 @@ export default function DiscountsPanel({catalog}:{catalog:{products:{id:number;n
     }catch(error){setMessage(error instanceof Error?error.message:"تعذر الحفظ")}
     finally{setBusy(false)}
   };
-  const now=Date.now(),[filter,setFilter]=[statusFilter,setStatusFilter];
+  const [filter,setFilter]=[statusFilter,setStatusFilter];
   const withStatus=rules.map(rule=>({rule,status:discountStatus(rule,now)})),counts=withStatus.reduce<Record<string,number>>((c,x)=>{c[x.status]=(c[x.status]||0)+1;return c},{all:rules.length});
   const copyCode=async(code:string)=>{try{await navigator.clipboard.writeText(code);setMessage("انسخ الكود "+code)}catch{setMessage("الكود: "+code)}};
   return <section className="dataPanel discountsPage" dir="rtl">

@@ -31,7 +31,7 @@ export function hebronMonth(now=Date.now()){
 
 export async function readOverviewExtras(db:Database,{now=Date.now(),days=30,goal=0,ownHost=""}={}){
  const since=now-days*864e5,month=hebronMonth(now);
- const safe=async<T>(work:()=>Promise<T>,fallback:T)=>{try{return await work()}catch{return fallback}};
+ async function safe<T>(work:()=>Promise<T>,fallback:T):Promise<T>{try{return await work()}catch{return fallback}}
  const [traffic,cities,reviews,pendingCount,terms,products,monthSales]=await Promise.all([
   safe(()=>db.prepare("SELECT source,referrer_host,COUNT(DISTINCT visitor_hash) AS visitors FROM marketing_events WHERE event_name='page_view' AND occurred_at>=? GROUP BY source,referrer_host").bind(since).all<{source:string|null;referrer_host:string|null;visitors:number}>(),{results:[]}),
   safe(()=>db.prepare("SELECT TRIM(city) AS city,COUNT(*) AS orders FROM orders WHERE deleted_at IS NULL AND status NOT IN ('draft','cancelled') AND created_at>=? AND TRIM(COALESCE(city,''))!='' GROUP BY TRIM(city) ORDER BY orders DESC LIMIT 6").bind(since).all<{city:string;orders:number}>(),{results:[]}),

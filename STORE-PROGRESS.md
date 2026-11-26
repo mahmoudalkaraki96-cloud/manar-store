@@ -2810,6 +2810,13 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-26 (Asia/Hebron) — ADMIN-COMPLETE / candidate 1.10.0
+- Owner asked for every remaining sample and deferred item in one release.
+- New data (runtime ALTER, guarded): products.is_new/seo_title/seo_description; shipping_zones.delivery_time; store profile lowStockThreshold (default 5) and monthlySalesGoal (default 0). orders.payment_method already existed (always cash_on_delivery) — now editable via PATCH /api/admin/orders/:id/payment.
+- New endpoint GET /api/admin/overview-extras (dashboard.read, polled every 5 min): sources from marketing_events page views, cities, pending reviews, failed searches computed against active products with the storefront matcher (works on existing history), month sales vs goal in Palestine time.
+- Free-delivery card saves the full settings object: PUT /api/admin/settings resets watermark/site name/SEO when fields are missing.
+- Not done: WhatsApp reminders for abandoned carts (carts are per device, no phone); separate draft vs hidden; per-zone «orders this month» (orders store city, not zone).
+
 ## 2026-11-26 (Asia/Hebron) — EDITOR-ABOVE-ACCOUNT-BAR / candidate 1.9.17
 - Live check of 1.9.16 found the sticky .adminAccountBar (z-index 300) over the editor top bar (modal z-index 200): save, save-and-add-another and close were not clickable on desktop since 1.9.14 (Ctrl+S still worked; phone save bar unaffected). .editModal.productEditorPage now z-index 360; verified by injecting the rule on the live page (elementFromPoint hits each button).
 

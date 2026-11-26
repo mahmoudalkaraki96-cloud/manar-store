@@ -24,7 +24,7 @@ export function buildCustomerOverview(orders:OverviewOrder[],now=Date.now()){
 
 export default function CustomersOverview({orders,onOpen}:{orders:OverviewOrder[];onOpen:(customer:OverviewCustomer)=>void}){
  const [query,setQuery]=useState(""),[segment,setSegment]=useState<"all"|Segment>("all"),[page,setPage]=useState(1);
- const now=Date.now();
+ const [now]=useState(()=>Date.now());
  const {rows,summary}=useMemo(()=>buildCustomerOverview(orders),[orders]);
  const search=query.trim().toLowerCase(),searchDigits=digits(query);
  const filtered=rows.filter(r=>(segment==="all"||r.segment===segment)&&(!search||r.name.toLowerCase().includes(search)||searchDigits.length>=3&&digits(r.phone).includes(searchDigits)));
