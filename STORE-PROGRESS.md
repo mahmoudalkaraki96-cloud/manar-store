@@ -2810,6 +2810,9 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-26 (Asia/Hebron) — EDITOR-ABOVE-ACCOUNT-BAR / candidate 1.9.17
+- Live check of 1.9.16 found the sticky .adminAccountBar (z-index 300) over the editor top bar (modal z-index 200): save, save-and-add-another and close were not clickable on desktop since 1.9.14 (Ctrl+S still worked; phone save bar unaffected). .editModal.productEditorPage now z-index 360; verified by injecting the rule on the live page (elementFromPoint hits each button).
+
 ## 2026-11-25 (Asia/Hebron) — EDITOR-QUICK-BASICS / candidate 1.9.16
 - Owner: put category, stock and prices next to each other so adding a product needs no scrolling; speed matters. Measured 1.9.14: price started ~1100px down, category/stock in the side column.
 - New quickBasics card (3 grid rows: name+number / category, price, old price, stock / wholesale, cost, profit, visible switch). Price card, side category card and side stock input removed (one category picker left). Description+specs card below with language tabs. Compact media upload cards.
