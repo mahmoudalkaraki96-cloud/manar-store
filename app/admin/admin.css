@@ -573,3 +573,5 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .dayPrepEmpty{color:var(--admin-muted)}
 @media print{.dayPrepOrder{break-after:page;page-break-after:always;border:0!important;margin:0!important}.dayPrepOrder:last-child{break-after:auto;page-break-after:auto}}
 @media(max-width:800px){.adminRedesign .ordersTable td.orderSelectCell{grid-column:2;grid-row:4;text-align:left}.adminRedesign .ordersTable td[data-label="الدفع"]{grid-column:1;grid-row:4}}
+/* 1.10.0: phone save bar holds save + save-and-add-another */
+@media(max-width:800px){.adminRedesign .productEditorMobileSave{display:flex;gap:8px}.adminRedesign .productEditorMobileSave .mobileSaveAnother{flex:0 0 auto;min-height:48px;padding:0 12px;border-radius:12px}.adminRedesign .productEditorMobileSave .mainBtn{flex:1}}

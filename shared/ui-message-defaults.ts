@@ -256,6 +256,7 @@ export const uiMessageDefaults: Record<string, Record<string, string>> = {
   "order_on_whatsapp": {AR: "اطلب عبر واتساب", EN: "Order on WhatsApp", HE: "הזמנה בוואטסאפ"},
   "order_received": {AR: "تم استلام طلبك", EN: "Order received", HE: "ההזמנה התקבלה"},
   "out_of_stock": {AR: "نفدت الكمية", EN: "Out of stock", HE: "אזל מהמלאי"},
+  "product.new_badge": {AR: "جديد", EN: "New", HE: "חדש"},
   "page_not_found": {AR: "الصفحة غير موجودة", EN: "Page not found", HE: "הדף לא נמצא"},
   "password": {AR: "كلمة المرور", EN: "Password", HE: "סיסמה"},
   "password_recovery_by_email_is_currently_unavaila": {AR: "استعادة كلمة المرور بالبريد غير متاحة حاليًا؛ احتفظ بكلمة المرور في مكان آمن.", EN: "Password recovery by email is currently unavailable. Keep your password somewhere safe.", HE: "שחזור סיסמה בדוא״ל אינו זמין כרגע. שמרו את הסיסמה במקום בטוח."},

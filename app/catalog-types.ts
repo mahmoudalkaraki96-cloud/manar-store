@@ -61,6 +61,7 @@ export type Product = {
   stock: number;
   inStock: boolean;
   active: boolean;
+  isNew?: boolean;
   featured: boolean;
   views: number;
   orders: number;

@@ -229,6 +229,15 @@ async function ensureManualOrderSchema(env:Env){
  return manualOrderSchemaReady;
 }
 let orderPolicyColumnsReady:Promise<void>|null=null;
+let productExtraColumnsReady:Promise<void>|null=null;
+// 1.10.0: «جديد» badge and per-product search-engine title/description.
+async function ensureProductExtraColumns(env:Env){
+  if(!productExtraColumnsReady)productExtraColumnsReady=(async()=>{
+    const columns=await env.DB.prepare("PRAGMA table_info(products)").all(),names=new Set((columns.results as Array<Record<string,unknown>>).map(row=>String(row.name)));
+    for(const [name,definition] of [["is_new","integer DEFAULT 0 NOT NULL"],["seo_title","text DEFAULT '' NOT NULL"],["seo_description","text DEFAULT '' NOT NULL"]])if(!names.has(name))await env.DB.prepare(`ALTER TABLE products ADD COLUMN ${name} ${definition}`).run();
+  })().catch(error=>{productExtraColumnsReady=null;throw error});
+  return productExtraColumnsReady;
+}
 async function ensureOrderPolicyColumns(env:Env){
   if(!orderPolicyColumnsReady)orderPolicyColumnsReady=(async()=>{
     const columns=await env.DB.prepare("PRAGMA table_info(orders)").all(),names=new Set((columns.results as Array<Record<string,unknown>>).map(row=>String(row.name)));
@@ -279,7 +288,7 @@ async function saveSettings(request:Request,env:Env){
   await ensureStorefrontColumns(env);
   const body=await parseJson(request),now=Date.now(),interval=Math.min(20000,Math.max(2000,Number(body.sliderIntervalMs)||5000));
   const limit=Math.min(24,Math.max(1,Number(body.homeProductsLimit)||6));
-  let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled","currency","currencySymbol","digits"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
+  let profile;try{const current=await readStoreProfile(env.DB),keys=["inventoryEnabled","mobileProductColumns","freeShippingEnabled","freeShippingThreshold","publicOrigin","googleAnalyticsId","googleAnalyticsEnabled","metaPixelId","metaPixelEnabled","currency","currencySymbol","digits","lowStockThreshold","monthlySalesGoal"];profile=validateStoreProfile({...current,...Object.fromEntries(keys.filter(key=>body[key]!==undefined).map(key=>[key,body[key]]))})}catch(error){return json({error:error instanceof Error?error.message:"إعدادات المتجر غير صالحة"},{status:400})}
   if(body.languages!==undefined)try{validateStoreLanguages(body.languages)}catch(error){if(error instanceof StoreLanguageError)return json({error:error.message},{status:400});throw error}
   const metaPixelId=body.metaPixelId===undefined?undefined:asText(body.metaPixelId).trim();
   if(metaPixelId&& !/^\d{5,30}$/.test(metaPixelId))return json({error:"رقم Meta Pixel يجب أن يحتوي على أرقام فقط (5–30 رقمًا)"},{status:400});
@@ -650,6 +659,7 @@ function writeTranslations(value: unknown, existing: unknown, codes: string[]) {
 }
 
 async function readCatalog(env: Env, includeInactive = false) {
+  await ensureProductExtraColumns(env);
   const visibility = includeInactive ? null : await env.DB.prepare("SELECT show_out_of_stock FROM store_settings WHERE id=1").first<{show_out_of_stock:number}>();
   const inventoryEnabled=(await readStoreProfile(env.DB)).inventoryEnabled!==false;
   const showOutOfStock = !inventoryEnabled || Boolean(visibility?.show_out_of_stock ?? 1);
@@ -738,7 +748,8 @@ async function readCatalog(env: Env, includeInactive = false) {
       keywords: (keywordsByProduct.get(id) || []).map((item) => String(item.keyword)).join(" "),
       customFields:(customFieldsByProduct.get(id) || []).map(item=>({id:Number(item.id),label:String(item.label),placeholder:String(item.placeholder||""),maxLength:Number(item.max_length||60),required:Boolean(item.required)})),
       suppliers:(suppliersByProduct.get(id) || []).map(item=>({id:Number(item.supplier_id),name:String(item.supplier_name),sourceProductId:String(item.source_product_id||""),sourceUrl:String(item.source_url||""),supplierPrice:amount(item.supplier_price_agorot as number|null),preferred:Boolean(item.preferred)})),
-      description: includeInactive ? String(row.description || row.short_description || "") : cleanCatalogDescription(row.description) || cleanCatalogDescription(row.short_description), specifications: String(row.specifications || ""), stock: Number(row.stock_quantity), inStock, active: Boolean(row.active), featured: Boolean(row.featured), views: Number(row.view_count), orders: Number(row.order_count), rating: Number(row.rating_average_x100) / 100, ratingCount:Number(row.rating_count||0),createdAt:Number(row.created_at||0), variants: productVariants,
+      description: includeInactive ? String(row.description || row.short_description || "") : cleanCatalogDescription(row.description) || cleanCatalogDescription(row.short_description), specifications: String(row.specifications || ""), stock: Number(row.stock_quantity), inStock, active: Boolean(row.active), featured: Boolean(row.featured),
+      isNew: Boolean(row.is_new), seoTitle: String(row.seo_title || ""), seoDescription: String(row.seo_description || ""), views: Number(row.view_count), orders: Number(row.order_count), rating: Number(row.rating_average_x100) / 100, ratingCount:Number(row.rating_count||0),createdAt:Number(row.created_at||0), variants: productVariants,
     };
   });
   return { categories, products: includeInactive || showOutOfStock ? products : products.filter((product) => product.inStock) };
@@ -791,6 +802,7 @@ async function saveCategory(request: Request, env: Env, id?: number) {
 
 async function saveProduct(request: Request, env: Env, id?: number) {
   await ensureCustomizationSchema(env);
+  await ensureProductExtraColumns(env);
   const body = await parseJson(request);
   const languageCodes = await translatableCodes(env.DB);
   const name = asText(body.name);
@@ -816,6 +828,7 @@ async function saveProduct(request: Request, env: Env, id?: number) {
     productId = Number(result.meta.last_row_id);
   }
   if (!productId) return json({ error: "تعذر حفظ الصنف" }, { status: 500 });
+  await env.DB.prepare("UPDATE products SET is_new=?,seo_title=?,seo_description=? WHERE id=?").bind(asBoolean(body.isNew)?1:0,asText(body.seoTitle).trim().slice(0,70),asText(body.seoDescription).trim().slice(0,160),productId).run();
   if (body.translations !== undefined) await env.DB.prepare("UPDATE products SET translations=? WHERE id=?").bind(writeTranslations(body.translations,(await env.DB.prepare("SELECT translations FROM products WHERE id=?").bind(productId).first())?.translations,languageCodes),productId).run();
   const customFields=(Array.isArray(body.customFields)?body.customFields as Array<Record<string,unknown>>:[]).slice(0,5).filter(field=>asText(field.label));
   if(customFields.length)await env.DB.batch(customFields.map((field,index)=>env.DB.prepare("INSERT INTO product_custom_fields (product_id,label,placeholder,max_length,required,sort_order) VALUES (?,?,?,?,?,?)").bind(productId,asText(field.label),asOptionalText(field.placeholder),Math.min(200,Math.max(1,Number(field.maxLength)||60)),asBoolean(field.required)?1:0,index)));
@@ -982,11 +995,12 @@ async function storefrontHead(env:Env,url:URL):Promise<{head:string;theme:ThemeS
   const productMatch=url.pathname.match(/^\/product\/(\d+)\/?$/);
   if(productMatch){
     const value=Number(productMatch[1]);
-    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value).first<Record<string,unknown>>();
+    await ensureProductExtraColumns(env);
+    const product=await env.DB.prepare("SELECT p.id,p.item_number,p.name,p.description,p.seo_title,p.seo_description,p.price_agorot,(p.stock_quantity>0 OR EXISTS(SELECT 1 FROM product_variants v WHERE v.product_id=p.id AND v.active=1 AND v.stock_quantity>0)) AS available,(SELECT url FROM product_media m WHERE m.product_id=p.id AND m.media_type='image' ORDER BY m.is_primary DESC,m.sort_order,m.id LIMIT 1) AS image_url FROM products p WHERE p.id=? AND p.active=1 AND p.deleted_at IS NULL LIMIT 1").bind(value).first<Record<string,unknown>>();
     if(product&&!isImportedErrorName(product.name)){
       const name=String(product.name),price=(Number(product.price_agorot||0)/100).toFixed(2);
-      title=name+" – "+storeName;
-      description=cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||await sourceUiText(env,"seo.product_description",{product:name,store:storeName,price:(await sourceMoneyFormatter(env))(Number(price))});
+      title=(String(product.seo_title||"").trim()||name)+" – "+storeName;
+      description=String(product.seo_description||"").trim()||cleanCatalogDescription(product.description).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim().slice(0,155)||await sourceUiText(env,"seo.product_description",{product:name,store:storeName,price:(await sourceMoneyFormatter(env))(Number(price))});
       canonicalUrl=url.origin+"/product/"+Number(product.id);
       image=absoluteStoreUrl(String(product.image_url||""),url.origin);type="product";
       jsonLd={"@context":"https://schema.org","@type":"Product",name,sku:String(product.item_number),image:[image],description,url:canonicalUrl,offers:{"@type":"Offer",priceCurrency:themeProfile.currency,price,availability:(themeProfile.inventoryEnabled===false||Boolean(product.available))?"https://schema.org/InStock":"https://schema.org/OutOfStock",url:canonicalUrl}};
@@ -1220,7 +1234,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
   if(request.method==="GET"&&url.pathname==="/api/admin/carts"){const days=Number(url.searchParams.get("days")||30),page=Number(url.searchParams.get("page")||1);if(![1,7,30].includes(days)||!Number.isSafeInteger(page)||page<1||page>100000)return json({error:"الفترة أو الصفحة غير صالحة"},{status:400});const cutoff=dayStart(calendarDays(Date.now(),days)[0]);return json(await readGroupedCarts(env.DB,cutoff,page),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/marketing-analytics"){const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readMarketingAnalytics(env.DB,days),{headers:{"cache-control":"no-store"}});}
-  if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days),{headers:{"cache-control":"no-store"}});}
+  if(request.method==="GET"&&url.pathname==="/api/admin/dashboard"){await ensureAnalyticsSchema(env);const days=Number(url.searchParams.get("days")||30);if(![1,7,30,90].includes(days))return json({error:"الفترة غير صالحة"},{status:400});return json(await readAdminDashboard(env.DB,days,Date.now(),(await readStoreProfile(env.DB)).lowStockThreshold),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/supplier-import-response"){const source=url.searchParams.get("source");if(source!=="dofesh"&&source!=="jabari")return json({error:"Invalid source"},{status:400});const row=await env.DB.prepare("SELECT last_response FROM supplier_import_jobs WHERE source=?").bind(source).first<{last_response:string}>();return new Response(row?.last_response||"",{headers:{"content-type":"text/plain; charset=utf-8","cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/supplier-imports")return json(await readSupplierImports(env.DB),{headers:{"cache-control":"no-store"}});
   if(request.method==="GET"&&url.pathname==="/api/admin/cart-metrics")return json({...await readCartMetrics(env.DB),...await readCartDetails(env.DB)},{headers:{"cache-control":"no-store"}});
