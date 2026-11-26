@@ -648,5 +648,4 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
  .adminRedesign .bottomBarBadge{position:absolute;top:2px;left:calc(50% - 22px);min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#f2b544;color:#3a2a00;font-size:10px;display:grid;place-items:center}
  .adminRedesign .adminMain{padding-bottom:84px!important}
  .adminRedesign .settingsSaveBar{bottom:72px}
- .adminRedesign .adminSide{z-index:300}
 }
