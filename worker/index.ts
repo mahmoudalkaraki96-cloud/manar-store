@@ -1252,6 +1252,15 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
  }
  if (request.method === "GET" && url.pathname === "/api/admin/orders") return json({orders:await readOrders(env)});
   if(request.method==='GET'&&url.pathname==='/api/admin/orders/customers'){const customers=await env.DB.prepare('SELECT id,name,phone,city,address FROM admin_customers ORDER BY name,id').all();return json({customers:customers.results});}
+  // 1.10.0: payment method chosen by the store for each order.
+  const paymentMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)\/payment$/);
+  if(paymentMatch&&request.method==="PATCH"){
+    const body=await parseJson(request),method=String(body.method||"");
+    if(!["cash_on_delivery","bank_transfer","cash_in_store","card","other"].includes(method))return json({error:"طريقة الدفع غير معروفة"},{status:400});
+    const result=await env.DB.prepare("UPDATE orders SET payment_method=?,updated_at=? WHERE id=? AND deleted_at IS NULL").bind(method,Date.now(),Number(paymentMatch[1])).run();
+    if(!result.meta?.changes)return json({error:"الطلب غير موجود"},{status:404});
+    return json({ok:true});
+  }
   const orderMatch=url.pathname.match(/^\/api\/admin\/orders\/(\d+)$/);
   if(orderMatch&&request.method==="PUT")return updateOrder(request,env,Number(orderMatch[1]),ctx);
   if(orderMatch&&request.method==="DELETE")return json(await archiveOrder(env.DB,Number(orderMatch[1])));
