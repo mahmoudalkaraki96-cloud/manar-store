@@ -2810,6 +2810,12 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-28 (Asia/Hebron) — THUMBS-SOURCING / candidate 1.10.2
+- Live check on rokon-home.com: /_media/thumbnail returned 1101 for every width not already stored in R2 (w384 copies from upload worked). Cloudflare dashboard: Images unique transformations 5,000/5,000 for the month. Carts ask for 256px, so variant images (rarely pre-stored) disappeared.
+- worker/thumb-maker.ts: @jsquash webp/jpeg/png decode + resize + webp encode (WASM imported with ?module). The thumbnail route buffers the source, tries env.IMAGES, then the WASM maker; AVIF falls back to the WebP URL; last resort serves the original. Locally: 1024x1536 webp → 256/384/640 in ~0.5s total.
+- worker/thumbnail-backfill.ts: scheduled, leased, 40 product_media rows / 15s per run, makes the missing w256/w384/w640 copies into R2 using the route's key layout. rokon-store has no cron trigger (manar and red-rose run every minute), so on rokon only the on-demand path applies until a trigger is added.
+- worker/sourcing.ts + POST /api/admin/sourcing (suppliers.write or products.write): items grouped by preferred supplier; unit cost = variant purchase price, else product purchase price, else supplier price (today's values). Used by SourcingView in the order details (toggle) and the admin cart popup.
+
 ## 2026-11-26 (Asia/Hebron) — PHONE-BAR-FIX / candidate 1.10.1
 - Live check of 1.10.0 on a 375px viewport: .adminBottomBar was rendered inside .adminSide, whose nav rules made it display:block (4 stacked buttons, 221px). Moved it to the start of main.adminShell; verified on the live page by moving the node (grid, 65px, one row).
 

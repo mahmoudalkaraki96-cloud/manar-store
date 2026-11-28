@@ -675,3 +675,24 @@ button.cartItemName{color:var(--admin-accent,#11816b)}button.cartItemName:hover{
 .adminRedesign .bellMenu>b{padding:4px 8px 8px}.adminRedesign .bellMenu p{margin:0;padding:8px;color:var(--admin-muted);font-size:13px}
 .adminRedesign .bellMenu button{display:flex;justify-content:space-between;gap:8px;min-height:40px;padding:0 10px;border:0;border-radius:10px;background:none;color:var(--admin-ink);font:inherit;font-size:14px;text-align:right;cursor:pointer}.adminRedesign .bellMenu button:hover{background:var(--admin-soft)}
 @media(max-width:800px){.adminRedesign .quickShortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.adminRedesign .extraBarLabel{flex-basis:70px}}
+/* 1.10.2: items grouped by supplier with profit (order details and cart popup) */
+.sourcingView{display:flex;flex-direction:column;gap:12px}
+.sourcingLoading,.sourcingNote{margin:0;color:var(--admin-muted,#5f6f78);font-size:12.5px}
+.sourcingSummary{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.sourcingSummary>div{background:var(--admin-soft,#f3f5f7);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.sourcingSummary small{color:var(--admin-muted,#5f6f78);font-size:12px}.sourcingSummary b{font-size:17px;font-weight:800}.sourcingSummary em{font-style:normal;font-size:12px;font-weight:700}
+.sourcingView .gain{color:#0d6b52}.sourcingView .loss{color:#b3261e}
+.sourcingGroup{border:1px solid var(--admin-line,#e4eaee);border-radius:14px;overflow:hidden;background:var(--admin-panel,#fff)}
+.sourcingGroup>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:10px 14px;background:var(--admin-soft,#f3f5f7)}
+.sourcingGroup>header>div:first-child{flex:1;min-width:140px}.sourcingGroup h4{margin:0;font-size:15px;font-weight:800}.sourcingGroup header small{color:var(--admin-muted,#5f6f78);font-size:12px}
+.sourcingGroupMoney{display:flex;flex-direction:column;align-items:flex-end;gap:2px}.sourcingGroupMoney b{font-size:13.5px}
+.sourcingGroup ul{list-style:none;margin:0;padding:0 14px}
+.sourcingGroup li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--admin-line,#e4eaee)}.sourcingGroup li:last-child{border-bottom:0}
+.sourcingThumb{width:48px;height:48px;flex:0 0 48px;border-radius:10px;background:var(--admin-soft,#f3f5f7);overflow:hidden;display:grid;place-items:center;color:var(--admin-muted,#5f6f78)}.sourcingThumb img{width:100%;height:100%;object-fit:cover;display:block}
+.sourcingInfo{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.sourcingInfo small{color:var(--admin-muted,#5f6f78);font-size:12px;overflow-wrap:anywhere}
+.sourcingCode{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}.sourcingCode a{color:var(--admin-accent,#1f5f8b);font-weight:700}
+.sourcingLineMoney{display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:end;flex:none}.sourcingLineMoney b{font-size:13px;white-space:nowrap}.sourcingLineMoney small{font-size:12px;color:var(--admin-muted,#5f6f78);white-space:nowrap}
+.orderSourcing{margin:12px 0 16px}
+.cartDialogSourcing{padding:12px 18px;overflow:auto;flex:1}
+.cartDialogSourcing .cartItemName{font-weight:700}
+@media(max-width:600px){.sourcingGroup li{flex-wrap:wrap}.sourcingLineMoney{flex-basis:100%;flex-direction:row;justify-content:flex-end;flex-wrap:wrap;gap:4px 10px}.sourcingGroupMoney{align-items:flex-start}}

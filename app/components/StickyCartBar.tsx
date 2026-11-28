@@ -3,6 +3,7 @@ import {useStoreLanguage} from "../store-language";
 import {useEffect,useState} from "react";
 import {usePathname} from "next/navigation";
 import {loadCart,type CartLine} from "../cart-storage";
+import {productThumbnail} from "../image-utils";
 
 
 export default function StickyCartBar(){
@@ -12,6 +13,6 @@ export default function StickyCartBar(){
  const lines=Object.values(cart).filter(line=>Number.isFinite(line.qty)&&line.qty>0&&Number.isFinite(line.price)&&line.price>=0),count=lines.reduce((sum,line)=>sum+line.qty,0),subtotal=lines.reduce((sum,line)=>sum+line.qty*line.price,0);
  if(!count||pathname.startsWith("/admin"))return null;
  const open=(target:"cart"|"checkout")=>{window.dispatchEvent(new CustomEvent(`manar:open-${target}`))};
- return <><div className="stickyCartSpace" aria-hidden="true"/><aside className="stickyCartBar" aria-label={t("cart.summary")}><div className="stickyCartInner"><button type="button" className="stickyCartSummary" onClick={()=>open("cart")} aria-label={t("cart.open")}><span className="stickyCartThumbs" aria-hidden="true">{lines.filter(line=>line.image).slice(-3).map((line,index)=><img key={index} src={line.image} alt=""/>)}</span><span>{t("cart")} · <b>{number(count)} {t("items")}</b></span><strong aria-live="polite" aria-atomic="true">{money(subtotal)}</strong><small>{t("subtotal_before_delivery")}</small></button><button type="button" className="stickyCheckoutButton" onClick={()=>open("checkout")}>{t("checkout")} <span className="dirFlip" aria-hidden="true">←</span></button></div></aside></>;
+ return <><div className="stickyCartSpace" aria-hidden="true"/><aside className="stickyCartBar" aria-label={t("cart.summary")}><div className="stickyCartInner"><button type="button" className="stickyCartSummary" onClick={()=>open("cart")} aria-label={t("cart.open")}><span className="stickyCartThumbs" aria-hidden="true">{lines.filter(line=>line.image).slice(-3).map((line,index)=><img key={index} src={productThumbnail(line.image,240)} alt="" decoding="async" onError={event=>{const img=event.currentTarget;if(line.image&&img.dataset.fallback!=="1"){img.dataset.fallback="1";img.src=line.image}}}/>)}</span><span>{t("cart")} · <b>{number(count)} {t("items")}</b></span><strong aria-live="polite" aria-atomic="true">{money(subtotal)}</strong><small>{t("subtotal_before_delivery")}</small></button><button type="button" className="stickyCheckoutButton" onClick={()=>open("checkout")}>{t("checkout")} <span className="dirFlip" aria-hidden="true">←</span></button></div></aside></>;
 }
 
