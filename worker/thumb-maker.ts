@@ -1,3 +1,4 @@
+/// <reference path="./wasm-modules.d.ts" />
 // 1.10.2: thumbnails made inside the worker with WebAssembly codecs, so they do not depend on the
 // Cloudflare Images transformation quota (5,000 unique transformations a month). Used as the
 // fallback when env.IMAGES fails, and by the scheduled backfill that pre-makes every product and
