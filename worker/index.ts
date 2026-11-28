@@ -1,6 +1,9 @@
 import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
 import {THUMBNAIL_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
+import {makeThumbnail} from "./thumb-maker";
+import {backfillThumbnails} from "./thumbnail-backfill";
+import {parseSourcingItems,readSourcing} from "./sourcing";
 import {catalogViewRequest,categoriesView,homeView,categoryView,collectionView,productView,itemsView,searchView} from "./catalog-views";
 import type {CatalogResponse} from "../app/catalog-types";
 import {readOverviewExtras} from "./overview-extras";
@@ -79,7 +82,7 @@ export interface D1Database {
   batch<T = Record<string, unknown>>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
 }
 interface R2ObjectBody { size:number; range?:{offset:number;length:number}; body: ReadableStream; httpEtag: string; writeHttpMetadata(headers: Headers): void }
-interface R2Bucket { delete(key:string):Promise<void>; get(key: string,options?:{range:Headers}): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string;cacheControl?:string } }): Promise<unknown> }
+interface R2Bucket { delete(key:string):Promise<void>; head(key:string):Promise<unknown>; get(key: string,options?:{range:Headers}): Promise<R2ObjectBody | null>; put(key: string, body: ReadableStream | ArrayBuffer, options?: { httpMetadata?: { contentType?: string;cacheControl?:string } }): Promise<unknown> }
 interface Fetcher { fetch(request: Request): Promise<Response> }
 
 interface ExecutionContext {
@@ -1235,6 +1238,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
       return json({error:"Not Found"},{status:404});
     }catch(error){if(error instanceof LedgerError)return json({error:error.message},{status:error.status});throw error}
   }
+  if(request.method==="POST"&&url.pathname==="/api/admin/sourcing"){let items;try{items=parseSourcingItems(await request.json())}catch(error){return json({error:error instanceof Error?error.message:"قائمة الأصناف غير صالحة"},{status:400})}return json(await readSourcing(env.DB,items),{headers:{"cache-control":"no-store"}})}
   if(request.method==="GET"&&url.pathname==="/api/admin/live-activity")return json(await readBrowserActivity(env.DB),{headers:{"cache-control":"no-store"}});
   if(request.method==="GET"&&url.pathname==="/api/admin/carts"){const days=Number(url.searchParams.get("days")||30),page=Number(url.searchParams.get("page")||1);if(![1,7,30].includes(days)||!Number.isSafeInteger(page)||page<1||page>100000)return json({error:"الفترة أو الصفحة غير صالحة"},{status:400});const cutoff=dayStart(calendarDays(Date.now(),days)[0]);return json(await readGroupedCarts(env.DB,cutoff,page),{headers:{"cache-control":"no-store"}});}
   if(request.method==="GET"&&url.pathname==="/api/admin/navigation"){await ensureHighlightSchema(env);const row=await env.DB.prepare("SELECT (SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL) AS orders,(SELECT COUNT(*) FROM orders WHERE deleted_at IS NULL AND status='new') AS newOrders,(SELECT COUNT(*) FROM categories) AS categories,(SELECT COUNT(*) FROM store_highlights) AS highlights").first<{orders:number;newOrders:number;categories:number;highlights:number}>();return json(row||{orders:0,newOrders:0,categories:0,highlights:0},{headers:{"cache-control":"no-store"}});}
@@ -1432,7 +1436,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
-  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")));ctx.waitUntil(backfillThumbnails(env).catch(error=>console.error(JSON.stringify({event:"scheduled_thumbnail_backfill_failed",message:error instanceof Error?error.message:"unknown"}))))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
@@ -1522,11 +1526,25 @@ const worker = {
       }
       const original=await fetchImageSource(source,env,request);
       if(!original.ok||!original.body)return new Response("Image not found",{status:original.status||404});
-      if(!original.headers.get("content-type")?.startsWith("image/"))return new Response("Invalid image content",{status:415});
-      const resized=await env.IMAGES.input(original.body).transform({width}).output({format:thumb.mime,quality:thumb.quality});
-      const transformed=await resized.response(),bytes=await transformed.arrayBuffer(),headers=new Headers(transformed.headers);
+      const originalType=original.headers.get("content-type")||"";
+      if(!originalType.startsWith("image/"))return new Response("Invalid image content",{status:415});
+      const sourceBytes=await original.arrayBuffer();
+      // 1.10.2: Cloudflare Images first; when it fails (monthly transformation quota used up), the worker
+      // makes the thumbnail itself with WebAssembly codecs. AVIF falls back to the WebP URL of the same width.
+      let bytes:ArrayBuffer|null=null;
+      try{
+        const resized=await env.IMAGES.input(new Response(sourceBytes).body!).transform({width}).output({format:thumb.mime,quality:thumb.quality});
+        const transformed=await resized.response();
+        if(transformed.ok)bytes=await transformed.arrayBuffer();
+      }catch(error){console.error(JSON.stringify({event:"images_transform_failed",message:error instanceof Error?error.message:"unknown"}))}
+      if(!bytes&&thumb.mime==="image/avif"){const webp=new URL(url);webp.searchParams.delete("format");return Response.redirect(webp.toString(),302)}
+      if(!bytes){
+        try{bytes=await makeThumbnail(sourceBytes,width,thumb.quality)}catch(error){console.error(JSON.stringify({event:"wasm_thumbnail_failed",message:error instanceof Error?error.message:"unknown"}))}
+      }
+      if(!bytes)return new Response(sourceBytes,{headers:{"content-type":originalType,"cache-control":"public, max-age=3600"}});
+      const headers=new Headers();
       headers.set("content-type",thumb.mime);headers.set("cache-control","public, max-age=31536000, immutable");
-      const response=new Response(bytes,{status:transformed.status,headers});
+      const response=new Response(bytes,{status:200,headers});
       if(source.startsWith("/media/")){
         try{
           const sourceKey=decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length));
