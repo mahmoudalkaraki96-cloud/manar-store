@@ -2,8 +2,9 @@ const {test}=require("node:test"),assert=require("node:assert/strict"),fs=requir
 const load=(file,deps={})=>{const m={exports:{}};new Function("module","exports","require",ts.transpileModule(fs.readFileSync(file,"utf8"),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(m,m.exports,name=>name in deps?deps[name]:require(name));return m.exports};
 const sizes=load("shared/image-sizes.ts"),utils=load("app/image-utils.ts",{"../shared/image-sizes":sizes});
 
-test("card thumbnails keep the sizes and quality they had before 1.8.4",()=>{
- for(const [requested,produced] of [[180,256],[240,256],[320,256],[384,384],[480,384],[640,640]])assert.equal(sizes.thumbnailWidth(requested),produced,String(requested));
+test("1.10.3: every small image shares the 384 copy; card quality is unchanged",()=>{
+ for(const [requested,produced] of [[180,384],[240,384],[320,384],[384,384],[480,384],[640,640]])assert.equal(sizes.thumbnailWidth(requested),produced,String(requested));
+ assert.deepEqual(sizes.PREMADE_WIDTHS,[384,1080]);
  for(const width of [256,384,640])assert.deepEqual(sizes.thumbnailFormat(width,"avif"),{mime:"image/webp",extension:"webp",suffix:"",quality:75});
 });
 

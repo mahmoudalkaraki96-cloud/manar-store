@@ -2810,6 +2810,11 @@
 - rooms.css, phone only (max-width:859px): .details becomes a wrapping row — category, then price with the favourite button beside it; quantity label hidden and the input matches the 52px add button; productSectionDivider hidden (the description card has its own heading); smaller margins/padding on gallery, divider lines, variants, share row, description, reviews, policies and related products; related heading on one line.
 - Verified by injecting the CSS on live Rokon (375px): page 2848px → 2517px.
 
+## 2026-11-28 (Asia/Hebron) — THUMBS-PREMADE / candidate 1.10.3
+- Owner: cart and cards can share one small copy; product page AVIF stays (approved for quality). thumbnailWidth maps every request ≤480 to 384 (256 still accepted for old links). Upload makes PREMADE_WIDTHS [384, 1080] WebP with the WASM codecs.
+- Missing AVIF no longer 302s on every view: the route answers with the stored (or newly made) WebP of the same width, cache 1h.
+- .github/workflows/warm-thumbnails.yml + scripts/warm-thumbnails.mjs: per store, D1 image list vs R2 listing; missing WebP via the store route, missing AVIF 1080 via sharp 0.33.5 (q60, effort 4) uploaded to R2 at thumbnails/w1080-avif/. Local sample: 1024x1536 → AVIF 1080 28.9 KB vs WebP 51.2 KB, ~1.9s. The in-worker scheduled backfill from 1.10.2 is removed.
+
 ## 2026-11-28 (Asia/Hebron) — THUMBS-SOURCING / candidate 1.10.2
 - Live check on rokon-home.com: /_media/thumbnail returned 1101 for every width not already stored in R2 (w384 copies from upload worked). Cloudflare dashboard: Images unique transformations 5,000/5,000 for the month. Carts ask for 256px, so variant images (rarely pre-stored) disappeared.
 - worker/thumb-maker.ts: @jsquash webp/jpeg/png decode + resize + webp encode (WASM imported with ?module). The thumbnail route buffers the source, tries env.IMAGES, then the WASM maker; AVIF falls back to the WebP URL; last resort serves the original. Locally: 1024x1536 webp → 256/384/640 in ~0.5s total.
