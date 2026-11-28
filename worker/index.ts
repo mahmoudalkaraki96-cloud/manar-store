@@ -1,7 +1,6 @@
 import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
 import {THUMBNAIL_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
-import {makeThumbnail} from "./thumb-maker";
 import {backfillThumbnails} from "./thumbnail-backfill";
 import {parseSourcingItems,readSourcing} from "./sourcing";
 import {catalogViewRequest,categoriesView,homeView,categoryView,collectionView,productView,itemsView,searchView} from "./catalog-views";
@@ -1539,7 +1538,7 @@ const worker = {
       }catch(error){console.error(JSON.stringify({event:"images_transform_failed",message:error instanceof Error?error.message:"unknown"}))}
       if(!bytes&&thumb.mime==="image/avif"){const webp=new URL(url);webp.searchParams.delete("format");return Response.redirect(webp.toString(),302)}
       if(!bytes){
-        try{bytes=await makeThumbnail(sourceBytes,width,thumb.quality)}catch(error){console.error(JSON.stringify({event:"wasm_thumbnail_failed",message:error instanceof Error?error.message:"unknown"}))}
+        try{const {makeThumbnail}=await import("./thumb-maker");bytes=await makeThumbnail(sourceBytes,width,thumb.quality)}catch(error){console.error(JSON.stringify({event:"wasm_thumbnail_failed",message:error instanceof Error?error.message:"unknown"}))}
       }
       if(!bytes)return new Response(sourceBytes,{headers:{"content-type":originalType,"cache-control":"public, max-age=3600"}});
       const headers=new Headers();

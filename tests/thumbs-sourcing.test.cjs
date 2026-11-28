@@ -5,6 +5,8 @@ test('1.10.2: thumbnails fall back to the worker codecs, then to the original im
  const w=read('worker/index.ts'),route=w.slice(w.indexOf('url.pathname==="/_media/thumbnail"'),w.indexOf('url.pathname === "/_vinext/image"'));
  assert.ok(route.indexOf('env.IMAGES.input(new Response(sourceBytes).body!)')>0,'Images first, from a buffered copy');
  assert.ok(route.indexOf('makeThumbnail(sourceBytes,width,thumb.quality)')>route.indexOf('env.IMAGES.input'),'WASM after Images');
+ assert.ok(route.includes('await import("./thumb-maker")'),'codecs load lazily');
+ assert.ok(!/^import .*thumb-maker/m.test(w)&&!/^import .*thumb-maker/m.test(read('worker/thumbnail-backfill.ts')),'no static import of the wasm codecs');
  assert.match(route,/thumb\.mime==="image\/avif"\)\{const webp=new URL\(url\);webp\.searchParams\.delete\("format"\)/);
  assert.match(route,/if\(!bytes\)return new Response\(sourceBytes,\{headers:\{"content-type":originalType/);
  const m=read('worker/thumb-maker.ts');

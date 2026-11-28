@@ -1,7 +1,8 @@
 // 1.10.2: pre-makes the small thumbnails (cart, cards, admin) for every product and variant image,
 // a few dozen images per scheduled run, and stores them in R2 next to the originals. The thumbnail
 // route finds them there, so carts never wait for — or depend on — an on-demand resize.
-import {decodeImage,encodeThumbnail} from "./thumb-maker";
+// The codecs load only when there is work (a dynamic import keeps the .wasm modules out of the worker entry,
+// which the build check imports in Node).
 import {CARD_QUALITY} from "../shared/image-sizes";
 
 export const BACKFILL_WIDTHS=[256,384,640];
@@ -54,6 +55,7 @@ export async function backfillThumbnails(env:BackfillEnv){
         const heads=await Promise.all(BACKFILL_WIDTHS.map(width=>env.MEDIA.head(thumbnailKeyOf(key,width))));
         const missing=BACKFILL_WIDTHS.filter((_,index)=>!heads[index]);
         if(!missing.length){skipped++;continue}
+        const {decodeImage,encodeThumbnail}=await import("./thumb-maker");
         const original=await env.MEDIA.get(key);
         if(!original){skipped++;continue}
         const image=await decodeImage(await new Response(original.body).arrayBuffer());
