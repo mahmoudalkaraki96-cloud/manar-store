@@ -40,6 +40,6 @@ jobs:
         env:
           SHARP_DIR: ${{ runner.temp }}/sharp
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ACCOUNT_ID: 008c61df8c322c27b8d1c1137922e328
           STORE: ${{ inputs.store || 'all' }}
         run: node scripts/warm-thumbnails.mjs
