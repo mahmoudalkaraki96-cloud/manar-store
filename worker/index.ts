@@ -1,7 +1,6 @@
 import {priceDiscounts} from "../shared/discounts";
 import {normalizeHeifUpload,ImageUploadError} from "./normalize-upload";
-import {THUMBNAIL_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
-import {backfillThumbnails} from "./thumbnail-backfill";
+import {THUMBNAIL_WIDTHS,PREMADE_WIDTHS,thumbnailFormat} from "../shared/image-sizes";
 import {parseSourcingItems,readSourcing} from "./sourcing";
 import {catalogViewRequest,categoriesView,homeView,categoryView,collectionView,productView,itemsView,searchView} from "./catalog-views";
 import type {CatalogResponse} from "../app/catalog-types";
@@ -1414,11 +1413,17 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
     if(file.type.startsWith("image/")){
       const bytes=await file.arrayBuffer();
       await env.MEDIA.put(key,bytes,{httpMetadata:{contentType:file.type}});
+      // 1.10.3: the small (384, cards/search/cart) and large (1080, product page on phones) copies are made
+      // here with the worker's own codecs, so they exist before anyone opens the product and do not use
+      // the Cloudflare Images quota.
       try{
-        const thumbnail=await env.IMAGES.input(new Response(bytes).body!).transform({width:384}).output({format:"image/webp",quality:75});
-        const thumbnailBytes=await (await thumbnail.response()).arrayBuffer();
-        const thumbnailKey=`thumbnails/w384/${key.replace(/\.[^.]+$/,"")}.webp`;
-        await env.MEDIA.put(thumbnailKey,thumbnailBytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}});
+        const {decodeImage,encodeThumbnail}=await import("./thumb-maker");
+        const image=await decodeImage(bytes);
+        if(image)for(const width of PREMADE_WIDTHS){
+          const format=thumbnailFormat(width,null);
+          const thumbnailBytes=await encodeThumbnail(image,width,format.quality);
+          await env.MEDIA.put(`thumbnails/w${width}${format.suffix}/${key.replace(/\.[^.]+$/,"")}.webp`,thumbnailBytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}});
+        }
       }catch(error){console.error(JSON.stringify({event:"image_thumbnail_upload_failed",message:error instanceof Error?error.message:"unknown"}))}
     }else{
       await env.MEDIA.put(key,file.stream(),{httpMetadata:{contentType:file.type}});
@@ -1435,7 +1440,7 @@ async function api(request: Request, env: Env, url: URL,ctx:ExecutionContext): P
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
 const worker = {
-  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")));ctx.waitUntil(backfillThumbnails(env).catch(error=>console.error(JSON.stringify({event:"scheduled_thumbnail_backfill_failed",message:error instanceof Error?error.message:"unknown"}))))},
+  async scheduled(_event:unknown,env:Env,ctx:ExecutionContext){ctx.waitUntil(purgeBrowserActivity(env.DB).catch(()=>console.error("scheduled_activity_cleanup_failed")));ctx.waitUntil(drainPushQueue(env).catch(()=>console.error("scheduled_push_failed")));ctx.waitUntil(runSupplierImports(env).catch(()=>console.error("scheduled_supplier_import_failed")))},
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if(url.pathname==="/_store/favicon")return storeIconResponse(request,env.DB);
@@ -1536,7 +1541,22 @@ const worker = {
         const transformed=await resized.response();
         if(transformed.ok)bytes=await transformed.arrayBuffer();
       }catch(error){console.error(JSON.stringify({event:"images_transform_failed",message:error instanceof Error?error.message:"unknown"}))}
-      if(!bytes&&thumb.mime==="image/avif"){const webp=new URL(url);webp.searchParams.delete("format");return Response.redirect(webp.toString(),302)}
+      if(!bytes&&thumb.mime==="image/avif"){
+        // 1.10.3: AVIF comes from Cloudflare Images or the nightly thumbnail workflow. Until it exists, answer
+        // with the WebP copy of the same width (stored, or made now and stored) instead of a redirect on every
+        // view. Short cache, so the AVIF takes over once the workflow has made it.
+        const webpFormat=thumbnailFormat(width,null);let webpKey:string|null=null,webpBytes:ArrayBuffer|null=null;
+        if(source.startsWith("/media/")){try{webpKey=`thumbnails/w${width}${webpFormat.suffix}/${decodeURIComponent(new URL(source,request.url).pathname.slice("/media/".length)).replace(/\.[^.]+$/,"")}.webp`}catch{}}
+        if(webpKey){const saved=await env.MEDIA.get(webpKey);if(saved)webpBytes=await new Response(saved.body).arrayBuffer()}
+        if(!webpBytes){
+          try{const {makeThumbnail}=await import("./thumb-maker");webpBytes=await makeThumbnail(sourceBytes,width,webpFormat.quality)}catch(error){console.error(JSON.stringify({event:"wasm_thumbnail_failed",message:error instanceof Error?error.message:"unknown"}))}
+          if(webpBytes&&webpKey)ctx.waitUntil(env.MEDIA.put(webpKey,webpBytes,{httpMetadata:{contentType:"image/webp",cacheControl:"public, max-age=31536000, immutable"}}));
+        }
+        if(!webpBytes)return new Response(sourceBytes,{headers:{"content-type":originalType,"cache-control":"public, max-age=3600"}});
+        const fallback=new Response(webpBytes,{headers:{"content-type":"image/webp","cache-control":"public, max-age=3600"}});
+        ctx.waitUntil(cache.put(cacheKey,fallback.clone()));
+        return fallback;
+      }
       if(!bytes){
         try{const {makeThumbnail}=await import("./thumb-maker");bytes=await makeThumbnail(sourceBytes,width,thumb.quality)}catch(error){console.error(JSON.stringify({event:"wasm_thumbnail_failed",message:error instanceof Error?error.message:"unknown"}))}
       }

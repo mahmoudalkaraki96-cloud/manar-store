@@ -1,0 +1,45 @@
+name: Make missing product thumbnails
+
+# 1.10.3: makes the copies still missing for every product and variant image, for all stores:
+# WebP 384 and 1080 through the store itself, and AVIF 1080 (product page) here with sharp.
+# Finished images are skipped, so the nightly run only handles new or failed ones.
+on:
+  workflow_dispatch:
+    inputs:
+      store:
+        description: Store to process
+        type: choice
+        default: all
+        options: [all, manar, rokon, red-rose]
+  schedule:
+    - cron: '30 1 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: warm-thumbnails
+  cancel-in-progress: false
+
+jobs:
+  thumbnails:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install the AVIF encoder
+        run: |
+          mkdir -p "$RUNNER_TEMP/sharp"
+          cd "$RUNNER_TEMP/sharp"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund sharp@0.33.5
+      - name: Make the missing thumbnails
+        env:
+          SHARP_DIR: ${{ runner.temp }}/sharp
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          STORE: ${{ inputs.store || 'all' }}
+        run: node scripts/warm-thumbnails.mjs

@@ -6,19 +6,31 @@ test('1.10.2: thumbnails fall back to the worker codecs, then to the original im
  assert.ok(route.indexOf('env.IMAGES.input(new Response(sourceBytes).body!)')>0,'Images first, from a buffered copy');
  assert.ok(route.indexOf('makeThumbnail(sourceBytes,width,thumb.quality)')>route.indexOf('env.IMAGES.input'),'WASM after Images');
  assert.ok(route.includes('await import("./thumb-maker")'),'codecs load lazily');
- assert.ok(!/^import .*thumb-maker/m.test(w)&&!/^import .*thumb-maker/m.test(read('worker/thumbnail-backfill.ts')),'no static import of the wasm codecs');
- assert.match(route,/thumb\.mime==="image\/avif"\)\{const webp=new URL\(url\);webp\.searchParams\.delete\("format"\)/);
+ assert.ok(!/^import .*thumb-maker/m.test(w),'no static import of the wasm codecs');
+ assert.ok(!route.includes('Response.redirect('),'1.10.3: no redirect on every view when AVIF is missing');
+ assert.ok(route.includes('if(webpKey){const saved=await env.MEDIA.get(webpKey);if(saved)webpBytes='),'stored WebP answers the AVIF request');
+ assert.ok(route.includes('const fallback=new Response(webpBytes,{headers:{"content-type":"image/webp","cache-control":"public, max-age=3600"}});'));
  assert.match(route,/if\(!bytes\)return new Response\(sourceBytes,\{headers:\{"content-type":originalType/);
  const m=read('worker/thumb-maker.ts');
  for(const wasm of ['webp_dec.wasm?module','webp_enc_simd.wasm?module','mozjpeg_dec.wasm?module','squoosh_png_bg.wasm?module','squoosh_resize_bg.wasm?module'])assert.ok(m.includes(wasm),wasm);
  assert.match(m,/if\(typeof scope\.ImageData==="undefined"\)scope\.ImageData=WorkerImageData/);
 });
-test('1.10.2: scheduled backfill uses the route key layout and a lease',()=>{
- const b=read('worker/thumbnail-backfill.ts');
- assert.match(b,/export const BACKFILL_WIDTHS=\[256,384,640\]/);
- assert.ok(b.includes('`thumbnails/w${width}/${sourceKey.replace(/\\.[^.]+$/,"")}.webp`'));
- assert.match(b,/lease_until<\?/);
- assert.ok(read('worker/index.ts').includes('ctx.waitUntil(backfillThumbnails(env)'));
+test('1.10.3: uploads make the 384 and 1080 copies; the workflow fills in older images',()=>{
+ const w=read('worker/index.ts');
+ assert.ok(w.includes('if(image)for(const width of PREMADE_WIDTHS){'));
+ assert.ok(w.includes('`thumbnails/w${width}${format.suffix}/${key.replace(/\\.[^.]+$/,"")}.webp`'));
+ assert.ok(!w.includes('backfillThumbnails'),'scheduled backfill replaced by the workflow');
+ assert.ok(!fs.existsSync(path.join(root,'worker/thumbnail-backfill.ts')));
+ const s=read('scripts/warm-thumbnails.mjs');
+ assert.ok(s.includes('const WIDTHS=[{width:384,suffix:""},{width:1080,suffix:"-q82"}];'));
+ for(const bucket of ['manar-store-media','rokon-store-media','tenant-red-rose-media'])assert.ok(s.includes(bucket),bucket);
+ assert.ok(s.includes('const AVIF={width:1080,prefix:"thumbnails/w1080-avif/",quality:60};'),'AVIF at the approved quality and route key');
+ assert.ok(s.includes('.avif({quality:AVIF.quality,effort:4})'));
+ const y=read('.github/workflows/warm-thumbnails.yml');
+ assert.match(y,/workflow_dispatch:/);
+ assert.ok(y.includes("cron: '30 1 * * *'"));
+ assert.ok(y.includes('run: node scripts/warm-thumbnails.mjs'));
+ assert.ok(y.includes('npm install --no-audit --no-fund sharp@0.33.5'));
 });
 test('1.10.2: carts show the original image when a thumbnail fails',()=>{
  const o=read('app/components/ShoppingOverlay.tsx'),bar=read('app/components/StickyCartBar.tsx');

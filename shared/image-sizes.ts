@@ -13,10 +13,17 @@ export const CARD_QUALITY = 75;
 export const LARGE_QUALITY = 82;
 export const LARGE_AVIF_QUALITY = 60;
 
-/** Requested display width → produced width. Cards keep their old sizes; product pages get 1080/1280. */
+/**
+ * Requested display width → produced width. 1.10.3: every small image (cards, search, cart, gallery strip,
+ * admin) shares the 384 copy, so each image needs one small copy; product pages get 640/1080/1280.
+ * 256 stays a valid width on the server for links made before 1.10.3.
+ */
 export function thumbnailWidth(requested: number) {
-  return requested <= 320 ? 256 : requested <= 480 ? 384 : requested <= 640 ? 640 : requested <= 1080 ? 1080 : 1280;
+  return requested <= 480 ? 384 : requested <= 640 ? 640 : requested <= 1080 ? 1080 : 1280;
 }
+
+/** Copies made as soon as an image is uploaded (and by the thumbnail workflow for older images). */
+export const PREMADE_WIDTHS = [384, 1080];
 
 /** Output format and quality for a width. AVIF only for large product-page sizes, and only when asked for. */
 export function thumbnailFormat(width: number, requested: string | null) {
